@@ -1,0 +1,151 @@
+.content {
+  padding: 0;
+}
+.content .shop-header {
+  padding: 0 24rpx;
+  height: 192rpx;
+  background-color: aqua;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.content .shop-header .left {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.content .shop-header .left .shop-logo image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.content .shop-header .left .shop-info {
+  margin-left: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.content .shop-header .left .shop-info .name {
+  color: #333;
+  font-size: 30rpx;
+}
+.content .shop-header .left .shop-info .score-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.content .shop-header .left .shop-info .score-wrapper .score {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #FFB30A;
+}
+.content .shop-header .left .shop-info .score-wrapper .saleinfo {
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #888888;
+}
+.content .shop-header .right {
+  display: inline-block;
+}
+.content .shop-header .right .fav {
+  width: 44rpx;
+  height: 38rpx;
+}
+.content .shop-header .right .share {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 36rpx;
+}
+.content .shop-content {
+  height: 100%;
+}
+.content .shop-content .tab-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  background-color: #fff;
+  height: 84rpx;
+}
+.content .shop-content .tab-wrapper .tab-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 84rpx;
+  position: relative;
+}
+.content .shop-content .tab-wrapper .tab-item .line {
+  position: absolute;
+  bottom: 0;
+  height: 2rpx;
+  width: 52rpx;
+  background-color: #7CA7D2;
+}
+.content .shop-content .tab-wrapper .tab-item .title {
+  color: #333;
+  font-size: 24rpx;
+  line-height: 84rpx;
+}
+.content .shop-content .swiper {
+  height: 100%;
+  background-color: #FFB30A;
+}
+

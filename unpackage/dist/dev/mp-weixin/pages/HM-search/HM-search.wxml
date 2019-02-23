@@ -1,0 +1,2 @@
+<import src="./HM-search.vue.wxml" />
+    <template is="5f6deb42" data="{{ ...$root['0'], $root }}"/>

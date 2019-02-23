@@ -8,7 +8,7 @@
 				</view>
 			</view>
 			<view class="search-wrapper">
-				<view class="search-box" @click="navigateTo('../HM-search/HM-search')">
+				<view class="search-box" @click="goSearch">
 					<view class="label">
 						搜索
 					</view>
@@ -55,7 +55,7 @@
 			</view>
 		</view>
 		<view class="shop-info-wrapper" v-for="(item, index) in items" :key="index"  >
-			<view class="shop-info">
+			<view class="shop-info" @click="goShop">
 				<image src="../../static/img/banner.png" class="shop-img"></image>
 				<view class="shop-info-middle">
 					<view class="shop-name">陈蓉的店</view>
@@ -106,6 +106,16 @@
 			},
 			durationChange(e) {
 				this.duration = e.target.value
+			},
+			goSearch(){
+				uni.navigateTo({
+					url:"../HM-search/HM-search"
+				})
+			},
+			goShop(){
+				uni.navigateTo({
+					url:"shop/shop"
+				})
 			}
 		},
 		computed: mapState(['forcedLogin', 'hasLogin', 'userName']),

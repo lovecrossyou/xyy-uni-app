@@ -43,12 +43,18 @@
                 "navigationBarTitleText" : "购物车"
             }
         },
-		{
-		    "path" : "pages/HM-search/HM-search",
-		    "style" : {
-		        "navigationBarTitleText" : "搜索"
-		    }
-		}
+        {
+            "path" : "pages/HM-search/HM-search",
+            "style" : {
+                "navigationBarTitleText" : "搜索"
+            }
+        },
+        {
+            "path" : "pages/main/shop/shop",
+            "style" : {
+                "navigationBarTitleText" : "店铺"
+            }
+        }
     ],
     "tabBar" : {
         "color" : "#7a7e83",
