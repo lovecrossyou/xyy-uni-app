@@ -1468,7 +1468,7 @@ __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./common/slots.wxml','/components/uni-icon/uni-icon.vue.wxml','/components/uni-list/uni-list.vue.wxml','/components/uni-list-item/uni-list-item.vue.wxml','/components/m-input.vue.wxml','/components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','/pages/main/shop/goods.vue.wxml','/pages/main/shop/judgement.vue.wxml','/pages/main/shop/shop-info.vue.wxml','/components/m-icon/m-icon.vue.wxml','/components/uni-badge/uni-badge.vue.wxml','/common/slots.wxml','/pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./components/m-icon/m-icon.vue.wxml','./components/m-input.vue.wxml','./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./components/uni-badge/uni-badge.vue.wxml','./components/uni-icon/uni-icon.vue.wxml','./components/uni-list-item/uni-list-item.vue.wxml','./components/uni-list/uni-list.vue.wxml','./pages/HM-search/HM-search.vue.wxml','./pages/HM-search/HM-search.wxml','./HM-search.vue.wxml','./pages/login/login.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/main/main.vue.wxml','./pages/main/main.wxml','./main.vue.wxml','./pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/goods.vue.wxml','./pages/main/shop/judgement.vue.wxml','./pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.vue.wxml','./pages/main/shop/shop.wxml','./shop.vue.wxml','./pages/order/order.vue.wxml','./pages/order/order.wxml','./order.vue.wxml','./pages/pwd/pwd.vue.wxml','./pages/pwd/pwd.wxml','./pwd.vue.wxml','./pages/reg/reg.vue.wxml','./pages/reg/reg.wxml','./reg.vue.wxml','./pages/shoppingcart/shoppingcart.vue.wxml','./pages/shoppingcart/shoppingcart.wxml','./shoppingcart.vue.wxml','./pages/user/user.vue.wxml','./pages/user/user.wxml','./user.vue.wxml'];d_[x[0]]={}
+var x=['./common/slots.wxml','/components/uni-icon/uni-icon.vue.wxml','/components/uni-list/uni-list.vue.wxml','/components/uni-list-item/uni-list-item.vue.wxml','./components/m-icon/m-icon.vue.wxml','./components/m-input.vue.wxml','/components/m-icon/m-icon.vue.wxml','./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./components/uni-badge/uni-badge.vue.wxml','./components/uni-icon/uni-icon.vue.wxml','./components/uni-list-item/uni-list-item.vue.wxml','/components/uni-badge/uni-badge.vue.wxml','./components/uni-list/uni-list.vue.wxml','/common/slots.wxml','./pages/HM-search/HM-search.vue.wxml','/components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./pages/HM-search/HM-search.wxml','./HM-search.vue.wxml','./pages/login/login.vue.wxml','/components/m-input.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/main/main.vue.wxml','./pages/main/main.wxml','./main.vue.wxml','./pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/goods.vue.wxml','/pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/judgement.vue.wxml','./pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.vue.wxml','/pages/main/shop/goods.vue.wxml','/pages/main/shop/judgement.vue.wxml','/pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.wxml','./shop.vue.wxml','./pages/order/order.vue.wxml','./pages/order/order.wxml','./order.vue.wxml','./pages/pwd/pwd.vue.wxml','./pages/pwd/pwd.wxml','./pwd.vue.wxml','./pages/reg/reg.vue.wxml','./pages/reg/reg.wxml','./reg.vue.wxml','./pages/shoppingcart/shoppingcart.vue.wxml','./pages/shoppingcart/shoppingcart.wxml','./shoppingcart.vue.wxml','./pages/user/user.vue.wxml','./pages/user/user.wxml','./user.vue.wxml'];d_[x[0]]={}
 d_[x[0]]["7d3c43dd-default-7d3c43dd-7"]=function(e,s,r,gg){
 var z=gz$gwx_1()
 var b=x[0]+':7d3c43dd-default-7d3c43dd-7'
@@ -1479,7 +1479,7 @@ p_[b]=true
 try{
 var oB=_v()
 _(r,oB)
-cs.push("./common/slots.wxml:template:14:47")
+cs.push("./common/slots.wxml:template:5:47")
 var xC=_oz(z,2,e,s,gg)
 var oD=_gd(x[0],xC,e_,d_)
 if(oD){
@@ -1489,11 +1489,11 @@ oB.wxXCkey=3
 oD(fE,fE,oB,gg)
 gg.f=cur_globalf
 }
-else _w(xC,x[0],14,198)
+else _w(xC,x[0],5,198)
 cs.pop()
 var cF=_v()
 _(r,cF)
-cs.push("./common/slots.wxml:template:14:221")
+cs.push("./common/slots.wxml:template:5:221")
 var hG=_oz(z,6,e,s,gg)
 var oH=_gd(x[0],hG,e_,d_)
 if(oH){
@@ -1503,11 +1503,11 @@ cF.wxXCkey=3
 oH(cI,cI,cF,gg)
 gg.f=cur_globalf
 }
-else _w(hG,x[0],14,375)
+else _w(hG,x[0],5,375)
 cs.pop()
 var oJ=_v()
 _(r,oJ)
-cs.push("./common/slots.wxml:template:14:398")
+cs.push("./common/slots.wxml:template:5:398")
 var lK=_oz(z,10,e,s,gg)
 var aL=_gd(x[0],lK,e_,d_)
 if(aL){
@@ -1517,11 +1517,11 @@ oJ.wxXCkey=3
 aL(tM,tM,oJ,gg)
 gg.f=cur_globalf
 }
-else _w(lK,x[0],14,552)
+else _w(lK,x[0],5,552)
 cs.pop()
 var eN=_v()
 _(r,eN)
-cs.push("./common/slots.wxml:template:14:575")
+cs.push("./common/slots.wxml:template:5:575")
 var bO=_oz(z,14,e,s,gg)
 var oP=_gd(x[0],bO,e_,d_)
 if(oP){
@@ -1531,11 +1531,11 @@ eN.wxXCkey=3
 oP(xQ,xQ,eN,gg)
 gg.f=cur_globalf
 }
-else _w(bO,x[0],14,726)
+else _w(bO,x[0],5,726)
 cs.pop()
 var oR=_v()
 _(r,oR)
-cs.push("./common/slots.wxml:template:14:749")
+cs.push("./common/slots.wxml:template:5:749")
 var fS=_oz(z,18,e,s,gg)
 var cT=_gd(x[0],fS,e_,d_)
 if(cT){
@@ -1545,11 +1545,11 @@ oR.wxXCkey=3
 cT(hU,hU,oR,gg)
 gg.f=cur_globalf
 }
-else _w(fS,x[0],14,900)
+else _w(fS,x[0],5,900)
 cs.pop()
 var oV=_v()
 _(r,oV)
-cs.push("./common/slots.wxml:template:14:923")
+cs.push("./common/slots.wxml:template:5:923")
 var cW=_oz(z,22,e,s,gg)
 var oX=_gd(x[0],cW,e_,d_)
 if(oX){
@@ -1559,7 +1559,7 @@ oV.wxXCkey=3
 oX(lY,lY,oV,gg)
 gg.f=cur_globalf
 }
-else _w(cW,x[0],14,1077)
+else _w(cW,x[0],5,1077)
 cs.pop()
 }catch(err){
 p_[b]=false
@@ -1574,37 +1574,19 @@ var oB=e_[x[0]].i
 _ai(oB,x[1],e_,x[0],1,1)
 _ai(oB,x[2],e_,x[0],2,2)
 _ai(oB,x[3],e_,x[0],3,2)
-_ai(oB,x[4],e_,x[0],4,2)
-_ai(oB,x[5],e_,x[0],5,2)
-_ai(oB,x[6],e_,x[0],6,2)
-_ai(oB,x[7],e_,x[0],7,2)
-_ai(oB,x[8],e_,x[0],8,2)
-_ai(oB,x[9],e_,x[0],9,2)
-_ai(oB,x[10],e_,x[0],10,2)
-_ai(oB,x[11],e_,x[0],11,2)
-_ai(oB,x[12],e_,x[0],12,2)
-oB.pop()
-oB.pop()
-oB.pop()
-oB.pop()
-oB.pop()
-oB.pop()
-oB.pop()
-oB.pop()
-oB.pop()
 oB.pop()
 oB.pop()
 oB.pop()
 return r
 }
-e_[x[0]]={f:m0,j:[],i:[],ti:[x[1],x[2],x[3],x[4],x[5],x[6],x[7],x[8],x[9],x[10],x[11],x[12]],ic:[]}
-d_[x[13]]={}
-d_[x[13]]["3df31add"]=function(e,s,r,gg){
+e_[x[0]]={f:m0,j:[],i:[],ti:[x[1],x[2],x[3]],ic:[]}
+d_[x[4]]={}
+d_[x[4]]["3df31add"]=function(e,s,r,gg){
 var z=gz$gwx_2()
-var b=x[13]+':3df31add'
+var b=x[4]+':3df31add'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/m-icon/m-icon.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[13]);return}
+if(p_[b]){_wl(b,x[4]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1618,14 +1600,14 @@ var m1=function(e,s,r,gg){
 var z=gz$gwx_2()
 return r
 }
-e_[x[13]]={f:m1,j:[],i:[],ti:[],ic:[]}
-d_[x[14]]={}
-d_[x[14]]["2d9ace10"]=function(e,s,r,gg){
+e_[x[4]]={f:m1,j:[],i:[],ti:[],ic:[]}
+d_[x[5]]={}
+d_[x[5]]["2d9ace10"]=function(e,s,r,gg){
 var z=gz$gwx_3()
-var b=x[14]+':2d9ace10'
+var b=x[5]+':2d9ace10'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/m-input.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[14]);return}
+if(p_[b]){_wl(b,x[5]);return}
 p_[b]=true
 try{
 cs.push("./components/m-input.vue.wxml:view:1:78")
@@ -1639,7 +1621,7 @@ var fE=_v()
 _(xC,fE)
 cs.push("./components/m-input.vue.wxml:template:1:521")
 var cF=_oz(z,8,e,s,gg)
-var hG=_gd(x[14],cF,e_,d_)
+var hG=_gd(x[5],cF,e_,d_)
 if(hG){
 var oH=_1z(z,5,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1647,7 +1629,7 @@ fE.wxXCkey=3
 hG(oH,oH,fE,gg)
 gg.f=cur_globalf
 }
-else _w(cF,x[14],1,706)
+else _w(cF,x[5],1,706)
 cs.pop()
 cs.pop()
 }
@@ -1659,7 +1641,7 @@ var cI=_v()
 _(oD,cI)
 cs.push("./components/m-input.vue.wxml:template:1:803")
 var oJ=_oz(z,16,e,s,gg)
-var lK=_gd(x[14],oJ,e_,d_)
+var lK=_gd(x[5],oJ,e_,d_)
 if(lK){
 var aL=_1z(z,13,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1667,7 +1649,7 @@ cI.wxXCkey=3
 lK(aL,aL,cI,gg)
 gg.f=cur_globalf
 }
-else _w(oJ,x[14],1,970)
+else _w(oJ,x[5],1,970)
 cs.pop()
 cs.pop()
 }
@@ -1684,19 +1666,19 @@ return r
 }
 var m2=function(e,s,r,gg){
 var z=gz$gwx_3()
-var fE=e_[x[14]].i
-_ai(fE,x[9],e_,x[14],1,1)
+var fE=e_[x[5]].i
+_ai(fE,x[6],e_,x[5],1,1)
 fE.pop()
 return r
 }
-e_[x[14]]={f:m2,j:[],i:[],ti:[x[9]],ic:[]}
-d_[x[15]]={}
-d_[x[15]]["98b6b736"]=function(e,s,r,gg){
+e_[x[5]]={f:m2,j:[],i:[],ti:[x[6]],ic:[]}
+d_[x[7]]={}
+d_[x[7]]["98b6b736"]=function(e,s,r,gg){
 var z=gz$gwx_4()
-var b=x[15]+':98b6b736'
+var b=x[7]+':98b6b736'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[15]);return}
+if(p_[b]){_wl(b,x[7]);return}
 p_[b]=true
 try{
 cs.push("./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml:view:1:27")
@@ -1733,14 +1715,14 @@ var m3=function(e,s,r,gg){
 var z=gz$gwx_4()
 return r
 }
-e_[x[15]]={f:m3,j:[],i:[],ti:[],ic:[]}
-d_[x[16]]={}
-d_[x[16]]["3ccfe3cb"]=function(e,s,r,gg){
+e_[x[7]]={f:m3,j:[],i:[],ti:[],ic:[]}
+d_[x[8]]={}
+d_[x[8]]["3ccfe3cb"]=function(e,s,r,gg){
 var z=gz$gwx_5()
-var b=x[16]+':3ccfe3cb'
+var b=x[8]+':3ccfe3cb'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-badge/uni-badge.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[16]);return}
+if(p_[b]){_wl(b,x[8]);return}
 p_[b]=true
 try{
 var oB=_v()
@@ -1761,14 +1743,14 @@ var m4=function(e,s,r,gg){
 var z=gz$gwx_5()
 return r
 }
-e_[x[16]]={f:m4,j:[],i:[],ti:[],ic:[]}
-d_[x[17]]={}
-d_[x[17]]["2eadb6fd"]=function(e,s,r,gg){
+e_[x[8]]={f:m4,j:[],i:[],ti:[],ic:[]}
+d_[x[9]]={}
+d_[x[9]]["2eadb6fd"]=function(e,s,r,gg){
 var z=gz$gwx_6()
-var b=x[17]+':2eadb6fd'
+var b=x[9]+':2eadb6fd'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-icon/uni-icon.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[17]);return}
+if(p_[b]){_wl(b,x[9]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1782,14 +1764,14 @@ var m5=function(e,s,r,gg){
 var z=gz$gwx_6()
 return r
 }
-e_[x[17]]={f:m5,j:[],i:[],ti:[],ic:[]}
-d_[x[18]]={}
-d_[x[18]]["2dcafb89"]=function(e,s,r,gg){
+e_[x[9]]={f:m5,j:[],i:[],ti:[],ic:[]}
+d_[x[10]]={}
+d_[x[10]]["2dcafb89"]=function(e,s,r,gg){
 var z=gz$gwx_7()
-var b=x[18]+':2dcafb89'
+var b=x[10]+':2dcafb89'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list-item/uni-list-item.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[18]);return}
+if(p_[b]){_wl(b,x[10]);return}
 p_[b]=true
 try{
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:view:1:139")
@@ -1809,7 +1791,7 @@ var hG=_v()
 _(oD,hG)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:795")
 var oH=_oz(z,10,e,s,gg)
-var cI=_gd(x[18],oH,e_,d_)
+var cI=_gd(x[10],oH,e_,d_)
 if(cI){
 var oJ=_1z(z,9,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1817,7 +1799,7 @@ hG.wxXCkey=3
 cI(oJ,oJ,hG,gg)
 gg.f=cur_globalf
 }
-else _w(oH,x[18],1,866)
+else _w(oH,x[10],1,866)
 cs.pop()
 cs.pop()
 }
@@ -1842,7 +1824,7 @@ var bO=_v()
 _(aL,bO)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:1315")
 var oP=_oz(z,16,e,s,gg)
-var xQ=_gd(x[18],oP,e_,d_)
+var xQ=_gd(x[10],oP,e_,d_)
 if(xQ){
 var oR=_1z(z,15,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1850,7 +1832,7 @@ bO.wxXCkey=3
 xQ(oR,oR,bO,gg)
 gg.f=cur_globalf
 }
-else _w(oP,x[18],1,1441)
+else _w(oP,x[10],1,1441)
 cs.pop()
 cs.pop()
 }
@@ -1868,7 +1850,7 @@ var fS=_v()
 _(eN,fS)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:1686")
 var cT=_oz(z,21,e,s,gg)
-var hU=_gd(x[18],cT,e_,d_)
+var hU=_gd(x[10],cT,e_,d_)
 if(hU){
 var oV=_1z(z,20,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1876,7 +1858,7 @@ fS.wxXCkey=3
 hU(oV,oV,fS,gg)
 gg.f=cur_globalf
 }
-else _w(cT,x[18],1,1853)
+else _w(cT,x[10],1,1853)
 cs.pop()
 cs.pop()
 }
@@ -1903,21 +1885,21 @@ return r
 }
 var m6=function(e,s,r,gg){
 var z=gz$gwx_7()
-var oJ=e_[x[18]].i
-_ai(oJ,x[1],e_,x[18],1,1)
-_ai(oJ,x[10],e_,x[18],1,56)
+var oJ=e_[x[10]].i
+_ai(oJ,x[1],e_,x[10],1,1)
+_ai(oJ,x[11],e_,x[10],1,56)
 oJ.pop()
 oJ.pop()
 return r
 }
-e_[x[18]]={f:m6,j:[],i:[],ti:[x[1],x[10]],ic:[]}
-d_[x[19]]={}
-d_[x[19]]["35ad909d"]=function(e,s,r,gg){
+e_[x[10]]={f:m6,j:[],i:[],ti:[x[1],x[11]],ic:[]}
+d_[x[12]]={}
+d_[x[12]]["35ad909d"]=function(e,s,r,gg){
 var z=gz$gwx_8()
-var b=x[19]+':35ad909d'
+var b=x[12]+':35ad909d'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list/uni-list.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[19]);return}
+if(p_[b]){_wl(b,x[12]);return}
 p_[b]=true
 try{
 cs.push("./components/uni-list/uni-list.vue.wxml:view:1:62")
@@ -1927,7 +1909,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./components/uni-list/uni-list.vue.wxml:template:1:136")
 var oD=_oz(z,4,e,s,gg)
-var fE=_gd(x[19],oD,e_,d_)
+var fE=_gd(x[12],oD,e_,d_)
 if(fE){
 var cF=_1z(z,3,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1935,7 +1917,7 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[19],1,194)
+else _w(oD,x[12],1,194)
 cs.pop()
 cs.pop()
 _(r,oB)
@@ -1946,12 +1928,12 @@ throw err
 p_[b]=false
 return r
 }
-d_[x[19]]["default"]=function(e,s,r,gg){
+d_[x[12]]["default"]=function(e,s,r,gg){
 var z=gz$gwx_8()
-var b=x[19]+':default'
+var b=x[12]+':default'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list/uni-list.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[19]);return}
+if(p_[b]){_wl(b,x[12]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1963,19 +1945,19 @@ return r
 }
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var aL=e_[x[19]].i
-_ai(aL,x[11],e_,x[19],1,1)
+var aL=e_[x[12]].i
+_ai(aL,x[13],e_,x[12],1,1)
 aL.pop()
 return r
 }
-e_[x[19]]={f:m7,j:[],i:[],ti:[x[11]],ic:[]}
-d_[x[20]]={}
-d_[x[20]]["5f6deb42"]=function(e,s,r,gg){
+e_[x[12]]={f:m7,j:[],i:[],ti:[x[13]],ic:[]}
+d_[x[14]]={}
+d_[x[14]]["5f6deb42"]=function(e,s,r,gg){
 var z=gz$gwx_9()
-var b=x[20]+':5f6deb42'
+var b=x[14]+':5f6deb42'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/HM-search/HM-search.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[20]);return}
+if(p_[b]){_wl(b,x[14]);return}
 p_[b]=true
 try{
 cs.push("./pages/HM-search/HM-search.vue.wxml:view:1:116")
@@ -1985,7 +1967,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./pages/HM-search/HM-search.vue.wxml:template:1:193")
 var oD=_oz(z,10,e,s,gg)
-var fE=_gd(x[20],oD,e_,d_)
+var fE=_gd(x[14],oD,e_,d_)
 if(fE){
 var cF=_1z(z,7,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1993,7 +1975,7 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[20],1,453)
+else _w(oD,x[14],1,453)
 cs.pop()
 cs.push("./pages/HM-search/HM-search.vue.wxml:view:1:483")
 var hG=_mz(z,'view',['bindtouchstart',12,'class',1,'data-comkey',2,'data-eventid',3],[],e,s,gg)
@@ -2017,22 +1999,22 @@ return r
 }
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var eN=e_[x[20]].i
-_ai(eN,x[5],e_,x[20],1,1)
+var eN=e_[x[14]].i
+_ai(eN,x[15],e_,x[14],1,1)
 eN.pop()
 return r
 }
-e_[x[20]]={f:m8,j:[],i:[],ti:[x[5]],ic:[]}
-d_[x[21]]={}
+e_[x[14]]={f:m8,j:[],i:[],ti:[x[15]],ic:[]}
+d_[x[16]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var oP=e_[x[21]].i
-_ai(oP,x[22],e_,x[21],1,1)
+var oP=e_[x[16]].i
+_ai(oP,x[17],e_,x[16],1,1)
 var xQ=_v()
 _(r,xQ)
 cs.push("./pages/HM-search/HM-search.wxml:template:2:6")
 var oR=_oz(z,1,e,s,gg)
-var fS=_gd(x[21],oR,e_,d_)
+var fS=_gd(x[16],oR,e_,d_)
 if(fS){
 var cT=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2040,19 +2022,19 @@ xQ.wxXCkey=3
 fS(cT,cT,xQ,gg)
 gg.f=cur_globalf
 }
-else _w(oR,x[21],2,18)
+else _w(oR,x[16],2,18)
 cs.pop()
 oP.pop()
 return r
 }
-e_[x[21]]={f:m9,j:[],i:[],ti:[x[22]],ic:[]}
-d_[x[23]]={}
-d_[x[23]]["20802211"]=function(e,s,r,gg){
+e_[x[16]]={f:m9,j:[],i:[],ti:[x[17]],ic:[]}
+d_[x[18]]={}
+d_[x[18]]["20802211"]=function(e,s,r,gg){
 var z=gz$gwx_11()
-var b=x[23]+':20802211'
+var b=x[18]+':20802211'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/login/login.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[23]);return}
+if(p_[b]){_wl(b,x[18]);return}
 p_[b]=true
 try{
 cs.push("./pages/login/login.vue.wxml:view:1:72")
@@ -2065,7 +2047,7 @@ var fE=_v()
 _(oD,fE)
 cs.push("./pages/login/login.vue.wxml:template:1:247")
 var cF=_oz(z,7,e,s,gg)
-var hG=_gd(x[23],cF,e_,d_)
+var hG=_gd(x[18],cF,e_,d_)
 if(hG){
 var oH=_1z(z,4,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2073,13 +2055,13 @@ fE.wxXCkey=3
 hG(oH,oH,fE,gg)
 gg.f=cur_globalf
 }
-else _w(cF,x[23],1,474)
+else _w(cF,x[18],1,474)
 cs.pop()
 var cI=_v()
 _(oD,cI)
 cs.push("./pages/login/login.vue.wxml:template:1:594")
 var oJ=_oz(z,15,e,s,gg)
-var lK=_gd(x[23],oJ,e_,d_)
+var lK=_gd(x[18],oJ,e_,d_)
 if(lK){
 var aL=_1z(z,12,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2087,7 +2069,7 @@ cI.wxXCkey=3
 lK(aL,aL,cI,gg)
 gg.f=cur_globalf
 }
-else _w(oJ,x[23],1,822)
+else _w(oJ,x[18],1,822)
 cs.pop()
 cs.pop()
 _(oB,oD)
@@ -2109,22 +2091,22 @@ return r
 }
 var m10=function(e,s,r,gg){
 var z=gz$gwx_11()
-var oV=e_[x[23]].i
-_ai(oV,x[4],e_,x[23],1,1)
+var oV=e_[x[18]].i
+_ai(oV,x[19],e_,x[18],1,1)
 oV.pop()
 return r
 }
-e_[x[23]]={f:m10,j:[],i:[],ti:[x[4]],ic:[]}
-d_[x[24]]={}
+e_[x[18]]={f:m10,j:[],i:[],ti:[x[19]],ic:[]}
+d_[x[20]]={}
 var m11=function(e,s,r,gg){
 var z=gz$gwx_12()
-var oX=e_[x[24]].i
-_ai(oX,x[25],e_,x[24],1,1)
+var oX=e_[x[20]].i
+_ai(oX,x[21],e_,x[20],1,1)
 var lY=_v()
 _(r,lY)
 cs.push("./pages/login/login.wxml:template:2:6")
 var aZ=_oz(z,1,e,s,gg)
-var t1=_gd(x[24],aZ,e_,d_)
+var t1=_gd(x[20],aZ,e_,d_)
 if(t1){
 var e2=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2132,19 +2114,19 @@ lY.wxXCkey=3
 t1(e2,e2,lY,gg)
 gg.f=cur_globalf
 }
-else _w(aZ,x[24],2,18)
+else _w(aZ,x[20],2,18)
 cs.pop()
 oX.pop()
 return r
 }
-e_[x[24]]={f:m11,j:[],i:[],ti:[x[25]],ic:[]}
-d_[x[26]]={}
-d_[x[26]]["5a05489d"]=function(e,s,r,gg){
+e_[x[20]]={f:m11,j:[],i:[],ti:[x[21]],ic:[]}
+d_[x[22]]={}
+d_[x[22]]["5a05489d"]=function(e,s,r,gg){
 var z=gz$gwx_13()
-var b=x[26]+':5a05489d'
+var b=x[22]+':5a05489d'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/main.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[26]);return}
+if(p_[b]){_wl(b,x[22]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2158,17 +2140,17 @@ var m12=function(e,s,r,gg){
 var z=gz$gwx_13()
 return r
 }
-e_[x[26]]={f:m12,j:[],i:[],ti:[],ic:[]}
-d_[x[27]]={}
+e_[x[22]]={f:m12,j:[],i:[],ti:[],ic:[]}
+d_[x[23]]={}
 var m13=function(e,s,r,gg){
 var z=gz$gwx_14()
-var x5=e_[x[27]].i
-_ai(x5,x[28],e_,x[27],1,1)
+var x5=e_[x[23]].i
+_ai(x5,x[24],e_,x[23],1,1)
 var o6=_v()
 _(r,o6)
 cs.push("./pages/main/main.wxml:template:2:6")
 var f7=_oz(z,1,e,s,gg)
-var c8=_gd(x[27],f7,e_,d_)
+var c8=_gd(x[23],f7,e_,d_)
 if(c8){
 var h9=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2176,19 +2158,19 @@ o6.wxXCkey=3
 c8(h9,h9,o6,gg)
 gg.f=cur_globalf
 }
-else _w(f7,x[27],2,18)
+else _w(f7,x[23],2,18)
 cs.pop()
 x5.pop()
 return r
 }
-e_[x[27]]={f:m13,j:[],i:[],ti:[x[28]],ic:[]}
-d_[x[29]]={}
-d_[x[29]]["5ff52036"]=function(e,s,r,gg){
+e_[x[23]]={f:m13,j:[],i:[],ti:[x[24]],ic:[]}
+d_[x[25]]={}
+d_[x[25]]["5ff52036"]=function(e,s,r,gg){
 var z=gz$gwx_15()
-var b=x[29]+':5ff52036'
+var b=x[25]+':5ff52036'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/cartcontrol/cartcontrol.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[29]);return}
+if(p_[b]){_wl(b,x[25]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2202,14 +2184,14 @@ var m14=function(e,s,r,gg){
 var z=gz$gwx_15()
 return r
 }
-e_[x[29]]={f:m14,j:[],i:[],ti:[],ic:[]}
-d_[x[30]]={}
-d_[x[30]]["2ae02ee1"]=function(e,s,r,gg){
+e_[x[25]]={f:m14,j:[],i:[],ti:[],ic:[]}
+d_[x[26]]={}
+d_[x[26]]["2ae02ee1"]=function(e,s,r,gg){
 var z=gz$gwx_16()
-var b=x[30]+':2ae02ee1'
+var b=x[26]+':2ae02ee1'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/goods.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[30]);return}
+if(p_[b]){_wl(b,x[26]);return}
 p_[b]=true
 try{
 var oB=_v()
@@ -2220,7 +2202,7 @@ var oH=_v()
 _(cF,oH)
 cs.push("./pages/main/shop/goods.vue.wxml:template:1:1216")
 var cI=_oz(z,6,fE,oD,gg)
-var oJ=_gd(x[30],cI,e_,d_)
+var oJ=_gd(x[26],cI,e_,d_)
 if(oJ){
 var lK=_1z(z,5,fE,oD,gg) || {}
 var cur_globalf=gg.f
@@ -2228,7 +2210,7 @@ oH.wxXCkey=3
 oJ(lK,lK,oH,gg)
 gg.f=cur_globalf
 }
-else _w(cI,x[30],1,1294)
+else _w(cI,x[26],1,1294)
 cs.pop()
 return cF
 }
@@ -2244,19 +2226,19 @@ return r
 }
 var m15=function(e,s,r,gg){
 var z=gz$gwx_16()
-var oBB=e_[x[30]].i
-_ai(oBB,x[12],e_,x[30],1,1)
+var oBB=e_[x[26]].i
+_ai(oBB,x[27],e_,x[26],1,1)
 oBB.pop()
 return r
 }
-e_[x[30]]={f:m15,j:[],i:[],ti:[x[12]],ic:[]}
-d_[x[31]]={}
-d_[x[31]]["3a37fb00"]=function(e,s,r,gg){
+e_[x[26]]={f:m15,j:[],i:[],ti:[x[27]],ic:[]}
+d_[x[28]]={}
+d_[x[28]]["3a37fb00"]=function(e,s,r,gg){
 var z=gz$gwx_17()
-var b=x[31]+':3a37fb00'
+var b=x[28]+':3a37fb00'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/judgement.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[31]);return}
+if(p_[b]){_wl(b,x[28]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2270,14 +2252,14 @@ var m16=function(e,s,r,gg){
 var z=gz$gwx_17()
 return r
 }
-e_[x[31]]={f:m16,j:[],i:[],ti:[],ic:[]}
-d_[x[32]]={}
-d_[x[32]]["7c59ef30"]=function(e,s,r,gg){
+e_[x[28]]={f:m16,j:[],i:[],ti:[],ic:[]}
+d_[x[29]]={}
+d_[x[29]]["7c59ef30"]=function(e,s,r,gg){
 var z=gz$gwx_18()
-var b=x[32]+':7c59ef30'
+var b=x[29]+':7c59ef30'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/shop-info.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[32]);return}
+if(p_[b]){_wl(b,x[29]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2291,14 +2273,14 @@ var m17=function(e,s,r,gg){
 var z=gz$gwx_18()
 return r
 }
-e_[x[32]]={f:m17,j:[],i:[],ti:[],ic:[]}
-d_[x[33]]={}
-d_[x[33]]["c362b3ea"]=function(e,s,r,gg){
+e_[x[29]]={f:m17,j:[],i:[],ti:[],ic:[]}
+d_[x[30]]={}
+d_[x[30]]["c362b3ea"]=function(e,s,r,gg){
 var z=gz$gwx_19()
-var b=x[33]+':c362b3ea'
+var b=x[30]+':c362b3ea'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/shop.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[33]);return}
+if(p_[b]){_wl(b,x[30]);return}
 p_[b]=true
 try{
 cs.push("./pages/main/shop/shop.vue.wxml:view:1:946")
@@ -2330,7 +2312,7 @@ var aL=_v()
 _(lK,aL)
 cs.push("./pages/main/shop/shop.vue.wxml:template:1:1633")
 var tM=_oz(z,18,e,s,gg)
-var eN=_gd(x[33],tM,e_,d_)
+var eN=_gd(x[30],tM,e_,d_)
 if(eN){
 var bO=_1z(z,17,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2338,13 +2320,13 @@ aL.wxXCkey=3
 eN(bO,bO,aL,gg)
 gg.f=cur_globalf
 }
-else _w(tM,x[33],1,1704)
+else _w(tM,x[30],1,1704)
 cs.pop()
 var oP=_v()
 _(lK,oP)
 cs.push("./pages/main/shop/shop.vue.wxml:template:1:1784")
 var xQ=_oz(z,20,e,s,gg)
-var oR=_gd(x[33],xQ,e_,d_)
+var oR=_gd(x[30],xQ,e_,d_)
 if(oR){
 var fS=_1z(z,19,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2352,13 +2334,13 @@ oP.wxXCkey=3
 oR(fS,fS,oP,gg)
 gg.f=cur_globalf
 }
-else _w(xQ,x[33],1,1855)
+else _w(xQ,x[30],1,1855)
 cs.pop()
 var cT=_v()
 _(lK,cT)
 cs.push("./pages/main/shop/shop.vue.wxml:template:1:1935")
 var hU=_oz(z,22,e,s,gg)
-var oV=_gd(x[33],hU,e_,d_)
+var oV=_gd(x[30],hU,e_,d_)
 if(oV){
 var cW=_1z(z,21,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2366,7 +2348,7 @@ cT.wxXCkey=3
 oV(cW,cW,cT,gg)
 gg.f=cur_globalf
 }
-else _w(hU,x[33],1,2006)
+else _w(hU,x[30],1,2006)
 cs.pop()
 cs.pop()
 _(oB,lK)
@@ -2381,16 +2363,16 @@ return r
 }
 var m18=function(e,s,r,gg){
 var z=gz$gwx_19()
-var eFB=e_[x[33]].i
-_ai(eFB,x[6],e_,x[33],1,1)
-_ai(eFB,x[7],e_,x[33],1,49)
-_ai(eFB,x[8],e_,x[33],1,101)
+var eFB=e_[x[30]].i
+_ai(eFB,x[31],e_,x[30],1,1)
+_ai(eFB,x[32],e_,x[30],1,49)
+_ai(eFB,x[33],e_,x[30],1,101)
 eFB.pop()
 eFB.pop()
 eFB.pop()
 return r
 }
-e_[x[33]]={f:m18,j:[],i:[],ti:[x[6],x[7],x[8]],ic:[]}
+e_[x[30]]={f:m18,j:[],i:[],ti:[x[31],x[32],x[33]],ic:[]}
 d_[x[34]]={}
 var m19=function(e,s,r,gg){
 var z=gz$gwx_20()
@@ -2491,11 +2473,11 @@ return r
 var m22=function(e,s,r,gg){
 var z=gz$gwx_23()
 var bUB=e_[x[39]].i
-_ai(bUB,x[4],e_,x[39],1,1)
+_ai(bUB,x[19],e_,x[39],1,1)
 bUB.pop()
 return r
 }
-e_[x[39]]={f:m22,j:[],i:[],ti:[x[4]],ic:[]}
+e_[x[39]]={f:m22,j:[],i:[],ti:[x[19]],ic:[]}
 d_[x[40]]={}
 var m23=function(e,s,r,gg){
 var z=gz$gwx_24()
@@ -2585,11 +2567,11 @@ return r
 var m24=function(e,s,r,gg){
 var z=gz$gwx_25()
 var c3B=e_[x[42]].i
-_ai(c3B,x[4],e_,x[42],1,1)
+_ai(c3B,x[19],e_,x[42],1,1)
 c3B.pop()
 return r
 }
-e_[x[42]]={f:m24,j:[],i:[],ti:[x[4]],ic:[]}
+e_[x[42]]={f:m24,j:[],i:[],ti:[x[19]],ic:[]}
 d_[x[43]]={}
 var m25=function(e,s,r,gg){
 var z=gz$gwx_26()
@@ -2882,7 +2864,7 @@ define('common/main.js',function(require, module, exports, window, document, fra
   /***/function node_modulesBabelLoaderLibIndexJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioWebpackUniMpLoaderLibScriptJsNode_modulesVueLoaderLibIndexJsUsersZhulizheDesktopKuaimaXyyUniAppAppVueVueTypeScriptLangJs(module, exports, __webpack_require__) {
 
     "use strict";
-    eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n{\n  onLaunch: function onLaunch() {\n    console.log('App Launch');\n  },\n  onShow: function onShow() {\n    console.log('App Show');\n  },\n  onHide: function onHide() {\n    console.log('App Hide');\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///App.vue?vue&type=script&lang=js&?fa70");
+    eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n{\n  onLaunch: function onLaunch() {\n    console.log('App Launch');\n    // \t\t\tuni.getLocation({\n    // \t\t\t\ttype: 'wgs84',\n    // \t\t\t\tsuccess: function(res) {\n    // \t\t\t\t\tconsole.log('当前位置的经度：' + res.longitude);\n    // \t\t\t\t\tconsole.log('当前位置的纬度：' + res.latitude);\n    // \t\t\t\t}\n    // \t\t\t});\n  },\n  onShow: function onShow() {\n    console.log('App Show');\n  },\n  onHide: function onHide() {\n    console.log('App Hide');\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///App.vue?vue&type=script&lang=js&?fa70");
 
     /***/},
 
@@ -3582,6 +3564,18 @@ __wxRoute = 'pages/main/main';__wxRouteBegin = true;__wxAppCurrentFile__ = 'page
 define('pages/main/main.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/main/main"],{
 
+/***/ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/common/amap-wx.js":
+/*!********************************************************************!*\
+  !*** /Users/zhulizhe/Desktop/kuaima/xyy-uni-app/common/amap-wx.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("function AMapWX(a) {this.key = a.key, this.requestConfig = { key: a.key, s: \"rsx\", platform: \"WXJS\", appname: a.key, sdkversion: \"1.2.0\", logversion: \"2.0\" };}AMapWX.prototype.getWxLocation = function (a, b) {wx.getLocation({ type: \"gcj02\", success: function success(a) {var c = a.longitude + \",\" + a.latitude;wx.setStorage({ key: \"userLocation\", data: c }), b(c);}, fail: function fail(c) {wx.getStorage({ key: \"userLocation\", success: function success(a) {a.data && b(a.data);} }), a.fail({ errCode: \"0\", errMsg: c.errMsg || \"\" });} });}, AMapWX.prototype.getRegeo = function (a) {function c(c) {var d = b.requestConfig;wx.request({ url: \"https://restapi.amap.com/v3/geocode/regeo\", data: { key: b.key, location: c, extensions: \"all\", s: d.s, platform: d.platform, appname: b.key, sdkversion: d.sdkversion, logversion: d.logversion }, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {var d, e, f, g, h, i, j, k, l;b.data.status && \"1\" == b.data.status ? (d = b.data.regeocode, e = d.addressComponent, f = [], g = \"\", d && d.roads[0] && d.roads[0].name && (g = d.roads[0].name + \"附近\"), h = c.split(\",\")[0], i = c.split(\",\")[1], d.pois && d.pois[0] && (g = d.pois[0].name + \"附近\", j = d.pois[0].location, j && (h = parseFloat(j.split(\",\")[0]), i = parseFloat(j.split(\",\")[1]))), e.provice && f.push(e.provice), e.city && f.push(e.city), e.district && f.push(e.district), e.streetNumber && e.streetNumber.street && e.streetNumber.number ? (f.push(e.streetNumber.street), f.push(e.streetNumber.number)) : (k = \"\", d && d.roads[0] && d.roads[0].name && (k = d.roads[0].name), f.push(k)), f = f.join(\"\"), l = [{ iconPath: a.iconPath, width: a.iconWidth, height: a.iconHeight, name: f, desc: g, longitude: h, latitude: i, id: 0, regeocodeData: d }], a.success(l)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}var b = this;a.location ? c(a.location) : b.getWxLocation(a, function (a) {c(a);});}, AMapWX.prototype.getWeather = function (a) {function d(d) {var e = \"base\";a.type && \"forecast\" == a.type && (e = \"all\"), wx.request({ url: \"https://restapi.amap.com/v3/weather/weatherInfo\", data: { key: b.key, city: d, extensions: e, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {function c(a) {var b = { city: { text: \"城市\", data: a.city }, weather: { text: \"天气\", data: a.weather }, temperature: { text: \"温度\", data: a.temperature }, winddirection: { text: \"风向\", data: a.winddirection + \"风\" }, windpower: { text: \"风力\", data: a.windpower + \"级\" }, humidity: { text: \"湿度\", data: a.humidity + \"%\" } };return b;}var d, e;b.data.status && \"1\" == b.data.status ? b.data.lives ? (d = b.data.lives, d && d.length > 0 && (d = d[0], e = c(d), e[\"liveData\"] = d, a.success(e))) : b.data.forecasts && b.data.forecasts[0] && a.success({ forecast: b.data.forecasts[0] }) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}function e(e) {wx.request({ url: \"https://restapi.amap.com/v3/geocode/regeo\", data: { key: b.key, location: e, extensions: \"all\", s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {var c, e;b.data.status && \"1\" == b.data.status ? (e = b.data.regeocode, e.addressComponent ? c = e.addressComponent.adcode : e.aois && e.aois.length > 0 && (c = e.aois[0].adcode), d(c)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}var b = this,c = b.requestConfig;a.city ? d(a.city) : b.getWxLocation(a, function (a) {e(a);});}, AMapWX.prototype.getPoiAround = function (a) {function d(d) {var e = { key: b.key, location: d, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.querytypes && (e[\"types\"] = a.querytypes), a.querykeywords && (e[\"keywords\"] = a.querykeywords), wx.request({ url: \"https://restapi.amap.com/v3/place/around\", data: e, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {var c, d, e, f;if (b.data.status && \"1\" == b.data.status) {if (b = b.data, b && b.pois) {for (c = [], d = 0; d < b.pois.length; d++) {e = 0 == d ? a.iconPathSelected : a.iconPath, c.push({ latitude: parseFloat(b.pois[d].location.split(\",\")[1]), longitude: parseFloat(b.pois[d].location.split(\",\")[0]), iconPath: e, width: 22, height: 32, id: d, name: b.pois[d].name, address: b.pois[d].address });}f = { markers: c, poisData: b.pois }, a.success(f);}} else a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}var b = this,c = b.requestConfig;a.location ? d(a.location) : b.getWxLocation(a, function (a) {d(a);});}, AMapWX.prototype.getStaticmap = function (a) {function f(b) {c.push(\"location=\" + b), a.zoom && c.push(\"zoom=\" + a.zoom), a.size && c.push(\"size=\" + a.size), a.scale && c.push(\"scale=\" + a.scale), a.markers && c.push(\"markers=\" + a.markers), a.labels && c.push(\"labels=\" + a.labels), a.paths && c.push(\"paths=\" + a.paths), a.traffic && c.push(\"traffic=\" + a.traffic);var e = d + c.join(\"&\");a.success({ url: e });}var e,b = this,c = [],d = \"https://restapi.amap.com/v3/staticmap?\";c.push(\"key=\" + b.key), e = b.requestConfig, c.push(\"s=\" + e.s), c.push(\"platform=\" + e.platform), c.push(\"appname=\" + e.appname), c.push(\"sdkversion=\" + e.sdkversion), c.push(\"logversion=\" + e.logversion), a.location ? f(a.location) : b.getWxLocation(a, function (a) {f(a);});}, AMapWX.prototype.getInputtips = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.location && (d[\"location\"] = a.location), a.keywords && (d[\"keywords\"] = a.keywords), a.type && (d[\"type\"] = a.type), a.city && (d[\"city\"] = a.city), a.citylimit && (d[\"citylimit\"] = a.citylimit), wx.request({ url: \"https://restapi.amap.com/v3/assistant/inputtips\", data: d, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {b && b.data && b.data.tips && a.success({ tips: b.data.tips });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}, AMapWX.prototype.getDrivingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d[\"origin\"] = a.origin), a.destination && (d[\"destination\"] = a.destination), a.strategy && (d[\"strategy\"] = a.strategy), a.waypoints && (d[\"waypoints\"] = a.waypoints), a.avoidpolygons && (d[\"avoidpolygons\"] = a.avoidpolygons), a.avoidroad && (d[\"avoidroad\"] = a.avoidroad), wx.request({ url: \"https://restapi.amap.com/v3/direction/driving\", data: d, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths, taxi_cost: b.data.route.taxi_cost || \"\" });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}, AMapWX.prototype.getWalkingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d[\"origin\"] = a.origin), a.destination && (d[\"destination\"] = a.destination), wx.request({ url: \"https://restapi.amap.com/v3/direction/walking\", data: d, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}, AMapWX.prototype.getTransitRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d[\"origin\"] = a.origin), a.destination && (d[\"destination\"] = a.destination), a.strategy && (d[\"strategy\"] = a.strategy), a.city && (d[\"city\"] = a.city), a.cityd && (d[\"cityd\"] = a.cityd), wx.request({ url: \"https://restapi.amap.com/v3/direction/transit/integrated\", data: d, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {if (b && b.data && b.data.route) {var c = b.data.route;a.success({ distance: c.distance || \"\", taxi_cost: c.taxi_cost || \"\", transits: c.transits });}}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}, AMapWX.prototype.getRidingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d[\"origin\"] = a.origin), a.destination && (d[\"destination\"] = a.destination), wx.request({ url: \"https://restapi.amap.com/v4/direction/bicycling\", data: d, method: \"GET\", header: { \"content-type\": \"application/json\" }, success: function success(b) {b && b.data && b.data.data && a.success({ paths: b.data.data.paths });}, fail: function fail(b) {a.fail({ errCode: \"0\", errMsg: b.errMsg || \"\" });} });}, module.exports.AMapWX = AMapWX;\n\n//# sourceURL=uni-app:///common/amap-wx.js?201d");
+
+/***/ }),
+
 /***/ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/main.js?{\"page\":\"pages%2Fmain%2Fmain\"}":
 /*!*****************************************************************************************!*\
   !*** /Users/zhulizhe/Desktop/kuaima/xyy-uni-app/main.js?{"page":"pages%2Fmain%2Fmain"} ***!
@@ -3650,7 +3644,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");var _default =\n\n\n\n{\n  data: function data() {\n    return {\n      background: ['color1', 'color2', 'color3'],\n      indicatorDots: true,\n      autoplay: true,\n      interval: 2000,\n      duration: 500,\n      items: [1, 2, 3, 3, 5, 6, 6, 7] };\n\n  },\n  methods: {\n    changeIndicatorDots: function changeIndicatorDots(e) {\n      this.indicatorDots = !this.indicatorDots;\n    },\n    changeAutoplay: function changeAutoplay(e) {\n      this.autoplay = !this.autoplay;\n    },\n    intervalChange: function intervalChange(e) {\n      this.interval = e.target.value;\n    },\n    durationChange: function durationChange(e) {\n      this.duration = e.target.value;\n    },\n    goSearch: function goSearch() {\n      uni.navigateTo({\n        url: \"../HM-search/HM-search\" });\n\n    },\n    goShop: function goShop() {\n      uni.navigateTo({\n        url: \"shop/shop\" });\n\n    } },\n\n  computed: (0, _vuex.mapState)(['forcedLogin', 'hasLogin', 'userName']),\n  onLoad: function onLoad() {var _this = this;\n    if (!this.hasLogin) {\n      uni.showModal({\n        title: '未登录',\n        content: '您未登录，需要登录后才能继续',\n        /**\n                                    * 如果需要强制登录，不显示取消按钮\n                                    */\n        showCancel: !this.forcedLogin,\n        success: function success(res) {\n          if (res.confirm) {\n            /**\n                             * 如果需要强制登录，使用reLaunch方式\n                             */\n            if (_this.forcedLogin) {\n              uni.reLaunch({\n                url: '../login/login' });\n\n            } else {\n              uni.navigateTo({\n                url: '../login/login' });\n\n            }\n          }\n        } });\n\n    }\n  } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/main/main.vue?vue&type=script&lang=js&?06e1");
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");\n\n\nvar _amapWx = _interopRequireDefault(__webpack_require__(/*! ../../common/amap-wx.js */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/common/amap-wx.js\"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =\n\n{\n  data: function data() {\n    return {\n      background: ['color1', 'color2', 'color3'],\n      indicatorDots: true,\n      autoplay: true,\n      interval: 2000,\n      duration: 500,\n      items: [1, 2, 3, 3, 5, 6, 6, 7],\n\n      amapPlugin: null,\n      key: '72239a17febe0f534f11c5b1fbd8ce4c',\n      addressName: '' };\n\n  },\n  methods: {\n    changeIndicatorDots: function changeIndicatorDots(e) {\n      this.indicatorDots = !this.indicatorDots;\n    },\n    changeAutoplay: function changeAutoplay(e) {\n      this.autoplay = !this.autoplay;\n    },\n    intervalChange: function intervalChange(e) {\n      this.interval = e.target.value;\n    },\n    durationChange: function durationChange(e) {\n      this.duration = e.target.value;\n    },\n    goSearch: function goSearch() {\n      uni.navigateTo({\n        url: \"../HM-search/HM-search\" });\n\n    },\n    goShop: function goShop() {\n      uni.navigateTo({\n        url: \"shop/shop\" });\n\n    },\n    getRegeo: function getRegeo() {\n      var that = this;\n      uni.showLoading({\n        title: '获取信息中' });\n\n      this.amapPlugin.getRegeo({\n        success: function success(data) {\n          console.log(data);\n          that.addressName = data[0].name;\n          console.log(\"addressName \", that.addressName);\n\n          uni.hideLoading();\n        },\n        fail: function fail(e) {\n          uni.hideLoading();\n\n          console.log(e);\n        } });\n\n    } },\n\n  computed: (0, _vuex.mapState)(['forcedLogin', 'hasLogin', 'userName']),\n  onLoad: function onLoad() {var _this = this;\n    this.amapPlugin = new _amapWx.default.AMapWX({\n      key: this.key });\n\n    if (!this.hasLogin) {\n      uni.showModal({\n        title: '未登录',\n        content: '您未登录，需要登录后才能继续',\n        /**\n                                    * 如果需要强制登录，不显示取消按钮\n                                    */\n        showCancel: !this.forcedLogin,\n        success: function success(res) {\n          if (res.confirm) {\n            /**\n                             * 如果需要强制登录，使用reLaunch方式\n                             */\n            if (_this.forcedLogin) {\n              uni.reLaunch({\n                url: '../login/login' });\n\n            } else {\n              uni.navigateTo({\n                url: '../login/login' });\n\n            }\n          }\n        } });\n\n    }\n    this.getRegeo();\n  } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/main/main.vue?vue&type=script&lang=js&?06e1");
 
 /***/ }),
 
@@ -3673,7 +3667,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=Users/zhulizhe/De
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"content\" },\n    [\n      _c(\"view\", { staticClass: \"header\" }, [\n        _vm._m(0),\n        _c(\"view\", { staticClass: \"search-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"search-box\",\n              attrs: { eventid: \"5a05489d-0\" },\n              on: { click: _vm.goSearch }\n            },\n            [_c(\"view\", { staticClass: \"label\" }, [_vm._v(\"搜索\")])]\n          )\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"banner\" }, [\n        _c(\"view\", { staticClass: \"page-section swiper\" }, [\n          _c(\n            \"view\",\n            { staticClass: \"page-section-spacing\" },\n            [\n              _c(\n                \"swiper\",\n                {\n                  staticClass: \"swiper\",\n                  attrs: {\n                    \"indicator-dots\": _vm.indicatorDots,\n                    autoplay: _vm.autoplay,\n                    interval: _vm.interval,\n                    duration: _vm.duration\n                  }\n                },\n                [\n                  _c(\"swiper-item\", { attrs: { mpcomid: \"5a05489d-0\" } }, [\n                    _c(\"image\", {\n                      staticClass: \"swiper-item\",\n                      attrs: {\n                        src: \"../../static/img/banner.png\",\n                        mode: \"scaleToFill\"\n                      }\n                    })\n                  ]),\n                  _c(\"swiper-item\", { attrs: { mpcomid: \"5a05489d-1\" } }, [\n                    _c(\"image\", {\n                      staticClass: \"swiper-item\",\n                      attrs: {\n                        src: \"../../static/img/banner.png\",\n                        mode: \"scaleToFill\"\n                      }\n                    })\n                  ]),\n                  _c(\"swiper-item\", { attrs: { mpcomid: \"5a05489d-2\" } }, [\n                    _c(\"image\", {\n                      staticClass: \"swiper-item\",\n                      attrs: {\n                        src: \"../../static/img/banner.png\",\n                        mode: \"scaleToFill\"\n                      }\n                    })\n                  ])\n                ],\n                1\n              )\n            ],\n            1\n          )\n        ])\n      ]),\n      _vm._m(1),\n      _vm._l(_vm.items, function(item, index) {\n        return _c(\"view\", { key: index, staticClass: \"shop-info-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"shop-info\",\n              attrs: { eventid: \"5a05489d-1-\" + index },\n              on: { click: _vm.goShop }\n            },\n            [\n              _c(\"image\", {\n                staticClass: \"shop-img\",\n                attrs: { src: \"../../static/img/banner.png\" }\n              }),\n              _vm._m(2, true),\n              _vm._m(3, true)\n            ]\n          )\n        ])\n      })\n    ],\n    2\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"address-wrapper\" }, [\n      _c(\"view\", { staticClass: \"address-icon\" }, [_vm._v(\"xx\")]),\n      _c(\"view\", { staticClass: \"address\" }, [\n        _vm._v(\"阳光大厦（西直门外大街…\")\n      ])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"entery\" }, [\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_shooping.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"商超便利\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_fruits.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水果\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", {\n          attrs: { src: \"../../static/main/main_water_check.png\" }\n        }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水质检测\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_water.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"桶装水\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_dinner.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"夜宵\")])\n      ])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-info-middle\" }, [\n      _c(\"view\", { staticClass: \"shop-name\" }, [_vm._v(\"陈蓉的店\")]),\n      _c(\"view\", { staticClass: \"shop-details\" }, [\n        _c(\"view\", { staticClass: \"shop-score\" }, [\n          _c(\"image\", { attrs: { src: \"../../static/main/star_icon.png\" } }),\n          _c(\"view\", { staticClass: \"shop-score-text\" }, [_vm._v(\"5.0\")])\n        ]),\n        _c(\"view\", { staticClass: \"shop-sales-volume\" }, [_vm._v(\"月售10000+\")])\n      ]),\n      _c(\"view\", { staticClass: \"distribution-num\" }, [_vm._v(\"起送¥20\")])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-info-right\" }, [\n      _c(\"view\", { staticClass: \"distribution-gap\" }, [_vm._v(\"666m\")]),\n      _c(\"view\", { staticClass: \"distribution-time\" }, [_vm._v(\"35分钟\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=template&id=86b4c236&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"content\" },\n    [\n      _c(\"view\", { staticClass: \"header\" }, [\n        _c(\"view\", { staticClass: \"address-wrapper\" }, [\n          _c(\"view\", { staticClass: \"address-icon\" }),\n          _c(\"view\", {\n            staticClass: \"address\",\n            attrs: { eventid: \"5a05489d-0\" },\n            model: {\n              value: _vm.addressName,\n              callback: function($$v) {\n                _vm.addressName = $$v\n              },\n              expression: \"addressName\"\n            }\n          })\n        ]),\n        _c(\"view\", { staticClass: \"search-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"search-box\",\n              attrs: { eventid: \"5a05489d-1\" },\n              on: { click: _vm.goSearch }\n            },\n            [_c(\"view\", { staticClass: \"label\" }, [_vm._v(\"搜索\")])]\n          )\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"banner\" }, [\n        _c(\"view\", { staticClass: \"page-section swiper\" }, [\n          _c(\n            \"view\",\n            { staticClass: \"page-section-spacing\" },\n            [\n              _c(\n                \"swiper\",\n                {\n                  staticClass: \"swiper\",\n                  attrs: {\n                    \"indicator-dots\": _vm.indicatorDots,\n                    autoplay: _vm.autoplay,\n                    interval: _vm.interval,\n                    duration: _vm.duration\n                  }\n                },\n                [\n                  _c(\"swiper-item\", { attrs: { mpcomid: \"5a05489d-0\" } }, [\n                    _c(\"image\", {\n                      staticClass: \"swiper-item\",\n                      attrs: {\n                        src: \"../../static/img/banner.png\",\n                        mode: \"scaleToFill\"\n                      }\n                    })\n                  ]),\n                  _c(\"swiper-item\", { attrs: { mpcomid: \"5a05489d-1\" } }, [\n                    _c(\"image\", {\n                      staticClass: \"swiper-item\",\n                      attrs: {\n                        src: \"../../static/img/banner.png\",\n                        mode: \"scaleToFill\"\n                      }\n                    })\n                  ]),\n                  _c(\"swiper-item\", { attrs: { mpcomid: \"5a05489d-2\" } }, [\n                    _c(\"image\", {\n                      staticClass: \"swiper-item\",\n                      attrs: {\n                        src: \"../../static/img/banner.png\",\n                        mode: \"scaleToFill\"\n                      }\n                    })\n                  ])\n                ],\n                1\n              )\n            ],\n            1\n          )\n        ])\n      ]),\n      _vm._m(0),\n      _vm._l(_vm.items, function(item, index) {\n        return _c(\"view\", { key: index, staticClass: \"shop-info-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"shop-info\",\n              attrs: { eventid: \"5a05489d-2-\" + index },\n              on: { click: _vm.goShop }\n            },\n            [\n              _c(\"image\", {\n                staticClass: \"shop-img\",\n                attrs: { src: \"../../static/img/banner.png\" }\n              }),\n              _vm._m(1, true),\n              _vm._m(2, true)\n            ]\n          )\n        ])\n      })\n    ],\n    2\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"entery\" }, [\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_shooping.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"商超便利\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_fruits.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水果\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", {\n          attrs: { src: \"../../static/main/main_water_check.png\" }\n        }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水质检测\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_water.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"桶装水\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_dinner.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"夜宵\")])\n      ])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-info-middle\" }, [\n      _c(\"view\", { staticClass: \"shop-name\" }, [_vm._v(\"陈蓉的店\")]),\n      _c(\"view\", { staticClass: \"shop-details\" }, [\n        _c(\"view\", { staticClass: \"shop-score\" }, [\n          _c(\"image\", { attrs: { src: \"../../static/main/star_icon.png\" } }),\n          _c(\"view\", { staticClass: \"shop-score-text\" }, [_vm._v(\"5.0\")])\n        ]),\n        _c(\"view\", { staticClass: \"shop-sales-volume\" }, [_vm._v(\"月售10000+\")])\n      ]),\n      _c(\"view\", { staticClass: \"distribution-num\" }, [_vm._v(\"起送¥20\")])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-info-right\" }, [\n      _c(\"view\", { staticClass: \"distribution-gap\" }, [_vm._v(\"666m\")]),\n      _c(\"view\", { staticClass: \"distribution-time\" }, [_vm._v(\"35分钟\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=template&id=86b4c236&");
 
 /***/ })
 
@@ -4154,7 +4148,7 @@ eval("__webpack_require__(/*! uni-pages */ \"../../../../../../Users/zhulizhe/De
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _order_vue_vue_type_template_id_66caa53a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./order.vue?vue&type=template&id=66caa53a& */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=template&id=66caa53a&\");\n/* harmony import */ var _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order.vue?vue&type=script&lang=js& */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=script&lang=js&\");\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _order_vue_vue_type_template_id_66caa53a___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _order_vue_vue_type_template_id_66caa53a___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _order_vue_vue_type_template_id_66caa53a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./order.vue?vue&type=template&id=66caa53a& */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=template&id=66caa53a&\");\n/* harmony import */ var _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order.vue?vue&type=script&lang=js& */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=script&lang=js&\");\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _order_vue_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order.vue?vue&type=style&index=0&lang=less& */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less&\");\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(\n  _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _order_vue_vue_type_template_id_66caa53a___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _order_vue_vue_type_template_id_66caa53a___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue");
 
 /***/ }),
 
@@ -4167,6 +4161,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ord
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./order.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=script&lang=js&\");\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=uni-app:///pages/order/order.vue?vue&type=script&lang=js&?4c9f");
+
+/***/ }),
+
+/***/ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less&":
+/*!**********************************************************************************************************!*\
+  !*** /Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less& ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--10-oneOf-1-2!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--10-oneOf-1-3!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./order.vue?vue&type=style&index=0&lang=less& */ \"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less&\");\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less&");
 
 /***/ }),
 
@@ -4190,7 +4196,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n{\n  data: function data() {\n    return {};\n\n\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/order/order.vue?vue&type=script&lang=js&?e722");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',\n      orders: [{\n        products: [1, 2, 3] },\n      {\n        products: [1, 2, 3] },\n      {\n        products: [1, 2, 3] }] };\n\n\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/order/order.vue?vue&type=script&lang=js&?e722");
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!./node_modules/css-loader??ref--10-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/vue-loader/lib??vue-loader-options!/Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=style&index=0&lang=less&");
 
 /***/ }),
 
@@ -4202,7 +4219,7 @@ eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.de
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\")\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=template&id=66caa53a&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"content\" },\n    _vm._l(_vm.orders, function(order, index) {\n      return _c(\n        \"view\",\n        { key: index, staticClass: \"order-list\" },\n        [\n          _vm._l(order.products, function(subOrder, s_index) {\n            return _c(\"view\", { key: s_index, staticClass: \"order\" }, [\n              _c(\"view\", { staticClass: \"shop-info\" }, [\n                _c(\"view\", { staticClass: \"left\" }, [\n                  _c(\"view\", { staticClass: \"icon\" }, [\n                    _c(\"image\", { attrs: { src: _vm.src, mode: \"aspectFit\" } })\n                  ]),\n                  _c(\"view\", { staticClass: \"name\" }, [\n                    _vm._v(\"鑫源水站(安贞桥)\")\n                  ])\n                ]),\n                _c(\"view\", { staticClass: \"order-status\" }, [\n                  _vm._v(\"商家已接单\")\n                ])\n              ]),\n              _vm._m(0, true)\n            ])\n          }),\n          _vm._m(1, true)\n        ],\n        2\n      )\n    })\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"p-info\" }, [\n      _c(\"view\", { staticClass: \"p-name\" }, [_vm._v(\"农夫山泉\")]),\n      _c(\"view\", { staticClass: \"p-price\" }, [_vm._v(\"¥15.00\")])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"footer\" }, [\n      _c(\"view\", { staticClass: \"more-order\" }, [_vm._v(\"再来一单\")]),\n      _c(\"view\", { staticClass: \"judgement\" }, [_vm._v(\"去评价\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/order/order.vue?vue&type=template&id=66caa53a&");
 
 /***/ })
 

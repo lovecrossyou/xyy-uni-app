@@ -36,7 +36,7 @@
 		data() {
 			return {
 				p_icon: '../../static/shop/p_001.png',
-				carts:[1,2,3]
+				carts: [1, 2, 3]
 			};
 		}
 	}
@@ -46,11 +46,9 @@
 	.shop-wrapper {
 		// height: 260upx;
 		width: 100%;
-
 		.header {
 			// height: 60upx;
 		}
-
 		.product-list {
 			display: flex;
 			flex-direction: row;

@@ -68,7 +68,7 @@ eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.de
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n{\n  onLaunch: function onLaunch() {\n    console.log('App Launch');\n  },\n  onShow: function onShow() {\n    console.log('App Show');\n  },\n  onHide: function onHide() {\n    console.log('App Hide');\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///App.vue?vue&type=script&lang=js&?fa70");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n{\n  onLaunch: function onLaunch() {\n    console.log('App Launch');\n    // \t\t\tuni.getLocation({\n    // \t\t\t\ttype: 'wgs84',\n    // \t\t\t\tsuccess: function(res) {\n    // \t\t\t\t\tconsole.log('当前位置的经度：' + res.longitude);\n    // \t\t\t\t\tconsole.log('当前位置的纬度：' + res.latitude);\n    // \t\t\t\t}\n    // \t\t\t});\n  },\n  onShow: function onShow() {\n    console.log('App Show');\n  },\n  onHide: function onHide() {\n    console.log('App Hide');\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///App.vue?vue&type=script&lang=js&?fa70");
 
 /***/ }),
 

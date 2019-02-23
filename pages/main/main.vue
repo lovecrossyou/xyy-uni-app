@@ -2,10 +2,8 @@
 	<view class="content">
 		<view class="header">
 			<view class="address-wrapper">
-				<view class="address-icon">xx</view>
-				<view class="address">
-					阳光大厦（西直门外大街…
-				</view>
+				<view class="address-icon"></view>
+				<view class="address" v-model="addressName" />
 			</view>
 			<view class="search-wrapper">
 				<view class="search-box" @click="goSearch">
@@ -54,7 +52,7 @@
 				<view class="entery-text">夜宵</view>
 			</view>
 		</view>
-		<view class="shop-info-wrapper" v-for="(item, index) in items" :key="index"  >
+		<view class="shop-info-wrapper" v-for="(item, index) in items" :key="index">
 			<view class="shop-info" @click="goShop">
 				<image src="../../static/img/banner.png" class="shop-img"></image>
 				<view class="shop-info-middle">
@@ -82,6 +80,7 @@
 	import {
 		mapState
 	} from 'vuex'
+	import amap from '../../common/amap-wx.js';
 
 	export default {
 		data() {
@@ -91,7 +90,11 @@
 				autoplay: true,
 				interval: 2000,
 				duration: 500,
-				items: [1, 2, 3, 3, 5, 6, 6, 7]
+				items: [1, 2, 3, 3, 5, 6, 6, 7],
+
+				amapPlugin: null,
+				key: '72239a17febe0f534f11c5b1fbd8ce4c',
+				addressName: '',
 			}
 		},
 		methods: {
@@ -107,19 +110,42 @@
 			durationChange(e) {
 				this.duration = e.target.value
 			},
-			goSearch(){
+			goSearch() {
 				uni.navigateTo({
-					url:"../HM-search/HM-search"
+					url: "../HM-search/HM-search"
 				})
 			},
-			goShop(){
+			goShop() {
 				uni.navigateTo({
-					url:"shop/shop"
+					url: "shop/shop"
 				})
+			},
+			getRegeo() {
+				var that = this;
+				uni.showLoading({
+					title: '获取信息中'
+				});
+				this.amapPlugin.getRegeo({
+					success: (data) => {
+						console.log(data)
+						that.addressName = data[0].name;
+						console.log("addressName ", that.addressName)
+
+						uni.hideLoading();
+					},
+					fail: e => {
+						uni.hideLoading();
+
+						console.log(e)
+					}
+				});
 			}
 		},
 		computed: mapState(['forcedLogin', 'hasLogin', 'userName']),
 		onLoad() {
+			this.amapPlugin = new amap.AMapWX({
+				key: this.key
+			});
 			if (!this.hasLogin) {
 				uni.showModal({
 					title: '未登录',
@@ -146,6 +172,7 @@
 					}
 				});
 			}
+			this.getRegeo();
 		}
 	}
 </script>
