@@ -11,7 +11,7 @@
 				</view>
 			</view>
 			<view class="right">
-				>
+			   <uni-icon type="arrowright" color="#bbb" size="20"></uni-icon>
 			</view>
 		</view>
 
@@ -38,6 +38,7 @@
 	} from 'vuex'
 	import uniList from '@/components/uni-list/uni-list.vue'
 	import uniListItem from '@/components/uni-list-item/uni-list-item.vue'
+	import uniIcon from '../../components/uni-icon/uni-icon.vue'
 
 
 	export default {
@@ -48,7 +49,8 @@
 		},
 		components: {
 			uniList,
-			uniListItem
+			uniListItem,
+			uniIcon
 		},
 		computed: {
 			...mapState(['hasLogin', 'forcedLogin'])
@@ -87,6 +89,7 @@
 			align-items: center;
 			display: flex;
 			padding: 35upx;
+			height: 200upx;
 			.left {
 				display: flex;
 				flex-direction: row;
@@ -99,21 +102,22 @@
 					justify-content: space-around;
 					height: 100%;
 					margin-left: 10upx;
+						height: 100%;
 		
 					.name {
-						font-size: 14px;
+						font-size: 28upx;
 						font-family: PingFangSC-Medium;
 						font-weight: 500;
 						color: rgba(39, 39, 39, 1);
-						line-height: 20px;
+						// line-height: 20px;
 					}
 		
 					.score {
-						font-size: 12px;
+						font-size: 24upx;
 						font-family: PingFangSC-Regular;
 						font-weight: 400;
 						color: rgba(153, 153, 153, 1);
-						line-height: 17px;
+						// line-height: 17px;
 					}
 				}
 			}

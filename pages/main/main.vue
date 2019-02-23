@@ -162,7 +162,7 @@
 				align-items: center;
 
 				.address {
-					font-size: 14px;
+					font-size: 28upx;
 					font-family: PingFangSC-Medium;
 					font-weight: 500;
 					color: rgba(0, 0, 0, 1);
@@ -182,7 +182,7 @@
 
 					.label {
 						height: 80upx;
-						font-size: 14px;
+						font-size: 28upx;
 						font-family: PingFangSC-Regular;
 						font-weight: 400;
 						color: rgba(124, 167, 210, 1);

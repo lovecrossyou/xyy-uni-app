@@ -560,6 +560,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 35rpx;
+  height: 200rpx;
 }
 .content .header .left {
   display: -webkit-box;
@@ -590,21 +591,19 @@
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-  height: 100%;
   margin-left: 10rpx;
+  height: 100%;
 }
 .content .header .left .user-info .name {
-  font-size: 14rpx;
+  font-size: 28rpx;
   font-family: PingFangSC-Medium;
   font-weight: 500;
   color: #272727;
-  line-height: 20rpx;
 }
 .content .header .left .user-info .score {
-  font-size: 12rpx;
+  font-size: 24rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #999999;
-  line-height: 17rpx;
 }
 

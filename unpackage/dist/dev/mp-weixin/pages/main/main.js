@@ -226,6 +226,11 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       uni.navigateTo({
         url: "../HM-search/HM-search" });
 
+    },
+    goShop: function goShop() {
+      uni.navigateTo({
+        url: "shop/shop" });
+
     } },
 
   computed: (0, _vuex.mapState)(['forcedLogin', 'hasLogin', 'userName']),
@@ -361,7 +366,22 @@ var render = function() {
       _vm._m(1),
       _vm._l(_vm.items, function(item, index) {
         return _c("view", { key: index, staticClass: "shop-info-wrapper" }, [
-          _vm._m(2, true)
+          _c(
+            "view",
+            {
+              staticClass: "shop-info",
+              attrs: { eventid: "5a05489d-1-" + index },
+              on: { click: _vm.goShop }
+            },
+            [
+              _c("image", {
+                staticClass: "shop-img",
+                attrs: { src: "../../static/img/banner.png" }
+              }),
+              _vm._m(2, true),
+              _vm._m(3, true)
+            ]
+          )
         ])
       })
     ],
@@ -413,28 +433,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "shop-info" }, [
-      _c("image", {
-        staticClass: "shop-img",
-        attrs: { src: "../../static/img/banner.png" }
-      }),
-      _c("view", { staticClass: "shop-info-middle" }, [
-        _c("view", { staticClass: "shop-name" }, [_vm._v("陈蓉的店")]),
-        _c("view", { staticClass: "shop-details" }, [
-          _c("view", { staticClass: "shop-score" }, [
-            _c("image", { attrs: { src: "../../static/main/star_icon.png" } }),
-            _c("view", { staticClass: "shop-score-text" }, [_vm._v("5.0")])
-          ]),
-          _c("view", { staticClass: "shop-sales-volume" }, [
-            _vm._v("月售10000+")
-          ])
+    return _c("view", { staticClass: "shop-info-middle" }, [
+      _c("view", { staticClass: "shop-name" }, [_vm._v("陈蓉的店")]),
+      _c("view", { staticClass: "shop-details" }, [
+        _c("view", { staticClass: "shop-score" }, [
+          _c("image", { attrs: { src: "../../static/main/star_icon.png" } }),
+          _c("view", { staticClass: "shop-score-text" }, [_vm._v("5.0")])
         ]),
-        _c("view", { staticClass: "distribution-num" }, [_vm._v("起送¥20")])
+        _c("view", { staticClass: "shop-sales-volume" }, [_vm._v("月售10000+")])
       ]),
-      _c("view", { staticClass: "shop-info-right" }, [
-        _c("view", { staticClass: "distribution-gap" }, [_vm._v("666m")]),
-        _c("view", { staticClass: "distribution-time" }, [_vm._v("35分钟")])
-      ])
+      _c("view", { staticClass: "distribution-num" }, [_vm._v("起送¥20")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("view", { staticClass: "shop-info-right" }, [
+      _c("view", { staticClass: "distribution-gap" }, [_vm._v("666m")]),
+      _c("view", { staticClass: "distribution-time" }, [_vm._v("35分钟")])
     ])
   }
 ]

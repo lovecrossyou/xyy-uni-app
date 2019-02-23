@@ -3,7 +3,7 @@
 		<view class="shop-header">
 			<view class="left">
 				<view class="shop-logo">
-					<image src="../../../static/main/avatar.png" mode=""></image>
+					<image src="../../../static/main/avatar.png" mode="aspectFill"></image>
 				</view>
 				<view class="shop-info">
 					<view class="name">利强水店</view>
@@ -22,7 +22,7 @@
 			<view class="tab-wrapper">
 				<view v-for="(tab,index) in tabs" :key='index'>
 					<view class="tab-item" @click="changeTab(index)">
-						<view class="line" v-if="tab.index===activeTabIndex"/>
+						<view class="line" v-if="tab.index===activeTabIndex" />
 						<view class="title">
 							{{tab.title}}
 						</view>
@@ -31,20 +31,33 @@
 			</view>
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
 				<swiper-item>
-					<view class="swiper-item uni-bg-red">A</view>
+					<goods></goods>
 				</swiper-item>
 				<swiper-item>
-					<view class="swiper-item uni-bg-green">B</view>
+					<judgement></judgement>
 				</swiper-item>
 				<swiper-item>
-					<view class="swiper-item uni-bg-blue">C</view>
+					<shop-info></shop-info>
 				</swiper-item>
 			</swiper>
+		</view>
+		<view class="footer">
+			<view class="cart-wrapper">
+				<image v-bind:src="cart_icon" mode="aspectFit"></image>
+			</view>
+			<view class="confirm-wrapper">
+				<view class="limit">
+					¥20起送
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import judgement from "./judgement.vue";
+	import shopInfo from "./shop-info.vue";
+	import goods from "./goods";
 	export default {
 		data() {
 			return {
@@ -61,44 +74,50 @@
 						index: 2
 					}
 				],
-				activeTabIndex:0
+				activeTabIndex: 0,
+				cart_icon:'../../../static/shop/cart.png'
 			};
 		},
-		methods:{
-			changeTab(index){
-				this.activeTabIndex = index ;
+		components: {
+			judgement,
+			shopInfo,
+			goods
+		},
+		methods: {
+			changeTab(index) {
+				this.activeTabIndex = index;
 			},
-			swiperChange(e){
-				this.activeTabIndex =  e.detail.current ;
+			swiperChange(e) {
+				this.activeTabIndex = e.detail.current;
 			}
 		}
 	}
 </script>
 
 <style lang="less">
+	@footerHeight:98upx;
 	.content {
 		padding: 0;
-
+		margin: 0;
+		position: relative;
 		.shop-header {
 			padding: 0 24upx;
 			height: 192upx;
-			background-color: aqua;
+			background-color: #fff;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-
 			.left {
 				display: flex;
 				flex-direction: row;
-
 				.shop-logo {
+					background-color:#333333;
 					image {
 						width: 100upx;
 						height: 100upx;
 					}
 				}
-
 				.shop-info {
 					margin-left: 20upx;
 					display: flex;
@@ -106,7 +125,7 @@
 					justify-content: space-around;
 
 					.name {
-						color: #333;
+						color: #333333;
 						font-size: 30upx;
 					}
 
@@ -152,7 +171,7 @@
 
 		.shop-content {
 			height: 100%;
-
+			padding-bottom: @footerHeight;
 			.tab-wrapper {
 				display: flex;
 				flex-direction: row;
@@ -187,7 +206,43 @@
 
 			.swiper {
 				height: 100%;
-				background-color: #FFB30A;
+				background-color: #fff;
+			}
+		}
+
+		.footer {
+			height: @footerHeight;
+			background-color: #656565;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			.confirm-wrapper{
+				width: 232upx;
+				height: 100%;
+				background-color: #727272;
+				.limit{
+					color: #fff;
+					font-size: 32upx;
+					line-height: @footerHeight;
+					text-align: center;
+				}
+			}
+			.cart-wrapper{
+				flex: 1;
+				position: relative;
+				
+				image{
+					margin-left: 24upx;
+					width: 110upx;
+					height: 110upx;
+					position: absolute;
+					top: -20upx;
+				}
+				
 			}
 		}
 	}

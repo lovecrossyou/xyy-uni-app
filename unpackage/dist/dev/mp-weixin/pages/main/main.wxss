@@ -17,7 +17,7 @@
           align-items: center;
 }
 .content .header .address-wrapper .address {
-  font-size: 14rpx;
+  font-size: 28rpx;
   font-family: PingFangSC-Medium;
   font-weight: 500;
   color: #000000;
@@ -34,7 +34,7 @@
 }
 .content .header .search-wrapper .search-box .label {
   height: 80rpx;
-  font-size: 14rpx;
+  font-size: 28rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #7ca7d2;

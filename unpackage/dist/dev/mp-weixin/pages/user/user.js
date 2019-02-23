@@ -720,7 +720,8 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
 
 var _uniList = _interopRequireDefault(__webpack_require__(/*! @/components/uni-list/uni-list.vue */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/components/uni-list/uni-list.vue"));
-var _uniListItem = _interopRequireDefault(__webpack_require__(/*! @/components/uni-list-item/uni-list-item.vue */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/components/uni-list-item/uni-list-item.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+var _uniListItem = _interopRequireDefault(__webpack_require__(/*! @/components/uni-list-item/uni-list-item.vue */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/components/uni-list-item/uni-list-item.vue"));
+var _uniIcon = _interopRequireDefault(__webpack_require__(/*! ../../components/uni-icon/uni-icon.vue */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/components/uni-icon/uni-icon.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 
 
 {
@@ -731,7 +732,8 @@ var _uniListItem = _interopRequireDefault(__webpack_require__(/*! @/components/u
   },
   components: {
     uniList: _uniList.default,
-    uniListItem: _uniListItem.default },
+    uniListItem: _uniListItem.default,
+    uniIcon: _uniIcon.default },
 
   computed: _objectSpread({},
   (0, _vuex.mapState)(['hasLogin', 'forcedLogin'])),
@@ -1082,22 +1084,29 @@ var render = function() {
           ]),
           _vm._m(0)
         ]),
-        _c("view", { staticClass: "right" }, [_vm._v(">")])
+        _c(
+          "view",
+          { staticClass: "right" },
+          [
+            _c("uni-icon", {
+              attrs: {
+                type: "arrowright",
+                color: "#bbb",
+                size: "20",
+                mpcomid: "7d3c43dd-0"
+              }
+            })
+          ],
+          1
+        )
       ]),
       _c(
         "uni-list",
-        { attrs: { mpcomid: "7d3c43dd-6" } },
+        { attrs: { mpcomid: "7d3c43dd-7" } },
         [
           _c("uni-list-item", {
             attrs: {
               title: "收货地址",
-              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
-              mpcomid: "7d3c43dd-0"
-            }
-          }),
-          _c("uni-list-item", {
-            attrs: {
-              title: "我的优惠券",
               thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
               mpcomid: "7d3c43dd-1"
             }
@@ -1111,23 +1120,30 @@ var render = function() {
           }),
           _c("uni-list-item", {
             attrs: {
-              title: "我的积分",
+              title: "我的优惠券",
               thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
               mpcomid: "7d3c43dd-3"
             }
           }),
           _c("uni-list-item", {
             attrs: {
-              title: "意见反馈",
+              title: "我的积分",
               thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
               mpcomid: "7d3c43dd-4"
             }
           }),
           _c("uni-list-item", {
             attrs: {
-              title: "我的优惠券",
+              title: "意见反馈",
               thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
               mpcomid: "7d3c43dd-5"
+            }
+          }),
+          _c("uni-list-item", {
+            attrs: {
+              title: "我的优惠券",
+              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
+              mpcomid: "7d3c43dd-6"
             }
           })
         ],
