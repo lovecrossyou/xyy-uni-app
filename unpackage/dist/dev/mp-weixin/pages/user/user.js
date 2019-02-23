@@ -727,7 +727,8 @@ var _uniIcon = _interopRequireDefault(__webpack_require__(/*! ../../components/u
 {
   data: function data() {
     return {
-      src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg' };
+      src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
+      icon_address: '../../static/me/address.png' };
 
   },
   components: {
