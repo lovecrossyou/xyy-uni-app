@@ -6,11 +6,13 @@
 					<image src="../../../static/main/avatar.png" mode="aspectFill"></image>
 				</view>
 				<view class="shop-info">
-					<view class="name">{{shop.info.name}}</view>
-					<view class="score-wrapper">
-						<view class="score">评分{{shop.info.score}}</view>
-						<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
-					</view>
+					<block v-if="shop">
+						<view class="name">{{shop.info.name}}</view>
+						<view class="score-wrapper">
+							<view class="score">评分{{shop.info.score}}</view>
+							<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
+						</view>
+					</block>
 				</view>
 			</view>
 			<view class="right">
@@ -31,14 +33,16 @@
 			</view>
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
 				<swiper-item>
-					<goods></goods>
+					<goods :products="shop.products"></goods>
 				</swiper-item>
 				<swiper-item>
 					<judgement></judgement>
 				</swiper-item>
-				<swiper-item>
-					<shop-info></shop-info>
-				</swiper-item>
+				<block v-if="shop">
+					<swiper-item>
+						<shop-info></shop-info>
+					</swiper-item>
+				</block>
 			</swiper>
 		</view>
 		<view class="footer">

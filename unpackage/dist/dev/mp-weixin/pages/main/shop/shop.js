@@ -506,46 +506,30 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
 var _cartcontrol = _interopRequireDefault(__webpack_require__(/*! ./cartcontrol/cartcontrol.vue */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/cartcontrol/cartcontrol.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+
 {
+  props: {
+    products: Array },
+
   components: {
     cartcontrol: _cartcontrol.default },
 
   data: function data() {
     return {
       currentIndex: 0,
-      img_url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550900041138&di=722b8ba73b2b6c1ec8671480add10f70&imgtype=0&src=http%3A%2F%2Fwww.sy-tzs.com%2Fupfile%2FisClass%2Fppic%2F20160216114715-679156452.jpg',
-      goods: [{
-        name: '主食' },
-      {
-        name: '饮料' },
-      {
-        name: '零食' },
-      {
-        name: '其他' },
-      {
-        name: '主食' },
-      {
-        name: '饮料' },
-      {
-        name: '零食' },
-      {
-        name: '其他' },
-      {
-        name: '主食' },
-      {
-        name: '饮料' },
-      {
-        name: '零食' },
-      {
-        name: '其他' }],
-
-      products: [1, 2, 3, 4, 5, 5, 2, 3, 4, 5, 5] };
+      img_url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550900041138&di=722b8ba73b2b6c1ec8671480add10f70&imgtype=0&src=http%3A%2F%2Fwww.sy-tzs.com%2Fupfile%2FisClass%2Fppic%2F20160216114715-679156452.jpg' };
 
   },
   methods: {
     selectMenu: function selectMenu(index) {
       this.currentIndex = index;
+    } },
+
+  computed: {
+    currentProducts: function currentProducts() {
+      return this.products[this.currentIndex].products;
     } } };exports.default = _default;
 
 /***/ }),
@@ -583,6 +567,10 @@ var _cartcontrol = _interopRequireDefault(__webpack_require__(/*! ./cartcontrol/
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
 
 
 
@@ -782,11 +770,11 @@ var render = function() {
         _c(
           "scroll-view",
           { staticClass: "menu-wrapper", attrs: { "scroll-y": "true" } },
-          _vm._l(_vm.goods, function(item, index) {
+          _vm._l(_vm.products, function(item, index) {
             return _c(
               "view",
               {
-                key: index,
+                key: item.id,
                 staticClass: "menu-item",
                 class: { current: _vm.currentIndex === index },
                 attrs: { eventid: "2ae02ee1-0-" + index },
@@ -807,21 +795,27 @@ var render = function() {
         _c(
           "scroll-view",
           { staticClass: "foods-wrapper", attrs: { "scroll-y": "true" } },
-          _vm._l(_vm.products, function(p, index) {
+          _vm._l(_vm.currentProducts, function(p, index) {
             return _c("view", { key: index, staticClass: "food-list" }, [
-              _c("view", { staticClass: "title" }, [_vm._v("hha")]),
+              _c("view", { staticClass: "title" }, [
+                _vm._v(_vm._s(p.headName))
+              ]),
               _c("view", { staticClass: "food-item" }, [
                 _c("view", { staticClass: "icon" }, [
                   _c("image", {
-                    attrs: { src: _vm.img_url, mode: "aspectFit" }
+                    attrs: { src: p.headImage, mode: "aspectFit" }
                   })
                 ]),
                 _c("view", { staticClass: "content" }, [
-                  _c("view", { staticClass: "name" }, [_vm._v("恒大山泉")]),
-                  _c("view", { staticClass: "desc" }, [
-                    _vm._v("月售605 好评95%")
+                  _c("view", { staticClass: "name" }, [
+                    _vm._v(_vm._s(p.headName))
                   ]),
-                  _c("view", { staticClass: "price" }, [_vm._v("28.00")])
+                  _c("view", { staticClass: "desc" }, [
+                    _vm._v("月售" + _vm._s(p.saleAmount) + " 好评95%")
+                  ]),
+                  _c("view", { staticClass: "price" }, [
+                    _vm._v(_vm._s(p.price))
+                  ])
                 ]),
                 _c(
                   "view",
@@ -916,19 +910,28 @@ var render = function() {
     _c("view", { staticClass: "shop-header" }, [
       _c("view", { staticClass: "left" }, [
         _vm._m(0),
-        _c("view", { staticClass: "shop-info" }, [
-          _c("view", { staticClass: "name" }, [
-            _vm._v(_vm._s(_vm.shop.info.name))
-          ]),
-          _c("view", { staticClass: "score-wrapper" }, [
-            _c("view", { staticClass: "score" }, [
-              _vm._v("评分" + _vm._s(_vm.shop.info.score))
-            ]),
-            _c("view", { staticClass: "saleinfo" }, [
-              _vm._v("月售" + _vm._s(_vm.shop.info.soldAmount) + "单")
-            ])
-          ])
-        ])
+        _c(
+          "view",
+          { staticClass: "shop-info" },
+          [
+            _vm.shop
+              ? _c("block", [
+                  _c("view", { staticClass: "name" }, [
+                    _vm._v(_vm._s(_vm.shop.info.name))
+                  ]),
+                  _c("view", { staticClass: "score-wrapper" }, [
+                    _c("view", { staticClass: "score" }, [
+                      _vm._v("评分" + _vm._s(_vm.shop.info.score))
+                    ]),
+                    _c("view", { staticClass: "saleinfo" }, [
+                      _vm._v("月售" + _vm._s(_vm.shop.info.soldAmount) + "单")
+                    ])
+                  ])
+                ])
+              : _vm._e()
+          ],
+          1
+        )
       ]),
       _vm._m(1)
     ]),
@@ -979,7 +982,11 @@ var render = function() {
             _c(
               "swiper-item",
               { attrs: { mpcomid: "c362b3ea-1" } },
-              [_c("goods", { attrs: { mpcomid: "c362b3ea-0" } })],
+              [
+                _c("goods", {
+                  attrs: { products: _vm.shop.products, mpcomid: "c362b3ea-0" }
+                })
+              ],
               1
             ),
             _c(
@@ -988,12 +995,20 @@ var render = function() {
               [_c("judgement", { attrs: { mpcomid: "c362b3ea-2" } })],
               1
             ),
-            _c(
-              "swiper-item",
-              { attrs: { mpcomid: "c362b3ea-5" } },
-              [_c("shop-info", { attrs: { mpcomid: "c362b3ea-4" } })],
-              1
-            )
+            _vm.shop
+              ? _c(
+                  "block",
+                  [
+                    _c(
+                      "swiper-item",
+                      { attrs: { mpcomid: "c362b3ea-5" } },
+                      [_c("shop-info", { attrs: { mpcomid: "c362b3ea-4" } })],
+                      1
+                    )
+                  ],
+                  1
+                )
+              : _vm._e()
           ],
           1
         )
