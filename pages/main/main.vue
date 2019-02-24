@@ -3,7 +3,7 @@
 		<view class="header">
 			<view class="address-wrapper">
 				<view class="address-icon"></view>
-				<view class="address" v-model="addressName" />
+				<view class="address">{{addressName}}</view>
 			</view>
 			<view class="search-wrapper">
 				<view class="search-box" @click="goSearch">
@@ -17,16 +17,13 @@
 			<view class="page-section swiper">
 				<view class="page-section-spacing">
 					<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-						<swiper-item>
-							<image src="../../static/img/banner.png" class="swiper-item" mode="scaleToFill"></image>
-						</swiper-item>
-						<swiper-item>
-							<image src="../../static/img/banner.png" class="swiper-item" mode="scaleToFill"></image>
-						</swiper-item>
-						<swiper-item>
-							<image src="../../static/img/banner.png" class="swiper-item" mode="scaleToFill"></image>
-						</swiper-item>
+						<block v-for="(banner,index) in banners" :key="index">
+							<swiper-item>
+								<image v-bind:src="banner.image" class="swiper-item" mode="scaleToFill"></image>
+							</swiper-item>
+						</block>
 					</swiper>
+
 				</view>
 			</view>
 		</view>
@@ -72,7 +69,6 @@
 				</view>
 			</view>
 		</view>
-
 	</view>
 </template>
 
@@ -80,8 +76,11 @@
 	import {
 		mapState
 	} from 'vuex'
-	import amap from '../../common/amap-wx.js';
-
+	import API from '@/util/api'
+	import amap from '@/common/amap-wx.js';
+	import {
+		getReqest
+	} from '@/util/network.js'
 	export default {
 		data() {
 			return {
@@ -94,10 +93,22 @@
 
 				amapPlugin: null,
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
-				addressName: '',
+				addressName: '获取中...',
+				banners: []
 			}
 		},
 		methods: {
+			async getBanner() {
+				const params = {
+					latitude: '20.111111',
+					longitude: '113.09091'
+				}
+				const that = this;
+				getReqest('banner/list', params, function(res) {
+					that.banners = res;
+					console.log('res ###', res);
+				})
+			},
 			changeIndicatorDots(e) {
 				this.indicatorDots = !this.indicatorDots
 			},
@@ -173,6 +184,7 @@
 				});
 			}
 			this.getRegeo();
+			this.getBanner();
 		}
 	}
 </script>
@@ -220,12 +232,12 @@
 		}
 
 		.banner {
-			height: 340upx;
+			height: 320upx;
 			margin-top: 12upx;
 
 			.swiper-item {
 				width: 100%;
-				height: 340upx;
+				height: 100%;
 			}
 		}
 
@@ -233,12 +245,13 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
+			align-items: center;
 
 			.entery-item {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				margin-top: 36upx;
+				// margin-top: 36upx;
 
 				image {
 					width: 72upx;

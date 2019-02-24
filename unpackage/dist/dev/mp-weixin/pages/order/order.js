@@ -157,11 +157,13 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     return {
       src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
       orders: [{
-        products: [1, 2, 3] },
-      {
-        products: [1, 2, 3] },
-      {
-        products: [1, 2, 3] }] };
+        products: [{
+          src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg' },
+        {
+          src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg' },
+        {
+          src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg' }] }] };
+
 
 
   } };exports.default = _default;
@@ -207,7 +209,9 @@ var render = function() {
               _c("view", { staticClass: "shop-info" }, [
                 _c("view", { staticClass: "left" }, [
                   _c("view", { staticClass: "icon" }, [
-                    _c("image", { attrs: { src: _vm.src, mode: "aspectFit" } })
+                    _c("image", {
+                      attrs: { src: subOrder.src, mode: "aspectFit" }
+                    })
                   ]),
                   _c("view", { staticClass: "name" }, [
                     _vm._v("鑫源水站(安贞桥)")

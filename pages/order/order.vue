@@ -5,7 +5,7 @@
 				<view class="shop-info">
 					<view class="left">
 						<view class="icon">
-							<image v-bind:src="src" mode="aspectFit"></image>
+							<image :src="subOrder.src" mode="aspectFit"></image>
 						</view>
 						<view class="name">
 							鑫源水站(安贞桥)
@@ -42,11 +42,13 @@
 			return {
 				src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
 				orders: [{
-					products: [1, 2, 3]
-				}, {
-					products: [1, 2, 3]
-				}, {
-					products: [1, 2, 3]
+					products: [{
+						src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
+					}, {
+						src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
+					}, {
+						src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
+					}]
 				}]
 			};
 		}
@@ -119,6 +121,7 @@
 				justify-content: flex-end;
 				padding: 5upx 0;
 				margin-bottom: 30upx;
+
 				.more-order {
 					width: 136upx;
 					height: 48upx;
