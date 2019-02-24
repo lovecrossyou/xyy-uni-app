@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="order-list" v-for="(order,index) in orders" :key='index'>
 			<view class="order" v-for="(subOrder,s_index) in order.products" :key='s_index'>
-				<view class="shop-info">
+				<view class="shop-info" v-on:click="goOrderDetail">
 					<view class="left">
 						<view class="icon">
 							<image v-bind:src="src" mode="aspectFit"></image>
@@ -49,7 +49,15 @@
 					products: [1, 2, 3]
 				}]
 			};
+		},
+		methods:{
+			goOrderDetail(){
+				uni.navigateTo({
+					url: "orderDetail/OrderDetail"
+				})
+			}
 		}
+		
 	}
 </script>
 

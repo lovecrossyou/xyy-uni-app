@@ -43,6 +43,12 @@
 			}
 		},
 		{
+			"path": "pages/order/orderDetail/OrderDetail",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
 			"path": "pages/shoppingcart/shoppingcart",
 			"style": {
 				"navigationBarTitleText": "购物车"
