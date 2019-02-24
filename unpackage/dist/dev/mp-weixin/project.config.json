@@ -5,16 +5,12 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"autoAudits": false
+		"newFeature": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "",
 	"appid": "wx56e7731073ee003f",
-	"projectname": "xyy-uni",
+	"projectname": "%E9%91%AB%E7%BF%BC%E4%BC%98",
 	"condition": {
 		"search": {
 			"current": -1,

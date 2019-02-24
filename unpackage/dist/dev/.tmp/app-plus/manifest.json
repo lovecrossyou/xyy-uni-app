@@ -5,12 +5,12 @@
     "iPad"
   ],
   "id": "__UNI__824ECFA",
-  "name": "xyy-uni",
+  "name": "鑫翼优",
   "version": {
     "name": "1.0.0",
     "code": "100"
   },
-  "description": "鑫翼优",
+  "description": "本地生活服务",
   "launch_path": "__uniappservice.html",
   "developer": {
     "name": "",
