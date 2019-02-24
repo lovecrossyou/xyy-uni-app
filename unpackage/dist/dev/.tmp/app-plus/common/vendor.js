@@ -264,6 +264,18 @@ eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, 
 
 /***/ }),
 
+/***/ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js":
+/*!******************************************************************!*\
+  !*** /Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function(uni) {var baseUrl = 'http://47.94.209.108:7002/client/';\nvar getReqest = function getReqest(url, params, cb) {\n  uni.request({\n    url: baseUrl + url,\n    data: params,\n    method: 'GET',\n    success: function success(res) {\n      var data = res.data;\n      if (data.status === 'ok') {\n        cb(data.data);\n        console.log('success ##', data);\n      } else\n      {\n        uni.showToast({\n          title: data.message });\n\n      }\n    } });\n\n};\nvar postRequest = function postRequest(url, params, cb) {\n  uni.request({\n    url: baseUrl + url,\n    data: params,\n    method: 'POST',\n    success: function success(res) {\n      cb(res);\n    },\n    fail: function fail(e) {\n\n    } });\n\n};\nmodule.exports = {\n  getReqest: getReqest,\n  postRequest: postRequest };\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///util/network.js?aa7c");
+
+/***/ }),
+
 /***/ "./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js":
 /*!*********************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js ***!

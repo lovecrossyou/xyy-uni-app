@@ -641,7 +641,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 var _judgement = _interopRequireDefault(__webpack_require__(/*! ./judgement.vue */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/judgement.vue"));
 var _shopInfo = _interopRequireDefault(__webpack_require__(/*! ./shop-info.vue */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/shop-info.vue"));
-var _goods = _interopRequireDefault(__webpack_require__(/*! ./goods */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/goods.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _goods = _interopRequireDefault(__webpack_require__(/*! ./goods */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/goods.vue"));
+var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+
+
 {
   data: function data() {
     return {
@@ -659,7 +662,8 @@ var _goods = _interopRequireDefault(__webpack_require__(/*! ./goods */ "../../..
 
 
       activeTabIndex: 0,
-      cart_icon: '../../../static/shop/cart.png' };
+      cart_icon: '../../../static/shop/cart.png',
+      shop: null };
 
   },
   components: {
@@ -673,7 +677,18 @@ var _goods = _interopRequireDefault(__webpack_require__(/*! ./goods */ "../../..
     },
     swiperChange: function swiperChange(e) {
       this.activeTabIndex = e.detail.current;
-    } } };exports.default = _default;
+    },
+    initShop: function initShop(shopId) {
+      var that = this;
+      (0, _network.getReqest)('shop/shopInfo/13', {}, function (res) {
+        that.shop = res;
+      });
+    } },
+
+  onLoad: function onLoad(option) {
+    console.log('shopId ', option);
+    this.initShop(option.shopId);
+  } };exports.default = _default;
 
 /***/ }),
 
@@ -898,7 +913,25 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("view", { staticClass: "content" }, [
-    _vm._m(0),
+    _c("view", { staticClass: "shop-header" }, [
+      _c("view", { staticClass: "left" }, [
+        _vm._m(0),
+        _c("view", { staticClass: "shop-info" }, [
+          _c("view", { staticClass: "name" }, [
+            _vm._v(_vm._s(_vm.shop.info.name))
+          ]),
+          _c("view", { staticClass: "score-wrapper" }, [
+            _c("view", { staticClass: "score" }, [
+              _vm._v("评分" + _vm._s(_vm.shop.info.score))
+            ]),
+            _c("view", { staticClass: "saleinfo" }, [
+              _vm._v("月售" + _vm._s(_vm.shop.info.soldAmount) + "单")
+            ])
+          ])
+        ])
+      ]),
+      _vm._m(1)
+    ]),
     _c(
       "view",
       { staticClass: "shop-content" },
@@ -971,7 +1004,7 @@ var render = function() {
       _c("view", { staticClass: "cart-wrapper" }, [
         _c("image", { attrs: { src: _vm.cart_icon, mode: "aspectFit" } })
       ]),
-      _vm._m(1)
+      _vm._m(2)
     ])
   ])
 }
@@ -980,37 +1013,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "shop-header" }, [
-      _c("view", { staticClass: "left" }, [
-        _c("view", { staticClass: "shop-logo" }, [
-          _c("image", {
-            attrs: {
-              src: "../../../static/main/avatar.png",
-              mode: "aspectFill"
-            }
-          })
-        ]),
-        _c("view", { staticClass: "shop-info" }, [
-          _c("view", { staticClass: "name" }, [_vm._v("利强水店")]),
-          _c("view", { staticClass: "score-wrapper" }, [
-            _c("view", { staticClass: "score" }, [_vm._v("评分4.5")]),
-            _c("view", { staticClass: "saleinfo" }, [_vm._v("月售6555单")])
-          ])
-        ])
-      ]),
-      _c("view", { staticClass: "right" }, [
-        _c("image", {
-          staticClass: "share",
-          attrs: { src: "../../../static/main/share.png", mode: "aspectFit" }
-        }),
-        _c("image", {
-          staticClass: "fav",
-          attrs: {
-            src: "../../../static/main/favourite.png",
-            mode: "aspectFit"
-          }
-        })
-      ])
+    return _c("view", { staticClass: "shop-logo" }, [
+      _c("image", {
+        attrs: { src: "../../../static/main/avatar.png", mode: "aspectFill" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("view", { staticClass: "right" }, [
+      _c("image", {
+        staticClass: "share",
+        attrs: { src: "../../../static/main/share.png", mode: "aspectFit" }
+      }),
+      _c("image", {
+        staticClass: "fav",
+        attrs: { src: "../../../static/main/favourite.png", mode: "aspectFit" }
+      })
     ])
   },
   function() {

@@ -6,10 +6,10 @@
 					<image src="../../../static/main/avatar.png" mode="aspectFill"></image>
 				</view>
 				<view class="shop-info">
-					<view class="name">利强水店</view>
+					<view class="name">{{shop.info.name}}</view>
 					<view class="score-wrapper">
-						<view class="score">评分4.5</view>
-						<view class="saleinfo">月售6555单</view>
+						<view class="score">评分{{shop.info.score}}</view>
+						<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
 					</view>
 				</view>
 			</view>
@@ -58,6 +58,9 @@
 	import judgement from "./judgement.vue";
 	import shopInfo from "./shop-info.vue";
 	import goods from "./goods";
+	import {
+		getReqest
+	} from '@/util/network.js'
 	export default {
 		data() {
 			return {
@@ -75,7 +78,8 @@
 					}
 				],
 				activeTabIndex: 0,
-				cart_icon:'../../../static/shop/cart.png'
+				cart_icon: '../../../static/shop/cart.png',
+				shop: null
 			};
 		},
 		components: {
@@ -89,17 +93,29 @@
 			},
 			swiperChange(e) {
 				this.activeTabIndex = e.detail.current;
+			},
+			initShop(shopId) {
+				const that = this;
+				getReqest('shop/shopInfo/13', {}, res => {
+					that.shop = res;
+				})
 			}
+		},
+		onLoad: function(option) {
+			console.log('shopId ', option)
+			this.initShop(option.shopId)
 		}
 	}
 </script>
 
 <style lang="less">
-	@footerHeight:98upx;
+	@footerHeight: 98upx;
+
 	.content {
 		padding: 0;
 		margin: 0;
 		position: relative;
+
 		.shop-header {
 			padding: 0 24upx;
 			height: 192upx;
@@ -108,21 +124,26 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
+
 			.left {
 				display: flex;
 				flex-direction: row;
+
 				.shop-logo {
-					background-color:#333333;
+					background-color: #333333;
+
 					image {
 						width: 100upx;
 						height: 100upx;
 					}
 				}
+
 				.shop-info {
 					margin-left: 20upx;
 					display: flex;
 					flex-direction: column;
 					justify-content: space-around;
+					align-items: center;
 
 					.name {
 						color: #333333;
@@ -132,6 +153,7 @@
 					.score-wrapper {
 						display: flex;
 						flex-direction: row;
+						align-items: center;
 
 						.score {
 							font-size: 24upx;
@@ -172,6 +194,7 @@
 		.shop-content {
 			height: 100%;
 			padding-bottom: @footerHeight;
+
 			.tab-wrapper {
 				display: flex;
 				flex-direction: row;
@@ -220,29 +243,32 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
-			.confirm-wrapper{
+
+			.confirm-wrapper {
 				width: 232upx;
 				height: 100%;
 				background-color: #727272;
-				.limit{
+
+				.limit {
 					color: #fff;
 					font-size: 32upx;
 					line-height: @footerHeight;
 					text-align: center;
 				}
 			}
-			.cart-wrapper{
+
+			.cart-wrapper {
 				flex: 1;
 				position: relative;
-				
-				image{
+
+				image {
 					margin-left: 24upx;
 					width: 110upx;
 					height: 110upx;
 					position: absolute;
 					top: -20upx;
 				}
-				
+
 			}
 		}
 	}

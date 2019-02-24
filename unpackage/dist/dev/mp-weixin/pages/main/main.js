@@ -117,54 +117,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js":
-/*!******************************************************************!*\
-  !*** /Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {var baseUrl = 'http://47.94.209.108:7002/client/';
-var getReqest = function getReqest(url, params, cb) {
-  uni.request({
-    url: baseUrl + url,
-    data: params,
-    method: 'GET',
-    success: function success(res) {
-      var data = res.data;
-      if (data.status === 'ok') {
-        cb(data.data);
-        console.log('success ##', data);
-      } else
-      {
-        uni.showToast({
-          title: data.message });
-
-      }
-    } });
-
-};
-var postRequest = function postRequest(url, params, cb) {
-  uni.request({
-    url: baseUrl + url,
-    data: params,
-    method: 'POST',
-    success: function success(res) {
-      cb(res);
-    },
-    fail: function fail(e) {
-
-    } });
-
-};
-module.exports = {
-  getReqest: getReqest,
-  postRequest: postRequest };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!/Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=script&lang=js& ***!
@@ -297,9 +249,10 @@ var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../U
         url: "../HM-search/HM-search" });
 
     },
-    goShop: function goShop() {
+    goShop: function goShop(shop) {
+      console.log(shop);
       uni.navigateTo({
-        url: "shop/shop" });
+        url: "shop/shop?shopId=" + shop.id });
 
     },
     getRegeo: function getRegeo() {
@@ -451,7 +404,11 @@ var render = function() {
             {
               staticClass: "shop-info",
               attrs: { eventid: "5a05489d-1-" + index },
-              on: { click: _vm.goShop }
+              on: {
+                click: function($event) {
+                  _vm.goShop(shop)
+                }
+              }
             },
             [
               _c("image", {

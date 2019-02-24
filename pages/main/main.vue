@@ -50,7 +50,7 @@
 			</view>
 		</view>
 		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
-			<view class="shop-info" @click="goShop">
+			<view class="shop-info" @click="goShop(shop)">
 				<image :src="shop.imageUrl" class="shop-img"></image>
 				<view class="shop-info-middle">
 					<view class="shop-name">{{shop.name}}</view>
@@ -122,9 +122,10 @@
 					url: "../HM-search/HM-search"
 				})
 			},
-			goShop() {
+			goShop(shop) {
+				console.log(shop);
 				uni.navigateTo({
-					url: "shop/shop"
+					url: "shop/shop?shopId="+shop.id
 				})
 			},
 			getRegeo() {

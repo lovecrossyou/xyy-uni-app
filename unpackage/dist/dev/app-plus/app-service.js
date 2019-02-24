@@ -1468,7 +1468,7 @@ __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./common/slots.wxml','/components/uni-icon/uni-icon.vue.wxml','/components/uni-list/uni-list.vue.wxml','/components/uni-list-item/uni-list-item.vue.wxml','./components/m-icon/m-icon.vue.wxml','./components/m-input.vue.wxml','/components/m-icon/m-icon.vue.wxml','./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./components/uni-badge/uni-badge.vue.wxml','./components/uni-icon/uni-icon.vue.wxml','./components/uni-list-item/uni-list-item.vue.wxml','/components/uni-badge/uni-badge.vue.wxml','./components/uni-list/uni-list.vue.wxml','/common/slots.wxml','./pages/HM-search/HM-search.vue.wxml','/components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./pages/HM-search/HM-search.wxml','./HM-search.vue.wxml','./pages/login/login.vue.wxml','/components/m-input.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/main/main.vue.wxml','./pages/main/main.wxml','./main.vue.wxml','./pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/goods.vue.wxml','/pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/judgement.vue.wxml','./pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.vue.wxml','/pages/main/shop/goods.vue.wxml','/pages/main/shop/judgement.vue.wxml','/pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.wxml','./shop.vue.wxml','./pages/order/order.vue.wxml','./pages/order/order.wxml','./order.vue.wxml','./pages/pwd/pwd.vue.wxml','./pages/pwd/pwd.wxml','./pwd.vue.wxml','./pages/reg/reg.vue.wxml','./pages/reg/reg.wxml','./reg.vue.wxml','./pages/shoppingcart/shoppingcart.vue.wxml','./pages/shoppingcart/shoppingcart.wxml','./shoppingcart.vue.wxml','./pages/user/user.vue.wxml','./pages/user/user.wxml','./user.vue.wxml'];d_[x[0]]={}
+var x=['./common/slots.wxml','/components/uni-icon/uni-icon.vue.wxml','/components/uni-list/uni-list.vue.wxml','/components/uni-list-item/uni-list-item.vue.wxml','/pages/main/shop/goods.vue.wxml','/pages/main/shop/judgement.vue.wxml','/pages/main/shop/shop-info.vue.wxml','./components/m-icon/m-icon.vue.wxml','./components/m-input.vue.wxml','/components/m-icon/m-icon.vue.wxml','./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./components/uni-badge/uni-badge.vue.wxml','./components/uni-icon/uni-icon.vue.wxml','./components/uni-list-item/uni-list-item.vue.wxml','/components/uni-badge/uni-badge.vue.wxml','./components/uni-list/uni-list.vue.wxml','/common/slots.wxml','./pages/HM-search/HM-search.vue.wxml','/components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./pages/HM-search/HM-search.wxml','./HM-search.vue.wxml','./pages/login/login.vue.wxml','/components/m-input.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/main/main.vue.wxml','./pages/main/main.wxml','./main.vue.wxml','./pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/goods.vue.wxml','/pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/judgement.vue.wxml','./pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.vue.wxml','./pages/main/shop/shop.wxml','./shop.vue.wxml','./pages/order/order.vue.wxml','./pages/order/order.wxml','./order.vue.wxml','./pages/pwd/pwd.vue.wxml','./pages/pwd/pwd.wxml','./pwd.vue.wxml','./pages/reg/reg.vue.wxml','./pages/reg/reg.wxml','./reg.vue.wxml','./pages/shoppingcart/shoppingcart.vue.wxml','./pages/shoppingcart/shoppingcart.wxml','./shoppingcart.vue.wxml','./pages/user/user.vue.wxml','./pages/user/user.wxml','./user.vue.wxml'];d_[x[0]]={}
 d_[x[0]]["7d3c43dd-default-7d3c43dd-7"]=function(e,s,r,gg){
 var z=gz$gwx_1()
 var b=x[0]+':7d3c43dd-default-7d3c43dd-7'
@@ -1479,7 +1479,7 @@ p_[b]=true
 try{
 var oB=_v()
 _(r,oB)
-cs.push("./common/slots.wxml:template:5:47")
+cs.push("./common/slots.wxml:template:8:47")
 var xC=_oz(z,2,e,s,gg)
 var oD=_gd(x[0],xC,e_,d_)
 if(oD){
@@ -1489,11 +1489,11 @@ oB.wxXCkey=3
 oD(fE,fE,oB,gg)
 gg.f=cur_globalf
 }
-else _w(xC,x[0],5,198)
+else _w(xC,x[0],8,198)
 cs.pop()
 var cF=_v()
 _(r,cF)
-cs.push("./common/slots.wxml:template:5:221")
+cs.push("./common/slots.wxml:template:8:221")
 var hG=_oz(z,6,e,s,gg)
 var oH=_gd(x[0],hG,e_,d_)
 if(oH){
@@ -1503,11 +1503,11 @@ cF.wxXCkey=3
 oH(cI,cI,cF,gg)
 gg.f=cur_globalf
 }
-else _w(hG,x[0],5,375)
+else _w(hG,x[0],8,375)
 cs.pop()
 var oJ=_v()
 _(r,oJ)
-cs.push("./common/slots.wxml:template:5:398")
+cs.push("./common/slots.wxml:template:8:398")
 var lK=_oz(z,10,e,s,gg)
 var aL=_gd(x[0],lK,e_,d_)
 if(aL){
@@ -1517,11 +1517,11 @@ oJ.wxXCkey=3
 aL(tM,tM,oJ,gg)
 gg.f=cur_globalf
 }
-else _w(lK,x[0],5,552)
+else _w(lK,x[0],8,552)
 cs.pop()
 var eN=_v()
 _(r,eN)
-cs.push("./common/slots.wxml:template:5:575")
+cs.push("./common/slots.wxml:template:8:575")
 var bO=_oz(z,14,e,s,gg)
 var oP=_gd(x[0],bO,e_,d_)
 if(oP){
@@ -1531,11 +1531,11 @@ eN.wxXCkey=3
 oP(xQ,xQ,eN,gg)
 gg.f=cur_globalf
 }
-else _w(bO,x[0],5,726)
+else _w(bO,x[0],8,726)
 cs.pop()
 var oR=_v()
 _(r,oR)
-cs.push("./common/slots.wxml:template:5:749")
+cs.push("./common/slots.wxml:template:8:749")
 var fS=_oz(z,18,e,s,gg)
 var cT=_gd(x[0],fS,e_,d_)
 if(cT){
@@ -1545,11 +1545,11 @@ oR.wxXCkey=3
 cT(hU,hU,oR,gg)
 gg.f=cur_globalf
 }
-else _w(fS,x[0],5,900)
+else _w(fS,x[0],8,900)
 cs.pop()
 var oV=_v()
 _(r,oV)
-cs.push("./common/slots.wxml:template:5:923")
+cs.push("./common/slots.wxml:template:8:923")
 var cW=_oz(z,22,e,s,gg)
 var oX=_gd(x[0],cW,e_,d_)
 if(oX){
@@ -1559,7 +1559,7 @@ oV.wxXCkey=3
 oX(lY,lY,oV,gg)
 gg.f=cur_globalf
 }
-else _w(cW,x[0],5,1077)
+else _w(cW,x[0],8,1077)
 cs.pop()
 }catch(err){
 p_[b]=false
@@ -1574,19 +1574,25 @@ var oB=e_[x[0]].i
 _ai(oB,x[1],e_,x[0],1,1)
 _ai(oB,x[2],e_,x[0],2,2)
 _ai(oB,x[3],e_,x[0],3,2)
+_ai(oB,x[4],e_,x[0],4,2)
+_ai(oB,x[5],e_,x[0],5,2)
+_ai(oB,x[6],e_,x[0],6,2)
+oB.pop()
+oB.pop()
+oB.pop()
 oB.pop()
 oB.pop()
 oB.pop()
 return r
 }
-e_[x[0]]={f:m0,j:[],i:[],ti:[x[1],x[2],x[3]],ic:[]}
-d_[x[4]]={}
-d_[x[4]]["3df31add"]=function(e,s,r,gg){
+e_[x[0]]={f:m0,j:[],i:[],ti:[x[1],x[2],x[3],x[4],x[5],x[6]],ic:[]}
+d_[x[7]]={}
+d_[x[7]]["3df31add"]=function(e,s,r,gg){
 var z=gz$gwx_2()
-var b=x[4]+':3df31add'
+var b=x[7]+':3df31add'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/m-icon/m-icon.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[4]);return}
+if(p_[b]){_wl(b,x[7]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1600,14 +1606,14 @@ var m1=function(e,s,r,gg){
 var z=gz$gwx_2()
 return r
 }
-e_[x[4]]={f:m1,j:[],i:[],ti:[],ic:[]}
-d_[x[5]]={}
-d_[x[5]]["2d9ace10"]=function(e,s,r,gg){
+e_[x[7]]={f:m1,j:[],i:[],ti:[],ic:[]}
+d_[x[8]]={}
+d_[x[8]]["2d9ace10"]=function(e,s,r,gg){
 var z=gz$gwx_3()
-var b=x[5]+':2d9ace10'
+var b=x[8]+':2d9ace10'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/m-input.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[5]);return}
+if(p_[b]){_wl(b,x[8]);return}
 p_[b]=true
 try{
 cs.push("./components/m-input.vue.wxml:view:1:78")
@@ -1621,7 +1627,7 @@ var fE=_v()
 _(xC,fE)
 cs.push("./components/m-input.vue.wxml:template:1:521")
 var cF=_oz(z,8,e,s,gg)
-var hG=_gd(x[5],cF,e_,d_)
+var hG=_gd(x[8],cF,e_,d_)
 if(hG){
 var oH=_1z(z,5,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1629,7 +1635,7 @@ fE.wxXCkey=3
 hG(oH,oH,fE,gg)
 gg.f=cur_globalf
 }
-else _w(cF,x[5],1,706)
+else _w(cF,x[8],1,706)
 cs.pop()
 cs.pop()
 }
@@ -1641,7 +1647,7 @@ var cI=_v()
 _(oD,cI)
 cs.push("./components/m-input.vue.wxml:template:1:803")
 var oJ=_oz(z,16,e,s,gg)
-var lK=_gd(x[5],oJ,e_,d_)
+var lK=_gd(x[8],oJ,e_,d_)
 if(lK){
 var aL=_1z(z,13,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1649,7 +1655,7 @@ cI.wxXCkey=3
 lK(aL,aL,cI,gg)
 gg.f=cur_globalf
 }
-else _w(oJ,x[5],1,970)
+else _w(oJ,x[8],1,970)
 cs.pop()
 cs.pop()
 }
@@ -1666,19 +1672,19 @@ return r
 }
 var m2=function(e,s,r,gg){
 var z=gz$gwx_3()
-var fE=e_[x[5]].i
-_ai(fE,x[6],e_,x[5],1,1)
+var fE=e_[x[8]].i
+_ai(fE,x[9],e_,x[8],1,1)
 fE.pop()
 return r
 }
-e_[x[5]]={f:m2,j:[],i:[],ti:[x[6]],ic:[]}
-d_[x[7]]={}
-d_[x[7]]["98b6b736"]=function(e,s,r,gg){
+e_[x[8]]={f:m2,j:[],i:[],ti:[x[9]],ic:[]}
+d_[x[10]]={}
+d_[x[10]]["98b6b736"]=function(e,s,r,gg){
 var z=gz$gwx_4()
-var b=x[7]+':98b6b736'
+var b=x[10]+':98b6b736'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[7]);return}
+if(p_[b]){_wl(b,x[10]);return}
 p_[b]=true
 try{
 cs.push("./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml:view:1:27")
@@ -1715,14 +1721,14 @@ var m3=function(e,s,r,gg){
 var z=gz$gwx_4()
 return r
 }
-e_[x[7]]={f:m3,j:[],i:[],ti:[],ic:[]}
-d_[x[8]]={}
-d_[x[8]]["3ccfe3cb"]=function(e,s,r,gg){
+e_[x[10]]={f:m3,j:[],i:[],ti:[],ic:[]}
+d_[x[11]]={}
+d_[x[11]]["3ccfe3cb"]=function(e,s,r,gg){
 var z=gz$gwx_5()
-var b=x[8]+':3ccfe3cb'
+var b=x[11]+':3ccfe3cb'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-badge/uni-badge.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[8]);return}
+if(p_[b]){_wl(b,x[11]);return}
 p_[b]=true
 try{
 var oB=_v()
@@ -1743,14 +1749,14 @@ var m4=function(e,s,r,gg){
 var z=gz$gwx_5()
 return r
 }
-e_[x[8]]={f:m4,j:[],i:[],ti:[],ic:[]}
-d_[x[9]]={}
-d_[x[9]]["2eadb6fd"]=function(e,s,r,gg){
+e_[x[11]]={f:m4,j:[],i:[],ti:[],ic:[]}
+d_[x[12]]={}
+d_[x[12]]["2eadb6fd"]=function(e,s,r,gg){
 var z=gz$gwx_6()
-var b=x[9]+':2eadb6fd'
+var b=x[12]+':2eadb6fd'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-icon/uni-icon.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[9]);return}
+if(p_[b]){_wl(b,x[12]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1764,14 +1770,14 @@ var m5=function(e,s,r,gg){
 var z=gz$gwx_6()
 return r
 }
-e_[x[9]]={f:m5,j:[],i:[],ti:[],ic:[]}
-d_[x[10]]={}
-d_[x[10]]["2dcafb89"]=function(e,s,r,gg){
+e_[x[12]]={f:m5,j:[],i:[],ti:[],ic:[]}
+d_[x[13]]={}
+d_[x[13]]["2dcafb89"]=function(e,s,r,gg){
 var z=gz$gwx_7()
-var b=x[10]+':2dcafb89'
+var b=x[13]+':2dcafb89'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list-item/uni-list-item.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[10]);return}
+if(p_[b]){_wl(b,x[13]);return}
 p_[b]=true
 try{
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:view:1:139")
@@ -1791,7 +1797,7 @@ var hG=_v()
 _(oD,hG)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:795")
 var oH=_oz(z,10,e,s,gg)
-var cI=_gd(x[10],oH,e_,d_)
+var cI=_gd(x[13],oH,e_,d_)
 if(cI){
 var oJ=_1z(z,9,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1799,7 +1805,7 @@ hG.wxXCkey=3
 cI(oJ,oJ,hG,gg)
 gg.f=cur_globalf
 }
-else _w(oH,x[10],1,866)
+else _w(oH,x[13],1,866)
 cs.pop()
 cs.pop()
 }
@@ -1824,7 +1830,7 @@ var bO=_v()
 _(aL,bO)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:1315")
 var oP=_oz(z,16,e,s,gg)
-var xQ=_gd(x[10],oP,e_,d_)
+var xQ=_gd(x[13],oP,e_,d_)
 if(xQ){
 var oR=_1z(z,15,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1832,7 +1838,7 @@ bO.wxXCkey=3
 xQ(oR,oR,bO,gg)
 gg.f=cur_globalf
 }
-else _w(oP,x[10],1,1441)
+else _w(oP,x[13],1,1441)
 cs.pop()
 cs.pop()
 }
@@ -1850,7 +1856,7 @@ var fS=_v()
 _(eN,fS)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:1686")
 var cT=_oz(z,21,e,s,gg)
-var hU=_gd(x[10],cT,e_,d_)
+var hU=_gd(x[13],cT,e_,d_)
 if(hU){
 var oV=_1z(z,20,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1858,7 +1864,7 @@ fS.wxXCkey=3
 hU(oV,oV,fS,gg)
 gg.f=cur_globalf
 }
-else _w(cT,x[10],1,1853)
+else _w(cT,x[13],1,1853)
 cs.pop()
 cs.pop()
 }
@@ -1885,21 +1891,21 @@ return r
 }
 var m6=function(e,s,r,gg){
 var z=gz$gwx_7()
-var oJ=e_[x[10]].i
-_ai(oJ,x[1],e_,x[10],1,1)
-_ai(oJ,x[11],e_,x[10],1,56)
+var oJ=e_[x[13]].i
+_ai(oJ,x[1],e_,x[13],1,1)
+_ai(oJ,x[14],e_,x[13],1,56)
 oJ.pop()
 oJ.pop()
 return r
 }
-e_[x[10]]={f:m6,j:[],i:[],ti:[x[1],x[11]],ic:[]}
-d_[x[12]]={}
-d_[x[12]]["35ad909d"]=function(e,s,r,gg){
+e_[x[13]]={f:m6,j:[],i:[],ti:[x[1],x[14]],ic:[]}
+d_[x[15]]={}
+d_[x[15]]["35ad909d"]=function(e,s,r,gg){
 var z=gz$gwx_8()
-var b=x[12]+':35ad909d'
+var b=x[15]+':35ad909d'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list/uni-list.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[12]);return}
+if(p_[b]){_wl(b,x[15]);return}
 p_[b]=true
 try{
 cs.push("./components/uni-list/uni-list.vue.wxml:view:1:62")
@@ -1909,7 +1915,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./components/uni-list/uni-list.vue.wxml:template:1:136")
 var oD=_oz(z,4,e,s,gg)
-var fE=_gd(x[12],oD,e_,d_)
+var fE=_gd(x[15],oD,e_,d_)
 if(fE){
 var cF=_1z(z,3,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1917,7 +1923,7 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[12],1,194)
+else _w(oD,x[15],1,194)
 cs.pop()
 cs.pop()
 _(r,oB)
@@ -1928,12 +1934,12 @@ throw err
 p_[b]=false
 return r
 }
-d_[x[12]]["default"]=function(e,s,r,gg){
+d_[x[15]]["default"]=function(e,s,r,gg){
 var z=gz$gwx_8()
-var b=x[12]+':default'
+var b=x[15]+':default'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list/uni-list.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[12]);return}
+if(p_[b]){_wl(b,x[15]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1945,19 +1951,19 @@ return r
 }
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var aL=e_[x[12]].i
-_ai(aL,x[13],e_,x[12],1,1)
+var aL=e_[x[15]].i
+_ai(aL,x[16],e_,x[15],1,1)
 aL.pop()
 return r
 }
-e_[x[12]]={f:m7,j:[],i:[],ti:[x[13]],ic:[]}
-d_[x[14]]={}
-d_[x[14]]["5f6deb42"]=function(e,s,r,gg){
+e_[x[15]]={f:m7,j:[],i:[],ti:[x[16]],ic:[]}
+d_[x[17]]={}
+d_[x[17]]["5f6deb42"]=function(e,s,r,gg){
 var z=gz$gwx_9()
-var b=x[14]+':5f6deb42'
+var b=x[17]+':5f6deb42'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/HM-search/HM-search.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[14]);return}
+if(p_[b]){_wl(b,x[17]);return}
 p_[b]=true
 try{
 cs.push("./pages/HM-search/HM-search.vue.wxml:view:1:116")
@@ -1967,7 +1973,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./pages/HM-search/HM-search.vue.wxml:template:1:193")
 var oD=_oz(z,10,e,s,gg)
-var fE=_gd(x[14],oD,e_,d_)
+var fE=_gd(x[17],oD,e_,d_)
 if(fE){
 var cF=_1z(z,7,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1975,7 +1981,7 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[14],1,453)
+else _w(oD,x[17],1,453)
 cs.pop()
 cs.push("./pages/HM-search/HM-search.vue.wxml:view:1:483")
 var hG=_mz(z,'view',['bindtouchstart',12,'class',1,'data-comkey',2,'data-eventid',3],[],e,s,gg)
@@ -1999,22 +2005,22 @@ return r
 }
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var eN=e_[x[14]].i
-_ai(eN,x[15],e_,x[14],1,1)
+var eN=e_[x[17]].i
+_ai(eN,x[18],e_,x[17],1,1)
 eN.pop()
 return r
 }
-e_[x[14]]={f:m8,j:[],i:[],ti:[x[15]],ic:[]}
-d_[x[16]]={}
+e_[x[17]]={f:m8,j:[],i:[],ti:[x[18]],ic:[]}
+d_[x[19]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var oP=e_[x[16]].i
-_ai(oP,x[17],e_,x[16],1,1)
+var oP=e_[x[19]].i
+_ai(oP,x[20],e_,x[19],1,1)
 var xQ=_v()
 _(r,xQ)
 cs.push("./pages/HM-search/HM-search.wxml:template:2:6")
 var oR=_oz(z,1,e,s,gg)
-var fS=_gd(x[16],oR,e_,d_)
+var fS=_gd(x[19],oR,e_,d_)
 if(fS){
 var cT=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2022,19 +2028,19 @@ xQ.wxXCkey=3
 fS(cT,cT,xQ,gg)
 gg.f=cur_globalf
 }
-else _w(oR,x[16],2,18)
+else _w(oR,x[19],2,18)
 cs.pop()
 oP.pop()
 return r
 }
-e_[x[16]]={f:m9,j:[],i:[],ti:[x[17]],ic:[]}
-d_[x[18]]={}
-d_[x[18]]["20802211"]=function(e,s,r,gg){
+e_[x[19]]={f:m9,j:[],i:[],ti:[x[20]],ic:[]}
+d_[x[21]]={}
+d_[x[21]]["20802211"]=function(e,s,r,gg){
 var z=gz$gwx_11()
-var b=x[18]+':20802211'
+var b=x[21]+':20802211'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/login/login.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[18]);return}
+if(p_[b]){_wl(b,x[21]);return}
 p_[b]=true
 try{
 cs.push("./pages/login/login.vue.wxml:view:1:72")
@@ -2047,7 +2053,7 @@ var fE=_v()
 _(oD,fE)
 cs.push("./pages/login/login.vue.wxml:template:1:247")
 var cF=_oz(z,7,e,s,gg)
-var hG=_gd(x[18],cF,e_,d_)
+var hG=_gd(x[21],cF,e_,d_)
 if(hG){
 var oH=_1z(z,4,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2055,13 +2061,13 @@ fE.wxXCkey=3
 hG(oH,oH,fE,gg)
 gg.f=cur_globalf
 }
-else _w(cF,x[18],1,474)
+else _w(cF,x[21],1,474)
 cs.pop()
 var cI=_v()
 _(oD,cI)
 cs.push("./pages/login/login.vue.wxml:template:1:594")
 var oJ=_oz(z,15,e,s,gg)
-var lK=_gd(x[18],oJ,e_,d_)
+var lK=_gd(x[21],oJ,e_,d_)
 if(lK){
 var aL=_1z(z,12,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2069,7 +2075,7 @@ cI.wxXCkey=3
 lK(aL,aL,cI,gg)
 gg.f=cur_globalf
 }
-else _w(oJ,x[18],1,822)
+else _w(oJ,x[21],1,822)
 cs.pop()
 cs.pop()
 _(oB,oD)
@@ -2091,22 +2097,22 @@ return r
 }
 var m10=function(e,s,r,gg){
 var z=gz$gwx_11()
-var oV=e_[x[18]].i
-_ai(oV,x[19],e_,x[18],1,1)
+var oV=e_[x[21]].i
+_ai(oV,x[22],e_,x[21],1,1)
 oV.pop()
 return r
 }
-e_[x[18]]={f:m10,j:[],i:[],ti:[x[19]],ic:[]}
-d_[x[20]]={}
+e_[x[21]]={f:m10,j:[],i:[],ti:[x[22]],ic:[]}
+d_[x[23]]={}
 var m11=function(e,s,r,gg){
 var z=gz$gwx_12()
-var oX=e_[x[20]].i
-_ai(oX,x[21],e_,x[20],1,1)
+var oX=e_[x[23]].i
+_ai(oX,x[24],e_,x[23],1,1)
 var lY=_v()
 _(r,lY)
 cs.push("./pages/login/login.wxml:template:2:6")
 var aZ=_oz(z,1,e,s,gg)
-var t1=_gd(x[20],aZ,e_,d_)
+var t1=_gd(x[23],aZ,e_,d_)
 if(t1){
 var e2=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2114,19 +2120,19 @@ lY.wxXCkey=3
 t1(e2,e2,lY,gg)
 gg.f=cur_globalf
 }
-else _w(aZ,x[20],2,18)
+else _w(aZ,x[23],2,18)
 cs.pop()
 oX.pop()
 return r
 }
-e_[x[20]]={f:m11,j:[],i:[],ti:[x[21]],ic:[]}
-d_[x[22]]={}
-d_[x[22]]["5a05489d"]=function(e,s,r,gg){
+e_[x[23]]={f:m11,j:[],i:[],ti:[x[24]],ic:[]}
+d_[x[25]]={}
+d_[x[25]]["5a05489d"]=function(e,s,r,gg){
 var z=gz$gwx_13()
-var b=x[22]+':5a05489d'
+var b=x[25]+':5a05489d'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/main.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[22]);return}
+if(p_[b]){_wl(b,x[25]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2140,17 +2146,17 @@ var m12=function(e,s,r,gg){
 var z=gz$gwx_13()
 return r
 }
-e_[x[22]]={f:m12,j:[],i:[],ti:[],ic:[]}
-d_[x[23]]={}
+e_[x[25]]={f:m12,j:[],i:[],ti:[],ic:[]}
+d_[x[26]]={}
 var m13=function(e,s,r,gg){
 var z=gz$gwx_14()
-var x5=e_[x[23]].i
-_ai(x5,x[24],e_,x[23],1,1)
+var x5=e_[x[26]].i
+_ai(x5,x[27],e_,x[26],1,1)
 var o6=_v()
 _(r,o6)
 cs.push("./pages/main/main.wxml:template:2:6")
 var f7=_oz(z,1,e,s,gg)
-var c8=_gd(x[23],f7,e_,d_)
+var c8=_gd(x[26],f7,e_,d_)
 if(c8){
 var h9=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2158,19 +2164,19 @@ o6.wxXCkey=3
 c8(h9,h9,o6,gg)
 gg.f=cur_globalf
 }
-else _w(f7,x[23],2,18)
+else _w(f7,x[26],2,18)
 cs.pop()
 x5.pop()
 return r
 }
-e_[x[23]]={f:m13,j:[],i:[],ti:[x[24]],ic:[]}
-d_[x[25]]={}
-d_[x[25]]["5ff52036"]=function(e,s,r,gg){
+e_[x[26]]={f:m13,j:[],i:[],ti:[x[27]],ic:[]}
+d_[x[28]]={}
+d_[x[28]]["5ff52036"]=function(e,s,r,gg){
 var z=gz$gwx_15()
-var b=x[25]+':5ff52036'
+var b=x[28]+':5ff52036'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/cartcontrol/cartcontrol.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[25]);return}
+if(p_[b]){_wl(b,x[28]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2184,14 +2190,14 @@ var m14=function(e,s,r,gg){
 var z=gz$gwx_15()
 return r
 }
-e_[x[25]]={f:m14,j:[],i:[],ti:[],ic:[]}
-d_[x[26]]={}
-d_[x[26]]["2ae02ee1"]=function(e,s,r,gg){
+e_[x[28]]={f:m14,j:[],i:[],ti:[],ic:[]}
+d_[x[29]]={}
+d_[x[29]]["2ae02ee1"]=function(e,s,r,gg){
 var z=gz$gwx_16()
-var b=x[26]+':2ae02ee1'
+var b=x[29]+':2ae02ee1'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/goods.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[26]);return}
+if(p_[b]){_wl(b,x[29]);return}
 p_[b]=true
 try{
 var oB=_v()
@@ -2202,7 +2208,7 @@ var oH=_v()
 _(cF,oH)
 cs.push("./pages/main/shop/goods.vue.wxml:template:1:1216")
 var cI=_oz(z,6,fE,oD,gg)
-var oJ=_gd(x[26],cI,e_,d_)
+var oJ=_gd(x[29],cI,e_,d_)
 if(oJ){
 var lK=_1z(z,5,fE,oD,gg) || {}
 var cur_globalf=gg.f
@@ -2210,7 +2216,7 @@ oH.wxXCkey=3
 oJ(lK,lK,oH,gg)
 gg.f=cur_globalf
 }
-else _w(cI,x[26],1,1294)
+else _w(cI,x[29],1,1294)
 cs.pop()
 return cF
 }
@@ -2226,19 +2232,19 @@ return r
 }
 var m15=function(e,s,r,gg){
 var z=gz$gwx_16()
-var oBB=e_[x[26]].i
-_ai(oBB,x[27],e_,x[26],1,1)
+var oBB=e_[x[29]].i
+_ai(oBB,x[30],e_,x[29],1,1)
 oBB.pop()
 return r
 }
-e_[x[26]]={f:m15,j:[],i:[],ti:[x[27]],ic:[]}
-d_[x[28]]={}
-d_[x[28]]["3a37fb00"]=function(e,s,r,gg){
+e_[x[29]]={f:m15,j:[],i:[],ti:[x[30]],ic:[]}
+d_[x[31]]={}
+d_[x[31]]["3a37fb00"]=function(e,s,r,gg){
 var z=gz$gwx_17()
-var b=x[28]+':3a37fb00'
+var b=x[31]+':3a37fb00'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/judgement.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[28]);return}
+if(p_[b]){_wl(b,x[31]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2252,14 +2258,14 @@ var m16=function(e,s,r,gg){
 var z=gz$gwx_17()
 return r
 }
-e_[x[28]]={f:m16,j:[],i:[],ti:[],ic:[]}
-d_[x[29]]={}
-d_[x[29]]["7c59ef30"]=function(e,s,r,gg){
+e_[x[31]]={f:m16,j:[],i:[],ti:[],ic:[]}
+d_[x[32]]={}
+d_[x[32]]["7c59ef30"]=function(e,s,r,gg){
 var z=gz$gwx_18()
-var b=x[29]+':7c59ef30'
+var b=x[32]+':7c59ef30'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/shop-info.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[29]);return}
+if(p_[b]){_wl(b,x[32]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2273,29 +2279,29 @@ var m17=function(e,s,r,gg){
 var z=gz$gwx_18()
 return r
 }
-e_[x[29]]={f:m17,j:[],i:[],ti:[],ic:[]}
-d_[x[30]]={}
-d_[x[30]]["c362b3ea"]=function(e,s,r,gg){
+e_[x[32]]={f:m17,j:[],i:[],ti:[],ic:[]}
+d_[x[33]]={}
+d_[x[33]]["c362b3ea"]=function(e,s,r,gg){
 var z=gz$gwx_19()
-var b=x[30]+':c362b3ea'
+var b=x[33]+':c362b3ea'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/shop.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[30]);return}
+if(p_[b]){_wl(b,x[33]);return}
 p_[b]=true
 try{
-cs.push("./pages/main/shop/shop.vue.wxml:view:1:946")
+cs.push("./pages/main/shop/shop.vue.wxml:view:1:988")
 var oB=_n('view')
 _rz(z,oB,'class',1,e,s,gg)
 var xC=_v()
 _(oB,xC)
-cs.push("./pages/main/shop/shop.vue.wxml:view:1:1029")
+cs.push("./pages/main/shop/shop.vue.wxml:view:1:1071")
 var oD=function(cF,fE,hG,gg){
-cs.push("./pages/main/shop/shop.vue.wxml:view:1:1146")
+cs.push("./pages/main/shop/shop.vue.wxml:view:1:1188")
 var cI=_mz(z,'view',['bindtap',6,'class',1,'data-comkey',2,'data-eventid',3],[],cF,fE,gg)
 var oJ=_v()
 _(cI,oJ)
 if(_oz(z,10,cF,fE,gg)){oJ.wxVkey=1
-cs.push("./pages/main/shop/shop.vue.wxml:view:1:1266")
+cs.push("./pages/main/shop/shop.vue.wxml:view:1:1308")
 cs.pop()
 }
 oJ.wxXCkey=1
@@ -2306,13 +2312,13 @@ return hG
 xC.wxXCkey=2
 _2z(z,4,oD,e,s,gg,xC,'tab','index','index')
 cs.pop()
-cs.push("./pages/main/shop/shop.vue.wxml:swiper:1:1422")
+cs.push("./pages/main/shop/shop.vue.wxml:swiper:1:1464")
 var lK=_mz(z,'swiper',['autoplay',11,'bindchange',1,'class',2,'current',3,'data-comkey',4,'data-eventid',5],[],e,s,gg)
 var aL=_v()
 _(lK,aL)
-cs.push("./pages/main/shop/shop.vue.wxml:template:1:1633")
+cs.push("./pages/main/shop/shop.vue.wxml:template:1:1675")
 var tM=_oz(z,18,e,s,gg)
-var eN=_gd(x[30],tM,e_,d_)
+var eN=_gd(x[33],tM,e_,d_)
 if(eN){
 var bO=_1z(z,17,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2320,13 +2326,13 @@ aL.wxXCkey=3
 eN(bO,bO,aL,gg)
 gg.f=cur_globalf
 }
-else _w(tM,x[30],1,1704)
+else _w(tM,x[33],1,1746)
 cs.pop()
 var oP=_v()
 _(lK,oP)
-cs.push("./pages/main/shop/shop.vue.wxml:template:1:1784")
+cs.push("./pages/main/shop/shop.vue.wxml:template:1:1826")
 var xQ=_oz(z,20,e,s,gg)
-var oR=_gd(x[30],xQ,e_,d_)
+var oR=_gd(x[33],xQ,e_,d_)
 if(oR){
 var fS=_1z(z,19,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2334,13 +2340,13 @@ oP.wxXCkey=3
 oR(fS,fS,oP,gg)
 gg.f=cur_globalf
 }
-else _w(xQ,x[30],1,1855)
+else _w(xQ,x[33],1,1897)
 cs.pop()
 var cT=_v()
 _(lK,cT)
-cs.push("./pages/main/shop/shop.vue.wxml:template:1:1935")
+cs.push("./pages/main/shop/shop.vue.wxml:template:1:1977")
 var hU=_oz(z,22,e,s,gg)
-var oV=_gd(x[30],hU,e_,d_)
+var oV=_gd(x[33],hU,e_,d_)
 if(oV){
 var cW=_1z(z,21,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2348,7 +2354,7 @@ cT.wxXCkey=3
 oV(cW,cW,cT,gg)
 gg.f=cur_globalf
 }
-else _w(hU,x[30],1,2006)
+else _w(hU,x[33],1,2048)
 cs.pop()
 cs.pop()
 _(oB,lK)
@@ -2363,16 +2369,16 @@ return r
 }
 var m18=function(e,s,r,gg){
 var z=gz$gwx_19()
-var eFB=e_[x[30]].i
-_ai(eFB,x[31],e_,x[30],1,1)
-_ai(eFB,x[32],e_,x[30],1,49)
-_ai(eFB,x[33],e_,x[30],1,101)
+var eFB=e_[x[33]].i
+_ai(eFB,x[4],e_,x[33],1,1)
+_ai(eFB,x[5],e_,x[33],1,49)
+_ai(eFB,x[6],e_,x[33],1,101)
 eFB.pop()
 eFB.pop()
 eFB.pop()
 return r
 }
-e_[x[30]]={f:m18,j:[],i:[],ti:[x[31],x[32],x[33]],ic:[]}
+e_[x[33]]={f:m18,j:[],i:[],ti:[x[4],x[5],x[6]],ic:[]}
 d_[x[34]]={}
 var m19=function(e,s,r,gg){
 var z=gz$gwx_20()
@@ -2473,11 +2479,11 @@ return r
 var m22=function(e,s,r,gg){
 var z=gz$gwx_23()
 var bUB=e_[x[39]].i
-_ai(bUB,x[19],e_,x[39],1,1)
+_ai(bUB,x[22],e_,x[39],1,1)
 bUB.pop()
 return r
 }
-e_[x[39]]={f:m22,j:[],i:[],ti:[x[19]],ic:[]}
+e_[x[39]]={f:m22,j:[],i:[],ti:[x[22]],ic:[]}
 d_[x[40]]={}
 var m23=function(e,s,r,gg){
 var z=gz$gwx_24()
@@ -2567,11 +2573,11 @@ return r
 var m24=function(e,s,r,gg){
 var z=gz$gwx_25()
 var c3B=e_[x[42]].i
-_ai(c3B,x[19],e_,x[42],1,1)
+_ai(c3B,x[22],e_,x[42],1,1)
 c3B.pop()
 return r
 }
-e_[x[42]]={f:m24,j:[],i:[],ti:[x[19]],ic:[]}
+e_[x[42]]={f:m24,j:[],i:[],ti:[x[22]],ic:[]}
 d_[x[43]]={}
 var m25=function(e,s,r,gg){
 var z=gz$gwx_26()
@@ -3303,6 +3309,18 @@ eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, 
 
 /***/ }),
 
+/***/ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js":
+/*!******************************************************************!*\
+  !*** /Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function(uni) {var baseUrl = 'http://47.94.209.108:7002/client/';\nvar getReqest = function getReqest(url, params, cb) {\n  uni.request({\n    url: baseUrl + url,\n    data: params,\n    method: 'GET',\n    success: function success(res) {\n      var data = res.data;\n      if (data.status === 'ok') {\n        cb(data.data);\n        console.log('success ##', data);\n      } else\n      {\n        uni.showToast({\n          title: data.message });\n\n      }\n    } });\n\n};\nvar postRequest = function postRequest(url, params, cb) {\n  uni.request({\n    url: baseUrl + url,\n    data: params,\n    method: 'POST',\n    success: function success(res) {\n      cb(res);\n    },\n    fail: function fail(e) {\n\n    } });\n\n};\nmodule.exports = {\n  getReqest: getReqest,\n  postRequest: postRequest };\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///util/network.js?aa7c");
+
+/***/ }),
+
 /***/ "./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js":
 /*!*********************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js ***!
@@ -3636,18 +3654,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App
 
 /***/ }),
 
-/***/ "../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js":
-/*!******************************************************************!*\
-  !*** /Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("/* WEBPACK VAR INJECTION */(function(uni) {var baseUrl = 'http://47.94.209.108:7002/client/';\nvar getReqest = function getReqest(url, params, cb) {\n  uni.request({\n    url: baseUrl + url,\n    data: params,\n    method: 'GET',\n    success: function success(res) {\n      var data = res.data;\n      if (data.status === 'ok') {\n        cb(data.data);\n        console.log('success ##', data);\n      } else\n      {\n        uni.showToast({\n          title: data.message });\n\n      }\n    } });\n\n};\nvar postRequest = function postRequest(url, params, cb) {\n  uni.request({\n    url: baseUrl + url,\n    data: params,\n    method: 'POST',\n    success: function success(res) {\n      cb(res);\n    },\n    fail: function fail(e) {\n\n    } });\n\n};\nmodule.exports = {\n  getReqest: getReqest,\n  postRequest: postRequest };\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///util/network.js?aa7c");
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!/Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=script&lang=js& ***!
@@ -3656,7 +3662,7 @@ eval("/* WEBPACK VAR INJECTION */(function(uni) {var baseUrl = 'http://47.94.209
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");\n\n\nvar _amapWx = _interopRequireDefault(__webpack_require__(/*! @/common/amap-wx.js */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/common/amap-wx.js\"));\nvar _network = __webpack_require__(/*! @/util/network.js */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js\");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =\n\n\n{\n  data: function data() {\n    return {\n      background: ['color1', 'color2', 'color3'],\n      items: [1, 2, 3, 3, 5, 6, 6, 7],\n      amapPlugin: null,\n      key: '72239a17febe0f534f11c5b1fbd8ce4c',\n      addressName: '获取中...',\n      banners: [],\n      shops: [] };\n\n  },\n  methods: {\n    getNearShops: function getNearShops() {\n      var params = {\n        latitude: '20.111111',\n        longitude: '113.09091',\n        page: 1,\n        pageSize: 10 };\n\n      var that = this;\n      (0, _network.getReqest)('shop/nearShops', params, function (res) {\n        console.log('res shop/nearShops###', res);\n        that.shops = res.content;\n      });\n    },\n    getBanner: function getBanner() {\n      var params = {\n        latitude: '20.111111',\n        longitude: '113.09091' };\n\n      var that = this;\n      (0, _network.getReqest)('banner/list', params, function (res) {\n        that.banners = res;\n        console.log('res banner/list###', res);\n      });\n    },\n    goSearch: function goSearch() {\n      uni.navigateTo({\n        url: \"../HM-search/HM-search\" });\n\n    },\n    goShop: function goShop() {\n      uni.navigateTo({\n        url: \"shop/shop\" });\n\n    },\n    getRegeo: function getRegeo() {\n      var that = this;\n      uni.showLoading({\n        title: '获取信息中' });\n\n      this.amapPlugin.getRegeo({\n        success: function success(data) {\n          console.log(data);\n          that.addressName = data[0].name;\n          console.log(\"addressName \", that.addressName);\n          uni.hideLoading();\n        },\n        fail: function fail(e) {\n          uni.hideLoading();\n          console.log(e);\n        } });\n\n    } },\n\n  computed: (0, _vuex.mapState)(['forcedLogin', 'hasLogin', 'userName']),\n  onLoad: function onLoad() {var _this = this;\n    this.amapPlugin = new _amapWx.default.AMapWX({\n      key: this.key });\n\n    if (!this.hasLogin) {\n      uni.showModal({\n        title: '未登录',\n        content: '您未登录，需要登录后才能继续',\n        /**\n                                    * 如果需要强制登录，不显示取消按钮\n                                    */\n        showCancel: !this.forcedLogin,\n        success: function success(res) {\n          if (res.confirm) {\n            /**\n                             * 如果需要强制登录，使用reLaunch方式\n                             */\n            if (_this.forcedLogin) {\n              uni.reLaunch({\n                url: '../login/login' });\n\n            } else {\n              uni.navigateTo({\n                url: '../login/login' });\n\n            }\n          }\n        } });\n\n    }\n    this.getRegeo();\n    this.getBanner();\n    this.getNearShops();\n  } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/main/main.vue?vue&type=script&lang=js&?06e1");
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");\n\n\nvar _amapWx = _interopRequireDefault(__webpack_require__(/*! @/common/amap-wx.js */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/common/amap-wx.js\"));\nvar _network = __webpack_require__(/*! @/util/network.js */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js\");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =\n\n\n{\n  data: function data() {\n    return {\n      background: ['color1', 'color2', 'color3'],\n      items: [1, 2, 3, 3, 5, 6, 6, 7],\n      amapPlugin: null,\n      key: '72239a17febe0f534f11c5b1fbd8ce4c',\n      addressName: '获取中...',\n      banners: [],\n      shops: [] };\n\n  },\n  methods: {\n    getNearShops: function getNearShops() {\n      var params = {\n        latitude: '20.111111',\n        longitude: '113.09091',\n        page: 1,\n        pageSize: 10 };\n\n      var that = this;\n      (0, _network.getReqest)('shop/nearShops', params, function (res) {\n        console.log('res shop/nearShops###', res);\n        that.shops = res.content;\n      });\n    },\n    getBanner: function getBanner() {\n      var params = {\n        latitude: '20.111111',\n        longitude: '113.09091' };\n\n      var that = this;\n      (0, _network.getReqest)('banner/list', params, function (res) {\n        that.banners = res;\n        console.log('res banner/list###', res);\n      });\n    },\n    goSearch: function goSearch() {\n      uni.navigateTo({\n        url: \"../HM-search/HM-search\" });\n\n    },\n    goShop: function goShop(shop) {\n      console.log(shop);\n      uni.navigateTo({\n        url: \"shop/shop?shopId=\" + shop.id });\n\n    },\n    getRegeo: function getRegeo() {\n      var that = this;\n      uni.showLoading({\n        title: '获取信息中' });\n\n      this.amapPlugin.getRegeo({\n        success: function success(data) {\n          console.log(data);\n          that.addressName = data[0].name;\n          console.log(\"addressName \", that.addressName);\n          uni.hideLoading();\n        },\n        fail: function fail(e) {\n          uni.hideLoading();\n          console.log(e);\n        } });\n\n    } },\n\n  computed: (0, _vuex.mapState)(['forcedLogin', 'hasLogin', 'userName']),\n  onLoad: function onLoad() {var _this = this;\n    this.amapPlugin = new _amapWx.default.AMapWX({\n      key: this.key });\n\n    if (!this.hasLogin) {\n      uni.showModal({\n        title: '未登录',\n        content: '您未登录，需要登录后才能继续',\n        /**\n                                    * 如果需要强制登录，不显示取消按钮\n                                    */\n        showCancel: !this.forcedLogin,\n        success: function success(res) {\n          if (res.confirm) {\n            /**\n                             * 如果需要强制登录，使用reLaunch方式\n                             */\n            if (_this.forcedLogin) {\n              uni.reLaunch({\n                url: '../login/login' });\n\n            } else {\n              uni.navigateTo({\n                url: '../login/login' });\n\n            }\n          }\n        } });\n\n    }\n    this.getRegeo();\n    this.getBanner();\n    this.getNearShops();\n  } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/main/main.vue?vue&type=script&lang=js&?06e1");
 
 /***/ }),
 
@@ -3679,7 +3685,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=Users/zhulizhe/De
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"content\" },\n    [\n      _c(\"view\", { staticClass: \"header\" }, [\n        _c(\"view\", { staticClass: \"address-wrapper\" }, [\n          _c(\"view\", { staticClass: \"address-icon\" }),\n          _c(\"view\", { staticClass: \"address\" }, [\n            _vm._v(_vm._s(_vm.addressName))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"search-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"search-box\",\n              attrs: { eventid: \"5a05489d-0\" },\n              on: { click: _vm.goSearch }\n            },\n            [_c(\"view\", { staticClass: \"label\" }, [_vm._v(\"搜索\")])]\n          )\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"banner\" }, [\n        _c(\"view\", { staticClass: \"page-section swiper\" }, [\n          _c(\n            \"view\",\n            { staticClass: \"page-section-spacing\" },\n            [\n              _c(\n                \"swiper\",\n                { staticClass: \"swiper\", attrs: { \"indicator-dots\": \"true\" } },\n                _vm._l(_vm.banners, function(banner, index) {\n                  return _c(\n                    \"block\",\n                    { key: index },\n                    [\n                      _c(\n                        \"swiper-item\",\n                        { attrs: { mpcomid: \"5a05489d-0-\" + index } },\n                        [\n                          _c(\"image\", {\n                            staticClass: \"swiper-item\",\n                            attrs: { src: banner.image, mode: \"scaleToFill\" }\n                          })\n                        ]\n                      )\n                    ],\n                    1\n                  )\n                })\n              )\n            ],\n            1\n          )\n        ])\n      ]),\n      _vm._m(0),\n      _vm._l(_vm.shops, function(shop, index) {\n        return _c(\"view\", { key: index, staticClass: \"shop-info-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"shop-info\",\n              attrs: { eventid: \"5a05489d-1-\" + index },\n              on: { click: _vm.goShop }\n            },\n            [\n              _c(\"image\", {\n                staticClass: \"shop-img\",\n                attrs: { src: shop.imageUrl }\n              }),\n              _c(\"view\", { staticClass: \"shop-info-middle\" }, [\n                _c(\"view\", { staticClass: \"shop-name\" }, [\n                  _vm._v(_vm._s(shop.name))\n                ]),\n                _c(\"view\", { staticClass: \"shop-details\" }, [\n                  _c(\"view\", { staticClass: \"shop-score\" }, [\n                    _c(\"image\", {\n                      attrs: { src: \"../../static/main/star_icon.png\" }\n                    }),\n                    _c(\"view\", { staticClass: \"shop-score-text\" }, [\n                      _vm._v(_vm._s(shop.score))\n                    ])\n                  ]),\n                  _c(\"view\", { staticClass: \"shop-sales-volume\" }, [\n                    _vm._v(\"月售\" + _vm._s(shop.soldAmount))\n                  ])\n                ]),\n                _c(\"view\", { staticClass: \"distribution-num\" }, [\n                  _vm._v(\"起送¥20\")\n                ])\n              ]),\n              _vm._m(1, true)\n            ]\n          )\n        ])\n      })\n    ],\n    2\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"entery\" }, [\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_shooping.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"商超便利\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_fruits.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水果\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", {\n          attrs: { src: \"../../static/main/main_water_check.png\" }\n        }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水质检测\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_water.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"桶装水\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_dinner.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"夜宵\")])\n      ])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-info-right\" }, [\n      _c(\"view\", { staticClass: \"distribution-gap\" }, [_vm._v(\"666m\")]),\n      _c(\"view\", { staticClass: \"distribution-time\" }, [_vm._v(\"30分钟\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=template&id=86b4c236&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"content\" },\n    [\n      _c(\"view\", { staticClass: \"header\" }, [\n        _c(\"view\", { staticClass: \"address-wrapper\" }, [\n          _c(\"view\", { staticClass: \"address-icon\" }),\n          _c(\"view\", { staticClass: \"address\" }, [\n            _vm._v(_vm._s(_vm.addressName))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"search-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"search-box\",\n              attrs: { eventid: \"5a05489d-0\" },\n              on: { click: _vm.goSearch }\n            },\n            [_c(\"view\", { staticClass: \"label\" }, [_vm._v(\"搜索\")])]\n          )\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"banner\" }, [\n        _c(\"view\", { staticClass: \"page-section swiper\" }, [\n          _c(\n            \"view\",\n            { staticClass: \"page-section-spacing\" },\n            [\n              _c(\n                \"swiper\",\n                { staticClass: \"swiper\", attrs: { \"indicator-dots\": \"true\" } },\n                _vm._l(_vm.banners, function(banner, index) {\n                  return _c(\n                    \"block\",\n                    { key: index },\n                    [\n                      _c(\n                        \"swiper-item\",\n                        { attrs: { mpcomid: \"5a05489d-0-\" + index } },\n                        [\n                          _c(\"image\", {\n                            staticClass: \"swiper-item\",\n                            attrs: { src: banner.image, mode: \"scaleToFill\" }\n                          })\n                        ]\n                      )\n                    ],\n                    1\n                  )\n                })\n              )\n            ],\n            1\n          )\n        ])\n      ]),\n      _vm._m(0),\n      _vm._l(_vm.shops, function(shop, index) {\n        return _c(\"view\", { key: index, staticClass: \"shop-info-wrapper\" }, [\n          _c(\n            \"view\",\n            {\n              staticClass: \"shop-info\",\n              attrs: { eventid: \"5a05489d-1-\" + index },\n              on: {\n                click: function($event) {\n                  _vm.goShop(shop)\n                }\n              }\n            },\n            [\n              _c(\"image\", {\n                staticClass: \"shop-img\",\n                attrs: { src: shop.imageUrl }\n              }),\n              _c(\"view\", { staticClass: \"shop-info-middle\" }, [\n                _c(\"view\", { staticClass: \"shop-name\" }, [\n                  _vm._v(_vm._s(shop.name))\n                ]),\n                _c(\"view\", { staticClass: \"shop-details\" }, [\n                  _c(\"view\", { staticClass: \"shop-score\" }, [\n                    _c(\"image\", {\n                      attrs: { src: \"../../static/main/star_icon.png\" }\n                    }),\n                    _c(\"view\", { staticClass: \"shop-score-text\" }, [\n                      _vm._v(_vm._s(shop.score))\n                    ])\n                  ]),\n                  _c(\"view\", { staticClass: \"shop-sales-volume\" }, [\n                    _vm._v(\"月售\" + _vm._s(shop.soldAmount))\n                  ])\n                ]),\n                _c(\"view\", { staticClass: \"distribution-num\" }, [\n                  _vm._v(\"起送¥20\")\n                ])\n              ]),\n              _vm._m(1, true)\n            ]\n          )\n        ])\n      })\n    ],\n    2\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"entery\" }, [\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_shooping.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"商超便利\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_fruits.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水果\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", {\n          attrs: { src: \"../../static/main/main_water_check.png\" }\n        }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"水质检测\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_water.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"桶装水\")])\n      ]),\n      _c(\"view\", { staticClass: \"entery-item\" }, [\n        _c(\"image\", { attrs: { src: \"../../static/main/main_dinner.png\" } }),\n        _c(\"view\", { staticClass: \"entery-text\" }, [_vm._v(\"夜宵\")])\n      ])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-info-right\" }, [\n      _c(\"view\", { staticClass: \"distribution-gap\" }, [_vm._v(\"666m\")]),\n      _c(\"view\", { staticClass: \"distribution-time\" }, [_vm._v(\"30分钟\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/main.vue?vue&type=template&id=86b4c236&");
 
 /***/ })
 
@@ -4816,7 +4822,7 @@ eval("\n\n//# sourceURL=uni-app:///pages/main/shop/shop-info.vue?vue&type=script
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _judgement = _interopRequireDefault(__webpack_require__(/*! ./judgement.vue */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/judgement.vue\"));\nvar _shopInfo = _interopRequireDefault(__webpack_require__(/*! ./shop-info.vue */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/shop-info.vue\"));\nvar _goods = _interopRequireDefault(__webpack_require__(/*! ./goods */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/goods.vue\"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =\n{\n  data: function data() {\n    return {\n      tabs: [{\n        title: '购物',\n        index: 0 },\n\n      {\n        title: '评价',\n        index: 1 },\n\n      {\n        title: '商家',\n        index: 2 }],\n\n\n      activeTabIndex: 0,\n      cart_icon: '../../../static/shop/cart.png' };\n\n  },\n  components: {\n    judgement: _judgement.default,\n    shopInfo: _shopInfo.default,\n    goods: _goods.default },\n\n  methods: {\n    changeTab: function changeTab(index) {\n      this.activeTabIndex = index;\n    },\n    swiperChange: function swiperChange(e) {\n      this.activeTabIndex = e.detail.current;\n    } } };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/main/shop/shop.vue?vue&type=script&lang=js&?3a1f");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _judgement = _interopRequireDefault(__webpack_require__(/*! ./judgement.vue */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/judgement.vue\"));\nvar _shopInfo = _interopRequireDefault(__webpack_require__(/*! ./shop-info.vue */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/shop-info.vue\"));\nvar _goods = _interopRequireDefault(__webpack_require__(/*! ./goods */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/goods.vue\"));\nvar _network = __webpack_require__(/*! @/util/network.js */ \"../../../../../../Users/zhulizhe/Desktop/kuaima/xyy-uni-app/util/network.js\");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =\n\n\n{\n  data: function data() {\n    return {\n      tabs: [{\n        title: '购物',\n        index: 0 },\n\n      {\n        title: '评价',\n        index: 1 },\n\n      {\n        title: '商家',\n        index: 2 }],\n\n\n      activeTabIndex: 0,\n      cart_icon: '../../../static/shop/cart.png',\n      shop: null };\n\n  },\n  components: {\n    judgement: _judgement.default,\n    shopInfo: _shopInfo.default,\n    goods: _goods.default },\n\n  methods: {\n    changeTab: function changeTab(index) {\n      this.activeTabIndex = index;\n    },\n    swiperChange: function swiperChange(e) {\n      this.activeTabIndex = e.detail.current;\n    },\n    initShop: function initShop(shopId) {\n      var that = this;\n      (0, _network.getReqest)('shop/shopInfo/13', {}, function (res) {\n        that.shop = res;\n      });\n    } },\n\n  onLoad: function onLoad(option) {\n    console.log('shopId ', option);\n    this.initShop(option.shopId);\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/main/shop/shop.vue?vue&type=script&lang=js&?3a1f");
 
 /***/ }),
 
@@ -4909,7 +4915,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"content\" }, [\n    _vm._m(0),\n    _c(\n      \"view\",\n      { staticClass: \"shop-content\" },\n      [\n        _c(\n          \"view\",\n          { staticClass: \"tab-wrapper\" },\n          _vm._l(_vm.tabs, function(tab, index) {\n            return _c(\"view\", { key: index }, [\n              _c(\n                \"view\",\n                {\n                  staticClass: \"tab-item\",\n                  attrs: { eventid: \"c362b3ea-0-\" + index },\n                  on: {\n                    click: function($event) {\n                      _vm.changeTab(index)\n                    }\n                  }\n                },\n                [\n                  tab.index === _vm.activeTabIndex\n                    ? _c(\"view\", { staticClass: \"line\" })\n                    : _vm._e(),\n                  _c(\"view\", { staticClass: \"title\" }, [\n                    _vm._v(_vm._s(tab.title))\n                  ])\n                ]\n              )\n            ])\n          })\n        ),\n        _c(\n          \"swiper\",\n          {\n            staticClass: \"swiper\",\n            attrs: {\n              current: _vm.activeTabIndex,\n              autoplay: false,\n              eventid: \"c362b3ea-1\"\n            },\n            on: { change: _vm.swiperChange }\n          },\n          [\n            _c(\n              \"swiper-item\",\n              { attrs: { mpcomid: \"c362b3ea-1\" } },\n              [_c(\"goods\", { attrs: { mpcomid: \"c362b3ea-0\" } })],\n              1\n            ),\n            _c(\n              \"swiper-item\",\n              { attrs: { mpcomid: \"c362b3ea-3\" } },\n              [_c(\"judgement\", { attrs: { mpcomid: \"c362b3ea-2\" } })],\n              1\n            ),\n            _c(\n              \"swiper-item\",\n              { attrs: { mpcomid: \"c362b3ea-5\" } },\n              [_c(\"shop-info\", { attrs: { mpcomid: \"c362b3ea-4\" } })],\n              1\n            )\n          ],\n          1\n        )\n      ],\n      1\n    ),\n    _c(\"view\", { staticClass: \"footer\" }, [\n      _c(\"view\", { staticClass: \"cart-wrapper\" }, [\n        _c(\"image\", { attrs: { src: _vm.cart_icon, mode: \"aspectFit\" } })\n      ]),\n      _vm._m(1)\n    ])\n  ])\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-header\" }, [\n      _c(\"view\", { staticClass: \"left\" }, [\n        _c(\"view\", { staticClass: \"shop-logo\" }, [\n          _c(\"image\", {\n            attrs: {\n              src: \"../../../static/main/avatar.png\",\n              mode: \"aspectFill\"\n            }\n          })\n        ]),\n        _c(\"view\", { staticClass: \"shop-info\" }, [\n          _c(\"view\", { staticClass: \"name\" }, [_vm._v(\"利强水店\")]),\n          _c(\"view\", { staticClass: \"score-wrapper\" }, [\n            _c(\"view\", { staticClass: \"score\" }, [_vm._v(\"评分4.5\")]),\n            _c(\"view\", { staticClass: \"saleinfo\" }, [_vm._v(\"月售6555单\")])\n          ])\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"right\" }, [\n        _c(\"image\", {\n          staticClass: \"share\",\n          attrs: { src: \"../../../static/main/share.png\", mode: \"aspectFit\" }\n        }),\n        _c(\"image\", {\n          staticClass: \"fav\",\n          attrs: {\n            src: \"../../../static/main/favourite.png\",\n            mode: \"aspectFit\"\n          }\n        })\n      ])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"confirm-wrapper\" }, [\n      _c(\"view\", { staticClass: \"limit\" }, [_vm._v(\"¥20起送\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/shop.vue?vue&type=template&id=7e10fef3&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"content\" }, [\n    _c(\"view\", { staticClass: \"shop-header\" }, [\n      _c(\"view\", { staticClass: \"left\" }, [\n        _vm._m(0),\n        _c(\"view\", { staticClass: \"shop-info\" }, [\n          _c(\"view\", { staticClass: \"name\" }, [\n            _vm._v(_vm._s(_vm.shop.info.name))\n          ]),\n          _c(\"view\", { staticClass: \"score-wrapper\" }, [\n            _c(\"view\", { staticClass: \"score\" }, [\n              _vm._v(\"评分\" + _vm._s(_vm.shop.info.score))\n            ]),\n            _c(\"view\", { staticClass: \"saleinfo\" }, [\n              _vm._v(\"月售\" + _vm._s(_vm.shop.info.soldAmount) + \"单\")\n            ])\n          ])\n        ])\n      ]),\n      _vm._m(1)\n    ]),\n    _c(\n      \"view\",\n      { staticClass: \"shop-content\" },\n      [\n        _c(\n          \"view\",\n          { staticClass: \"tab-wrapper\" },\n          _vm._l(_vm.tabs, function(tab, index) {\n            return _c(\"view\", { key: index }, [\n              _c(\n                \"view\",\n                {\n                  staticClass: \"tab-item\",\n                  attrs: { eventid: \"c362b3ea-0-\" + index },\n                  on: {\n                    click: function($event) {\n                      _vm.changeTab(index)\n                    }\n                  }\n                },\n                [\n                  tab.index === _vm.activeTabIndex\n                    ? _c(\"view\", { staticClass: \"line\" })\n                    : _vm._e(),\n                  _c(\"view\", { staticClass: \"title\" }, [\n                    _vm._v(_vm._s(tab.title))\n                  ])\n                ]\n              )\n            ])\n          })\n        ),\n        _c(\n          \"swiper\",\n          {\n            staticClass: \"swiper\",\n            attrs: {\n              current: _vm.activeTabIndex,\n              autoplay: false,\n              eventid: \"c362b3ea-1\"\n            },\n            on: { change: _vm.swiperChange }\n          },\n          [\n            _c(\n              \"swiper-item\",\n              { attrs: { mpcomid: \"c362b3ea-1\" } },\n              [_c(\"goods\", { attrs: { mpcomid: \"c362b3ea-0\" } })],\n              1\n            ),\n            _c(\n              \"swiper-item\",\n              { attrs: { mpcomid: \"c362b3ea-3\" } },\n              [_c(\"judgement\", { attrs: { mpcomid: \"c362b3ea-2\" } })],\n              1\n            ),\n            _c(\n              \"swiper-item\",\n              { attrs: { mpcomid: \"c362b3ea-5\" } },\n              [_c(\"shop-info\", { attrs: { mpcomid: \"c362b3ea-4\" } })],\n              1\n            )\n          ],\n          1\n        )\n      ],\n      1\n    ),\n    _c(\"view\", { staticClass: \"footer\" }, [\n      _c(\"view\", { staticClass: \"cart-wrapper\" }, [\n        _c(\"image\", { attrs: { src: _vm.cart_icon, mode: \"aspectFit\" } })\n      ]),\n      _vm._m(2)\n    ])\n  ])\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"shop-logo\" }, [\n      _c(\"image\", {\n        attrs: { src: \"../../../static/main/avatar.png\", mode: \"aspectFill\" }\n      })\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"right\" }, [\n      _c(\"image\", {\n        staticClass: \"share\",\n        attrs: { src: \"../../../static/main/share.png\", mode: \"aspectFit\" }\n      }),\n      _c(\"image\", {\n        staticClass: \"fav\",\n        attrs: { src: \"../../../static/main/favourite.png\", mode: \"aspectFit\" }\n      })\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"confirm-wrapper\" }, [\n      _c(\"view\", { staticClass: \"limit\" }, [_vm._v(\"¥20起送\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/zhulizhe/Desktop/kuaima/xyy-uni-app/pages/main/shop/shop.vue?vue&type=template&id=7e10fef3&");
 
 /***/ })
 
