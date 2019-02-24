@@ -200,51 +200,59 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 
 
-var _amapWx = _interopRequireDefault(__webpack_require__(/*! ../../common/amap-wx.js */ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/common/amap-wx.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _amapWx = _interopRequireDefault(__webpack_require__(/*! @/common/amap-wx.js */ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/common/amap-wx.js"));
+var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/util/network.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+
 
 {
   data: function data() {
     return {
       background: ['color1', 'color2', 'color3'],
-      indicatorDots: true,
-      autoplay: true,
-      interval: 2000,
-      duration: 500,
       items: [1, 2, 3, 3, 5, 6, 6, 7],
-
       amapPlugin: null,
       key: '72239a17febe0f534f11c5b1fbd8ce4c',
-      addressName: '' };
+      addressName: '获取中...',
+      banners: [],
+      shops: [] };
 
   },
   methods: {
-    changeIndicatorDots: function changeIndicatorDots(e) {
-      this.indicatorDots = !this.indicatorDots;
+    getNearShops: function getNearShops() {
+      var params = {
+        latitude: '20.111111',
+        longitude: '113.09091',
+        page: 1,
+        pageSize: 10 };
+
+      var that = this;
+      (0, _network.getReqest)('shop/nearShops', params, function (res) {
+        console.log('res shop/nearShops###', res);
+        that.shops = res.content;
+      });
     },
-    changeAutoplay: function changeAutoplay(e) {
-      this.autoplay = !this.autoplay;
-    },
-    intervalChange: function intervalChange(e) {
-      this.interval = e.target.value;
-    },
-    durationChange: function durationChange(e) {
-      this.duration = e.target.value;
+    getBanner: function getBanner() {
+      var params = {
+        latitude: '20.111111',
+        longitude: '113.09091' };
+
+      var that = this;
+      (0, _network.getReqest)('banner/list', params, function (res) {
+        that.banners = res;
+        console.log('res banner/list###', res);
+      });
     },
     goSearch: function goSearch() {
       uni.navigateTo({
         url: "../HM-search/HM-search" });
 
     },
-    goShop: function goShop() {
+    goShop: function goShop(shop) {
+      console.log(shop);
       uni.navigateTo({
-        url: "shop/shop" });
+        url: "shop/shop?shopId=" + shop.id });
 
     },
     getRegeo: function getRegeo() {
@@ -257,12 +265,10 @@ var _amapWx = _interopRequireDefault(__webpack_require__(/*! ../../common/amap-w
           console.log(data);
           that.addressName = data[0].name;
           console.log("addressName ", that.addressName);
-
           uni.hideLoading();
         },
         fail: function fail(e) {
           uni.hideLoading();
-
           console.log(e);
         } });
 
@@ -300,6 +306,8 @@ var _amapWx = _interopRequireDefault(__webpack_require__(/*! ../../common/amap-w
 
     }
     this.getRegeo();
+    this.getBanner();
+    this.getNearShops();
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
@@ -338,24 +346,16 @@ var render = function() {
       _c("view", { staticClass: "header" }, [
         _c("view", { staticClass: "address-wrapper" }, [
           _c("view", { staticClass: "address-icon" }),
-          _c("view", {
-            staticClass: "address",
-            attrs: { eventid: "5a05489d-0" },
-            model: {
-              value: _vm.addressName,
-              callback: function($$v) {
-                _vm.addressName = $$v
-              },
-              expression: "addressName"
-            }
-          })
+          _c("view", { staticClass: "address" }, [
+            _vm._v(_vm._s(_vm.addressName))
+          ])
         ]),
         _c("view", { staticClass: "search-wrapper" }, [
           _c(
             "view",
             {
               staticClass: "search-box",
-              attrs: { eventid: "5a05489d-1" },
+              attrs: { eventid: "5a05489d-0" },
               on: { click: _vm.goSearch }
             },
             [_c("view", { staticClass: "label" }, [_vm._v("搜索")])]
@@ -370,45 +370,26 @@ var render = function() {
             [
               _c(
                 "swiper",
-                {
-                  staticClass: "swiper",
-                  attrs: {
-                    "indicator-dots": _vm.indicatorDots,
-                    autoplay: _vm.autoplay,
-                    interval: _vm.interval,
-                    duration: _vm.duration
-                  }
-                },
-                [
-                  _c("swiper-item", { attrs: { mpcomid: "5a05489d-0" } }, [
-                    _c("image", {
-                      staticClass: "swiper-item",
-                      attrs: {
-                        src: "../../static/img/banner.png",
-                        mode: "scaleToFill"
-                      }
-                    })
-                  ]),
-                  _c("swiper-item", { attrs: { mpcomid: "5a05489d-1" } }, [
-                    _c("image", {
-                      staticClass: "swiper-item",
-                      attrs: {
-                        src: "../../static/img/banner.png",
-                        mode: "scaleToFill"
-                      }
-                    })
-                  ]),
-                  _c("swiper-item", { attrs: { mpcomid: "5a05489d-2" } }, [
-                    _c("image", {
-                      staticClass: "swiper-item",
-                      attrs: {
-                        src: "../../static/img/banner.png",
-                        mode: "scaleToFill"
-                      }
-                    })
-                  ])
-                ],
-                1
+                { staticClass: "swiper", attrs: { "indicator-dots": "true" } },
+                _vm._l(_vm.banners, function(banner, index) {
+                  return _c(
+                    "block",
+                    { key: index },
+                    [
+                      _c(
+                        "swiper-item",
+                        { attrs: { mpcomid: "5a05489d-0-" + index } },
+                        [
+                          _c("image", {
+                            staticClass: "swiper-item",
+                            attrs: { src: banner.image, mode: "scaleToFill" }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                })
               )
             ],
             1
@@ -416,22 +397,46 @@ var render = function() {
         ])
       ]),
       _vm._m(0),
-      _vm._l(_vm.items, function(item, index) {
+      _vm._l(_vm.shops, function(shop, index) {
         return _c("view", { key: index, staticClass: "shop-info-wrapper" }, [
           _c(
             "view",
             {
               staticClass: "shop-info",
-              attrs: { eventid: "5a05489d-2-" + index },
-              on: { click: _vm.goShop }
+              attrs: { eventid: "5a05489d-1-" + index },
+              on: {
+                click: function($event) {
+                  _vm.goShop(shop)
+                }
+              }
             },
             [
               _c("image", {
                 staticClass: "shop-img",
-                attrs: { src: "../../static/img/banner.png" }
+                attrs: { src: shop.imageUrl }
               }),
-              _vm._m(1, true),
-              _vm._m(2, true)
+              _c("view", { staticClass: "shop-info-middle" }, [
+                _c("view", { staticClass: "shop-name" }, [
+                  _vm._v(_vm._s(shop.name))
+                ]),
+                _c("view", { staticClass: "shop-details" }, [
+                  _c("view", { staticClass: "shop-score" }, [
+                    _c("image", {
+                      attrs: { src: "../../static/main/star_icon.png" }
+                    }),
+                    _c("view", { staticClass: "shop-score-text" }, [
+                      _vm._v(_vm._s(shop.score))
+                    ])
+                  ]),
+                  _c("view", { staticClass: "shop-sales-volume" }, [
+                    _vm._v("月售" + _vm._s(shop.soldAmount))
+                  ])
+                ]),
+                _c("view", { staticClass: "distribution-num" }, [
+                  _vm._v("起送¥20")
+                ])
+              ]),
+              _vm._m(1, true)
             ]
           )
         ])
@@ -474,25 +479,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "shop-info-middle" }, [
-      _c("view", { staticClass: "shop-name" }, [_vm._v("陈蓉的店")]),
-      _c("view", { staticClass: "shop-details" }, [
-        _c("view", { staticClass: "shop-score" }, [
-          _c("image", { attrs: { src: "../../static/main/star_icon.png" } }),
-          _c("view", { staticClass: "shop-score-text" }, [_vm._v("5.0")])
-        ]),
-        _c("view", { staticClass: "shop-sales-volume" }, [_vm._v("月售10000+")])
-      ]),
-      _c("view", { staticClass: "distribution-num" }, [_vm._v("起送¥20")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("view", { staticClass: "shop-info-right" }, [
       _c("view", { staticClass: "distribution-gap" }, [_vm._v("666m")]),
-      _c("view", { staticClass: "distribution-time" }, [_vm._v("35分钟")])
+      _c("view", { staticClass: "distribution-time" }, [_vm._v("30分钟")])
     ])
   }
 ]

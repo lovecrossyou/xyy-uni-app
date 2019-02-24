@@ -499,6 +499,54 @@ var addUser = function addUser(userInfo) {
 
 /***/ }),
 
+/***/ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/util/network.js":
+/*!*************************************************************************!*\
+  !*** /Users/tianxiaotian/Documents/uni-app/xyy-uni-app/util/network.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {var baseUrl = 'http://47.94.209.108:7002/client/';
+var getReqest = function getReqest(url, params, cb) {
+  uni.request({
+    url: baseUrl + url,
+    data: params,
+    method: 'GET',
+    success: function success(res) {
+      var data = res.data;
+      if (data.status === 'ok') {
+        cb(data.data);
+        console.log('success ##', data);
+      } else
+      {
+        uni.showToast({
+          title: data.message });
+
+      }
+    } });
+
+};
+var postRequest = function postRequest(url, params, cb) {
+  uni.request({
+    url: baseUrl + url,
+    data: params,
+    method: 'POST',
+    success: function success(res) {
+      cb(res);
+    },
+    fail: function fail(e) {
+
+    } });
+
+};
+module.exports = {
+  getReqest: getReqest,
+  postRequest: postRequest };
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+
+/***/ }),
+
 /***/ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js":
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!

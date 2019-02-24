@@ -3,7 +3,7 @@
 		<view class="header">
 			<view class="address-wrapper">
 				<view class="address-icon"></view>
-				<view class="address" v-model="addressName" />
+				<view class="address">{{addressName}}</view>
 			</view>
 			<view class="search-wrapper">
 				<view class="search-box" @click="goSearch">
@@ -16,17 +16,14 @@
 		<view class="banner">
 			<view class="page-section swiper">
 				<view class="page-section-spacing">
-					<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-						<swiper-item>
-							<image src="../../static/img/banner.png" class="swiper-item" mode="scaleToFill"></image>
-						</swiper-item>
-						<swiper-item>
-							<image src="../../static/img/banner.png" class="swiper-item" mode="scaleToFill"></image>
-						</swiper-item>
-						<swiper-item>
-							<image src="../../static/img/banner.png" class="swiper-item" mode="scaleToFill"></image>
-						</swiper-item>
+					<swiper class="swiper" indicator-dots="true">
+						<block v-for="(banner,index) in banners" :key="index">
+							<swiper-item>
+								<image v-bind:src="banner.image" class="swiper-item" mode="scaleToFill"></image>
+							</swiper-item>
+						</block>
 					</swiper>
+
 				</view>
 			</view>
 		</view>
@@ -52,27 +49,26 @@
 				<view class="entery-text">夜宵</view>
 			</view>
 		</view>
-		<view class="shop-info-wrapper" v-for="(item, index) in items" :key="index">
-			<view class="shop-info" @click="goShop">
-				<image src="../../static/img/banner.png" class="shop-img"></image>
+		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
+			<view class="shop-info" @click="goShop(shop)">
+				<image :src="shop.imageUrl" class="shop-img"></image>
 				<view class="shop-info-middle">
-					<view class="shop-name">陈蓉的店</view>
+					<view class="shop-name">{{shop.name}}</view>
 					<view class="shop-details">
 						<view class="shop-score">
 							<image src="../../static/main/star_icon.png"></image>
-							<view class="shop-score-text">5.0</view>
+							<view class="shop-score-text">{{shop.score}}</view>
 						</view>
-						<view class="shop-sales-volume">月售10000+</view>
+						<view class="shop-sales-volume">月售{{shop.soldAmount}}</view>
 					</view>
 					<view class="distribution-num">起送¥20</view>
 				</view>
 				<view class="shop-info-right">
 					<view class="distribution-gap">666m</view>
-					<view class="distribution-time">35分钟</view>
+					<view class="distribution-time">30分钟</view>
 				</view>
 			</view>
 		</view>
-
 	</view>
 </template>
 
@@ -80,44 +76,56 @@
 	import {
 		mapState
 	} from 'vuex'
-	import amap from '../../common/amap-wx.js';
-
+	import amap from '@/common/amap-wx.js';
+	import {
+		getReqest
+	} from '@/util/network.js'
 	export default {
 		data() {
 			return {
 				background: ['color1', 'color2', 'color3'],
-				indicatorDots: true,
-				autoplay: true,
-				interval: 2000,
-				duration: 500,
 				items: [1, 2, 3, 3, 5, 6, 6, 7],
-
 				amapPlugin: null,
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
-				addressName: '',
+				addressName: '获取中...',
+				banners: [],
+				shops:[]
 			}
 		},
 		methods: {
-			changeIndicatorDots(e) {
-				this.indicatorDots = !this.indicatorDots
+			getNearShops() {
+				const params = {
+					latitude: '20.111111',
+					longitude: '113.09091',
+					page: 1,
+					pageSize: 10
+				}
+				const that = this;
+				getReqest('shop/nearShops', params, res => {
+					console.log('res shop/nearShops###', res);
+					that.shops = res.content;
+				})
 			},
-			changeAutoplay(e) {
-				this.autoplay = !this.autoplay
-			},
-			intervalChange(e) {
-				this.interval = e.target.value
-			},
-			durationChange(e) {
-				this.duration = e.target.value
+			getBanner() {
+				const params = {
+					latitude: '20.111111',
+					longitude: '113.09091'
+				}
+				const that = this;
+				getReqest('banner/list', params, function(res) {
+					that.banners = res;
+					console.log('res banner/list###', res);
+				})
 			},
 			goSearch() {
 				uni.navigateTo({
 					url: "../HM-search/HM-search"
 				})
 			},
-			goShop() {
+			goShop(shop) {
+				console.log(shop);
 				uni.navigateTo({
-					url: "shop/shop"
+					url: "shop/shop?shopId="+shop.id
 				})
 			},
 			getRegeo() {
@@ -130,12 +138,10 @@
 						console.log(data)
 						that.addressName = data[0].name;
 						console.log("addressName ", that.addressName)
-
 						uni.hideLoading();
 					},
 					fail: e => {
 						uni.hideLoading();
-
 						console.log(e)
 					}
 				});
@@ -173,6 +179,8 @@
 				});
 			}
 			this.getRegeo();
+			this.getBanner();
+			this.getNearShops();
 		}
 	}
 </script>
@@ -220,12 +228,12 @@
 		}
 
 		.banner {
-			height: 340upx;
+			height: 320upx;
 			margin-top: 12upx;
 
 			.swiper-item {
 				width: 100%;
-				height: 340upx;
+				height: 100%;
 			}
 		}
 
@@ -233,12 +241,13 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
+			align-items: center;
 
 			.entery-item {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				margin-top: 36upx;
+				// margin-top: 36upx;
 
 				image {
 					width: 72upx;

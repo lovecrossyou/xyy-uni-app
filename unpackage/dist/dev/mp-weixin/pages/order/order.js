@@ -157,11 +157,13 @@ __webpack_require__.r(__webpack_exports__);
     return {
       src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
       orders: [{
-        products: [1, 2, 3] },
-      {
-        products: [1, 2, 3] },
-      {
-        products: [1, 2, 3] }] };
+        products: [{
+          src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg' },
+        {
+          src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg' },
+        {
+          src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg' }] }] };
+
 
 
   },
@@ -222,7 +224,7 @@ var render = function() {
                   _c("view", { staticClass: "left" }, [
                     _c("view", { staticClass: "icon" }, [
                       _c("image", {
-                        attrs: { src: _vm.src, mode: "aspectFit" }
+                        attrs: { src: subOrder.src, mode: "aspectFit" }
                       })
                     ]),
                     _c("view", { staticClass: "name" }, [

@@ -4,13 +4,13 @@
     "iPhone",
     "iPad"
   ],
-  "id": "__UNI__3AEC710",
-  "name": "xyy-uni",
+  "id": "__UNI__824ECFA",
+  "name": "鑫翼优",
   "version": {
     "name": "1.0.0",
     "code": "100"
   },
-  "description": "登录模板",
+  "description": "本地生活服务",
   "launch_path": "__uniappservice.html",
   "developer": {
     "name": "",

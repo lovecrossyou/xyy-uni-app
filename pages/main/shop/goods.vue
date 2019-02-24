@@ -2,30 +2,31 @@
 	<view>
 		<view class="goods">
 			<scroll-view scroll-y="true" class="menu-wrapper">
-				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in goods" :key='index'>
+				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in products"
+				 v-bind:key="item.id">
 					<view class="title">
 						{{item.name}}
 					</view>
 				</view>
 			</scroll-view>
 			<scroll-view scroll-y="true" class="foods-wrapper">
-				<view class="food-list" v-for="(p,index) in products" :key='index'>
+				<view class="food-list" v-for="(p,index) in currentProducts" :key='index'>
 					<view class="title">
-						hha
+						{{p.headName}}
 					</view>
 					<view class="food-item">
 						<view class="icon">
-							<image v-bind:src="img_url" mode="aspectFit"></image>
+							<image v-bind:src="p.headImage" mode="aspectFit"></image>
 						</view>
 						<view class="content">
 							<view class="name">
-								恒大山泉
+								{{p.headName}}
 							</view>
 							<view class="desc">
-								月售605 好评95%
+								月售{{p.saleAmount}} 好评95%
 							</view>
 							<view class="price">
-								28.00
+								{{p.price}}
 							</view>
 						</view>
 						<view class="cartcontrol-wrapper">
@@ -40,45 +41,28 @@
 
 <script>
 	import cartcontrol from "./cartcontrol/cartcontrol.vue"
+
 	export default {
+		props: {
+			products: Array
+		},
 		components: {
 			cartcontrol
 		},
 		data() {
 			return {
-				currentIndex:0,
+				currentIndex: 0,
 				img_url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550900041138&di=722b8ba73b2b6c1ec8671480add10f70&imgtype=0&src=http%3A%2F%2Fwww.sy-tzs.com%2Fupfile%2FisClass%2Fppic%2F20160216114715-679156452.jpg',
-				goods: [{
-					name: '主食'
-				}, {
-					name: '饮料'
-				}, {
-					name: '零食'
-				}, {
-					name: '其他'
-				}, {
-					name: '主食'
-				}, {
-					name: '饮料'
-				}, {
-					name: '零食'
-				}, {
-					name: '其他'
-				}, {
-					name: '主食'
-				}, {
-					name: '饮料'
-				}, {
-					name: '零食'
-				}, {
-					name: '其他'
-				}],
-				products: [1, 2, 3, 4, 5, 5, 2, 3, 4, 5, 5]
 			}
 		},
-		methods:{
-			selectMenu(index){
-				this.currentIndex = index ;
+		methods: {
+			selectMenu(index) {
+				this.currentIndex = index;
+			}
+		},
+		computed: {
+			currentProducts: function() {
+				return this.products[this.currentIndex].products;
 			}
 		}
 	}
@@ -104,7 +88,8 @@
 				width: 112upx;
 				line-height: 108upx;
 				padding: 0 24upx;
-				.title{
+
+				.title {
 					color: #444;
 					font-weight: 400;
 					font-size: 24upx;
