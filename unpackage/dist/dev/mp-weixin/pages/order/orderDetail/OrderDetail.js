@@ -184,6 +184,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
@@ -196,15 +212,165 @@ __webpack_require__.r(__webpack_exports__);
         products: [1, 2, 3] },
 
       {
-        products: [1, 2, 3] }] };
+        products: [1, 2, 3] }],
 
+
+      orderDetailData: {},
+      food: [],
+      extra: [],
+      desc: {
+        "delivery_company": "蜂鸟快送",
+        "delivery_type": "",
+        "has_distribution_info": 0,
+        "is_position_valid": 0,
+        "is_rider_valid": 0 } };
 
 
   },
+  onLoad: function onLoad() {
+    this.getData();
+  },
   methods: {
+
     goOrderDetail: function goOrderDetail() {
       uni.navigateTo({
         url: "orderDetail/OrderDetail" });
+
+    },
+    getData: function getData() {
+
+      var detailData = {
+        "address": "粮科大厦(百万庄大街)3楼",
+        "basket": {
+          "abandoned_extra": [
+          {
+            "category_id": 12,
+            "name": "全店满减",
+            "price": -10,
+            "quantity": 1 }],
+
+
+          "conditional_extra": [],
+
+
+          "deliver_fee": {
+            "category_id": 2,
+            "name": "配送费",
+            "price": 3,
+            "quantity": 1 },
+
+          "extra": [
+          {
+            "category_id": 12,
+            "name": "全店满减",
+            "price": -10,
+            "quantity": 1 }],
+
+
+          "group": [
+          [
+          {
+            "attrs": [],
+
+
+            "current_price": 10.94,
+            "id": 1542771617554892,
+            "ingredient_items": [],
+
+
+            "name": "高麦可迷你黄油曲奇饼干51g",
+            "new_specs": [],
+
+
+            "price": 10.94,
+            "quantity": 1,
+            "sku_id": 1542771617554892,
+            "sku_id_str": 1542771617554892,
+            "specs": [] },
+
+
+
+          {
+            "attrs": [],
+
+
+            "current_price": 20.6,
+            "id": 1542771610553774,
+            "ingredient_items": [],
+
+
+            "name": "小牧-酸奶涂层饼（蔓越莓提子味）160g",
+            "new_specs": [],
+
+
+            "price": 20.6,
+            "quantity": 1,
+            "sku_id": 1542771610553774,
+            "sku_id_str": 1542771610553774,
+            "specs": [] }]],
+
+
+
+
+
+          "package_group": [],
+
+
+          "packing_fee": {
+            "category_id": 102,
+            "name": "餐盒",
+            "price": 0.5,
+            "quantity": 1 },
+
+          "pindan_map": [],
+
+
+          "tying_group": [] },
+
+
+
+        "consignee": "田先生(先生)",
+        "deliver_time": "尽快送达",
+        "description": "",
+        "formatted_created_at": "2019-02-19 16:42",
+        "id": 2104305524043915500,
+        "invoice": "",
+        "invoice_scheme": "",
+        "is_book": 0,
+        "is_cancel_tableware": 0,
+        "is_gifting": 0,
+        "is_new_restaurant": 0,
+        "is_ninja": 1,
+        "is_online_paid": 1,
+        "is_pindan": 0,
+        "new_retail_shop_id": 2217934056,
+        "order_type": 0,
+        "pay_method": "在线支付",
+        "phone": "18301379671",
+        "pick_up_code": "",
+        "pick_up_time": "",
+        "rebuy_scheme": "eleme://retail_store?re_store_id=150075280",
+        "rebuy_scheme_v2": "eleme://web?url=https%3A//h5.ele.me/newretail/p/shop/%3Fid%3D2217934056%26cart_sku_ids%3D1542771610553774%2C1542771617554892%26ele_id%3D150075280&navType=3",
+        "restaurant_address": "北京市西城区三里河路34号（原鲜驿站店）",
+        "restaurant_id": "E17991839890915245586",
+        "restaurant_image_hash": "b529d8acfa1656612a493eda02dc992ajpeg",
+        "restaurant_mobile": "",
+        "restaurant_name": "好邻居(朝阳庵店)",
+        "restaurant_phone": "15910516428",
+        "restaurant_type": 1,
+        "scene_id": -1,
+        "scheme": "eleme://retail_store?re_store_id=150075280",
+        "show_liangpiao_remind": 0,
+        "total_amount": 25.04,
+        "tpp_id": "None",
+        "unique_id": "2104305524043915418",
+        "restaurant_img": "https://cn.vuejs.org/images/logo.png" };
+
+      var food = detailData.basket ? detailData.basket.group[0] : [];
+      var extra = detailData.basket ? detailData.basket.extra : [];
+      this.orderDetailData = detailData;
+      this.food = food;
+      this.extra = extra;
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
@@ -238,24 +404,130 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("view", { staticClass: "detail" }, [
+    _vm._m(0),
     _c(
       "view",
       { staticClass: "content" },
       [
-        _vm._m(0),
-        _vm._l(_vm.orders, function(order, index) {
-          return _c("view", { key: index }, [_vm._m(1, true)])
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "img" }, [
+            _c("image", {
+              staticClass: "img",
+              attrs: { src: _vm.orderDetailData.restaurant_img }
+            })
+          ]),
+          _c("view", { staticClass: "text" }, [
+            _vm._v(_vm._s(_vm.orderDetailData.restaurant_name))
+          ])
+        ]),
+        _vm._l(_vm.food, function(foodData, index) {
+          return _c("view", { key: index }, [
+            _c("view", { staticClass: "item" }, [
+              _c("view", { staticClass: "text" }, [
+                _vm._v(_vm._s(foodData.name))
+              ]),
+              _c("view", { staticClass: "num" }, [
+                _vm._v("x" + _vm._s(foodData.quantity))
+              ]),
+              _c("view", { staticClass: "price" }, [
+                _vm._v("¥" + _vm._s(foodData.price))
+              ])
+            ])
+          ])
         }),
-        _vm._m(2),
-        _vm._l(_vm.orders, function(order, index) {
-          return _c("view", { key: index }, [_vm._m(3, true)])
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "text" }, [_vm._v("配送费")]),
+          _c("view", { staticClass: "price" }, [
+            _vm._v(
+              "¥" +
+                _vm._s(
+                  _vm.orderDetailData.basket &&
+                    _vm.orderDetailData.basket.deliver_fee.price
+                )
+            )
+          ])
+        ]),
+        _vm._l(_vm.extra, function(extraData, index) {
+          return _c("view", { key: index }, [
+            _c("view", { staticClass: "item" }, [
+              _c("view", { staticClass: "text" }, [
+                _vm._v(_vm._s(extraData.name))
+              ]),
+              _c("view", { staticClass: "price" }, [
+                _vm._v("- ¥" + _vm._s(extraData.price.toString().slice(1)))
+              ])
+            ])
+          ])
         }),
-        _c("view", { staticClass: "totoal" }, [_vm._v("实付 ¥320")])
+        _c("view", { staticClass: "totoal" }, [
+          _vm._v("实付 ¥" + _vm._s(_vm.orderDetailData.total_amount))
+        ])
       ],
       2
     ),
-    _vm._m(4),
-    _vm._m(5)
+    _c("view", { staticClass: "info" }, [
+      _c("view", { staticClass: "title" }, [_vm._v("配送信息")]),
+      _c("view", { staticClass: "desc" }, [
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "label" }, [_vm._v("送达时间")]),
+          _c("view", { staticClass: "text" }, [
+            _vm._v(_vm._s(_vm.orderDetailData.deliver_time))
+          ])
+        ]),
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "label" }, [_vm._v("送货地址")]),
+          _c(
+            "view",
+            { staticClass: "text" },
+            [
+              _vm._v(_vm._s(_vm.orderDetailData.consignee)),
+              _c("br"),
+              _vm._v(_vm._s(_vm.orderDetailData.phone)),
+              _c("br"),
+              _vm._v(_vm._s(_vm.orderDetailData.address))
+            ],
+            1
+          )
+        ]),
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "label" }, [_vm._v("配送方式")]),
+          _c("view", { staticClass: "text" }, [
+            _vm._v(_vm._s(_vm.desc.delivery_company))
+          ])
+        ]),
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "label" }, [_vm._v("配送骑手")]),
+          _c("view", { staticClass: "text" }, [
+            _vm._v(
+              _vm._s(_vm.desc.rider_name) + "," + _vm._s(_vm.desc.rider_phone)
+            )
+          ])
+        ])
+      ])
+    ]),
+    _c("view", { staticClass: "info" }, [
+      _c("view", { staticClass: "title" }, [_vm._v("订单信息")]),
+      _c("view", { staticClass: "desc" }, [
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "label" }, [_vm._v("订单号")]),
+          _c("view", { staticClass: "text" }, [
+            _vm._v(_vm._s(_vm.orderDetailData.id))
+          ])
+        ]),
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "label" }, [_vm._v("支付方式")]),
+          _c("view", { staticClass: "text" }, [
+            _vm._v(_vm._s(_vm.orderDetailData.pay_method))
+          ])
+        ]),
+        _c("view", { staticClass: "item" }, [
+          _c("view", { staticClass: "label" }, [_vm._v("下单时间")]),
+          _c("view", { staticClass: "text" }, [
+            _vm._v(_vm._s(_vm.orderDetailData.formatted_created_at))
+          ])
+        ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -263,84 +535,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "item" }, [
-      _c("view", { staticClass: "img" }),
-      _c("view", { staticClass: "text" }, [_vm._v("啦啦啦")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "item" }, [
-      _c("view", { staticClass: "text" }, [_vm._v("name")]),
-      _c("view", { staticClass: "num" }, [_vm._v("xquantity")]),
-      _c("view", { staticClass: "price" }, [_vm._v("¥price")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "item" }, [
-      _c("view", { staticClass: "text" }, [_vm._v("配送费")]),
-      _c("view", { staticClass: "price" }, [_vm._v("¥300.00")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "item" }, [
-      _c("view", { staticClass: "text" }, [_vm._v("name")]),
-      _c("view", { staticClass: "price" }, [_vm._v("- ¥20")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "info" }, [
-      _c("view", { staticClass: "title" }, [_vm._v("配送信息")]),
-      _c("view", { staticClass: "desc" }, [
-        _c("view", { staticClass: "item" }, [
-          _c("view", { staticClass: "label" }, [_vm._v("送达时间")]),
-          _c("view", { staticClass: "text" }, [_vm._v("2018-11-24 23:23:44")])
-        ]),
-        _c("view", { staticClass: "item" }, [
-          _c("view", { staticClass: "label" }, [_vm._v("送货地址")]),
-          _c("view", { staticClass: "text" }, [_vm._v("并和洗礼32好楼")])
-        ]),
-        _c("view", { staticClass: "item" }, [
-          _c("view", { staticClass: "label" }, [_vm._v("配送方式")]),
-          _c("view", { staticClass: "text" }, [_vm._v("在线")])
-        ]),
-        _c("view", { staticClass: "item" }, [
-          _c("view", { staticClass: "label" }, [_vm._v("配送骑手")]),
-          _c("view", { staticClass: "text" }, [_vm._v("田豪杰 18301379671")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "info" }, [
-      _c("view", { staticClass: "title" }, [_vm._v("订单信息")]),
-      _c("view", { staticClass: "desc" }, [
-        _c("view", { staticClass: "item" }, [
-          _c("view", { staticClass: "label" }, [_vm._v("订单号")]),
-          _c("view", { staticClass: "text" }, [_vm._v("2335366677")])
-        ]),
-        _c("view", { staticClass: "item" }, [
-          _c("view", { staticClass: "label" }, [_vm._v("支付方式")]),
-          _c("view", { staticClass: "text" }, [_vm._v("在线")])
-        ]),
-        _c("view", { staticClass: "item" }, [
-          _c("view", { staticClass: "label" }, [_vm._v("下单时间")]),
-          _c("view", { staticClass: "text" }, [_vm._v("2018-22-23 18:34:33")])
-        ])
+    return _c("view", { staticClass: "orderdetail_header" }, [
+      _c("img", {
+        staticClass: "header_img",
+        attrs: {
+          src:
+            "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D"
+        }
+      }),
+      _c("view", { staticClass: "h_payStatus_c" }, [
+        _c("view", { staticClass: "h_payStatus" }, [_vm._v("等待支付")]),
+        _c("img", { staticClass: "h_pay_arrow", attrs: { src: "" } })
+      ]),
+      _c("view", { staticClass: "h_orderDesc" }, [
+        _vm._v("逾期未支付，订单将自动取消")
+      ]),
+      _c("view", { staticClass: "orderBtn_c" }, [
+        _c("view", { staticClass: "cancel_left_btn" }, [_vm._v("取消订单")]),
+        _c("view", { staticClass: "toPay_btn" }, [_vm._v("倒计时")])
       ])
     ])
   }

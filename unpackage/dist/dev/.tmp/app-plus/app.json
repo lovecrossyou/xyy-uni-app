@@ -6,6 +6,7 @@
     "pages/pwd/pwd",
     "pages/user/user",
     "pages/order/order",
+    "pages/order/orderDetail/OrderDetail",
     "pages/shoppingcart/shoppingcart",
     "pages/HM-search/HM-search",
     "pages/main/shop/shop"
