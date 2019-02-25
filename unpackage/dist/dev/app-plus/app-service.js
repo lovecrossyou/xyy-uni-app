@@ -1089,12 +1089,21 @@ function gz$gwx_2(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_2)return __WXML_GLOBAL__.ops_cached.$gwx_2
 __WXML_GLOBAL__.ops_cached.$gwx_2=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'3df31add'])
+Z([3,'56b0713f'])
+Z([[6],[[7],[3,'msTime']],[3,'show']])
+Z([[2,'>'],[[6],[[7],[3,'msTime']],[3,'day']],[1,0]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_2);return __WXML_GLOBAL__.ops_cached.$gwx_2
 }
 function gz$gwx_3(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_3)return __WXML_GLOBAL__.ops_cached.$gwx_3
 __WXML_GLOBAL__.ops_cached.$gwx_3=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'3df31add'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
+}
+function gz$gwx_4(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_4)return __WXML_GLOBAL__.ops_cached.$gwx_4
+__WXML_GLOBAL__.ops_cached.$gwx_4=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'2d9ace10'])
 Z([3,'_view 2d9ace10 m-input-view'])
@@ -1115,11 +1124,11 @@ Z([1,'2d9ace10-2'])
 Z(z[8])
 Z(z[9])
 Z([3,'eye'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
+})(__WXML_GLOBAL__.ops_cached.$gwx_4);return __WXML_GLOBAL__.ops_cached.$gwx_4
 }
-function gz$gwx_4(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_4)return __WXML_GLOBAL__.ops_cached.$gwx_4
-__WXML_GLOBAL__.ops_cached.$gwx_4=[];
+function gz$gwx_5(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_5)return __WXML_GLOBAL__.ops_cached.$gwx_5
+__WXML_GLOBAL__.ops_cached.$gwx_5=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'98b6b736'])
 Z([3,'_view data-v-9d87b172 serach'])
@@ -1129,26 +1138,26 @@ Z([[7],[3,'$k']])
 Z([1,'98b6b736-2'])
 Z([[7],[3,'isDelShow']])
 Z([[2,'==='],[[7],[3,'button']],[1,'outside']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_4);return __WXML_GLOBAL__.ops_cached.$gwx_4
-}
-function gz$gwx_5(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_5)return __WXML_GLOBAL__.ops_cached.$gwx_5
-__WXML_GLOBAL__.ops_cached.$gwx_5=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'3ccfe3cb'])
-Z([[7],[3,'text']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_5);return __WXML_GLOBAL__.ops_cached.$gwx_5
 }
 function gz$gwx_6(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_6)return __WXML_GLOBAL__.ops_cached.$gwx_6
 __WXML_GLOBAL__.ops_cached.$gwx_6=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'2eadb6fd'])
+Z([3,'3ccfe3cb'])
+Z([[7],[3,'text']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_6);return __WXML_GLOBAL__.ops_cached.$gwx_6
 }
 function gz$gwx_7(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_7)return __WXML_GLOBAL__.ops_cached.$gwx_7
 __WXML_GLOBAL__.ops_cached.$gwx_7=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'2eadb6fd'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_7);return __WXML_GLOBAL__.ops_cached.$gwx_7
+}
+function gz$gwx_8(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_8)return __WXML_GLOBAL__.ops_cached.$gwx_8
+__WXML_GLOBAL__.ops_cached.$gwx_8=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'2dcafb89'])
 Z([3,'handleProxy'])
@@ -1174,22 +1183,46 @@ Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],
 Z(z[10])
 Z([3,'20'])
 Z([3,'arrowright'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_7);return __WXML_GLOBAL__.ops_cached.$gwx_7
+})(__WXML_GLOBAL__.ops_cached.$gwx_8);return __WXML_GLOBAL__.ops_cached.$gwx_8
 }
-function gz$gwx_8(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_8)return __WXML_GLOBAL__.ops_cached.$gwx_8
-__WXML_GLOBAL__.ops_cached.$gwx_8=[];
+function gz$gwx_9(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
+__WXML_GLOBAL__.ops_cached.$gwx_9=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'35ad909d'])
 Z([3,'_view 35ad909d uni-list'])
 Z([3,'default'])
 Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[7],[3,'$k']]]]],[[8],'$root',[[7],[3,'$root']]]])
 Z([[2,'||'],[[7],[3,'$slotdefault']],[1,'default']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_8);return __WXML_GLOBAL__.ops_cached.$gwx_8
+})(__WXML_GLOBAL__.ops_cached.$gwx_9);return __WXML_GLOBAL__.ops_cached.$gwx_9
 }
-function gz$gwx_9(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
-__WXML_GLOBAL__.ops_cached.$gwx_9=[];
+function gz$gwx_10(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_10)return __WXML_GLOBAL__.ops_cached.$gwx_10
+__WXML_GLOBAL__.ops_cached.$gwx_10=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'7339ad1a'])
+Z([3,'_view 7339ad1a uni-countdown'])
+Z([[7],[3,'showDay']])
+Z(z[2])
+Z([[2,'>'],[[7],[3,'h']],[1,0]])
+Z(z[4])
+Z([[2,'!'],[[7],[3,'showColon']]])
+})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
+}
+function gz$gwx_11(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_11)return __WXML_GLOBAL__.ops_cached.$gwx_11
+__WXML_GLOBAL__.ops_cached.$gwx_11=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'46da2827'])
+Z([3,'_view 46da2827 uni-countdown'])
+Z([[7],[3,'showDay']])
+Z(z[2])
+Z([[2,'!'],[[7],[3,'showColon']]])
+})(__WXML_GLOBAL__.ops_cached.$gwx_11);return __WXML_GLOBAL__.ops_cached.$gwx_11
+}
+function gz$gwx_12(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_12)return __WXML_GLOBAL__.ops_cached.$gwx_12
+__WXML_GLOBAL__.ops_cached.$gwx_12=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'5f6deb42'])
 Z([3,'_view 5f6deb42 content'])
@@ -1208,19 +1241,19 @@ Z([3,'_view 5f6deb42 search-keyword'])
 Z(z[8])
 Z([1,'5f6deb42-7'])
 Z([[2,'>'],[[6],[[7],[3,'oldKeywordList']],[3,'length']],[1,0]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_9);return __WXML_GLOBAL__.ops_cached.$gwx_9
+})(__WXML_GLOBAL__.ops_cached.$gwx_12);return __WXML_GLOBAL__.ops_cached.$gwx_12
 }
-function gz$gwx_10(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_10)return __WXML_GLOBAL__.ops_cached.$gwx_10
-__WXML_GLOBAL__.ops_cached.$gwx_10=[];
+function gz$gwx_13(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_13)return __WXML_GLOBAL__.ops_cached.$gwx_13
+__WXML_GLOBAL__.ops_cached.$gwx_13=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'5f6deb42'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
+})(__WXML_GLOBAL__.ops_cached.$gwx_13);return __WXML_GLOBAL__.ops_cached.$gwx_13
 }
-function gz$gwx_11(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_11)return __WXML_GLOBAL__.ops_cached.$gwx_11
-__WXML_GLOBAL__.ops_cached.$gwx_11=[];
+function gz$gwx_14(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_14)return __WXML_GLOBAL__.ops_cached.$gwx_14
+__WXML_GLOBAL__.ops_cached.$gwx_14=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'20802211'])
 Z([3,'_view 20802211 content'])
@@ -1242,41 +1275,41 @@ Z([3,'请输入密码'])
 Z([3,'password'])
 Z([[7],[3,'password']])
 Z([[7],[3,'hasProvider']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_11);return __WXML_GLOBAL__.ops_cached.$gwx_11
-}
-function gz$gwx_12(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_12)return __WXML_GLOBAL__.ops_cached.$gwx_12
-__WXML_GLOBAL__.ops_cached.$gwx_12=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'20802211'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_12);return __WXML_GLOBAL__.ops_cached.$gwx_12
-}
-function gz$gwx_13(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_13)return __WXML_GLOBAL__.ops_cached.$gwx_13
-__WXML_GLOBAL__.ops_cached.$gwx_13=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'5a05489d'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_13);return __WXML_GLOBAL__.ops_cached.$gwx_13
-}
-function gz$gwx_14(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_14)return __WXML_GLOBAL__.ops_cached.$gwx_14
-__WXML_GLOBAL__.ops_cached.$gwx_14=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'5a05489d'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_14);return __WXML_GLOBAL__.ops_cached.$gwx_14
 }
 function gz$gwx_15(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_15)return __WXML_GLOBAL__.ops_cached.$gwx_15
 __WXML_GLOBAL__.ops_cached.$gwx_15=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'5ff52036'])
+Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'20802211'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_15);return __WXML_GLOBAL__.ops_cached.$gwx_15
 }
 function gz$gwx_16(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_16)return __WXML_GLOBAL__.ops_cached.$gwx_16
 __WXML_GLOBAL__.ops_cached.$gwx_16=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'5a05489d'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_16);return __WXML_GLOBAL__.ops_cached.$gwx_16
+}
+function gz$gwx_17(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_17)return __WXML_GLOBAL__.ops_cached.$gwx_17
+__WXML_GLOBAL__.ops_cached.$gwx_17=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'5a05489d'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_17);return __WXML_GLOBAL__.ops_cached.$gwx_17
+}
+function gz$gwx_18(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_18)return __WXML_GLOBAL__.ops_cached.$gwx_18
+__WXML_GLOBAL__.ops_cached.$gwx_18=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'5ff52036'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_18);return __WXML_GLOBAL__.ops_cached.$gwx_18
+}
+function gz$gwx_19(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_19)return __WXML_GLOBAL__.ops_cached.$gwx_19
+__WXML_GLOBAL__.ops_cached.$gwx_19=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'2ae02ee1'])
 Z([3,'index'])
@@ -1285,25 +1318,25 @@ Z([[7],[3,'currentProducts']])
 Z(z[1])
 Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[2,'+'],[[7],[3,'$kk']],[1,'2ae02ee1-0-']],[[7],[3,'index']]]]]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'5ff52036'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_16);return __WXML_GLOBAL__.ops_cached.$gwx_16
+})(__WXML_GLOBAL__.ops_cached.$gwx_19);return __WXML_GLOBAL__.ops_cached.$gwx_19
 }
-function gz$gwx_17(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_17)return __WXML_GLOBAL__.ops_cached.$gwx_17
-__WXML_GLOBAL__.ops_cached.$gwx_17=[];
+function gz$gwx_20(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_20)return __WXML_GLOBAL__.ops_cached.$gwx_20
+__WXML_GLOBAL__.ops_cached.$gwx_20=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'3a37fb00'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_17);return __WXML_GLOBAL__.ops_cached.$gwx_17
+})(__WXML_GLOBAL__.ops_cached.$gwx_20);return __WXML_GLOBAL__.ops_cached.$gwx_20
 }
-function gz$gwx_18(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_18)return __WXML_GLOBAL__.ops_cached.$gwx_18
-__WXML_GLOBAL__.ops_cached.$gwx_18=[];
+function gz$gwx_21(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_21)return __WXML_GLOBAL__.ops_cached.$gwx_21
+__WXML_GLOBAL__.ops_cached.$gwx_21=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'7c59ef30'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_18);return __WXML_GLOBAL__.ops_cached.$gwx_18
+})(__WXML_GLOBAL__.ops_cached.$gwx_21);return __WXML_GLOBAL__.ops_cached.$gwx_21
 }
-function gz$gwx_19(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_19)return __WXML_GLOBAL__.ops_cached.$gwx_19
-__WXML_GLOBAL__.ops_cached.$gwx_19=[];
+function gz$gwx_22(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_22)return __WXML_GLOBAL__.ops_cached.$gwx_22
+__WXML_GLOBAL__.ops_cached.$gwx_22=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'c362b3ea'])
 Z([3,'_view c362b3ea content'])
@@ -1331,49 +1364,55 @@ Z([3,'3a37fb00'])
 Z(z[2])
 Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[7],[3,'$kk']],[1,'c362b3ea-4']]]]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'7c59ef30'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_19);return __WXML_GLOBAL__.ops_cached.$gwx_19
-}
-function gz$gwx_20(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_20)return __WXML_GLOBAL__.ops_cached.$gwx_20
-__WXML_GLOBAL__.ops_cached.$gwx_20=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'c362b3ea'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_20);return __WXML_GLOBAL__.ops_cached.$gwx_20
-}
-function gz$gwx_21(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_21)return __WXML_GLOBAL__.ops_cached.$gwx_21
-__WXML_GLOBAL__.ops_cached.$gwx_21=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'337d121b'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_21);return __WXML_GLOBAL__.ops_cached.$gwx_21
-}
-function gz$gwx_22(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_22)return __WXML_GLOBAL__.ops_cached.$gwx_22
-__WXML_GLOBAL__.ops_cached.$gwx_22=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'337d121b'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_22);return __WXML_GLOBAL__.ops_cached.$gwx_22
 }
 function gz$gwx_23(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_23)return __WXML_GLOBAL__.ops_cached.$gwx_23
 __WXML_GLOBAL__.ops_cached.$gwx_23=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'7d2021dc'])
+Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'c362b3ea'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_23);return __WXML_GLOBAL__.ops_cached.$gwx_23
 }
 function gz$gwx_24(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_24)return __WXML_GLOBAL__.ops_cached.$gwx_24
 __WXML_GLOBAL__.ops_cached.$gwx_24=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'7d2021dc'])
+Z([3,'337d121b'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_24);return __WXML_GLOBAL__.ops_cached.$gwx_24
 }
 function gz$gwx_25(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_25)return __WXML_GLOBAL__.ops_cached.$gwx_25
 __WXML_GLOBAL__.ops_cached.$gwx_25=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'337d121b'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_25);return __WXML_GLOBAL__.ops_cached.$gwx_25
+}
+function gz$gwx_26(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_26)return __WXML_GLOBAL__.ops_cached.$gwx_26
+__WXML_GLOBAL__.ops_cached.$gwx_26=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'7d2021dc'])
+Z([3,'transparent'])
+Z(z[1])
+Z([3,'#FFFFFF'])
+Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[7],[3,'$kk']],[1,'7d2021dc-0']]]]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'7339ad1a'])
+Z(z[3])
+})(__WXML_GLOBAL__.ops_cached.$gwx_26);return __WXML_GLOBAL__.ops_cached.$gwx_26
+}
+function gz$gwx_27(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_27)return __WXML_GLOBAL__.ops_cached.$gwx_27
+__WXML_GLOBAL__.ops_cached.$gwx_27=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'7d2021dc'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_27);return __WXML_GLOBAL__.ops_cached.$gwx_27
+}
+function gz$gwx_28(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_28)return __WXML_GLOBAL__.ops_cached.$gwx_28
+__WXML_GLOBAL__.ops_cached.$gwx_28=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'eb2e358e'])
 Z([3,'handleProxy'])
@@ -1384,19 +1423,19 @@ Z([3,'2d9ace10'])
 Z([3,'请输入邮箱'])
 Z([3,'text'])
 Z([[7],[3,'email']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_25);return __WXML_GLOBAL__.ops_cached.$gwx_25
+})(__WXML_GLOBAL__.ops_cached.$gwx_28);return __WXML_GLOBAL__.ops_cached.$gwx_28
 }
-function gz$gwx_26(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_26)return __WXML_GLOBAL__.ops_cached.$gwx_26
-__WXML_GLOBAL__.ops_cached.$gwx_26=[];
+function gz$gwx_29(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_29)return __WXML_GLOBAL__.ops_cached.$gwx_29
+__WXML_GLOBAL__.ops_cached.$gwx_29=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'eb2e358e'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_26);return __WXML_GLOBAL__.ops_cached.$gwx_26
+})(__WXML_GLOBAL__.ops_cached.$gwx_29);return __WXML_GLOBAL__.ops_cached.$gwx_29
 }
-function gz$gwx_27(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_27)return __WXML_GLOBAL__.ops_cached.$gwx_27
-__WXML_GLOBAL__.ops_cached.$gwx_27=[];
+function gz$gwx_30(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_30)return __WXML_GLOBAL__.ops_cached.$gwx_30
+__WXML_GLOBAL__.ops_cached.$gwx_30=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'54af2732'])
 Z([3,'_view 54af2732 input-group'])
@@ -1424,19 +1463,19 @@ Z(z[6])
 Z([3,'请输入邮箱'])
 Z(z[8])
 Z([[7],[3,'email']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_27);return __WXML_GLOBAL__.ops_cached.$gwx_27
+})(__WXML_GLOBAL__.ops_cached.$gwx_30);return __WXML_GLOBAL__.ops_cached.$gwx_30
 }
-function gz$gwx_28(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_28)return __WXML_GLOBAL__.ops_cached.$gwx_28
-__WXML_GLOBAL__.ops_cached.$gwx_28=[];
+function gz$gwx_31(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_31)return __WXML_GLOBAL__.ops_cached.$gwx_31
+__WXML_GLOBAL__.ops_cached.$gwx_31=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'54af2732'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_28);return __WXML_GLOBAL__.ops_cached.$gwx_28
+})(__WXML_GLOBAL__.ops_cached.$gwx_31);return __WXML_GLOBAL__.ops_cached.$gwx_31
 }
-function gz$gwx_29(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_29)return __WXML_GLOBAL__.ops_cached.$gwx_29
-__WXML_GLOBAL__.ops_cached.$gwx_29=[];
+function gz$gwx_32(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_32)return __WXML_GLOBAL__.ops_cached.$gwx_32
+__WXML_GLOBAL__.ops_cached.$gwx_32=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'07dd8206'])
 Z([3,'index'])
@@ -1446,19 +1485,19 @@ Z(z[1])
 Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[2,'+'],[[7],[3,'$kk']],[1,'07dd8206-0-']],[[7],[3,'index']]]]]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'2dcafb89'])
 Z([3,'家乐福'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_29);return __WXML_GLOBAL__.ops_cached.$gwx_29
+})(__WXML_GLOBAL__.ops_cached.$gwx_32);return __WXML_GLOBAL__.ops_cached.$gwx_32
 }
-function gz$gwx_30(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_30)return __WXML_GLOBAL__.ops_cached.$gwx_30
-__WXML_GLOBAL__.ops_cached.$gwx_30=[];
+function gz$gwx_33(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_33)return __WXML_GLOBAL__.ops_cached.$gwx_33
+__WXML_GLOBAL__.ops_cached.$gwx_33=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'07dd8206'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_30);return __WXML_GLOBAL__.ops_cached.$gwx_30
+})(__WXML_GLOBAL__.ops_cached.$gwx_33);return __WXML_GLOBAL__.ops_cached.$gwx_33
 }
-function gz$gwx_31(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_31)return __WXML_GLOBAL__.ops_cached.$gwx_31
-__WXML_GLOBAL__.ops_cached.$gwx_31=[];
+function gz$gwx_34(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_34)return __WXML_GLOBAL__.ops_cached.$gwx_34
+__WXML_GLOBAL__.ops_cached.$gwx_34=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'7d3c43dd'])
 Z([3,'_view 7d3c43dd content'])
@@ -1472,21 +1511,21 @@ Z([3,'35ad909d'])
 Z([3,'_view 7d3c43dd btn-row'])
 Z([[2,'!'],[[7],[3,'hasLogin']]])
 Z([[7],[3,'hasLogin']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_31);return __WXML_GLOBAL__.ops_cached.$gwx_31
+})(__WXML_GLOBAL__.ops_cached.$gwx_34);return __WXML_GLOBAL__.ops_cached.$gwx_34
 }
-function gz$gwx_32(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_32)return __WXML_GLOBAL__.ops_cached.$gwx_32
-__WXML_GLOBAL__.ops_cached.$gwx_32=[];
+function gz$gwx_35(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_35)return __WXML_GLOBAL__.ops_cached.$gwx_35
+__WXML_GLOBAL__.ops_cached.$gwx_35=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'7d3c43dd'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_32);return __WXML_GLOBAL__.ops_cached.$gwx_32
+})(__WXML_GLOBAL__.ops_cached.$gwx_35);return __WXML_GLOBAL__.ops_cached.$gwx_35
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./common/slots.wxml','/components/uni-icon/uni-icon.vue.wxml','/components/uni-list/uni-list.vue.wxml','/components/uni-list-item/uni-list-item.vue.wxml','./components/m-icon/m-icon.vue.wxml','./components/m-input.vue.wxml','/components/m-icon/m-icon.vue.wxml','./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./components/uni-badge/uni-badge.vue.wxml','./components/uni-icon/uni-icon.vue.wxml','./components/uni-list-item/uni-list-item.vue.wxml','/components/uni-badge/uni-badge.vue.wxml','./components/uni-list/uni-list.vue.wxml','/common/slots.wxml','./pages/HM-search/HM-search.vue.wxml','/components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./pages/HM-search/HM-search.wxml','./HM-search.vue.wxml','./pages/login/login.vue.wxml','/components/m-input.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/main/main.vue.wxml','./pages/main/main.wxml','./main.vue.wxml','./pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/goods.vue.wxml','/pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/judgement.vue.wxml','./pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.vue.wxml','/pages/main/shop/goods.vue.wxml','/pages/main/shop/judgement.vue.wxml','/pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.wxml','./shop.vue.wxml','./pages/order/order.vue.wxml','./pages/order/order.wxml','./order.vue.wxml','./pages/order/orderDetail/OrderDetail.vue.wxml','./pages/order/orderDetail/OrderDetail.wxml','./OrderDetail.vue.wxml','./pages/pwd/pwd.vue.wxml','./pages/pwd/pwd.wxml','./pwd.vue.wxml','./pages/reg/reg.vue.wxml','./pages/reg/reg.wxml','./reg.vue.wxml','./pages/shoppingcart/shoppingcart.vue.wxml','./pages/shoppingcart/shoppingcart.wxml','./shoppingcart.vue.wxml','./pages/user/user.vue.wxml','./pages/user/user.wxml','./user.vue.wxml'];d_[x[0]]={}
+var x=['./common/slots.wxml','/components/uni-icon/uni-icon.vue.wxml','/components/uni-list/uni-list.vue.wxml','/components/uni-list-item/uni-list-item.vue.wxml','./components/CountDown.vue.wxml','./components/m-icon/m-icon.vue.wxml','./components/m-input.vue.wxml','/components/m-icon/m-icon.vue.wxml','./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./components/uni-badge/uni-badge.vue.wxml','./components/uni-icon/uni-icon.vue.wxml','./components/uni-list-item/uni-list-item.vue.wxml','/components/uni-badge/uni-badge.vue.wxml','./components/uni-list/uni-list.vue.wxml','/common/slots.wxml','./components/uniCountDown.vue.wxml','./node-modules/@dcloudio/uni-ui/lib/uni-countdown/uni-countdown.vue.wxml','./pages/HM-search/HM-search.vue.wxml','/components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml','./pages/HM-search/HM-search.wxml','./HM-search.vue.wxml','./pages/login/login.vue.wxml','/components/m-input.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/main/main.vue.wxml','./pages/main/main.wxml','./main.vue.wxml','./pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/goods.vue.wxml','/pages/main/shop/cartcontrol/cartcontrol.vue.wxml','./pages/main/shop/judgement.vue.wxml','./pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.vue.wxml','/pages/main/shop/goods.vue.wxml','/pages/main/shop/judgement.vue.wxml','/pages/main/shop/shop-info.vue.wxml','./pages/main/shop/shop.wxml','./shop.vue.wxml','./pages/order/order.vue.wxml','./pages/order/order.wxml','./order.vue.wxml','./pages/order/orderDetail/OrderDetail.vue.wxml','/components/uniCountDown.vue.wxml','./pages/order/orderDetail/OrderDetail.wxml','./OrderDetail.vue.wxml','./pages/pwd/pwd.vue.wxml','./pages/pwd/pwd.wxml','./pwd.vue.wxml','./pages/reg/reg.vue.wxml','./pages/reg/reg.wxml','./reg.vue.wxml','./pages/shoppingcart/shoppingcart.vue.wxml','./pages/shoppingcart/shoppingcart.wxml','./shoppingcart.vue.wxml','./pages/user/user.vue.wxml','./pages/user/user.wxml','./user.vue.wxml'];d_[x[0]]={}
 d_[x[0]]["7d3c43dd-default-7d3c43dd-7"]=function(e,s,r,gg){
 var z=gz$gwx_1()
 var b=x[0]+':7d3c43dd-default-7d3c43dd-7'
@@ -1599,14 +1638,28 @@ return r
 }
 e_[x[0]]={f:m0,j:[],i:[],ti:[x[1],x[2],x[3]],ic:[]}
 d_[x[4]]={}
-d_[x[4]]["3df31add"]=function(e,s,r,gg){
+d_[x[4]]["56b0713f"]=function(e,s,r,gg){
 var z=gz$gwx_2()
-var b=x[4]+':3df31add'
+var b=x[4]+':56b0713f'
 r.wxVkey=b
-gg.f=$gdc(f_["./components/m-icon/m-icon.vue.wxml"],"",1)
+gg.f=$gdc(f_["./components/CountDown.vue.wxml"],"",1)
 if(p_[b]){_wl(b,x[4]);return}
 p_[b]=true
 try{
+var oB=_v()
+_(r,oB)
+if(_oz(z,1,e,s,gg)){oB.wxVkey=1
+cs.push("./components/CountDown.vue.wxml:view:1:55")
+var xC=_v()
+_(oB,xC)
+if(_oz(z,2,e,s,gg)){xC.wxVkey=1
+cs.push("./components/CountDown.vue.wxml:label:1:105")
+cs.pop()
+}
+xC.wxXCkey=1
+cs.pop()
+}
+oB.wxXCkey=1
 }catch(err){
 p_[b]=false
 throw err
@@ -1620,12 +1673,33 @@ return r
 }
 e_[x[4]]={f:m1,j:[],i:[],ti:[],ic:[]}
 d_[x[5]]={}
-d_[x[5]]["2d9ace10"]=function(e,s,r,gg){
+d_[x[5]]["3df31add"]=function(e,s,r,gg){
 var z=gz$gwx_3()
-var b=x[5]+':2d9ace10'
+var b=x[5]+':3df31add'
+r.wxVkey=b
+gg.f=$gdc(f_["./components/m-icon/m-icon.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[5]);return}
+p_[b]=true
+try{
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m2=function(e,s,r,gg){
+var z=gz$gwx_3()
+return r
+}
+e_[x[5]]={f:m2,j:[],i:[],ti:[],ic:[]}
+d_[x[6]]={}
+d_[x[6]]["2d9ace10"]=function(e,s,r,gg){
+var z=gz$gwx_4()
+var b=x[6]+':2d9ace10'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/m-input.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[5]);return}
+if(p_[b]){_wl(b,x[6]);return}
 p_[b]=true
 try{
 cs.push("./components/m-input.vue.wxml:view:1:78")
@@ -1639,7 +1713,7 @@ var fE=_v()
 _(xC,fE)
 cs.push("./components/m-input.vue.wxml:template:1:521")
 var cF=_oz(z,8,e,s,gg)
-var hG=_gd(x[5],cF,e_,d_)
+var hG=_gd(x[6],cF,e_,d_)
 if(hG){
 var oH=_1z(z,5,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1647,7 +1721,7 @@ fE.wxXCkey=3
 hG(oH,oH,fE,gg)
 gg.f=cur_globalf
 }
-else _w(cF,x[5],1,706)
+else _w(cF,x[6],1,706)
 cs.pop()
 cs.pop()
 }
@@ -1659,7 +1733,7 @@ var cI=_v()
 _(oD,cI)
 cs.push("./components/m-input.vue.wxml:template:1:803")
 var oJ=_oz(z,16,e,s,gg)
-var lK=_gd(x[5],oJ,e_,d_)
+var lK=_gd(x[6],oJ,e_,d_)
 if(lK){
 var aL=_1z(z,13,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1667,7 +1741,7 @@ cI.wxXCkey=3
 lK(aL,aL,cI,gg)
 gg.f=cur_globalf
 }
-else _w(oJ,x[5],1,970)
+else _w(oJ,x[6],1,970)
 cs.pop()
 cs.pop()
 }
@@ -1682,21 +1756,21 @@ throw err
 p_[b]=false
 return r
 }
-var m2=function(e,s,r,gg){
-var z=gz$gwx_3()
-var fE=e_[x[5]].i
-_ai(fE,x[6],e_,x[5],1,1)
-fE.pop()
+var m3=function(e,s,r,gg){
+var z=gz$gwx_4()
+var cF=e_[x[6]].i
+_ai(cF,x[7],e_,x[6],1,1)
+cF.pop()
 return r
 }
-e_[x[5]]={f:m2,j:[],i:[],ti:[x[6]],ic:[]}
-d_[x[7]]={}
-d_[x[7]]["98b6b736"]=function(e,s,r,gg){
-var z=gz$gwx_4()
-var b=x[7]+':98b6b736'
+e_[x[6]]={f:m3,j:[],i:[],ti:[x[7]],ic:[]}
+d_[x[8]]={}
+d_[x[8]]["98b6b736"]=function(e,s,r,gg){
+var z=gz$gwx_5()
+var b=x[8]+':98b6b736'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[7]);return}
+if(p_[b]){_wl(b,x[8]);return}
 p_[b]=true
 try{
 cs.push("./components/mehaotian-search-revision/mehaotian-search-revision.vue.wxml:view:1:27")
@@ -1729,18 +1803,18 @@ throw err
 p_[b]=false
 return r
 }
-var m3=function(e,s,r,gg){
-var z=gz$gwx_4()
+var m4=function(e,s,r,gg){
+var z=gz$gwx_5()
 return r
 }
-e_[x[7]]={f:m3,j:[],i:[],ti:[],ic:[]}
-d_[x[8]]={}
-d_[x[8]]["3ccfe3cb"]=function(e,s,r,gg){
-var z=gz$gwx_5()
-var b=x[8]+':3ccfe3cb'
+e_[x[8]]={f:m4,j:[],i:[],ti:[],ic:[]}
+d_[x[9]]={}
+d_[x[9]]["3ccfe3cb"]=function(e,s,r,gg){
+var z=gz$gwx_6()
+var b=x[9]+':3ccfe3cb'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-badge/uni-badge.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[8]);return}
+if(p_[b]){_wl(b,x[9]);return}
 p_[b]=true
 try{
 var oB=_v()
@@ -1757,18 +1831,18 @@ throw err
 p_[b]=false
 return r
 }
-var m4=function(e,s,r,gg){
-var z=gz$gwx_5()
+var m5=function(e,s,r,gg){
+var z=gz$gwx_6()
 return r
 }
-e_[x[8]]={f:m4,j:[],i:[],ti:[],ic:[]}
-d_[x[9]]={}
-d_[x[9]]["2eadb6fd"]=function(e,s,r,gg){
-var z=gz$gwx_6()
-var b=x[9]+':2eadb6fd'
+e_[x[9]]={f:m5,j:[],i:[],ti:[],ic:[]}
+d_[x[10]]={}
+d_[x[10]]["2eadb6fd"]=function(e,s,r,gg){
+var z=gz$gwx_7()
+var b=x[10]+':2eadb6fd'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-icon/uni-icon.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[9]);return}
+if(p_[b]){_wl(b,x[10]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1778,18 +1852,18 @@ throw err
 p_[b]=false
 return r
 }
-var m5=function(e,s,r,gg){
-var z=gz$gwx_6()
+var m6=function(e,s,r,gg){
+var z=gz$gwx_7()
 return r
 }
-e_[x[9]]={f:m5,j:[],i:[],ti:[],ic:[]}
-d_[x[10]]={}
-d_[x[10]]["2dcafb89"]=function(e,s,r,gg){
-var z=gz$gwx_7()
-var b=x[10]+':2dcafb89'
+e_[x[10]]={f:m6,j:[],i:[],ti:[],ic:[]}
+d_[x[11]]={}
+d_[x[11]]["2dcafb89"]=function(e,s,r,gg){
+var z=gz$gwx_8()
+var b=x[11]+':2dcafb89'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list-item/uni-list-item.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[10]);return}
+if(p_[b]){_wl(b,x[11]);return}
 p_[b]=true
 try{
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:view:1:139")
@@ -1809,7 +1883,7 @@ var hG=_v()
 _(oD,hG)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:795")
 var oH=_oz(z,10,e,s,gg)
-var cI=_gd(x[10],oH,e_,d_)
+var cI=_gd(x[11],oH,e_,d_)
 if(cI){
 var oJ=_1z(z,9,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1817,7 +1891,7 @@ hG.wxXCkey=3
 cI(oJ,oJ,hG,gg)
 gg.f=cur_globalf
 }
-else _w(oH,x[10],1,866)
+else _w(oH,x[11],1,866)
 cs.pop()
 cs.pop()
 }
@@ -1842,7 +1916,7 @@ var bO=_v()
 _(aL,bO)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:1315")
 var oP=_oz(z,16,e,s,gg)
-var xQ=_gd(x[10],oP,e_,d_)
+var xQ=_gd(x[11],oP,e_,d_)
 if(xQ){
 var oR=_1z(z,15,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1850,7 +1924,7 @@ bO.wxXCkey=3
 xQ(oR,oR,bO,gg)
 gg.f=cur_globalf
 }
-else _w(oP,x[10],1,1441)
+else _w(oP,x[11],1,1441)
 cs.pop()
 cs.pop()
 }
@@ -1868,7 +1942,7 @@ var fS=_v()
 _(eN,fS)
 cs.push("./components/uni-list-item/uni-list-item.vue.wxml:template:1:1686")
 var cT=_oz(z,21,e,s,gg)
-var hU=_gd(x[10],cT,e_,d_)
+var hU=_gd(x[11],cT,e_,d_)
 if(hU){
 var oV=_1z(z,20,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1876,7 +1950,7 @@ fS.wxXCkey=3
 hU(oV,oV,fS,gg)
 gg.f=cur_globalf
 }
-else _w(cT,x[10],1,1853)
+else _w(cT,x[11],1,1853)
 cs.pop()
 cs.pop()
 }
@@ -1901,23 +1975,23 @@ throw err
 p_[b]=false
 return r
 }
-var m6=function(e,s,r,gg){
-var z=gz$gwx_7()
-var oJ=e_[x[10]].i
-_ai(oJ,x[1],e_,x[10],1,1)
-_ai(oJ,x[11],e_,x[10],1,56)
-oJ.pop()
-oJ.pop()
+var m7=function(e,s,r,gg){
+var z=gz$gwx_8()
+var lK=e_[x[11]].i
+_ai(lK,x[1],e_,x[11],1,1)
+_ai(lK,x[12],e_,x[11],1,56)
+lK.pop()
+lK.pop()
 return r
 }
-e_[x[10]]={f:m6,j:[],i:[],ti:[x[1],x[11]],ic:[]}
-d_[x[12]]={}
-d_[x[12]]["35ad909d"]=function(e,s,r,gg){
-var z=gz$gwx_8()
-var b=x[12]+':35ad909d'
+e_[x[11]]={f:m7,j:[],i:[],ti:[x[1],x[12]],ic:[]}
+d_[x[13]]={}
+d_[x[13]]["35ad909d"]=function(e,s,r,gg){
+var z=gz$gwx_9()
+var b=x[13]+':35ad909d'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list/uni-list.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[12]);return}
+if(p_[b]){_wl(b,x[13]);return}
 p_[b]=true
 try{
 cs.push("./components/uni-list/uni-list.vue.wxml:view:1:62")
@@ -1927,7 +2001,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./components/uni-list/uni-list.vue.wxml:template:1:136")
 var oD=_oz(z,4,e,s,gg)
-var fE=_gd(x[12],oD,e_,d_)
+var fE=_gd(x[13],oD,e_,d_)
 if(fE){
 var cF=_1z(z,3,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1935,7 +2009,7 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[12],1,194)
+else _w(oD,x[13],1,194)
 cs.pop()
 cs.pop()
 _(r,oB)
@@ -1946,12 +2020,12 @@ throw err
 p_[b]=false
 return r
 }
-d_[x[12]]["default"]=function(e,s,r,gg){
-var z=gz$gwx_8()
-var b=x[12]+':default'
+d_[x[13]]["default"]=function(e,s,r,gg){
+var z=gz$gwx_9()
+var b=x[13]+':default'
 r.wxVkey=b
 gg.f=$gdc(f_["./components/uni-list/uni-list.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[12]);return}
+if(p_[b]){_wl(b,x[13]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -1961,21 +2035,129 @@ throw err
 p_[b]=false
 return r
 }
-var m7=function(e,s,r,gg){
-var z=gz$gwx_8()
-var aL=e_[x[12]].i
-_ai(aL,x[13],e_,x[12],1,1)
-aL.pop()
+var m8=function(e,s,r,gg){
+var z=gz$gwx_9()
+var tM=e_[x[13]].i
+_ai(tM,x[14],e_,x[13],1,1)
+tM.pop()
 return r
 }
-e_[x[12]]={f:m7,j:[],i:[],ti:[x[13]],ic:[]}
-d_[x[14]]={}
-d_[x[14]]["5f6deb42"]=function(e,s,r,gg){
-var z=gz$gwx_9()
-var b=x[14]+':5f6deb42'
+e_[x[13]]={f:m8,j:[],i:[],ti:[x[14]],ic:[]}
+d_[x[15]]={}
+d_[x[15]]["7339ad1a"]=function(e,s,r,gg){
+var z=gz$gwx_10()
+var b=x[15]+':7339ad1a'
+r.wxVkey=b
+gg.f=$gdc(f_["./components/uniCountDown.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[15]);return}
+p_[b]=true
+try{
+cs.push("./components/uniCountDown.vue.wxml:view:1:27")
+var oB=_n('view')
+_rz(z,oB,'class',1,e,s,gg)
+var xC=_v()
+_(oB,xC)
+if(_oz(z,2,e,s,gg)){xC.wxVkey=1
+cs.push("./components/uniCountDown.vue.wxml:view:1:70")
+cs.pop()
+}
+var oD=_v()
+_(oB,oD)
+if(_oz(z,3,e,s,gg)){oD.wxVkey=1
+cs.push("./components/uniCountDown.vue.wxml:view:1:279")
+cs.pop()
+}
+var fE=_v()
+_(oB,fE)
+if(_oz(z,4,e,s,gg)){fE.wxVkey=1
+cs.push("./components/uniCountDown.vue.wxml:view:1:406")
+cs.pop()
+}
+var cF=_v()
+_(oB,cF)
+if(_oz(z,5,e,s,gg)){cF.wxVkey=1
+cs.push("./components/uniCountDown.vue.wxml:view:1:611")
+cs.pop()
+}
+var hG=_v()
+_(oB,hG)
+if(_oz(z,6,e,s,gg)){hG.wxVkey=1
+cs.push("./components/uniCountDown.vue.wxml:view:1:1267")
+cs.pop()
+}
+xC.wxXCkey=1
+oD.wxXCkey=1
+fE.wxXCkey=1
+cF.wxXCkey=1
+hG.wxXCkey=1
+cs.pop()
+_(r,oB)
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m9=function(e,s,r,gg){
+var z=gz$gwx_10()
+return r
+}
+e_[x[15]]={f:m9,j:[],i:[],ti:[],ic:[]}
+d_[x[16]]={}
+d_[x[16]]["46da2827"]=function(e,s,r,gg){
+var z=gz$gwx_11()
+var b=x[16]+':46da2827'
+r.wxVkey=b
+gg.f=$gdc(f_["./node-modules/@dcloudio/uni-ui/lib/uni-countdown/uni-countdown.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[16]);return}
+p_[b]=true
+try{
+cs.push("./node-modules/@dcloudio/uni-ui/lib/uni-countdown/uni-countdown.vue.wxml:view:1:27")
+var oB=_n('view')
+_rz(z,oB,'class',1,e,s,gg)
+var xC=_v()
+_(oB,xC)
+if(_oz(z,2,e,s,gg)){xC.wxVkey=1
+cs.push("./node-modules/@dcloudio/uni-ui/lib/uni-countdown/uni-countdown.vue.wxml:view:1:70")
+cs.pop()
+}
+var oD=_v()
+_(oB,oD)
+if(_oz(z,3,e,s,gg)){oD.wxVkey=1
+cs.push("./node-modules/@dcloudio/uni-ui/lib/uni-countdown/uni-countdown.vue.wxml:view:1:279")
+cs.pop()
+}
+var fE=_v()
+_(oB,fE)
+if(_oz(z,4,e,s,gg)){fE.wxVkey=1
+cs.push("./node-modules/@dcloudio/uni-ui/lib/uni-countdown/uni-countdown.vue.wxml:view:1:1235")
+cs.pop()
+}
+xC.wxXCkey=1
+oD.wxXCkey=1
+fE.wxXCkey=1
+cs.pop()
+_(r,oB)
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m10=function(e,s,r,gg){
+var z=gz$gwx_11()
+return r
+}
+e_[x[16]]={f:m10,j:[],i:[],ti:[],ic:[]}
+d_[x[17]]={}
+d_[x[17]]["5f6deb42"]=function(e,s,r,gg){
+var z=gz$gwx_12()
+var b=x[17]+':5f6deb42'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/HM-search/HM-search.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[14]);return}
+if(p_[b]){_wl(b,x[17]);return}
 p_[b]=true
 try{
 cs.push("./pages/HM-search/HM-search.vue.wxml:view:1:116")
@@ -1985,7 +2167,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./pages/HM-search/HM-search.vue.wxml:template:1:193")
 var oD=_oz(z,10,e,s,gg)
-var fE=_gd(x[14],oD,e_,d_)
+var fE=_gd(x[17],oD,e_,d_)
 if(fE){
 var cF=_1z(z,7,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -1993,7 +2175,7 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[14],1,453)
+else _w(oD,x[17],1,453)
 cs.pop()
 cs.push("./pages/HM-search/HM-search.vue.wxml:view:1:483")
 var hG=_mz(z,'view',['bindtouchstart',12,'class',1,'data-comkey',2,'data-eventid',3],[],e,s,gg)
@@ -2015,44 +2197,44 @@ throw err
 p_[b]=false
 return r
 }
-var m8=function(e,s,r,gg){
-var z=gz$gwx_9()
-var eN=e_[x[14]].i
-_ai(eN,x[15],e_,x[14],1,1)
-eN.pop()
+var m11=function(e,s,r,gg){
+var z=gz$gwx_12()
+var xQ=e_[x[17]].i
+_ai(xQ,x[18],e_,x[17],1,1)
+xQ.pop()
 return r
 }
-e_[x[14]]={f:m8,j:[],i:[],ti:[x[15]],ic:[]}
-d_[x[16]]={}
-var m9=function(e,s,r,gg){
-var z=gz$gwx_10()
-var oP=e_[x[16]].i
-_ai(oP,x[17],e_,x[16],1,1)
-var xQ=_v()
-_(r,xQ)
+e_[x[17]]={f:m11,j:[],i:[],ti:[x[18]],ic:[]}
+d_[x[19]]={}
+var m12=function(e,s,r,gg){
+var z=gz$gwx_13()
+var fS=e_[x[19]].i
+_ai(fS,x[20],e_,x[19],1,1)
+var cT=_v()
+_(r,cT)
 cs.push("./pages/HM-search/HM-search.wxml:template:2:6")
-var oR=_oz(z,1,e,s,gg)
-var fS=_gd(x[16],oR,e_,d_)
-if(fS){
-var cT=_1z(z,0,e,s,gg) || {}
+var hU=_oz(z,1,e,s,gg)
+var oV=_gd(x[19],hU,e_,d_)
+if(oV){
+var cW=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
-xQ.wxXCkey=3
-fS(cT,cT,xQ,gg)
+cT.wxXCkey=3
+oV(cW,cW,cT,gg)
 gg.f=cur_globalf
 }
-else _w(oR,x[16],2,18)
+else _w(hU,x[19],2,18)
 cs.pop()
-oP.pop()
+fS.pop()
 return r
 }
-e_[x[16]]={f:m9,j:[],i:[],ti:[x[17]],ic:[]}
-d_[x[18]]={}
-d_[x[18]]["20802211"]=function(e,s,r,gg){
-var z=gz$gwx_11()
-var b=x[18]+':20802211'
+e_[x[19]]={f:m12,j:[],i:[],ti:[x[20]],ic:[]}
+d_[x[21]]={}
+d_[x[21]]["20802211"]=function(e,s,r,gg){
+var z=gz$gwx_14()
+var b=x[21]+':20802211'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/login/login.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[18]);return}
+if(p_[b]){_wl(b,x[21]);return}
 p_[b]=true
 try{
 cs.push("./pages/login/login.vue.wxml:view:1:72")
@@ -2065,7 +2247,7 @@ var fE=_v()
 _(oD,fE)
 cs.push("./pages/login/login.vue.wxml:template:1:247")
 var cF=_oz(z,7,e,s,gg)
-var hG=_gd(x[18],cF,e_,d_)
+var hG=_gd(x[21],cF,e_,d_)
 if(hG){
 var oH=_1z(z,4,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2073,13 +2255,13 @@ fE.wxXCkey=3
 hG(oH,oH,fE,gg)
 gg.f=cur_globalf
 }
-else _w(cF,x[18],1,474)
+else _w(cF,x[21],1,474)
 cs.pop()
 var cI=_v()
 _(oD,cI)
 cs.push("./pages/login/login.vue.wxml:template:1:594")
 var oJ=_oz(z,15,e,s,gg)
-var lK=_gd(x[18],oJ,e_,d_)
+var lK=_gd(x[21],oJ,e_,d_)
 if(lK){
 var aL=_1z(z,12,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2087,7 +2269,7 @@ cI.wxXCkey=3
 lK(aL,aL,cI,gg)
 gg.f=cur_globalf
 }
-else _w(oJ,x[18],1,822)
+else _w(oJ,x[21],1,822)
 cs.pop()
 cs.pop()
 _(oB,oD)
@@ -2107,87 +2289,43 @@ throw err
 p_[b]=false
 return r
 }
-var m10=function(e,s,r,gg){
-var z=gz$gwx_11()
-var oV=e_[x[18]].i
-_ai(oV,x[19],e_,x[18],1,1)
-oV.pop()
-return r
-}
-e_[x[18]]={f:m10,j:[],i:[],ti:[x[19]],ic:[]}
-d_[x[20]]={}
-var m11=function(e,s,r,gg){
-var z=gz$gwx_12()
-var oX=e_[x[20]].i
-_ai(oX,x[21],e_,x[20],1,1)
-var lY=_v()
-_(r,lY)
-cs.push("./pages/login/login.wxml:template:2:6")
-var aZ=_oz(z,1,e,s,gg)
-var t1=_gd(x[20],aZ,e_,d_)
-if(t1){
-var e2=_1z(z,0,e,s,gg) || {}
-var cur_globalf=gg.f
-lY.wxXCkey=3
-t1(e2,e2,lY,gg)
-gg.f=cur_globalf
-}
-else _w(aZ,x[20],2,18)
-cs.pop()
-oX.pop()
-return r
-}
-e_[x[20]]={f:m11,j:[],i:[],ti:[x[21]],ic:[]}
-d_[x[22]]={}
-d_[x[22]]["5a05489d"]=function(e,s,r,gg){
-var z=gz$gwx_13()
-var b=x[22]+':5a05489d'
-r.wxVkey=b
-gg.f=$gdc(f_["./pages/main/main.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[22]);return}
-p_[b]=true
-try{
-}catch(err){
-p_[b]=false
-throw err
-}
-p_[b]=false
-return r
-}
-var m12=function(e,s,r,gg){
-var z=gz$gwx_13()
-return r
-}
-e_[x[22]]={f:m12,j:[],i:[],ti:[],ic:[]}
-d_[x[23]]={}
 var m13=function(e,s,r,gg){
 var z=gz$gwx_14()
-var x5=e_[x[23]].i
-_ai(x5,x[24],e_,x[23],1,1)
-var o6=_v()
-_(r,o6)
-cs.push("./pages/main/main.wxml:template:2:6")
-var f7=_oz(z,1,e,s,gg)
-var c8=_gd(x[23],f7,e_,d_)
-if(c8){
-var h9=_1z(z,0,e,s,gg) || {}
-var cur_globalf=gg.f
-o6.wxXCkey=3
-c8(h9,h9,o6,gg)
-gg.f=cur_globalf
-}
-else _w(f7,x[23],2,18)
-cs.pop()
-x5.pop()
+var lY=e_[x[21]].i
+_ai(lY,x[22],e_,x[21],1,1)
+lY.pop()
 return r
 }
-e_[x[23]]={f:m13,j:[],i:[],ti:[x[24]],ic:[]}
-d_[x[25]]={}
-d_[x[25]]["5ff52036"]=function(e,s,r,gg){
+e_[x[21]]={f:m13,j:[],i:[],ti:[x[22]],ic:[]}
+d_[x[23]]={}
+var m14=function(e,s,r,gg){
 var z=gz$gwx_15()
-var b=x[25]+':5ff52036'
+var t1=e_[x[23]].i
+_ai(t1,x[24],e_,x[23],1,1)
+var e2=_v()
+_(r,e2)
+cs.push("./pages/login/login.wxml:template:2:6")
+var b3=_oz(z,1,e,s,gg)
+var o4=_gd(x[23],b3,e_,d_)
+if(o4){
+var x5=_1z(z,0,e,s,gg) || {}
+var cur_globalf=gg.f
+e2.wxXCkey=3
+o4(x5,x5,e2,gg)
+gg.f=cur_globalf
+}
+else _w(b3,x[23],2,18)
+cs.pop()
+t1.pop()
+return r
+}
+e_[x[23]]={f:m14,j:[],i:[],ti:[x[24]],ic:[]}
+d_[x[25]]={}
+d_[x[25]]["5a05489d"]=function(e,s,r,gg){
+var z=gz$gwx_16()
+var b=x[25]+':5a05489d'
 r.wxVkey=b
-gg.f=$gdc(f_["./pages/main/shop/cartcontrol/cartcontrol.vue.wxml"],"",1)
+gg.f=$gdc(f_["./pages/main/main.vue.wxml"],"",1)
 if(p_[b]){_wl(b,x[25]);return}
 p_[b]=true
 try{
@@ -2198,86 +2336,41 @@ throw err
 p_[b]=false
 return r
 }
-var m14=function(e,s,r,gg){
-var z=gz$gwx_15()
-return r
-}
-e_[x[25]]={f:m14,j:[],i:[],ti:[],ic:[]}
-d_[x[26]]={}
-d_[x[26]]["2ae02ee1"]=function(e,s,r,gg){
-var z=gz$gwx_16()
-var b=x[26]+':2ae02ee1'
-r.wxVkey=b
-gg.f=$gdc(f_["./pages/main/shop/goods.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[26]);return}
-p_[b]=true
-try{
-var oB=_v()
-_(r,oB)
-cs.push("./pages/main/shop/goods.vue.wxml:view:1:642")
-var xC=function(fE,oD,cF,gg){
-var oH=_v()
-_(cF,oH)
-cs.push("./pages/main/shop/goods.vue.wxml:template:1:1266")
-var cI=_oz(z,6,fE,oD,gg)
-var oJ=_gd(x[26],cI,e_,d_)
-if(oJ){
-var lK=_1z(z,5,fE,oD,gg) || {}
-var cur_globalf=gg.f
-oH.wxXCkey=3
-oJ(lK,lK,oH,gg)
-gg.f=cur_globalf
-}
-else _w(cI,x[26],1,1344)
-cs.pop()
-return cF
-}
-oB.wxXCkey=2
-_2z(z,3,xC,e,s,gg,oB,'p','index','index')
-cs.pop()
-}catch(err){
-p_[b]=false
-throw err
-}
-p_[b]=false
-return r
-}
 var m15=function(e,s,r,gg){
 var z=gz$gwx_16()
-var oBB=e_[x[26]].i
-_ai(oBB,x[27],e_,x[26],1,1)
-oBB.pop()
 return r
 }
-e_[x[26]]={f:m15,j:[],i:[],ti:[x[27]],ic:[]}
-d_[x[28]]={}
-d_[x[28]]["3a37fb00"]=function(e,s,r,gg){
-var z=gz$gwx_17()
-var b=x[28]+':3a37fb00'
-r.wxVkey=b
-gg.f=$gdc(f_["./pages/main/shop/judgement.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[28]);return}
-p_[b]=true
-try{
-}catch(err){
-p_[b]=false
-throw err
-}
-p_[b]=false
-return r
-}
+e_[x[25]]={f:m15,j:[],i:[],ti:[],ic:[]}
+d_[x[26]]={}
 var m16=function(e,s,r,gg){
 var z=gz$gwx_17()
+var c8=e_[x[26]].i
+_ai(c8,x[27],e_,x[26],1,1)
+var h9=_v()
+_(r,h9)
+cs.push("./pages/main/main.wxml:template:2:6")
+var o0=_oz(z,1,e,s,gg)
+var cAB=_gd(x[26],o0,e_,d_)
+if(cAB){
+var oBB=_1z(z,0,e,s,gg) || {}
+var cur_globalf=gg.f
+h9.wxXCkey=3
+cAB(oBB,oBB,h9,gg)
+gg.f=cur_globalf
+}
+else _w(o0,x[26],2,18)
+cs.pop()
+c8.pop()
 return r
 }
-e_[x[28]]={f:m16,j:[],i:[],ti:[],ic:[]}
-d_[x[29]]={}
-d_[x[29]]["7c59ef30"]=function(e,s,r,gg){
+e_[x[26]]={f:m16,j:[],i:[],ti:[x[27]],ic:[]}
+d_[x[28]]={}
+d_[x[28]]["5ff52036"]=function(e,s,r,gg){
 var z=gz$gwx_18()
-var b=x[29]+':7c59ef30'
+var b=x[28]+':5ff52036'
 r.wxVkey=b
-gg.f=$gdc(f_["./pages/main/shop/shop-info.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[29]);return}
+gg.f=$gdc(f_["./pages/main/shop/cartcontrol/cartcontrol.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[28]);return}
 p_[b]=true
 try{
 }catch(err){
@@ -2291,14 +2384,103 @@ var m17=function(e,s,r,gg){
 var z=gz$gwx_18()
 return r
 }
-e_[x[29]]={f:m17,j:[],i:[],ti:[],ic:[]}
-d_[x[30]]={}
-d_[x[30]]["c362b3ea"]=function(e,s,r,gg){
+e_[x[28]]={f:m17,j:[],i:[],ti:[],ic:[]}
+d_[x[29]]={}
+d_[x[29]]["2ae02ee1"]=function(e,s,r,gg){
 var z=gz$gwx_19()
-var b=x[30]+':c362b3ea'
+var b=x[29]+':2ae02ee1'
+r.wxVkey=b
+gg.f=$gdc(f_["./pages/main/shop/goods.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[29]);return}
+p_[b]=true
+try{
+var oB=_v()
+_(r,oB)
+cs.push("./pages/main/shop/goods.vue.wxml:view:1:642")
+var xC=function(fE,oD,cF,gg){
+var oH=_v()
+_(cF,oH)
+cs.push("./pages/main/shop/goods.vue.wxml:template:1:1266")
+var cI=_oz(z,6,fE,oD,gg)
+var oJ=_gd(x[29],cI,e_,d_)
+if(oJ){
+var lK=_1z(z,5,fE,oD,gg) || {}
+var cur_globalf=gg.f
+oH.wxXCkey=3
+oJ(lK,lK,oH,gg)
+gg.f=cur_globalf
+}
+else _w(cI,x[29],1,1344)
+cs.pop()
+return cF
+}
+oB.wxXCkey=2
+_2z(z,3,xC,e,s,gg,oB,'p','index','index')
+cs.pop()
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m18=function(e,s,r,gg){
+var z=gz$gwx_19()
+var tEB=e_[x[29]].i
+_ai(tEB,x[30],e_,x[29],1,1)
+tEB.pop()
+return r
+}
+e_[x[29]]={f:m18,j:[],i:[],ti:[x[30]],ic:[]}
+d_[x[31]]={}
+d_[x[31]]["3a37fb00"]=function(e,s,r,gg){
+var z=gz$gwx_20()
+var b=x[31]+':3a37fb00'
+r.wxVkey=b
+gg.f=$gdc(f_["./pages/main/shop/judgement.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[31]);return}
+p_[b]=true
+try{
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m19=function(e,s,r,gg){
+var z=gz$gwx_20()
+return r
+}
+e_[x[31]]={f:m19,j:[],i:[],ti:[],ic:[]}
+d_[x[32]]={}
+d_[x[32]]["7c59ef30"]=function(e,s,r,gg){
+var z=gz$gwx_21()
+var b=x[32]+':7c59ef30'
+r.wxVkey=b
+gg.f=$gdc(f_["./pages/main/shop/shop-info.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[32]);return}
+p_[b]=true
+try{
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m20=function(e,s,r,gg){
+var z=gz$gwx_21()
+return r
+}
+e_[x[32]]={f:m20,j:[],i:[],ti:[],ic:[]}
+d_[x[33]]={}
+d_[x[33]]["c362b3ea"]=function(e,s,r,gg){
+var z=gz$gwx_22()
+var b=x[33]+':c362b3ea'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/main/shop/shop.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[30]);return}
+if(p_[b]){_wl(b,x[33]);return}
 p_[b]=true
 try{
 cs.push("./pages/main/shop/shop.vue.wxml:view:1:179")
@@ -2339,7 +2521,7 @@ var bO=_v()
 _(tM,bO)
 cs.push("./pages/main/shop/shop.vue.wxml:template:1:1707")
 var oP=_oz(z,20,e,s,gg)
-var xQ=_gd(x[30],oP,e_,d_)
+var xQ=_gd(x[33],oP,e_,d_)
 if(xQ){
 var oR=_1z(z,19,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2347,13 +2529,13 @@ bO.wxXCkey=3
 xQ(oR,oR,bO,gg)
 gg.f=cur_globalf
 }
-else _w(oP,x[30],1,1778)
+else _w(oP,x[33],1,1778)
 cs.pop()
 var fS=_v()
 _(tM,fS)
 cs.push("./pages/main/shop/shop.vue.wxml:template:1:1858")
 var cT=_oz(z,22,e,s,gg)
-var hU=_gd(x[30],cT,e_,d_)
+var hU=_gd(x[33],cT,e_,d_)
 if(hU){
 var oV=_1z(z,21,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2361,7 +2543,7 @@ fS.wxXCkey=3
 hU(oV,oV,fS,gg)
 gg.f=cur_globalf
 }
-else _w(cT,x[30],1,1929)
+else _w(cT,x[33],1,1929)
 cs.pop()
 var eN=_v()
 _(tM,eN)
@@ -2371,7 +2553,7 @@ var cW=_v()
 _(eN,cW)
 cs.push("./pages/main/shop/shop.vue.wxml:template:1:2033")
 var oX=_oz(z,25,e,s,gg)
-var lY=_gd(x[30],oX,e_,d_)
+var lY=_gd(x[33],oX,e_,d_)
 if(lY){
 var aZ=_1z(z,24,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2379,7 +2561,7 @@ cW.wxXCkey=3
 lY(aZ,aZ,cW,gg)
 gg.f=cur_globalf
 }
-else _w(oX,x[30],1,2104)
+else _w(oX,x[33],1,2104)
 cs.pop()
 cs.pop()
 }
@@ -2398,91 +2580,47 @@ throw err
 p_[b]=false
 return r
 }
-var m18=function(e,s,r,gg){
-var z=gz$gwx_19()
-var eFB=e_[x[30]].i
-_ai(eFB,x[31],e_,x[30],1,1)
-_ai(eFB,x[32],e_,x[30],1,49)
-_ai(eFB,x[33],e_,x[30],1,101)
-eFB.pop()
-eFB.pop()
-eFB.pop()
-return r
-}
-e_[x[30]]={f:m18,j:[],i:[],ti:[x[31],x[32],x[33]],ic:[]}
-d_[x[34]]={}
-var m19=function(e,s,r,gg){
-var z=gz$gwx_20()
-var oHB=e_[x[34]].i
-_ai(oHB,x[35],e_,x[34],1,1)
-var xIB=_v()
-_(r,xIB)
-cs.push("./pages/main/shop/shop.wxml:template:2:6")
-var oJB=_oz(z,1,e,s,gg)
-var fKB=_gd(x[34],oJB,e_,d_)
-if(fKB){
-var cLB=_1z(z,0,e,s,gg) || {}
-var cur_globalf=gg.f
-xIB.wxXCkey=3
-fKB(cLB,cLB,xIB,gg)
-gg.f=cur_globalf
-}
-else _w(oJB,x[34],2,18)
-cs.pop()
-oHB.pop()
-return r
-}
-e_[x[34]]={f:m19,j:[],i:[],ti:[x[35]],ic:[]}
-d_[x[36]]={}
-d_[x[36]]["337d121b"]=function(e,s,r,gg){
-var z=gz$gwx_21()
-var b=x[36]+':337d121b'
-r.wxVkey=b
-gg.f=$gdc(f_["./pages/order/order.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[36]);return}
-p_[b]=true
-try{
-}catch(err){
-p_[b]=false
-throw err
-}
-p_[b]=false
-return r
-}
-var m20=function(e,s,r,gg){
-var z=gz$gwx_21()
-return r
-}
-e_[x[36]]={f:m20,j:[],i:[],ti:[],ic:[]}
-d_[x[37]]={}
 var m21=function(e,s,r,gg){
 var z=gz$gwx_22()
-var cOB=e_[x[37]].i
-_ai(cOB,x[38],e_,x[37],1,1)
-var oPB=_v()
-_(r,oPB)
-cs.push("./pages/order/order.wxml:template:2:6")
-var lQB=_oz(z,1,e,s,gg)
-var aRB=_gd(x[37],lQB,e_,d_)
-if(aRB){
-var tSB=_1z(z,0,e,s,gg) || {}
-var cur_globalf=gg.f
-oPB.wxXCkey=3
-aRB(tSB,tSB,oPB,gg)
-gg.f=cur_globalf
-}
-else _w(lQB,x[37],2,18)
-cs.pop()
-cOB.pop()
+var xIB=e_[x[33]].i
+_ai(xIB,x[34],e_,x[33],1,1)
+_ai(xIB,x[35],e_,x[33],1,49)
+_ai(xIB,x[36],e_,x[33],1,101)
+xIB.pop()
+xIB.pop()
+xIB.pop()
 return r
 }
-e_[x[37]]={f:m21,j:[],i:[],ti:[x[38]],ic:[]}
-d_[x[39]]={}
-d_[x[39]]["7d2021dc"]=function(e,s,r,gg){
+e_[x[33]]={f:m21,j:[],i:[],ti:[x[34],x[35],x[36]],ic:[]}
+d_[x[37]]={}
+var m22=function(e,s,r,gg){
 var z=gz$gwx_23()
-var b=x[39]+':7d2021dc'
+var fKB=e_[x[37]].i
+_ai(fKB,x[38],e_,x[37],1,1)
+var cLB=_v()
+_(r,cLB)
+cs.push("./pages/main/shop/shop.wxml:template:2:6")
+var hMB=_oz(z,1,e,s,gg)
+var oNB=_gd(x[37],hMB,e_,d_)
+if(oNB){
+var cOB=_1z(z,0,e,s,gg) || {}
+var cur_globalf=gg.f
+cLB.wxXCkey=3
+oNB(cOB,cOB,cLB,gg)
+gg.f=cur_globalf
+}
+else _w(hMB,x[37],2,18)
+cs.pop()
+fKB.pop()
+return r
+}
+e_[x[37]]={f:m22,j:[],i:[],ti:[x[38]],ic:[]}
+d_[x[39]]={}
+d_[x[39]]["337d121b"]=function(e,s,r,gg){
+var z=gz$gwx_24()
+var b=x[39]+':337d121b'
 r.wxVkey=b
-gg.f=$gdc(f_["./pages/order/orderDetail/OrderDetail.vue.wxml"],"",1)
+gg.f=$gdc(f_["./pages/order/order.vue.wxml"],"",1)
 if(p_[b]){_wl(b,x[39]);return}
 p_[b]=true
 try{
@@ -2493,56 +2631,56 @@ throw err
 p_[b]=false
 return r
 }
-var m22=function(e,s,r,gg){
-var z=gz$gwx_23()
-return r
-}
-e_[x[39]]={f:m22,j:[],i:[],ti:[],ic:[]}
-d_[x[40]]={}
 var m23=function(e,s,r,gg){
 var z=gz$gwx_24()
-var oVB=e_[x[40]].i
-_ai(oVB,x[41],e_,x[40],1,1)
-var xWB=_v()
-_(r,xWB)
-cs.push("./pages/order/orderDetail/OrderDetail.wxml:template:2:6")
-var oXB=_oz(z,1,e,s,gg)
-var fYB=_gd(x[40],oXB,e_,d_)
-if(fYB){
-var cZB=_1z(z,0,e,s,gg) || {}
-var cur_globalf=gg.f
-xWB.wxXCkey=3
-fYB(cZB,cZB,xWB,gg)
-gg.f=cur_globalf
-}
-else _w(oXB,x[40],2,18)
-cs.pop()
-oVB.pop()
 return r
 }
-e_[x[40]]={f:m23,j:[],i:[],ti:[x[41]],ic:[]}
-d_[x[42]]={}
-d_[x[42]]["eb2e358e"]=function(e,s,r,gg){
+e_[x[39]]={f:m23,j:[],i:[],ti:[],ic:[]}
+d_[x[40]]={}
+var m24=function(e,s,r,gg){
 var z=gz$gwx_25()
-var b=x[42]+':eb2e358e'
+var aRB=e_[x[40]].i
+_ai(aRB,x[41],e_,x[40],1,1)
+var tSB=_v()
+_(r,tSB)
+cs.push("./pages/order/order.wxml:template:2:6")
+var eTB=_oz(z,1,e,s,gg)
+var bUB=_gd(x[40],eTB,e_,d_)
+if(bUB){
+var oVB=_1z(z,0,e,s,gg) || {}
+var cur_globalf=gg.f
+tSB.wxXCkey=3
+bUB(oVB,oVB,tSB,gg)
+gg.f=cur_globalf
+}
+else _w(eTB,x[40],2,18)
+cs.pop()
+aRB.pop()
+return r
+}
+e_[x[40]]={f:m24,j:[],i:[],ti:[x[41]],ic:[]}
+d_[x[42]]={}
+d_[x[42]]["7d2021dc"]=function(e,s,r,gg){
+var z=gz$gwx_26()
+var b=x[42]+':7d2021dc'
 r.wxVkey=b
-gg.f=$gdc(f_["./pages/pwd/pwd.vue.wxml"],"",1)
+gg.f=$gdc(f_["./pages/order/orderDetail/OrderDetail.vue.wxml"],"",1)
 if(p_[b]){_wl(b,x[42]);return}
 p_[b]=true
 try{
 var oB=_v()
 _(r,oB)
-cs.push("./pages/pwd/pwd.vue.wxml:template:1:240")
+cs.push("./pages/order/orderDetail/OrderDetail.vue.wxml:template:1:744")
 var xC=_oz(z,5,e,s,gg)
 var oD=_gd(x[42],xC,e_,d_)
 if(oD){
-var fE=_1z(z,2,e,s,gg) || {}
+var fE=_1z(z,4,e,s,gg) || {}
 var cur_globalf=gg.f
 oB.wxXCkey=3
 oD(fE,fE,oB,gg)
 gg.f=cur_globalf
 }
-else _w(xC,x[42],1,465)
+else _w(xC,x[42],1,913)
 cs.pop()
 }catch(err){
 p_[b]=false
@@ -2551,44 +2689,105 @@ throw err
 p_[b]=false
 return r
 }
-var m24=function(e,s,r,gg){
-var z=gz$gwx_25()
-var o2B=e_[x[42]].i
-_ai(o2B,x[19],e_,x[42],1,1)
-o2B.pop()
-return r
-}
-e_[x[42]]={f:m24,j:[],i:[],ti:[x[19]],ic:[]}
-d_[x[43]]={}
 var m25=function(e,s,r,gg){
 var z=gz$gwx_26()
-var o4B=e_[x[43]].i
-_ai(o4B,x[44],e_,x[43],1,1)
-var l5B=_v()
-_(r,l5B)
-cs.push("./pages/pwd/pwd.wxml:template:2:6")
-var a6B=_oz(z,1,e,s,gg)
-var t7B=_gd(x[43],a6B,e_,d_)
-if(t7B){
-var e8B=_1z(z,0,e,s,gg) || {}
-var cur_globalf=gg.f
-l5B.wxXCkey=3
-t7B(e8B,e8B,l5B,gg)
-gg.f=cur_globalf
-}
-else _w(a6B,x[43],2,18)
-cs.pop()
-o4B.pop()
+var oXB=e_[x[42]].i
+_ai(oXB,x[43],e_,x[42],1,1)
+oXB.pop()
 return r
 }
-e_[x[43]]={f:m25,j:[],i:[],ti:[x[44]],ic:[]}
-d_[x[45]]={}
-d_[x[45]]["54af2732"]=function(e,s,r,gg){
+e_[x[42]]={f:m25,j:[],i:[],ti:[x[43]],ic:[]}
+d_[x[44]]={}
+var m26=function(e,s,r,gg){
 var z=gz$gwx_27()
-var b=x[45]+':54af2732'
+var cZB=e_[x[44]].i
+_ai(cZB,x[45],e_,x[44],1,1)
+var h1B=_v()
+_(r,h1B)
+cs.push("./pages/order/orderDetail/OrderDetail.wxml:template:2:6")
+var o2B=_oz(z,1,e,s,gg)
+var c3B=_gd(x[44],o2B,e_,d_)
+if(c3B){
+var o4B=_1z(z,0,e,s,gg) || {}
+var cur_globalf=gg.f
+h1B.wxXCkey=3
+c3B(o4B,o4B,h1B,gg)
+gg.f=cur_globalf
+}
+else _w(o2B,x[44],2,18)
+cs.pop()
+cZB.pop()
+return r
+}
+e_[x[44]]={f:m26,j:[],i:[],ti:[x[45]],ic:[]}
+d_[x[46]]={}
+d_[x[46]]["eb2e358e"]=function(e,s,r,gg){
+var z=gz$gwx_28()
+var b=x[46]+':eb2e358e'
+r.wxVkey=b
+gg.f=$gdc(f_["./pages/pwd/pwd.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[46]);return}
+p_[b]=true
+try{
+var oB=_v()
+_(r,oB)
+cs.push("./pages/pwd/pwd.vue.wxml:template:1:240")
+var xC=_oz(z,5,e,s,gg)
+var oD=_gd(x[46],xC,e_,d_)
+if(oD){
+var fE=_1z(z,2,e,s,gg) || {}
+var cur_globalf=gg.f
+oB.wxXCkey=3
+oD(fE,fE,oB,gg)
+gg.f=cur_globalf
+}
+else _w(xC,x[46],1,465)
+cs.pop()
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m27=function(e,s,r,gg){
+var z=gz$gwx_28()
+var a6B=e_[x[46]].i
+_ai(a6B,x[22],e_,x[46],1,1)
+a6B.pop()
+return r
+}
+e_[x[46]]={f:m27,j:[],i:[],ti:[x[22]],ic:[]}
+d_[x[47]]={}
+var m28=function(e,s,r,gg){
+var z=gz$gwx_29()
+var e8B=e_[x[47]].i
+_ai(e8B,x[48],e_,x[47],1,1)
+var b9B=_v()
+_(r,b9B)
+cs.push("./pages/pwd/pwd.wxml:template:2:6")
+var o0B=_oz(z,1,e,s,gg)
+var xAC=_gd(x[47],o0B,e_,d_)
+if(xAC){
+var oBC=_1z(z,0,e,s,gg) || {}
+var cur_globalf=gg.f
+b9B.wxXCkey=3
+xAC(oBC,oBC,b9B,gg)
+gg.f=cur_globalf
+}
+else _w(o0B,x[47],2,18)
+cs.pop()
+e8B.pop()
+return r
+}
+e_[x[47]]={f:m28,j:[],i:[],ti:[x[48]],ic:[]}
+d_[x[49]]={}
+d_[x[49]]["54af2732"]=function(e,s,r,gg){
+var z=gz$gwx_30()
+var b=x[49]+':54af2732'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/reg/reg.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[45]);return}
+if(p_[b]){_wl(b,x[49]);return}
 p_[b]=true
 try{
 cs.push("./pages/reg/reg.vue.wxml:view:1:109")
@@ -2598,7 +2797,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./pages/reg/reg.vue.wxml:template:1:247")
 var oD=_oz(z,6,e,s,gg)
-var fE=_gd(x[45],oD,e_,d_)
+var fE=_gd(x[49],oD,e_,d_)
 if(fE){
 var cF=_1z(z,3,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2606,13 +2805,13 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[45],1,474)
+else _w(oD,x[49],1,474)
 cs.pop()
 var hG=_v()
 _(oB,hG)
 cs.push("./pages/reg/reg.vue.wxml:template:1:601")
 var oH=_oz(z,14,e,s,gg)
-var cI=_gd(x[45],oH,e_,d_)
+var cI=_gd(x[49],oH,e_,d_)
 if(cI){
 var oJ=_1z(z,11,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2620,13 +2819,13 @@ hG.wxXCkey=3
 cI(oJ,oJ,hG,gg)
 gg.f=cur_globalf
 }
-else _w(oH,x[45],1,829)
+else _w(oH,x[49],1,829)
 cs.pop()
 var lK=_v()
 _(oB,lK)
 cs.push("./pages/reg/reg.vue.wxml:template:1:949")
 var aL=_oz(z,22,e,s,gg)
-var tM=_gd(x[45],aL,e_,d_)
+var tM=_gd(x[49],aL,e_,d_)
 if(tM){
 var eN=_1z(z,19,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2634,7 +2833,7 @@ lK.wxXCkey=3
 tM(eN,eN,lK,gg)
 gg.f=cur_globalf
 }
-else _w(aL,x[45],1,1168)
+else _w(aL,x[49],1,1168)
 cs.pop()
 cs.pop()
 _(r,oB)
@@ -2645,44 +2844,44 @@ throw err
 p_[b]=false
 return r
 }
-var m26=function(e,s,r,gg){
-var z=gz$gwx_27()
-var o0B=e_[x[45]].i
-_ai(o0B,x[19],e_,x[45],1,1)
-o0B.pop()
+var m29=function(e,s,r,gg){
+var z=gz$gwx_30()
+var cDC=e_[x[49]].i
+_ai(cDC,x[22],e_,x[49],1,1)
+cDC.pop()
 return r
 }
-e_[x[45]]={f:m26,j:[],i:[],ti:[x[19]],ic:[]}
-d_[x[46]]={}
-var m27=function(e,s,r,gg){
-var z=gz$gwx_28()
-var oBC=e_[x[46]].i
-_ai(oBC,x[47],e_,x[46],1,1)
-var fCC=_v()
-_(r,fCC)
+e_[x[49]]={f:m29,j:[],i:[],ti:[x[22]],ic:[]}
+d_[x[50]]={}
+var m30=function(e,s,r,gg){
+var z=gz$gwx_31()
+var oFC=e_[x[50]].i
+_ai(oFC,x[51],e_,x[50],1,1)
+var cGC=_v()
+_(r,cGC)
 cs.push("./pages/reg/reg.wxml:template:2:6")
-var cDC=_oz(z,1,e,s,gg)
-var hEC=_gd(x[46],cDC,e_,d_)
-if(hEC){
-var oFC=_1z(z,0,e,s,gg) || {}
+var oHC=_oz(z,1,e,s,gg)
+var lIC=_gd(x[50],oHC,e_,d_)
+if(lIC){
+var aJC=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
-fCC.wxXCkey=3
-hEC(oFC,oFC,fCC,gg)
+cGC.wxXCkey=3
+lIC(aJC,aJC,cGC,gg)
 gg.f=cur_globalf
 }
-else _w(cDC,x[46],2,18)
+else _w(oHC,x[50],2,18)
 cs.pop()
-oBC.pop()
+oFC.pop()
 return r
 }
-e_[x[46]]={f:m27,j:[],i:[],ti:[x[47]],ic:[]}
-d_[x[48]]={}
-d_[x[48]]["07dd8206"]=function(e,s,r,gg){
-var z=gz$gwx_29()
-var b=x[48]+':07dd8206'
+e_[x[50]]={f:m30,j:[],i:[],ti:[x[51]],ic:[]}
+d_[x[52]]={}
+d_[x[52]]["07dd8206"]=function(e,s,r,gg){
+var z=gz$gwx_32()
+var b=x[52]+':07dd8206'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/shoppingcart/shoppingcart.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[48]);return}
+if(p_[b]){_wl(b,x[52]);return}
 p_[b]=true
 try{
 var oB=_v()
@@ -2693,7 +2892,7 @@ var oH=_v()
 _(cF,oH)
 cs.push("./pages/shoppingcart/shoppingcart.vue.wxml:template:1:297")
 var cI=_oz(z,6,fE,oD,gg)
-var oJ=_gd(x[48],cI,e_,d_)
+var oJ=_gd(x[52],cI,e_,d_)
 if(oJ){
 var lK=_1z(z,5,fE,oD,gg) || {}
 var cur_globalf=gg.f
@@ -2701,7 +2900,7 @@ oH.wxXCkey=3
 oJ(lK,lK,oH,gg)
 gg.f=cur_globalf
 }
-else _w(cI,x[48],1,393)
+else _w(cI,x[52],1,393)
 cs.pop()
 return cF
 }
@@ -2715,44 +2914,44 @@ throw err
 p_[b]=false
 return r
 }
-var m28=function(e,s,r,gg){
-var z=gz$gwx_29()
-var oHC=e_[x[48]].i
-_ai(oHC,x[3],e_,x[48],1,1)
-oHC.pop()
+var m31=function(e,s,r,gg){
+var z=gz$gwx_32()
+var eLC=e_[x[52]].i
+_ai(eLC,x[3],e_,x[52],1,1)
+eLC.pop()
 return r
 }
-e_[x[48]]={f:m28,j:[],i:[],ti:[x[3]],ic:[]}
-d_[x[49]]={}
-var m29=function(e,s,r,gg){
-var z=gz$gwx_30()
-var aJC=e_[x[49]].i
-_ai(aJC,x[50],e_,x[49],1,1)
-var tKC=_v()
-_(r,tKC)
+e_[x[52]]={f:m31,j:[],i:[],ti:[x[3]],ic:[]}
+d_[x[53]]={}
+var m32=function(e,s,r,gg){
+var z=gz$gwx_33()
+var oNC=e_[x[53]].i
+_ai(oNC,x[54],e_,x[53],1,1)
+var xOC=_v()
+_(r,xOC)
 cs.push("./pages/shoppingcart/shoppingcart.wxml:template:2:6")
-var eLC=_oz(z,1,e,s,gg)
-var bMC=_gd(x[49],eLC,e_,d_)
-if(bMC){
-var oNC=_1z(z,0,e,s,gg) || {}
+var oPC=_oz(z,1,e,s,gg)
+var fQC=_gd(x[53],oPC,e_,d_)
+if(fQC){
+var cRC=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
-tKC.wxXCkey=3
-bMC(oNC,oNC,tKC,gg)
+xOC.wxXCkey=3
+fQC(cRC,cRC,xOC,gg)
 gg.f=cur_globalf
 }
-else _w(eLC,x[49],2,18)
+else _w(oPC,x[53],2,18)
 cs.pop()
-aJC.pop()
+oNC.pop()
 return r
 }
-e_[x[49]]={f:m29,j:[],i:[],ti:[x[50]],ic:[]}
-d_[x[51]]={}
-d_[x[51]]["7d3c43dd"]=function(e,s,r,gg){
-var z=gz$gwx_31()
-var b=x[51]+':7d3c43dd'
+e_[x[53]]={f:m32,j:[],i:[],ti:[x[54]],ic:[]}
+d_[x[55]]={}
+d_[x[55]]["7d3c43dd"]=function(e,s,r,gg){
+var z=gz$gwx_34()
+var b=x[55]+':7d3c43dd'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/user/user.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[51]);return}
+if(p_[b]){_wl(b,x[55]);return}
 p_[b]=true
 try{
 cs.push("./pages/user/user.vue.wxml:view:1:202")
@@ -2762,7 +2961,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./pages/user/user.vue.wxml:template:1:766")
 var oD=_oz(z,4,e,s,gg)
-var fE=_gd(x[51],oD,e_,d_)
+var fE=_gd(x[55],oD,e_,d_)
 if(fE){
 var cF=_1z(z,3,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2770,13 +2969,13 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[51],1,878)
+else _w(oD,x[55],1,878)
 cs.pop()
 var hG=_v()
 _(oB,hG)
 cs.push("./pages/user/user.vue.wxml:template:1:915")
 var oH=_oz(z,8,e,s,gg)
-var cI=_gd(x[51],oH,e_,d_)
+var cI=_gd(x[55],oH,e_,d_)
 if(cI){
 var oJ=_1z(z,7,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -2784,7 +2983,7 @@ hG.wxXCkey=3
 cI(oJ,oJ,hG,gg)
 gg.f=cur_globalf
 }
-else _w(oH,x[51],1,1030)
+else _w(oH,x[55],1,1030)
 cs.pop()
 cs.push("./pages/user/user.vue.wxml:view:1:1053")
 var lK=_n('view')
@@ -2814,41 +3013,41 @@ throw err
 p_[b]=false
 return r
 }
-var m30=function(e,s,r,gg){
-var z=gz$gwx_31()
-var oPC=e_[x[51]].i
-_ai(oPC,x[1],e_,x[51],1,1)
-_ai(oPC,x[2],e_,x[51],1,56)
-_ai(oPC,x[3],e_,x[51],1,111)
-oPC.pop()
-oPC.pop()
-oPC.pop()
+var m33=function(e,s,r,gg){
+var z=gz$gwx_34()
+var oTC=e_[x[55]].i
+_ai(oTC,x[1],e_,x[55],1,1)
+_ai(oTC,x[2],e_,x[55],1,56)
+_ai(oTC,x[3],e_,x[55],1,111)
+oTC.pop()
+oTC.pop()
+oTC.pop()
 return r
 }
-e_[x[51]]={f:m30,j:[],i:[],ti:[x[1],x[2],x[3]],ic:[]}
-d_[x[52]]={}
-var m31=function(e,s,r,gg){
-var z=gz$gwx_32()
-var cRC=e_[x[52]].i
-_ai(cRC,x[53],e_,x[52],1,1)
-var hSC=_v()
-_(r,hSC)
+e_[x[55]]={f:m33,j:[],i:[],ti:[x[1],x[2],x[3]],ic:[]}
+d_[x[56]]={}
+var m34=function(e,s,r,gg){
+var z=gz$gwx_35()
+var oVC=e_[x[56]].i
+_ai(oVC,x[57],e_,x[56],1,1)
+var lWC=_v()
+_(r,lWC)
 cs.push("./pages/user/user.wxml:template:2:6")
-var oTC=_oz(z,1,e,s,gg)
-var cUC=_gd(x[52],oTC,e_,d_)
-if(cUC){
-var oVC=_1z(z,0,e,s,gg) || {}
+var aXC=_oz(z,1,e,s,gg)
+var tYC=_gd(x[56],aXC,e_,d_)
+if(tYC){
+var eZC=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
-hSC.wxXCkey=3
-cUC(oVC,oVC,hSC,gg)
+lWC.wxXCkey=3
+tYC(eZC,eZC,lWC,gg)
 gg.f=cur_globalf
 }
-else _w(oTC,x[52],2,18)
+else _w(aXC,x[56],2,18)
 cs.pop()
-cRC.pop()
+oVC.pop()
 return r
 }
-e_[x[52]]={f:m31,j:[],i:[],ti:[x[53]],ic:[]}
+e_[x[56]]={f:m34,j:[],i:[],ti:[x[57]],ic:[]}
 if(path&&e_[path]){
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
 var main=e_[path].f
@@ -4324,6 +4523,54 @@ __wxRoute = 'pages/order/orderDetail/OrderDetail';__wxRouteBegin = true;__wxAppC
 define('pages/order/orderDetail/OrderDetail.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/order/orderDetail/OrderDetail"],{
 
+/***/ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue":
+/*!*************************************************************************************!*\
+  !*** /Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uniCountDown_vue_vue_type_template_id_a91031fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./uniCountDown.vue?vue&type=template&id=a91031fe& */ \"../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe&\");\n/* harmony import */ var _uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./uniCountDown.vue?vue&type=script&lang=js& */ \"../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=script&lang=js&\");\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _uniCountDown_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./uniCountDown.vue?vue&type=style&index=0&lang=scss& */ \"../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss&\");\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(\n  _uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _uniCountDown_vue_vue_type_template_id_a91031fe___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _uniCountDown_vue_vue_type_template_id_a91031fe___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue");
+
+/***/ }),
+
+/***/ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************!*\
+  !*** /Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./uniCountDown.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=script&lang=js&\");\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=uni-app:///components/uniCountDown.vue?vue&type=script&lang=js&?b9cf");
+
+/***/ }),
+
+/***/ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss&":
+/*!***********************************************************************************************************************!*\
+  !*** /Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss& ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--8-oneOf-1-2!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--8-oneOf-1-3!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./uniCountDown.vue?vue&type=style&index=0&lang=scss& */ \"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss&\");\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss&");
+
+/***/ }),
+
+/***/ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe&":
+/*!********************************************************************************************************************!*\
+  !*** /Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe& ***!
+  \********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_template_id_a91031fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./uniCountDown.vue?vue&type=template&id=a91031fe& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_template_id_a91031fe___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uniCountDown_vue_vue_type_template_id_a91031fe___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe&");
+
+/***/ }),
+
 /***/ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/main.js?{\"page\":\"pages%2Forder%2ForderDetail%2FOrderDetail\"}":
 /*!**********************************************************************************************************************!*\
   !*** /Users/tianxiaotian/Documents/uni-app/xyy-uni-app/main.js?{"page":"pages%2Forder%2ForderDetail%2FOrderDetail"} ***!
@@ -4384,6 +4631,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!/Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  name: \"uni-countdown\",\n  props: {\n    showDay: {\n      type: Boolean,\n      default: true },\n\n    showColon: {\n      type: Boolean,\n      default: true },\n\n    backgroundColor: {\n      type: String,\n      default: \"#FFFFFF\" },\n\n    borderColor: {\n      type: String,\n      default: \"#000000\" },\n\n    color: {\n      type: String,\n      value: \"#000000\" },\n\n    splitorColor: {\n      type: String,\n      default: \"#000000\" },\n\n    day: {\n      type: Number,\n      default: 0 },\n\n    hour: {\n      type: Number,\n      default: 0 },\n\n    minute: {\n      type: Number,\n      default: 0 },\n\n    second: {\n      type: Number,\n      default: 0 } },\n\n\n  data: function data() {\n    return {\n      timer: null,\n      d: '00',\n      h: '00',\n      i: '00',\n      s: '00',\n      leftTime: 0,\n      seconds: 0 };\n\n  },\n  created: function created(e) {var _this = this;\n    this.seconds = this.toSeconds(this.day, this.hour, this.minute, this.second);\n    this.countDown();\n    this.timer = setInterval(function () {\n      _this.seconds--;\n      if (_this.seconds < 0) {\n        _this.timeUp();\n        return;\n      }\n      _this.countDown();\n    }, 1000);\n  },\n  beforeDestroy: function beforeDestroy() {\n    clearInterval(this.timer);\n  },\n  methods: {\n    toSeconds: function toSeconds(day, hours, minutes, seconds) {\n      return day * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds;\n    },\n    timeUp: function timeUp() {\n      clearInterval(this.timer);\n      this.$emit('timeup');\n    },\n    countDown: function countDown() {\n      var seconds = this.seconds;var\n      day = 0,hour = 0,minute = 0,second = 0;\n      if (seconds > 0) {\n        day = Math.floor(seconds / (60 * 60 * 24));\n        hour = Math.floor(seconds / (60 * 60)) - day * 24;\n        minute = Math.floor(seconds / 60) - day * 24 * 60 - hour * 60;\n        second = Math.floor(seconds) - day * 24 * 60 * 60 - hour * 60 * 60 - minute * 60;\n      } else {\n        this.timeUp();\n      }\n      if (day < 10) {\n        day = '0' + day;\n      }\n      if (hour < 10) {\n        hour = '0' + hour;\n      }\n      if (minute < 10) {\n        minute = '0' + minute;\n      }\n      if (second < 10) {\n        second = '0' + second;\n      }\n      this.d = day;\n      this.h = hour;\n      this.i = minute;\n      this.s = second;\n    } } };exports.default = _default;\n\n//# sourceURL=uni-app:///components/uniCountDown.vue?vue&type=script&lang=js&?450e");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/order/orderDetail/OrderDetail.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!/Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/order/orderDetail/OrderDetail.vue?vue&type=script&lang=js& ***!
@@ -4392,7 +4651,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      src: \"https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg\",\n      orders: [\n      {\n        products: [1, 2, 3] },\n\n      {\n        products: [1, 2, 3] },\n\n      {\n        products: [1, 2, 3] }],\n\n\n      orderDetailData: {},\n      food: [],\n      extra: [],\n      desc: {\n        \"delivery_company\": \"蜂鸟快送\",\n        \"delivery_type\": \"\",\n        \"has_distribution_info\": 0,\n        \"is_position_valid\": 0,\n        \"is_rider_valid\": 0 } };\n\n\n  },\n  onLoad: function onLoad() {\n    this.getData();\n  },\n  methods: {\n\n    goOrderDetail: function goOrderDetail() {\n      uni.navigateTo({\n        url: \"orderDetail/OrderDetail\" });\n\n    },\n    getData: function getData() {\n\n      var detailData = {\n        \"address\": \"粮科大厦(百万庄大街)3楼\",\n        \"basket\": {\n          \"abandoned_extra\": [\n          {\n            \"category_id\": 12,\n            \"name\": \"全店满减\",\n            \"price\": -10,\n            \"quantity\": 1 }],\n\n\n          \"conditional_extra\": [],\n\n\n          \"deliver_fee\": {\n            \"category_id\": 2,\n            \"name\": \"配送费\",\n            \"price\": 3,\n            \"quantity\": 1 },\n\n          \"extra\": [\n          {\n            \"category_id\": 12,\n            \"name\": \"全店满减\",\n            \"price\": -10,\n            \"quantity\": 1 }],\n\n\n          \"group\": [\n          [\n          {\n            \"attrs\": [],\n\n\n            \"current_price\": 10.94,\n            \"id\": 1542771617554892,\n            \"ingredient_items\": [],\n\n\n            \"name\": \"高麦可迷你黄油曲奇饼干51g\",\n            \"new_specs\": [],\n\n\n            \"price\": 10.94,\n            \"quantity\": 1,\n            \"sku_id\": 1542771617554892,\n            \"sku_id_str\": 1542771617554892,\n            \"specs\": [] },\n\n\n\n          {\n            \"attrs\": [],\n\n\n            \"current_price\": 20.6,\n            \"id\": 1542771610553774,\n            \"ingredient_items\": [],\n\n\n            \"name\": \"小牧-酸奶涂层饼（蔓越莓提子味）160g\",\n            \"new_specs\": [],\n\n\n            \"price\": 20.6,\n            \"quantity\": 1,\n            \"sku_id\": 1542771610553774,\n            \"sku_id_str\": 1542771610553774,\n            \"specs\": [] }]],\n\n\n\n\n\n          \"package_group\": [],\n\n\n          \"packing_fee\": {\n            \"category_id\": 102,\n            \"name\": \"餐盒\",\n            \"price\": 0.5,\n            \"quantity\": 1 },\n\n          \"pindan_map\": [],\n\n\n          \"tying_group\": [] },\n\n\n\n        \"consignee\": \"田先生(先生)\",\n        \"deliver_time\": \"尽快送达\",\n        \"description\": \"\",\n        \"formatted_created_at\": \"2019-02-19 16:42\",\n        \"id\": 2104305524043915500,\n        \"invoice\": \"\",\n        \"invoice_scheme\": \"\",\n        \"is_book\": 0,\n        \"is_cancel_tableware\": 0,\n        \"is_gifting\": 0,\n        \"is_new_restaurant\": 0,\n        \"is_ninja\": 1,\n        \"is_online_paid\": 1,\n        \"is_pindan\": 0,\n        \"new_retail_shop_id\": 2217934056,\n        \"order_type\": 0,\n        \"pay_method\": \"在线支付\",\n        \"phone\": \"18301379671\",\n        \"pick_up_code\": \"\",\n        \"pick_up_time\": \"\",\n        \"rebuy_scheme\": \"eleme://retail_store?re_store_id=150075280\",\n        \"rebuy_scheme_v2\": \"eleme://web?url=https%3A//h5.ele.me/newretail/p/shop/%3Fid%3D2217934056%26cart_sku_ids%3D1542771610553774%2C1542771617554892%26ele_id%3D150075280&navType=3\",\n        \"restaurant_address\": \"北京市西城区三里河路34号（原鲜驿站店）\",\n        \"restaurant_id\": \"E17991839890915245586\",\n        \"restaurant_image_hash\": \"b529d8acfa1656612a493eda02dc992ajpeg\",\n        \"restaurant_mobile\": \"\",\n        \"restaurant_name\": \"好邻居(朝阳庵店)\",\n        \"restaurant_phone\": \"15910516428\",\n        \"restaurant_type\": 1,\n        \"scene_id\": -1,\n        \"scheme\": \"eleme://retail_store?re_store_id=150075280\",\n        \"show_liangpiao_remind\": 0,\n        \"total_amount\": 25.04,\n        \"tpp_id\": \"None\",\n        \"unique_id\": \"2104305524043915418\",\n        \"restaurant_img\": \"https://cn.vuejs.org/images/logo.png\" };\n\n      var food = detailData.basket ? detailData.basket.group[0] : [];\n      var extra = detailData.basket ? detailData.basket.extra : [];\n      this.orderDetailData = detailData;\n      this.food = food;\n      this.extra = extra;\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/order/orderDetail/OrderDetail.vue?vue&type=script&lang=js&?488d");
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _uniCountDown = _interopRequireDefault(__webpack_require__(/*! ../../../components/uniCountDown.vue */ \"../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue\"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import {uniCountdown} from '@dcloudio/uni-ui'\nvar _default =\n{\n  components: {\n    uniCountdown: _uniCountDown.default },\n\n  data: function data() {\n    return {\n      src: \"https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg\",\n      orders: [\n      {\n        products: [1, 2, 3] },\n\n      {\n        products: [1, 2, 3] },\n\n      {\n        products: [1, 2, 3] }],\n\n\n      orderDetailData: {},\n      food: [],\n      extra: [],\n      desc: {\n        \"delivery_company\": \"蜂鸟快送\",\n        \"delivery_type\": \"\",\n        \"has_distribution_info\": 0,\n        \"is_position_valid\": 0,\n        \"is_rider_valid\": 0 } };\n\n\n  },\n  onLoad: function onLoad() {\n    this.getData();\n  },\n  methods: {\n\n    goOrderDetail: function goOrderDetail() {\n      uni.navigateTo({\n        url: \"orderDetail/OrderDetail\" });\n\n    },\n    countDownS_cb: function countDownS_cb(x) {\n      console.log(x);\n    },\n    countDownE_cb: function countDownE_cb(x) {\n      console.log(x);\n    },\n    getData: function getData() {\n\n      var detailData = {\n        \"address\": \"粮科大厦(百万庄大街)3楼\",\n        \"basket\": {\n          \"abandoned_extra\": [\n          {\n            \"category_id\": 12,\n            \"name\": \"全店满减\",\n            \"price\": -10,\n            \"quantity\": 1 }],\n\n\n          \"conditional_extra\": [],\n\n\n          \"deliver_fee\": {\n            \"category_id\": 2,\n            \"name\": \"配送费\",\n            \"price\": 3,\n            \"quantity\": 1 },\n\n          \"extra\": [\n          {\n            \"category_id\": 12,\n            \"name\": \"全店满减\",\n            \"price\": -10,\n            \"quantity\": 1 }],\n\n\n          \"group\": [\n          [\n          {\n            \"attrs\": [],\n\n\n            \"current_price\": 10.94,\n            \"id\": 1542771617554892,\n            \"ingredient_items\": [],\n\n\n            \"name\": \"高麦可迷你黄油曲奇饼干51g\",\n            \"new_specs\": [],\n\n\n            \"price\": 10.94,\n            \"quantity\": 1,\n            \"sku_id\": 1542771617554892,\n            \"sku_id_str\": 1542771617554892,\n            \"specs\": [] },\n\n\n\n          {\n            \"attrs\": [],\n\n\n            \"current_price\": 20.6,\n            \"id\": 1542771610553774,\n            \"ingredient_items\": [],\n\n\n            \"name\": \"小牧-酸奶涂层饼（蔓越莓提子味）160g\",\n            \"new_specs\": [],\n\n\n            \"price\": 20.6,\n            \"quantity\": 1,\n            \"sku_id\": 1542771610553774,\n            \"sku_id_str\": 1542771610553774,\n            \"specs\": [] }]],\n\n\n\n\n\n          \"package_group\": [],\n\n\n          \"packing_fee\": {\n            \"category_id\": 102,\n            \"name\": \"餐盒\",\n            \"price\": 0.5,\n            \"quantity\": 1 },\n\n          \"pindan_map\": [],\n\n\n          \"tying_group\": [] },\n\n\n\n        \"consignee\": \"田先生(先生)\",\n        \"deliver_time\": \"尽快送达\",\n        \"description\": \"\",\n        \"formatted_created_at\": \"2019-02-19 16:42\",\n        \"id\": 2104305524043915500,\n        \"invoice\": \"\",\n        \"invoice_scheme\": \"\",\n        \"is_book\": 0,\n        \"is_cancel_tableware\": 0,\n        \"is_gifting\": 0,\n        \"is_new_restaurant\": 0,\n        \"is_ninja\": 1,\n        \"is_online_paid\": 1,\n        \"is_pindan\": 0,\n        \"new_retail_shop_id\": 2217934056,\n        \"order_type\": 0,\n        \"pay_method\": \"在线支付\",\n        \"phone\": \"18301379671\",\n        \"pick_up_code\": \"\",\n        \"pick_up_time\": \"\",\n        \"rebuy_scheme\": \"eleme://retail_store?re_store_id=150075280\",\n        \"rebuy_scheme_v2\": \"eleme://web?url=https%3A//h5.ele.me/newretail/p/shop/%3Fid%3D2217934056%26cart_sku_ids%3D1542771610553774%2C1542771617554892%26ele_id%3D150075280&navType=3\",\n        \"restaurant_address\": \"北京市西城区三里河路34号（原鲜驿站店）\",\n        \"restaurant_id\": \"E17991839890915245586\",\n        \"restaurant_image_hash\": \"b529d8acfa1656612a493eda02dc992ajpeg\",\n        \"restaurant_mobile\": \"\",\n        \"restaurant_name\": \"好邻居(朝阳庵店)\",\n        \"restaurant_phone\": \"15910516428\",\n        \"restaurant_type\": 1,\n        \"scene_id\": -1,\n        \"scheme\": \"eleme://retail_store?re_store_id=150075280\",\n        \"show_liangpiao_remind\": 0,\n        \"total_amount\": 25.04,\n        \"tpp_id\": \"None\",\n        \"unique_id\": \"2104305524043915418\",\n        \"restaurant_img\": \"https://cn.vuejs.org/images/logo.png\" };\n\n      var food = detailData.basket ? detailData.basket.group[0] : [];\n      var extra = detailData.basket ? detailData.basket.extra : [];\n      this.orderDetailData = detailData;\n      this.food = food;\n      this.extra = extra;\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/order/orderDetail/OrderDetail.vue?vue&type=script&lang=js&?488d");
 
 /***/ }),
 
@@ -4407,6 +4666,29 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=Users/tianxiaotia
 
 /***/ }),
 
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/vue-loader/lib??vue-loader-options!/Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=style&index=0&lang=scss&");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!/Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"uni-countdown\" }, [\n    _vm.showDay\n      ? _c(\n          \"view\",\n          {\n            staticClass: \"uni-countdown__number\",\n            style: {\n              borderColor: _vm.borderColor,\n              color: _vm.color,\n              background: _vm.backgroundColor\n            }\n          },\n          [_vm._v(_vm._s(_vm.d))]\n        )\n      : _vm._e(),\n    _vm.showDay\n      ? _c(\n          \"view\",\n          {\n            staticClass: \"uni-countdown__splitor\",\n            style: { color: _vm.splitorColor }\n          },\n          [_vm._v(\"天\")]\n        )\n      : _vm._e(),\n    _vm.h > 0\n      ? _c(\n          \"view\",\n          {\n            staticClass: \"uni-countdown__number\",\n            style: {\n              borderColor: _vm.borderColor,\n              color: _vm.color,\n              background: _vm.backgroundColor\n            }\n          },\n          [_vm._v(_vm._s(_vm.h))]\n        )\n      : _vm._e(),\n    _vm.h > 0\n      ? _c(\n          \"view\",\n          {\n            staticClass: \"uni-countdown__splitor\",\n            style: { color: _vm.splitorColor }\n          },\n          [_vm._v(_vm._s(_vm.showColon ? \":\" : \"时\"))]\n        )\n      : _vm._e(),\n    _c(\n      \"view\",\n      {\n        staticClass: \"uni-countdown__number\",\n        style: {\n          borderColor: _vm.borderColor,\n          color: _vm.color,\n          background: _vm.backgroundColor\n        }\n      },\n      [_vm._v(_vm._s(_vm.i))]\n    ),\n    _c(\n      \"view\",\n      {\n        staticClass: \"uni-countdown__splitor\",\n        style: { color: _vm.splitorColor }\n      },\n      [_vm._v(_vm._s(_vm.showColon ? \":\" : \"分\"))]\n    ),\n    _c(\n      \"view\",\n      {\n        staticClass: \"uni-countdown__number\",\n        style: {\n          borderColor: _vm.borderColor,\n          color: _vm.color,\n          background: _vm.backgroundColor\n        }\n      },\n      [_vm._v(_vm._s(_vm.s))]\n    ),\n    !_vm.showColon\n      ? _c(\n          \"view\",\n          {\n            staticClass: \"uni-countdown__splitor\",\n            style: { color: _vm.splitorColor }\n          },\n          [_vm._v(\"秒\")]\n        )\n      : _vm._e()\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/tianxiaotian/Documents/uni-app/xyy-uni-app/components/uniCountDown.vue?vue&type=template&id=a91031fe&");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/order/orderDetail/OrderDetail.vue?vue&type=template&id=67e8fc2c&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!/Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/order/orderDetail/OrderDetail.vue?vue&type=template&id=67e8fc2c& ***!
@@ -4415,7 +4697,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=Users/tianxiaotia
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"detail\" }, [\n    _vm._m(0),\n    _c(\n      \"view\",\n      { staticClass: \"content\" },\n      [\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"img\" }, [\n            _c(\"image\", {\n              staticClass: \"img\",\n              attrs: { src: _vm.orderDetailData.restaurant_img }\n            })\n          ]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.restaurant_name))\n          ])\n        ]),\n        _vm._l(_vm.food, function(foodData, index) {\n          return _c(\"view\", { key: index }, [\n            _c(\"view\", { staticClass: \"item\" }, [\n              _c(\"view\", { staticClass: \"text\" }, [\n                _vm._v(_vm._s(foodData.name))\n              ]),\n              _c(\"view\", { staticClass: \"num\" }, [\n                _vm._v(\"x\" + _vm._s(foodData.quantity))\n              ]),\n              _c(\"view\", { staticClass: \"price\" }, [\n                _vm._v(\"¥\" + _vm._s(foodData.price))\n              ])\n            ])\n          ])\n        }),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"text\" }, [_vm._v(\"配送费\")]),\n          _c(\"view\", { staticClass: \"price\" }, [\n            _vm._v(\n              \"¥\" +\n                _vm._s(\n                  _vm.orderDetailData.basket &&\n                    _vm.orderDetailData.basket.deliver_fee.price\n                )\n            )\n          ])\n        ]),\n        _vm._l(_vm.extra, function(extraData, index) {\n          return _c(\"view\", { key: index }, [\n            _c(\"view\", { staticClass: \"item\" }, [\n              _c(\"view\", { staticClass: \"text\" }, [\n                _vm._v(_vm._s(extraData.name))\n              ]),\n              _c(\"view\", { staticClass: \"price\" }, [\n                _vm._v(\"- ¥\" + _vm._s(extraData.price.toString().slice(1)))\n              ])\n            ])\n          ])\n        }),\n        _c(\"view\", { staticClass: \"totoal\" }, [\n          _vm._v(\"实付 ¥\" + _vm._s(_vm.orderDetailData.total_amount))\n        ])\n      ],\n      2\n    ),\n    _c(\"view\", { staticClass: \"info\" }, [\n      _c(\"view\", { staticClass: \"title\" }, [_vm._v(\"配送信息\")]),\n      _c(\"view\", { staticClass: \"desc\" }, [\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"送达时间\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.deliver_time))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"送货地址\")]),\n          _c(\n            \"view\",\n            { staticClass: \"text\" },\n            [\n              _vm._v(_vm._s(_vm.orderDetailData.consignee)),\n              _c(\"br\"),\n              _vm._v(_vm._s(_vm.orderDetailData.phone)),\n              _c(\"br\"),\n              _vm._v(_vm._s(_vm.orderDetailData.address))\n            ],\n            1\n          )\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"配送方式\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.desc.delivery_company))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"配送骑手\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(\n              _vm._s(_vm.desc.rider_name) + \",\" + _vm._s(_vm.desc.rider_phone)\n            )\n          ])\n        ])\n      ])\n    ]),\n    _c(\"view\", { staticClass: \"info\" }, [\n      _c(\"view\", { staticClass: \"title\" }, [_vm._v(\"订单信息\")]),\n      _c(\"view\", { staticClass: \"desc\" }, [\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"订单号\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.id))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"支付方式\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.pay_method))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"下单时间\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.formatted_created_at))\n          ])\n        ])\n      ])\n    ])\n  ])\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"orderdetail_header\" }, [\n      _c(\"img\", {\n        staticClass: \"header_img\",\n        attrs: {\n          src:\n            \"https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D\"\n        }\n      }),\n      _c(\"view\", { staticClass: \"h_payStatus_c\" }, [\n        _c(\"view\", { staticClass: \"h_payStatus\" }, [_vm._v(\"等待支付\")]),\n        _c(\"img\", { staticClass: \"h_pay_arrow\", attrs: { src: \"\" } })\n      ]),\n      _c(\"view\", { staticClass: \"h_orderDesc\" }, [\n        _vm._v(\"逾期未支付，订单将自动取消\")\n      ]),\n      _c(\"view\", { staticClass: \"orderBtn_c\" }, [\n        _c(\"view\", { staticClass: \"cancel_left_btn\" }, [_vm._v(\"取消订单\")]),\n        _c(\"view\", { staticClass: \"toPay_btn\" }, [_vm._v(\"倒计时\")])\n      ])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/order/orderDetail/OrderDetail.vue?vue&type=template&id=67e8fc2c&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"detail\" }, [\n    _c(\"view\", { staticClass: \"orderdetail_header\" }, [\n      _c(\"img\", {\n        staticClass: \"header_img\",\n        attrs: {\n          src:\n            \"https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D\"\n        }\n      }),\n      _vm._m(0),\n      _c(\"view\", { staticClass: \"h_orderDesc\" }, [\n        _vm._v(\"逾期未支付，订单将自动取消\")\n      ]),\n      _c(\"view\", { staticClass: \"orderBtn_c\" }, [\n        _c(\"view\", { staticClass: \"cancel_left_btn\" }, [_vm._v(\"取消订单\")]),\n        _c(\n          \"view\",\n          { staticClass: \"toPay_btn\" },\n          [\n            _c(\"uni-countdown\", {\n              attrs: {\n                color: \"#FFFFFF\",\n                \"splitor-color\": \"#FFFFFF\",\n                \"background-color\": \"transparent\",\n                \"border-color\": \"transparent\",\n                showColon: false,\n                \"show-day\": false,\n                hour: 1,\n                minute: 0,\n                second: 0,\n                mpcomid: \"7d2021dc-0\"\n              }\n            })\n          ],\n          1\n        )\n      ])\n    ]),\n    _c(\n      \"view\",\n      { staticClass: \"content\" },\n      [\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"img\" }, [\n            _c(\"image\", {\n              staticClass: \"img\",\n              attrs: { src: _vm.orderDetailData.restaurant_img }\n            })\n          ]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.restaurant_name))\n          ])\n        ]),\n        _vm._l(_vm.food, function(foodData, index) {\n          return _c(\"view\", { key: index }, [\n            _c(\"view\", { staticClass: \"item\" }, [\n              _c(\"view\", { staticClass: \"text\" }, [\n                _vm._v(_vm._s(foodData.name))\n              ]),\n              _c(\"view\", { staticClass: \"num\" }, [\n                _vm._v(\"x\" + _vm._s(foodData.quantity))\n              ]),\n              _c(\"view\", { staticClass: \"price\" }, [\n                _vm._v(\"¥\" + _vm._s(foodData.price))\n              ])\n            ])\n          ])\n        }),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"text\" }, [_vm._v(\"配送费\")]),\n          _c(\"view\", { staticClass: \"price\" }, [\n            _vm._v(\n              \"¥\" +\n                _vm._s(\n                  _vm.orderDetailData.basket &&\n                    _vm.orderDetailData.basket.deliver_fee.price\n                )\n            )\n          ])\n        ]),\n        _vm._l(_vm.extra, function(extraData, index) {\n          return _c(\"view\", { key: index }, [\n            _c(\"view\", { staticClass: \"item\" }, [\n              _c(\"view\", { staticClass: \"text\" }, [\n                _vm._v(_vm._s(extraData.name))\n              ]),\n              _c(\"view\", { staticClass: \"price\" }, [\n                _vm._v(\"- ¥\" + _vm._s(extraData.price.toString().slice(1)))\n              ])\n            ])\n          ])\n        }),\n        _c(\"view\", { staticClass: \"totoal\" }, [\n          _vm._v(\"实付 ¥\" + _vm._s(_vm.orderDetailData.total_amount))\n        ])\n      ],\n      2\n    ),\n    _c(\"view\", { staticClass: \"info\" }, [\n      _c(\"view\", { staticClass: \"title\" }, [_vm._v(\"配送信息\")]),\n      _c(\"view\", { staticClass: \"desc\" }, [\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"送达时间\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.deliver_time))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"送货地址\")]),\n          _c(\n            \"view\",\n            { staticClass: \"text\" },\n            [\n              _vm._v(_vm._s(_vm.orderDetailData.consignee)),\n              _c(\"br\"),\n              _vm._v(_vm._s(_vm.orderDetailData.phone)),\n              _c(\"br\"),\n              _vm._v(_vm._s(_vm.orderDetailData.address))\n            ],\n            1\n          )\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"配送方式\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.desc.delivery_company))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"配送骑手\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(\n              _vm._s(_vm.desc.rider_name) + \",\" + _vm._s(_vm.desc.rider_phone)\n            )\n          ])\n        ])\n      ])\n    ]),\n    _c(\"view\", { staticClass: \"info\" }, [\n      _c(\"view\", { staticClass: \"title\" }, [_vm._v(\"订单信息\")]),\n      _c(\"view\", { staticClass: \"desc\" }, [\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"订单号\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.id))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"支付方式\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.pay_method))\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"下单时间\")]),\n          _c(\"view\", { staticClass: \"text\" }, [\n            _vm._v(_vm._s(_vm.orderDetailData.formatted_created_at))\n          ])\n        ])\n      ])\n    ])\n  ])\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"h_payStatus_c\" }, [\n      _c(\"view\", { staticClass: \"h_payStatus\" }, [_vm._v(\"等待支付\")]),\n      _c(\"img\", { staticClass: \"h_pay_arrow\", attrs: { src: \"\" } })\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/order/orderDetail/OrderDetail.vue?vue&type=template&id=67e8fc2c&");
 
 /***/ })
 

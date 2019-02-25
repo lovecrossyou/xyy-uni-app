@@ -10,7 +10,17 @@
         <view class="orderBtn_c">
           <view class="cancel_left_btn">取消订单</view>
           <view class="toPay_btn">
-            倒计时
+			<uni-countdown
+				color="#FFFFFF"
+				splitor-color="#FFFFFF"
+				background-color="transparent" 
+				border-color="transparent"
+				:showColon="false"
+				:show-day="false" 		 
+				:hour="1" 
+				:minute="0" 
+				:second="0">
+			</uni-countdown>
           </view>
         </view>
 
@@ -85,7 +95,13 @@
 </template>
 
 <script>
+// import {uniCountdown} from '@dcloudio/uni-ui'
+import uniCountdown from "../../../components/uniCountDown.vue"
+
 export default {
+	components: {
+	    uniCountdown
+	},
   data() {
     return {
 		src: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg",
@@ -122,6 +138,12 @@ export default {
         url: "orderDetail/OrderDetail"
       });
     },
+	countDownS_cb: function (x) {
+		console.log(x)
+	},
+	countDownE_cb: function (x) {
+		console.log(x)
+	},
 	getData(){
 		
 		const detailData = {
