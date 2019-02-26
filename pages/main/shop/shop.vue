@@ -36,7 +36,7 @@
 					<goods :products="shop.products"></goods>
 				</swiper-item>
 				<swiper-item>
-					<judgement></judgement>
+					<judgement :judgementData="judgementData"></judgement>
 				</swiper-item>
 				<block v-if="shop">
 					<swiper-item>
@@ -83,7 +83,8 @@
 				],
 				activeTabIndex: 0,
 				cart_icon: '../../../static/shop/cart.png',
-				shop: null
+				shop: null,
+				judgementData:{content:[]}
 			};
 		},
 		components: {
@@ -103,11 +104,18 @@
 				getReqest('shop/shopInfo/13', {}, res => {
 					that.shop = res;
 				})
+			},
+			initJudgement(shopId){
+				const that = this;
+				getReqest('shop/comments', {"shopId":13}, res => {
+					that.judgementData = res;
+				})
 			}
 		},
 		onLoad: function(option) {
 			console.log('shopId ', option)
 			this.initShop(option.shopId)
+			this.initJudgement(option.shopId)
 		}
 	}
 </script>

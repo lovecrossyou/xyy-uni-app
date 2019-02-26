@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "",
 	"appid": "wx56e7731073ee003f",
-	"projectname": "%E9%91%AB%E7%BF%BC%E4%BC%98",
+	"projectname": "鑫翼优",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -33,8 +33,8 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "订单详情",
-					"pathName": "pages/order/orderDetail/OrderDetail",
+					"name": "店铺详情",
+					"pathName": "pages/main/shop/shop",
 					"scene": null
 				}
 			]
