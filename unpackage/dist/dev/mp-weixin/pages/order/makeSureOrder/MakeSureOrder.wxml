@@ -1,0 +1,2 @@
+<import src="./MakeSureOrder.vue.wxml" />
+    <template is="a477a898" data="{{ ...$root['0'], $root }}"/>

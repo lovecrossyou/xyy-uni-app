@@ -337,6 +337,15 @@
   color: #333333;
   line-height: 34rpx;
 }
+.info .info_wrapper .info-row .info_phone.data-v-575e40be {
+  margin-left: 10rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #7CA7D2;
+  line-height: 34rpx;
+}
 
 .control-wrapper {
   display: -webkit-box;

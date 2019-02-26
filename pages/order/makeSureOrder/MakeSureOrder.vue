@@ -1,9 +1,169 @@
 <template>
-	<div></div>
+	<view class="place-order">
+        <view class="content">
+          <AddressChoose :mydata="addressData"  v-on:click="chooseAddAction"></AddressChoose>
+          <ArriveAndPay :mydata="arriveAndPayData1" ></ArriveAndPay>
+          <ArriveAndPay :mydata="arriveAndPayData2" ></ArriveAndPay>
+		  <view class="water_store_info">
+				 <view class="water_store_h_t" >水站信息</view>
+				 <view v-for="(listItem,index) in productItemList" :key='index' >
+					 <WaterStoreItem :shopProduct="listItem"></WaterStoreItem>
+				 </view>
+		  </view>
+          <view class="bottom_white">
+            <OrderInfoItemAction
+              itemTitle="使用优惠卷"
+              itemContent="80"></OrderInfoItemAction>
+            <OrderInfoItemAction itemTitle="立减优惠" itemContent="-¥6" hideArrow="true" ></OrderInfoItemAction>
+            
+			<view class="space" />
+	
+            <OrderInfoItemAction
+              itemTitle="订单备注"
+              itemContent="xxxxxx"> </OrderInfoItemAction>
+          </view>
+        </view>
+        <BottomBar ></BottomBar>
+      </view>
 </template>
 
 <script>
+	import AddressChoose from "../components/AddressChoose.vue"
+	import WaterStoreItem from "../components/WaterStoreItem.vue"
+	import OrderInfoItemAction from "../components/OrderInfoItemAction.vue"
+	import ArriveAndPay from "../components/ArriveAndPay.vue"
+	import BottomBar from "../components/BottomBar.vue"
+	import {
+		postRequest
+	} from '@/util/network.js'
+	export default {
+		components:{
+			AddressChoose,
+			ArriveAndPay,
+			WaterStoreItem,
+			OrderInfoItemAction,
+			BottomBar
+		},
+		methods: {
+			chooseAddAction(){
+				
+			},
+			requestOrderData(){
+				const that = this;
+				postRequest('shop/cartClient', this.cartParams, res => {
+					that.info = res.data;
+					that.productItemList = res.data.productItemList;
+					console.log(that.productItemList)
+				})
+			}
+		},
+		data(){
+			return{
+				arriveAndPayData1:{title:"送达时间",value:"尽快送达"},
+				arriveAndPayData2:{title:"支付方式",value:"在线支付" },
+				addressData:{
+					
+				},
+				info:{},
+				productItemList:[],
+				cartParams:{
+					"shopId": 13,
+					"userId": 2,
+					"products": [
+						{
+							"quantity": 2,
+							"productId": 10
+						},
+						{
+							"quantity": 7,
+							"productId": 13
+						},
+						{
+							"quantity": 1,
+							"productId": 14
+						}
+					]
+				},
+			}
+		},
+		onLoad() {
+			this.requestOrderData();
+		}
+	}
 </script>
 	
-<style>
+<style lang="less" scoped>
+	@import '../../../common/theme.less';
+	@import '../../../common/mixin.less';
+.row_center{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.row_between{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.display_b{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.column_between{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.place-order {
+  position: absolute;
+  .position-full;
+  background: linear-gradient(to bottom, @primary-color 50%, white 80%, white);
+  .content {
+	background-color: transparent;
+    .water_store_info{
+      margin: 20px 24px 0 24px;
+      padding: 24px;
+      box-sizing: border-box;
+      background-color: white;
+      .water_store_h_t{
+        width:100%;
+        height: 80px;
+        text-align: left;
+        font-size:28px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        line-height: 80px;
+        color:#333333;
+        border-bottom: 1px #EDEBEB solid;
+      }
+    }
+   }
+    .bottom_white{
+      background-color: white;
+      padding: 0 48px;
+	  .space{
+		  width: 100%;
+		  height: 30upx;
+	  }
+    }
+}
+.orderInfo_item_right_v_style{
+  color: #D19B5C !important;
+}
+.orderInfo_item_left_style{
+  color: #7CA7D2 !important;
+}
+.orderInfo_color_red{
+  color:rgba(251,81,71,1) !important;
+}
+.orderInfo_color_gray9{
+  color: #999999 !important;
+}
+.orderInfo_color_gray2e{
+  color: #2E2E2E !important;
+}
+
 </style>

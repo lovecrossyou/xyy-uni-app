@@ -28,7 +28,7 @@
 			</view>
 		</view>
 		<view class="entery">
-			<view class="entery-item">
+			<view class="entery-item" v-on:click="gotoConfirmOrder">
 				<image src="../../static/main/main_shooping.png"></image>
 				<view class="entery-text">商超便利</view>
 			</view>
@@ -115,6 +115,11 @@
 				getReqest('banner/list', params, function(res) {
 					that.banners = res;
 					console.log('res banner/list###', res);
+				})
+			},
+			gotoConfirmOrder(){
+				uni.navigateTo({
+					url: "../order/makeSureOrder/MakeSureOrder"
 				})
 			},
 			goSearch() {

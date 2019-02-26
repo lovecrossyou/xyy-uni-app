@@ -49,6 +49,12 @@
 			}
 		},
 		{
+			"path": "pages/order/makeSureOrder/MakeSureOrder",
+			"style": {
+				"navigationBarTitleText": "确认订单"
+			}
+		},
+		{
 			"path": "pages/shoppingcart/shoppingcart",
 			"style": {
 				"navigationBarTitleText": "购物车"

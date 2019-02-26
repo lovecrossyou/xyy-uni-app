@@ -21,10 +21,13 @@ const getReqest = (url, params, cb) => {
 const postRequest = (url, params, cb) => {
 	uni.request({
 		url: baseUrl + url,
-		data: params,
 		method: 'POST',
+// 		header: {
+// 			'content-type': 'application/json;charset=UTF-8' //自定义请求头信息
+// 		},
+		data: params,
 		success: (res) => {
-			cb(res);
+			cb(res.data);
 		},
 		fail(e) {
 

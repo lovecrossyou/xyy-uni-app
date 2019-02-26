@@ -18,6 +18,10 @@
 				<view class="info_sub1">门店地址 </view>
 				<view class="info_sub">北京朝阳区安贞门胜古北里惠新西街南口52号</view>
 			</view>
+			<view class="info-row">
+				<view class="info_sub1">门店电话 </view>
+				<view class="info_phone">18301379671</view>
+			</view>
 		</view>
 		<view class="space"></view>
 		<view class="info_wrapper">
@@ -79,6 +83,15 @@
 					font-family:PingFangSC-Regular;
 					font-weight:400;
 					color:rgba(51,51,51,1);
+					line-height:34upx;
+				}
+				.info_phone{
+					margin-left: 10upx;
+					height:34upx;
+					font-size:24upx;
+					font-family:PingFangSC-Regular;
+					font-weight:400;
+					color:#7CA7D2;
 					line-height:34upx;
 				}
 			}

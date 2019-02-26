@@ -530,10 +530,13 @@ var getReqest = function getReqest(url, params, cb) {
 var postRequest = function postRequest(url, params, cb) {
   uni.request({
     url: baseUrl + url,
-    data: params,
     method: 'POST',
+    // 		header: {
+    // 			'content-type': 'application/json;charset=UTF-8' //自定义请求头信息
+    // 		},
+    data: params,
     success: function success(res) {
-      cb(res);
+      cb(res.data);
     },
     fail: function fail(e) {
 

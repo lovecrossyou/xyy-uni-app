@@ -861,6 +861,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
 {
   props: {
     shopInfo: Object } };exports.default = _default;
@@ -1393,6 +1397,10 @@ var staticRenderFns = [
           _c("view", { staticClass: "info_sub" }, [
             _vm._v("北京朝阳区安贞门胜古北里惠新西街南口52号")
           ])
+        ]),
+        _c("view", { staticClass: "info-row" }, [
+          _c("view", { staticClass: "info_sub1" }, [_vm._v("门店电话")]),
+          _c("view", { staticClass: "info_phone" }, [_vm._v("18301379671")])
         ])
       ]),
       _c("view", { staticClass: "space" }),

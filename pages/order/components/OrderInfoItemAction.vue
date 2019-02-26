@@ -1,0 +1,72 @@
+<template>
+	<div class="orderInfoItem_action">
+        <div class="orderInfo_item_left">{{itemTitle}}</div>
+        <div class="orderInfo_item_right"  v-on:click="callBack" >
+          <div class="orderInfo_item_right_value">
+            {{itemContent}}
+          </div>
+          <img v-if="hideArrow" class="address_choose_arrow" src="" />
+        </div>
+    </div>
+</template>
+
+<script>
+	export default {
+		props:{
+			itemTitle:String,
+			itemContent:String,
+		},
+		methods:{
+			callBack(){
+				console.log(33333);
+			}
+		},
+		onLoad() {
+			
+		}
+	}
+</script>
+
+<style lang="less" scoped>
+
+	.row_between{
+	  display: flex;
+	  flex-direction: row;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+	.row_center{
+	  display: flex;
+	  flex-direction: row;
+	  align-items: center;
+	}	
+	.orderInfoItem_action{
+        .row_between;
+        padding: 22px 24px 0 24px;
+        box-sizing: border-box;
+        width: 100%;
+        .orderInfo_item_left{
+          font-size:24px;
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:#7CA7D2;
+          line-height: 24px;
+        }
+        .orderInfo_item_right{
+          .row_center;
+          .orderInfo_item_right_value{
+            font-size:24px;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:#D4660B;
+            margin-right: 10px;
+            line-height: 24px;
+          }
+          .address_choose_arrow{
+            width: 10px;
+            height: 18px;
+            }
+          }
+      }
+	
+</style>

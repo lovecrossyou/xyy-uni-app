@@ -244,6 +244,11 @@ var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../U
         console.log('res banner/list###', res);
       });
     },
+    gotoConfirmOrder: function gotoConfirmOrder() {
+      uni.navigateTo({
+        url: "../order/makeSureOrder/MakeSureOrder" });
+
+    },
     goSearch: function goSearch() {
       uni.navigateTo({
         url: "../HM-search/HM-search" });
@@ -396,14 +401,33 @@ var render = function() {
           )
         ])
       ]),
-      _vm._m(0),
+      _c("view", { staticClass: "entery" }, [
+        _c(
+          "view",
+          {
+            staticClass: "entery-item",
+            attrs: { eventid: "5a05489d-1" },
+            on: { click: _vm.gotoConfirmOrder }
+          },
+          [
+            _c("image", {
+              attrs: { src: "../../static/main/main_shooping.png" }
+            }),
+            _c("view", { staticClass: "entery-text" }, [_vm._v("商超便利")])
+          ]
+        ),
+        _vm._m(0),
+        _vm._m(1),
+        _vm._m(2),
+        _vm._m(3)
+      ]),
       _vm._l(_vm.shops, function(shop, index) {
         return _c("view", { key: index, staticClass: "shop-info-wrapper" }, [
           _c(
             "view",
             {
               staticClass: "shop-info",
-              attrs: { eventid: "5a05489d-1-" + index },
+              attrs: { eventid: "5a05489d-2-" + index },
               on: {
                 click: function($event) {
                   _vm.goShop(shop)
@@ -436,7 +460,7 @@ var render = function() {
                   _vm._v("起送¥20")
                 ])
               ]),
-              _vm._m(1, true)
+              _vm._m(4, true)
             ]
           )
         ])
@@ -450,29 +474,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("view", { staticClass: "entery" }, [
-      _c("view", { staticClass: "entery-item" }, [
-        _c("image", { attrs: { src: "../../static/main/main_shooping.png" } }),
-        _c("view", { staticClass: "entery-text" }, [_vm._v("商超便利")])
-      ]),
-      _c("view", { staticClass: "entery-item" }, [
-        _c("image", { attrs: { src: "../../static/main/main_fruits.png" } }),
-        _c("view", { staticClass: "entery-text" }, [_vm._v("水果")])
-      ]),
-      _c("view", { staticClass: "entery-item" }, [
-        _c("image", {
-          attrs: { src: "../../static/main/main_water_check.png" }
-        }),
-        _c("view", { staticClass: "entery-text" }, [_vm._v("水质检测")])
-      ]),
-      _c("view", { staticClass: "entery-item" }, [
-        _c("image", { attrs: { src: "../../static/main/main_water.png" } }),
-        _c("view", { staticClass: "entery-text" }, [_vm._v("桶装水")])
-      ]),
-      _c("view", { staticClass: "entery-item" }, [
-        _c("image", { attrs: { src: "../../static/main/main_dinner.png" } }),
-        _c("view", { staticClass: "entery-text" }, [_vm._v("夜宵")])
-      ])
+    return _c("view", { staticClass: "entery-item" }, [
+      _c("image", { attrs: { src: "../../static/main/main_fruits.png" } }),
+      _c("view", { staticClass: "entery-text" }, [_vm._v("水果")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("view", { staticClass: "entery-item" }, [
+      _c("image", { attrs: { src: "../../static/main/main_water_check.png" } }),
+      _c("view", { staticClass: "entery-text" }, [_vm._v("水质检测")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("view", { staticClass: "entery-item" }, [
+      _c("image", { attrs: { src: "../../static/main/main_water.png" } }),
+      _c("view", { staticClass: "entery-text" }, [_vm._v("桶装水")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("view", { staticClass: "entery-item" }, [
+      _c("image", { attrs: { src: "../../static/main/main_dinner.png" } }),
+      _c("view", { staticClass: "entery-text" }, [_vm._v("夜宵")])
     ])
   },
   function() {
