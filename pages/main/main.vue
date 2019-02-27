@@ -32,7 +32,7 @@
 				<image src="../../static/main/main_shooping.png"></image>
 				<view class="entery-text">商超便利</view>
 			</view>
-			<view class="entery-item">
+			<view class="entery-item" v-on:click="gotoAddAddress">
 				<image src="../../static/main/main_fruits.png"></image>
 				<view class="entery-text">水果</view>
 			</view>
@@ -80,6 +80,9 @@
 	import {
 		getReqest
 	} from '@/util/network.js'
+	
+	import api from "@/util/api.js"
+	
 	export default {
 		data() {
 			return {
@@ -93,6 +96,29 @@
 			}
 		},
 		methods: {
+			async test() {
+				const params = {
+					"shopId": 13,
+					"userId": 2,
+					"products": [
+						{
+							"quantity": 2,
+							"productId": 10
+						},
+						{
+							"quantity": 7,
+							"productId": 13
+						},
+						{
+							"quantity": 1,
+							"productId": 14
+						}
+					]
+				}
+				const ids = await api.requestCartClient(params);
+				console.log("cartClient=======",ids)
+			},
+			
 			getNearShops() {
 				const params = {
 					latitude: '20.111111',
@@ -106,6 +132,7 @@
 					that.shops = res.content;
 				})
 			},
+			
 			getBanner() {
 				const params = {
 					latitude: '20.111111',
@@ -120,6 +147,11 @@
 			gotoConfirmOrder(){
 				uni.navigateTo({
 					url: "../order/makeSureOrder/MakeSureOrder"
+				})
+			},
+			gotoAddAddress(){
+				uni.navigateTo({
+					url: "../address/addAddress"
 				})
 			},
 			goSearch() {
@@ -153,7 +185,7 @@
 			}
 		},
 		computed: mapState(['forcedLogin', 'hasLogin', 'userName']),
-		onLoad() {
+		 onLoad() {
 			this.amapPlugin = new amap.AMapWX({
 				key: this.key
 			});
@@ -186,6 +218,7 @@
 			this.getRegeo();
 			this.getBanner();
 			this.getNearShops();
+			this.test();
 		}
 	}
 </script>

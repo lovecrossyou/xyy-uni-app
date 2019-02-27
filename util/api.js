@@ -1,13 +1,13 @@
 import request from './request'
 
-const baseURL = `https://petrify.cc`
-// const baseURL = 'http://192.168.29.238:7001'
+// const baseURL = `https://petrify.cc`
+const baseURL = 'http://47.94.209.108:7002/client/'
 request.config.baseURL = baseURL
 
 const dailyRequest = (id) => request.post('/v1/daily', {
   url: `/api/4/news/${id}`
 })
-
+// const postRequest = ( url, params) => request.post(url, params);
 const api = {
   // picture
   getNewIds: () => request.get(`/v1/one?${encodeURI('url=/api/hp/idlist/0?version=3.5.0&platform=android')}`),
@@ -23,7 +23,9 @@ const api = {
   getWeather: (location) => request.get(`/v1/weather?location=${location}`),
   // 知乎日报
   getZhList: () => dailyRequest('latest'),
-  getZhDtl: (id) => dailyRequest(id)
+  getZhDtl: (id) => dailyRequest(id),
+	requestCartClient: (params) => request.post("shop/cartClient", params),
+	
 }
 
 export default api

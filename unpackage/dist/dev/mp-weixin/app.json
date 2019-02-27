@@ -10,7 +10,9 @@
     "pages/order/makeSureOrder/MakeSureOrder",
     "pages/shoppingcart/shoppingcart",
     "pages/HM-search/HM-search",
-    "pages/main/shop/shop"
+    "pages/main/shop/shop",
+    "pages/address/addAddress",
+    "pages/address/searchAddress"
   ],
   "subPackages": [],
   "window": {

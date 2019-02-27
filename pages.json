@@ -71,6 +71,20 @@
 			"style": {
 				"navigationBarTitleText": "店铺"
 			}
+		},
+		{
+			"path": "pages/address/addAddress",
+			"style": {
+				"navigationBarTitleText": "添加地址"
+			}
+		},
+		{
+			
+			"path": "pages/address/searchAddress",
+			"style": {
+				"navigationBarTitleText": "搜索地址"
+			}
+
 		}
 	],
 	"tabBar": {

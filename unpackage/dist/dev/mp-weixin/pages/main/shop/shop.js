@@ -1539,7 +1539,11 @@ var render = function() {
                     _c(
                       "swiper-item",
                       { attrs: { mpcomid: "c362b3ea-5" } },
-                      [_c("shop-info", { attrs: { mpcomid: "c362b3ea-4" } })],
+                      [
+                        _c("shop-info", {
+                          attrs: { shopInfo: _vm.shop, mpcomid: "c362b3ea-4" }
+                        })
+                      ],
                       1
                     )
                   ],

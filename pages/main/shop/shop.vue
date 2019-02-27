@@ -40,7 +40,7 @@
 				</swiper-item>
 				<block v-if="shop">
 					<swiper-item>
-						<shop-info></shop-info>
+						<shop-info :shopInfo="shop"></shop-info>
 					</swiper-item>
 				</block>
 			</swiper>

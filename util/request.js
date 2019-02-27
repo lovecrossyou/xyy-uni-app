@@ -4,7 +4,7 @@ const request = new Fly()
 
 const errorPrompt = (err) => {
   wx.showToast({
-    title: err.message || 'fetch data error.',
+    title: err.data.message || 'fetch data error.',
     icon: 'none'
   })
 }
@@ -16,7 +16,7 @@ request.interceptors.request.use((request) => {
 
 request.interceptors.response.use((response, promise) => {
   wx.hideNavigationBarLoading()
-  if (!(response && response.data && response.data.res === 0)) {
+  if (!(response.data.status === "ok")) {
     errorPrompt(response)
   }
   return promise.resolve(response.data)
