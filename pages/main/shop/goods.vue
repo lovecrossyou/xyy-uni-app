@@ -10,10 +10,10 @@
 				</view>
 			</scroll-view>
 			<scroll-view scroll-y="true" class="foods-wrapper">
+				<view class="title">
+					{{currentTitle}}
+				</view>
 				<view class="food-list" v-for="(p,index) in currentProducts" :key='index'>
-					<view class="title">
-						{{p.headName}}
-					</view>
 					<view class="food-item">
 						<view class="icon">
 							<image v-bind:src="p.headImage" mode="aspectFit"></image>
@@ -30,7 +30,7 @@
 							</view>
 						</view>
 						<view class="cartcontrol-wrapper">
-							<cartcontrol></cartcontrol>
+							<cartcontrol :food="food" @add="addFood"></cartcontrol>
 						</view>
 					</view>
 				</view>
@@ -51,6 +51,9 @@
 		},
 		data() {
 			return {
+				food:{
+					count:10
+				},
 				currentIndex: 0,
 				img_url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550900041138&di=722b8ba73b2b6c1ec8671480add10f70&imgtype=0&src=http%3A%2F%2Fwww.sy-tzs.com%2Fupfile%2FisClass%2Fppic%2F20160216114715-679156452.jpg',
 			}
@@ -63,6 +66,9 @@
 		computed: {
 			currentProducts: function() {
 				return this.products[this.currentIndex].products;
+			},
+			currentTitle: function() {
+				return this.products[this.currentIndex].name;
 			}
 		}
 	}
@@ -113,17 +119,17 @@
 		.foods-wrapper {
 			flex: 1;
 
-			.food-list {
-				.title {
-					padding: 0 0 0 28upx;
-					border-left: 4upx solid #d9dde1;
-					height: 52upx;
-					line-height: 52upx;
-					background: #f3f5f7;
-					font-size: 24upx;
-					color: rgb(147, 153, 159);
-				}
+			.title {
+				padding: 0 0 0 28upx;
+				border-left: 4upx solid #d9dde1;
+				height: 52upx;
+				line-height: 52upx;
+				background: #f3f5f7;
+				font-size: 24upx;
+				color: rgb(147, 153, 159);
+			}
 
+			.food-list {
 				.food-item {
 					display: flex;
 					margin: 12upx;
