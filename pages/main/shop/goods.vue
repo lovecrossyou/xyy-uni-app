@@ -30,7 +30,7 @@
 							</view>
 						</view>
 						<view class="cartcontrol-wrapper">
-							<cartcontrol :food="food" @add="addFood"></cartcontrol>
+							<cartcontrol :food="p" @add="addFood"></cartcontrol>
 						</view>
 					</view>
 				</view>

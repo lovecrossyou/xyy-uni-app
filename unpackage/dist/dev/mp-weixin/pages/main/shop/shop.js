@@ -691,7 +691,7 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules
 
   },
   methods: {
-    addCart: function addCart() {
+    addCart: function addCart(event) {
       if (!this.food.count) {
         _vue.default.set(this.food, 'count', 1); // 向对象/数组添加是非响应的，强制响应
       } else {
@@ -1320,7 +1320,7 @@ var render = function() {
                     [
                       _c("cartcontrol", {
                         attrs: {
-                          food: _vm.food,
+                          food: p,
                           eventid: "2ae02ee1-1-" + index,
                           mpcomid: "2ae02ee1-0-" + index
                         },

@@ -21,7 +21,7 @@
 			}
 		},
 		methods: {
-			addCart() {
+			addCart(event) {
 				if (!this.food.count) {
 					Vue.set(this.food, 'count', 1); // 向对象/数组添加是非响应的，强制响应
 				} else {
