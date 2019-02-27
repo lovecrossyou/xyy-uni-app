@@ -29,12 +29,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
-					"name": "地址",
-					"pathName": "pages/address/searchAddress",
+					"name": "地址列表",
+					"pathName": "pages/address/chooseAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "pages/address/addAddress",
 					"scene": null
 				}
 			]

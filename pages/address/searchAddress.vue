@@ -71,32 +71,33 @@
         padding: 10upx;
 		box-sizing: border-box;
         input{
-            @include sc(.65rem, #999);
+            @include sc(26upx, #999);
             flex: 4;
             background-color: #f1f1f1;
-            margin-right: 8upx;
-            height: 40upx;
-            border-radius: 5upx;
-            padding: 0 10upx;
+            margin-right: 12upx;
+            height: 80upx;
+            border-radius: 10upx;
+            padding: 0 20upx;
         }
         button{
             flex: 1;
-            @include sc(.65rem, #fff);
+            @include sc(26upx, #fff);
             background-color: $blue;
-            border-radius: 0.15rem;
+            border-radius: 6upx;
+			line-height: 80upx;
         }
     }
     .address_list{
-        padding: .7rem;
+        padding:28upx;
         li{
-            padding: .7rem 0;
-            border-bottom: 0.025rem solid #f5f5f5;
-            line-height: 1rem;
+            padding: 28upx 0;
+            border-bottom: 1upx solid #f5f5f5;
+            line-height: 40upx;
             h4{
-                @include sc(.75rem, #555);
+                @include sc(30upx, #555);
             }
             p{
-                @include sc(.65rem, #999);
+                @include sc(26upx, #999);
             }
         }
     }
@@ -104,8 +105,8 @@
         @include center;
         width: 100%;
         p{
-            @include sc(.5rem, #aaa);
-            line-height: .7rem;
+            @include sc(26upx, #aaa);
+            line-height: 28upx;
             text-align: center;
 
         }

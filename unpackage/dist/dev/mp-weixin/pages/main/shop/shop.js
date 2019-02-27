@@ -964,7 +964,7 @@ var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../U
 
       activeTabIndex: 0,
       cart_icon: '../../../static/shop/cart.png',
-      shop: null,
+      shop: {},
       judgementData: { content: [] } };
 
   },
@@ -1447,7 +1447,7 @@ var render = function() {
             _vm.shop
               ? _c("block", [
                   _c("view", { staticClass: "name" }, [
-                    _vm._v(_vm._s(_vm.shop.info.name))
+                    _vm._v(_vm._s(_vm.shop.info.name || ""))
                   ]),
                   _c("view", { staticClass: "score-wrapper" }, [
                     _c("view", { staticClass: "score" }, [

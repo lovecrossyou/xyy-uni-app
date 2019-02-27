@@ -7,7 +7,7 @@
 				</view>
 				<view class="shop-info">
 					<block v-if="shop">
-						<view class="name">{{shop.info.name}}</view>
+						<view class="name">{{shop.info.name||""}}</view>
 						<view class="score-wrapper">
 							<view class="score">评分{{shop.info.score}}</view>
 							<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
@@ -83,7 +83,7 @@
 				],
 				activeTabIndex: 0,
 				cart_icon: '../../../static/shop/cart.png',
-				shop: null,
+				shop: {},
 				judgementData:{content:[]}
 			};
 		},

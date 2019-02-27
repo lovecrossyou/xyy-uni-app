@@ -12,7 +12,8 @@
     "pages/HM-search/HM-search",
     "pages/main/shop/shop",
     "pages/address/addAddress",
-    "pages/address/searchAddress"
+    "pages/address/searchAddress",
+    "pages/address/chooseAddress"
   ],
   "subPackages": [],
   "window": {
