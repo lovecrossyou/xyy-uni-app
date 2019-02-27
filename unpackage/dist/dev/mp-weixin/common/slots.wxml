@@ -1,6 +1,7 @@
 <import src="/components/uni-icon/uni-icon.vue.wxml" />
 <import src="/components/uni-list/uni-list.vue.wxml" />
 <import src="/components/uni-list-item/uni-list-item.vue.wxml" />
+<import src="/pages/main/shop/cartcontrol/cartcontrol.vue.wxml" />
 
 <template name="7d3c43dd-default-7d3c43dd-7"><template title="收货地址" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png" data="{{...$root['0'], ...$root[$kk+'7d3c43dd-1'],$root}}" is="2dcafb89"></template><template title="我的优惠券" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png" data="{{...$root['0'], ...$root[$kk+'7d3c43dd-2'],$root}}" is="2dcafb89"></template><template title="我的优惠券" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png" data="{{...$root['0'], ...$root[$kk+'7d3c43dd-3'],$root}}" is="2dcafb89"></template><template title="我的积分" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png" data="{{...$root['0'], ...$root[$kk+'7d3c43dd-4'],$root}}" is="2dcafb89"></template><template title="意见反馈" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png" data="{{...$root['0'], ...$root[$kk+'7d3c43dd-5'],$root}}" is="2dcafb89"></template><template title="我的优惠券" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png" data="{{...$root['0'], ...$root[$kk+'7d3c43dd-6'],$root}}" is="2dcafb89"></template></template>
 

@@ -1,4 +1,4 @@
-.search_address_page.data-v-a63baba6 {
+.search_address_page.data-v-28a26a32 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -6,10 +6,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.search_address_page ._p.data-v-a63baba6, .search_address_page ._span.data-v-a63baba6 {
+.search_address_page ._p.data-v-28a26a32, .search_address_page ._span.data-v-28a26a32 {
     font-family: Helvetica Neue,Tahoma,Arial;
 }
-.search_form.data-v-a63baba6 {
+.search_form.data-v-28a26a32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,8 +24,13 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+<<<<<<< HEAD
 .search_form ._input.data-v-a63baba6 {
     font-size: 26rpx;
+=======
+.search_form ._input.data-v-28a26a32 {
+    font-size: 0.65rem;
+>>>>>>> d207c5f04f431fe7cbf573e170751166d189a3c6
     color: #999;
     -webkit-box-flex: 4;
     -webkit-flex: 4;
@@ -37,7 +42,7 @@
     border-radius: 10rpx;
     padding: 0 20rpx;
 }
-.search_form ._button.data-v-a63baba6 {
+.search_form ._button.data-v-28a26a32 {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
@@ -48,6 +53,7 @@
     border-radius: 6rpx;
     line-height: 80rpx;
 }
+<<<<<<< HEAD
 .address_list.data-v-a63baba6 {
   padding: 28rpx;
 }
@@ -62,9 +68,25 @@
 }
 .address_list ._li ._p.data-v-a63baba6 {
       font-size: 26rpx;
+=======
+.address_list.data-v-28a26a32 {
+  padding: .7rem;
+}
+.address_list ._li.data-v-28a26a32 {
+    padding: .7rem 0;
+    border-bottom: 0.025rem solid #f5f5f5;
+    line-height: 1rem;
+}
+.address_list ._li ._h4.data-v-28a26a32 {
+      font-size: 0.75rem;
+      color: #555;
+}
+.address_list ._li ._p.data-v-28a26a32 {
+      font-size: 0.65rem;
+>>>>>>> d207c5f04f431fe7cbf573e170751166d189a3c6
       color: #999;
 }
-.empty_tips.data-v-a63baba6 {
+.empty_tips.data-v-28a26a32 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -73,8 +95,13 @@
           transform: translate(-50%, -50%);
   width: 100%;
 }
+<<<<<<< HEAD
 .empty_tips ._p.data-v-a63baba6 {
     font-size: 26rpx;
+=======
+.empty_tips ._p.data-v-28a26a32 {
+    font-size: 0.5rem;
+>>>>>>> d207c5f04f431fe7cbf573e170751166d189a3c6
     color: #aaa;
     line-height: 28rpx;
     text-align: center;

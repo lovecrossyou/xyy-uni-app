@@ -668,7 +668,7 @@ var _uniIcon = _interopRequireDefault(__webpack_require__(/*! ../uni-icon/uni-ic
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -679,12 +679,31 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
+  props: {
+    food: Object },
+
   data: function data() {
     return {
-      add_icon: '../../../static/shop/icon_add.png' };
+      add_icon: '../../../static/shop/icon_add.png',
+      minus_icon: '../../../static/shop/icon_minus.png' };
 
-  } };exports.default = _default;
+  },
+  methods: {
+    addCart: function addCart(event) {
+      if (!this.food.count) {
+        _vue.default.set(this.food, 'count', 1); // 向对象/数组添加是非响应的，强制响应
+      } else {
+        this.food.count++;
+      };
+      this.$emit('add', event.target); // 触发当前实例上的事件，以便父元素@监听子元素。将点击的元素传入
+    },
+    decreaseCart: function decreaseCart() {
+      if (this.food.count) {
+        this.food.count--;
+      }
+    } } };exports.default = _default;
 
 /***/ }),
 
@@ -749,6 +768,9 @@ var _cartcontrol = _interopRequireDefault(__webpack_require__(/*! ./cartcontrol/
 
   data: function data() {
     return {
+      food: {
+        count: 10 },
+
       currentIndex: 0,
       img_url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550900041138&di=722b8ba73b2b6c1ec8671480add10f70&imgtype=0&src=http%3A%2F%2Fwww.sy-tzs.com%2Fupfile%2FisClass%2Fppic%2F20160216114715-679156452.jpg' };
 
@@ -761,6 +783,9 @@ var _cartcontrol = _interopRequireDefault(__webpack_require__(/*! ./cartcontrol/
   computed: {
     currentProducts: function currentProducts() {
       return this.products[this.currentIndex].products;
+    },
+    currentTitle: function currentTitle() {
+      return this.products[this.currentIndex].name;
     } } };exports.default = _default;
 
 /***/ }),
@@ -940,6 +965,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
 var _judgement = _interopRequireDefault(__webpack_require__(/*! ./judgement.vue */ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/main/shop/judgement.vue"));
 var _shopInfo = _interopRequireDefault(__webpack_require__(/*! ./shop-info.vue */ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/main/shop/shop-info.vue"));
 var _goods = _interopRequireDefault(__webpack_require__(/*! ./goods */ "../../../../../../Users/tianxiaotian/Documents/uni-app/xyy-uni-app/pages/main/shop/goods.vue"));
@@ -964,7 +991,7 @@ var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../U
 
       activeTabIndex: 0,
       cart_icon: '../../../static/shop/cart.png',
-      shop: {},
+      shop: null,
       judgementData: { content: [] } };
 
   },
@@ -988,7 +1015,9 @@ var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../U
     },
     initJudgement: function initJudgement(shopId) {
       var that = this;
-      (0, _network.getReqest)('shop/comments', { "shopId": 13 }, function (res) {
+      (0, _network.getReqest)('shop/comments', {
+        "shopId": 13 },
+      function (res) {
         that.judgementData = res;
       });
     } },
@@ -1159,13 +1188,49 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("view", { staticClass: "control-wrapper" }, [
     _c("image", {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.food.count > 0,
+          expression: "food.count>0"
+        }
+      ],
       staticClass: "icon",
-      attrs: { src: _vm.add_icon, mode: "aspectFit" }
+      attrs: { src: _vm.minus_icon, mode: "aspectFit", eventid: "5ff52036-0" },
+      on: {
+        click: function($event) {
+          $event.stopPropagation()
+          $event.preventDefault()
+          _vm.decreaseCart($event)
+        }
+      }
     }),
-    _c("view", { staticClass: "number" }, [_vm._v("1")]),
+    _c(
+      "view",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.food.count > 0,
+            expression: "food.count > 0"
+          }
+        ],
+        staticClass: "number"
+      },
+      [_vm._v(_vm._s(_vm.food.count))]
+    ),
     _c("image", {
       staticClass: "icon",
-      attrs: { src: _vm.add_icon, mode: "aspectFit" }
+      attrs: { src: _vm.add_icon, mode: "aspectFit", eventid: "5ff52036-1" },
+      on: {
+        click: function($event) {
+          $event.stopPropagation()
+          $event.preventDefault()
+          _vm.addCart($event)
+        }
+      }
     })
   ])
 }
@@ -1224,41 +1289,49 @@ var render = function() {
         _c(
           "scroll-view",
           { staticClass: "foods-wrapper", attrs: { "scroll-y": "true" } },
-          _vm._l(_vm.currentProducts, function(p, index) {
-            return _c("view", { key: index, staticClass: "food-list" }, [
-              _c("view", { staticClass: "title" }, [
-                _vm._v(_vm._s(p.headName))
-              ]),
-              _c("view", { staticClass: "food-item" }, [
-                _c("view", { staticClass: "icon" }, [
-                  _c("image", {
-                    attrs: { src: p.headImage, mode: "aspectFit" }
-                  })
-                ]),
-                _c("view", { staticClass: "content" }, [
-                  _c("view", { staticClass: "name" }, [
-                    _vm._v(_vm._s(p.headName))
-                  ]),
-                  _c("view", { staticClass: "desc" }, [
-                    _vm._v("月售" + _vm._s(p.saleAmount) + " 好评95%")
-                  ]),
-                  _c("view", { staticClass: "price" }, [
-                    _vm._v(_vm._s(p.price))
-                  ])
-                ]),
-                _c(
-                  "view",
-                  { staticClass: "cartcontrol-wrapper" },
-                  [
-                    _c("cartcontrol", {
-                      attrs: { mpcomid: "2ae02ee1-0-" + index }
+          [
+            _c("view", { staticClass: "title" }, [
+              _vm._v(_vm._s(_vm.currentTitle))
+            ]),
+            _vm._l(_vm.currentProducts, function(p, index) {
+              return _c("view", { key: index, staticClass: "food-list" }, [
+                _c("view", { staticClass: "food-item" }, [
+                  _c("view", { staticClass: "icon" }, [
+                    _c("image", {
+                      attrs: { src: p.headImage, mode: "aspectFit" }
                     })
-                  ],
-                  1
-                )
+                  ]),
+                  _c("view", { staticClass: "content" }, [
+                    _c("view", { staticClass: "name" }, [
+                      _vm._v(_vm._s(p.headName))
+                    ]),
+                    _c("view", { staticClass: "desc" }, [
+                      _vm._v("月售" + _vm._s(p.saleAmount) + " 好评95%")
+                    ]),
+                    _c("view", { staticClass: "price" }, [
+                      _vm._v(_vm._s(p.price))
+                    ])
+                  ]),
+                  _c(
+                    "view",
+                    { staticClass: "cartcontrol-wrapper" },
+                    [
+                      _c("cartcontrol", {
+                        attrs: {
+                          food: p,
+                          eventid: "2ae02ee1-1-" + index,
+                          mpcomid: "2ae02ee1-0-" + index
+                        },
+                        on: { add: _vm.addFood }
+                      })
+                    ],
+                    1
+                  )
+                ])
               ])
-            ])
-          })
+            })
+          ],
+          2
         )
       ],
       1
@@ -1509,16 +1582,27 @@ var render = function() {
             on: { change: _vm.swiperChange }
           },
           [
-            _c(
-              "swiper-item",
-              { attrs: { mpcomid: "c362b3ea-1" } },
-              [
-                _c("goods", {
-                  attrs: { products: _vm.shop.products, mpcomid: "c362b3ea-0" }
-                })
-              ],
-              1
-            ),
+            _vm.shop
+              ? _c(
+                  "block",
+                  [
+                    _c(
+                      "swiper-item",
+                      { attrs: { mpcomid: "c362b3ea-1" } },
+                      [
+                        _c("goods", {
+                          attrs: {
+                            products: _vm.shop.products,
+                            mpcomid: "c362b3ea-0"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              : _vm._e(),
             _c(
               "swiper-item",
               { attrs: { mpcomid: "c362b3ea-3" } },

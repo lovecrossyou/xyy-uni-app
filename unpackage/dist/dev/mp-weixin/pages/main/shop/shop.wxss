@@ -368,8 +368,8 @@
   width: 180rpx;
 }
 .control-wrapper .icon {
-  width: 40rpx;
-  height: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
   overflow: hidden;
 }
 .control-wrapper .number {
@@ -428,7 +428,7 @@
       -ms-flex: 1;
           flex: 1;
 }
-.goods .foods-wrapper .food-list .title {
+.goods .foods-wrapper .title {
   padding: 0 0 0 28rpx;
   border-left: 4rpx solid #d9dde1;
   height: 52rpx;
@@ -649,7 +649,7 @@
 .content .shop-content .tab-wrapper .tab-item .line {
   position: absolute;
   bottom: 0;
-  height: 2rpx;
+  height: 4rpx;
   width: 52rpx;
   background-color: #7CA7D2;
 }

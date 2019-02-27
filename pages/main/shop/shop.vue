@@ -32,9 +32,11 @@
 				</view>
 			</view>
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
-				<swiper-item>
-					<goods :products="shop.products"></goods>
-				</swiper-item>
+				<block v-if="shop">
+					<swiper-item>
+						<goods :products="shop.products"></goods>
+					</swiper-item>
+				</block>
 				<swiper-item>
 					<judgement :judgementData="judgementData"></judgement>
 				</swiper-item>
@@ -83,7 +85,7 @@
 				],
 				activeTabIndex: 0,
 				cart_icon: '../../../static/shop/cart.png',
-				shop: {},
+				shop: null,
 				judgementData:{content:[]}
 			};
 		},
@@ -105,9 +107,11 @@
 					that.shop = res;
 				})
 			},
-			initJudgement(shopId){
+			initJudgement(shopId) {
 				const that = this;
-				getReqest('shop/comments', {"shopId":13}, res => {
+				getReqest('shop/comments', {
+					"shopId": 13
+				}, res => {
 					that.judgementData = res;
 				})
 			}
@@ -226,7 +230,7 @@
 					.line {
 						position: absolute;
 						bottom: 0;
-						height: 2px;
+						height: 4px;
 						width: 52upx;
 						background-color: #7CA7D2;
 					}
