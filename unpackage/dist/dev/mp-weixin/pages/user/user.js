@@ -417,42 +417,42 @@ var render = function() {
           _c("uni-list-item", {
             attrs: {
               title: "收货地址",
-              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
+              thumb: "http://qnimage.xiteng.com/dizhi@2x.png",
               mpcomid: "7d3c43dd-1"
             }
           }),
           _c("uni-list-item", {
             attrs: {
               title: "我的优惠券",
-              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
+              thumb: "http://qnimage.xiteng.com/kabao@2x.png",
               mpcomid: "7d3c43dd-2"
             }
           }),
           _c("uni-list-item", {
             attrs: {
-              title: "我的优惠券",
-              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
+              title: "我的收藏",
+              thumb: "http://qnimage.xiteng.com/shoucang@2x.png",
               mpcomid: "7d3c43dd-3"
             }
           }),
           _c("uni-list-item", {
             attrs: {
               title: "我的积分",
-              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
+              thumb: "http://qnimage.xiteng.com/jifen@2x.png",
               mpcomid: "7d3c43dd-4"
             }
           }),
           _c("uni-list-item", {
             attrs: {
               title: "意见反馈",
-              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
+              thumb: "http://qnimage.xiteng.com/fankui@2x.png",
               mpcomid: "7d3c43dd-5"
             }
           }),
           _c("uni-list-item", {
             attrs: {
-              title: "我的优惠券",
-              thumb: "http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png",
+              title: "更多",
+              thumb: "http://qnimage.xiteng.com/gengduo@2x.png",
               mpcomid: "7d3c43dd-6"
             }
           })
@@ -497,7 +497,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("view", { staticClass: "user-info" }, [
-      _c("view", { staticClass: "name" }, [_vm._v("任蕊芳")]),
+      _c("view", { staticClass: "name" }, [_vm._v("chechero")]),
       _c("view", { staticClass: "score" }, [_vm._v("积分：2500")])
     ])
   }

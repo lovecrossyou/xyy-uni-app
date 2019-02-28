@@ -100,15 +100,11 @@
 				duration: 1000,
 				timingFunction: 'ease',
 			})
-
 			this.animation = animation
-
-			animation.translateY(100).step()
-
+			animation.translateY(-200).step()
 			this.animationData = animation.export()
-
 			setTimeout(function() {
-				animation.translateY(-100).step()
+				animation.translateY(0).step()
 				this.animationData = animation.export()
 			}.bind(this), 1000)
 		},
@@ -317,7 +313,7 @@
 			width: 100%;
 			z-index: 100;
 			position: absolute;
-			bottom: 0;
+			bottom: -200upx;
 		}
 	}
 </style>
