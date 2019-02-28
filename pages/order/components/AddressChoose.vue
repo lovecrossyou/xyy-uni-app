@@ -1,6 +1,8 @@
 <template>
+	
 	<div class="address_choose" v-on:click="chooseAddAction" >
-      <div class="address_choose_left">
+		<div class="add_address" v-if="!mydata">请添加一个收货地址</div>
+      <div v-else class="address_choose_left">
         <div class="address_choose_mark_c">
           <div class="address_choose_mark_t">订单配送至</div>
           <div class="address_choose_mark">公司</div>
@@ -35,9 +37,15 @@
 	  align-items: center;
 	}	
 	.address_choose{
+		
 	  .row_center;
 	  padding: 24px;
 	  box-sizing: border-box;
+	
+	  .add_address{
+          font-size: 28upx;
+		  color: #333333;
+       }
 	  .address_choose_arrow{
 	    width: 14px;
 	    height: 28px;

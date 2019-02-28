@@ -8,12 +8,11 @@
         <section id="scroll_section" class="scroll_container">
             <section class="list_cotainer">
                 <ul class="deliverable_address">
-                    <li v-for="(item,index) in deliverable" :key="index">
-                        <view class="choosed_address" :class="{default_address: index===defaultIndex}"></view>
-                        <div v-on:click="chooseAddress(index)">
+                    <div class="div_li" v-for="(item,index) in deliverable" :key="index">
+                        <div class="detail_container" v-on:click="chooseAddress(item)">
                             <header>
                                 <span>{{item.recievName}}</span>
-                                <span>{{item.sex == 1? '先生' : '女士'}}</span>
+                                <span class="space_l_and_r">{{item.sex == 1? '先生' : '女士'}}</span>
                                 <span>{{item.phoneNum}}</span>
                             </header>
                             <div class="address_detail ellipsis">
@@ -21,7 +20,8 @@
                                 <p>{{item.fullAddress}}</p>   
                             </div>
                         </div>
-                    </li>
+						<image class="edit_address" src="../../static/img/edit_address.png" v-on:click="editAddress(item)"></image>
+                    </div>
                 </ul>
                 <section id="out_delivery" v-if="deliverdisable.length">
                     <header class="out_header">以下地址超出配送范围</header>
@@ -57,7 +57,7 @@
 <script>
 	import api from "@/util/api.js";
     export default {
-		onLoad() {
+		onShow() {
 			this.initData();
 		},
 		data(){
@@ -69,7 +69,6 @@
                 sig: null,
                 showAlert: false,
                 alertText: null,
-				defaultIndex:0,
             }
         },
 		computed:{
@@ -80,8 +79,12 @@
 			},
 		},
         methods: {
-			chooseAddress(index){
-				this.defaultIndex = index;
+			chooseAddress(item){
+				// this.defaultIndex = index;
+				console.log("chooseAddressitem====",item);
+			},
+			editAddress(item){
+				console.log("editAddress===",item);
 			},
 			addAddress(){
 				uni.navigateTo({
@@ -133,6 +136,9 @@
 	  .activeGrey{
 		  color: #ff5722;
 	  }
+	  .space_l_and_r{
+		  margin: 0 10upx;
+	  }
     .rating_page{
         position: absolute;
         top: 0;
@@ -141,7 +147,7 @@
         bottom: 0;
         background-color: #fff;
         z-index: 202;
-        padding-top: 1.95rem;
+        padding-top: 20upx;
         p, span{
             font-family: Helvetica Neue,Tahoma,Arial;
         }
@@ -152,78 +158,81 @@
         left: 0;
         right: 0;
         bottom: 0;
-        padding-top: 1.95rem;
+        padding-top: 20upx;
         overflow-y: auto;
     }
     .list_cotainer{
-        padding-bottom: 5rem;
+        padding-bottom: 40upx;
     }
     .add_icon_footer{
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-        height: 2.5rem;
+        height: 100upx;
         background-color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 204;
         span{
-            @include sc(.7rem, $blue);
-            margin-left: .3rem;
+            @include sc(28upx, $blue);
+            margin-left: 12upx;
         }
     }
     .deliverable_address{
         background-color: #fff;
-        li{
+		.edit_address{
+		    width: 40upx;
+			height: 40upx;
+			margin-left: 20upx;
+		}
+        .div_li{
             display: flex;
+			width: 100%;
             align-items: center;
-            border-bottom: 0.025rem solid #f5f5f5;
-            padding: .7rem;
-            line-height: 1rem;
-            .choosed_address{
-                @include wh(16upx, 16upx);
-                fill: #4cd964;
-                margin-right: 8upx;
-                opacity: 0;
-				background-color: #4cd964;
-            }
-            .default_address{
-                opacity: 1;
-            }
-            header{
-                @include sc(.7rem, #333);
-                span:nth-of-type(1){
-                    font-size: .8rem;
-                    font-weight: bold;
-                }
-            }
-            .address_detail{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                span{
-                    @include sc(.5rem, #fff);
-                    border-radius: .15rem;
-                    background-color: #ff5722;
-                    height: .6rem;
-                    line-height: .6rem;
-                    padding: 0 .2rem;
-                    margin-right: .3rem;
-                }
-                p{
-                    @include sc(.6rem, #777);
-                }
-            }
-			
+            border-bottom: 1px solid #f5f5f5;
+            padding: 28px;
+			box-sizing: border-box;
+			.detail_container{
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+				header{
+				    @include sc(28upx, #333);
+				    span:nth-of-type(1){
+				        font-size: 32upx;
+				        font-weight: bold;
+						// margin-left: 12upx;
+				    }
+				}
+				.address_detail{
+				    display: flex;
+				    align-items: center;
+				    span{
+				        @include sc(20upx, #fff);
+				        border-radius: 6upx;
+				        background-color: #ff5722;
+				        height: 24upx;
+				        line-height: 24upx;
+				        padding: 0 8upx;
+						box-sizing: border-box;
+						
+				    }
+				    p{
+				        @include sc(24upx, #777);
+						margin-left: 10upx;
+				    }
+				}
+			}
+            
         }
     }
     #out_delivery{
         .out_header{
-            @include sc(.6rem, #666);
-            line-height: 1.5rem;
-            padding-left: .5rem;
+            @include sc(24upx, #666);
+            line-height: 60upx;
+            padding-left: 20upx;
             background-color: #f5f5f5;
         }
         *{
@@ -234,7 +243,7 @@
         transition: all .4s;
     }
     .router-slid-enter, .router-slid-leave-active {
-        transform: translate3d(2rem, 0, 0);
+        transform: translate3d(80upx, 0, 0);
         opacity: 0;
     }
 </style>
