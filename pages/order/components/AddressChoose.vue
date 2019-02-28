@@ -38,7 +38,6 @@
 	  
 	}	
 	.address_choose{
-		
 	  .row_center;
 	  padding: 24px;
 	  box-sizing: border-box;
