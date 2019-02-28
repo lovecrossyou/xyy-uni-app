@@ -27,7 +27,7 @@
 				} else {
 					this.food.count++;
 				};
-				this.$emit('add', event.target); // 触发当前实例上的事件，以便父元素@监听子元素。将点击的元素传入
+				this.$store.commit('cart/addCart', this.food); // 触发当前实例上的事件，以便父元素@监听子元素。将点击的元素传入
 			},
 			decreaseCart() {
 				if (this.food.count) {

@@ -69,12 +69,15 @@
 				</view>
 			</view>
 			<scroll-view scroll-y="true" class="cart-list-items">
-				<block v-for="(cart,index) in carts" :key="index">
+				<block v-for="(product,index) in currentCarts" :key="index">
 					<view class="cart-list-item">
 						<view class="p-name">
-							农夫山泉
+							{{product.headName}}
 						</view>
 						<view class="right">
+							<view class="price">
+								¥{{product.price}}
+							</view>
 							<cartcontrol :food="product" @add="addFood"></cartcontrol>
 						</view>
 					</view>
@@ -124,12 +127,16 @@
 				showMenu: false
 			};
 		},
-		onShow: function() {},
 		components: {
 			judgement,
 			shopInfo,
 			goods,
 			cartcontrol
+		},
+		computed: {
+			currentCarts() {
+				return this.$store.state.cart.items
+			}
 		},
 		methods: {
 			addFood() {
@@ -178,6 +185,7 @@
 		},
 		onLoad: function(option) {
 			console.log('shopId ', option)
+
 			this.initShop(option.shopId)
 			this.initJudgement(option.shopId)
 		}
@@ -407,8 +415,19 @@
 					}
 
 					.right {
+						// height: 100%;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
 						// margin-right: 24upx;
+						.price {
+							// height: 100%;
 
+
+							color: #E02C2C;
+							font-size: 28upx;
+							line-height: 100%;
+						}
 					}
 				}
 			}
