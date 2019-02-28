@@ -1,9 +1,9 @@
 <template>
 	<view class="content">
-		<view class="header">
+		 <view class="header">
 			<view class="left">
 				<view class="image-content">
-					<image style="width: 128upx; height: 128upx; background-color: #eeeeee;" mode="aspectFill" :src="src" @error="imageError"></image>
+					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="src" @error="imageError"></image>
 				</view>
 				<view class="user-info">
 					<view class="name">chechero</view>
@@ -11,8 +11,7 @@
 				</view>
 			</view>
 			<view class="right">
-			   <uni-icon type="arrowright
-			   " color="#bbb" size="20"></uni-icon>
+			   <uni-icon type="arrowright" color="#bbb" size="20"></uni-icon>
 			</view>
 		</view>
 

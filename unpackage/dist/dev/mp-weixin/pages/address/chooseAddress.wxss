@@ -1,17 +1,17 @@
-.add_address_img.data-v-f265ec0c {
+.add_address_img.data-v-d60d8092 {
   width: 24rpx;
   height: 24rpx;
 }
-.container.data-v-f265ec0c {
+.container.data-v-d60d8092 {
   color: #4cd964;
 }
-.activeGrey.data-v-f265ec0c {
+.activeGrey.data-v-d60d8092 {
   color: #ff5722;
 }
-.space_l_and_r.data-v-f265ec0c {
+.space_l_and_r.data-v-d60d8092 {
   margin: 0 10rpx;
 }
-.rating_page.data-v-f265ec0c {
+.rating_page.data-v-d60d8092 {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,10 +21,10 @@
   z-index: 202;
   padding-top: 20rpx;
 }
-.rating_page ._p.data-v-f265ec0c, .rating_page ._span.data-v-f265ec0c {
+.rating_page ._p.data-v-d60d8092, .rating_page ._span.data-v-d60d8092 {
     font-family: Helvetica Neue,Tahoma,Arial;
 }
-.scroll_container.data-v-f265ec0c {
+.scroll_container.data-v-d60d8092 {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,10 +33,10 @@
   padding-top: 20rpx;
   overflow-y: auto;
 }
-.list_cotainer.data-v-f265ec0c {
+.list_cotainer.data-v-d60d8092 {
   padding-bottom: 40rpx;
 }
-.add_icon_footer.data-v-f265ec0c {
+.add_icon_footer.data-v-d60d8092 {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -57,20 +57,20 @@
           align-items: center;
   z-index: 204;
 }
-.add_icon_footer ._span.data-v-f265ec0c {
+.add_icon_footer ._span.data-v-d60d8092 {
     font-size: 28rpx;
     color: #3190e8;
     margin-left: 12rpx;
 }
-.deliverable_address.data-v-f265ec0c {
+.deliverable_address.data-v-d60d8092 {
   background-color: #fff;
 }
-.deliverable_address .edit_address.data-v-f265ec0c {
+.deliverable_address .edit_address.data-v-d60d8092 {
     width: 40rpx;
     height: 40rpx;
     margin-left: 20rpx;
 }
-.deliverable_address .div_li.data-v-f265ec0c {
+.deliverable_address .div_li.data-v-d60d8092 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -85,7 +85,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.deliverable_address .div_li .detail_container.data-v-f265ec0c {
+.deliverable_address .div_li .detail_container.data-v-d60d8092 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -100,15 +100,15 @@
           -ms-flex: 1;
               flex: 1;
 }
-.deliverable_address .div_li .detail_container ._header.data-v-f265ec0c {
+.deliverable_address .div_li .detail_container ._header.data-v-d60d8092 {
         font-size: 28rpx;
         color: #333;
 }
-.deliverable_address .div_li .detail_container ._header ._span.data-v-f265ec0c:nth-of-type(1) {
+.deliverable_address .div_li .detail_container ._header ._span.data-v-d60d8092:nth-of-type(1) {
           font-size: 32rpx;
           font-weight: bold;
 }
-.deliverable_address .div_li .detail_container .address_detail.data-v-f265ec0c {
+.deliverable_address .div_li .detail_container .address_detail.data-v-d60d8092 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -118,7 +118,7 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-.deliverable_address .div_li .detail_container .address_detail ._span.data-v-f265ec0c {
+.deliverable_address .div_li .detail_container .address_detail ._span.data-v-d60d8092 {
           font-size: 20rpx;
           color: #fff;
           border-radius: 6rpx;
@@ -129,24 +129,24 @@
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
 }
-.deliverable_address .div_li .detail_container .address_detail ._p.data-v-f265ec0c {
+.deliverable_address .div_li .detail_container .address_detail ._p.data-v-d60d8092 {
           font-size: 24rpx;
           color: #777;
           margin-left: 10rpx;
 }
-#out_delivery .out_header.data-v-f265ec0c {
+#out_delivery .out_header.data-v-d60d8092 {
   font-size: 24rpx;
   color: #666;
   line-height: 60rpx;
   padding-left: 20rpx;
   background-color: #f5f5f5;
 }
-.router-slid-enter-active.data-v-f265ec0c, .router-slid-leave-active.data-v-f265ec0c {
+.router-slid-enter-active.data-v-d60d8092, .router-slid-leave-active.data-v-d60d8092 {
   -webkit-transition: all .4s;
   -o-transition: all .4s;
   transition: all .4s;
 }
-.router-slid-enter.data-v-f265ec0c, .router-slid-leave-active.data-v-f265ec0c {
+.router-slid-enter.data-v-d60d8092, .router-slid-leave-active.data-v-d60d8092 {
   -webkit-transform: translate3d(80rpx, 0, 0);
           transform: translate3d(80rpx, 0, 0);
   opacity: 0;
