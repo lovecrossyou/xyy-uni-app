@@ -7,7 +7,7 @@
 				</view>
 				<view class="shop-info">
 					<block v-if="shop">
-						<view class="name">{{shop.info.name}}</view>
+						<view class="name">{{shop.info.name||""}}</view>
 						<view class="score-wrapper">
 							<view class="score">评分{{shop.info.score}}</view>
 							<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
@@ -32,9 +32,11 @@
 				</view>
 			</view>
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
-				<swiper-item>
-					<goods :products="shop.products"></goods>
-				</swiper-item>
+				<block v-if="shop">
+					<swiper-item>
+						<goods :products="shop.products"></goods>
+					</swiper-item>
+				</block>
 				<swiper-item>
 					<judgement :judgementData="judgementData"></judgement>
 				</swiper-item>
@@ -105,9 +107,11 @@
 					that.shop = res;
 				})
 			},
-			initJudgement(shopId){
+			initJudgement(shopId) {
 				const that = this;
-				getReqest('shop/comments', {"shopId":13}, res => {
+				getReqest('shop/comments', {
+					"shopId": 13
+				}, res => {
 					that.judgementData = res;
 				})
 			}
@@ -226,7 +230,7 @@
 					.line {
 						position: absolute;
 						bottom: 0;
-						height: 2px;
+						height: 4px;
 						width: 52upx;
 						background-color: #7CA7D2;
 					}

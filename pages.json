@@ -85,6 +85,14 @@
 				"navigationBarTitleText": "搜索地址"
 			}
 
+		},
+		{
+			
+			"path": "pages/address/chooseAddress",
+			"style": {
+				"navigationBarTitleText": "地址列表"
+			}
+		
 		}
 	],
 	"tabBar": {

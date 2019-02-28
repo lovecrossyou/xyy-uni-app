@@ -7,18 +7,17 @@
                 <section class="section_right">
                     <input type="text" name="name" placeholder="你的名字" v-model="name" class="input_style">
                     <div class="choose_sex">
-                        <span class="choose_option">
-                            <svg class="address_empty_right" @click="chooseSex(1)" :class="{choosed: sex == 1}">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select"></use>
-                            </svg>
+                        <div class="choose_option" @click="chooseSex(1)">
+                            <div class="address_empty_right"  :class="{choosed: sex == 1}">
+                            </div>
                             <span>先生</span>
-                        </span>
-                        <span class="choose_option">
-                            <svg class="address_empty_right" @click="chooseSex(2)" :class="{choosed: sex == 2}">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select"></use>
-                            </svg>
+                        </div>
+                        <div class="choose_option" @click="chooseSex(2)">
+                            <div class="address_empty_right"  :class="{choosed: sex == 2}">
+                               
+                            </div>
                             <span>女士</span>
-                        </span>
+                        </div>
                     </div>
                 </section>
             </section>
@@ -49,7 +48,7 @@
             </section>
         </section>
         <div class="determine" @click="addAddress">确定</div>
-        <!-- <alert-tip v-if="showAlert" @closeTip="showAlert = false" :alertText="alertText"></alert-tip> -->
+        <alert-tip v-if="showAlert" @closeTip="showAlert = false" :alertText="alertText"></alert-tip>
         <!-- <transition name="router-slid" mode="out-in">
             <router-view></router-view>
         </transition> -->
@@ -60,11 +59,13 @@
 
     import {mapState, mapMutations} from 'vuex'
     import {getAddress, getUser, postAddAddress} from '../../util/service/getData.js'
-    // import alertTip from '../../components/alertTip.vue'
+    import alertTip from '../../components/alertTip.vue'
+	import api from '../../util/api.js'
 
     export default {
       data(){
             return{
+				userInfo:{user_id:"13"},
                 name: null, //姓名
                 sex: 1, //性别
                 phone: null, //电话
@@ -78,20 +79,23 @@
                 poi_type: 0, //地址类型
             }
         },
+		components:{
+			alertTip
+		},
         created(){
 
         },
-        computed: {
-            ...mapState([
-                'searchAddress', 'geohash', 'userInfo',
-            ]),
-        },
+//         computed: {
+//             ...mapState([
+//                 'searchAddress', 'geohash', 'userInfo',
+//             ]),
+//         },
         methods: {
-            ...mapMutations([
-                'CONFIRM_ADDRESS'
-            ]),
+//             ...mapMutations([
+//                 'CONFIRM_ADDRESS'
+//             ]),
             //选择性别
-            chooseSex(sex){
+            chooseSex(sex){			
                 this.sex = sex;
             },
 			searchAdd(){
@@ -110,10 +114,12 @@
                 }else if(!this.phone){
                     this.showAlert = true;
                     this.alertText = '请输入电话号码'
-                }else if(!this.searchAddress){
-                    this.showAlert = true;
-                    this.alertText = '请选择地址'
-                }else if(!this.address_detail){
+                }
+// 				else if(this.searchAddress){
+//                     this.showAlert = true;
+//                     this.alertText = '请选择地址'
+//                 }
+				else if(!this.address_detail){
                     this.showAlert = true;
                     this.alertText = '请输入详细地址'
                 }
@@ -124,15 +130,29 @@
                 }else if(this.tag == '公司'){
                     this.tag_type = 4;
                 }
-                let res = await postAddAddress(this.userInfo.user_id, this.searchAddress.name, this.address_detail, this.geohash, this.name, this.phone, this.anntherPhoneNumber, 0, this.sex, this.tag, this.tag_type);
-                //保存成功返沪上一页，否则弹出提示框
-                if (res.message) {
-                    this.showAlert = true;
-                    this.alertText = res.message;
-                }else {
-                    this.CONFIRM_ADDRESS(1);
-                    this.$router.go(-1);
-                }
+				const params = {
+						"phoneNum": this.phone,
+						"fullAddress": this.address_detail,
+						"recievName": this.name,
+						"positionX": 37.09909123,
+						"positionY": 87.09091231,
+						"userId": 13,
+						"provinceId": 4101,
+						"cityId": 410100,
+						"isDefault": 1
+					}
+					let res = await api.deliveryAddressCreate(params);
+					this.showAlert = true;
+					this.alertText = res.message;
+//                 let res = await postAddAddress(this.userInfo.user_id, this.searchAddress.name, this.address_detail, this.geohash, this.name, this.phone, this.anntherPhoneNumber, 0, this.sex, this.tag, this.tag_type);
+//                 //保存成功返沪上一页，否则弹出提示框
+//                 if (res.message) {
+//                     this.showAlert = true;
+//                     this.alertText = res.message;
+//                 }else {
+//                     this.CONFIRM_ADDRESS(1);
+//                     this.$router.go(-1);
+//                 }
             },
         }
     }
@@ -143,8 +163,8 @@
     // @import "../../static/css/common.less";
 	@import "../../static/style/mixin.scss";
 	.add_img{
-		width: 1rem;
-		height: 1rem;
+		width: 24upx;
+		height: 24upx;
 	}
     .address_page{
         position: fixed;
@@ -154,32 +174,32 @@
         bottom: 0;
         background-color: #f5f5f5;
         z-index: 204;
-        padding-top: 1.95rem;
+        padding-top: 20upx;
         p, span, input{
             font-family: Helvetica Neue,Tahoma,Arial;
         }
     }
     .page_text_container{
         background-color: #fff;
-        padding: 0 .7rem;
+        padding: 20upx;
     }
     .section_list{
         display: flex;
-        border-bottom: 0.025rem solid #f5f5f5;
+        border-bottom: 1upx solid #f5f5f5;
         .section_left{
-            @include sc(.7rem, #333);
+            @include sc(28upx, #333);
             flex: 2;
-            line-height: 2.5rem;
+            line-height: 100upx;
         }
         .section_right{
             flex: 5;
             .input_style{
                 width: 100%;
-                height: 2.5rem;
-                @include sc(.7rem, #999);
+                height: 100upx;
+                @include sc(28upx, #999);
             }
             .phone_bk{
-                border-top: 0.025rem solid #f5f5f5;
+                border-top: 1upx solid #f5f5f5;
             }
             .phone_add{
                 @include fj;
@@ -187,44 +207,45 @@
             }
             .choose_sex{
                 display: flex;
-                line-height: 2.5rem;
-                border-top: 0.025rem solid #f5f5f5;
+                line-height: 100upx;
+                border-top: 1upx solid #f5f5f5;
                 .choose_option{
-                    @include sc(.7rem, #333);
+                    @include sc(28upx, #333);
                     display: flex;
                     align-items: center;
-                    margin-right: .8rem;
-                    svg{
-                        margin-right: .3rem;
-                        @include wh(.8rem, .8rem);
+                    margin-right: 32upx;
+                    .address_empty_right{
+                        margin-right: 12upx;
+                        @include wh(28upx, 28upx);
                         fill: #ccc;
+						border-radius: 14upx;
                     }
                     .choosed{
-                        fill: #4cd964;
+                        background-color: #4cd964;
                     }
                 }
             }
             .choose_address{
-                @include sc(.7rem, #999);
-                line-height: 2.5rem;
-                border-bottom: 0.025rem solid #f5f5f5;
+                @include sc(28upx, #999);
+                line-height: 100upx;
+                border-bottom: 1upx solid #f5f5f5;
             }
         }
     }
     .determine{
         background-color: #4cd964;
-        @include sc(.7rem, #fff);
+        @include sc(28upx, #fff);
         text-align: center;
-        margin: 0 .7rem;
-        line-height: 1.8rem;
-        border-radius: 0.2rem;
-        margin-top: .6rem;
+        margin: 0 28upx;
+        line-height: 72upx;
+        border-radius: 8upx;
+        margin-top: 24upx;
     }
     .router-slid-enter-active, .router-slid-leave-active {
         transition: all .4s;
     }
     .router-slid-enter, .router-slid-leave-active {
-        transform: translate3d(2rem, 0, 0);
+        transform: translate3d(80px, 0, 0);
         opacity: 0;
     }
 	

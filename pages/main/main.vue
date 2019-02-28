@@ -36,7 +36,7 @@
 				<image src="../../static/main/main_fruits.png"></image>
 				<view class="entery-text">水果</view>
 			</view>
-			<view class="entery-item">
+			<view class="entery-item" v-on:click="gotoAddresslist">
 				<image src="../../static/main/main_water_check.png"></image>
 				<view class="entery-text">水质检测</view>
 			</view>
@@ -80,9 +80,7 @@
 	import {
 		getReqest
 	} from '@/util/network.js'
-	
-	import api from "@/util/api.js"
-	
+
 	export default {
 		data() {
 			return {
@@ -96,28 +94,6 @@
 			}
 		},
 		methods: {
-			async test() {
-				const params = {
-					"shopId": 13,
-					"userId": 2,
-					"products": [
-						{
-							"quantity": 2,
-							"productId": 10
-						},
-						{
-							"quantity": 7,
-							"productId": 13
-						},
-						{
-							"quantity": 1,
-							"productId": 14
-						}
-					]
-				}
-				const ids = await api.requestCartClient(params);
-				console.log("cartClient=======",ids)
-			},
 			
 			getNearShops() {
 				const params = {
@@ -132,7 +108,6 @@
 					that.shops = res.content;
 				})
 			},
-			
 			getBanner() {
 				const params = {
 					latitude: '20.111111',
@@ -152,6 +127,11 @@
 			gotoAddAddress(){
 				uni.navigateTo({
 					url: "../address/addAddress"
+				})
+			},
+			gotoAddresslist(){
+				uni.navigateTo({
+					url: "../address/chooseAddress"
 				})
 			},
 			goSearch() {
@@ -218,7 +198,7 @@
 			this.getRegeo();
 			this.getBanner();
 			this.getNearShops();
-			this.test();
+			
 		}
 	}
 </script>
