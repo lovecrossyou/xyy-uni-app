@@ -10,14 +10,11 @@ const getters = {
 	cartProducts: (state, getters, rootState) => {
 
 	},
-
 	cartTotalPrice: (state, getters) => {
 		var products = state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId));
-		var total = products.reduce((total, product) => {
+		return products.reduce((total, product) => {
 			return total + product.price * product.count
 		}, 0)
-		console.log('getters cartTotalPrice ', total)
-		return total;
 	}
 }
 

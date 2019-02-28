@@ -126,9 +126,6 @@
 					content: []
 				},
 				animationData: {},
-				product: {
-					count: 8
-				},
 				showMenu: false
 			};
 		},
