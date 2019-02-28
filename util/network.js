@@ -1,4 +1,4 @@
-const baseUrl = 'http://47.94.209.108:7002/client/'
+const baseUrl = 'https://api.kuaimayoupin.com/client/'
 const getReqest = (url, params, cb) => {
 	uni.request({
 		url: baseUrl + url,

@@ -50,10 +50,13 @@
 		<view class="footer">
 			<view class="cart-wrapper" @click="popMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
+				<view class="totalPrice">
+					¥{{cartTotalPrice}}
+				</view>
 			</view>
 			<view class="confirm-wrapper">
 				<view class="limit">
-					¥20起送
+					去结算
 				</view>
 			</view>
 		</view>
@@ -69,18 +72,22 @@
 				</view>
 			</view>
 			<scroll-view scroll-y="true" class="cart-list-items">
-				<block v-for="(cart,index) in carts" :key="index">
+				<block v-for="(product,index) in currentCarts" :key="index">
 					<view class="cart-list-item">
 						<view class="p-name">
-							农夫山泉
+							{{product.headName}}
 						</view>
 						<view class="right">
+							<view class="price">
+								¥{{product.price}}
+							</view>
 							<cartcontrol :food="product" @add="addFood"></cartcontrol>
 						</view>
 					</view>
 				</block>
 			</scroll-view>
 		</view>
+
 	</view>
 </template>
 
@@ -89,6 +96,9 @@
 	import shopInfo from "./shop-info.vue";
 	import goods from "./goods";
 	import cartcontrol from "./cartcontrol/cartcontrol.vue"
+	import {
+		mapGetters
+	} from 'vuex'
 
 	import {
 		getReqest
@@ -116,19 +126,22 @@
 					content: []
 				},
 				animationData: {},
-				carts: [1, 2, 3, 4, 5, 6, 2],
-				product: {
-					count: 8
-				},
 				showMenu: false
 			};
 		},
-		onShow: function() {},
 		components: {
 			judgement,
 			shopInfo,
 			goods,
 			cartcontrol
+		},
+		computed: {
+			currentCarts() {
+				return this.$store.state.cart.items
+			},
+			...mapGetters({
+				cartTotalPrice: 'cart/cartTotalPrice'
+			}, )
 		},
 		methods: {
 			addFood() {
@@ -177,8 +190,10 @@
 		},
 		onLoad: function(option) {
 			console.log('shopId ', option)
-			this.initShop(option.shopId)
-			this.initJudgement(option.shopId)
+			var shopId = option.shopId;
+			this.initShop(shopId)
+			this.initJudgement(shopId)
+			// this.$store.commit('cart/setShopId', shopId);
 		}
 	}
 </script>
@@ -322,13 +337,14 @@
 			.confirm-wrapper {
 				width: 232upx;
 				height: 100%;
-				background-color: #727272;
+				background-color: #7CA7D2;
 
 				.limit {
 					color: #fff;
 					font-size: 32upx;
 					line-height: @footerHeight;
 					text-align: center;
+
 				}
 			}
 
@@ -344,11 +360,19 @@
 					top: -20upx;
 				}
 
+				.totalPrice {
+					font-size: 32upx;
+					color: #fff;
+					margin-left: 150upx;
+					line-height: @footerHeight;
+					// text-align: center;
+				}
+
 			}
 		}
 
 		.modal-shadow {
-			background: rgba(136, 136, 136, .5);
+			background: rgba(0, 0, 0, .5);
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -370,6 +394,7 @@
 				align-items: center;
 				height: 92upx;
 				padding: 0 24upx;
+				box-sizing: border-box;
 				border-bottom: solid #E4E4E4 2upx;
 
 				.left {
@@ -387,6 +412,8 @@
 			.cart-list-items {
 				// z-index: 11;
 				height: 100%;
+				padding-bottom: 92upx+24upx;
+				box-sizing: border-box;
 
 				.cart-list-item {
 					display: flex;
@@ -403,8 +430,20 @@
 					}
 
 					.right {
-						// margin-right: 24upx;
+						// height: 100%;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
 
+						// margin-right: 24upx;
+						.price {
+							// height: 100%;
+
+
+							color: #E02C2C;
+							font-size: 28upx;
+							line-height: 100%;
+						}
 					}
 				}
 			}

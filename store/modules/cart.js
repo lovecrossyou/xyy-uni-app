@@ -1,82 +1,60 @@
-
 // initial state
-// shape: [{ id, quantity }]
+// items: [{ product }]
 const state = {
-  items: [],
-  checkoutStatus: null
+	items: [],
+	shopId: 13
 }
 
 // getters
 const getters = {
-  cartProducts: (state, getters, rootState) => {
-    return state.items.map(({ id, quantity }) => {
-      const product = rootState.products.all.find(product => product.id === id)
-      return {
-        title: product.title,
-        price: product.price,
-        quantity
-      }
-    })
-  },
-  
-  cartTotalPrice: (state, getters) => {
-    return getters.cartProducts.reduce((total, product) => {
-      return total + product.price * product.quantity
-    }, 0)
-  }
+	cartProducts: (state, getters, rootState) => {
+
+	},
+	cartTotalPrice: (state, getters) => {
+		var products = state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId));
+		return products.reduce((total, product) => {
+			return total + product.price * product.count
+		}, 0)
+	}
 }
 
 // actions
 const actions = {
-  checkout ({ commit, state }, products) {
-    const savedCartItems = [...state.items]
-    commit('setCheckoutStatus', null)
-    // empty cart
-    commit('setCartItems', { items: [] })
-  },
 
-  addProductToCart ({ state, commit }, product) {
-    commit('setCheckoutStatus', null)
-    if (product.inventory > 0) {
-      const cartItem = state.items.find(item => item.id === product.id)
-      if (!cartItem) {
-        commit('pushProductToCart', { id: product.id })
-      } else {
-        commit('incrementItemQuantity', cartItem)
-      }
-      // remove 1 item from stock
-      commit('products/decrementProductInventory', { id: product.id }, { root: true })
-    }
-  }
 }
 
 // mutations
 const mutations = {
-  pushProductToCart (state, { id }) {
-    state.items.push({
-      id,
-      quantity: 1
-    })
-  },
-
-  incrementItemQuantity (state, { id }) {
-    const cartItem = state.items.find(item => item.id === id)
-    cartItem.quantity++
-  },
-
-  setCartItems (state, { items }) {
-    state.items = items
-  },
-
-  setCheckoutStatus (state, status) {
-    state.checkoutStatus = status
-  }
+	addCart(state, product) {
+		console.log('mutations addCart ', product);
+		var existFlag = false;
+		state.items.forEach(p => {
+			if (product.id === p.id) {
+				p.count = product.count;
+				existFlag = true;
+			}
+		})
+		if (existFlag === false) {
+			state.items.push(product);
+		}
+	},
+	decrease(state, product) {
+		console.log('mutations decrease ', product);
+		state.items.forEach(p => {
+			if (product.id === p.id) {
+				p.count = product.count;
+			}
+		})
+	},
+	setShopId(state, shopId) {
+		state.shopId = shopId;
+	}
 }
 
 export default {
-  namespaced: true,
-  state,
-  getters,
-  actions,
-  mutations
+	namespaced: true,
+	state,
+	getters,
+	actions,
+	mutations
 }

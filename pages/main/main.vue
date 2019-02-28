@@ -94,7 +94,6 @@
 			}
 		},
 		methods: {
-			
 			getNearShops() {
 				const params = {
 					latitude: '20.111111',
@@ -165,7 +164,7 @@
 			}
 		},
 		computed: mapState(['forcedLogin', 'hasLogin', 'userName']),
-		 onLoad() {
+		onLoad() {
 			this.amapPlugin = new amap.AMapWX({
 				key: this.key
 			});
