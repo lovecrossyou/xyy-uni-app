@@ -9,7 +9,7 @@
             <section class="list_cotainer">
                 <ul class="deliverable_address">
                     <div class="div_li" v-for="(item,index) in deliverable" :key="index">
-                        <div class="detail_container" v-on:click="chooseAddress(item)">
+                        <div class="detail_container" v-on:click="chooseAddress(item,index)">
                             <header>
                                 <span>{{item.recievName}}</span>
                                 <span class="space_l_and_r">{{item.sex == 1? '先生' : '女士'}}</span>
@@ -55,6 +55,7 @@
 
 
 <script>
+	import {mapState, mapMutations} from 'vuex';
 	import api from "@/util/api.js";
     export default {
 		onShow() {
@@ -79,14 +80,25 @@
 			},
 		},
         methods: {
-			chooseAddress(item){
+			...mapMutations([
+				'CHOOSE_ADDRESS',
+				'EDIT_ADDRESS',
+			]),
+			chooseAddress(address,index){
 				// this.defaultIndex = index;
-				console.log("chooseAddressitem====",item);
+				this.CHOOSE_ADDRESS({address, index});
+				uni.navigateBack({
+					delta:1
+				})
 			},
-			editAddress(item){
-				console.log("editAddress===",item);
+			editAddress(address){
+				this.EDIT_ADDRESS({address});
+				uni.navigateTo({
+					url:"addAddress"
+				})
 			},
 			addAddress(){
+				this.EDIT_ADDRESS({});
 				uni.navigateTo({
 					url:"addAddress"
 				})
@@ -157,7 +169,7 @@
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: 100upx;
         padding-top: 20upx;
         overflow-y: auto;
     }
@@ -165,7 +177,7 @@
         padding-bottom: 40upx;
     }
     .add_icon_footer{
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;

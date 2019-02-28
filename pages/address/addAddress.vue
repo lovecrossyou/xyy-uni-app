@@ -82,14 +82,23 @@
 		components:{
 			alertTip
 		},
+		onLoad() {
+			if(this.editAddress.address){
+				this.name = this.editAddress.address.recievName || "";
+			}
+			
+		},
         created(){
-
+			
         },
-//         computed: {
-//             ...mapState([
-//                 'searchAddress', 'geohash', 'userInfo',
-//             ]),
-//         },
+		onShow() {
+			console.log('editAddress',this.editAddress.address)
+		},
+        computed: {
+            ...mapState([
+                'editAddress', 'userInfo',
+            ]),
+        },
         methods: {
 //             ...mapMutations([
 //                 'CONFIRM_ADDRESS'
@@ -105,7 +114,7 @@
 			},
             //保存地址信息
             async addAddress(){
-                if (!(this.userInfo && this.userInfo.user_id)) {
+                if (!(this.userInfo && this.userInfo.userId)) {
                     this.showAlert = true;
                     this.alertText = '请登录'
                 }else if(!this.name){
@@ -245,7 +254,7 @@
         transition: all .4s;
     }
     .router-slid-enter, .router-slid-leave-active {
-        transform: translate3d(80px, 0, 0);
+        transform: translate3d(80upx, 0, 0);
         opacity: 0;
     }
 	

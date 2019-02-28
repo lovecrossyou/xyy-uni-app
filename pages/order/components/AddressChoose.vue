@@ -1,19 +1,20 @@
 <template>
 	
 	<div class="address_choose" v-on:click="chooseAddAction" >
-		<div class="add_address" v-if="!mydata">请添加一个收货地址</div>
-      <div v-else class="address_choose_left">
+	  
+      <div  class="address_choose_left" v-if="mydata.phoneNum">
         <div class="address_choose_mark_c">
           <div class="address_choose_mark_t">订单配送至</div>
           <div class="address_choose_mark">公司</div>
         </div>
-        <div class="address_choose_detail">真聂女聂女IE我女诶 v 捏 v聂女</div>
+        <div class="address_choose_detail">{{mydata.fullAddress}}</div>
         <div class="address_people">
-          <div class="address_p_name">天哈姐</div>
-          <div class="address_p_phone">老倪嗯</div>
+          <div class="address_p_name">{{mydata.recievName}}</div>
+          <div class="address_p_phone">{{mydata.phoneNum}}</div>
         </div>
       </div>
-      <img src="" class="address_choose_arrow"/>
+	  <div v-else class="add_address">请添加一个收货地址</div>
+      <img src="../../../static/img/youjiantou.png" class="address_choose_arrow"/>
     </div>
 </template>
 
@@ -21,11 +22,14 @@
 	export default {
 		methods:{
 			chooseAddAction(){
-				
+				this.$emit('chooseAddAction');
 			}
 		},
+		onLoad() {
+			console.log('mydata',this.mydata);
+		},
 		props:{
-			mydata:Object
+			mydata:{},
 		}
 	}
 </script>
@@ -44,10 +48,10 @@
 	
 	  .add_address{
           font-size: 28upx;
-		  color: #333333;
+		  color: #fff;
        }
 	  .address_choose_arrow{
-	    width: 14px;
+	    width: 28px;
 	    height: 28px;
 	  }
 	  .address_choose_left{

@@ -1,16 +1,17 @@
 <template>
 	<view class="place-order">
         <view class="content">
-          <AddressChoose :mydata="addressData"  v-on:click="chooseAddAction"></AddressChoose>
-          <ArriveAndPay :mydata="arriveAndPayData1" ></ArriveAndPay>
-          <ArriveAndPay :mydata="arriveAndPayData2" ></ArriveAndPay>
-		  <view class="water_store_info">
-				 <view class="water_store_h_t" >水站信息</view>
-				 <view v-for="(listItem,index) in productItemList" :key='index' >
-					 <WaterStoreItem :shopProduct="listItem"></WaterStoreItem>
-				 </view>
-		  </view>
-          <view class="bottom_white">
+			<AddressChoose :mydata="choosedAddress" @chooseAddAction="chooseAddAction" ></AddressChoose>
+			<ArriveAndPay :mydata="arriveAndPayData1" ></ArriveAndPay>
+			<ArriveAndPay :mydata="arriveAndPayData2" ></ArriveAndPay>
+			<view class="water_store_info">
+				<view class="water_store_h_t" >水站信息</view>
+					<view v-for="(listItem,index) in productItemList" :key='index' >
+					<WaterStoreItem :shopProduct="listItem"></WaterStoreItem>
+				</view>
+			</view>
+		</view>
+        <view class="bottom_white">
             <OrderInfoItemAction
               itemTitle="使用优惠卷"
               itemContent="80"></OrderInfoItemAction>
@@ -21,13 +22,13 @@
             <OrderInfoItemAction
               itemTitle="订单备注"
               itemContent="xxxxxx"> </OrderInfoItemAction>
-          </view>
         </view>
         <BottomBar ></BottomBar>
       </view>
 </template>
 
 <script>
+	import {mapState, mapMutations} from 'vuex'
 	import AddressChoose from "../components/AddressChoose.vue"
 	import WaterStoreItem from "../components/WaterStoreItem.vue"
 	import OrderInfoItemAction from "../components/OrderInfoItemAction.vue"
@@ -44,9 +45,14 @@
 			OrderInfoItemAction,
 			BottomBar
 		},
+		computed:{
+			...mapState(['choosedAddress'])
+		},
 		methods: {
 			chooseAddAction(){
-				
+				uni.navigateTo({
+					url:"../../address/chooseAddress"
+				})
 			},
 			requestOrderData(){
 				const that = this;
@@ -119,7 +125,7 @@
 
 .place-order {
   position: absolute;
-  .position-full;
+  width: 100%;
   background: linear-gradient(to bottom, @primary-color 50%, white 80%, white);
   .content {
 	background-color: transparent;
@@ -141,15 +147,19 @@
       }
     }
    }
-    .bottom_white{
-      background-color: white;
-      padding: 0 48px;
-	  .space{
-		  width: 100%;
-		  height: 30upx;
-	  }
-    }
+   .bottom_white{
+   	 width: 100%;
+     background-color: white;
+     padding: 0 48upx;
+	 margin-bottom: 108upx;
+   	 box-sizing: border-box;
+   	  .space{
+   		  width: 100%;
+   		  height: 30upx;
+   	  }
+       }
 }
+
 .orderInfo_item_right_v_style{
   color: #D19B5C !important;
 }
