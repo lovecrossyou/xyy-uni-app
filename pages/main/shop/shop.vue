@@ -50,10 +50,13 @@
 		<view class="footer">
 			<view class="cart-wrapper" @click="popMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
+				<view class="totalPrice">
+					¥{{cartTotalPrice}}
+				</view>
 			</view>
 			<view class="confirm-wrapper">
 				<view class="limit">
-					¥20起送
+					去结算
 				</view>
 			</view>
 		</view>
@@ -93,6 +96,9 @@
 	import shopInfo from "./shop-info.vue";
 	import goods from "./goods";
 	import cartcontrol from "./cartcontrol/cartcontrol.vue"
+	import {
+		mapGetters
+	} from 'vuex'
 
 	import {
 		getReqest
@@ -120,7 +126,6 @@
 					content: []
 				},
 				animationData: {},
-				carts: [1, 2, 3, 4, 5, 6, 2],
 				product: {
 					count: 8
 				},
@@ -136,7 +141,10 @@
 		computed: {
 			currentCarts() {
 				return this.$store.state.cart.items
-			}
+			},
+			...mapGetters({
+				cartTotalPrice: 'cart/cartTotalPrice'
+			}, )
 		},
 		methods: {
 			addFood() {
@@ -185,9 +193,10 @@
 		},
 		onLoad: function(option) {
 			console.log('shopId ', option)
-
-			this.initShop(option.shopId)
-			this.initJudgement(option.shopId)
+			var shopId = option.shopId;
+			this.initShop(shopId)
+			this.initJudgement(shopId)
+			// this.$store.commit('cart/setShopId', shopId);
 		}
 	}
 </script>
@@ -331,13 +340,14 @@
 			.confirm-wrapper {
 				width: 232upx;
 				height: 100%;
-				background-color: #727272;
+				background-color: #7CA7D2;
 
 				.limit {
 					color: #fff;
 					font-size: 32upx;
 					line-height: @footerHeight;
 					text-align: center;
+
 				}
 			}
 
@@ -351,6 +361,14 @@
 					height: 110upx;
 					position: absolute;
 					top: -20upx;
+				}
+
+				.totalPrice {
+					font-size: 32upx;
+					color: #fff;
+					margin-left: 150upx;
+					line-height: @footerHeight;
+					// text-align: center;
 				}
 
 			}
@@ -419,6 +437,7 @@
 						display: flex;
 						flex-direction: row;
 						align-items: center;
+
 						// margin-right: 24upx;
 						.price {
 							// height: 100%;

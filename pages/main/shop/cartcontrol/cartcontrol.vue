@@ -20,6 +20,7 @@
 				minus_icon: '../../../static/shop/icon_minus.png'
 			}
 		},
+		
 		methods: {
 			addCart(event) {
 				if (!this.food.count) {
@@ -27,12 +28,13 @@
 				} else {
 					this.food.count++;
 				};
-				this.$store.commit('cart/addCart', this.food); // 触发当前实例上的事件，以便父元素@监听子元素。将点击的元素传入
+				this.$store.commit('cart/addCart', this.food);
 			},
 			decreaseCart() {
 				if (this.food.count) {
 					this.food.count--;
 				}
+				this.$store.commit('cart/decrease', this.food);
 			}
 		}
 

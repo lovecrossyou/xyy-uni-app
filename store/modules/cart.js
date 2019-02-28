@@ -1,30 +1,23 @@
 // initial state
-// shape: [{ id, quantity }]
+// items: [{ product }]
 const state = {
 	items: [],
-	checkoutStatus: null
+	shopId: 13
 }
 
 // getters
 const getters = {
 	cartProducts: (state, getters, rootState) => {
-		return state.items.map(({
-			id,
-			quantity
-		}) => {
-			const product = rootState.products.all.find(product => product.id === id)
-			return {
-				title: product.title,
-				price: product.price,
-				quantity
-			}
-		})
+
 	},
 
 	cartTotalPrice: (state, getters) => {
-		return getters.cartProducts.reduce((total, product) => {
-			return total + product.price * product.quantity
+		var products = state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId));
+		var total = products.reduce((total, product) => {
+			return total + product.price * product.count
 		}, 0)
+		console.log('getters cartTotalPrice ', total)
+		return total;
 	}
 }
 
@@ -47,6 +40,17 @@ const mutations = {
 		if (existFlag === false) {
 			state.items.push(product);
 		}
+	},
+	decrease(state, product) {
+		console.log('mutations decrease ', product);
+		state.items.forEach(p => {
+			if (product.id === p.id) {
+				p.count = product.count;
+			}
+		})
+	},
+	setShopId(state, shopId) {
+		state.shopId = shopId;
 	}
 }
 
