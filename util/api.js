@@ -1,5 +1,5 @@
 import request from './request'
-const baseURL = 'http://47.94.209.108:7002/client/'
+const baseURL = 'https://api.kuaimayoupin.com/client/'
 request.config.baseURL = baseURL
 const api = {
 	requestCartClient: (params) => request.post("shop/cartClient", params),
