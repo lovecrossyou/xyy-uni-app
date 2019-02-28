@@ -18,12 +18,12 @@ import {
 import {
   setStore,
   getStore
-} from '../util/config/mUtils.js';
+} from '@/util/config/mUtils.js';
 
 import {
   localapi,
   proapi
-} from '../util/config/env.js';
+} from '@/util/config/env.js';
 
 export default {
   // 记录当前经度纬度

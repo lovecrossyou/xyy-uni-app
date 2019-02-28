@@ -1,7 +1,7 @@
 import {
 	getUser,
 	getAddressList
-} from '../util/service/getData.js';
+} from '@/util/service/getData.js';
 import {
 	GET_USERINFO,
 	SAVE_ADDRESS
