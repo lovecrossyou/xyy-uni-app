@@ -57,6 +57,9 @@
 				</view>
 			</view>
 		</view>
+		<view :animation="animationData" class="cart-modal">
+
+		</view>
 	</view>
 </template>
 
@@ -86,8 +89,28 @@
 				activeTabIndex: 0,
 				cart_icon: '../../../static/shop/cart.png',
 				shop: null,
-				judgementData:{content:[]}
+				judgementData: {
+					content: []
+				},
+				animationData: {}
 			};
+		},
+		onShow: function() {
+			var animation = uni.createAnimation({
+				duration: 1000,
+				timingFunction: 'ease',
+			})
+
+			this.animation = animation
+
+			animation.translateY(100).step()
+
+			this.animationData = animation.export()
+
+			setTimeout(function() {
+				animation.translateY(-100).step()
+				this.animationData = animation.export()
+			}.bind(this), 1000)
 		},
 		components: {
 			judgement,
@@ -286,6 +309,15 @@
 				}
 
 			}
+		}
+
+		.cart-modal {
+			background-color: #7CA7D2;
+			height: 200upx;
+			width: 100%;
+			z-index: 100;
+			position: absolute;
+			bottom: 0;
 		}
 	}
 </style>

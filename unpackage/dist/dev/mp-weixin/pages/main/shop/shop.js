@@ -904,7 +904,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
 
 
 
@@ -992,8 +995,28 @@ var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../U
       activeTabIndex: 0,
       cart_icon: '../../../static/shop/cart.png',
       shop: null,
-      judgementData: { content: [] } };
+      judgementData: {
+        content: [] },
 
+      animationData: {} };
+
+  },
+  onShow: function onShow() {
+    var animation = uni.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease' });
+
+
+    this.animation = animation;
+
+    animation.translateY(100).step();
+
+    this.animationData = animation.export();
+
+    setTimeout(function () {
+      animation.translateY(-100).step();
+      this.animationData = animation.export();
+    }.bind(this), 1000);
   },
   components: {
     judgement: _judgement.default,
@@ -1027,6 +1050,7 @@ var _network = __webpack_require__(/*! @/util/network.js */ "../../../../../../U
     this.initShop(option.shopId);
     this.initJudgement(option.shopId);
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -1645,7 +1669,11 @@ var render = function() {
         _c("image", { attrs: { src: _vm.cart_icon, mode: "aspectFit" } })
       ]),
       _vm._m(2)
-    ])
+    ]),
+    _c("view", {
+      staticClass: "cart-modal",
+      attrs: { animation: _vm.animationData }
+    })
   ])
 }
 var staticRenderFns = [

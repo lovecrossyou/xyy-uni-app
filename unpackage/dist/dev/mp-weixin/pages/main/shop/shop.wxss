@@ -712,4 +712,12 @@
   position: absolute;
   top: -20rpx;
 }
+.content .cart-modal {
+  background-color: #7CA7D2;
+  height: 200rpx;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+}
 
