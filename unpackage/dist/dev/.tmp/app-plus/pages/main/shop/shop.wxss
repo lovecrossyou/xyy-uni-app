@@ -361,20 +361,24 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   height: 40rpx;
   width: 180rpx;
 }
 .control-wrapper .icon {
-  width: 50rpx;
-  height: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
   overflow: hidden;
 }
 .control-wrapper .number {
   font-size: 28rpx;
   color: #333;
+  width: 30%;
+  text-align: center;
+  line-height: 40rpx;
 }
 
 .goods {
@@ -707,5 +711,18 @@
   height: 110rpx;
   position: absolute;
   top: -20rpx;
+}
+.content .cart-modal {
+  background-color: #7CA7D2;
+  height: 200rpx;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+  bottom: -200rpx;
+}
+.content .cart-modal .cart-list {
+  width: 100%;
+  background: #FFB30A;
+  height: 80rpx;
 }
 

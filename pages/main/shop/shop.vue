@@ -48,7 +48,7 @@
 			</swiper>
 		</view>
 		<view class="footer">
-			<view class="cart-wrapper">
+			<view class="cart-wrapper" @click="showMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
 			</view>
 			<view class="confirm-wrapper">
@@ -58,7 +58,9 @@
 			</view>
 		</view>
 		<view :animation="animationData" class="cart-modal">
-
+			<view class="cart-list" @click="hiddeMenu">
+				
+			</view>
 		</view>
 	</view>
 </template>
@@ -96,17 +98,6 @@
 			};
 		},
 		onShow: function() {
-			var animation = uni.createAnimation({
-				duration: 1000,
-				timingFunction: 'ease',
-			})
-			this.animation = animation
-			animation.translateY(-200).step()
-			this.animationData = animation.export()
-			setTimeout(function() {
-				animation.translateY(0).step()
-				this.animationData = animation.export()
-			}.bind(this), 1000)
 		},
 		components: {
 			judgement,
@@ -114,6 +105,24 @@
 			goods
 		},
 		methods: {
+			showMenu(){
+				var animation = uni.createAnimation({
+					duration: 500,
+					timingFunction: 'ease',
+				})
+				this.animation = animation
+				animation.translateY(-100).step()
+				this.animationData = animation.export()
+			},
+			hiddeMenu(){
+				var animation = uni.createAnimation({
+					duration: 300,
+					timingFunction: 'ease-in-out',
+				})
+				this.animation = animation
+				animation.translateY(0).step()
+				this.animationData = animation.export()
+			},
 			changeTab(index) {
 				this.activeTabIndex = index;
 			},
@@ -314,6 +323,11 @@
 			z-index: 100;
 			position: absolute;
 			bottom: -200upx;
+			.cart-list{
+				width: 100%;
+				background: #FFB30A;
+				height: 80upx;
+			}
 		}
 	}
 </style>
