@@ -22,3 +22,7 @@
 .idea/
 .idea/codeStyles/Project.xml
 /unpackage
+unpackage
+/unpackage/dist
+unpackage/dist/
+/unpackage/dist/
