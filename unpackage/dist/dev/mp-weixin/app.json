@@ -53,9 +53,5 @@
       }
     ]
   },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "获取附近店铺需要您的位置信息"
-    }
-  }
+  "permission": {}
 }

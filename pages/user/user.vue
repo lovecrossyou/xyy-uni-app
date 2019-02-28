@@ -38,7 +38,7 @@
 	} from 'vuex'
 	import uniList from '@/components/uni-list/uni-list.vue'
 	import uniListItem from '@/components/uni-list-item/uni-list-item.vue'
-	import uniIcon from '../../components/uni-icon/uni-icon.vue'
+	import uniIcon from '@/components/uni-icon/uni-icon.vue'
 
 
 	export default {

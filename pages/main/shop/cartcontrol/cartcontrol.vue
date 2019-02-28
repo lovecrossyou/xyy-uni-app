@@ -44,19 +44,22 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: flex-end;
 		height: 40upx;
 		width: 180upx;
 
 		.icon {
-			width: 50upx;
-			height: 50upx;
+			width: 40upx;
+			height: 40upx;
 			overflow: hidden;
 		}
 
 		.number {
 			font-size: 28upx;
 			color: #333;
+			width: 30%;
+			text-align: center;
+			line-height: 40upx;
 		}
 	}
 </style>

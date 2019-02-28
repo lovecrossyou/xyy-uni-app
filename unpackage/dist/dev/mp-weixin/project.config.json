@@ -1,60 +1,12 @@
 {
-<<<<<<< HEAD
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "",
-	"appid": "wx56e7731073ee003f",
-	"projectname": "鑫翼优",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 1,
-			"list": [
-				{
-					"id": -1,
-					"name": "地址列表",
-					"pathName": "pages/address/chooseAddress",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "添加地址",
-					"pathName": "pages/address/addAddress",
-					"scene": null
-				}
-			]
-		}
-	}
-=======
   "description": "项目配置文件。",
   "packOptions": {
     "ignore": []
   },
   "setting": {
-    "urlCheck": false
+    "urlCheck": false,
+    "es6": true,
+    "minified": false
   },
   "compileType": "miniprogram",
   "libVersion": "",
@@ -85,5 +37,4 @@
       ]
     }
   }
->>>>>>> d207c5f04f431fe7cbf573e170751166d189a3c6
 }
