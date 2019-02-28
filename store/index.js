@@ -8,6 +8,6 @@ export default new Vuex.Store({
 	modules: {
     cart,
     address
-	},
+	}
 })
 

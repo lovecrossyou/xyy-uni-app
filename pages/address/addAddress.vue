@@ -35,7 +35,7 @@
             <section class="section_list">
                 <span class="section_left">送餐地址</span>
                 <section class="section_right">
-                    <div class="choose_address" v-on:click="searchAdd" >{{searchAddress? searchAddress.name : '小区/写字楼/学校等'}}</div>
+                    <div class="choose_address" v-on:click="searchAdd" >{{myDeatil}}</div>
                     <input type="text" name="address_detail" placeholder="详细地址（如门牌号等）" v-model="address_detail" class="input_style">
 
                 </section>
@@ -49,9 +49,6 @@
         </section>
         <div class="determine" @click="addAddress">确定</div>
         <alert-tip v-if="showAlert" @closeTip="showAlert = false" :alertText="alertText"></alert-tip>
-        <!-- <transition name="router-slid" mode="out-in">
-            <router-view></router-view>
-        </transition> -->
     </div>
 </template>
 
@@ -84,7 +81,12 @@
 		},
 		onLoad() {
 			if(this.editAddress.address){
-				this.name = this.editAddress.address.recievName || "";
+				this.name = this.editAddress.address.recievName ;
+				this.phone = this.editAddress.address.phoneNum ;
+				this.address_detail = this.editAddress.address.detailAddress;
+				this.positionX = this.editAddress.address.positionX;
+				this.positionY = this.editAddress.address.positionY
+				
 			}
 			
 		},
@@ -95,14 +97,27 @@
 			console.log('editAddress',this.editAddress.address)
 		},
         computed: {
-            ...mapState([
-                'editAddress', 'userInfo',
-            ]),
+            ...mapState({
+				"editAddress":state => state.address.editAddress,
+				"searchAddress":state => state.address.searchAddress,
+				"positionX":state => state.address.positionX,
+				"positionY":state => state.address.positionY,
+			}),
+			myDeatil() {
+			
+				let mydistrictAddress = '小区/写字楼/学校等';
+				if(this.searchAddress){
+					mydistrictAddress = this.searchAddress.name;
+				}else if(this.editAddress.address){
+					mydistrictAddress = this.editAddress.address.districtAddress;
+				}
+				 return mydistrictAddress;
+			},
         },
         methods: {
-//             ...mapMutations([
-//                 'CONFIRM_ADDRESS'
-//             ]),
+            ...mapMutations('address',[
+                'CONFIRM_ADDRESS'
+            ]),
             //选择性别
             chooseSex(sex){			
                 this.sex = sex;
@@ -124,10 +139,10 @@
                     this.showAlert = true;
                     this.alertText = '请输入电话号码'
                 }
-// 				else if(this.searchAddress){
-//                     this.showAlert = true;
-//                     this.alertText = '请选择地址'
-//                 }
+				else if(this.searchAddress){
+                    this.showAlert = true;
+                    this.alertText = '请选择地址'
+                }
 				else if(!this.address_detail){
                     this.showAlert = true;
                     this.alertText = '请输入详细地址'
@@ -139,20 +154,33 @@
                 }else if(this.tag == '公司'){
                     this.tag_type = 4;
                 }
-				const params = {
+				const fullAddress = this.myDeatil + this.address_detail
+				let params = {
 						"phoneNum": this.phone,
-						"fullAddress": this.address_detail,
+						"detailAddress": this.address_detail,
 						"recievName": this.name,
-						"positionX": 37.09909123,
-						"positionY": 87.09091231,
+						"positionX": this.positionX,
+						"positionY": this.positionY,
 						"userId": 13,
 						"provinceId": 4101,
 						"cityId": 410100,
-						"isDefault": 1
+						"isDefault": 0,
+						"districtAddress": this.myDeatil,
+						"fullAddress": fullAddress,
+
 					}
-					let res = await api.deliveryAddressCreate(params);
-					this.showAlert = true;
-					this.alertText = res.message;
+					if ( this.editAddress.address) {
+						params.id = this.editAddress.address.id;
+					}
+					let res =  this.editAddress.address? await api.deliveryAddressEdit(params) : await api.deliveryAddressCreate(params);
+					if(res.status==='ok'){
+						uni.navigateBack({
+							delta:1
+						})
+					}else{
+						this.showAlert = true;
+						this.alertText = res.message;
+					}
 //                 let res = await postAddAddress(this.userInfo.user_id, this.searchAddress.name, this.address_detail, this.geohash, this.name, this.phone, this.anntherPhoneNumber, 0, this.sex, this.tag, this.tag_type);
 //                 //保存成功返沪上一页，否则弹出提示框
 //                 if (res.message) {

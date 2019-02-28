@@ -46,7 +46,7 @@
 			BottomBar
 		},
 		computed:{
-			...mapState(['choosedAddress'])
+			...mapState('address',['choosedAddress'])
 		},
 		methods: {
 			chooseAddAction(){

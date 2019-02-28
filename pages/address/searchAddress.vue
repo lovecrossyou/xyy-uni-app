@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import {searchNearby} from '../../util/service/getData.js'
+    import api from '@/util/api.js'
     import {mapMutations} from 'vuex'
 
     export default {
@@ -33,19 +33,23 @@
         },
         props:[],
         methods: {
-            ...mapMutations([
+            ...mapMutations('address',[
                 'CHOOSE_SEARCH_ADDRESS'
             ]),
             //搜索
             async searchPlace(){
-                if (this.searchValue) {
-                    this.searchData = await searchNearby(this.searchValue);
+                if (this.searchValue && this.searchValue.length>0) {
+                    const res = await api.searchNearby({keywords:this.searchValue});
+					this.searchData = res.data.pois;
+					console.log('searchData',JSON.stringify(this.searchData));
                 }
             },
             //选择搜素结果
             choooedAddress(item){
                 this.CHOOSE_SEARCH_ADDRESS(item);
-                this.$router.go(-1);
+				uni.navigateBack({
+					delta:1
+				})
             },
 
         }

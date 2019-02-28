@@ -1,5 +1,3 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import getters from './getters.js'
 import actions from './action.js'
 import mutations from './mutations.js'
@@ -23,9 +21,9 @@ const state = {
 	
 }
 export default {
-  namespaced: true,
-  state,
-  getters,
-  actions,
-  mutations
+	namespaced: true,
+	state,
+	getters,
+	actions,
+	mutations
 }

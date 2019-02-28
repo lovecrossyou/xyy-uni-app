@@ -80,7 +80,7 @@
 			},
 		},
         methods: {
-			...mapMutations([
+			...mapMutations('address',[
 				'CHOOSE_ADDRESS',
 				'EDIT_ADDRESS',
 			]),
