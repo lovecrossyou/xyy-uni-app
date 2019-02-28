@@ -11,7 +11,8 @@
 				</view>
 			</view>
 			<view class="right">
-			   <uni-icon type="arrowright" color="#bbb" size="20"></uni-icon>
+			   <uni-icon type="arrowright
+			   " color="#bbb" size="20"></uni-icon>
 			</view>
 		</view>
 
