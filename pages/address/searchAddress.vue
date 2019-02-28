@@ -34,7 +34,8 @@
         props:[],
         methods: {
             ...mapMutations('address',[
-                'CHOOSE_SEARCH_ADDRESS'
+                'CHOOSE_SEARCH_ADDRESS',
+				'RECORD_ADDRESS'
             ]),
             //搜索
             async searchPlace(){
@@ -46,6 +47,11 @@
             },
             //选择搜素结果
             choooedAddress(item){
+
+				const locations = item.location.split(',');
+				if ( locations && locations.length>1) {
+					this.RECORD_ADDRESS(locations[0],locations[1]);
+				}
                 this.CHOOSE_SEARCH_ADDRESS(item);
 				uni.navigateBack({
 					delta:1

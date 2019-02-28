@@ -18,6 +18,8 @@ const state = {
 	choosedAddress:{}, //选择的地址
 	addressIndex: null,//选择地址的索引值
 	removeAddress:[],//移除地址
+	positionX:null,
+	positionY:null,
 	
 }
 export default {

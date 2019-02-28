@@ -109,7 +109,7 @@
 				if(this.searchAddress){
 					mydistrictAddress = this.searchAddress.name;
 				}else if(this.editAddress.address){
-					mydistrictAddress = this.editAddress.address.districtAddress;
+					mydistrictAddress = this.editAddress.address.districtAddress||'小区/写字楼/学校等';
 				}
 				 return mydistrictAddress;
 			},

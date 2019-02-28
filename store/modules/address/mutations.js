@@ -4,8 +4,17 @@ import {
 	CHOOSE_ADDRESS,
 	SAVE_ADDRESS,
 	EDIT_ADDRESS,
+	RECORD_ADDRESS,
 } from './mutation-types.js';
 export default {
+	
+	[RECORD_ADDRESS](state, {
+		positionX,
+		positionY
+	}) {
+		state.positionX = positionX;
+		state.positionY = positionY;
+	},
   //选择搜索的地址
   [CHOOSE_SEARCH_ADDRESS](state, place) {
     state.searchAddress = place;
