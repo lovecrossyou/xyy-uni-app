@@ -62,7 +62,7 @@
     export default {
       data(){
             return{
-				userInfo:{user_id:"13"},
+
                 name: null, //姓名
                 sex: 1, //性别
                 phone: null, //电话
@@ -102,6 +102,7 @@
 				"searchAddress":state => state.address.searchAddress,
 				"positionX":state => state.address.positionX,
 				"positionY":state => state.address.positionY,
+				"userInfo": state => state.user.userInfo,
 			}),
 			myDeatil() {
 			
@@ -132,20 +133,24 @@
                 if (!(this.userInfo && this.userInfo.userId)) {
                     this.showAlert = true;
                     this.alertText = '请登录'
+					return;
                 }else if(!this.name){
                     this.showAlert = true;
                     this.alertText = '请输入姓名'
+					return;
                 }else if(!this.phone){
                     this.showAlert = true;
                     this.alertText = '请输入电话号码'
+					return;
                 }
-				else if(this.searchAddress){
+				else if(!this.searchAddress){
                     this.showAlert = true;
                     this.alertText = '请选择地址'
-                }
-				else if(!this.address_detail){
+					return;
+                }else if(!this.address_detail){
                     this.showAlert = true;
                     this.alertText = '请输入详细地址'
+					return;
                 }
                 if (this.tag == '家') {
                     this.tag_type = 2;
@@ -173,6 +178,7 @@
 						params.id = this.editAddress.address.id;
 					}
 					let res =  this.editAddress.address? await api.deliveryAddressEdit(params) : await api.deliveryAddressCreate(params);
+					console.log('添加地址res===',JSON.stringify(res));
 					if(res.status==='ok'){
 						uni.navigateBack({
 							delta:1
@@ -181,15 +187,6 @@
 						this.showAlert = true;
 						this.alertText = res.message;
 					}
-//                 let res = await postAddAddress(this.userInfo.user_id, this.searchAddress.name, this.address_detail, this.geohash, this.name, this.phone, this.anntherPhoneNumber, 0, this.sex, this.tag, this.tag_type);
-//                 //保存成功返沪上一页，否则弹出提示框
-//                 if (res.message) {
-//                     this.showAlert = true;
-//                     this.alertText = res.message;
-//                 }else {
-//                     this.CONFIRM_ADDRESS(1);
-//                     this.$router.go(-1);
-//                 }
             },
         }
     }
