@@ -48,7 +48,7 @@
 			</swiper>
 		</view>
 		<view class="footer">
-			<view class="cart-wrapper" @click="showMenu">
+			<view class="cart-wrapper" @click="popMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
 			</view>
 			<view class="confirm-wrapper">
@@ -57,10 +57,29 @@
 				</view>
 			</view>
 		</view>
+		<view class="modal-shadow" v-show="showMenu" @click="hiddeMenu">
+		</view>
 		<view :animation="animationData" class="cart-modal">
-			<view class="cart-list" @click="hiddeMenu">
-				
+			<view class="title" @click="hiddeMenu">
+				<view class="left">
+					已选商品
+				</view>
+				<view class="right">
+					清空购物车
+				</view>
 			</view>
+			<scroll-view scroll-y="true" class="cart-list-items">
+				<block v-for="(cart,index) in carts" :key="index">
+					<view class="cart-list-item">
+						<view class="p-name">
+							农夫山泉
+						</view>
+						<view class="right">
+							<cartcontrol :food="product" @add="addFood"></cartcontrol>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
 		</view>
 	</view>
 </template>
@@ -69,6 +88,8 @@
 	import judgement from "./judgement.vue";
 	import shopInfo from "./shop-info.vue";
 	import goods from "./goods";
+	import cartcontrol from "./cartcontrol/cartcontrol.vue"
+
 	import {
 		getReqest
 	} from '@/util/network.js'
@@ -94,27 +115,36 @@
 				judgementData: {
 					content: []
 				},
-				animationData: {}
+				animationData: {},
+				carts: [1, 2, 3, 4, 5, 6, 2],
+				product: {
+					count: 8
+				},
+				showMenu: false
 			};
 		},
-		onShow: function() {
-		},
+		onShow: function() {},
 		components: {
 			judgement,
 			shopInfo,
-			goods
+			goods,
+			cartcontrol
 		},
 		methods: {
-			showMenu(){
+			addFood() {
+
+			},
+			popMenu() {
 				var animation = uni.createAnimation({
 					duration: 500,
 					timingFunction: 'ease',
 				})
 				this.animation = animation
-				animation.translateY(-100).step()
+				animation.translateY(-200).step()
 				this.animationData = animation.export()
+				this.showMenu = true;
 			},
-			hiddeMenu(){
+			hiddeMenu() {
 				var animation = uni.createAnimation({
 					duration: 300,
 					timingFunction: 'ease-in-out',
@@ -122,6 +152,7 @@
 				this.animation = animation
 				animation.translateY(0).step()
 				this.animationData = animation.export()
+				this.showMenu = false;
 			},
 			changeTab(index) {
 				this.activeTabIndex = index;
@@ -316,17 +347,66 @@
 			}
 		}
 
+		.modal-shadow {
+			background: rgba(136, 136, 136, .5);
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+
 		.cart-modal {
-			background-color: #7CA7D2;
-			height: 200upx;
+			background-color: #fff;
+			height: 400upx;
 			width: 100%;
-			z-index: 100;
-			position: absolute;
-			bottom: -200upx;
-			.cart-list{
-				width: 100%;
-				background: #FFB30A;
-				height: 80upx;
+			position: fixed;
+			bottom: -400upx;
+
+
+			.title {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				height: 92upx;
+				padding: 0 24upx;
+				border-bottom: solid #E4E4E4 2upx;
+
+				.left {
+					font-weight: 500;
+					font-size: 28upx;
+					color: #333;
+				}
+
+				.right {
+					font-size: 24upx;
+					color: #7CA7D2;
+				}
+			}
+
+			.cart-list-items {
+				// z-index: 11;
+				height: 100%;
+
+				.cart-list-item {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0 24upx 0 34upx;
+					height: 100upx;
+
+					.title {
+						font-size: 28upx;
+						color: #333;
+						font-weight: 400;
+					}
+
+					.right {
+						// margin-right: 24upx;
+
+					}
+				}
 			}
 		}
 	}
