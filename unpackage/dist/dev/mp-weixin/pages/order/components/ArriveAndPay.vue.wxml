@@ -1,1 +1,0 @@
-<template name="0783890e"><view class="_div data-v-1b24001c arrive_pay_c"><view class="_div data-v-1b24001c arrive_pay_c_title">{{mydata.title}}</view><view class="_div data-v-1b24001c arrive_pay_c_value">{{mydata.value}}</view></view></template>

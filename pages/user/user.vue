@@ -6,7 +6,7 @@
 					<image style="width: 128upx; height: 128upx; background-color: #eeeeee;" mode="aspectFill" :src="src" @error="imageError"></image>
 				</view>
 				<view class="user-info">
-					<view class="name">任蕊芳</view>
+					<view class="name">chechero</view>
 					<view class="score">积分：2500</view>
 				</view>
 			</view>
@@ -16,13 +16,13 @@
 		</view>
 
 		<uni-list>
-			<uni-list-item title="收货地址" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
-			<uni-list-item title="我的优惠券" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
-			<uni-list-item title="我的优惠券" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
+			<uni-list-item title="收货地址" thumb="http://qnimage.xiteng.com/dizhi@2x.png"></uni-list-item>
+			<uni-list-item title="我的优惠券" thumb="http://qnimage.xiteng.com/kabao@2x.png"></uni-list-item>
+			<uni-list-item title="我的收藏" thumb="http://qnimage.xiteng.com/shoucang@2x.png"></uni-list-item>
 			
-			<uni-list-item title="我的积分" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
-			<uni-list-item title="意见反馈" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
-			<uni-list-item title="我的优惠券" thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
+			<uni-list-item title="我的积分" thumb="http://qnimage.xiteng.com/jifen@2x.png"></uni-list-item>
+			<uni-list-item title="意见反馈" thumb="http://qnimage.xiteng.com/fankui@2x.png"></uni-list-item>
+			<uni-list-item title="更多" thumb="http://qnimage.xiteng.com/gengduo@2x.png"></uni-list-item>
 		</uni-list>
 		<view class="btn-row">
 			<button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
@@ -96,14 +96,19 @@
 				flex-direction: row;
 				align-items: center;
 				height: 100%;
+				
+				.image-content>image{
+					border-radius: 50%;
+				}
 		
 				.user-info {
 					display: flex;
 					flex-direction: column;
-					justify-content: space-around;
-					height: 100%;
-					margin-left: 10upx;
-						height: 100%;
+					justify-content: space-between;
+					margin-left: 20upx;
+					padding: 25upx 0;
+					box-sizing: border-box;
+					height: 126upx;
 		
 					.name {
 						font-size: 28upx;

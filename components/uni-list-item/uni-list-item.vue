@@ -184,8 +184,8 @@
 			align-items: center;
 
 			&-img {
-				height: $uni-img-size-base;
-				width: $uni-img-size-base;
+				height: $uni-img-size-sm;
+				width: $uni-img-size-sm;
 			}
 		}
 	}
