@@ -81,7 +81,7 @@
 				</block>
 			</scroll-view>
 		</view>
-		
+
 	</view>
 </template>
 
@@ -349,7 +349,7 @@
 		}
 
 		.modal-shadow {
-			background: rgba(136, 136, 136, .5);
+			background: rgba(0, 0, 0, .5);
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -371,6 +371,7 @@
 				align-items: center;
 				height: 92upx;
 				padding: 0 24upx;
+				box-sizing: border-box;
 				border-bottom: solid #E4E4E4 2upx;
 
 				.left {
@@ -388,6 +389,8 @@
 			.cart-list-items {
 				// z-index: 11;
 				height: 100%;
+				padding-bottom: 92upx+24upx;
+				box-sizing: border-box;
 
 				.cart-list-item {
 					display: flex;
