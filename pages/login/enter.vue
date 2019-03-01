@@ -3,16 +3,14 @@
 		<img src="http://qnimage.xiteng.com/Mask@2x.png" alt="" class="bg_img">
 		<view class="enter_box_area">
 			<view class="tel_area_wrapper">
-				<input type="number"  value="" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
+				<input type="number" value="" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
 			</view>
 			<view class="tel_area_wrapper">
 				<input type="number" value="" placeholder="请输入验证码" placeholder-style="color:#7CA7D2;" />
 				<button type="primary" class="get_code_btn">获取验证码</button>
 			</view>
 		</view>
-
 		<button class="login_btn">登录</button>
-		
 		<view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
 		</view>
@@ -85,7 +83,8 @@
 				flex: 1;
 			}
 		}
-		.login_btn{
+
+		.login_btn {
 			width: 655upx;
 			height: 90upx;
 			border: none;
@@ -97,12 +96,14 @@
 			border-radius: 40upx;
 			margin-top: 100upx;
 		}
-		.third_party_area{
+
+		.third_party_area {
 			width: 100%;
 			border-top: 1upx dashed #F1F1F1;
 			margin-top: 100upx;
 			position: relative;
-			.third_party_text{
+
+			.third_party_text {
 				color: #A3A3A3;
 				font-size: 24upx;
 				position: absolute;
@@ -110,21 +111,24 @@
 				top: -15upx;
 			}
 		}
-		.login_way{
+
+		.login_way {
 			width: 70%;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
 			margin: 65upx auto 0 auto;
 		}
-		.login_way image{
+
+		.login_way image {
 			width: 110upx;
 			height: 110upx;
 		}
-		.footer_text{
+
+		.footer_text {
 			width: 100%;
 			height: 25upx;
-			color:#7CA7D2 ;
+			color: #7CA7D2;
 			font-size: 22upx;
 			margin-top: 93upx;
 			text-align: center;
