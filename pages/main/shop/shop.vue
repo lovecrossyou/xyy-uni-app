@@ -97,7 +97,9 @@
 	import goods from "./goods";
 	import cartcontrol from "./cartcontrol/cartcontrol.vue"
 	import {
-		mapGetters
+		mapGetters,
+		mapActions,
+		mapMutations
 	} from 'vuex'
 
 
@@ -119,10 +121,6 @@
 				],
 				activeTabIndex: 0,
 				cart_icon: '../../../static/shop/cart.png',
-				shop: null,
-				judgementData: {
-					content: []
-				},
 				animationData: {},
 				showMenu: false
 			};
@@ -137,14 +135,22 @@
 			...mapGetters({
 				cartTotalPrice: 'cart/cartTotalPrice',
 				cartProducts: 'cart/cartProducts'
-			}, )
+			}),
+			shop() {
+				return this.$store.state.shop.shopInfo;
+			},
+			judgementData(){
+				return this.$store.state.shop.comments;
+			}
 		},
 		methods: {
-			addFood() {
-			},
-			toConfirmOrder(){
+			...mapActions({
+				"fetchShopInfo": "shop/fetchShopInfo",
+				"fetchComments": "shop/fetchComments",
+			}),
+			toConfirmOrder() {
 				uni.navigateTo({
-					url:'../../order/makeSureOrder/MakeSureOrder'
+					url: '../../order/makeSureOrder/MakeSureOrder'
 				})
 			},
 			popMenu() {
@@ -174,25 +180,22 @@
 				this.activeTabIndex = e.detail.current;
 			},
 			initShop(shopId) {
-				const that = this;
-				getReqest('shop/shopInfo/13', {}, res => {
-					that.shop = res;
-				})
+				this.fetchShopInfo(shopId);
 			},
 			initJudgement(shopId) {
-				const that = this;
-				getReqest('shop/comments', {
-					"shopId": 13
-				}, res => {
-					that.judgementData = res;
-				})
+				var params = {
+					page:1,
+					pageSize:15,
+					shopId:shopId
+				}
+				this.fetchComments(params);
 			}
 		},
 		onLoad: function(option) {
 			console.log('shopId ', option)
 			var shopId = option.shopId;
-			this.initShop(shopId)
-			this.initJudgement(shopId)
+			this.initShop(13)
+			this.initJudgement(13)
 			// this.$store.commit('cart/setShopId', shopId);
 		}
 	}

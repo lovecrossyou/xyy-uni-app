@@ -1,6 +1,6 @@
 <template>
 	<view class="enter_wrapper">
-		<img src="http://qnimage.xiteng.com/Mask@2x.png" alt="" class="bg_img">
+		<img src="http://qnimage.xiteng.com/WechatIMG2083.jpeg" alt="" class="bg_img">
 		<view class="enter_box_area">
 			<view class="tel_area_wrapper">
 				<input type="number" value="" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
@@ -18,7 +18,7 @@
 			<img src="http://qnimage.xiteng.com/weixin@2x.png" alt="">
 			<img src="http://qnimage.xiteng.com/qq@2x.png" alt="">
 		</view>
-		<view class="footer_text">注册或创建账户即同意《xxx用户注册协议书》 </view>
+		<view class="footer_text">注册或创建账户即同意《鑫翼优用户注册协议书》 </view>
 	</view>
 </template>
 

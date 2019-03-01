@@ -186,7 +186,7 @@
 								});
 							} else {
 								uni.navigateTo({
-									url: '../login/login'
+									url: '../login/enter'
 								});
 							}
 						}

@@ -4,6 +4,8 @@ import cart from './modules/cart.js'
 import address from './modules/address/index.js'
 import user from './modules/user.js'
 import main from "./modules/main.js"
+import shop from "./modules/shop.js"
+
 import loginApi from "../util/apis/login.js"
 
 Vue.use(Vuex)
@@ -12,12 +14,13 @@ export default new Vuex.Store({
 		cart,
 		address,
 		user,
-		main
+		main,
+		shop
 	},
 	state: {
 		count: 0,
 		hasLogin: false,
-		forcedLogin:true,
+		forcedLogin:false,
 		banners:[],
 		shops:[]
 	},
