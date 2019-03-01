@@ -100,9 +100,7 @@
 		mapGetters
 	} from 'vuex'
 
-	import {
-		getReqest
-	} from '@/util/network.js'
+
 	export default {
 		data() {
 			return {

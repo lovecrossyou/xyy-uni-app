@@ -90,7 +90,7 @@
 		methods: {
 			...mapActions({
 				fetchBanners: 'main/banners', // 将 `this.fetchShops()` 映射为 `this.$store.dispatch('fetchShops')`
-				fetchShops: 'main/bearByShops'
+				fetchShops: 'main/nearByShops'
 			}),
 			getNearShops() {
 				const params = {
@@ -106,7 +106,8 @@
 					latitude: '20.111111',
 					longitude: '113.09091'
 				}
-				this.fetchBanners(params);
+				this.$store.dispatch("main/banners",params)
+				// this.fetchBanners(params);
 			},
 			gotoConfirmOrder() {
 				uni.navigateTo({

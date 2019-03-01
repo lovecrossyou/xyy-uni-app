@@ -43,9 +43,7 @@
 	import loading from '../../../components/loading.vue';
 	import alertTip from '../../../components/alertTip.vue'
 	import api from '@/util/api.js'
-	import {
-		postRequest
-	} from '@/util/network.js'
+	
 	export default {
 		components:{
 			AddressChoose,

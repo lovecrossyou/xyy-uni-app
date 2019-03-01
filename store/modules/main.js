@@ -13,7 +13,7 @@ const actions = {
 		const res = await mainApi.banners(params);
 		commit('saveBanners', res.data);
 	},
-	async bearByShops({commit},params){
+	async nearByShops({commit},params){
 		const res = await mainApi.nearByShops(params);
 		commit('saveShops', res.data.content);
 	}
