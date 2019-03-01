@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import cart from './modules/cart.js'
 import address from './modules/address/index.js'
 import user from './modules/user.js'
+import main from "./modules/main.js"
 import loginApi from "../util/apis/login.js"
 
 Vue.use(Vuex)
@@ -10,18 +11,19 @@ export default new Vuex.Store({
 	modules: {
 		cart,
 		address,
-		user
+		user,
+		main
 	},
 	state: {
 		count: 0,
-		hasLogin: false
+		hasLogin: true,
+		banners:[],
+		shops:[]
 	},
 	mutations: {
 		login(state, params) {
+			console.log('login ', params);
 			loginApi.login();
-			
-// 			state.count++,
-// 			console.log('login ', params);
 		}
 	}
 })
