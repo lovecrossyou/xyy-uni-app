@@ -101,6 +101,12 @@
 				"navigationBarTitleText": "个人资料"
 			}
 		
+		},
+		{
+			"path": "pages/login/enter",
+			"style": {
+				"navigationBarTitleText": "登录页面"
+			}
 		}
 	],
 	"tabBar": {
