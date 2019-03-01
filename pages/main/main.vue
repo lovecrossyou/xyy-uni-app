@@ -74,26 +74,24 @@
 
 <script>
 	import {
-		mapState
+		mapState,
+		mapActions
 	} from 'vuex'
 	import amap from '@/common/amap-wx.js';
-	import {
-		getReqest
-	} from '@/util/network.js'
 
 	export default {
 		data() {
 			return {
-				background: ['color1', 'color2', 'color3'],
-				items: [1, 2, 3, 3, 5, 6, 6, 7],
 				amapPlugin: null,
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
 				addressName: '获取中...',
-				banners: [],
-				shops:[]
 			}
 		},
 		methods: {
+			...mapActions({
+				fetchBanners: 'main/banners', // 将 `this.fetchShops()` 映射为 `this.$store.dispatch('fetchShops')`
+				fetchShops: 'main/bearByShops'
+			}),
 			getNearShops() {
 				const params = {
 					latitude: '20.111111',
@@ -101,21 +99,28 @@
 					page: 1,
 					pageSize: 10
 				}
-				const that = this;
-				getReqest('shop/nearShops', params, res => {
-					console.log('res shop/nearShops###', res);
-					that.shops = res.content;
-				})
+				this.fetchShops(params);
 			},
 			getBanner() {
 				const params = {
 					latitude: '20.111111',
 					longitude: '113.09091'
 				}
-				const that = this;
-				getReqest('banner/list', params, function(res) {
-					that.banners = res;
-					console.log('res banner/list###', res);
+				this.fetchBanners(params);
+			},
+			gotoConfirmOrder() {
+				uni.navigateTo({
+					url: "../order/makeSureOrder/MakeSureOrder"
+				})
+			},
+			gotoAddAddress() {
+				uni.navigateTo({
+					url: "../address/addAddress"
+				})
+			},
+			gotoAddresslist() {
+				uni.navigateTo({
+					url: "../address/chooseAddress"
 				})
 			},
 			goSearch() {
@@ -126,13 +131,13 @@
 			goShop(shop) {
 				console.log(shop);
 				uni.navigateTo({
-					url: "shop/shop?shopId="+shop.id
+					url: "shop/shop?shopId=" + shop.id
 				})
 			},
 			getRegeo() {
 				var that = this;
 				uni.showLoading({
-					title: '获取信息中'
+					title: '获取信息中.'
 				});
 				this.amapPlugin.getRegeo({
 					success: (data) => {
@@ -148,7 +153,15 @@
 				});
 			}
 		},
-		computed: mapState(['forcedLogin', 'hasLogin', 'userName']),
+		computed: {
+			...mapState(['forcedLogin', 'hasLogin', 'userName']),
+			banners() {
+				return this.$store.state.main.banners
+			},
+			shops() {
+				return this.$store.state.main.shops
+			}
+		},
 		onLoad() {
 			this.amapPlugin = new amap.AMapWX({
 				key: this.key
@@ -168,7 +181,7 @@
 							 */
 							if (this.forcedLogin) {
 								uni.reLaunch({
-									url: '../login/login'
+									url: '../login/enter'
 								});
 							} else {
 								uni.navigateTo({
@@ -182,7 +195,6 @@
 			this.getRegeo();
 			this.getBanner();
 			this.getNearShops();
-			
 		}
 	}
 </script>

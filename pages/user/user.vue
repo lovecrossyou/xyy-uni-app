@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		 <view class="header">
+		 <view class="header" @click="modification(modification)">
 			<view class="left">
 				<view class="image-content">
 					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="src" @error="imageError"></image>
@@ -76,7 +76,12 @@
 			},
 			imageError(e) {
 				console.error('image发生error事件，携带值为' + e.detail.errMsg)
-			}
+			},
+			modification(modification) {
+				uni.navigateTo({
+					url:"personalData/personalData"
+				})
+			},
 		}
 	}
 </script>
