@@ -28,15 +28,15 @@
 			</view>
 		</view>
 		<view class="entery">
-			<view class="entery-item" v-on:click="gotoConfirmOrder">
+			<view class="entery-item">
 				<image src="../../static/main/main_shooping.png"></image>
 				<view class="entery-text">商超便利</view>
 			</view>
-			<view class="entery-item" v-on:click="gotoAddAddress">
+			<view class="entery-item">
 				<image src="../../static/main/main_fruits.png"></image>
 				<view class="entery-text">水果</view>
 			</view>
-			<view class="entery-item" v-on:click="gotoAddresslist">
+			<view class="entery-item">
 				<image src="../../static/main/main_water_check.png"></image>
 				<view class="entery-text">水质检测</view>
 			</view>
@@ -116,21 +116,6 @@
 				getReqest('banner/list', params, function(res) {
 					that.banners = res;
 					console.log('res banner/list###', res);
-				})
-			},
-			gotoConfirmOrder(){
-				uni.navigateTo({
-					url: "../order/makeSureOrder/MakeSureOrder"
-				})
-			},
-			gotoAddAddress(){
-				uni.navigateTo({
-					url: "../address/addAddress"
-				})
-			},
-			gotoAddresslist(){
-				uni.navigateTo({
-					url: "../address/chooseAddress"
 				})
 			},
 			goSearch() {

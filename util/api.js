@@ -7,5 +7,7 @@ const api = {
 	deliveryAddressCreate: (params) =>request.post("deliveryAddress/create",params),
 	searchNearby: (params) => request.get("common/searchAddress",params),
 	deliveryAddressEdit:(params) => request.post("deliveryAddress/edit",params),
+	shopOrderCreate:(params) => request.post("shopOrder/create",params),
+	keplerPayConfirm:(params)=> request.post("keplerPay/confirm",params),
 }
 export default api

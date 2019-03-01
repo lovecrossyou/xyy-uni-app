@@ -55,7 +55,7 @@
 				</view>
 			</view>
 			<view class="confirm-wrapper">
-				<view class="limit">
+				<view class="limit" @click="toConfirmOrder">
 					去结算
 				</view>
 			</view>
@@ -143,6 +143,11 @@
 		},
 		methods: {
 			addFood() {
+			},
+			toConfirmOrder(){
+				uni.navigateTo({
+					url:'../../order/makeSureOrder/MakeSureOrder'
+				})
 			},
 			popMenu() {
 				var animation = uni.createAnimation({

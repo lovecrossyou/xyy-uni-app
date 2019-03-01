@@ -6,7 +6,7 @@
         <div class="buttom_container_m_value">20.00</div>
         <div class="buttom_container_m_ex">已优惠¥6</div>
       </div>
-      <div class="buttom_container_pay" >去支付</div>
+      <div class="buttom_container_pay"  @click="toPay" >去支付</div>
     </div>
 </template>
 
@@ -14,6 +14,11 @@
 	export default {
 		onLoad() {
 			console.log('bar....')
+		},
+		methods:{
+			toPay(){
+				this.$emit('toPay')
+			}
 		}
 	}
 </script>
