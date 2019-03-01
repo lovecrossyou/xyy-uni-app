@@ -1,39 +1,48 @@
 <template>
 	<view class="place-order">
-        <view class="content">
-			<AddressChoose :mydata="choosedAddress" @chooseAddAction="chooseAddAction" ></AddressChoose>
-			<ArriveAndPay :mydata="arriveAndPayData1" ></ArriveAndPay>
-			<ArriveAndPay :mydata="arriveAndPayData2" ></ArriveAndPay>
-			<view class="water_store_info">
-				<view class="water_store_h_t" >水站信息</view>
-					<view v-for="(listItem,index) in productItemList" :key='index' >
-					<WaterStoreItem :shopProduct="listItem"></WaterStoreItem>
+		<div v-if="!showLoading">
+			<view class="content">
+				<AddressChoose :mydata="choosedAddress" @chooseAddAction="chooseAddAction" ></AddressChoose>
+				<ArriveAndPay :mydata="arriveAndPayData1" ></ArriveAndPay>
+				<ArriveAndPay :mydata="arriveAndPayData2" ></ArriveAndPay>
+				<view class="water_store_info">
+					<view class="water_store_h_t" >水站信息</view>
+						<view v-for="(listItem,index) in productItemList" :key='index' >
+						<WaterStoreItem :shopProduct="listItem"></WaterStoreItem>
+					</view>
 				</view>
 			</view>
-		</view>
-        <view class="bottom_white">
-            <OrderInfoItemAction
-              itemTitle="使用优惠卷"
-              itemContent="80"></OrderInfoItemAction>
-            <OrderInfoItemAction itemTitle="立减优惠" itemContent="-¥6" hideArrow="true" ></OrderInfoItemAction>
-            
-			<view class="space" />
-	
-            <OrderInfoItemAction
-              itemTitle="订单备注"
-              itemContent="xxxxxx"> </OrderInfoItemAction>
-        </view>
-        <BottomBar ></BottomBar>
+			<view class="bottom_white">
+			    <OrderInfoItemAction
+			      itemTitle="使用优惠卷"
+			      itemContent="80"></OrderInfoItemAction>
+			    <OrderInfoItemAction itemTitle="立减优惠" itemContent="-¥6" hideArrow="true" ></OrderInfoItemAction>
+			    
+				<view class="space" />
+				
+			    <OrderInfoItemAction
+			      itemTitle="订单备注"
+			      itemContent="xxxxxx"> </OrderInfoItemAction>
+			</view>
+		</div>
+        
+		 <loading v-if="showLoading"></loading>
+        <BottomBar @toPay="toPay"></BottomBar>
+		<alert-tip v-if="showAlert" @closeTip="showAlert = false" :alertText="alertText"></alert-tip>
       </view>
 </template>
 
 <script>
-	import {mapState, mapMutations} from 'vuex'
+	import Vue from 'vue'
+	import {mapState, mapMutations,mapGetters} from 'vuex'
 	import AddressChoose from "../components/AddressChoose.vue"
 	import WaterStoreItem from "../components/WaterStoreItem.vue"
 	import OrderInfoItemAction from "../components/OrderInfoItemAction.vue"
 	import ArriveAndPay from "../components/ArriveAndPay.vue"
 	import BottomBar from "../components/BottomBar.vue"
+	import loading from '../../../components/loading.vue';
+	import alertTip from '../../../components/alertTip.vue'
+	import api from '@/util/api.js'
 	import {
 		postRequest
 	} from '@/util/network.js'
@@ -43,10 +52,12 @@
 			ArriveAndPay,
 			WaterStoreItem,
 			OrderInfoItemAction,
-			BottomBar
+			BottomBar,
+			alertTip,
 		},
 		computed:{
-			...mapState('address',['choosedAddress'])
+			...mapState('address',['choosedAddress']),
+			...mapGetters('cart',['cartConfirmInfo'])
 		},
 		methods: {
 			chooseAddAction(){
@@ -54,13 +65,27 @@
 					url:"../../address/chooseAddress"
 				})
 			},
-			requestOrderData(){
-				const that = this;
-				postRequest('shop/cartClient', this.cartParams, res => {
-					that.info = res.data;
-					that.productItemList = res.data.productItemList;
-					console.log(that.productItemList)
-				})
+			async requestOrderData(){
+				const res = await api.requestCartClient(this.cartConfirmInfo)
+				this.info = res.data;
+				this.productItemList = res.data.productItemList;
+				this.showLoading = false;
+			},
+			async toPay(){
+				
+				if(this.choosedAddress.id){
+					let params = Object.assign({},this.cartConfirmInfo);
+					console.log('choosedAddress=============',JSON.stringify(this.choosedAddress));
+					params.deliverAddressId = this.choosedAddress.id;
+					const createRes = await api.shopOrderCreate(params);
+					console.log("createRes",JSON.stringify(createRes));
+					// return ;
+				}else{
+					this.showAlert=true;
+					this.alertText='请选择地址';
+				}
+				
+				
 			}
 		},
 		data(){
@@ -71,6 +96,9 @@
 					
 				},
 				info:{},
+				showLoading:true,
+				showAlert:false,
+				alertText:'',
 				productItemList:[],
 				cartParams:{
 					"shopId": 13,
@@ -94,6 +122,7 @@
 		},
 		onLoad() {
 			this.requestOrderData();
+			console.log('cartConfirmInfo',this.cartConfirmInfo);
 		}
 	}
 </script>
