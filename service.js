@@ -8,7 +8,7 @@ const getToken = function () {
     if (!ret) {
         ret = '{}';
     }
-    return JSON.parse(ret);
+    return ret;
 }
 
 const addToken = function (token) {
