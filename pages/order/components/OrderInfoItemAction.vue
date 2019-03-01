@@ -1,11 +1,11 @@
 <template>
 	<div class="orderInfoItem_action">
-        <div class="orderInfo_item_left">{{itemTitle}}</div>
+        <div class="orderInfo_item_left" :style="{'color':titleColor}">{{itemTitle}}</div>
         <div class="orderInfo_item_right"  v-on:click="callBack" >
-          <div class="orderInfo_item_right_value">
+          <div class="orderInfo_item_right_value" :style="{'color':valueColor}">
             {{itemContent}}
           </div>
-          <img v-if="hideArrow" class="address_choose_arrow" src="" />
+          <image v-if="showArrow" class="address_choose_arrow" src="../../../static/img/right_arrow.png" />
         </div>
     </div>
 </template>
@@ -15,10 +15,15 @@
 		props:{
 			itemTitle:String,
 			itemContent:String,
+			showArrow:Boolean,
+			titleColor:String,
+			valueColor:String,
 		},
 		methods:{
 			callBack(){
-				console.log(33333);
+				if (this.showArrow) {
+					this.$emit('itemCallBack');
+				}
 			}
 		},
 		onLoad() {
@@ -41,8 +46,9 @@
 	  align-items: center;
 	}	
 	.orderInfoItem_action{
+
         .row_between;
-        padding: 22px 24px 0 24px;
+        padding: 20px 0;
         box-sizing: border-box;
         width: 100%;
         .orderInfo_item_left{

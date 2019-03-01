@@ -5,6 +5,7 @@ import {
 	SAVE_ADDRESS,
 	EDIT_ADDRESS,
 	RECORD_ADDRESS,
+	GET_DEFAULT_ADDRESS,
 } from './mutation-types.js';
 export default {
 	
@@ -14,6 +15,10 @@ export default {
 	}) {
 		state.positionX = positionX;
 		state.positionY = positionY;
+	},
+	//获得默认的地址
+	[GET_DEFAULT_ADDRESS](state,address){
+		state.choosedAddress = address;
 	},
   //选择搜索的地址
   [CHOOSE_SEARCH_ADDRESS](state, place) {
