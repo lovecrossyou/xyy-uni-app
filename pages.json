@@ -95,17 +95,23 @@
 
 		},
 		{
-		
+
 			"path": "pages/user/personalData/personalData",
 			"style": {
 				"navigationBarTitleText": "个人资料"
 			}
-		
+
 		},
 		{
 			"path": "pages/login/enter",
 			"style": {
-				"navigationBarTitleText": "登录页面"
+				"navigationBarTitleText": "登录",
+				"navigationBarBackgroundColor":"#4A90E2",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" //透明渐变导航栏
+					}
+				}
 			}
 		}
 	],

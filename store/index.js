@@ -16,7 +16,8 @@ export default new Vuex.Store({
 	},
 	state: {
 		count: 0,
-		hasLogin: true,
+		hasLogin: false,
+		forcedLogin:true,
 		banners:[],
 		shops:[]
 	},

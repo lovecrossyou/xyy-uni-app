@@ -3,10 +3,10 @@
 		<img src="http://qnimage.xiteng.com/Mask@2x.png" alt="" class="bg_img">
 		<view class="enter_box_area">
 			<view class="tel_area_wrapper">
-				<input type="text" value="" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
+				<input type="number"  value="" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
 			</view>
 			<view class="tel_area_wrapper">
-				<input type="text" value="" placeholder="请输入验证码" placeholder-style="color:#7CA7D2;" />
+				<input type="number" value="" placeholder="请输入验证码" placeholder-style="color:#7CA7D2;" />
 				<button type="primary" class="get_code_btn">获取验证码</button>
 			</view>
 		</view>
@@ -21,9 +21,6 @@
 			<img src="http://qnimage.xiteng.com/qq@2x.png" alt="">
 		</view>
 		<view class="footer_text">注册或创建账户即同意《xxx用户注册协议书》 </view>
-
-
-
 	</view>
 </template>
 

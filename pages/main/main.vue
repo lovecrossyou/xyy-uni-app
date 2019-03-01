@@ -181,7 +181,7 @@
 							 */
 							if (this.forcedLogin) {
 								uni.reLaunch({
-									url: '../login/login'
+									url: '../login/enter'
 								});
 							} else {
 								uni.navigateTo({
