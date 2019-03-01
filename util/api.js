@@ -1,11 +1,10 @@
 import request from './request'
-const baseURL = 'https://api.kuaimayoupin.com/client/'
-request.config.baseURL = baseURL
+
 const api = {
-	requestCartClient: (params) => request.post("shop/cartClient", params),
-	deliveryAddressList: (params) =>request.post("deliveryAddress/list",params),
-	deliveryAddressCreate: (params) =>request.post("deliveryAddress/create",params),
-	searchNearby: (params) => request.get("common/searchAddress",params),
-	deliveryAddressEdit:(params) => request.post("deliveryAddress/edit",params),
+	requestCartClient: (params) => request.post("client/shop/cartClient", params),
+	deliveryAddressList: (params) =>request.post("client/deliveryAddress/list",params),
+	deliveryAddressCreate: (params) =>request.post("client/deliveryAddress/create",params),
+	searchNearby: (params) => request.get("client/common/searchAddress",params),
+	deliveryAddressEdit:(params) => request.post("client/deliveryAddress/edit",params),
 }
 export default api
