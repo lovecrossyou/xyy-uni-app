@@ -1,7 +1,7 @@
 <template>
 	<view class="place-order">
 		<div v-if="!showLoading">
-			<view class="content">
+			<view class="makeOrder_content">
 				<AddressChoose :mydata="choosedAddress" @chooseAddAction="chooseAddAction" ></AddressChoose>
 				<ArriveAndPay :mydata="arriveAndPayData1" ></ArriveAndPay>
 				<ArriveAndPay :mydata="arriveAndPayData2" ></ArriveAndPay>
@@ -13,16 +13,16 @@
 				</view>
 			</view>
 			<view class="bottom_white">
-			    <OrderInfoItemAction
-			      itemTitle="使用优惠卷"
-			      itemContent="80"></OrderInfoItemAction>
-			    <OrderInfoItemAction itemTitle="立减优惠" itemContent="-¥6" hideArrow="true" ></OrderInfoItemAction>
-			    
-				<view class="space" />
-				
+				<view class="space10" />
+			    <OrderInfoItemAction itemTitle="使用优惠卷" itemContent="0" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
+			    <OrderInfoItemAction itemTitle="立减优惠" itemContent="-¥0" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
+				<view class="space30" />
 			    <OrderInfoItemAction
 			      itemTitle="订单备注"
-			      itemContent="xxxxxx"> </OrderInfoItemAction>
+			      itemContent="尽快送达"
+				  valueColor="#999999"
+				  titleColor="#2E2E2E"
+				  > </OrderInfoItemAction>
 			</view>
 		</div>
         
@@ -60,11 +60,27 @@
 			...mapGetters('cart',['cartConfirmInfo'])
 		},
 		methods: {
+			...mapMutations('address',['GET_DEFAULT_ADDRESS']),
+			
+			// 选择地址
 			chooseAddAction(){
 				uni.navigateTo({
 					url:"../../address/chooseAddress"
 				})
 			},
+			// 选择优惠券
+			chooseTickets(){
+				
+			},
+			//获取默认地址
+			async getDefaultAddress(){
+				const defaultAddressRes = await api.getDefaultAddress({});
+				if ( defaultAddressRes.status === 'ok') {
+					console.log('defaultAddressRes',JSON.stringify(defaultAddressRes));
+					this.GET_DEFAULT_ADDRESS(defaultAddressRes.data);
+				} 
+			},
+			//获取确认订单信息
 			async requestOrderData(){
 				const res = await api.requestCartClient(this.cartConfirmInfo)
 				this.info = res.data;
@@ -74,11 +90,43 @@
 			async toPay(){
 				
 				if(this.choosedAddress.id){
+					
 					let params = Object.assign({},this.cartConfirmInfo);
-					console.log('choosedAddress=============',JSON.stringify(this.choosedAddress));
 					params.deliverAddressId = this.choosedAddress.id;
 					const createRes = await api.shopOrderCreate(params);
-					console.log("createRes",JSON.stringify(createRes));
+					
+					let confirmParams = {
+						"openId": "oLtGG5N9Q6MudlWkU1O4fVavNQGg",
+						"payChannel": "WeixinMiniProgramPay",
+						"payOrderNo": createRes.orderNo
+					}
+					console.log("confirmParams",JSON.stringify(confirmParams))
+					const confirmRes = await api.keplerPayConfirm(confirmParams)
+					console.log("confirmRes",JSON.stringify(confirmRes))
+					if(confirmRes.status==='ok' && confirmRes.data.wexinSpec){
+						const  wexinSpec = confirmRes.data.wexinSpec;
+						uni.requestPayment({
+							provider: 'wxpay',
+							timeStamp: wexinSpec.timestamp,
+							nonceStr: wexinSpec.noncestr,
+							package: 'prepay_id=wx20180101abcdefg',
+							signType: 'MD5',
+							paySign: wexinSpec.sign,
+							success: function (res) {
+								uni.navigateTo({
+									url:"../orderDetail/OrderDetail"
+								})
+							},
+							fail: function (err) {
+								uni.navigateTo({
+									url:"../orderDetail/OrderDetail"
+								})
+							}
+						});
+					}else{
+						
+					}
+					
 					// return ;
 				}else{
 					this.showAlert=true;
@@ -100,28 +148,11 @@
 				showAlert:false,
 				alertText:'',
 				productItemList:[],
-				cartParams:{
-					"shopId": 13,
-					"userId": 2,
-					"products": [
-						{
-							"quantity": 2,
-							"productId": 10
-						},
-						{
-							"quantity": 7,
-							"productId": 13
-						},
-						{
-							"quantity": 1,
-							"productId": 14
-						}
-					]
-				},
 			}
 		},
 		onLoad() {
 			this.requestOrderData();
+			this.getDefaultAddress();
 			console.log('cartConfirmInfo',this.cartConfirmInfo);
 		}
 	}
@@ -156,37 +187,41 @@
   position: absolute;
   width: 100%;
   background: linear-gradient(to bottom, @primary-color 50%, white 80%, white);
-  .content {
+  .makeOrder_content {
 	background-color: transparent;
     .water_store_info{
-      margin: 20px 24px 0 24px;
-      padding: 24px;
+      margin: 20upx 24upx 0 24upx;
+      padding: 24upx;
       box-sizing: border-box;
       background-color: white;
       .water_store_h_t{
         width:100%;
-        height: 80px;
+        height: 80upx;
         text-align: left;
-        font-size:28px;
+        font-size:28upx;
         font-family:PingFangSC-Regular;
         font-weight:400;
-        line-height: 80px;
+        line-height: 80upx;
         color:#333333;
-        border-bottom: 1px #EDEBEB solid;
+        border-bottom: 1upx #EDEBEB solid;
       }
     }
    }
    .bottom_white{
-   	 width: 100%;
-     background-color: white;
-     padding: 0 48upx;
-	 margin-bottom: 108upx;
-   	 box-sizing: border-box;
-   	  .space{
-   		  width: 100%;
-   		  height: 30upx;
-   	  }
-       }
+		width: 100%;
+		background-color: white;
+		padding: 0 48upx;
+		margin-bottom: 108upx;
+		box-sizing: border-box;
+		.space10{
+			width: 100%;
+			height: 10upx;
+		}
+		.space30{
+			width: 100%;
+			height: 30upx;
+		}
+    }
 }
 
 .orderInfo_item_right_v_style{
