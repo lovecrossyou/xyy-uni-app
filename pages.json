@@ -93,6 +93,14 @@
 				"navigationBarTitleText": "地址列表"
 			}
 
+		},
+		{
+		
+			"path": "pages/user/personalData/personalData",
+			"style": {
+				"navigationBarTitleText": "个人资料"
+			}
+		
 		}
 	],
 	"tabBar": {
