@@ -8,13 +8,25 @@ const state = {
 // getters
 const getters = {
 	cartProducts: (state, getters, rootState) => {
-
+		return state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId));
 	},
 	cartTotalPrice: (state, getters) => {
-		var products = state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId));
-		return products.reduce((total, product) => {
+		return getters.cartProducts.reduce((total, product) => {
 			return total + product.price * product.count
 		}, 0)
+	},
+	cartConfirmInfo:(state,getters)=>{
+		var products = getters.cartProducts.map(p=>{
+			return {
+				quantity:p.count,
+				productId:p.id
+			}
+		});
+		return {
+			"shopId": state.shopId,
+			"userId":2,
+			"products":products
+		}
 	}
 }
 

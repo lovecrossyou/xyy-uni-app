@@ -72,7 +72,7 @@
 				</view>
 			</view>
 			<scroll-view scroll-y="true" class="cart-list-items">
-				<block v-for="(product,index) in currentCarts" :key="index">
+				<block v-for="(product,index) in cartProducts" :key="index">
 					<view class="cart-list-item">
 						<view class="p-name">
 							{{product.headName}}
@@ -136,16 +136,13 @@
 			cartcontrol
 		},
 		computed: {
-			currentCarts() {
-				return this.$store.state.cart.items
-			},
 			...mapGetters({
-				cartTotalPrice: 'cart/cartTotalPrice'
+				cartTotalPrice: 'cart/cartTotalPrice',
+				cartProducts: 'cart/cartProducts'
 			}, )
 		},
 		methods: {
 			addFood() {
-
 			},
 			popMenu() {
 				var animation = uni.createAnimation({
