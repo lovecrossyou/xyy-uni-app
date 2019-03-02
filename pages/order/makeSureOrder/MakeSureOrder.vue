@@ -14,7 +14,7 @@
 			</view>
 			<view class="bottom_white">
 				<view class="space10" />
-			    <OrderInfoItemAction itemTitle="使用优惠卷" itemContent="0" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
+			    <OrderInfoItemAction itemTitle="使用优惠券" itemContent="0" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
 			    <OrderInfoItemAction itemTitle="立减优惠" itemContent="-¥0" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
 				<view class="space30" />
 			    <OrderInfoItemAction

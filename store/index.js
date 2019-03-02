@@ -36,7 +36,9 @@ export default new Vuex.Store({
 			state
 		}, params) {
 			const res = await loginApi.login(params);
+			if (res.status !== 'ok')return;
 			service.addInfo(res.data);
+			return res;
 		}
 	}
 })

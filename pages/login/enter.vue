@@ -10,7 +10,7 @@
 				<button type="primary" class="get_code_btn">获取验证码</button>
 			</view>
 		</view>
-		<button class="login_btn">登录</button>
+		<button class="login_btn" open-type="getUserInfo" @getuserinfo="oauth('weixin')">登录</button>
 		<view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
 		</view>
@@ -19,9 +19,8 @@
 				<image :src="provider.image" @tap="oauth(provider.value)"></image>
 			</view>
 		</view> -->
-		<view class="login_way" >
-			<button type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
-				<img src="http://qnimage.xiteng.com/weixin@2x.png" alt="">
+		<view class="login_way">
+			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
 			</button>
 			<!-- <img src="http://qnimage.xiteng.com/qq@2x.png" alt=""> -->
 		</view>
@@ -39,15 +38,9 @@
 		data() {
 			return {
 				providerList: [],
-				userCode:'',
-				userPhone:''
+				userCode: '',
+				userPhone: ''
 			}
-		},
-		components: {
-
-		},
-		computed: {
-
 		},
 		methods: {
 			...mapActions(['login']),
@@ -90,10 +83,10 @@
 								} = infoRes;
 								console.log("infoRes ", infoRes);
 								console.log("res ", res);
-			
+
 								console.log("encryptedData ", encryptedData);
 								const params = {
-									userPhone:this.userPhone,
+									userPhone: this.userPhone,
 									userCode: this.userCode,
 									code: res.code,
 									userLng: '',
@@ -112,8 +105,9 @@
 					}
 				});
 			},
-			async toMain(params){
-				const res = this.login(params);
+			async toMain(params) {
+				const res = await this.login(params);
+				if (res.status !== 'ok') return;
 				uni.navigateBack();
 			}
 		},
@@ -200,9 +194,27 @@
 			flex-direction: row;
 			justify-content: space-around;
 			margin: 65upx auto 0 auto;
+
 			image {
 				width: 110upx;
 				height: 110upx;
+			}
+
+			.share {
+				width: 110upx;
+				height: 110upx;
+				// padding: 0 20rpx;
+				// position: absolute;
+				// right: 32rpx;
+				// 				top: 0;
+				// 				bottom: 0;
+				margin: auto;
+				background-size: 110upx 110upx;
+				background-repeat: no-repeat;
+				border: none;
+				background-image: url('http://qnimage.xiteng.com/weixin@2x.png');
+				border-radius: 50%;
+				background-color: #fff;
 			}
 		}
 

@@ -6,7 +6,7 @@ const baseURL = 'https://api.kuaimayoupin.com/'
 request.config.baseURL = baseURL
 request.config.headers = {
 	"content-type": "application/json",
-	"accessToken":service.getToken()
+	"accessToken": service.getToken()
 }
 
 const errorPrompt = (err) => {
