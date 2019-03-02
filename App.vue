@@ -49,7 +49,7 @@
 		flex: 1;
 		flex-direction: column;
 		background-color: #fff;
-		padding: 20upx;
+		/* padding: 20upx; */
 	}
 
 	.input-group {
