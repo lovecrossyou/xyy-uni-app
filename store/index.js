@@ -23,11 +23,15 @@ export default new Vuex.Store({
 		hasLogin: false,
 		forcedLogin: false,
 		banners: [],
-		shops: []
+		shops: [],
+		userInfo:null
 	},
 	mutations: {
-		login(state, params) {
-			console.log('login ', params);
+		setUserInfo(state,info){
+			state.userInfo = info ;
+		},
+		setLogin(state,isLogin){
+			state.hasLogin = isLogin ;
 		}
 	},
 	actions: {
@@ -38,6 +42,8 @@ export default new Vuex.Store({
 			const res = await loginApi.login(params);
 			if (res.status !== 'ok')return;
 			service.addInfo(res.data);
+			commit('setUserInfo',res.data);
+			commit('setLogin',true);
 			return res;
 		}
 	}

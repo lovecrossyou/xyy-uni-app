@@ -79,6 +79,7 @@
 		mapActions
 	} from 'vuex'
 	import amap from '@/common/amap-wx.js';
+	import service from "../../service.js"
 
 	export default {
 		data() {
@@ -166,6 +167,11 @@
 			}
 		},
 		onLoad() {
+			const userInfo = service.getInfo();
+			if(userInfo){
+				this.$store.commit("setUserInfo",userInfo);
+				this.$store.commit("setLogin",true);
+			}
 			this.amapPlugin = new amap.AMapWX({
 				key: this.key
 			});

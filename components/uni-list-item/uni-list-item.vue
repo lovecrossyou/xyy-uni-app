@@ -149,7 +149,7 @@
 			flex-direction: column;
 
 			&-title {
-				font-size: $uni-font-size-lg;
+				font-size: $uni-font-size-base;
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				color: inherit;

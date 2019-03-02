@@ -3,6 +3,9 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch');
+// 			service.addInfo(res.data);
+// 			commit('setUserInfo',res.data);
+// 			commit('setLogin',true);
 // 			uni.getLocation({
 // 				type: 'wgs84',
 // 				success: function(res) {
