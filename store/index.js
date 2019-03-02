@@ -5,6 +5,7 @@ import address from './modules/address/index.js'
 import user from './modules/user.js'
 import main from "./modules/main.js"
 import shop from "./modules/shop.js"
+import service from "../service.js"
 
 import loginApi from "../util/apis/login.js"
 
@@ -20,14 +21,24 @@ export default new Vuex.Store({
 	state: {
 		count: 0,
 		hasLogin: false,
-		forcedLogin:false,
-		banners:[],
-		shops:[]
+		forcedLogin: false,
+		banners: [],
+		shops: []
 	},
 	mutations: {
 		login(state, params) {
 			console.log('login ', params);
-			loginApi.login();
+		}
+	},
+	actions: {
+		async login({
+			commit,
+			state
+		}, params) {
+			const res = await loginApi.login(params);
+			if (res.status !== 'ok')return;
+			service.addInfo(res.data);
+			return res;
 		}
 	}
 })

@@ -1,26 +1,39 @@
 // 管理账号信息
-const USERS_KEY = 'USERS_KEY';
-const STATE_KEY = 'STATE_KEY';
+const TOKEN_KEY = 'TOKEN_KEY';
+const INFO_KEY = 'INFO_KEY';
 
-const getUsers = function () {
-    let ret = '';
-    ret = uni.getStorageSync(USERS_KEY);
-    if (!ret) {
-        ret = '[]';
-    }
-    return JSON.parse(ret);
+const getToken = function() {
+	let ret = '';
+	ret = uni.getStorageSync(TOKEN_KEY);
+	if (!ret) {
+		ret = '{}';
+	}
+	return ret;
 }
 
-const addUser = function (userInfo) {
-    let users = getUsers();
-    users.push({
-        account: userInfo.account,
-        password: userInfo.password
-    });
-    uni.setStorageSync(USERS_KEY, JSON.stringify(users));
+const addToken = function(token) {
+	uni.setStorageSync(TOKEN_KEY, token);
+}
+
+
+const getInfo = function() {
+	let ret = '';
+	ret = uni.getStorageSync(INFO_KEY);
+	if (!ret) {
+		ret = '{}';
+	}
+	return JSON.parse(ret);
+}
+
+const addInfo = function(info) {
+	if (!info) return;
+	uni.setStorageSync(INFO_KEY, JSON.stringify(info));
+	addToken(info.accessToken);
 }
 
 export default {
-    getUsers,
-    addUser
+	getToken,
+	getInfo,
+	addToken,
+	addInfo
 }

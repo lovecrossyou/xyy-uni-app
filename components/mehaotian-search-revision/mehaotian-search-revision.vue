@@ -147,7 +147,7 @@ export default {
 		overflow: hidden;
 		transition: all 0.2s linear;
 		border-radius: 30px;
-
+		position: relative;
 		.content-box {
 			width: 100%;
 			display: flex;
@@ -188,6 +188,8 @@ export default {
 			color: #fff;
 			//border-left: 1px #ccc solid; //HM修改 去掉边框
 			transition: all 0.3s;
+			position: absolute;
+			right: 0;
 		}
 	}
 

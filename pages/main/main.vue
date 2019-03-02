@@ -16,10 +16,11 @@
 		<view class="banner">
 			<view class="page-section swiper">
 				<view class="page-section-spacing">
-					<swiper class="swiper" indicator-dots="true">
+					<swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="500"
+					 indicator-color="#2ca2f9" indicator-active-color="#d1c90e">
 						<block v-for="(banner,index) in banners" :key="index">
 							<swiper-item>
-								<image v-bind:src="banner.image" class="swiper-item" mode="scaleToFill"></image>
+								<image v-bind:src="bannerIcon" class="swiper-item" mode="scaleToFill"></image>
 							</swiper-item>
 						</block>
 					</swiper>
@@ -85,6 +86,7 @@
 				amapPlugin: null,
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
 				addressName: '获取中...',
+				"bannerIcon":'http://qnimage.xiteng.com/home_banner.png'
 			}
 		},
 		methods: {
@@ -106,7 +108,7 @@
 					latitude: '20.111111',
 					longitude: '113.09091'
 				}
-				this.$store.dispatch("main/banners",params)
+				this.$store.dispatch("main/banners", params)
 				// this.fetchBanners(params);
 			},
 			gotoConfirmOrder() {
@@ -203,6 +205,7 @@
 <style lang="less">
 	.content {
 		.header {
+			padding: 20upx;
 			// height: 86upx;
 			background-color: #fff;
 
@@ -210,7 +213,7 @@
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-
+				padding-bottom: 20upx;
 				.address {
 					font-size: 28upx;
 					font-family: PingFangSC-Medium;
@@ -282,7 +285,8 @@
 			display: flex;
 			flex-direction: row;
 			margin-top: 30upx;
-
+			padding: 0 20upx;
+			box-sizing: border-box;
 			.shop-img {
 				width: 148upx;
 				height: 112upx;
