@@ -1,11 +1,7 @@
 import Fly from 'flyio/dist/npm/wx'
 import service from "../service"
 const request = new Fly()
-<<<<<<< HEAD
 const baseURL = 'https://api.kuaimayoupin.com/'
-=======
-const baseURL = 'https://api.kuaimayoupin.com/'
->>>>>>> f7e4388a7a6310d3b7e3ae1be6548f37533f715f
 // const baseURL = 'http://47.94.209.108:7002/'
 request.config.baseURL = baseURL
 request.config.headers = {
