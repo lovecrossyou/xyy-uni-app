@@ -107,7 +107,7 @@
 							provider: 'wxpay',
 							timeStamp: wexinSpec.timestamp,
 							nonceStr: wexinSpec.noncestr,
-							package: 'prepay_id=wx20180101abcdefg',
+							package: 'prepay_id='+wexinSpec.prepay_id,
 							signType: 'MD5',
 							paySign: wexinSpec.sign,
 							success: function (res) {
