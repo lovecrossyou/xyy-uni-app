@@ -94,9 +94,9 @@
 					const createRes = await api.shopOrderCreate(params);
 					
 					let confirmParams = {
-						"openId": "oLtGG5N9Q6MudlWkU1O4fVavNQGg",
+						"openId": "ou3ry5IxNxJwMIYsrBG96S4zbUuE",
 						"payChannel": "WeixinMiniProgramPay",
-						"payOrderNo": createRes.orderNo
+						"payOrderNo": createRes.data.orderNo
 					}
 					console.log("confirmParams",JSON.stringify(confirmParams))
 					const confirmRes = await api.keplerPayConfirm(confirmParams)
