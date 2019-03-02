@@ -20,7 +20,7 @@
 					 indicator-color="#2ca2f9" indicator-active-color="#d1c90e">
 						<block v-for="(banner,index) in banners" :key="index">
 							<swiper-item>
-								<image v-bind:src="banner.image" class="swiper-item" mode="scaleToFill"></image>
+								<image v-bind:src="bannerIcon" class="swiper-item" mode="scaleToFill"></image>
 							</swiper-item>
 						</block>
 					</swiper>
@@ -86,6 +86,7 @@
 				amapPlugin: null,
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
 				addressName: '获取中...',
+				"bannerIcon":'http://qnimage.xiteng.com/home_banner.png'
 			}
 		},
 		methods: {

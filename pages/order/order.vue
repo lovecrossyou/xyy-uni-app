@@ -67,6 +67,7 @@
 	@shop_icon: 54upx;
 
 	.content {
+		padding: 20upx;
 		.order-list {
 			.order {
 				height: 168upx;
