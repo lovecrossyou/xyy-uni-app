@@ -17,18 +17,18 @@ const errorPrompt = (err) => {
 }
 
 request.interceptors.request.use((request) => {
-	uni.showNavigationBarLoading()
+	uni.showLoading();
 	return request
 })
 
 request.interceptors.response.use((response, promise) => {
-	uni.hideNavigationBarLoading()
+	uni.hideLoading()
 	if (!(response.data.status === "ok")) {
 		errorPrompt(response)
 	}
 	return promise.resolve(response.data)
 }, (err, promise) => {
-	uni.hideNavigationBarLoading()
+	uni.hideLoading()
 	errorPrompt(err)
 	return promise.reject(err)
 })
