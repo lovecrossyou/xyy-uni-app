@@ -108,7 +108,9 @@
 			async toMain(params) {
 				const res = await this.login(params);
 				if (res.status !== 'ok') return;
-				uni.navigateBack();
+				uni.reLaunch({
+					url:'../main/main'
+				});
 			}
 		},
 		onLoad() {
