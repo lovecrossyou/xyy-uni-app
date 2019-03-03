@@ -1,24 +1,16 @@
 <template>
 	<view class="content">
-		<view class="shop-wrapper" v-for="(cart,index) in carts" :key='index'>
+		<view class="shop-wrapper" v-for="(cart,index_cart) in carts" :key='index_cart'>
 			<view class="header">
 				<uni-list-item title="家乐福"></uni-list-item>
 			</view>
-			<view class="product-list">
+			<view class="product-list" v-for="(p,index) in cart.products" :key="index">
 				<view class="product-item">
 					<view class="icon">
-						<image v-bind:src="p_icon" mode="aspectFit"></image>
+						<image v-bind:src="p.headImage" mode="aspectFit"></image>
 					</view>
 					<view class="price">
-						¥ 12.00
-					</view>
-				</view>
-				<view class="product-item">
-					<view class="icon">
-						<image v-bind:src="p_icon" mode="aspectFit"></image>
-					</view>
-					<view class="price">
-						¥ 12.00
+						¥ {{p.price}}
 					</view>
 				</view>
 			</view>
@@ -28,15 +20,22 @@
 
 <script>
 	import uniListItem from '@/components/uni-list-item/uni-list-item.vue'
-
+	import {
+		mapGetters
+	} from 'vuex'
+	
 	export default {
 		components: {
 			uniListItem
 		},
+		computed:{
+			...mapGetters({
+				"carts":'cart/productsOrderByShop'
+			})
+		},
 		data() {
 			return {
 				p_icon: '../../static/shop/p_001.png',
-				carts: [1, 2, 3]
 			};
 		}
 	}
