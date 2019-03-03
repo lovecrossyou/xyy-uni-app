@@ -6,6 +6,11 @@ import user from './modules/user.js'
 import main from "./modules/main.js"
 import shop from "./modules/shop.js"
 import service from "../service.js"
+import amap from '@/common/amap-wx.js';
+
+// amapPlugin: null,
+// 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
+const amapKey = '72239a17febe0f534f11c5b1fbd8ce4c' ;
 
 import loginApi from "../util/apis/login.js"
 
@@ -21,10 +26,15 @@ export default new Vuex.Store({
 	state: {
 		count: 0,
 		hasLogin: false,
-		forcedLogin: false,
+		forcedLogin: true,
 		banners: [],
 		shops: [],
-		userInfo:null
+		userInfo:null,
+		location:{
+			latitude:'',
+			longitude:'',
+			name:'定位中...'
+		}
 	},
 	mutations: {
 		setUserInfo(state,info){
@@ -32,6 +42,9 @@ export default new Vuex.Store({
 		},
 		setLogin(state,isLogin){
 			state.hasLogin = isLogin ;
+		},
+		setLocation(state,location){
+			state.location = location ;
 		}
 	},
 	actions: {
@@ -45,6 +58,30 @@ export default new Vuex.Store({
 			commit('setUserInfo',res.data);
 			commit('setLogin',true);
 			return res;
+		},
+		startLocate({commit},callback){
+			var amapPlugin = new amap.AMapWX({
+				key: amapKey
+			});
+			amapPlugin.getRegeo({
+				success: (data) => {
+					console.log('location info ',data)
+					if(data instanceof Array){
+						var locationInfo = {
+							latitude:data[0].latitude,
+							longitude:data[0].longitude,
+							name:data[0].name
+						}
+						commit('setLocation',locationInfo);
+						callback();
+					}
+				},
+				fail: e => {
+					uni.showToast({
+						title:"定位失败"
+					})
+				}
+			});
 		}
 	}
 })

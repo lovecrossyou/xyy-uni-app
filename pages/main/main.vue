@@ -3,7 +3,7 @@
 		<view class="header">
 			<view class="address-wrapper">
 				<view class="address-icon"></view>
-				<view class="address">{{addressName}}</view>
+				<view class="address">{{location.name}}</view>
 			</view>
 			<view class="search-wrapper">
 				<view class="search-box" @click="goSearch">
@@ -84,9 +84,6 @@
 	export default {
 		data() {
 			return {
-				amapPlugin: null,
-				key: '72239a17febe0f534f11c5b1fbd8ce4c',
-				addressName: '获取中...',
 				"bannerIcon":'http://qnimage.xiteng.com/home_banner.png'
 			}
 		},
@@ -97,8 +94,8 @@
 			}),
 			getNearShops() {
 				const params = {
-					latitude: '20.111111',
-					longitude: '113.09091',
+					latitude: this.location.latitude,
+					longitude: this.location.longitude,
 					page: 1,
 					pageSize: 10
 				}
@@ -106,11 +103,10 @@
 			},
 			getBanner() {
 				const params = {
-					latitude: '20.111111',
-					longitude: '113.09091'
+					latitude: this.location.latitude,
+					longitude: this.location.longitude,
 				}
 				this.$store.dispatch("main/banners", params)
-				// this.fetchBanners(params);
 			},
 			gotoConfirmOrder() {
 				uni.navigateTo({
@@ -138,27 +134,12 @@
 					url: "shop/shop?shopId=" + shop.id
 				})
 			},
-			getRegeo() {
-				var that = this;
-				uni.showLoading({
-					title: '获取信息中.'
-				});
-				this.amapPlugin.getRegeo({
-					success: (data) => {
-						console.log(data)
-						that.addressName = data[0].name;
-						console.log("addressName ", that.addressName)
-						uni.hideLoading();
-					},
-					fail: e => {
-						uni.hideLoading();
-						console.log(e)
-					}
-				});
+			getRegeo(cb) {
+				this.$store.dispatch('startLocate',cb);
 			}
 		},
 		computed: {
-			...mapState(['forcedLogin', 'hasLogin', 'userName']),
+			...mapState(['forcedLogin', 'hasLogin', 'userName','location']),
 			banners() {
 				return this.$store.state.main.banners
 			},
@@ -172,9 +153,6 @@
 				this.$store.commit("setUserInfo",userInfo);
 				this.$store.commit("setLogin",true);
 			}
-			this.amapPlugin = new amap.AMapWX({
-				key: this.key
-			});
 			if (!this.hasLogin) {
 				uni.showModal({
 					title: '未登录',
@@ -201,9 +179,10 @@
 					}
 				});
 			}
-			this.getRegeo();
-			this.getBanner();
-			this.getNearShops();
+			this.getRegeo(()=>{
+				this.getBanner();
+				this.getNearShops();
+			});
 		}
 	}
 </script>
