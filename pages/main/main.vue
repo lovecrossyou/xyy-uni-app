@@ -150,34 +150,20 @@
 		onLoad() {
 			const userInfo = service.getInfo();
 			if(userInfo){
+				console.log('getInfo ',userInfo)
 				this.$store.commit("setUserInfo",userInfo);
 				this.$store.commit("setLogin",true);
 			}
 			if (!this.hasLogin) {
-				uni.showModal({
-					title: '未登录',
-					content: '您未登录，需要登录后才能继续',
-					/**
-					 * 如果需要强制登录，不显示取消按钮
-					 */
-					showCancel: !this.forcedLogin,
-					success: (res) => {
-						if (res.confirm) {
-							/**
-							 * 如果需要强制登录，使用reLaunch方式
-							 */
-							if (this.forcedLogin) {
-								uni.reLaunch({
-									url: '../login/enter'
-								});
-							} else {
-								uni.navigateTo({
-									url: '../login/enter'
-								});
-							}
-						}
-					}
-				});
+				if (this.forcedLogin) {
+					uni.reLaunch({
+						url: '../login/enter'
+					});
+				} else {
+					uni.navigateTo({
+						url: '../login/enter'
+					});
+				}
 			}
 			this.getRegeo(()=>{
 				this.getBanner();

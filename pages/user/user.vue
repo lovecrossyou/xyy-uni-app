@@ -1,17 +1,18 @@
 <template>
 	<view class="content">
-		 <view class="header" @click="modification(modification)">
+		<view class="header" @click="modification(modification)">
 			<view class="left">
 				<view class="image-content">
-					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="src" @error="imageError"></image>
+					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="userInfo.userIconUrl"
+					 @error="imageError"></image>
 				</view>
 				<view class="user-info">
-					<view class="name">chechero</view>
+					<view class="name">{{userInfo.nickName || userInfo.phoneNum}}</view>
 					<view class="score">积分：2500</view>
 				</view>
 			</view>
 			<view class="right">
-			   <uni-icon type="arrowright" color="#bbb" size="20"></uni-icon>
+				<uni-icon type="arrowright" color="#bbb" size="20"></uni-icon>
 			</view>
 		</view>
 
@@ -19,14 +20,12 @@
 			<uni-list-item title="收货地址" thumb="http://qnimage.xiteng.com/dizhi@2x.png" @click="toAddress"></uni-list-item>
 			<uni-list-item title="我的优惠券" thumb="http://qnimage.xiteng.com/kabao@2x.png"></uni-list-item>
 			<uni-list-item title="我的收藏" thumb="http://qnimage.xiteng.com/shoucang@2x.png"></uni-list-item>
-			
 			<uni-list-item title="我的积分" thumb="http://qnimage.xiteng.com/jifen@2x.png"></uni-list-item>
 			<uni-list-item title="意见反馈" thumb="http://qnimage.xiteng.com/fankui@2x.png" @click="feedback(feedback)"></uni-list-item>
 			<uni-list-item title="更多" thumb="http://qnimage.xiteng.com/gengduo@2x.png"></uni-list-item>
 		</uni-list>
 		<view class="btn-row">
 			<button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
-			<button v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
 		</view>
 	</view>
 </template>
@@ -45,7 +44,7 @@
 		data() {
 			return {
 				src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
-				icon_address:'../../static/me/address.png'
+				icon_address: '../../static/me/address.png'
 			}
 		},
 		components: {
@@ -54,7 +53,7 @@
 			uniIcon
 		},
 		computed: {
-			...mapState(['hasLogin', 'forcedLogin'])
+			...mapState(['hasLogin', 'forcedLogin', 'userInfo'])
 		},
 		methods: {
 			...mapMutations(['logout']),
@@ -63,10 +62,10 @@
 					url: '../login/login',
 				});
 			},
-			toAddress(){
+			toAddress() {
 				//地址列表
 				uni.navigateTo({
-					url:'../address/chooseAddress'
+					url: '../address/chooseAddress'
 				})
 			},
 			bindLogout() {
@@ -85,12 +84,12 @@
 			},
 			modification(modification) {
 				uni.navigateTo({
-					url:"personalData/personalData"
+					url: "personalData/personalData"
 				})
 			},
-			feedback(feedback){
+			feedback(feedback) {
 				uni.navigateTo({
-					url:"feedback/feedback"
+					url: "feedback/feedback"
 				})
 			}
 		}
@@ -98,8 +97,9 @@
 </script>
 
 <style lang="less">
-	.content{
+	.content {
 		padding: 0;
+
 		.header {
 			background-color: #fff;
 			justify-content: space-between;
@@ -107,16 +107,17 @@
 			display: flex;
 			padding: 35upx;
 			height: 200upx;
+
 			.left {
 				display: flex;
 				flex-direction: row;
 				align-items: center;
 				height: 100%;
-				
-				.image-content>image{
+
+				.image-content>image {
 					border-radius: 50%;
 				}
-		
+
 				.user-info {
 					display: flex;
 					flex-direction: column;
@@ -125,7 +126,7 @@
 					padding: 25upx 0;
 					box-sizing: border-box;
 					height: 126upx;
-		
+
 					.name {
 						font-size: 28upx;
 						font-family: PingFangSC-Medium;
@@ -133,7 +134,7 @@
 						color: rgba(39, 39, 39, 1);
 						// line-height: 20px;
 					}
-		
+
 					.score {
 						font-size: 24upx;
 						font-family: PingFangSC-Regular;
@@ -143,7 +144,7 @@
 					}
 				}
 			}
-		
+
 		}
 	}
 </style>

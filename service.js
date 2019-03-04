@@ -19,9 +19,7 @@ const addToken = function(token) {
 const getInfo = function() {
 	let ret = '';
 	ret = uni.getStorageSync(INFO_KEY);
-	if (!ret) {
-		ret = '{}';
-	}
+	if (!ret) return null;
 	return JSON.parse(ret);
 }
 

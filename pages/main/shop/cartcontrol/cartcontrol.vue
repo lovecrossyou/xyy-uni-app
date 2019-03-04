@@ -12,7 +12,8 @@
 	import Vue from 'vue';
 	export default {
 		props: {
-			food: Object
+			food: Object,
+			shopInfo: Object
 		},
 		data() {
 			return {
@@ -27,13 +28,19 @@
 				} else {
 					this.food.count++;
 				};
-				this.$store.commit('cart/addCart', this.food);
+				this.$store.commit('cart/addCart', {
+					shop: this.shopInfo,
+					product: this.food
+				});
 			},
 			decreaseCart() {
 				if (this.food.count) {
 					this.food.count--;
 				}
-				this.$store.commit('cart/decrease', this.food);
+				this.$store.commit('cart/decrease', {
+					shop: this.shopInfo,
+					product: this.food
+				});
 			}
 		}
 
