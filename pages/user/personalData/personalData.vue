@@ -9,7 +9,10 @@
 		</view>
 		
 		<view>
-			<modifiedData title="用户名" desc="chechero" ></modifiedData>
+			<view @click="amendName(amendName)">
+				<modifiedData title="用户名" desc="chechero"></modifiedData>
+			</view>
+			
 			<modifiedData title="性别"  desc="女"></modifiedData>
 		</view>
 		
@@ -32,7 +35,11 @@
 			
 		},
 		methods: {
-			
+			amendName(amendName) {
+				uni.navigateTo({
+					url:"amendName"
+				})
+			},
 		}
 	}
 </script>

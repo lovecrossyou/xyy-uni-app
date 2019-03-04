@@ -97,6 +97,12 @@
 
 		},
 		{
+			"path": "pages/user/personalData/amendName",
+			"style": {
+				"navigationBarTitleText": "用户名"
+			}
+		},
+		{
 			"path": "pages/login/enter",
 			"style": {
 				"navigationBarTitleText": "登录",
