@@ -97,6 +97,14 @@
 
 		},
 		{
+		
+			"path": "pages/order/makeSureOrder/Tickets",
+			"style": {
+				"navigationBarTitleText": "优惠券"
+			}
+		
+		},
+		{
 			"path": "pages/login/enter",
 			"style": {
 				"navigationBarTitleText": "登录",
