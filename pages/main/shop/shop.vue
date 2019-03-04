@@ -36,11 +36,9 @@
 					<swiper-item>
 						<goods :products="shop.products"></goods>
 					</swiper-item>
-				</block>
-				<swiper-item>
-					<judgement :judgementData="judgementData"></judgement>
-				</swiper-item>
-				<block v-if="shop">
+					<swiper-item>
+						<judgement :judgementData="judgementData"></judgement>
+					</swiper-item>
 					<swiper-item>
 						<shop-info :shopInfo="shop"></shop-info>
 					</swiper-item>
@@ -99,7 +97,8 @@
 	import {
 		mapGetters,
 		mapActions,
-		mapMutations
+		mapMutations,
+		mapState
 	} from 'vuex'
 
 
@@ -133,14 +132,12 @@
 		computed: {
 			...mapGetters({
 				cartTotalPrice: 'cart/cartTotalPrice',
-				cartProducts: 'cart/cartProducts'
+				cartProducts: 'cart/cartProducts',
 			}),
-			shop() {
-				return this.$store.state.shop.shopInfo;
-			},
-			judgementData() {
-				return this.$store.state.shop.comments;
-			},
+			...mapState({
+				judgementData: state => state.shop.comments,
+				shop: state => state.shop.shopInfo
+			}),
 			cart_icon() {
 				if (this.cartProducts.length === 0) return "../../../static/shop/cart.png"
 				return "../../../static/shop/cart_active.png"

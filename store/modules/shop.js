@@ -26,6 +26,7 @@ const actions = {
 
 const mutations = {
 	saveShopInfo(state, params) {
+		console.log('saveShopInfo ',params);
 		state.shopInfo = params;
 	},
 	saveComments(state, params) {

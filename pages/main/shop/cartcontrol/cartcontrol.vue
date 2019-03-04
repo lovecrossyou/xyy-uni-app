@@ -10,15 +10,23 @@
 
 <script>
 	import Vue from 'vue';
+	import {
+		mapState
+	} from "vuex"
 	export default {
 		props: {
-			food: Object
+			food: Object,
 		},
 		data() {
 			return {
 				add_icon: '../../../static/shop/icon_add.png',
 				minus_icon: '../../../static/shop/icon_minus.png'
 			}
+		},
+		computed: {
+			...mapState({
+				shopInfo: state => state.shop.shopInfo
+			})
 		},
 		methods: {
 			addCart(event) {
@@ -27,13 +35,19 @@
 				} else {
 					this.food.count++;
 				};
-				this.$store.commit('cart/addCart', this.food);
+				this.$store.commit('cart/addCart', {
+					shop: this.shopInfo,
+					product: this.food
+				});
 			},
 			decreaseCart() {
 				if (this.food.count) {
 					this.food.count--;
 				}
-				this.$store.commit('cart/decrease', this.food);
+				this.$store.commit('cart/decrease', {
+					shop: this.shopInfo,
+					product: this.food
+				});
 			}
 		}
 

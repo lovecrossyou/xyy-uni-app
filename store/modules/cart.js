@@ -20,20 +20,22 @@ const getters = {
 			carts[shopId].push(Object.assign({}, product));
 		}
 		var allKeys = Object.keys(carts);
-		
-		var lists = [] ;
-		var index = 0 ;
-		for(var obj in carts){
+
+		var lists = [];
+		var index = 0;
+		for (var obj in carts) {
+			var products = carts[allKeys[index]];
 			lists.push({
-				shopId:allKeys[index],
-				poducts:carts[allKeys[index]]
+				shopId: allKeys[index],
+				shopName:products[0].shopName,
+				products: products
 			});
-			index++ ;
+			index++;
 		}
 		return lists;
 	},
 	cartProducts: (state, getters, rootState) => {
-		return state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId) && p.count!=0);
+		return state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId) && p.count != 0);
 	},
 	cartTotalPrice: (state, getters) => {
 		return getters.cartProducts.reduce((total, product) => {
@@ -62,7 +64,12 @@ const actions = {
 
 // mutations
 const mutations = {
-	addCart(state, product) {
+	addCart(state, pInfo) {
+		const {
+			product,
+			shop
+		} = pInfo;
+		console.log('shop ',shop);
 		var existFlag = false;
 		state.items.forEach(p => {
 			if (product.id === p.id) {
@@ -71,10 +78,16 @@ const mutations = {
 			}
 		})
 		if (existFlag === false) {
+			product.shopName = shop.info.name ;
 			state.items.push(product);
 		}
 	},
-	decrease(state, product) {
+	decrease(state, pInfo) {
+		const {
+			product,
+			shop
+		} = pInfo;
+		console.log('shop ',shop);
 		state.items.forEach(p => {
 			if (product.id === p.id) {
 				p.count = product.count;
