@@ -143,7 +143,7 @@
 			},
 			cart_icon() {
 				if (this.cartProducts.length === 0) return "../../../static/shop/cart.png"
-				return "../../../static/shop/cart_active.jpg"
+				return "../../../static/shop/cart_active.png"
 			}
 		},
 		methods: {
