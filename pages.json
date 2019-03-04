@@ -127,6 +127,12 @@
 			"style": {
 				"navigationBarTitleText": "意见反馈"
 			}
+		},
+		{
+			"path": "pages/order/makeSureOrder/OrderRemark",
+			"style": {
+				"navigationBarTitleText": "备注"
+			}
 		}
 	],
 	"tabBar": {

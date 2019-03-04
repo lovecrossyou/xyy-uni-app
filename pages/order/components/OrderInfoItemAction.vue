@@ -61,6 +61,7 @@
         .orderInfo_item_right{
           .row_center;
           .orderInfo_item_right_value{
+			  overflow: hidden;
 			min-width: 100px;
             font-size:24px;
             font-family:PingFangSC-Regular;

@@ -14,15 +14,16 @@
 			</view>
 			<view class="bottom_white">
 				<view class="space10" />
-			    <OrderInfoItemAction itemTitle="使用优惠券" :itemContent="ticketName" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
-			    <OrderInfoItemAction itemTitle="立减优惠" :itemContent="ticketMoney" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
+			    <OrderInfoItemAction itemTitle="使用优惠券" :itemContent="getTicketName" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
+			    <OrderInfoItemAction itemTitle="立减优惠" :itemContent="getTicketMoney" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
 				<view class="space30" />
 			    <OrderInfoItemAction
 			      itemTitle="订单备注"
-			      itemContent="尽快送达"
 				  valueColor="#999999"
 				  titleColor="#2E2E2E"
+				  :itemContent="getOrderRemark"
 				  :showArrow="true"
+				  @itemCallBack="orderRemarkInput"
 				  > </OrderInfoItemAction>
 			</view>
 		</div>
@@ -53,24 +54,14 @@
 			...mapState({
 				"choosedAddress":state => state.address.choosedAddress,
 				"ticket": state => state.orderConfirm.ticket,
+				"orderRemark":state => state.orderConfirm.orderRemark
 			}),
 			...mapGetters({
 				cartConfirmInfo:'cart/cartConfirmInfo',
+				getTicketName:'orderConfirm/getTicketName',
+				getTicketMoney:'orderConfirm/getTicketMoney',
+				getOrderRemark:'orderConfirm/getOrderRemark'
 			}),
-			ticketName(){
-				let name = "不使用"
-				if(this.ticket){
-					name = this.ticket.name || "不使用"
-				}
-				return name;
-			},
-			ticketMoney(){
-				let money = "-0.00"
-				if(this.ticket){
-					money = "- ¥" + (this.ticket.money||"0")
-				}
-				return money;
-			}
 		},
 		methods: {
 			...mapMutations({
@@ -86,6 +77,12 @@
 			chooseTickets(){
 				uni.navigateTo({
 					url:"Tickets?isChoose=true"
+				})
+			},
+			//添加备注
+			orderRemarkInput(){
+				uni.navigateTo({
+					url:"OrderRemark"
 				})
 			},
 			//获取默认地址
