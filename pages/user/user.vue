@@ -17,7 +17,7 @@
 
 		<uni-list>
 			<uni-list-item title="收货地址" thumb="http://qnimage.xiteng.com/dizhi@2x.png" @click="toAddress"></uni-list-item>
-			<uni-list-item title="我的优惠券" thumb="http://qnimage.xiteng.com/kabao@2x.png"></uni-list-item>
+			<uni-list-item title="我的优惠券" thumb="http://qnimage.xiteng.com/kabao@2x.png" @click="toTickets"></uni-list-item>
 			<uni-list-item title="我的收藏" thumb="http://qnimage.xiteng.com/shoucang@2x.png"></uni-list-item>
 			
 			<uni-list-item title="我的积分" thumb="http://qnimage.xiteng.com/jifen@2x.png"></uni-list-item>
@@ -67,6 +67,12 @@
 				//地址列表
 				uni.navigateTo({
 					url:'../address/chooseAddress'
+				})
+			},
+			// 优惠卷
+			toTickets(){
+				uni.navigateTo({
+					url:'../order/makeSureOrder/Tickets'
 				})
 			},
 			bindLogout() {

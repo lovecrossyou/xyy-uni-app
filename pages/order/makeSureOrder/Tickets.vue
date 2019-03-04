@@ -1,8 +1,8 @@
 <template>
 	<view class="tickets_container">
 		<View class="ticket_list_container">
-			<view v-for="(ticket,index) in tickets" :key='index' @click="ticketChoose(ticket)" >
-				<Ticket></Ticket>
+			<view v-for="(ticket,index) in tickets" :key='index' v-on:click="ticketChoose(ticket,index)">
+				<Ticket v-bind:ticketData="ticket" v-bind:index="index" :chooseIndex="chooseIndex" ></Ticket>
 			</view>
 		</view>
 		
@@ -19,9 +19,14 @@
 		components:{
 			Ticket
 		},
+		onLoad(option) {
+			this.isChoose = option.isChoose === "true"
+		},
 		data() {
 			return {
 				tickets:["","","","","","","","","",""],
+				chooseIndex:0,
+				isChoose:false,
 			}
 		},
 		computed: {
@@ -33,11 +38,14 @@
 			...mapMutations({
 				CHOOSETICKET:'orderConfirm/CHOOSETICKET'
 			}),
-			ticketChoose(ticket){
-				this.CHOOSETICKET({money:30,name:"新人首单"})
-				uni.navigateBack({
-					delta:1
-				})
+			ticketChoose(ticket,index){
+				if(this.isChoose){
+					this.CHOOSETICKET({money:30,name:"新人首单"})
+					uni.navigateBack({
+						delta:1
+					})
+				}
+				
 			}
 		},
 	}

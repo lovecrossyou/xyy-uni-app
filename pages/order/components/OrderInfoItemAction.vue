@@ -61,12 +61,14 @@
         .orderInfo_item_right{
           .row_center;
           .orderInfo_item_right_value{
+			min-width: 100px;
             font-size:24px;
             font-family:PingFangSC-Regular;
             font-weight:400;
             color:#D4660B;
             margin-right: 10px;
             line-height: 24px;
+			text-align: right;
           }
           .address_choose_arrow{
             width: 10px;
