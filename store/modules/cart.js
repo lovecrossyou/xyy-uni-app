@@ -67,6 +67,7 @@ const mutations = {
 			product,
 			shop
 		} = pInfo;
+		console.log('shop ',shop);
 		var existFlag = false;
 		state.items.forEach(p => {
 			if (product.id === p.id) {
@@ -83,6 +84,7 @@ const mutations = {
 			product,
 			shop
 		} = pInfo;
+		console.log('shop ',shop);
 		state.items.forEach(p => {
 			if (product.id === p.id) {
 				p.count = product.count;
