@@ -60,14 +60,14 @@
 			ticketName(){
 				let name = "不使用"
 				if(this.ticket){
-					name = this.ticket.name
+					name = this.ticket.name || "不使用"
 				}
 				return name;
 			},
 			ticketMoney(){
 				let money = "-0.00"
 				if(this.ticket){
-					money = "- ¥" + this.ticket.money||""
+					money = "- ¥" + (this.ticket.money||"0")
 				}
 				return money;
 			}
@@ -85,7 +85,7 @@
 			// 选择优惠券
 			chooseTickets(){
 				uni.navigateTo({
-					url:"Tickets"
+					url:"Tickets?isChoose=true"
 				})
 			},
 			//获取默认地址

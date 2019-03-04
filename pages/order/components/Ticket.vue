@@ -11,10 +11,10 @@
 						  <view class="ticket_date">有效期至2019-01-21</view>
 						</view>
 					</view>
-					<view class="ticket_choose_icon_container" @click="ticketChoose">
-						<dic class="ticket_choose_icon" :class="{ticket_choose_icon_s:isChoose}" />
+					<view  v-show="false" class="ticket_choose_icon_container" v-on:click.stop.prevent="ticketChoose(index)">
+						<div v-show="false" class="ticket_choose_icon" :class="{ticket_choose_icon_s:isChoose}" />
 					</view>
-					<view class="ticket_show_rule" @click="showDetail">
+					<view class="ticket_show_rule" v-on:click.stop.prevent="showDetail">
 						<view class="ticket_rule_btn">使用规则</view>
 						<uni-icon :type="icon_showdetail" color="#999999" size="14"></uni-icon>
 						
@@ -37,16 +37,27 @@
 		components:{
 			uniIcon
 		},
+		props:{
+			ticketData:Object,
+			index:0,
+			chooseIndex:0,
+		},
 		data() {
 			return {
 				isShowDetail:false,
-				icon_showdetail:"arrowdown"
+				icon_showdetail:"arrowdown",
+				isChoose:false,
 			}
 		},
 		methods: {
 			showDetail() {
+				console.log("showDetail")
 				this.isShowDetail = !this.isShowDetail;
 				this.icon_showdetail = this.isShowDetail ? "arrowup":"arrowdown"
+			},
+			ticketChoose(choosedIndex){
+				this.isChoose = !this.isChoose;
+				// this.$emit('ticketChoosed',this.ticketData,choosedIndex);
 			}
 		},
 	}
