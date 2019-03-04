@@ -30,12 +30,10 @@ const getters = {
 			});
 			index++ ;
 		}
-		console.log('lists ',lists)
 		return lists;
 	},
-
 	cartProducts: (state, getters, rootState) => {
-		return state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId));
+		return state.items.filter(p => parseInt(p.shopId) === parseInt(state.shopId) && p.count!=0);
 	},
 	cartTotalPrice: (state, getters) => {
 		return getters.cartProducts.reduce((total, product) => {
@@ -65,7 +63,6 @@ const actions = {
 // mutations
 const mutations = {
 	addCart(state, product) {
-		console.log('mutations addCart ', product);
 		var existFlag = false;
 		state.items.forEach(p => {
 			if (product.id === p.id) {
@@ -78,7 +75,6 @@ const mutations = {
 		}
 	},
 	decrease(state, product) {
-		console.log('mutations decrease ', product);
 		state.items.forEach(p => {
 			if (product.id === p.id) {
 				p.count = product.count;

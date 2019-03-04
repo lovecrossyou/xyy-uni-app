@@ -120,7 +120,6 @@
 					}
 				],
 				activeTabIndex: 0,
-				cart_icon: '../../../static/shop/cart.png',
 				animationData: {},
 				showMenu: false
 			};
@@ -139,8 +138,12 @@
 			shop() {
 				return this.$store.state.shop.shopInfo;
 			},
-			judgementData(){
+			judgementData() {
 				return this.$store.state.shop.comments;
+			},
+			cart_icon() {
+				if (this.cartProducts.length === 0) return "../../../static/shop/cart.png"
+				return "../../../static/shop/cart_active.jpg"
 			}
 		},
 		methods: {
@@ -184,9 +187,9 @@
 			},
 			initJudgement(shopId) {
 				var params = {
-					page:1,
-					pageSize:15,
-					shopId:shopId
+					page: 1,
+					pageSize: 15,
+					shopId: shopId
 				}
 				this.fetchComments(params);
 			}
@@ -354,6 +357,8 @@
 			.cart-wrapper {
 				flex: 1;
 				position: relative;
+				width: 110upx;
+				height: 110upx;
 
 				image {
 					margin-left: 24upx;
@@ -361,6 +366,8 @@
 					height: 110upx;
 					position: absolute;
 					top: -20upx;
+					border-radius: 50%;
+
 				}
 
 				.totalPrice {

@@ -23,21 +23,17 @@
 	import {
 		mapGetters
 	} from 'vuex'
-	
+
 	export default {
 		components: {
 			uniListItem
 		},
-		computed:{
+		computed: {
 			...mapGetters({
-				"carts":'cart/productsOrderByShop'
+				"carts": 'cart/productsOrderByShop'
 			})
 		},
-		data() {
-			return {
-				p_icon: '../../static/shop/p_001.png',
-			};
-		}
+		data() {}
 	}
 </script>
 
@@ -45,9 +41,11 @@
 	.shop-wrapper {
 		// height: 260upx;
 		width: 100%;
+
 		.header {
 			// height: 60upx;
 		}
+
 		.product-list {
 			display: flex;
 			flex-direction: row;
