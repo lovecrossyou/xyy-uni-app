@@ -24,9 +24,11 @@ const getters = {
 		var lists = [];
 		var index = 0;
 		for (var obj in carts) {
+			var products = carts[allKeys[index]];
 			lists.push({
 				shopId: allKeys[index],
-				poducts: carts[allKeys[index]]
+				shopName:products[0].shopName,
+				products: products
 			});
 			index++;
 		}
@@ -76,6 +78,7 @@ const mutations = {
 			}
 		})
 		if (existFlag === false) {
+			product.shopName = shop.info.name ;
 			state.items.push(product);
 		}
 	},

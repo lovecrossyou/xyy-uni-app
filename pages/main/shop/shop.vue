@@ -79,7 +79,7 @@
 							<view class="price">
 								¥{{product.price}}
 							</view>
-							<cartcontrol :shopInfo="shopInfo" :food="product" @add="addFood"></cartcontrol>
+							<cartcontrol :food="product" @add="addFood"></cartcontrol>
 						</view>
 					</view>
 				</block>

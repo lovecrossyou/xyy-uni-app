@@ -10,16 +10,23 @@
 
 <script>
 	import Vue from 'vue';
+	import {
+		mapState
+	} from "vuex"
 	export default {
 		props: {
 			food: Object,
-			shopInfo: Object
 		},
 		data() {
 			return {
 				add_icon: '../../../static/shop/icon_add.png',
 				minus_icon: '../../../static/shop/icon_minus.png'
 			}
+		},
+		computed: {
+			...mapState({
+				shopInfo: state => state.shop.shopInfo
+			})
 		},
 		methods: {
 			addCart(event) {
