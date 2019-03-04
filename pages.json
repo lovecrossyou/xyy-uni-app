@@ -97,6 +97,20 @@
 
 		},
 		{
+		
+			"path": "pages/order/makeSureOrder/Tickets",
+			"style": {
+				"navigationBarTitleText": "优惠券"
+			}
+		
+		},
+		{
+			"path": "pages/user/personalData/amendName",
+			"style": {
+				"navigationBarTitleText": "用户名"
+			}
+		},
+		{
 			"path": "pages/login/enter",
 			"style": {
 				"navigationBarTitleText": "登录",
@@ -106,6 +120,12 @@
 						"type": "transparent" //透明渐变导航栏
 					}
 				}
+			}
+		},
+		{
+			"path": "pages/user/feedback/feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈"
 			}
 		}
 	],

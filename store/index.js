@@ -5,8 +5,10 @@ import address from './modules/address/index.js'
 import user from './modules/user.js'
 import main from "./modules/main.js"
 import shop from "./modules/shop.js"
+import orderConfirm from './modules/orderConfirm.js'
 import service from "../service.js"
-import amap from '@/common/amap-wx.js';
+import amap from '@/common/amap-wx.js'
+
 
 // amapPlugin: null,
 // 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
@@ -21,7 +23,8 @@ export default new Vuex.Store({
 		address,
 		user,
 		main,
-		shop
+		shop,
+		orderConfirm
 	},
 	state: {
 		count: 0,

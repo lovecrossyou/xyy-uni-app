@@ -48,7 +48,6 @@
             </section>
         </section>
         <div class="determine" @click="addAddress">确定</div>
-        <alert-tip v-if="showAlert" @closeTip="showAlert = false" :alertText="alertText"></alert-tip>
     </div>
 </template>
 
@@ -71,14 +70,9 @@
                 tag_type: 1, //备注类型
                 phone_bk: false, //是否选择备注电话
                 anntherPhoneNumber: '', //备注电话
-                showAlert: false, //弹出框
-                alertText: null, //弹出框信息
                 poi_type: 0, //地址类型
             }
         },
-		components:{
-			alertTip
-		},
 		onLoad() {
 			if(this.editAddress.address){
 				this.name = this.editAddress.address.recievName ;
@@ -86,7 +80,6 @@
 				this.address_detail = this.editAddress.address.detailAddress;
 				this.positionX = this.editAddress.address.positionX;
 				this.positionY = this.editAddress.address.positionY
-				
 			}
 			
 		},
@@ -131,25 +124,40 @@
             //保存地址信息
             async addAddress(){
                 if (!(this.userInfo && this.userInfo.userId)) {
-                    this.showAlert = true;
-                    this.alertText = '请登录'
+					uni.showToast({
+						title: '请登录',
+						icon:'none',
+						duration: 2000
+					});
 					return;
                 }else if(!this.name){
-                    this.showAlert = true;
-                    this.alertText = '请输入姓名'
+					uni.showToast({
+						title: '请输入姓名',
+						icon:'none',
+						duration: 2000
+					});
 					return;
                 }else if(!this.phone){
-                    this.showAlert = true;
-                    this.alertText = '请输入电话号码'
+					uni.showToast({
+						title: '请输入电话号码',
+						icon:'none',
+						duration: 2000
+					});
 					return;
                 }
 				else if(!this.searchAddress){
-                    this.showAlert = true;
-                    this.alertText = '请选择地址'
+                   uni.showToast({
+                   	title: '请选择地址',
+                   	icon:'none',
+                   	duration: 2000
+                   });
 					return;
                 }else if(!this.address_detail){
-                    this.showAlert = true;
-                    this.alertText = '请输入详细地址'
+                   uni.showToast({
+                   	title: '请输入详细地址',
+                   	icon:'none',
+                   	duration: 2000
+                   });
 					return;
                 }
                 if (this.tag == '家') {
@@ -184,8 +192,11 @@
 							delta:1
 						})
 					}else{
-						this.showAlert = true;
-						this.alertText = res.message;
+						 uni.showToast({
+							title: res.message,
+							icon:'none',
+							duration: 2000
+						});
 					}
             },
         }

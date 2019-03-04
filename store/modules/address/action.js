@@ -26,4 +26,11 @@ export default {
 		let addres = await getAddressList(state.userInfo.user_id);
 		commit(SAVE_ADDRESS, addres);	
 	},
+	toPay({
+		commit,
+		state
+	}){
+		
+		
+	}
 }

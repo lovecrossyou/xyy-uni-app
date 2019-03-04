@@ -14,21 +14,19 @@
 			</view>
 			<view class="bottom_white">
 				<view class="space10" />
-			    <OrderInfoItemAction itemTitle="使用优惠券" itemContent="0" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
-			    <OrderInfoItemAction itemTitle="立减优惠" itemContent="-¥0" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
+			    <OrderInfoItemAction itemTitle="使用优惠券" :itemContent="ticketName" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
+			    <OrderInfoItemAction itemTitle="立减优惠" :itemContent="ticketMoney" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
 				<view class="space30" />
 			    <OrderInfoItemAction
 			      itemTitle="订单备注"
 			      itemContent="尽快送达"
 				  valueColor="#999999"
 				  titleColor="#2E2E2E"
+				  :showArrow="true"
 				  > </OrderInfoItemAction>
 			</view>
 		</div>
-        
-		 <loading v-if="showLoading"></loading>
         <BottomBar @toPay="toPay"></BottomBar>
-		<alert-tip v-if="showAlert" @closeTip="showAlert = false" :alertText="alertText"></alert-tip>
       </view>
 </template>
 
@@ -40,9 +38,8 @@
 	import OrderInfoItemAction from "../components/OrderInfoItemAction.vue"
 	import ArriveAndPay from "../components/ArriveAndPay.vue"
 	import BottomBar from "../components/BottomBar.vue"
-	import loading from '../../../components/loading.vue';
-	import alertTip from '../../../components/alertTip.vue'
 	import api from '@/util/api.js'
+	import service from "../../../service.js"
 	
 	export default {
 		components:{
@@ -51,24 +48,45 @@
 			WaterStoreItem,
 			OrderInfoItemAction,
 			BottomBar,
-			alertTip,
 		},
 		computed:{
-			...mapState('address',['choosedAddress']),
-			...mapGetters('cart',['cartConfirmInfo'])
+			...mapState({
+				"choosedAddress":state => state.address.choosedAddress,
+				"ticket": state => state.orderConfirm.ticket,
+			}),
+			...mapGetters({
+				cartConfirmInfo:'cart/cartConfirmInfo',
+			}),
+			ticketName(){
+				let name = "不使用"
+				if(this.ticket){
+					name = this.ticket.name
+				}
+				return name;
+			},
+			ticketMoney(){
+				let money = "-0.00"
+				if(this.ticket){
+					money = "- ¥" + this.ticket.money||""
+				}
+				return money;
+			}
 		},
 		methods: {
-			...mapMutations('address',['GET_DEFAULT_ADDRESS']),
-			
+			...mapMutations({
+				GET_DEFAULT_ADDRESS:'address/GET_DEFAULT_ADDRESS'
+			}),
 			// 选择地址
 			chooseAddAction(){
 				uni.navigateTo({
-					url:"../../address/chooseAddress"
+					url:"../../address/chooseAddress?isChoose=true"
 				})
 			},
 			// 选择优惠券
 			chooseTickets(){
-				
+				uni.navigateTo({
+					url:"Tickets"
+				})
 			},
 			//获取默认地址
 			async getDefaultAddress(){
@@ -80,10 +98,11 @@
 			},
 			//获取确认订单信息
 			async requestOrderData(){
-				const res = await api.requestCartClient(this.cartConfirmInfo)
+				const res = await api.requestCartClient(this.cartConfirmInfo);
 				this.info = res.data;
 				this.productItemList = res.data.productItemList;
 				this.showLoading = false;
+				uni.hideLoading();
 			},
 			async toPay(){
 				
@@ -92,9 +111,9 @@
 					let params = Object.assign({},this.cartConfirmInfo);
 					params.deliverAddressId = this.choosedAddress.id;
 					const createRes = await api.shopOrderCreate(params);
-					
+					const userInfo = service.getInfo();
 					let confirmParams = {
-						"openId": "ou3ry5IxNxJwMIYsrBG96S4zbUuE",
+						"openId": userInfo.openId,
 						"payChannel": "WeixinMiniProgramPay",
 						"payOrderNo": createRes.data.orderNo
 					}
@@ -127,8 +146,11 @@
 					
 					// return ;
 				}else{
-					this.showAlert=true;
-					this.alertText='请选择地址';
+					uni.showToast({
+						title: '请选择地址',
+						icon:'none',
+						duration: 2000
+					});
 				}
 				
 				
@@ -143,12 +165,15 @@
 				},
 				info:{},
 				showLoading:true,
-				showAlert:false,
 				alertText:'',
 				productItemList:[],
 			}
 		},
 		onLoad() {
+			uni.showLoading({
+				title: '加载中...',
+				mask: true
+			});
 			this.requestOrderData();
 			this.getDefaultAddress();
 			console.log('cartConfirmInfo',this.cartConfirmInfo);

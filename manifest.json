@@ -45,7 +45,21 @@
             "sdkConfigs" : {},
             "icons" : {
                 "ios" : {
+<<<<<<< HEAD
                     "appstore" : "/Users/wangq/Desktop/kuaima/小程序/logo_144@3x.png",
+=======
+                    "appstore" : "/Users/tianxiaotian/Desktop/logo_144@3x.png",
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png"
+                    },
+>>>>>>> dab9090a2d2cf0f6d8e39ebb63d10f03e9f8fe6a
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",

@@ -7,22 +7,23 @@
         </div>
         <section id="scroll_section" class="scroll_container">
             <section class="list_cotainer">
-                <ul class="deliverable_address">
-                    <div class="div_li" v-for="(item,index) in deliverable" :key="index">
-                        <div class="detail_container" v-on:click="chooseAddress(item,index)">
-                            <header>
-                                <span>{{item.recievName}}</span>
-                                <span class="space_l_and_r">{{item.sex == 1? '先生' : '女士'}}</span>
-                                <span>{{item.phoneNum}}</span>
-                            </header>
-                            <div class="address_detail ellipsis">
-                                <span v-if="item.tag" :style="{backgroundColor: iconColor(item.tag)}">{{item.tag}}</span>
-                                <p>{{item.fullAddress}}</p>   
-                            </div>
-                        </div>
+				<ul class="deliverable_address">
+				    <div class="div_li" v-for="(item,index) in deliverable" :key="index">
+				        <div class="detail_container" v-on:click="chooseAddress(item,index)">
+				            <header>
+				                <span>{{item.recievName}}</span>
+				                <span class="space_l_and_r">{{item.sex == 1? '先生' : '女士'}}</span>
+				                <span>{{item.phoneNum}}</span>
+				            </header>
+				            <div class="address_detail ellipsis">
+				                <span v-if="item.tag" :style="{backgroundColor: iconColor(item.tag)}">{{item.tag}}</span>
+				                <p>{{item.fullAddress}}</p>   
+				            </div>
+				        </div>
 						<image class="edit_address" src="../../static/img/edit_address.png" v-on:click="editAddress(item)"></image>
-                    </div>
-                </ul>
+				    </div>
+				</ul>
+				
                 <section id="out_delivery" v-if="deliverdisable.length">
                     <header class="out_header">以下地址超出配送范围</header>
                     <ul class="deliverable_address">
@@ -58,8 +59,10 @@
 	import {mapState, mapMutations} from 'vuex';
 	import api from "@/util/api.js";
     export default {
-		onShow() {
+		onLoad: function (option) {
+			console.log("lallla",JSON.stringify(option))
 			this.initData();
+			this.isChoose = option.isChoose === 'true';
 		},
 		data(){
             return{
@@ -70,6 +73,7 @@
                 sig: null,
                 showAlert: false,
                 alertText: null,
+				isChoose: false,
             }
         },
 		computed:{
@@ -86,10 +90,15 @@
 			]),
 			chooseAddress(address,index){
 				// this.defaultIndex = index;
-				this.CHOOSE_ADDRESS({address, index});
-				uni.navigateBack({
-					delta:1
-				})
+				if (this.isChoose){
+					this.CHOOSE_ADDRESS({address, index});
+					uni.navigateBack({
+						delta:1
+					})
+				}else{
+					this.editAddress(address);
+				}
+				
 			},
 			editAddress(address){
 				this.EDIT_ADDRESS({address});
@@ -124,14 +133,14 @@
                             this.deliverdisable.push(item);
                     }
                 })
-                },
-				iconColor(name){
-				    switch(name){
-				        case '公司': return '#4cd964';
-				        case '学校': return '#3190e8';
-				    }
-				},
-            }
+            },
+			iconColor(name){
+				switch(name){
+					case '公司': return '#4cd964';
+					case '学校': return '#3190e8';
+				}
+			},
+		}
     }
 </script>
   
