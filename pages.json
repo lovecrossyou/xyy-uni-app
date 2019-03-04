@@ -113,6 +113,12 @@
 					}
 				}
 			}
+		},
+		{
+			"path": "pages/user/feedback/feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈"
+			}
 		}
 	],
 	"tabBar": {
