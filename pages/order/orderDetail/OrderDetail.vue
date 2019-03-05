@@ -4,7 +4,7 @@
 			<img class="header_img" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D" />
 			<view class="h_payStatus_c">
 			  <view class="h_payStatus">等待支付</view>
-			  <uni-icon type="arrowright" color="#333333" size="20"></uni-icon>
+			  <!-- <uni-icon type="arrowright" color="#333333" size="20"></uni-icon> -->
 			</view>
 			<view class="h_orderDesc">逾期未支付，订单将自动取消</view>
 			<view class="orderBtn_c">
@@ -95,11 +95,11 @@
 <script>
 // import {uniCountdown} from '@dcloudio/uni-ui'
 import uniCountdown from "../../../components/uniCountDown.vue"
-import uniIcon from "@/components/uni-icon/uni-icon.vue"
+// import uniIcon from "@/components/uni-icon/uni-icon.vue"
 export default {
 	components: {
 	    uniCountdown,
-		uniIcon
+		// uniIcon
 	},
   data() {
     return {
