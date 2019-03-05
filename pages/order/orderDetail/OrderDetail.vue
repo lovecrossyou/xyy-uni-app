@@ -31,7 +31,7 @@
 			  </view>
 			  <view class="text">{{orderDetailData.restaurant_name}}</view>
 			</view>
-			<view v-for="(foodData,indexf) in food" :key="indexf">
+			<view v-for="foodData in food" :key="foodData.name">
 				<view class="item">
 					<view class="text">{{foodData.name}}</view>
 					<view class="num">x{{foodData.quantity}}</view>
@@ -129,6 +129,11 @@ export default {
   },
   onLoad() {
   	this.getData();
+  },
+  computed:{
+	  getfoodKey: function  (index) {
+	  	return index + "food"
+	  }
   },
   methods: {
 	
