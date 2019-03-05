@@ -21,9 +21,9 @@
 			<uni-list-item title="我的优惠券" thumb="http://qnimage.xiteng.com/kabao@2x.png" @click="toTickets"></uni-list-item>
 			<uni-list-item title="我的收藏" thumb="http://qnimage.xiteng.com/shoucang@2x.png"></uni-list-item>
 			
-			<uni-list-item title="我的积分" thumb="http://qnimage.xiteng.com/jifen@2x.png"></uni-list-item>
+			<uni-list-item title="我的积分" thumb="http://qnimage.xiteng.com/jifen@2x.png" @click="integral"></uni-list-item>
 			<uni-list-item title="意见反馈" thumb="http://qnimage.xiteng.com/fankui@2x.png" @click="feedback(feedback)"></uni-list-item>
-			<uni-list-item title="更多" thumb="http://qnimage.xiteng.com/gengduo@2x.png"></uni-list-item>
+			<uni-list-item title="更多" thumb="http://qnimage.xiteng.com/gengduo@2x.png" @click="more"></uni-list-item>
 		</uni-list>
 		<view class="btn-row">
 			<button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
@@ -98,7 +98,18 @@
 				uni.navigateTo({
 					url: "feedback/feedback"
 				})
+			},
+			integral(){
+				uni.navigateTo({
+					url: 'integral/integral'
+				});
+			},
+			more(){
+				uni.navigateTo({
+					url:"more/more"
+				})
 			}
+			
 		}
 	}
 </script>

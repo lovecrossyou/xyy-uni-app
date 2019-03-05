@@ -97,12 +97,12 @@
 
 		},
 		{
-		
+
 			"path": "pages/order/makeSureOrder/Tickets",
 			"style": {
 				"navigationBarTitleText": "优惠券"
 			}
-		
+
 		},
 		{
 			"path": "pages/user/personalData/amendName",
@@ -114,7 +114,7 @@
 			"path": "pages/login/enter",
 			"style": {
 				"navigationBarTitleText": "登录",
-				"navigationBarBackgroundColor":"#4A90E2",
+				"navigationBarBackgroundColor": "#4A90E2",
 				"app-plus": {
 					"titleNView": {
 						"type": "transparent" //透明渐变导航栏
@@ -132,6 +132,18 @@
 			"path": "pages/order/makeSureOrder/OrderRemark",
 			"style": {
 				"navigationBarTitleText": "备注"
+			}
+		},
+		{
+			"path": "pages/user/integral/integral",
+			"style": {
+				"navigationBarTitleText": "我的积分"
+			}
+		},
+		{
+			"path": "pages/user/more/more",
+			"style": {
+				"navigationBarTitleText": "更多"
 			}
 		}
 	],

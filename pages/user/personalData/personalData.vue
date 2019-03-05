@@ -21,7 +21,7 @@
 </template>
 
 <script>
-	import modifiedData from "./modifiedData.vue";
+	import modifiedData from "@/components/modifiedData.vue";
 	export default {
 		data() {
 			return {
