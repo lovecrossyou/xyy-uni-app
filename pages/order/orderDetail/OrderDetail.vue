@@ -1,106 +1,105 @@
 <template>
     <view class="detail">
-	<view class="orderdetail_header">
-        <img class="header_img" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D" />
-        <view class="h_payStatus_c">
-          <view class="h_payStatus">等待支付</view>
-          <img src="" class="h_pay_arrow" />
-        </view>
-        <view class="h_orderDesc">逾期未支付，订单将自动取消</view>
-        <view class="orderBtn_c">
-          <view class="cancel_left_btn">取消订单</view>
-          <view class="toPay_btn">
-			<uni-countdown
-				color="#FFFFFF"
-				splitor-color="#FFFFFF"
-				background-color="transparent" 
-				border-color="transparent"
-				:showColon="false"
-				:show-day="false" 		 
-				:hour="1" 
-				:minute="0" 
-				:second="0">
-			</uni-countdown>
-          </view>
-        </view>
+		<view class="orderdetail_header">
+			<img class="header_img" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D" />
+			<view class="h_payStatus_c">
+			  <view class="h_payStatus">等待支付</view>
+			  <uni-icon type="arrowright" color="#333333" size="20"></uni-icon>
+			</view>
+			<view class="h_orderDesc">逾期未支付，订单将自动取消</view>
+			<view class="orderBtn_c">
+				<view class="cancel_left_btn">取消订单</view>
+				<view class="toPay_btn">
+					<uni-countdown
+						color="#FFFFFF"
+						splitor-color="#FFFFFF"
+						background-color="transparent" 
+						border-color="transparent"
+						:showColon="false"
+						:show-day="false" 		 
+						:hour="1" 
+						:minute="0" 
+						:second="0">
+					</uni-countdown>
+				</view>
+			</view>
+		</view>
+		<view class="content_detail">
+			<view class="item">
+			  <view class="img">
+				<image :src="orderDetailData.restaurant_img" class="img"></image>
+			  </view>
+			  <view class="text">{{orderDetailData.restaurant_name}}</view>
+			</view>
+			<view v-for="(foodData,index) in food" :key="index+''">
+				<view class="item">
+					<view class="text">{{foodData.name}}</view>
+					<view class="num">x{{foodData.quantity}}</view>
+					<view class="price">¥{{foodData.price}}</view>
+				</view>
+			</view>
+			<view class="item">
+				<view class="text">配送费</view>
+				<view class="price">¥{{orderDetailData.basket && orderDetailData.basket.deliver_fee.price}}</view>
+			</view>
+			<view v-for="(extraData,index) in extra" :key="index+'#'">
+				<view class="item">
+					<view class="text">{{extraData.name}}</view>
+					<view class="price">- ¥{{extraData.price.toString().slice(1)}}</view>
+				</view>
+			</view>
+			<view class="totoal">实付 ¥{{orderDetailData.total_amount}}</view>
+		</view>
 
-      </view>
-      <view class="content">
-        <view class="item">
-          <view class="img">
-            <!-- <img src="orderDetailData.restaurant_img" /> -->
-			<image :src="orderDetailData.restaurant_img" class="img"></image>
-          </view>
-          <view class="text">{{orderDetailData.restaurant_name}}</view>
-        </view>
-        <view v-for="(foodData,index) in food" :key="index">
-          <view class="item">
-            <view class="text">{{foodData.name}}</view>
-            <view class="num">x{{foodData.quantity}}</view>
-            <view class="price">¥{{foodData.price}}</view>
-          </view>
-        </view>
-        <view class="item">
-          <view class="text">配送费</view>
-          <view class="price">¥{{orderDetailData.basket && orderDetailData.basket.deliver_fee.price}}</view>
-        </view>
-        <view v-for="(extraData,index) in extra" :key="index">
-          <view class="item">
-            <view class="text">{{extraData.name}}</view>
-            <view class="price">- ¥{{extraData.price.toString().slice(1)}}</view>
-          </view>
-        </view>
-        <view class="totoal">实付 ¥{{orderDetailData.total_amount}}</view>
-      </view>
-
-      <view class="info">
-        <view class="title">配送信息</view>
-        <view class="desc">
-          <view class="item">
-            <view class="label">送达时间</view>
-            <view class="text">{{orderDetailData.deliver_time}}</view>
-          </view>
-          <view class="item">
-            <view class="label">送货地址</view>
-            <view class="text">{{orderDetailData.consignee}}<br />{{orderDetailData.phone}}<br />{{orderDetailData.address}}</view>
-          </view>
-          <view class="item">
-            <view class="label">配送方式</view>
-            <view class="text">{{desc.delivery_company}}</view>
-          </view>
-          <view class="item">
-            <view class="label">配送骑手</view>
-            <view class="text">{{desc.rider_name}},{{desc.rider_phone}}</view>
-          </view>
-        </view>
-      </view>
-      <view class="info">
-        <view class="title">订单信息</view>
-        <view class="desc">
-          <view class="item">
-            <view class="label">订单号</view>
-            <view class="text">{{orderDetailData.id}}</view>
-          </view>
-          <view class="item">
-            <view class="label">支付方式</view>
-            <view class="text">{{orderDetailData.pay_method}}</view>
-          </view>
-          <view class="item">
-            <view class="label">下单时间</view>
-            <view class="text">{{orderDetailData.formatted_created_at}}</view>
-          </view>
-        </view>
-      </view>
+		<view class="info">
+			<view class="title">配送信息</view>
+			<view class="desc">
+			  <view class="item">
+				<view class="label">送达时间</view>
+				<view class="text">{{orderDetailData.deliver_time}}</view>
+			  </view>
+			  <view class="item">
+				<view class="label">送货地址</view>
+				<view class="text">{{orderDetailData.consignee}}<br />{{orderDetailData.phone}}<br />{{orderDetailData.address}}</view>
+			  </view>
+			  <view class="item">
+				<view class="label">配送方式</view>
+				<view class="text">{{desc.delivery_company}}</view>
+			  </view>
+			  <view class="item">
+				<view class="label">配送骑手</view>
+				<view class="text">{{desc.rider_name}},{{desc.rider_phone}}</view>
+			  </view>
+			</view>
+		  </view>
+		  <view class="info">
+			<view class="title">订单信息</view>
+			<view class="desc">
+			  <view class="item">
+				<view class="label">订单号</view>
+				<view class="text">{{orderDetailData.id}}</view>
+			  </view>
+			  <view class="item">
+				<view class="label">支付方式</view>
+				<view class="text">{{orderDetailData.pay_method}}</view>
+			  </view>
+			  <view class="item">
+				<view class="label">下单时间</view>
+				<view class="text">{{orderDetailData.formatted_created_at}}</view>
+			  </view>
+			</view>
+		</view>
     </view>
 </template>
 
 <script>
 // import {uniCountdown} from '@dcloudio/uni-ui'
 import uniCountdown from "../../../components/uniCountDown.vue"
-
+import uniIcon from "@/components/uni-icon/uni-icon.vue"
 export default {
 	components: {
-	    uniCountdown
+	    uniCountdown,
+		uniIcon
 	},
   data() {
     return {
@@ -308,11 +307,15 @@ export default {
   width: 100%;
   height: 100%;
   background-color: @fill-body-darken;
-  .content {
+  .content_detail {
     box-sizing: border-box;
     padding: 0 20px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     background-color: @fill-body;
+	.totoal{
+		padding: 12px 0;
+		box-sizing: border-box;
+	}
     .item {
       display: flex;
       min-height: 88px;
