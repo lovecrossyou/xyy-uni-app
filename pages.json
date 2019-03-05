@@ -134,11 +134,16 @@
 				"navigationBarTitleText": "备注"
 			}
 		},
-
 		{
 			"path": "pages/user/integral/integral",
 			"style": {
 				"navigationBarTitleText": "我的积分"
+			}
+		},
+		{
+			"path": "pages/user/more/more",
+			"style": {
+				"navigationBarTitleText": "更多"
 			}
 		}
 	],
