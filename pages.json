@@ -73,7 +73,6 @@
 			}
 		},
 		{
-
 			"path": "pages/address/searchAddress",
 			"style": {
 				"navigationBarTitleText": "搜索地址"
@@ -94,7 +93,6 @@
 			"style": {
 				"navigationBarTitleText": "个人资料"
 			}
-
 		},
 		{
 
@@ -102,7 +100,6 @@
 			"style": {
 				"navigationBarTitleText": "优惠券"
 			}
-
 		},
 		{
 			"path": "pages/user/personalData/amendName",

@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="header" @click="modification(modification)">
+		<view class="header" @click="modification">
 			<view class="left">
 				<view class="image-content">
 					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="userInfo.userIconUrl"
@@ -89,7 +89,7 @@
 			imageError(e) {
 				console.error('image发生error事件，携带值为' + e.detail.errMsg)
 			},
-			modification(modification) {
+			modification() {
 				uni.navigateTo({
 					url: "personalData/personalData"
 				})
