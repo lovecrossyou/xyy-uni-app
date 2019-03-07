@@ -1,12 +1,13 @@
 <template>
 	<view class="content">
-		<view class="header">
+		<view class="search_container">
 			<view class="address-wrapper">
-				<view class="address-icon"></view>
 				<view class="address">{{location.name}}</view>
+				<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
 			</view>
-			<view class="search-wrapper">
-				<view class="search-box" @click="goSearch">
+			<view class="search-wrapper" @click="goSearch">
+				<view class="search-box" >
+					<image src="../../static/img/search_home.png" class="search_home_icon"></image>
 					<view class="label">
 						搜索
 					</view>
@@ -28,28 +29,30 @@
 				</view>
 			</view>
 		</view>
+		
 		<view class="entery">
 			<view class="entery-item">
-				<image src="../../static/main/main_shooping.png"></image>
+				<image src="../../static/main/main_shooping.png" mode="widthFix" ></image>
 				<view class="entery-text">商超便利</view>
 			</view>
 			<view class="entery-item">
-				<image src="../../static/main/main_fruits.png"></image>
+				<image src="../../static/main/main_fruits.png" mode="widthFix" ></image>
 				<view class="entery-text">水果</view>
 			</view>
 			<view class="entery-item">
-				<image src="../../static/main/main_water_check.png"></image>
+				<image src="../../static/main/main_water_check.png" mode="widthFix" ></image>
 				<view class="entery-text">水质检测</view>
 			</view>
 			<view class="entery-item">
-				<image src="../../static/main/main_water.png"></image>
+				<image src="../../static/main/main_water.png" mode="widthFix"></image>
 				<view class="entery-text">桶装水</view>
 			</view>
 			<view class="entery-item">
-				<image src="../../static/main/main_dinner.png"></image>
+				<image src="../../static/main/main_dinner.png" mode="widthFix"></image>
 				<view class="entery-text">夜宵</view>
 			</view>
 		</view>
+		<image src="../../static/main/home_commend.png" class="home_commend_icon"></image>
 		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
 			<view class="shop-info" @click="goShop(shop)">
 				<image :src="shop.imageUrl" class="shop-img"></image>
@@ -80,8 +83,12 @@
 	} from 'vuex'
 	import amap from '@/common/amap-wx.js';
 	import service from "../../service.js"
+	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 
 	export default {
+		components:{
+			uniIcon
+		},
 		data() {
 			return {
 				"bannerIcon":'http://qnimage.xiteng.com/home_banner.png'
@@ -175,55 +182,78 @@
 
 <style lang="less">
 	.content {
-		.header {
-			padding: 20upx;
-			// height: 86upx;
-			background-color: #fff;
-
+		position: relative;
+		.search_container{
+			z-index: 999;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			padding: 30upx 32upx;
+			box-sizing: border-box;
+			width: 100%;
+			background-color: transparent;
 			.address-wrapper {
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				padding-bottom: 20upx;
+				margin-right: 10upx;
+				// padding-bottom: 20upx;
 				.address {
 					font-size: 28upx;
 					font-family: PingFangSC-Medium;
 					font-weight: 500;
-					color: rgba(0, 0, 0, 1);
+					color: #FEFEFE;
 				}
 			}
-
 			.search-wrapper {
+				display: flex;
+				flex: 1;
+				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 40px;
 				.search-box {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
 					margin: 0 5%;
-					width: 90%;
-					height: 80upx;
-					background-color: #fff;
-					border-radius: 23px;
-					border: 1upx solid rgba(124, 167, 210, 1);
-					line-height: 80upx;
+					height: 60upx;
+					line-height: 60upx;
 					text-align: center;
-
+				
+					.search_home_icon{
+						width: 30upx;
+						height: 30upx;
+						margin-right: 18upx;
+					}
 					.label {
-						height: 80upx;
+						height: 60upx;
 						font-size: 28upx;
 						font-family: PingFangSC-Regular;
 						font-weight: 400;
-						color: rgba(124, 167, 210, 1);
-						line-height: 80upx;
+						color: #666666;
+						line-height: 60upx;
 					}
 				}
 			}
 		}
-
 		.banner {
-			height: 320upx;
-			margin-top: 12upx;
-
-			.swiper-item {
+			height: 461upx;
+			background-color: #e6454a;
+			.swiper{
 				width: 100%;
-				height: 100%;
+				height: 461upx;
+				.swiper-item {
+					width: 100%;
+					height: 461upx;
+				}
 			}
+			
+		}
+		.home_commend_icon{
+			width: 341upx;
+			height: 42upx;
+			align-self: center;
 		}
 
 		.entery {
@@ -231,16 +261,18 @@
 			flex-direction: row;
 			justify-content: space-around;
 			align-items: center;
-
+			padding: 66upx 25upx 71upx 25upx;
+			box-sizing: border-box;
 			.entery-item {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				justify-content: space-between;
 				// margin-top: 36upx;
 
 				image {
-					width: 72upx;
-					height: 72upx;
+					width: 55upx;
+					height: 55upx;
 				}
 
 				.entery-text {
@@ -258,10 +290,10 @@
 			margin-top: 30upx;
 			padding: 0 20upx;
 			box-sizing: border-box;
+			
 			.shop-img {
-				width: 148upx;
-				height: 112upx;
-				border-radius: 8upx;
+				width: 132upx;
+				height: 132upx;
 			}
 
 			.shop-info-middle {

@@ -72,7 +72,8 @@
 			// 优惠卷
 			toTickets(){
 				uni.navigateTo({
-					url:'../order/makeSureOrder/Tickets'
+					url:"../address/slider"
+					// url:'../order/makeSureOrder/Tickets'
 				})
 			},
 			bindLogout() {
