@@ -53,6 +53,19 @@
 			</view>
 		</view>
 		<image src="../../static/main/home_commend.png" class="home_commend_icon"></image>
+		<view class="sort-container">
+			<view class="sort-composite">
+				<view class="sort-title">综合排序</view> 
+				<image src="../../static/main/sort_downarrow.png"></image>
+			</view>
+			<view class="sort-space">
+				<view class="sort-title">距离最近</view> 
+			</view>
+			<view class="sort-sift">
+				<view class="sort-title">筛选</view> 
+				<image src="../../static/main/sort_sift_icon.png"></image>
+			</view>
+		</view>
 		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
 			<view class="shop-info" @click="goShop(shop)">
 				<image :src="shop.imageUrl" class="shop-img"></image>
@@ -60,16 +73,20 @@
 					<view class="shop-name">{{shop.name}}</view>
 					<view class="shop-details">
 						<view class="shop-score">
-							<image src="../../static/main/star_icon.png"></image>
+							<uniRate disabled="true" value="3.5" size="12"></uniRate>
 							<view class="shop-score-text">{{shop.score}}</view>
 						</view>
 						<view class="shop-sales-volume">月售{{shop.soldAmount}}</view>
 					</view>
-					<view class="distribution-num">起送¥20</view>
-				</view>
-				<view class="shop-info-right">
-					<view class="distribution-gap">666m</view>
-					<view class="distribution-time">30分钟</view>
+					<view class="shop-middle-bottom">
+						<view class="distribution-num">
+							¥20起送 | 免费配送
+						</view>
+						<view class="distribution-num-r">
+							1200m | 40分钟
+						</view>
+					</view>
+					
 				</view>
 			</view>
 		</view>
@@ -84,10 +101,12 @@
 	import amap from '@/common/amap-wx.js';
 	import service from "../../service.js"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import uniRate from "@/components/uni-rate/uni-rate.vue";
 
 	export default {
 		components:{
-			uniIcon
+			uniIcon,
+			uniRate
 		},
 		data() {
 			return {
@@ -181,6 +200,13 @@
 </script>
 
 <style lang="less">
+	
+	.row_center{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
 	.content {
 		position: relative;
 		.search_container{
@@ -271,8 +297,8 @@
 				// margin-top: 36upx;
 
 				image {
-					width: 55upx;
-					height: 55upx;
+					width: 66upx;
+					height: 66upx;
 				}
 
 				.entery-text {
@@ -282,7 +308,47 @@
 				}
 			}
 		}
+		.sort-container{
+			.row_center;
+			margin-top: 20upx;
+			width: 100%;
+			.sort-title{
+				font-size:28px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(102,102,102,1);
+			}
+			.sort-composite{
+				.row_center;
+				flex: 1;
+				height: 60upx;
 
+				image{
+					width: 14upx;
+					height: 8upx;
+					margin-left: 10upx;
+				}
+			}
+			.sort-space{
+				.row_center;
+				flex: 1;
+				height: 60upx;
+
+			}
+			.sort-sift{
+				.row_center;
+				flex: 1;
+				height: 60upx;
+
+				image{
+					width: 20upx;
+					height: 18upx;
+					margin-left: 10upx;
+				}
+			}
+
+			
+		}
 		.shop-info {
 			width: 100%;
 			display: flex;
@@ -290,19 +356,17 @@
 			margin-top: 30upx;
 			padding: 0 20upx;
 			box-sizing: border-box;
-			
 			.shop-img {
 				width: 132upx;
 				height: 132upx;
 			}
-
 			.shop-info-middle {
-				width: 56%;
-				height: 112upx;
+				height: 132upx;
 				display: flex;
+				flex: 1;
 				flex-direction: column;
 				justify-content: space-between;
-				margin-left: 14upx;
+				margin-left: 30upx;
 
 				.shop-name {
 					color: #2E2E2E;
@@ -336,32 +400,38 @@
 
 				.shop-score {
 					.shop-score-text {
-						font-size: 20upx;
-						color: #FEA100;
+
+						font-size:24px;
+						font-family:PingFangSC-Regular;
+						font-weight:400;
+						color:rgba(136,136,136,1);
+						line-height:24px;
+						margin: 0 8upx 0 15upx;
 					}
 				}
-
-				.distribution-num {
-					font-size: 20upx;
-					color: #999;
-				}
-			}
-
-			.shop-info-right {
-				width: 150upx;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
-
-				.distribution-gap {
-					color: #676561;
-					font-size: 20upx;
-				}
-
-				.distribution-time {
-					color: #7CA7D2;
-					font-size: 20upx;
+				
+				.shop-middle-bottom{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					.distribution-num{
+						height:26px;
+						font-size:22px;
+						font-family:PingFangSC-Regular;
+						font-weight:400;
+						color:rgba(136,136,136,1);
+						line-height:26px;
+					}
+					.distribution-num-r{
+						height:26px;
+						font-size:22px;
+						font-family:PingFangSC-Regular;
+						font-weight:400;
+						color:rgba(136,136,136,1);
+						line-height:26px;
+						margin-bottom: 5upx;
+					}
 				}
 			}
 		}
