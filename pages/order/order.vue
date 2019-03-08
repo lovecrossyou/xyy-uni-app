@@ -17,11 +17,8 @@
 							<view class="product_price">￥{{ product.price }}</view>
 						</view>
 					</view>
-					<view v-if="indexP< shop.products.length-1"  class="space_line"></view>
-					
+					<view  class="space_line"></view>
 				</view>
-			
-			
 		</view>
 	</view>
 </template>
@@ -217,9 +214,10 @@ export default {
 				padding: 20upx;
 				box-sizing: border-box;
 				width: 100%;
-				
+				position: relative;
 				.space_line{
-					margin-top: 20upx;
+					position: absolute;
+					bottom: 0;
 					width: 100%;
 					height: 1upx;
 					background-color: #E0E0E0;
