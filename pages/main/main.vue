@@ -67,6 +67,7 @@
 			</view>
 		</view>
 		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
+			
 			<view class="shop-info" @click="goShop(shop)">
 				<image :src="shop.imageUrl" class="shop-img"></image>
 				<view class="shop-info-middle">
@@ -89,6 +90,8 @@
 					
 				</view>
 			</view>
+			
+			<view class="shop_info_line"></view>
 		</view>
 	</view>
 </template>
@@ -265,7 +268,6 @@
 		}
 		.banner {
 			height: 461upx;
-			background-color: #e6454a;
 			.swiper{
 				width: 100%;
 				height: 461upx;
@@ -349,91 +351,101 @@
 
 			
 		}
-		.shop-info {
-			width: 100%;
-			display: flex;
-			flex-direction: row;
-			margin-top: 30upx;
-			padding: 0 20upx;
-			box-sizing: border-box;
-			.shop-img {
-				width: 132upx;
-				height: 132upx;
-			}
-			.shop-info-middle {
-				height: 132upx;
+		.shop-info-wrapper{
+			.shop-info {
+				padding: 30upx 30upx 0 30upx;
+				box-sizing: border-box;
+				width: 100%;
 				display: flex;
-				flex: 1;
-				flex-direction: column;
-				justify-content: space-between;
-				margin-left: 30upx;
-
-				.shop-name {
-					color: #2E2E2E;
-					font-size: 30upx;
+				flex-direction: row;
+				.shop-img {
+					width: 132upx;
+					height: 132upx;
 				}
-
-				.shop-details {
+				.shop-info-middle {
+					height: 132upx;
 					display: flex;
-					flex-direction: row;
-					align-items: center;
-				}
-
-				.shop-score {
-					display: flex;
-					flex-direction: row;
-				}
-
-				.shop-sales-volume {
-					font-size: 20upx;
-					color: #999;
-					margin-left: 16upx;
-				}
-
-				.shop-score {
-					image {
-						width: 22upx;
-						height: 20upx;
-						margin-top: 7upx;
-					}
-				}
-
-				.shop-score {
-					.shop-score-text {
-
-						font-size:24px;
-						font-family:PingFangSC-Regular;
-						font-weight:400;
-						color:rgba(136,136,136,1);
-						line-height:24px;
-						margin: 0 8upx 0 15upx;
-					}
-				}
-				
-				.shop-middle-bottom{
-					display: flex;
-					flex-direction: row;
-					align-items: center;
+					flex: 1;
+					flex-direction: column;
 					justify-content: space-between;
-					.distribution-num{
-						height:26px;
-						font-size:22px;
-						font-family:PingFangSC-Regular;
-						font-weight:400;
-						color:rgba(136,136,136,1);
-						line-height:26px;
+					margin-left: 30upx;
+			
+					.shop-name {
+						color: #2E2E2E;
+						font-size: 30upx;
 					}
-					.distribution-num-r{
-						height:26px;
-						font-size:22px;
-						font-family:PingFangSC-Regular;
-						font-weight:400;
-						color:rgba(136,136,136,1);
-						line-height:26px;
-						margin-bottom: 5upx;
+			
+					.shop-details {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+					}
+			
+					.shop-score {
+						display: flex;
+						flex-direction: row;
+					}
+			
+					.shop-sales-volume {
+						font-size: 20upx;
+						color: #999;
+						margin-left: 16upx;
+					}
+			
+					.shop-score {
+						image {
+							width: 22upx;
+							height: 20upx;
+							margin-top: 7upx;
+						}
+					}
+			
+					.shop-score {
+						.shop-score-text {
+			
+							font-size:24px;
+							font-family:PingFangSC-Regular;
+							font-weight:400;
+							color:rgba(136,136,136,1);
+							line-height:24px;
+							margin: 0 8upx 0 15upx;
+						}
+					}
+					
+					.shop-middle-bottom{
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+						.distribution-num{
+							height:26px;
+							font-size:22px;
+							font-family:PingFangSC-Regular;
+							font-weight:400;
+							color:rgba(136,136,136,1);
+							line-height:26px;
+						}
+						.distribution-num-r{
+							height:26px;
+							font-size:22px;
+							font-family:PingFangSC-Regular;
+							font-weight:400;
+							color:rgba(136,136,136,1);
+							line-height:26px;
+							margin-bottom: 5upx;
+						}
 					}
 				}
+			}
+			.shop_info_line{
+				width: 100%;
+				height: 1upx;
+				margin-top: 30upx;
+				margin-left: 30upx;
+				background-color: #D4D4D4;
+			
 			}
 		}
+		
 	}
 </style>

@@ -20,7 +20,7 @@ const getters = {
 			carts[shopId].push(Object.assign({}, product));
 		}
 		var allKeys = Object.keys(carts);
-
+		console.log("products",JSON.stringify(products));
 		var lists = [];
 		var index = 0;
 		for (var obj in carts) {

@@ -50,7 +50,7 @@
 			}
 		},
 		{
-			"path": "pages/shoppingcart/shoppingcart",
+			"path": "pages/shoppingcart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车"
 			}
@@ -162,7 +162,7 @@
 				"selectedIconPath": "static/tab/home.png"
 			},
 			{
-				"pagePath": "pages/shoppingcart/shoppingcart",
+				"pagePath": "pages/shoppingcart/cart",
 				"text": "购物车",
 				"iconPath": "static/tab/cart_normal.png",
 				"selectedIconPath": "static/tab/cart.png"
