@@ -6,18 +6,17 @@
 					<image src="../../static/img/order_shop_icon.png"></image>
 					<view class="header-text">{{ shop.shopName }}</view>
 				</view>
-				<view class="order_status_des">交易完成</view>
+				<view class="order_status_des">{{shop.statusContent}}</view>
 			</view>
-			
-				<view class="shop_content" v-for="(product,indexP) in shop.products" :key="indexP" :id="product.id">
+				<view class="shop_content" v-for="(product,indexP) in shop.items" :key="indexP" :id="product.id">
 					<view class="product_container">
-						<image :src="product.headImage" ></image>
+						<image :src="product.productImage||'https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1320726089,2981856556&fm=85&s=DA2AA2451411586754BD75F10300C025'" ></image>
 						<view class="product_info">
-							<view class="product_name">{{ product.headName }}</view>
-							<view class="product_price">￥{{ product.price }}</view>
+							<view class="product_name">{{ product.productName }}</view>
+							<view class="product_price">￥{{ product.productPrice/100 }}</view>
 						</view>
 					</view>
-					<view  class="space_line"></view>
+					<view  v-if="indexP < shop.items.length-1"  class="space_line"></view>
 				</view>
 		</view>
 	</view>
@@ -25,97 +24,17 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import orderApi from "@/util/apis/order.js"
 	import {
 		mapGetters
 	} from 'vuex'
 export default {
 	onShow() {
-		
 		console.log("cart",JSON.stringify(this.carts))	
 	},
 	data(){
 		return{
-			orders:[
-				{
-					"shopId":"13",
-					"shopName":"第一个店铺",
-					"products":[
-						{
-							"id":8,
-							"shopId":13,
-							"headName":"西腾山区卡滚泉水",
-							"price":99,
-							"saleAmount":0,
-							"spec":"10",
-							"headImage":"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58",
-							"productDescribe":"无理由",
-							"shopName":"第一个店铺"
-						},
-						{
-							"id":8,
-							"shopId":13,
-							"headName":"002",
-							"price":99,
-							"saleAmount":0,
-							"spec":"10",
-							"headImage":"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58",
-							"productDescribe":"无理由",
-							"shopName":"第一个店铺"
-						},
-						{
-							"id":8,
-							"shopId":13,
-							"headName":"002",
-							"price":99,
-							"saleAmount":0,
-							"spec":"10",
-							"headImage":"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58",
-							"productDescribe":"无理由",
-							"shopName":"第一个店铺"
-						},
-						{
-							"id":8,
-							"shopId":13,
-							"headName":"002",
-							"price":99,
-							"saleAmount":0,
-							"spec":"10",
-							"headImage":"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58",
-							"productDescribe":"无理由",
-							"shopName":"第一个店铺"
-						}
-					]
-				},
-				{
-					"shopId":"13",
-					"shopName":"第一个店铺",
-					"products":[
-						{
-							"id":8,
-							"shopId":13,
-							"headName":"002",
-							"price":99,
-							"saleAmount":0,
-							"spec":"10",
-							"headImage":"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58",
-							"productDescribe":"无理由",
-							"shopName":"第一个店铺"
-						},
-						{
-							"id":8,
-							"shopId":13,
-							"headName":"002",
-							"price":99,
-							"saleAmount":0,
-							"spec":"10",
-							"headImage":"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58",
-							"productDescribe":"无理由",
-							"shopName":"第一个店铺"
-						}
-					]
-				},
-				
-			]
+			orders:[],
 		}
 	},
 	methods: {
@@ -131,18 +50,29 @@ export default {
 			uni.navigateTo({
 				url: "../main/shop/shop?shopId="+shopId
 			})
+		},
+		async requestList(){
+			const listRes = await orderApi.requestOrderList({});
+			console.log("listRes",JSON.stringify(listRes));
+			if(listRes.status === 'ok'){
+				this.orders = listRes.data.content;
+			}
+			
 		}
 		//?shopId=shop.id
+	},
+	onShow() {
+		this.requestList();
 	},
 	components:{
 		uniIcon
 	},
 	computed: {
-		
-		...mapGetters({
-			"carts": 'cart/productsOrderByShop'
-		}),
+// 		getImgStr( imgstr){
+// 			return imgstr || "https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1320726089,2981856556&fm=85&s=DA2AA2451411586754BD75F10300C025"
+// 		}
 	},
+	
 };
 </script>
 
@@ -217,8 +147,8 @@ export default {
 				position: relative;
 				.space_line{
 					position: absolute;
-					bottom: 0;
-					width: 100%;
+					bottom: 1upx;
+					width: calc(100% - 40upx);
 					height: 1upx;
 					background-color: #E0E0E0;
 				}

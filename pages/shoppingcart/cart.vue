@@ -45,10 +45,6 @@ export default {
 			})
 		},
 		toDetail(shopId){
-// 			uni.showToast({
-// 				icon:"none",
-// 				title:"去详情"
-// 			})
 			uni.navigateTo({
 				url: "../main/shop/shop?shopId="+shopId
 			})
@@ -164,8 +160,5 @@ export default {
 				}
 			}
 		}
-		
-		
-		
 	}
 </style>

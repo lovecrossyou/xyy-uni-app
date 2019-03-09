@@ -107,6 +107,7 @@
 					
 					let params = Object.assign({},this.cartConfirmInfo);
 					params.deliverAddressId = this.choosedAddress.id;
+					params.needDeliverTime = "尽快送达";
 					const createRes = await api.shopOrderCreate(params);
 					const userInfo = service.getInfo();
 					let confirmParams = {
