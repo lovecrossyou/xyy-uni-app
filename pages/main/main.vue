@@ -212,6 +212,8 @@
 	}
 	.content {
 		position: relative;
+		width: 100%;
+		overflow-x: hidden;
 		.search_container{
 			z-index: 999;
 			display: flex;
