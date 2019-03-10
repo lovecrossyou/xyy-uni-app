@@ -51,9 +51,9 @@
 					url: "/pages/main/shop/shop?shopId=" + shopId
 				})
 			},
-			toOrderDetail(orderNo){
+			toOrderDetail(orderNo) {
 				uni.navigateTo({
-					url: "./orderDetail/OrderDetail?orderNo="+orderNo
+					url: "./orderDetail/OrderDetail?orderNo=" + orderNo
 				})
 			},
 			async requestList() {
@@ -74,8 +74,7 @@
 		components: {
 			uniIcon
 		},
-		computed: {
-		},
+		computed: {},
 
 	};
 </script>
