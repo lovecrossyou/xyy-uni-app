@@ -118,6 +118,7 @@
 					console.log("confirmParams",JSON.stringify(confirmParams))
 					const confirmRes = await api.keplerPayConfirm(confirmParams)
 					console.log("confirmRes",JSON.stringify(confirmRes))
+					const payOrderNo = confirmRes.payOrderNo ;
 					if(confirmRes.status==='ok' && confirmRes.data.wexinSpec){
 						const  wexinSpec = confirmRes.data.wexinSpec;
 						uni.requestPayment({
@@ -128,13 +129,15 @@
 							signType: 'MD5',
 							paySign: wexinSpec.sign,
 							success: function (res) {
-								uni.navigateTo({
-									url:"../orderDetail/OrderDetail"
+								console.log('requestPayment res',res);
+								uni.redirectTo({
+									url:"../orderDetail/OrderDetail?orderNo="+payOrderNo
 								})
 							},
 							fail: function (err) {
-								uni.navigateTo({
-									url:"../orderDetail/OrderDetail"
+								console.log('requestPayment res',res);
+								uni.redirectTo({
+									url:"../orderDetail/OrderDetail?orderNo="+payOrderNo
 								})
 							}
 						});

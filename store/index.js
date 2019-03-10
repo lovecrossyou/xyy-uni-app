@@ -53,6 +53,7 @@ export default new Vuex.Store({
 	actions: {
 		async login({
 			commit,
+			dispatch,
 			state
 		}, params) {
 			const res = await loginApi.login(params);
@@ -60,6 +61,8 @@ export default new Vuex.Store({
 			service.addInfo(res.data);
 			commit('setUserInfo',res.data);
 			commit('setLogin',true);
+// 			dispatch("main/banners");
+// 			dispatch("main/nearByShops");
 			return res;
 		},
 		startLocate({commit},callback){

@@ -176,7 +176,7 @@
 				return this.$store.state.main.shops
 			}
 		},
-		onLoad() {
+		onShow() {
 			const userInfo = service.getInfo();
 			if(userInfo){
 				console.log('getInfo ',userInfo)
