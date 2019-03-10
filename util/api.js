@@ -10,7 +10,9 @@ const api = {
 	shopOrderCreate:(params) => request.post("client/shopOrder/create",params),
 	keplerPayConfirm:(params)=> request.post("client/keplerPay/confirm",params),
 	getDefaultAddress:(params)=> request.post("client/deliveryAddress/getDefault",params),
-	
+	//支付成功后的结果查询
+	// client/keplerPay/queryResult
+	queryResult:(params)=> request.post("client/keplerPay/queryResult",params),
 
 }
 export default api
