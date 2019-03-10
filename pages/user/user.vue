@@ -16,15 +16,14 @@
 			</view>
 		</view>
 
-		<uni-list>
-			<uni-list-item title="收货地址" thumb="http://qnimage.xiteng.com/dizhi@2x.png" @click="toAddress"></uni-list-item>
-			<uni-list-item title="我的优惠券" thumb="http://qnimage.xiteng.com/kabao@2x.png" @click="toTickets"></uni-list-item>
-			<uni-list-item title="我的收藏" thumb="http://qnimage.xiteng.com/shoucang@2x.png"></uni-list-item>
-			
-			<uni-list-item title="我的积分" thumb="http://qnimage.xiteng.com/jifen@2x.png" @click="integral"></uni-list-item>
-			<uni-list-item title="意见反馈" thumb="http://qnimage.xiteng.com/fankui@2x.png" @click="feedback(feedback)"></uni-list-item>
-			<uni-list-item title="更多" thumb="http://qnimage.xiteng.com/gengduo@2x.png" @click="more"></uni-list-item>
-		</uni-list>
+		<view class="item-wrapper">
+			<modifiedData title="收货地址" :thumb="icon_address" @click="toAddress"></modifiedData>
+			<modifiedData title="我的优惠券" :thumb="icon_conpon" @click="toTickets"></modifiedData>
+			<modifiedData title="我的收藏" :thumb="icon_collect" @click="toAddress"></modifiedData>
+			<modifiedData title="我的积分" :thumb="icon_score" @click="integral"></modifiedData>
+			<modifiedData title="意见反馈" :thumb="icon_feedback" @click="feedback"></modifiedData>
+			<modifiedData title="更多" :thumb="icon_collect" @click="more"></modifiedData>
+		</view>
 		<view class="btn-row">
 			<button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
 		</view>
@@ -36,21 +35,22 @@
 		mapState,
 		mapMutations
 	} from 'vuex'
-	import uniList from '@/components/uni-list/uni-list.vue'
-	import uniListItem from '@/components/uni-list-item/uni-list-item.vue'
 	import uniIcon from '@/components/uni-icon/uni-icon.vue'
-
-
+	import modifiedData from "@/components/modifiedData.vue";
 	export default {
 		data() {
 			return {
 				src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
-				icon_address: '../../static/me/address.png'
+				icon_address: '../../static/me/address.png',
+				icon_collect: '../../static/me/collect.png',
+				icon_feedback: '../../static/me/feedback.png',
+				icon_more: '../../static/me/more.png',
+				icon_score: '../../static/me/score.png',
+				icon_conpon: '../../static/me/conpon.png',
 			}
 		},
 		components: {
-			uniList,
-			uniListItem,
+			modifiedData,
 			uniIcon
 		},
 		computed: {
@@ -63,16 +63,16 @@
 					url: '../login/login',
 				});
 			},
-			toAddress(){
+			toAddress() {
 				//地址列表
 				uni.navigateTo({
-					url:'../address/chooseAddress'
+					url: '../address/chooseAddress'
 				})
 			},
 			// 优惠卷
-			toTickets(){
+			toTickets() {
 				uni.navigateTo({
-					url:'../order/makeSureOrder/Tickets'
+					url: '../order/makeSureOrder/Tickets'
 				})
 			},
 			bindLogout() {
@@ -94,22 +94,22 @@
 					url: "personalData/personalData"
 				})
 			},
-			feedback(feedback) {
+			feedback() {
 				uni.navigateTo({
 					url: "feedback/feedback"
 				})
 			},
-			integral(){
+			integral() {
 				uni.navigateTo({
 					url: 'integral/integral'
 				});
 			},
-			more(){
+			more() {
 				uni.navigateTo({
-					url:"more/more"
+					url: "more/more"
 				})
 			}
-			
+
 		}
 	}
 </script>
@@ -119,12 +119,12 @@
 		padding: 0;
 
 		.header {
-			background-color: #fff;
+			background-color: #7ca7d2;
 			justify-content: space-between;
 			align-items: center;
 			display: flex;
 			padding: 35upx;
-			height: 200upx;
+			height: 150upx;
 
 			.left {
 				display: flex;
@@ -134,6 +134,8 @@
 
 				.image-content>image {
 					border-radius: 50%;
+					width: 100upx;
+					height: 100upx;
 				}
 
 				.user-info {
@@ -146,23 +148,25 @@
 					height: 126upx;
 
 					.name {
-						font-size: 28upx;
+						font-size: 30upx;
 						font-family: PingFangSC-Medium;
-						font-weight: 500;
-						color: rgba(39, 39, 39, 1);
-						// line-height: 20px;
+						font-weight: 600;
+						color: #000000;
 					}
 
 					.score {
-						font-size: 24upx;
+						font-size: 26upx;
 						font-family: PingFangSC-Regular;
 						font-weight: 400;
-						color: rgba(153, 153, 153, 1);
-						// line-height: 17px;
+						color: #000000;
 					}
 				}
 			}
 
+		}
+
+		.item-wrapper {
+			padding: 0 24upx;
 		}
 	}
 </style>

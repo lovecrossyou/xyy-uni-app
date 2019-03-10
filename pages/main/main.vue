@@ -18,10 +18,10 @@
 			<view class="page-section swiper">
 				<view class="page-section-spacing">
 					<swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="500"
-					 indicator-color="#2ca2f9" indicator-active-color="#d1c90e">
+					 indicator-color="#2ca2f9" indicator-active-color="#FFFFFF">
 						<block v-for="(banner,index) in banners" :key="index">
 							<swiper-item>
-								<image v-bind:src="bannerIcon" class="swiper-item" mode="scaleToFill"></image>
+								<image v-bind:src="banner.image" class="swiper-item" mode="scaleToFill"></image>
 							</swiper-item>
 						</block>
 					</swiper>

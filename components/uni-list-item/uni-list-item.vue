@@ -138,7 +138,7 @@
 				content: '';
 				-webkit-transform: scaleY(.5);
 				transform: scaleY(.5);
-				background-color: $uni-border-color;
+				background-color: #E7E7E7;
 			}
 		}
 

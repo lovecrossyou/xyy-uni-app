@@ -4,7 +4,9 @@
 		{
 			"path": "pages/main/main",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTitleText": "首页",
+				"navigationBarTextStyle":"black"
 			},
 			"permission": {
 				"scope.userLocation": {
@@ -27,7 +29,13 @@
 		{
 			"path": "pages/user/user",
 			"style": {
+				// "navigationStyle": "custom",
 				"navigationBarTitleText": "我的"
+// 				"app-plus": {
+// 					"titleNView": {
+// 						"type": "transparent" //透明渐变导航栏,
+// 					}
+// 				}
 			}
 		},
 		{
@@ -153,7 +161,7 @@
 	],
 	"tabBar": {
 		"color": "#7a7e83",
-		"selectedColor": "#7CA7D2",
+		"selectedColor": "#7ca7d2",
 		"backgroundColor": "#ffffff",
 		"list": [{
 				"pagePath": "pages/main/main",
@@ -183,7 +191,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarBackgroundColor": "#7CA7D2",
+		"navigationBarBackgroundColor": "#7ca7d2",
 		"backgroundColor": "#fbf9fe"
 	},
 	"condition": { //模式配置，仅开发期间生效

@@ -62,7 +62,7 @@
 <style lang="less" scoped>
 	.wrapper{
 		width: 750upx;
-		padding: 19upx 26upx 0 26upx;
+		padding: 19upx 26upx 0 0;
 		box-sizing: border-box;
 		.modal-shadow {
 			background: rgba(0, 0, 0, .5);
@@ -79,7 +79,7 @@
 			justify-content: space-between;
 			align-items: center;
 			border-bottom: 1upx solid #E0E0E0;
-			padding: 15upx 0;
+			padding: 15upx 0 0 26upx;
 			box-sizing: border-box;
 			
 			.head_portraits_text{

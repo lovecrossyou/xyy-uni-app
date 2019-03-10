@@ -1,6 +1,9 @@
 <template>
-	<view class="modified_data_wrapper">
-		<text class="user_name_text">{{title}}</text>
+	<view class="modified_data_wrapper" @click="onClick">
+		<view class="left">
+			<image class="thumb" v-if="thumb" v-bind:src="thumb" ></image>
+			<text class="user_name_text">{{title}}</text>
+		</view>
 		<view class="modification_right">
 			<text class="user_name">{{desc}}</text>
 			<img src="http://qnimage.xiteng.com/right_icon@2x.png" alt="" class="user_head_img">
@@ -13,13 +16,19 @@
 	export default {
 		props:{
 			title:String,
-			desc:String
+			desc:String,
+			thumb:String
 		},
 		data() {
 			return {
 
 			}
 		},
+		methods:{
+			onClick() {
+				this.$emit('click')
+			},
+		}
 	}
 </script>
 
@@ -27,17 +36,31 @@
 	.modified_data_wrapper {
 		width: 100%;
 		display: flex;
+		height: 100upx;
 		flex-direction: row;
 		justify-content: space-between;
 		padding: 24upx 0;
 		box-sizing: border-box;
-		border-bottom: 1upx solid #E0E0E0;
+		border-bottom: 1upx solid rgba(231,231,231,1);
 		align-items: center;
-
-		.user_name_text {
-			color: #333333;
-			font-size: 30upx;
+		.left{
+			// width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			.thumb{
+				width: 32upx;
+				height: 34upx;
+			}
+			
+			.user_name_text {
+				color: #333333;
+				font-size: 30upx;
+				margin-left: 25upx;
+			}
 		}
+		
 
 		.modification_right {
 			display: flex;
