@@ -132,20 +132,16 @@
 							paySign: wexinSpec.sign,
 							success: function(res) {
 								console.log('requestPayment res', res);
-								const params = {
-									payOrderNo,
-									PayChannel:"WeixinMiniProgramPay"
-								}
-								that.queryResult(params, () => {
+								that.queryResult(confirmParams, () => {
 									uni.redirectTo({
-										url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+										url: "../orderDetail/OrderDetail?orderNo=" + createRes.data.orderNo
 									})
 								})
 							},
 							fail: function(err) {
 								console.log('requestPayment err', err);
 								uni.redirectTo({
-									url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+									url: "../orderDetail/OrderDetail?orderNo=" + createRes.data.orderNo
 								})
 							}
 						});
