@@ -6,7 +6,7 @@ const getToken = function() {
 	let ret = '';
 	ret = uni.getStorageSync(TOKEN_KEY);
 	if (!ret) {
-		ret = '{}';
+		ret = null;
 	}
 	return ret;
 }

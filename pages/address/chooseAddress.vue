@@ -60,9 +60,10 @@
 	import api from "@/util/api.js";
     export default {
 		onLoad: function (option) {
-			console.log("lallla",JSON.stringify(option))
-			this.initData();
 			this.isChoose = option.isChoose === 'true';
+		},
+		onShow: function () {
+			this.initData();
 		},
 		data(){
             return{

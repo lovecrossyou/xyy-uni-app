@@ -3,7 +3,7 @@
 		<modifiedData title="商务合作"></modifiedData>
 		<modifiedData title="关于我们"></modifiedData>
 
-		<button type="primary" class="quit_btn">退出登录</button>
+		<button type="primary" class="quit_btn" @click="loginOut">退出登录</button>
 	</view>
 </template>
 
@@ -17,7 +17,11 @@ export default {
 		modifiedData
 	},
 	computed: {},
-	methods: {}
+	methods: {
+		loginOut(){
+			
+		}
+	}
 };
 </script>
 

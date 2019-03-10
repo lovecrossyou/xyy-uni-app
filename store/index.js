@@ -43,6 +43,9 @@ export default new Vuex.Store({
 		setUserInfo(state,info){
 			state.userInfo = info ;
 		},
+		setLoginOut(state){
+			
+		},
 		setLogin(state,isLogin){
 			state.hasLogin = isLogin ;
 		},

@@ -3,10 +3,6 @@ import service from "../service"
 const request = new Fly()
 const baseURL = 'https://api.kuaimayoupin.com/'
 request.config.baseURL = baseURL
-request.config.headers = {
-	"content-type": "application/json",
-	"accessToken": service.getToken()
-}
 
 const errorPrompt = (err) => {
 	uni.showToast({
@@ -16,6 +12,7 @@ const errorPrompt = (err) => {
 }
 
 request.interceptors.request.use((request) => {
+	request.headers["accessToken"] = service.getToken();
 	uni.showLoading();
 	return request
 })

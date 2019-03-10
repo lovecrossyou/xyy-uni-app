@@ -51,7 +51,6 @@ const getters = {
 		});
 		return {
 			"shopId": state.shopId,
-			"userId": 2,
 			"products": products
 		}
 	}
