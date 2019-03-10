@@ -2,11 +2,11 @@
 	<view class="orderdetail_header">
 		<img class="header_img" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D" />
 		<view class="h_payStatus_c">
-		  <view class="h_payStatus">等待支付</view>
+		  <view class="h_payStatus">{{payStatus}}</view>
 		  <!-- <uni-icon type="arrowright" color="#333333" size="20"></uni-icon> -->
 		</view>
-		<view class="h_orderDesc">逾期未支付，订单将自动取消</view>
-		<view v-if="orderstatus==='watingPay'" class="orderBtn_c">
+		<view v-if="orderstatus==='create'" class="h_orderDesc">逾期未支付，订单将自动取消</view>
+		<view v-if="orderstatus==='create'" class="orderBtn_c">
 			<view class="cancel_left_btn" @click="orderAction('1')">取消订单</view>
 			<view class="toPay_btn">
 				<uni-countdown
@@ -23,13 +23,13 @@
 				</uni-countdown>
 			</view>
 		</view>
-		<view v-else-if="orderstatus==='done'" class="orderBtn_apprise" @click="orderAction('2')">
+		<view v-else-if="orderstatus==='finish'" class="orderBtn_apprise" @click="orderAction('2')">
 			去评价
 		</view>
 		<view v-else-if="orderstatus==='cancle'" class="orderBtn_apprise" @click="orderAction('3')">
 			再来一单
 		</view>
-		<view v-else-if="orderstatus==='wating'" class="orderBtn_c">
+		<view v-else-if="orderstatus==='wating_deal'" class="orderBtn_c">
 			<view class="orderBtn_apprise_left" @click="orderAction('4')">催单</view>
 			<view class="orderBtn_apprise_left" @click="orderAction('1')">取消订单</view>
 		</view>
@@ -40,9 +40,23 @@
 	import uniCountdown from "../../../components/uniCountDown.vue"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	export default {
+		props:{
+			orderInfo:Object
+		},
 		components:{
 			uniCountdown,
 			uniIcon
+		},
+		computed: {
+			payStatus:function(){
+				if(this.orderInfo.orderStatus === 'waiting_deal'){
+					return '等待商家接单'
+				}
+				return this.orderInfo.orderStatusContent
+			},
+			orderstatus:function(){
+				return this.orderInfo.orderStatus ;
+			}
 		},
 		methods:{
 		

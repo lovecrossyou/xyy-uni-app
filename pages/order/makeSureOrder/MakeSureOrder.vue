@@ -135,7 +135,7 @@
 								})
 							},
 							fail: function (err) {
-								console.log('requestPayment res',res);
+								console.log('requestPayment err',err);
 								uni.redirectTo({
 									url:"../orderDetail/OrderDetail?orderNo="+payOrderNo
 								})
