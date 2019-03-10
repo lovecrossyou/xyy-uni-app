@@ -9,7 +9,7 @@
 				<view class="order_status_des">{{shop.statusContent}}</view>
 			</view>
 			<view class="shop_content" v-for="(product,indexP) in shop.items" :key="indexP" :id="product.id">
-				<view class="product_container" @click="toOrderDetail(shop.orderNo)">
+				<view class="product_container" @click.stop="toOrderDetail(shop.orderNo)">
 					<image :src="product.productImage||'https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1320726089,2981856556&fm=85&s=DA2AA2451411586754BD75F10300C025'"></image>
 					<view class="product_info">
 						<view class="product_name">{{ product.productName }}</view>
