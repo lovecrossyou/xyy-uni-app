@@ -310,12 +310,11 @@
 				justify-content: space-around;
 				background-color: #fff;
 				height: 84upx;
-
+				border-bottom: solid 1upx #C0C0C0;
 				.tab-item {
 					display: flex;
 					flex-direction: column;
 					align-items: center;
-					// justify-content: space-around;
 					height: 84upx;
 					position: relative;
 
