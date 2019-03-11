@@ -6,7 +6,9 @@
 					<view class="grade_title">综合评分</view>
 					<view class="grade">4.8</view>
 				</view>
-				<uniRate value="8" size="12"></uniRate>
+				<view class="rate-wrapper">
+					<uniRate value="8" size="12"></uniRate>
+				</view>
 			</view>
 			<view class="comment_wrapper">
 				<view class="grade_title">评论总数</view>
@@ -63,10 +65,15 @@
 
 			.grade_wrap {
 				.flex-center;
-
+				height: 60upx;
 				.score-wrapper {
 					display: flex;
 					flex-direction: row;
+					align-items: center;
+					height: 40upx;
+				}
+				.rate-wrapper{
+					margin-top: 18upx;
 				}
 
 				flex-direction: column;
@@ -74,22 +81,22 @@
 
 				.grade {
 					margin-left: 10upx;
-					height: 56upx;
+					// height: 56upx;
 					font-size: 28upx;
 					font-family: PingFangSC-Medium;
 					font-weight: 500;
 					color: #FF6B6B;
-					line-height: 56upx;
+					// line-height: 56upx;
 				}
 
 				.grade_title {
 					margin-top: 10upx;
-					height: 34upx;
+					// height: 34upx;
 					font-size: 24upx;
 					font-family: PingFangSC-Regular;
 					font-weight: 400;
 					color: #444444;
-					line-height: 34upx;
+					// line-height: 34upx;
 				}
 
 			}
@@ -97,25 +104,22 @@
 			.comment_wrapper {
 				display: flex;
 				flex-direction: row;
-
+				align-items: center;
+				height: 40upx;
+				
 				.grade {
 					margin-left: 10upx;
-					height: 56upx;
 					font-size: 28upx;
 					font-family: PingFangSC-Medium;
 					font-weight: 500;
 					color: #FF6B6B;
-					line-height: 56upx;
 				}
 
 				.grade_title {
-					margin-top: 10upx;
-					height: 34upx;
 					font-size: 24upx;
 					font-family: PingFangSC-Regular;
 					font-weight: 400;
 					color: #444444;
-					line-height: 34upx;
 				}
 			}
 		}
