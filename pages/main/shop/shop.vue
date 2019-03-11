@@ -1,9 +1,10 @@
 <template>
 	<view class="content">
 		<view class="shop-header">
+			<view class="bg"></view>
 			<view class="left">
 				<view class="shop-logo">
-					<image src="../../../static/main/avatar.png" mode="aspectFill"></image>
+					<image v-bind:src="shop.info.imageUrl" mode="aspectFill"></image>
 				</view>
 				<view class="shop-info">
 					<block v-if="shop">
@@ -85,7 +86,6 @@
 				</block>
 			</scroll-view>
 		</view>
-
 	</view>
 </template>
 
@@ -211,16 +211,30 @@
 
 		.shop-header {
 			padding: 0 24upx;
-			height: 192upx;
+			box-sizing: border-box;
+			height: 240upx;
 			background-color: #fff;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
+			position:relative;
+			.bg {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				height: 240upx;
+				width: 100%;
+				filter: blur(8px);
+				background: url('http://static.kuaimayoupin.com/image/banner/banner2x222.png') no-repeat center;
+				background-size: cover;
+			}
 
 			.left {
 				display: flex;
 				flex-direction: row;
+				filter: blur(0px);
 
 				.shop-logo {
 					background-color: #333333;
@@ -239,8 +253,8 @@
 					align-items: center;
 
 					.name {
-						color: #333333;
-						font-size: 30upx;
+						color: #FFFFFF;
+						font-size: 34upx;
 					}
 
 					.score-wrapper {
@@ -249,18 +263,17 @@
 						align-items: center;
 
 						.score {
-							font-size: 24upx;
+							font-size: 26upx;
 							font-family: PingFangSC-Regular;
 							font-weight: 400;
-							color: #FFB30A;
+							color: #FFFFFF;
 						}
 
 						.saleinfo {
-
 							font-size: 18upx;
 							font-family: PingFangSC-Regular;
 							font-weight: 400;
-							color: rgba(136, 136, 136, 1);
+							color: #FFFFFF;
 						}
 					}
 				}
@@ -285,7 +298,9 @@
 		}
 
 		.shop-content {
-			height: 100%;
+			// display: flex;
+			flex: 1;
+			// height: 100%;
 			padding-bottom: @footerHeight;
 
 			.tab-wrapper {
