@@ -60,12 +60,24 @@ export default new Vuex.Store({
 			state
 		}, params) {
 			const res = await loginApi.login(params);
+			console.log("actions login res",JSON.stringify(res));
 			if (res.status !== 'ok')return;
 			service.addInfo(res.data);
 			commit('setUserInfo',res.data);
 			commit('setLogin',true);
-// 			dispatch("main/banners");
-// 			dispatch("main/nearByShops");
+			return res;
+		},
+		async appLogin({
+			commit,
+			dispatch,
+			state
+		}, params) {
+			const res = await loginApi.appLogin(params);
+			console.log("actions login res",JSON.stringify(res));
+			if (res.status !== 'ok')return;
+			service.addInfo(res.data);
+			commit('setUserInfo',res.data);
+			commit('setLogin',true);
 			return res;
 		},
 		startLocate({commit},callback){
