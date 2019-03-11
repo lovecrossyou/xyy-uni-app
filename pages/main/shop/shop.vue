@@ -10,8 +10,9 @@
 					<block v-if="shop">
 						<view class="name">{{shop.info.name||""}}</view>
 						<view class="score-wrapper">
-							<view class="score">评分{{shop.info.score}}</view>
+							<view class="score">评价{{shop.info.score}}</view>
 							<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
+							<view class="time">30分钟送达</view>
 						</view>
 					</block>
 				</view>
@@ -221,11 +222,11 @@
 			position:relative;
 			.bg {
 				position: absolute;
-				left: 0;
-				right: 0;
+				left: -10upx;
+				right: -10upx;
 				top: 0;
 				height: 240upx;
-				width: 100%;
+				// width: 100%;
 				filter: blur(8px);
 				background: url('http://static.kuaimayoupin.com/image/banner/banner2x222.png') no-repeat center;
 				background-size: cover;
@@ -240,8 +241,8 @@
 					background-color: #333333;
 
 					image {
-						width: 100upx;
-						height: 100upx;
+						width: 140upx;
+						height: 140upx;
 					}
 				}
 
@@ -250,7 +251,6 @@
 					display: flex;
 					flex-direction: column;
 					justify-content: space-around;
-					align-items: center;
 
 					.name {
 						color: #FFFFFF;
@@ -270,7 +270,14 @@
 						}
 
 						.saleinfo {
-							font-size: 18upx;
+							font-size: 26upx;
+							font-family: PingFangSC-Regular;
+							font-weight: 400;
+							color: #FFFFFF;
+							padding: 0 16upx;
+						}
+						.time{
+							font-size: 26upx;
 							font-family: PingFangSC-Regular;
 							font-weight: 400;
 							color: #FFFFFF;

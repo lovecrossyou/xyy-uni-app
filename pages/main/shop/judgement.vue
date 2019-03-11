@@ -149,16 +149,16 @@
 							font-size: 26upx;
 							font-family: PingFangSC-Regular;
 							font-weight: 400;
-							color: rgba(153, 153, 153, 1);
+							color: #333333;
 							line-height: 36upx;
 						}
 
 						.item_header_time {
 							height: 28px;
-							font-size: 20px;
+							font-size: 24px;
 							font-family: PingFangSC-Regular;
 							font-weight: 400;
-							color: rgba(51, 51, 51, 1);
+							color: #666666;
 							line-height: 28px;
 						}
 					}
