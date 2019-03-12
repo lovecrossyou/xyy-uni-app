@@ -105,7 +105,7 @@
 			},
 			async toPay() {
 				var that = this;
-				// #ifdef MP-WEIXIN
+				// #ifndef MP-WEIXIN
 				uni.navigateTo({
 					url:"/pages/order/makeSureOrder/OrderPay"
 				})
