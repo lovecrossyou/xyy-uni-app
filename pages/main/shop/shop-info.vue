@@ -4,32 +4,31 @@
 			<view class="info_title">店铺信息 </view>
 			<view class="info-row">
 				<view class="info_sub1">月销单量 </view>
-				<view class="info_sub">90000+</view>
+				<view class="info_sub">{{shopInfo.soldAmount}}</view>
 			</view>
 			<view class="info-row">
 				<view class="info_sub1">关注人数 </view>
-				<view class="info_sub">3000人</view>
+				<view class="info_sub">{{shopInfo.followers}}人</view>
 			</view>
 			<view class="info-row">
 				<view class="info_sub1">营业时间 </view>
-				<view class="info_sub">08:30-20:30</view>
+				<view class="info_sub">{{shopInfo.openTime}}</view>
 			</view>
 			<view class="info-row">
 				<view class="info_sub1">门店地址 </view>
-				<view class="info_sub">北京朝阳区安贞门胜古北里惠新西街南口52号</view>
+				<view class="info_sub">{{shopInfo.address}}</view>
 			</view>
 			<view class="info-row">
 				<view class="info_sub1">门店电话 </view>
-				<view class="info_phone">18301379671</view>
+				<view class="info_phone">{{shopInfo.telephone}}</view>
 			</view>
 		</view>
 		<view class="space"></view>
 		<view class="info_wrapper">
 			<view class="info_title">公告</view>
 			<view class="info-row">
-				<view class="info_sub">尊敬的客户，酒类无质量问题不支持退货哦。</view>
+				<view class="info_sub">{{shopInfo.summary}}</view>
 			</view>
-			
 		</view>
 	</view>
 </template>

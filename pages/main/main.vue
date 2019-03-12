@@ -6,7 +6,7 @@
 				<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
 			</view>
 			<view class="search-wrapper" @click="goSearch">
-				<view class="search-box" >
+				<view class="search-box">
 					<image src="../../static/img/search_home.png" class="search_home_icon"></image>
 					<view class="label">
 						搜索
@@ -29,18 +29,18 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<view class="entery">
 			<view class="entery-item">
-				<image src="../../static/main/main_shooping.png" mode="widthFix" ></image>
+				<image src="../../static/main/main_shooping.png" mode="widthFix"></image>
 				<view class="entery-text">商超便利</view>
 			</view>
 			<view class="entery-item">
-				<image src="../../static/main/main_fruits.png" mode="widthFix" ></image>
+				<image src="../../static/main/main_fruits.png" mode="widthFix"></image>
 				<view class="entery-text">水果</view>
 			</view>
 			<view class="entery-item">
-				<image src="../../static/main/main_water_check.png" mode="widthFix" ></image>
+				<image src="../../static/main/main_water_check.png" mode="widthFix"></image>
 				<view class="entery-text">水质检测</view>
 			</view>
 			<view class="entery-item">
@@ -55,19 +55,19 @@
 		<image src="../../static/main/home_commend.png" class="home_commend_icon"></image>
 		<view class="sort-container">
 			<view class="sort-composite">
-				<view class="sort-title">综合排序</view> 
+				<view class="sort-title">综合排序</view>
 				<image src="../../static/main/sort_downarrow.png"></image>
 			</view>
 			<view class="sort-space">
-				<view class="sort-title">距离最近</view> 
+				<view class="sort-title">距离最近</view>
 			</view>
 			<view class="sort-sift">
-				<view class="sort-title">筛选</view> 
+				<view class="sort-title">筛选</view>
 				<image src="../../static/main/sort_sift_icon.png"></image>
 			</view>
 		</view>
 		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
-			
+
 			<view class="shop-info" @click="goShop(shop)">
 				<image :src="shop.imageUrl" class="shop-img"></image>
 				<view class="shop-info-middle">
@@ -81,16 +81,16 @@
 					</view>
 					<view class="shop-middle-bottom">
 						<view class="distribution-num">
-							¥20起送 | 免费配送
+							¥{{shop.miniNumOrderAmount/100}}起送 | 免费配送
 						</view>
 						<view class="distribution-num-r">
-							1200m | 40分钟
+							{{shop.distance}}m | {{shop.deliveryExpectTime}}
 						</view>
 					</view>
-					
+
 				</view>
 			</view>
-			
+
 			<view class="shop_info_line"></view>
 		</view>
 	</view>
@@ -107,13 +107,13 @@
 	import uniRate from "@/components/uni-rate/uni-rate.vue";
 
 	export default {
-		components:{
+		components: {
 			uniIcon,
 			uniRate
 		},
 		data() {
 			return {
-				"bannerIcon":'http://qnimage.xiteng.com/home_banner.png'
+				"bannerIcon": 'http://qnimage.xiteng.com/home_banner.png'
 			}
 		},
 		methods: {
@@ -164,11 +164,11 @@
 				})
 			},
 			getRegeo(cb) {
-				this.$store.dispatch('startLocate',cb);
+				this.$store.dispatch('startLocate', cb);
 			}
 		},
 		computed: {
-			...mapState(['forcedLogin', 'hasLogin', 'userName','location']),
+			...mapState(['forcedLogin', 'hasLogin', 'userName', 'location']),
 			banners() {
 				return this.$store.state.main.banners
 			},
@@ -178,10 +178,10 @@
 		},
 		onShow() {
 			const userInfo = service.getInfo();
-			if(userInfo){
-				console.log('getInfo ',userInfo)
-				this.$store.commit("setUserInfo",userInfo);
-				this.$store.commit("setLogin",true);
+			if (userInfo) {
+				console.log('getInfo ', userInfo)
+				this.$store.commit("setUserInfo", userInfo);
+				this.$store.commit("setLogin", true);
 			}
 			if (!this.hasLogin) {
 				if (this.forcedLogin) {
@@ -194,7 +194,7 @@
 					});
 				}
 			}
-			this.getRegeo(()=>{
+			this.getRegeo(() => {
 				this.getBanner();
 				this.getNearShops();
 			});
@@ -203,18 +203,19 @@
 </script>
 
 <style lang="less">
-	
-	.row_center{
+	.row_center {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 	}
+
 	.content {
 		position: relative;
 		width: 100%;
 		overflow-x: hidden;
-		.search_container{
+
+		.search_container {
 			z-index: 999;
 			display: flex;
 			flex-direction: row;
@@ -225,11 +226,13 @@
 			box-sizing: border-box;
 			width: 100%;
 			background-color: transparent;
+
 			.address-wrapper {
 				display: flex;
 				flex-direction: row;
 				align-items: center;
 				margin-right: 10upx;
+
 				// padding-bottom: 20upx;
 				.address {
 					font-size: 28upx;
@@ -238,11 +241,13 @@
 					color: #FEFEFE;
 				}
 			}
+
 			.search-wrapper {
 				display: flex;
 				flex: 1;
 				background-color: rgba(255, 255, 255, 0.5);
 				border-radius: 40px;
+
 				.search-box {
 					display: flex;
 					flex-direction: row;
@@ -251,12 +256,13 @@
 					height: 60upx;
 					line-height: 60upx;
 					text-align: center;
-				
-					.search_home_icon{
+
+					.search_home_icon {
 						width: 30upx;
 						height: 30upx;
 						margin-right: 18upx;
 					}
+
 					.label {
 						height: 60upx;
 						font-size: 28upx;
@@ -268,19 +274,23 @@
 				}
 			}
 		}
+
 		.banner {
 			height: 461upx;
-			.swiper{
+
+			.swiper {
 				width: 100%;
 				height: 461upx;
+
 				.swiper-item {
 					width: 100%;
 					height: 461upx;
 				}
 			}
-			
+
 		}
-		.home_commend_icon{
+
+		.home_commend_icon {
 			width: 341upx;
 			height: 42upx;
 			align-self: center;
@@ -293,6 +303,7 @@
 			align-items: center;
 			padding: 66upx 25upx 71upx 25upx;
 			box-sizing: border-box;
+
 			.entery-item {
 				display: flex;
 				flex-direction: column;
@@ -312,58 +323,66 @@
 				}
 			}
 		}
-		.sort-container{
+
+		.sort-container {
 			.row_center;
 			margin-top: 20upx;
 			width: 100%;
-			.sort-title{
-				font-size:28px;
-				font-family:PingFangSC-Regular;
-				font-weight:400;
-				color:rgba(102,102,102,1);
+
+			.sort-title {
+				font-size: 28px;
+				font-family: PingFangSC-Regular;
+				font-weight: 400;
+				color: rgba(102, 102, 102, 1);
 			}
-			.sort-composite{
+
+			.sort-composite {
 				.row_center;
 				flex: 1;
 				height: 60upx;
 
-				image{
+				image {
 					width: 14upx;
 					height: 8upx;
 					margin-left: 10upx;
 				}
 			}
-			.sort-space{
+
+			.sort-space {
 				.row_center;
 				flex: 1;
 				height: 60upx;
 
 			}
-			.sort-sift{
+
+			.sort-sift {
 				.row_center;
 				flex: 1;
 				height: 60upx;
 
-				image{
+				image {
 					width: 20upx;
 					height: 18upx;
 					margin-left: 10upx;
 				}
 			}
 
-			
+
 		}
-		.shop-info-wrapper{
+
+		.shop-info-wrapper {
 			.shop-info {
 				padding: 30upx 30upx 0 30upx;
 				box-sizing: border-box;
 				width: 100%;
 				display: flex;
 				flex-direction: row;
+
 				.shop-img {
 					width: 132upx;
 					height: 132upx;
 				}
+
 				.shop-info-middle {
 					height: 132upx;
 					display: flex;
@@ -371,29 +390,31 @@
 					flex-direction: column;
 					justify-content: space-between;
 					margin-left: 30upx;
-			
+
 					.shop-name {
-						color: #2E2E2E;
 						font-size: 30upx;
+						font-family: PingFangSC-Medium;
+						font-weight: 500;
+						color: rgba(51, 51, 51, 1);
 					}
-			
+
 					.shop-details {
 						display: flex;
 						flex-direction: row;
 						align-items: center;
 					}
-			
+
 					.shop-score {
 						display: flex;
 						flex-direction: row;
 					}
-			
+
 					.shop-sales-volume {
-						font-size: 20upx;
-						color: #999;
+						font-size: 24upx;
+						color: #888;
 						margin-left: 16upx;
 					}
-			
+
 					.shop-score {
 						image {
 							width: 22upx;
@@ -401,53 +422,54 @@
 							margin-top: 7upx;
 						}
 					}
-			
+
 					.shop-score {
 						.shop-score-text {
-			
-							font-size:24px;
-							font-family:PingFangSC-Regular;
-							font-weight:400;
-							color:rgba(136,136,136,1);
-							line-height:24px;
+							font-size: 24upx;
+							font-family: PingFangSC-Regular;
+							font-weight: 400;
+							color: #888;
 							margin: 0 8upx 0 15upx;
 						}
 					}
-					
-					.shop-middle-bottom{
+
+					.shop-middle-bottom {
 						display: flex;
 						flex-direction: row;
 						align-items: center;
 						justify-content: space-between;
-						.distribution-num{
-							height:26px;
-							font-size:22px;
-							font-family:PingFangSC-Regular;
-							font-weight:400;
-							color:rgba(136,136,136,1);
-							line-height:26px;
+
+						.distribution-num {
+							height: 26px;
+							font-size: 22px;
+							font-family: PingFangSC-Regular;
+							font-weight: 400;
+							color: rgba(136, 136, 136, 1);
+							line-height: 26px;
 						}
-						.distribution-num-r{
-							height:26px;
-							font-size:22px;
-							font-family:PingFangSC-Regular;
-							font-weight:400;
-							color:rgba(136,136,136,1);
-							line-height:26px;
+
+						.distribution-num-r {
+							height: 26px;
+							font-size: 22px;
+							font-family: PingFangSC-Regular;
+							font-weight: 400;
+							color: rgba(136, 136, 136, 1);
+							line-height: 26px;
 							margin-bottom: 5upx;
 						}
 					}
 				}
 			}
-			.shop_info_line{
+
+			.shop_info_line {
 				width: 100%;
 				height: 1upx;
 				margin-top: 30upx;
 				margin-left: 30upx;
 				background-color: #D4D4D4;
-			
+
 			}
 		}
-		
+
 	}
 </style>

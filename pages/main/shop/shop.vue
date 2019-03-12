@@ -1,6 +1,6 @@
 <template>
-	<view class="content">
-		<view class="shop-header">
+	<view v-if="shop"  class="content">
+		<view  class="shop-header">
 			<view class="bg"></view>
 			<view class="left">
 				<view class="shop-logo">
@@ -12,7 +12,7 @@
 						<view class="score-wrapper">
 							<view class="score">评价{{shop.info.score}}</view>
 							<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
-							<view class="time">30分钟送达</view>
+							<!-- <view class="time">30分钟送达</view> -->
 						</view>
 					</block>
 				</view>
@@ -42,7 +42,7 @@
 						<judgement :judgementData="judgementData"></judgement>
 					</swiper-item>
 					<swiper-item>
-						<shop-info :shopInfo="shop"></shop-info>
+						<shop-info :shopInfo="shop.info"></shop-info>
 					</swiper-item>
 				</block>
 			</swiper>
@@ -51,7 +51,7 @@
 			<view class="cart-wrapper" @click="popMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
 				<view class="totalPrice">
-					¥{{cartTotalPrice}}
+					¥{{cartTotalPrice/100}}
 				</view>
 			</view>
 			<view class="confirm-wrapper">
@@ -79,7 +79,7 @@
 						</view>
 						<view class="right">
 							<view class="price">
-								¥{{product.price}}
+								¥{{product.price/100}}
 							</view>
 							<cartcontrol :food="product" @add="addFood"></cartcontrol>
 						</view>
@@ -195,9 +195,8 @@
 		onLoad: function(option) {
 			console.log('shopId ', option)
 			var shopId = option.shopId;
-			this.initShop(13)
-			this.initJudgement(13)
-			// this.$store.commit('cart/setShopId', shopId);
+			this.initShop(shopId)
+			this.initJudgement(shopId)
 		}
 	}
 </script>

@@ -16,7 +16,7 @@
 				<view class="food-list" v-for="(p,index) in currentProducts" :key='index'>
 					<view class="food-item">
 						<view class="icon">
-							<image v-bind:src="p.headImage" mode="aspectFit"></image>
+							<image v-bind:src="p.headImage" mode="aspectFill"></image>
 						</view>
 						<view class="content">
 							<view class="name">
@@ -26,7 +26,7 @@
 								月售{{p.saleAmount}} 好评95%
 							</view>
 							<view class="price">
-								{{p.price}}
+								¥{{p.price/100}}
 							</view>
 						</view>
 						<view class="cartcontrol-wrapper">
@@ -65,9 +65,11 @@
 		},
 		computed: {
 			currentProducts: function() {
+				if(this.products.length==0)return [];
 				return this.products[this.currentIndex].products;
 			},
 			currentTitle: function() {
+				if(this.products.length==0)return '';
 				return this.products[this.currentIndex].name;
 			}
 		}
@@ -139,35 +141,39 @@
 					position: relative;
 
 					.icon {
+						overflow: hidden;
 						image {
-							width: 160upx;
-							height: 160upx;
+							width: 139upx;
+							height: 139upx;
 							overflow: hidden;
 						}
 					}
 
 					.content {
+						padding: 8upx 0;
+						box-sizing: border-box;
+						height: 100%;
 						margin-left: 16upx;
 						display: flex;
 						flex-direction: column;
 						justify-content: space-between;
 
 						.name {
-							font-size: 24upx;
+							font-size: 28upx;
 							color: #333;
-							font-weight: 400;
+							font-weight: 500;
 						}
 
 						.desc {
-							font-size: 18upx;
-							color: #999;
+							font-size: 22upx;
+							color: #666;
 							font-weight: 400;
 
 						}
 
 						.price {
 							font-size: 28upx;
-							color: #333;
+							color: #FF6B6B;
 							font-weight: 500;
 						}
 					}

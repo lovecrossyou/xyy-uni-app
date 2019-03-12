@@ -6,7 +6,7 @@
       </div>
       <div class="water_store_item_count_c">
         <div class="water_store_item_count">{{shopProduct.shopProduct.spec}}</div>
-        <div class="water_store_item_money">¥{{shopProduct.shopProduct.price}}</div>
+        <div class="water_store_item_money">¥{{shopProduct.shopProduct.price/100}}</div>
       </div>
     </div>
 </template>

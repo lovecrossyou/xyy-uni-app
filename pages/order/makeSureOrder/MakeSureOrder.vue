@@ -105,8 +105,14 @@
 			},
 			async toPay() {
 				var that = this;
+				// #ifdef MP-WEIXIN
+				uni.navigateTo({
+					url:"/pages/order/makeSureOrder/OrderPay"
+				})
+				return;
+				// #endif
+				
 				if (this.choosedAddress.id) {
-
 					let params = Object.assign({}, this.cartConfirmInfo);
 					params.deliverAddressId = this.choosedAddress.id;
 					params.needDeliverTime = "尽快送达";
@@ -148,8 +154,6 @@
 					} else {
 
 					}
-
-					// return ;
 				} else {
 					uni.showToast({
 						title: '请选择地址',
@@ -157,8 +161,7 @@
 						duration: 2000
 					});
 				}
-
-
+			
 			}
 		},
 		data() {

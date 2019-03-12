@@ -5,7 +5,7 @@
 			<view class="content_detail">
 				<view class="item">
 					<view class="img">
-						<image :src="orderDetailData.restaurant_img" class="img"></image>
+						<image :src="orderDetailData.shopImage" class="img"></image>
 					</view>
 					<view class="text">{{orderDetailData.shopName}}</view>
 				</view>
@@ -13,20 +13,20 @@
 					<view class="item">
 						<view class="text">{{foodData.productName}}</view>
 						<view class="num">x{{foodData.quantity}}</view>
-						<view class="price">¥{{foodData.productPrice}}</view>
+						<view class="price">¥{{foodData.productPrice/100}}</view>
 					</view>
 				</view>
 				<view class="item">
 					<view class="text">配送费</view>
-					<view class="price">¥{{orderDetailData.basket && orderDetailData.basket.deliver_fee.price}}</view>
+					<view class="price">¥{{orderDetailData.deliveryFee/100}}</view>
 				</view>
 				<view v-for="(extraData,index) in extra" :key="index">
 					<view class="item">
 						<view class="text">{{extraData.name}}</view>
-						<view class="price">- ¥{{extraData.price.toString().slice(1)}}</view>
+						<view class="price">- ¥{{extraData.price/100}}</view>
 					</view>
 				</view>
-				<view class="totoal">实付 ¥{{orderDetailData.price}}</view>
+				<view class="totoal">实付 ¥{{orderDetailData.price/100}}</view>
 			</view>
 
 			<view class="info">
@@ -44,10 +44,10 @@
 						<view class="label">配送方式</view>
 						<view class="text">{{desc.delivery_company}}</view>
 					</view>
-					<view class="item">
+					<!-- <view class="item">
 						<view class="label">配送骑手</view>
 						<view class="text">{{desc.rider_name}},{{desc.rider_phone}}</view>
-					</view>
+					</view> -->
 				</view>
 			</view>
 			<view class="info">
@@ -59,11 +59,11 @@
 					</view>
 					<view class="item">
 						<view class="label">支付方式</view>
-						<view class="text">{{orderDetailData.pay_method}}</view>
+						<view class="text">在线支付</view>
 					</view>
 					<view class="item">
 						<view class="label">下单时间</view>
-						<view class="text">{{orderDetailData.payFinishTime}}</view>
+						<view class="text">{{orderDetailData.payFinishTime||orderDetailData.createTime}}</view>
 					</view>
 				</view>
 			</view>

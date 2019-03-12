@@ -58,6 +58,12 @@
 			}
 		},
 		{
+			"path": "pages/order/makeSureOrder/OrderPay",
+			"style": {
+				"navigationBarTitleText": "支付选择"
+			}
+		},
+		{
 			"path": "pages/shoppingcart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车"

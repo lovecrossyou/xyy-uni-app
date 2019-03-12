@@ -1,6 +1,6 @@
 <template>
 	<view class="orderdetail_header">
-		<img class="header_img" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1998933028,4161933866&fm=173&app=25&f=JPEG?w=218&h=146&s=1ED7885E9CFB1E9A18839EFD0300401D" />
+		<img class="header_img" :src="orderInfo.shopImage" />
 		<view class="h_payStatus_c">
 		  <view class="h_payStatus">{{payStatus}}</view>
 		  <!-- <uni-icon type="arrowright" color="#333333" size="20"></uni-icon> -->
