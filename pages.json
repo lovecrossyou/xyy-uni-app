@@ -153,6 +153,12 @@
 			}
 		},
 		{
+			"path": "pages/user/more/about",
+			"style": {
+				"navigationBarTitleText": "关于"
+			}
+		},
+		{
 			"path": "pages/address/slider",
 			"style": {
 				"navigationBarTitleText": "slider"

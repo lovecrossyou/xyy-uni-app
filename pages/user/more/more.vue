@@ -1,7 +1,7 @@
 <template>
 	<view class="more_wrapper">
 		<modifiedData title="商务合作"></modifiedData>
-		<modifiedData title="关于我们"></modifiedData>
+		<modifiedData title="关于我们" @click="goAbout"></modifiedData>
 
 		<button type="primary" class="quit_btn" @click="loginOut">退出登录</button>
 	</view>
@@ -20,6 +20,11 @@ export default {
 	methods: {
 		loginOut(){
 			
+		},
+		goAbout(){
+			uni.navigateTo({
+				url:"./about"
+			})
 		}
 	}
 };

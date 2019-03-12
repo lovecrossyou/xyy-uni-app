@@ -5,6 +5,7 @@ const baseURL = 'https://api.kuaimayoupin.com/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
+	console.log('errorPrompt ',err);
 	uni.showToast({
 		title: err.data.message || 'fetch data error.',
 		icon: 'none'

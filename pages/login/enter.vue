@@ -43,7 +43,7 @@
 			}
 		},
 		methods: {
-			...mapActions(['login']),
+			...mapActions(['login','appLogin']),
 			initProvider() {
 				const filters = ['weixin', 'qq', 'sinaweibo'];
 				uni.getProvider({
@@ -81,11 +81,11 @@
 									encryptedData,
 									iv
 								} = infoRes;
-								console.log("infoRes ", infoRes);
-								console.log("res ", res);
+								console.log("infoRes ", JSON.stringify(infoRes));
+								console.log("res ", JSON.stringify(res));
 
-								console.log("encryptedData ", encryptedData);
-								const params = {
+								console.log("encryptedData ", JSON.stringify(encryptedData));
+								var params = {
 									userPhone: this.userPhone,
 									userCode: this.userCode,
 									code: res.code,
@@ -96,6 +96,13 @@
 										iv
 									}
 								}
+								// #ifdef APP-PLUS
+								params.weiXinUserInfo={
+									openid:res.authResult.openid
+								}
+								// #endif
+								
+								console.log('params###',JSON.stringify(params));
 								this.toMain(params);
 							}
 						});
@@ -106,10 +113,17 @@
 				});
 			},
 			async toMain(params) {
-				const res = await this.login(params);
-				if (res.status !== 'ok') return;
+				// #ifdef APP-PLUS
+					const res = await this.appLogin(params);
+					if (res.status !== 'ok') return;
+				// #endif
+				// #ifndef APP-PLUS
+					const result = await this.login(params);
+					if (result.status !== 'ok') return;
+				// #endif
+								
 				uni.reLaunch({
-					url:'../main/main'
+					url: '../main/main'
 				});
 			}
 		},
