@@ -220,6 +220,7 @@
 			align-items: center;
 			justify-content: space-between;
 			position:relative;
+			overflow:hidden;
 			.bg {
 				position: absolute;
 				left: -10upx;
