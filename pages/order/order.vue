@@ -1,5 +1,9 @@
 <template>
 	<view class="shoppingcar">
+		<view v-if="orders.length==0" class="empty-data">
+			<image src="../../static/order/order.png" class="img"></image>
+			<view class="desc">您还没有相关的订单</view>
+		</view>
 		<view class="shopitem" v-for="(shop,index) in orders" :key="index" @click="toDetail(shop.shopId)">
 			<view class="shop_header">
 				<view class="order_shop_name">
@@ -80,6 +84,22 @@
 </script>
 
 <style lang="less" scoped>
+	.empty-data{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+		.img{
+			margin-top: 224upx;
+			width: 218upx;
+			height: 218upx;
+		}
+		.desc{
+			margin-top: 42upx;
+			color: #666;
+			font-size: 30upx;
+		}
+	}
 	.numInput {
 		overflow: hidden;
 		float: right;

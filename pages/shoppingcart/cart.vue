@@ -1,5 +1,9 @@
 <template>
 	<view class="shoppingcar">
+		<view v-if="carts.length==0" class="empty-data">
+			<image src="../../static/cart/cart.png" class="img"></image>
+			<view class="desc">您还没有相关的商品</view>
+		</view>
 		<view class="shopitem" v-for="(shop,index) in carts" :key="index" @click="toDetail(shop.shopId)">
 			<view class="shop_header">
 				<view class="header-text">{{ shop.shopName }}</view>
@@ -65,6 +69,23 @@ export default {
 </script>
 
 <style lang="less" scoped>
+	.empty-data{
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+		align-items: center;
+		flex: 1;
+		.img{
+			margin-top: 224upx;
+			width: 218upx;
+			height: 218upx;
+		}
+		.desc{
+			margin-top: 42upx;
+			color: #666;
+			font-size: 30upx;
+		}
+	}
 	.numInput {
 		overflow: hidden;
 		float: right;

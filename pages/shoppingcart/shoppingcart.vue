@@ -45,6 +45,7 @@
 </script>
 
 <style lang="less">
+	
 	.shop-wrapper {
 		// height: 260upx;
 		width: 100%;
