@@ -2,7 +2,7 @@
 // items: [{ product }]
 const state = {
 	items: [],
-	shopId: 13
+	shopId: null
 }
 
 // getters
@@ -68,7 +68,7 @@ const mutations = {
 			product,
 			shop
 		} = pInfo;
-		console.log('shop ',shop);
+		console.log('mutations product ###',product);
 		var existFlag = false;
 		state.items.forEach(p => {
 			if (product.id === p.id) {

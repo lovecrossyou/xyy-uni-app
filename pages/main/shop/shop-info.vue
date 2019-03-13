@@ -1,33 +1,49 @@
 <template>
 	<view class="info">
-		<view class="info_wrapper">
-			<view class="info_title">店铺信息 </view>
-			<view class="info-row">
-				<view class="info_sub1">月销单量 </view>
-				<view class="info_sub">{{shopInfo.soldAmount}}</view>
+		<view class="shop-summary">
+			<view class="item">
+				<image class="item-logo" :src="item_icon"></image>
+				<view class="item-title">
+					店铺信息
+				</view>
 			</view>
-			<view class="info-row">
-				<view class="info_sub1">关注人数 </view>
-				<view class="info_sub">{{shopInfo.followers}}人</view>
-			</view>
-			<view class="info-row">
-				<view class="info_sub1">营业时间 </view>
-				<view class="info_sub">{{shopInfo.openTime}}</view>
-			</view>
-			<view class="info-row">
-				<view class="info_sub1">门店地址 </view>
-				<view class="info_sub">{{shopInfo.address}}</view>
-			</view>
-			<view class="info-row">
-				<view class="info_sub1">门店电话 </view>
-				<view class="info_phone">{{shopInfo.telephone}}</view>
+			<view class="item-content">
+				{{shopInfo.summary}}
 			</view>
 		</view>
-		<view class="space"></view>
-		<view class="info_wrapper">
-			<view class="info_title">公告</view>
-			<view class="info-row">
-				<view class="info_sub">{{shopInfo.summary}}</view>
+		<view class="shop-address">
+			<view class="item">
+				<image class="item-logo" :src="item_icon"></image>
+				<view class="item-title">
+					地址
+				</view>
+			</view>
+			<view class="item-content">
+				{{shopInfo.address}}
+			</view>
+		</view>
+
+		<view class="shop-phone">
+			<view class="item">
+				<image class="item-logo" :src="item_icon"></image>
+				<view class="item-title">
+					电话
+				</view>
+			</view>
+			<view class="item-content">
+				{{shopInfo.telephone}}
+			</view>
+		</view>
+
+		<view class="shop-opentime">
+			<view class="item">
+				<image class="item-logo" :src="item_icon"></image>
+				<view class="item-title">
+					营业时间
+				</view>
+			</view>
+			<view class="item-content">
+				{{shopInfo.openTime}}
 			</view>
 		</view>
 	</view>
@@ -35,66 +51,159 @@
 
 <script>
 	export default {
-		props:{
-			shopInfo:Object,
+		props: {
+			shopInfo: Object,
+		},
+		data() {
+			return {
+				item_icon: "../../../static/shop/icon_shop_info_item.png"
+			}
 		}
 	}
 </script>
 
 <style lang="less" scoped>
 	@import "../../../common/mixin.less";
-	
-	.info{
+
+	.info {
+		padding: 0 30upx;
 		background-color: white;
-		.space{
-			width: 100%;
-			height: 20upx;
-			background-color: #FDFDFD;
-		}
-		.info_wrapper{
-			padding: 22upx 26upx;
-			box-sizing: border-box;
-			.info-row{
+
+		.shop-summary {
+			border-bottom: solid 1upx #e1e1e1;
+
+			.item {
+				height: 90upx;
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				margin-top: 30upx;
-				.info_title{
-					height:40upx;
-					font-size:28upx;
-					font-family:PingFangSC-Medium;
-					font-weight:500;
-					color:rgba(51,51,51,1);
-					line-height:40upx;
+
+				.item-logo {
+					width: 29upx;
+					height: 22upx;
 				}
-				.info_sub1{
-					height:34upx;
-					font-size:24upx;
-					font-family:PingFangSC-Regular;
-					font-weight:400;
-					color:rgba(51,51,51,1);
-					line-height:34upx;
-				}
-				.info_sub{
-					margin-left: 10upx;
-					height:34upx;
-					font-size:24upx;
-					font-family:PingFangSC-Regular;
-					font-weight:400;
-					color:rgba(51,51,51,1);
-					line-height:34upx;
-				}
-				.info_phone{
-					margin-left: 10upx;
-					height:34upx;
-					font-size:24upx;
-					font-family:PingFangSC-Regular;
-					font-weight:400;
-					color:#7CA7D2;
-					line-height:34upx;
+
+				.item-title {
+					font-size: 26upx;
+					color: #333;
+					margin-left: 15upx;
+					font-weight: 500;
 				}
 			}
-			
+
+			.item-content {
+				margin-bottom: 30upx;
+				font-size: 24upx;
+				font-family: PingFangSC-Regular;
+				font-weight: 400;
+				color: rgba(85, 85, 85, 1);
+
+			}
+		}
+
+		.shop-address {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: solid 1upx #e1e1e1;
+
+			.item {
+				height: 90upx;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				.item-logo {
+					width: 29upx;
+					height: 22upx;
+				}
+
+				.item-title {
+					font-size: 26upx;
+					color: #333;
+					margin-left: 15upx;
+					font-weight: 500;
+				}
+			}
+
+			.item-content {
+				font-size: 24upx;
+				font-family: PingFangSC-Regular;
+				font-weight: 400;
+				color: rgba(85, 85, 85, 1);
+
+			}
+		}
+
+		.shop-phone {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: solid 1upx #e1e1e1;
+
+			.item {
+				height: 90upx;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				.item-logo {
+					width: 29upx;
+					height: 22upx;
+				}
+
+				.item-title {
+					font-size: 26upx;
+					color: #333;
+					margin-left: 15upx;
+					font-weight: 500;
+				}
+			}
+
+			.item-content {
+				font-size: 24upx;
+				font-family: PingFangSC-Regular;
+				font-weight: 400;
+				color: #7ca7d2;
+
+			}
+		}
+
+		.shop-opentime {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: solid 1upx #e1e1e1;
+
+			.item {
+				height: 90upx;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				.item-logo {
+					width: 29upx;
+					height: 22upx;
+				}
+
+				.item-title {
+					font-size: 26upx;
+					color: #333;
+					margin-left: 15upx;
+					font-weight: 500;
+				}
+			}
+
+			.item-content {
+				font-size: 24upx;
+				font-family: PingFangSC-Regular;
+				font-weight: 400;
+				color: rgba(85, 85, 85, 1);
+
+			}
 		}
 	}
 </style>

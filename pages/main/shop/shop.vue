@@ -55,7 +55,7 @@
 				</view>
 			</view>
 			<view class="confirm-wrapper">
-				<view class="limit" @click="toConfirmOrder">
+				<view class="limit" v-bind:class="cartProducts.length==0 ?'gray-limit':''" @click="toConfirmOrder">
 					去结算
 				</view>
 			</view>
@@ -149,7 +149,11 @@
 				"fetchShopInfo": "shop/fetchShopInfo",
 				"fetchComments": "shop/fetchComments",
 			}),
+			...mapMutations({
+				"setShopId":"cart/setShopId"
+			}),
 			toConfirmOrder() {
+				if (this.cartProducts.length === 0)return;
 				uni.navigateTo({
 					url: '../../order/makeSureOrder/MakeSureOrder'
 				})
@@ -181,6 +185,7 @@
 				this.activeTabIndex = e.detail.current;
 			},
 			initShop(shopId) {
+				this.setShopId(shopId);
 				this.fetchShopInfo(shopId);
 			},
 			initJudgement(shopId) {
@@ -368,7 +373,13 @@
 					font-size: 32upx;
 					line-height: @footerHeight;
 					text-align: center;
-
+				}
+				.gray-limit{
+					color: #fff;
+					font-size: 32upx;
+					line-height: @footerHeight;
+					text-align: center;
+					background-color: gray;
 				}
 			}
 
