@@ -88,7 +88,7 @@ export default {
 			width: 156upx;
 			height: 56upx;
 			border-radius: 6px;
-			background-color: #7ca7d2;
+			background-color: #3e87eb;
 			line-height: 56upx;
 			text-align: center;
 			font-size: 28upx;
