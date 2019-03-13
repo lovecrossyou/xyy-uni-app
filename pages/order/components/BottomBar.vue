@@ -77,7 +77,7 @@
 	    width:258px;
 	    height:88px;
 	    text-align: center;
-	    background:rgba(124,167,210,1);
+	    background:#3e87eb;
 	    font-size:28px;
 	    font-family:PingFangSC-Medium;
 	    font-weight:500;

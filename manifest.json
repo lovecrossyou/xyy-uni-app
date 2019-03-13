@@ -49,13 +49,13 @@
             "sdkConfigs" : {
                 "oauth" : {
                     "weixin" : {
-                        "appid" : "wxe920a6ec16c8c9bd",
-                        "appsecret" : "530fb72cf121a0151421b5532f7027f9"
+                        "appid" : "wx56e7731073ee003f",
+                        "appsecret" : "1f0506f1a0336eada6fd7b3f43e29070"
                     }
                 },
                 "payment" : {
                     "weixin" : {
-                        "appid" : "wxe920a6ec16c8c9bd"
+                        "appid" : "wx56e7731073ee003f"
                     }
                 },
                 "speech" : {

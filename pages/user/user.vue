@@ -119,7 +119,7 @@
 		padding: 0;
 
 		.header {
-			background-color: #7ca7d2;
+			background-color: #3e87eb;
 			justify-content: space-between;
 			align-items: center;
 			display: flex;

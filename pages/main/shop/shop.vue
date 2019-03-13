@@ -141,7 +141,7 @@
 			}),
 			cart_icon() {
 				if (this.cartProducts.length === 0) return "../../../static/shop/cart.png"
-				return "../../../static/shop/cart_active.png"
+				return "../../../static/cart/cart.png"
 			}
 		},
 		methods: {
@@ -354,7 +354,7 @@
 
 		.footer {
 			height: @footerHeight;
-			background-color: #656565;
+			background-color: #666;
 			position: fixed;
 			bottom: 0;
 			left: 0;
@@ -366,7 +366,7 @@
 			.confirm-wrapper {
 				width: 232upx;
 				height: 100%;
-				background-color: #7CA7D2;
+				background-color: #3e87eb;
 
 				.limit {
 					color: #fff;
@@ -444,7 +444,7 @@
 
 				.right {
 					font-size: 24upx;
-					color: #7CA7D2;
+					color: #3e87eb;
 				}
 			}
 

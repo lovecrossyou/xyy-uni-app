@@ -85,7 +85,7 @@
         bottom: 0;
         .bottomBtn{
             width:100%;
-            background:rgba(124,167,210,1);
+            background:#3e87eb;
             border-radius:6px;
             font-size:28px;
             font-family:PingFangSC-Medium;

@@ -173,7 +173,7 @@
 	],
 	"tabBar": {
 		"color": "#7a7e83",
-		"selectedColor": "#7ca7d2",
+		"selectedColor": "#3e87eb",
 		"backgroundColor": "#ffffff",
 		"list": [{
 				"pagePath": "pages/main/main",
@@ -203,7 +203,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarBackgroundColor": "#7ca7d2",
+		"navigationBarBackgroundColor": "#3e87eb",
 		"backgroundColor": "#fbf9fe"
 	},
 	"condition": { //模式配置，仅开发期间生效

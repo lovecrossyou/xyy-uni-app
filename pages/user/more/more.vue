@@ -40,7 +40,7 @@ export default {
 	.quit_btn {
 		width: 100%;
 		height: 88upx;
-		background-color: #7ca7d2;
+		background-color: #3e87eb;
 		border-radius: 6upx;
 		color: #ffffff;
 		font-size: 28upx;
