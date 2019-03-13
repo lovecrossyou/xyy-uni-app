@@ -19,7 +19,9 @@ export default {
 	computed: {},
 	methods: {
 		loginOut(){
-			
+			uni.reLaunch({
+				url: '/pages/login/enter'
+			});
 		},
 		goAbout(){
 			uni.navigateTo({
