@@ -117,7 +117,7 @@
 				// #ifndef MP-WEIXIN
 				//传递支付信息
 				let confirmParams = {
-					"openId": userInfo.openId,
+					// "openId": userInfo.openId,
 					"payChannel": "WeixinPay",
 					"payOrderNo": createRes.data.orderNo
 				}
