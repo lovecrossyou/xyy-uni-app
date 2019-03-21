@@ -5,6 +5,12 @@
 		  <view class="h_payStatus">{{payStatus}}</view>
 		  <!-- <uni-icon type="arrowright" color="#333333" size="20"></uni-icon> -->
 		</view>
+		<!-- 继续支付按钮 -->
+		<!-- <view class="goOnPay_btn">
+			继续支付
+		</view> -->
+		
+		
 		<view v-if="orderstatus==='create'" class="h_orderDesc">逾期未支付，订单将自动取消</view>
 		<view v-if="orderstatus==='create'" class="orderBtn_c">
 			<view class="cancel_left_btn" @click="orderAction('1')">取消订单</view>
@@ -71,7 +77,7 @@
 		data(){
 			// wating
 			return{
-				orderstatus:"wating"
+				// orderstatus:"wating"
 			}
 		}
 	}
@@ -117,6 +123,10 @@
 	  width: 28px;
 	  height: 28px;
 	}
+  }
+  .goOnPay_btn{
+	  width: 120upx;
+	  height: 60upx
   }
   .h_orderDesc {
 	margin: 12px 0;

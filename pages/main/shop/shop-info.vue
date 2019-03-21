@@ -8,7 +8,7 @@
 				</view>
 			</view>
 			<view class="item-content">
-				{{shopInfo.summary}}
+				{{shopInfo.presentation}}
 			</view>
 		</view>
 		<view class="shop-address">
@@ -19,7 +19,7 @@
 				</view>
 			</view>
 			<view class="item-content">
-				{{shopInfo.address}}
+				{{shopInfo.address||''}}
 			</view>
 		</view>
 
@@ -34,7 +34,6 @@
 				{{shopInfo.telephone}}
 			</view>
 		</view>
-
 		<view class="shop-opentime">
 			<view class="item">
 				<image class="item-logo" :src="item_icon"></image>
@@ -43,7 +42,7 @@
 				</view>
 			</view>
 			<view class="item-content">
-				{{shopInfo.openTime}}
+				{{shopInfo.startOpenTime||''}} -- {{shopInfo.endOpenTime||''}}
 			</view>
 		</view>
 	</view>

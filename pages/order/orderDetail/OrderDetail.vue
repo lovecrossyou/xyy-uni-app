@@ -42,7 +42,7 @@
 					</view>
 					<view class="item">
 						<view class="label">配送方式</view>
-						<view class="text">{{desc.delivery_company}}</view>
+						<view class="text">{{desc.delivery_company||''}}</view>
 					</view>
 					<!-- <view class="item">
 						<view class="label">配送骑手</view>
