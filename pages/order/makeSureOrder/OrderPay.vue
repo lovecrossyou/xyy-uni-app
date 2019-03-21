@@ -163,7 +163,7 @@
 
 		.confirm_footer {
 			height: 98upx;
-			background: #7ca7d2;
+			background: #3e87eb;
 			position: fixed;
 			bottom: 0;
 			width: 100%;
