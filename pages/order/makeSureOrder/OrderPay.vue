@@ -3,7 +3,7 @@
 		<view class="order_content">
 			<view class="order_pay_top">
 				<!-- <view class="order_pay_top_time">支付剩余时间1:0:0</view> -->
-				<view class="order_pay_top_amount">¥6.00</view>
+				<view class="order_pay_top_amount">¥{{orderInfo.totalPrice/100}}</view>
 			</view>
 			<view>
 				<block v-for="(channel,index) in paychannels" :key="index">
@@ -24,20 +24,35 @@
 </template>
 
 <script>
+	import api from '@/util/api.js'
+	import {
+		mapState,
+		mapMutations,
+		mapGetters
+	} from 'vuex'
 	export default {
+		computed: mapState({
+			payInfo: state => state.orderConfirm.payInfo,
+			orderInfo: state => state.orderConfirm.orderInfo
+		}),
 		methods: {
-			goNext() {
-				const params = {
-					"appid": "wx56e7731073ee003f",
-					"partnerid": "1525281061",
-					"prepayid": "wx132217464805516d2bf6f8b31409765567",
-					"package": "Sign=WXPay",
-					"noncestr": "H9SDxsskn2QeLuiq",
-					"timestamp": "1552486666",
-					"sign": "F24C32930E41F332DFAB5EA0C01F9223"
+		async goNext() {
+				const params =  await api.keplerPayConfirm(this.payInfo);
+				const orderInfo = params.data.wexinSpec;
+				
+				const payParams = {
+					appid:orderInfo.appid,
+					partnerid:orderInfo.partnerid,
+					noncestr:orderInfo.noncestr,
+					package:orderInfo.packageValue,
+					timestamp:orderInfo.timestamp,
+					sign:orderInfo.sign,
+					prepayid:orderInfo.prepay_id
 				}
+				
+				console.log('orderInfo ',JSON.stringify(payParams));
 				uni.requestPayment({
-					orderInfo: JSON.stringify(params),
+					orderInfo: JSON.stringify(payParams),
 					provider: 'wxpay',
 					success: function(res) {
 						console.log('success:' + JSON.stringify(res));

@@ -63,7 +63,9 @@
 		},
 		methods: {
 			...mapMutations({
-				GET_DEFAULT_ADDRESS: 'address/GET_DEFAULT_ADDRESS'
+				GET_DEFAULT_ADDRESS: 'address/GET_DEFAULT_ADDRESS',
+				setPayInfo:'orderConfirm/setPayInfo',
+				setOrderInfo:'orderConfirm/setOrderInfo'
 			}),
 			async queryResult(params, cb) {
 				const d = await api.queryResult(params);
@@ -105,7 +107,22 @@
 			},
 			async toPay() {
 				var that = this;
+				let params = Object.assign({}, this.cartConfirmInfo);
+				params.deliverAddressId = this.choosedAddress.id;
+				params.needDeliverTime = "尽快送达";
+				//生成订单信息
+				const createRes = await api.shopOrderCreate(params);
+				const userInfo = service.getInfo();
+				
 				// #ifndef MP-WEIXIN
+				//传递支付信息
+				let confirmParams = {
+					"openId": userInfo.openId,
+					"payChannel": "WeixinPay",
+					"payOrderNo": createRes.data.orderNo
+				}
+				this.setPayInfo(confirmParams); //
+				this.setOrderInfo(createRes.data);
 				uni.navigateTo({
 					url:"/pages/order/makeSureOrder/OrderPay"
 				})
@@ -113,11 +130,6 @@
 				// #endif
 				
 				if (this.choosedAddress.id) {
-					let params = Object.assign({}, this.cartConfirmInfo);
-					params.deliverAddressId = this.choosedAddress.id;
-					params.needDeliverTime = "尽快送达";
-					const createRes = await api.shopOrderCreate(params);
-					const userInfo = service.getInfo();
 					let confirmParams = {
 						"openId": userInfo.openId,
 						"payChannel": "WeixinMiniProgramPay",

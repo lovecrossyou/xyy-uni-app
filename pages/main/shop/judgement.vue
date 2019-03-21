@@ -81,22 +81,17 @@
 
 				.grade {
 					margin-left: 10upx;
-					// height: 56upx;
 					font-size: 28upx;
 					font-family: PingFangSC-Medium;
 					font-weight: 500;
 					color: #FF6B6B;
-					// line-height: 56upx;
 				}
 
 				.grade_title {
-					margin-top: 10upx;
-					// height: 34upx;
 					font-size: 24upx;
 					font-family: PingFangSC-Regular;
 					font-weight: 400;
 					color: #444444;
-					// line-height: 34upx;
 				}
 
 			}

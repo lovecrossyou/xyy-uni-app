@@ -3,7 +3,9 @@ const ADD_REMARK = "ADD_REMARK";
 
 const state = {
 	ticket:{},
-	orderRemark:null
+	orderRemark:null,
+	payInfo:null,
+	orderInfo:null
 }
 // getters
 const getters = {
@@ -44,7 +46,12 @@ const mutations = {
 	[ADD_REMARK](state, remark) {
 		state.orderRemark = remark;
 	},
-	
+	setPayInfo(state,data){
+		state.payInfo = data;
+	},
+	setOrderInfo(state,data){
+		state.orderInfo = data;
+	}
 }
 
 export default {

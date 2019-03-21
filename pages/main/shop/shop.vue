@@ -243,8 +243,6 @@
 				filter: blur(0px);
 
 				.shop-logo {
-					background-color: #333333;
-
 					image {
 						width: 140upx;
 						height: 140upx;
