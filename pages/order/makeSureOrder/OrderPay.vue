@@ -39,7 +39,6 @@
 		async goNext() {
 				const params =  await api.keplerPayConfirm(this.payInfo);
 				const orderInfo = params.data.wexinSpec;
-				
 				const payParams = {
 					appid:orderInfo.appid,
 					partnerid:orderInfo.partnerid,

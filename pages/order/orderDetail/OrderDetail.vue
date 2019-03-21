@@ -128,7 +128,7 @@
 				});
 			},
 			orderAction(type) {
-				// type 1取消订单  2去评价  3再来一单 4催单
+				// type 1继续支付  2去评价  3再来一单 4催单
 				let showMessage = "";
 				switch (type) {
 					case "1":

@@ -10,10 +10,9 @@
 			继续支付
 		</view> -->
 		
-		
 		<view v-if="orderstatus==='create'" class="h_orderDesc">逾期未支付，订单将自动取消</view>
 		<view v-if="orderstatus==='create'" class="orderBtn_c">
-			<view class="cancel_left_btn" @click="orderAction('1')">取消订单</view>
+			<view class="cancel_left_btn uni-countdown" @click="orderAction('1')">继续支付</view>
 			<view class="toPay_btn">
 				<uni-countdown
 					color="#FFFFFF"
@@ -22,8 +21,8 @@
 					border-color="transparent"
 					:showColon="false"
 					:show-day="false" 		 
-					:hour="1" 
-					:minute="0" 
+					:hour="0" 
+					:minute="30" 
 					:second="0"
 					@timeup="timeup">
 				</uni-countdown>
@@ -158,7 +157,9 @@
 		text-align: center;
 		height:40px;
 		line-height: 40px;
-		background:rgba(255,255,255,1);
+			  background: rgba(255, 255, 255, 1);
+		
+		
 		border-radius:4px;
 		border:1px solid rgba(124,167,210,1);
 		font-size: 20px;
@@ -168,17 +169,19 @@
 	}
 	.cancel_left_btn {
 	  height: 40px;
-	  background: rgba(255, 255, 255, 1);
+	  
+	  background:rgba(255, 106, 97, 1);
+	  // background: rgba(255, 255, 255, 1);
 	  border-radius: 4px;
 	  border: 1px solid rgba(210, 210, 210, 1);
 	  text-align: center;
 	  font-size: 20px;
 	  font-family: PingFangSC-Regular;
 	  font-weight: 400;
-	  color: rgba(102, 102, 102, 1);
+	  color: #FFFFFF;
 	  line-height: 40px;
-	  .padding_my(0, 10px, 0, 10px);
-	  margin: 5px;
+	  .padding_my(0, 17px, 0, 17px);
+	  margin: 5px 10upx;
 	}
 	.toPay_btn {
 	  .padding_my(0, 10px, 0, 10px);
