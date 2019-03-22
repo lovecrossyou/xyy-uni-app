@@ -195,7 +195,7 @@
 				}
 			}
 			this.getRegeo(() => {
-				this.getBanner();
+				// this.getBanner();
 				this.getNearShops();
 			});
 		}

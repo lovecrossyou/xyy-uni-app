@@ -14,9 +14,9 @@
 		<button class="login_btn" @click="simpleLogin">登录</button>
 		<!-- #endif -->
 		<!-- #ifdef MP-WEIXIN -->
-		<button class="login_btn"  type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">登录</button>
+		<button class="login_btn" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">登录</button>
 		<!-- #endif -->
-				
+
 		<view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
 		</view>
@@ -49,33 +49,12 @@
 					userPhone: this.userPhone,
 					userCode: this.userCode,
 				}
-				await this.appLogin(params);
+				const res = await this.appLogin(params);
 				uni.reLaunch({
 					url: '../main/main'
 				});
 			},
-			initProvider() {
-				const filters = ['weixin', 'qq', 'sinaweibo'];
-				uni.getProvider({
-					service: 'oauth',
-					success: (res) => {
-						if (res.provider && res.provider.length) {
-							for (let i = 0; i < res.provider.length; i++) {
-								if (~filters.indexOf(res.provider[i])) {
-									this.providerList.push({
-										value: res.provider[i],
-										image: '../../static/img/' + res.provider[i] + '.png'
-									});
-								}
-							}
-							this.hasProvider = true;
-						}
-					},
-					fail: (err) => {
-						console.error('获取服务供应商失败：' + JSON.stringify(err));
-					}
-				});
-			},
+
 			oauth(value) {
 				uni.login({
 					provider: value,
@@ -135,9 +114,6 @@
 				});
 				// #endif
 			}
-		},
-		onLoad() {
-			this.initProvider();
 		}
 	}
 </script>
