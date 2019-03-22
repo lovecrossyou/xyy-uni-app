@@ -2,7 +2,7 @@ import mainApi from '@/util/apis/main'
 
 const state = {
 	banners: [],
-	shops:[]
+	shops: []
 }
 
 const actions = {
@@ -11,11 +11,18 @@ const actions = {
 		state
 	}, params) {
 		const res = await mainApi.banners(params);
-		commit('saveBanners', res.data);
+		console.log('banners ',res);
+		if (res) {
+			commit('saveBanners', res.data);
+		}
 	},
-	async nearByShops({commit},params){
+	async nearByShops({
+		commit
+	}, params) {
 		const res = await mainApi.nearByShops(params);
-		commit('saveShops', res.data.content);
+		if (res) {
+			commit('saveShops', res.data.content);
+		}
 	}
 }
 
@@ -23,7 +30,7 @@ const mutations = {
 	saveBanners(state, params) {
 		state.banners = params;
 	},
-	saveShops(state, params){
+	saveShops(state, params) {
 		state.shops = params;
 	}
 }
