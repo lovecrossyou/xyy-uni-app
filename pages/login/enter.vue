@@ -38,6 +38,19 @@
 		},
 		methods: {
 			...mapActions(['login', 'appLogin']),
+<<<<<<< HEAD
+=======
+			async simpleLogin() {
+				var params = {
+					userPhone: this.userPhone,
+					userCode: this.userCode,
+				}
+				await this.appLogin(params);
+				uni.reLaunch({
+					url: '../main/main'
+				});
+			},
+>>>>>>> 66a6a25b293a3adc318b7a1a9a9a85abd95a1923
 			initProvider() {
 				const filters = ['weixin', 'qq', 'sinaweibo'];
 				uni.getProvider({
@@ -106,6 +119,7 @@
 					}
 				});
 			},
+<<<<<<< HEAD
 
 			async simpleLogin() {
 				var params = {
@@ -119,6 +133,8 @@
 				});
 			},
 
+=======
+>>>>>>> 66a6a25b293a3adc318b7a1a9a9a85abd95a1923
 			async toMain(params) {
 				// #ifdef APP-PLUS
 				const res = await this.appLogin(params);
@@ -164,7 +180,6 @@
 				align-items: center;
 
 				.get_code_btn {
-					width: 165upx;
 					height: 60upx;
 					background-color: #7CA7D2;
 					color: #fff;

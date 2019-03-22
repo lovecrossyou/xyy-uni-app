@@ -42,7 +42,7 @@
 					</view>
 					<view class="item">
 						<view class="label">配送方式</view>
-						<view class="text">{{desc.delivery_company}}</view>
+						<view class="text">{{desc.delivery_company||''}}</view>
 					</view>
 					<!-- <view class="item">
 						<view class="label">配送骑手</view>
@@ -128,7 +128,7 @@
 				});
 			},
 			orderAction(type) {
-				// type 1取消订单  2去评价  3再来一单 4催单
+				// type 1继续支付  2去评价  3再来一单 4催单
 				let showMessage = "";
 				switch (type) {
 					case "1":
