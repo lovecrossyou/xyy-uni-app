@@ -10,7 +10,13 @@
 				<button type="primary" class="get_code_btn">获取验证码</button>
 			</view>
 		</view>
+		<!-- #ifdef APP-PLUS -->
 		<button class="login_btn" @click="simpleLogin">登录</button>
+		<!-- #endif -->
+		<!-- #ifdef MP-WEIXIN -->
+		<button class="login_btn"  type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">登录</button>
+		<!-- #endif -->
+				
 		<view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
 		</view>

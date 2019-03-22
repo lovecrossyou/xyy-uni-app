@@ -43,7 +43,7 @@ request.interceptors.response.use((response, promise) => {
 }, (err, promise) => {
 	uni.hideLoading()
 	errorPrompt(err.response.data)
-	return promise.reject(err)
+	return promise.reject(err.response.data)
 })
 
 export default request
