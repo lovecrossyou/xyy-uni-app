@@ -39,7 +39,7 @@
 				<image src="../../static/main/main_fruits.png" mode="widthFix"></image>
 				<view class="entery-text">水果</view>
 			</view>
-			<view class="entery-item">
+			<view class="entery-item" @click="waterDetection">
 				<image src="../../static/main/main_water_check.png" mode="widthFix"></image>
 				<view class="entery-text">水质检测</view>
 			</view>
@@ -165,7 +165,13 @@
 			},
 			getRegeo(cb) {
 				this.$store.dispatch('startLocate', cb);
+			},
+			waterDetection(){
+				uni.navigateTo({
+					url:"../waterDetection/waterDetection"
+				})
 			}
+				
 		},
 		computed: {
 			...mapState(['forcedLogin', 'hasLogin', 'userName', 'location']),

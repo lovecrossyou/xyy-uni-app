@@ -17,13 +17,17 @@
 		{
 			"path": "pages/reg/reg",
 			"style": {
-				"navigationBarTitleText": "注册"
+				"navigationBarTitleText": "注册",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/pwd/pwd",
 			"style": {
-				"navigationBarTitleText": "找回密码"
+				"navigationBarTitleText": "找回密码",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
@@ -41,56 +45,74 @@
 		{
 			"path": "pages/order/order",
 			"style": {
-				"navigationBarTitleText": "订单"
+				"navigationBarTitleText": "订单",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/order/orderDetail/OrderDetail",
 			"style": {
 				"navigationBarTitleText": "订单详情",
-				"enablePullDownRefresh":true
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/order/makeSureOrder/MakeSureOrder",
 			"style": {
-				"navigationBarTitleText": "确认订单"
+				"navigationBarTitleText": "确认订单",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/order/makeSureOrder/OrderPay",
 			"style": {
-				"navigationBarTitleText": "支付选择"
+				"navigationBarTitleText": "支付选择",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/shoppingcart/cart",
 			"style": {
-				"navigationBarTitleText": "购物车"
+				"navigationBarTitleText": "购物车",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/HM-search/HM-search",
 			"style": {
-				"navigationBarTitleText": "搜索"
+				"navigationBarTitleText": "搜索",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/main/shop/shop",
 			"style": {
-				"navigationBarTitleText": "店铺"
+				"navigationBarTitleText": "店铺",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/address/addAddress",
 			"style": {
-				"navigationBarTitleText": "添加地址"
+				"navigationBarTitleText": "添加地址",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/address/searchAddress",
 			"style": {
-				"navigationBarTitleText": "搜索地址"
+				"navigationBarTitleText": "搜索地址",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 
 		},
@@ -98,7 +120,9 @@
 
 			"path": "pages/address/chooseAddress",
 			"style": {
-				"navigationBarTitleText": "地址列表"
+				"navigationBarTitleText": "地址列表",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 
 		},
@@ -106,20 +130,26 @@
 
 			"path": "pages/user/personalData/personalData",
 			"style": {
-				"navigationBarTitleText": "个人资料"
+				"navigationBarTitleText": "个人资料",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 
 			"path": "pages/order/makeSureOrder/Tickets",
 			"style": {
-				"navigationBarTitleText": "优惠券"
+				"navigationBarTitleText": "优惠券",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/user/personalData/amendName",
 			"style": {
-				"navigationBarTitleText": "用户名"
+				"navigationBarTitleText": "用户名",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
@@ -137,37 +167,55 @@
 		{
 			"path": "pages/user/feedback/feedback",
 			"style": {
-				"navigationBarTitleText": "意见反馈"
+				"navigationBarTitleText": "意见反馈",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/order/makeSureOrder/OrderRemark",
 			"style": {
-				"navigationBarTitleText": "备注"
+				"navigationBarTitleText": "备注",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/user/integral/integral",
 			"style": {
-				"navigationBarTitleText": "我的积分"
+				"navigationBarTitleText": "我的积分",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/user/more/more",
 			"style": {
-				"navigationBarTitleText": "更多"
+				"navigationBarTitleText": "更多",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/user/more/about",
 			"style": {
-				"navigationBarTitleText": "关于"
+				"navigationBarTitleText": "关于",
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
 			}
 		},
 		{
 			"path": "pages/address/slider",
 			"style": {
 				"navigationBarTitleText": "slider"
+			}
+		},
+		{
+			"path": "pages/waterDetection/waterDetection",
+			"style": {
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTitleText": "水质检测",
+				"navigationBarTextStyle":"black"
 			}
 		}
 	],
