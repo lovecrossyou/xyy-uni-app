@@ -10,19 +10,13 @@
 				<button type="primary" class="get_code_btn">获取验证码</button>
 			</view>
 		</view>
-		<button class="login_btn" open-type="getUserInfo" @getuserinfo="oauth('weixin')">登录</button>
+		<button class="login_btn" @click="simpleLogin">登录</button>
 		<view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
 		</view>
-		<!-- <view class="oauth-row" v-if="hasProvider" v-bind:style="{top: positionTop + 'px'}">
-			<view class="oauth-image" v-for="provider in providerList" :key="provider.value">
-				<image :src="provider.image" @tap="oauth(provider.value)"></image>
-			</view>
-		</view> -->
 		<view class="login_way">
 			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
 			</button>
-			<!-- <img src="http://qnimage.xiteng.com/qq@2x.png" alt=""> -->
 		</view>
 		<view class="footer_text">注册或创建账户即同意《鑫翼优用户注册协议书》 </view>
 	</view>
@@ -43,7 +37,7 @@
 			}
 		},
 		methods: {
-			...mapActions(['login','appLogin']),
+			...mapActions(['login', 'appLogin']),
 			initProvider() {
 				const filters = ['weixin', 'qq', 'sinaweibo'];
 				uni.getProvider({
@@ -97,12 +91,12 @@
 									}
 								}
 								// #ifdef APP-PLUS
-								params.weiXinUserInfo={
-									openid:res.authResult.openid
+								params.weiXinUserInfo = {
+									openid: res.authResult.openid
 								}
 								// #endif
-								
-								console.log('params###',JSON.stringify(params));
+
+								console.log('params###', JSON.stringify(params));
 								this.toMain(params);
 							}
 						});
@@ -112,16 +106,29 @@
 					}
 				});
 			},
+
+			async simpleLogin() {
+				var params = {
+					userPhone: this.userPhone,
+					userCode: this.userCode,
+				}
+				const res = await this.appLogin(params);
+				if (res.status !== 'ok') return;
+				uni.reLaunch({
+					url: '../main/main'
+				});
+			},
+
 			async toMain(params) {
 				// #ifdef APP-PLUS
-					const res = await this.appLogin(params);
-					if (res.status !== 'ok') return;
+				const res = await this.appLogin(params);
+				if (res.status !== 'ok') return;
 				// #endif
 				// #ifndef APP-PLUS
-					const result = await this.login(params);
-					if (result.status !== 'ok') return;
+				const result = await this.login(params);
+				if (result.status !== 'ok') return;
 				// #endif
-								
+
 				uni.reLaunch({
 					url: '../main/main'
 				});

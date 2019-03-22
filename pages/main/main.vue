@@ -184,15 +184,15 @@
 				this.$store.commit("setLogin", true);
 			}
 			if (!this.hasLogin) {
-				if (this.forcedLogin) {
-					uni.reLaunch({
-						url: '../login/enter'
-					});
-				} else {
-					uni.navigateTo({
-						url: '../login/enter'
-					});
-				}
+// 				if (this.forcedLogin) {
+// 					uni.reLaunch({
+// 						url: '../login/enter'
+// 					});
+// 				} else {
+// 					uni.navigateTo({
+// 						url: '../login/enter'
+// 					});
+// 				}
 			}
 			this.getRegeo(() => {
 				this.getBanner();

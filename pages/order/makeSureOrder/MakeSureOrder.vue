@@ -135,7 +135,6 @@
 						"payChannel": "WeixinMiniProgramPay",
 						"payOrderNo": createRes.data.orderNo
 					}
-					console.log("confirmParams", JSON.stringify(confirmParams))
 					const confirmRes = await api.keplerPayConfirm(confirmParams)
 					console.log("confirmRes", JSON.stringify(confirmRes))
 					const payOrderNo = confirmRes.payOrderNo;

@@ -13,7 +13,8 @@ const errorPrompt = (err) => {
 }
 
 request.interceptors.request.use((request) => {
-	request.headers["accessToken"] = service.getToken();
+	// request.headers["accessToken"] = service.getToken();
+	request.headers["accessToken"] = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIzOSIsImlhdCI6MTU1MjQ2MTg5Mywic3ViIjoiQ0MwODUwNDYyNCJ9.8OtuLlvYI3Zg3_ODYP6x53XR8snbSgvCvHGckHhmHGE"
 	uni.showLoading();
 	return request
 })
@@ -23,10 +24,10 @@ request.interceptors.response.use((response, promise) => {
 	if (!(response.data.status === "ok")) {
 		if (response.data.status === "-999") {
 			//需要登录权限
-			this.$store.commit("setLogin", false)
-			uni.redirectTo({
-				url: '/pages/login/enter'
-			});
+// 			this.$store.commit("setLogin", false)
+// 			uni.redirectTo({
+// 				url: '/pages/login/enter'
+// 			});
 		} else {
 			errorPrompt(response)
 		}
