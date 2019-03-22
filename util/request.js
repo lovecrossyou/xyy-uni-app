@@ -5,29 +5,36 @@ const baseURL = 'https://api.kuaimayoupin.com/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
-	console.log('errorPrompt ', err);
-	uni.showToast({
-		title: err.data.message || 'fetch data error.',
-		icon: 'none'
-	})
+	if (err.response.data.status === "-999") {
+		//需要登录权限
+		goLoginPage();
+	} else {
+		uni.showToast({
+			title: err.data.message || 'fetch data error.',
+			icon: 'none'
+		})
+	}
 }
 
 request.interceptors.request.use((request) => {
-	// request.headers["accessToken"] = service.getToken();
-	request.headers["accessToken"] = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIzOSIsImlhdCI6MTU1MjQ2MTg5Mywic3ViIjoiQ0MwODUwNDYyNCJ9.8OtuLlvYI3Zg3_ODYP6x53XR8snbSgvCvHGckHhmHGE"
+	request.headers["accessToken"] = service.getToken();
 	uni.showLoading();
 	return request
 })
 
+const goLoginPage = () => {
+	uni.redirectTo({
+		url: '/pages/login/enter'
+	});
+}
+
 request.interceptors.response.use((response, promise) => {
 	uni.hideLoading()
 	if (!(response.data.status === "ok")) {
+		console.log("response.data.status ", response.data.status)
 		if (response.data.status === "-999") {
 			//需要登录权限
-// 			this.$store.commit("setLogin", false)
-// 			uni.redirectTo({
-// 				url: '/pages/login/enter'
-// 			});
+			goLoginPage();
 		} else {
 			errorPrompt(response)
 		}

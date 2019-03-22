@@ -38,8 +38,6 @@
 		},
 		methods: {
 			...mapActions(['login', 'appLogin']),
-<<<<<<< HEAD
-=======
 			async simpleLogin() {
 				var params = {
 					userPhone: this.userPhone,
@@ -50,7 +48,6 @@
 					url: '../main/main'
 				});
 			},
->>>>>>> 66a6a25b293a3adc318b7a1a9a9a85abd95a1923
 			initProvider() {
 				const filters = ['weixin', 'qq', 'sinaweibo'];
 				uni.getProvider({
@@ -119,22 +116,6 @@
 					}
 				});
 			},
-<<<<<<< HEAD
-
-			async simpleLogin() {
-				var params = {
-					userPhone: this.userPhone,
-					userCode: this.userCode,
-				}
-				const res = await this.appLogin(params);
-				if (res.status !== 'ok') return;
-				uni.reLaunch({
-					url: '../main/main'
-				});
-			},
-
-=======
->>>>>>> 66a6a25b293a3adc318b7a1a9a9a85abd95a1923
 			async toMain(params) {
 				// #ifdef APP-PLUS
 				const res = await this.appLogin(params);
@@ -143,11 +124,10 @@
 				// #ifndef APP-PLUS
 				const result = await this.login(params);
 				if (result.status !== 'ok') return;
-				// #endif
-
 				uni.reLaunch({
 					url: '../main/main'
 				});
+				// #endif
 			}
 		},
 		onLoad() {

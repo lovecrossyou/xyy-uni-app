@@ -36,7 +36,6 @@
 			orderInfo: state => state.orderConfirm.orderInfo
 		}),
 		methods: {
-<<<<<<< HEAD
 			async goNext() {
 				const params = await api.keplerPayConfirm(this.payInfo);
 				const orderInfo = params.data.wexinSpec;
@@ -52,22 +51,6 @@
 				}
 
 				console.log('orderInfo ', JSON.stringify(payParams));
-=======
-		async goNext() {
-				const params =  await api.keplerPayConfirm(this.payInfo);
-				const orderInfo = params.data.wexinSpec;
-				const payParams = {
-					appid:orderInfo.appid,
-					partnerid:orderInfo.partnerid,
-					noncestr:orderInfo.noncestr,
-					package:orderInfo.packageValue,
-					timestamp:orderInfo.timestamp,
-					sign:orderInfo.sign,
-					prepayid:orderInfo.prepay_id
-				}
-				
-				console.log('orderInfo ',JSON.stringify(payParams));
->>>>>>> 66a6a25b293a3adc318b7a1a9a9a85abd95a1923
 				uni.requestPayment({
 					provider: 'wxpay',
 					timeStamp: orderInfo.timestamp,
