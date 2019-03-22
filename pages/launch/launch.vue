@@ -24,7 +24,7 @@
 					console.log(JSON.stringify(params.data));
 					const orderInfo = params.data;
 					const payParams = {
-						appid: orderInfo.appid,
+						// appid: orderInfo.appid,
 						partnerid: orderInfo.partnerid,
 						noncestr: orderInfo.noncestr,
 						package: orderInfo.package,
@@ -41,11 +41,20 @@
 						},
 						fail: function(err) {
 							console.log('fail:' + JSON.stringify(err.errMsg));
-							uni.showToast({
-								title: JSON.stringify(err.errMsg),
-								mask: false,
-								duration: 1500
-							});
+							if (err.errMsg.indexOf('配置的支付appid和生成订单使用的appid不一致') !== -1) {
+								uni.showToast({
+									title: 'appid不一致',
+									mask: false,
+									duration: 1500
+								});
+							} else {
+								uni.showToast({
+									title: JSON.stringify(err.errMsg),
+									mask: false,
+									duration: 1500
+								});
+							}
+
 						}
 					})
 				})
