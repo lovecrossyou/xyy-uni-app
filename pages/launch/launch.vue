@@ -1,32 +1,63 @@
 <template>
 	<view>
-		<view class="btn-enter" @click="goHome">
-			进入首页
+		<view class="btn-enter" @click="goNext">
+			支付测试
 		</view>
 	</view>
 </template>
 
 <script>
+	import api from '@/util/api.js'
 	export default {
 		data() {
-			return {
-				
-			};
+			return {};
 		},
-		methods:{
-			goHome(){
+		methods: {
+			goHome() {
 				uni.switchTab({
 					url: '../main/main'
 				});
+			},
+			goNext() {
+				console.log('xx');
+				api.payTest(params => {
+					console.log(JSON.stringify(params.data));
+					const orderInfo = params.data;
+					const payParams = {
+						appid: orderInfo.appid,
+						partnerid: orderInfo.partnerid,
+						noncestr: orderInfo.noncestr,
+						package: orderInfo.package,
+						timestamp: orderInfo.timestamp,
+						sign: orderInfo.sign,
+						prepayid: orderInfo.prepayid
+					}
+
+					uni.requestPayment({
+						provider: 'wxpay',
+						orderInfo: JSON.stringify(payParams),
+						success: function(res) {
+							console.log('success:' + JSON.stringify(res));
+						},
+						fail: function(err) {
+							console.log('fail:' + JSON.stringify(err.errMsg));
+							uni.showToast({
+								title: JSON.stringify(err.errMsg),
+								mask: false,
+								duration: 1500
+							});
+						}
+					})
+				})
 			}
 		}
 	}
 </script>
 
 <style lang="less">
-.btn-enter{
-	width: 200upx;
-	height: 90upx;
-	background: firebrick;
-}
+	.btn-enter {
+		width: 200upx;
+		height: 90upx;
+		background: firebrick;
+	}
 </style>
