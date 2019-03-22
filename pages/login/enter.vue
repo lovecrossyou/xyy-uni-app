@@ -14,11 +14,6 @@
 		<view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
 		</view>
-		<!-- <view class="oauth-row" v-if="hasProvider" v-bind:style="{top: positionTop + 'px'}">
-			<view class="oauth-image" v-for="provider in providerList" :key="provider.value">
-				<image :src="provider.image" @tap="oauth(provider.value)"></image>
-			</view>
-		</view> -->
 		<view class="login_way">
 			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
 			</button>
@@ -129,11 +124,10 @@
 				// #ifndef APP-PLUS
 				const result = await this.login(params);
 				if (result.status !== 'ok') return;
-				// #endif
-
 				uni.reLaunch({
 					url: '../main/main'
 				});
+				// #endif
 			}
 		},
 		onLoad() {
