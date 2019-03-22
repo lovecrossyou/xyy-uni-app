@@ -8,9 +8,9 @@
     "app-plus" : {
         /* 5+App特有相关 */
         "modules" : {
-            "Payment" : {},
+            "Speech" : {},
             "OAuth" : {},
-            "Speech" : {}
+            "Payment" : {}
         },
         /* 模块配置 */
         "distribute" : {
@@ -48,13 +48,13 @@
             "sdkConfigs" : {
                 "oauth" : {
                     "weixin" : {
-                        "appid" : "wx56e7731073ee003f",
-                        "appsecret" : "1f0506f1a0336eada6fd7b3f43e29070"
+                        "appid" : "wxe920a6ec16c8c9bd",
+                        "appsecret" : "2cb17e31c06f5062c6fb19b49cd1cae8"
                     }
                 },
                 "payment" : {
                     "weixin" : {
-                        "appid" : "wx56e7731073ee003f"
+                        "appid" : "wxe920a6ec16c8c9bd"
                     }
                 },
                 "speech" : {

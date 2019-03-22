@@ -5,15 +5,17 @@ const baseURL = 'https://api.kuaimayoupin.com/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
-	console.log("errorPrompt err ", err)
-	if (err.status === "-999") {
+	if (err.data.status === "-999") {
+		
+		console.log('999#### ')
 		//需要登录权限
 		goLoginPage();
 	} else {
 		uni.showToast({
-			title: err.message || 'fetch data error.',
-			icon: 'none'
-		})
+			title: err.data.message || 'fetch data error.',
+			mask: false,
+			duration: 1500
+		});
 	}
 }
 
@@ -29,21 +31,27 @@ const goLoginPage = () => {
 	});
 }
 
-request.interceptors.response.use((response, promise) => {
-	uni.hideLoading()
-	if (!(response.data.status === "ok")) {
-		if (response.data.status === "-999") {
-			//需要登录权限
-			goLoginPage();
-		} else {
-			errorPrompt(response.data)
+request.interceptors.response.use(
+	(response) => {
+		//只将请求结果的data字段返回
+		uni.hideLoading()
+		if (!(response.data.status === "ok")) {
+			if (response.data.status === "-999") {
+				//需要登录权限
+				goLoginPage();
+			} else {
+				errorPrompt(response.data)
+			}
+			return Promise.resolve(null);
 		}
+		return Promise.resolve(response.data);
+	},
+	(err) => {
+		//发生网络错误后会走到这里
+		uni.hideLoading()
+		errorPrompt(err.response)
+		return Promise.resolve(null);
 	}
-	return promise.resolve(response.data)
-}, (err, promise) => {
-	uni.hideLoading()
-	errorPrompt(err.response.data)
-	return promise.reject(err.response.data)
-})
+)
 
 export default request
