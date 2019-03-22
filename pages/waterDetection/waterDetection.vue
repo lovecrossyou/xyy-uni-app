@@ -1,6 +1,6 @@
 <template>
 	<view class="water_detection_wrapper">
-		<view class="detection_list_wrapper_one">
+		<view class="detection_list_wrapper_one" @click="detectionAnalysis">
 			<view class="top_text_arae">
 				<img src="http://qnimage.xiteng.com/duobianxing@2x.png" alt="" />
 				<view class="title_text">生活用水检测</view>
@@ -64,7 +64,12 @@
 			
 		},
 		methods: {
-			
+			detectionAnalysis(){
+				uni.navigateTo({
+					url:"./detectionAnalysis"
+				})
+			}
+				
 		}
 	}
 </script>

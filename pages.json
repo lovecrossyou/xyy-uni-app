@@ -222,6 +222,14 @@
 				"navigationBarTitleText": "水质检测",
 				"navigationBarTextStyle":"black"
 			}
+		},
+		{
+			"path": "pages/waterDetection/detectionAnalysis",
+			"style": {
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTitleText": "检测分析",
+				"navigationBarTextStyle":"black"
+			}
 		}
     ],
 	"tabBar": {
