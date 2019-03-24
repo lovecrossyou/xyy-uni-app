@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="btn-enter" @click="goNext">
+		<view class="btn-enter" @click="goHome">
 			支付测试
 		</view>
 	</view>

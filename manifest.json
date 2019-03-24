@@ -9,7 +9,6 @@
         /* 5+App特有相关 */
         "modules" : {
             "Speech" : {},
-            "OAuth" : {},
             "Payment" : {}
         },
         /* 模块配置 */
@@ -46,12 +45,7 @@
             "ios" : {},
             /* ios打包配置 */
             "sdkConfigs" : {
-                "oauth" : {
-                    "weixin" : {
-                        "appid" : "wxe920a6ec16c8c9bd",
-                        "appsecret" : "2cb17e31c06f5062c6fb19b49cd1cae8"
-                    }
-                },
+                "oauth" : {},
                 "payment" : {
                     "weixin" : {
                         "appid" : "wxe920a6ec16c8c9bd"
@@ -63,7 +57,7 @@
             },
             "icons" : {
                 "ios" : {
-                    "appstore" : "/Users/wangq/Desktop/kuaima/小程序/xyy-client.png",
+                    "appstore" : "/Users/zhulizhe/Desktop/kuaima/用户端logo/1024*1024.png",
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",

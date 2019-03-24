@@ -2,10 +2,6 @@
 	"pages": [
 		//pages数组中第一项表示应用启动页
 		{
-		    "path" : "pages/launch/launch",
-		    "style" : {}
-		},
-		{
 			"path": "pages/main/main",
 			"style": {
 				"navigationBarBackgroundColor":"#FFFFFF",
@@ -18,7 +14,10 @@
 				}
 			}
 		},
-		
+		{
+		    "path" : "pages/launch/launch",
+		    "style" : {}
+		},
 		{
 			"path": "pages/reg/reg",
 			"style": {

@@ -41,7 +41,6 @@
 				const orderInfo = params.data.wexinSpec;
 
 				const payParams = {
-					appid: orderInfo.appid,
 					partnerid: orderInfo.partnerid,
 					noncestr: orderInfo.noncestr,
 					package: orderInfo.packageValue,
@@ -49,17 +48,10 @@
 					sign: orderInfo.sign,
 					prepayid: orderInfo.prepay_id
 				}
-
 				console.log('orderInfo ', JSON.stringify(payParams));
 				uni.requestPayment({
 					provider: 'wxpay',
-					timeStamp: orderInfo.timestamp,
-					nonceStr: orderInfo.noncestr,
-					package: orderInfo.packageValue,
-					signType: "MD5",
-					paySign: orderInfo.sign,
 					orderInfo: JSON.stringify(payParams),
-
 					success: function(res) {
 						console.log('success:' + JSON.stringify(res));
 					},

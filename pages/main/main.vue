@@ -163,9 +163,11 @@
 					url: "shop/shop?shopId=" + shop.id
 				})
 			},
+			
 			getRegeo(cb) {
 				this.$store.dispatch('startLocate', cb);
 			},
+			
 			waterDetection(){
 				uni.navigateTo({
 					url:"../waterDetection/waterDetection"
@@ -201,7 +203,7 @@
 				}
 			}
 			this.getRegeo(() => {
-				// this.getBanner();
+				this.getBanner();
 				this.getNearShops();
 			});
 		}
