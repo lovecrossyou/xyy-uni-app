@@ -81,7 +81,7 @@
 	.detection_list_wrapper_one {
 		width: 100%;
 		height: 840upx;
-		background: url(http://qnimage.xiteng.com/life@2x.png) no-repeat center center;
+		background: url("http://qnimage.xiteng.com/shenghuo@2x.png") no-repeat center center;
 		background-size: 750upx 100%;
 		padding: 70upx 80upx;
 		box-sizing: border-box;
@@ -89,7 +89,7 @@
 	.detection_list_wrapper_two {
 		width: 100%;
 		height: 840upx;
-		background: url(http://qnimage.xiteng.com/gongshui@2x.png) no-repeat center center;
+		background: url("http://qnimage.xiteng.com/erci@2x.png") no-repeat center center;
 		background-size: 750upx 100%;
 		padding: 70upx 80upx;
 		box-sizing: border-box;
@@ -97,7 +97,7 @@
 	.detection_list_wrapper_three {
 		width: 100%;
 		height: 840upx;
-		background: url(http://qnimage.xiteng.com/paishui@2x.png) no-repeat center center;
+		background: url("http://qnimage.xiteng.com/paishui@2x.png") no-repeat center center;
 		background-size: 750upx 100%;
 		padding: 70upx 80upx;
 		box-sizing: border-box;
@@ -105,7 +105,7 @@
 	.detection_list_wrapper_four{
 		width: 100%;
 		height: 840upx;
-		background: url(http://qnimage.xiteng.com/shuizhi@2x.png) no-repeat center center;
+		background: url("http://qnimage.xiteng.com/shuizhijiance@2x.png") no-repeat center center;
 		background-size: 750upx 100%;
 		padding: 70upx 80upx;
 		box-sizing: border-box;
