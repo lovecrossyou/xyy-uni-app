@@ -60,7 +60,7 @@ export default {
 .progress_area {
 	width: 100%;
 	height: 274upx;
-	background: url('http://qnimage.xiteng.com/write_bg.png') no-repeat center center;
+	background: url('http://qnimage.xiteng.com/fenxi@2x.png') no-repeat center center;
 	background-size: 100% 100%;
 	margin-top: -160upx;
 }
