@@ -111,6 +111,7 @@
 		},
 		onLoad(option) {
 			this.orderNo = option.orderNo;
+			console.log("orderNo------",this.orderNo);
 			this.getData();
 		},
 		computed: {
@@ -154,8 +155,8 @@
 				uni.showLoading({
 					title: "加载中..."
 				})
-				const res = await orderApi.requestOrderDetail(this.orderNo);
-				if(res.status === 'ok'){
+				const res = await orderApi.requestOrderDetail({orderNo:this.orderNo});
+				if(res && res.status === 'ok'){
 					this.orderDetailData = res.data ;
 					this.isLoading = false;
 				}

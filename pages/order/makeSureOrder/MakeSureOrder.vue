@@ -150,14 +150,14 @@
 								console.log('requestPayment res', res);
 								that.queryResult(confirmParams, () => {
 									uni.redirectTo({
-										url: "../orderDetail/OrderDetail?orderNo=" + createRes.data.orderNo
+										url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
 									})
 								})
 							},
 							fail: function(err) {
 								console.log('requestPayment err', err);
 								uni.redirectTo({
-									url: "../orderDetail/OrderDetail?orderNo=" + createRes.data.orderNo
+									url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
 								})
 							}
 						});

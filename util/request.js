@@ -5,6 +5,7 @@ const baseURL = 'https://api.kuaimayoupin.com/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
+	console.log("err-----",JSON.stringify(err))
 	if (err.data.status === "-999") {
 		
 		console.log('999#### ')
@@ -35,12 +36,13 @@ request.interceptors.response.use(
 	(response) => {
 		//只将请求结果的data字段返回
 		uni.hideLoading()
+		console.log("response.data=======",JSON.stringify(response.data));
 		if (!(response.data.status === "ok")) {
 			if (response.data.status === "-999") {
 				//需要登录权限
 				goLoginPage();
 			} else {
-				errorPrompt(response.data)
+				errorPrompt(response)
 			}
 			return Promise.resolve(null);
 		}
