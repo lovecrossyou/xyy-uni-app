@@ -82,13 +82,13 @@
 						selIcon: '../../../static/order/pay_btn_selected_weixin@2x.png',
 						title: "微信支付",
 						unselIcon: '../../../static/order/pay_btn@2x.png'
-					},
-					{
-						icon: '../../../static/order/pay_icon_zhifubao@2x.png',
-						selIcon: '../../../static/order/pay_btn_selected_zhifubao@2x.png',
-						title: "支付宝付款",
-						unselIcon: '../../../static/order/pay_btn@2x.png'
 					}
+// 					{
+// 						icon: '../../../static/order/pay_icon_zhifubao@2x.png',
+// 						selIcon: '../../../static/order/pay_btn_selected_zhifubao@2x.png',
+// 						title: "支付宝付款",
+// 						unselIcon: '../../../static/order/pay_btn@2x.png'
+// 					}
 				]
 			}
 		}

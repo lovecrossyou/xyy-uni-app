@@ -122,7 +122,7 @@
 				}
 				this.setPayInfo(confirmParams); //
 				this.setOrderInfo(createRes.data);
-				uni.navigateTo({
+				uni.redirectTo({
 					url: "/pages/order/makeSureOrder/OrderPay"
 				})
 				return;
@@ -136,7 +136,7 @@
 					}
 					const confirmRes = await api.keplerPayConfirm(confirmParams)
 					console.log("confirmRes", JSON.stringify(confirmRes))
-					const payOrderNo = confirmRes.payOrderNo;
+					const payOrderNo = confirmRes.data.payOrderNo;
 					if (confirmRes.status === 'ok' && confirmRes.data.wexinSpec) {
 						const wexinSpec = confirmRes.data.wexinSpec;
 						uni.requestPayment({
