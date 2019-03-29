@@ -123,10 +123,11 @@
 			}),
 			getNearShops() {
 				const params = {
-					latitude: this.location.latitude,
-					longitude: this.location.longitude,
-					page: 1,
-					pageSize: 10
+					"latitude": "39.9284300000",
+					"longitude": "116.3507300000",
+					"pageNum": "1",
+					"pageSize": "10",
+					"range": "500"
 				}
 				this.fetchShops(params);
 			},
@@ -163,17 +164,17 @@
 					url: "shop/shop?shopId=" + shop.id
 				})
 			},
-			
+
 			getRegeo(cb) {
 				this.$store.dispatch('startLocate', cb);
 			},
-			
-			waterDetection(){
+
+			waterDetection() {
 				uni.navigateTo({
-					url:"../waterDetection/waterDetection"
+					url: "../waterDetection/waterDetection"
 				})
 			}
-				
+
 		},
 		computed: {
 			...mapState(['forcedLogin', 'hasLogin', 'userName', 'location']),

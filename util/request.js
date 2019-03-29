@@ -1,7 +1,8 @@
 import Fly from 'flyio/dist/npm/wx'
 import service from "../service"
 const request = new Fly()
-const baseURL = 'https://api.kuaimayoupin.com/'
+// const baseURL = 'https://api.kuaimayoupin.com/'
+const baseURL = 'http://47.94.169.143:8004/';
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
@@ -36,8 +37,7 @@ request.interceptors.response.use(
 	(response) => {
 		//只将请求结果的data字段返回
 		uni.hideLoading()
-		console.log("response.data=======",JSON.stringify(response.data));
-		if (!(response.data.status === "ok")) {
+		if (!(response.data.status === 0)) {
 			if (response.data.status === "-999") {
 				//需要登录权限
 				goLoginPage();

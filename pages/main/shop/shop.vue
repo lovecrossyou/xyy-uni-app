@@ -194,11 +194,10 @@
 					pageSize: 15,
 					shopId: shopId
 				}
-				this.fetchComments(params);
+				// this.fetchComments(params);
 			}
 		},
 		onLoad: function(option) {
-			console.log('shopId ', option)
 			var shopId = option.shopId;
 			this.initShop(shopId)
 			this.initJudgement(shopId)

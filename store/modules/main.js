@@ -21,7 +21,7 @@ const actions = {
 	}, params) {
 		const res = await mainApi.nearByShops(params);
 		if (res) {
-			commit('saveShops', res.data.content);
+			commit('saveShops', res.data);
 		}
 	}
 }

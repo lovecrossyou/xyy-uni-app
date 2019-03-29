@@ -1,8 +1,8 @@
 import request from '../request'
 
 export default {
-	banners: (params) => request.get("client/banner/list", params),
-	nearByShops: (params) => request.get("client/shop/nearShops", params),
-	shopInfo: (shopId) => request.get(`client/shop/shopInfo/${shopId}`, {}),
+	banners: (params) => request.get("manage/banner/list", params),
+	nearByShops: (params) => request.post("shop/shopListNearBy", params),
+	shopInfo: (shopId) => request.get(`shop/shopInfo?shopId=${shopId}`, {}),
 	comments: (params) => request.get("client/shop/comments", params),
 }
