@@ -4,14 +4,14 @@
 			<view class="bg"></view>
 			<view class="left">
 				<view class="shop-logo">
-					<image v-bind:src="shop.info.imageUrl" mode="aspectFill"></image>
+					<image v-bind:src="shop.shopInfo.image_path" mode="aspectFill"></image>
 				</view>
 				<view class="shop-info">
 					<block v-if="shop">
-						<view class="name">{{shop.info.name||""}}</view>
+						<view class="name">{{shop.shopInfo.name||""}}</view>
 						<view class="score-wrapper">
-							<view class="score">评价{{shop.info.score}}</view>
-							<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
+							<!-- <view class="score">评价{{shop.info.score}}</view> -->
+							<!-- <view class="saleinfo">月售{{shop.info.soldAmount}}单</view> -->
 							<!-- <view class="time">30分钟送达</view> -->
 						</view>
 					</block>
@@ -36,13 +36,13 @@
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
 				<block v-if="shop">
 					<swiper-item>
-						<goods :products="shop.products"></goods>
+						<goods :products="shop.items"></goods>
 					</swiper-item>
 					<swiper-item>
 						<judgement :judgementData="judgementData"></judgement>
 					</swiper-item>
 					<swiper-item>
-						<shop-info :shopInfo="shop.info"></shop-info>
+						<shop-info :shopInfo="shop.shopInfo"></shop-info>
 					</swiper-item>
 				</block>
 			</swiper>
@@ -153,7 +153,7 @@
 				"setShopId":"cart/setShopId"
 			}),
 			toConfirmOrder() {
-				if (this.cartProducts.length === 0)return;
+				// if (this.cartProducts.length === 0)return;
 				uni.navigateTo({
 					url: '../../order/makeSureOrder/MakeSureOrder'
 				})

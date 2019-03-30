@@ -91,7 +91,7 @@
 			},
 			//获取默认地址
 			async getDefaultAddress() {
-				const defaultAddressRes = await api.getDefaultAddress({});
+				const defaultAddressRes = await api.deliveryAddressList();
 				if (defaultAddressRes.status === 'ok') {
 					console.log('defaultAddressRes', JSON.stringify(defaultAddressRes));
 					this.GET_DEFAULT_ADDRESS(defaultAddressRes.data);
@@ -105,72 +105,58 @@
 				this.showLoading = false;
 				uni.hideLoading();
 			},
+			//生成订单
+			createOrder() {
+				const params = {
+					shippingId:this.choosedAddress.id
+				}
+				return api.createOrder(params);	
+			},
+			wxpay(params){
+				return api.wxpay(params);
+			},
 			async toPay() {
 				var that = this;
-				let params = Object.assign({}, this.cartConfirmInfo);
-				params.deliverAddressId = this.choosedAddress.id;
-				params.needDeliverTime = "尽快送达";
-				//生成订单信息
-				const createRes = await api.shopOrderCreate(params);
-				const userInfo = service.getInfo();
+				const result = await this.createOrder();
+				const orderInfo = result.data;
+				//微信App支付
 				// #ifndef MP-WEIXIN
-				//传递支付信息
-				let confirmParams = {
-					// "openId": userInfo.openId,
-					"payChannel": "WeixinPay",
-					"payOrderNo": createRes.data.orderNo
-				}
-				this.setPayInfo(confirmParams); //
-				this.setOrderInfo(createRes.data);
+                const res = await this.wxpay({
+					orderNum:orderInfo.order.orderNum,
+					trade_type:'APP'
+				})
 				uni.redirectTo({
 					url: "/pages/order/makeSureOrder/OrderPay"
 				})
 				return;
 				// #endif
-
-				if (this.choosedAddress.id) {
-					let confirmParams = {
-						"openId": userInfo.openId,
-						"payChannel": "WeixinMiniProgramPay",
-						"payOrderNo": createRes.data.orderNo
+				//微信小程序支付
+				const rest = await this.wxpay({
+					orderNum:orderInfo.order.orderNum
+				})
+				const wexinSpec = rest.data;
+				uni.requestPayment({
+					provider: 'wxpay',
+					timeStamp: wexinSpec.timestamp,
+					nonceStr: wexinSpec.nonceStr,
+					package: wexinSpec.package,
+					signType: 'MD5',
+					paySign: wexinSpec.paySign,
+					success: function(res) {
+						console.log('requestPayment res', res);
+						that.queryResult(confirmParams, () => {
+							uni.redirectTo({
+								url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+							})
+						})
+					},
+					fail: function(err) {
+						console.log('requestPayment err', err);
+						uni.redirectTo({
+							url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+						})
 					}
-					const confirmRes = await api.keplerPayConfirm(confirmParams)
-					console.log("confirmRes", JSON.stringify(confirmRes))
-					const payOrderNo = confirmRes.data.payOrderNo;
-					if (confirmRes.status === 'ok' && confirmRes.data.wexinSpec) {
-						const wexinSpec = confirmRes.data.wexinSpec;
-						uni.requestPayment({
-							provider: 'wxpay',
-							timeStamp: wexinSpec.timestamp,
-							nonceStr: wexinSpec.noncestr,
-							package: 'prepay_id=' + wexinSpec.prepay_id,
-							signType: 'MD5',
-							paySign: wexinSpec.sign,
-							success: function(res) {
-								console.log('requestPayment res', res);
-								that.queryResult(confirmParams, () => {
-									uni.redirectTo({
-										url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-									})
-								})
-							},
-							fail: function(err) {
-								console.log('requestPayment err', err);
-								uni.redirectTo({
-									url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-								})
-							}
-						});
-					} else {
-
-					}
-				} else {
-					uni.showToast({
-						title: '请选择地址',
-						icon: 'none',
-						duration: 2000
-					});
-				}
+				});
 
 			}
 		},
@@ -194,10 +180,10 @@
 			}
 		},
 		onLoad() {
-			uni.showLoading({
-				title: '加载中...',
-				mask: true
-			});
+			// 			uni.showLoading({
+			// 				title: '加载中...',
+			// 				mask: true
+			// 			});
 			this.requestOrderData();
 			this.getDefaultAddress();
 			console.log('cartConfirmInfo', this.cartConfirmInfo);

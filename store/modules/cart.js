@@ -1,8 +1,10 @@
-// initial state
-// items: [{ product }]
+import api from '@/util/api'
+
+
 const state = {
 	items: [],
-	shopId: null
+	shopId: null,
+	cartList:[]
 }
 
 // getters
@@ -20,14 +22,14 @@ const getters = {
 			carts[shopId].push(Object.assign({}, product));
 		}
 		var allKeys = Object.keys(carts);
-		console.log("products",JSON.stringify(products));
+		console.log("products", JSON.stringify(products));
 		var lists = [];
 		var index = 0;
 		for (var obj in carts) {
 			var products = carts[allKeys[index]];
 			lists.push({
 				shopId: allKeys[index],
-				shopName:products[0].shopName,
+				shopName: products[0].shopName,
 				products: products
 			});
 			index++;
@@ -58,7 +60,20 @@ const getters = {
 
 // actions
 const actions = {
-
+	async addCart({
+		commit
+	}, product) {
+		const res = await api.addCart({
+			count:1,
+			productId:product.id
+		});
+		const rest = await api.cartList();
+		// commit('increment')
+	},
+	async cartList({commit}){
+		const res = await api.cartList();
+		
+	}
 }
 
 // mutations
@@ -68,7 +83,7 @@ const mutations = {
 			product,
 			shop
 		} = pInfo;
-		console.log('mutations product ###',product);
+		console.log('mutations product ###', product);
 		var existFlag = false;
 		state.items.forEach(p => {
 			if (product.id === p.id) {
@@ -77,7 +92,7 @@ const mutations = {
 			}
 		})
 		if (existFlag === false) {
-			product.shopName = shop.info.name ;
+			product.shopName = shop.info.name;
 			state.items.push(product);
 		}
 	},
@@ -86,7 +101,7 @@ const mutations = {
 			product,
 			shop
 		} = pInfo;
-		console.log('shop ',shop);
+		console.log('shop ', shop);
 		state.items.forEach(p => {
 			if (product.id === p.id) {
 				p.count = product.count;

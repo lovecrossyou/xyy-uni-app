@@ -160,8 +160,9 @@
 			},
 			goShop(shop) {
 				console.log(shop);
+				const id = '9b76a5a7-ebe5-443f-a305-39395dbb3d6b'
 				uni.navigateTo({
-					url: "shop/shop?shopId=" + shop.id
+					url: "shop/shop?shopId=" + id
 				})
 			},
 

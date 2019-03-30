@@ -35,10 +35,11 @@
 				} else {
 					this.food.count++;
 				};
-				this.$store.commit('cart/addCart', {
-					shop: this.shopInfo,
-					product: this.food
-				});
+				console.log('this.food ',this.food)
+				this.$store.dispatch('cart/addCart',this.food);
+// 				this.$store.commit('cart/addCart', {
+// 					product: this.food
+// 				});
 			},
 			decreaseCart() {
 				if (this.food.count) {

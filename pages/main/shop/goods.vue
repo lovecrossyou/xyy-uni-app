@@ -16,17 +16,17 @@
 				<view class="food-list" v-for="(p,index) in currentProducts" :key='index'>
 					<view class="food-item">
 						<view class="icon">
-							<image v-bind:src="p.headImage" mode="aspectFill"></image>
+							<image v-bind:src="p.mainImage" mode="aspectFill"></image>
 						</view>
 						<view class="content">
 							<view class="name">
-								{{p.headName}}
+								{{p.name}}
 							</view>
 							<view class="desc">
 								月售{{p.saleAmount}} 好评95%
 							</view>
 							<view class="price">
-								¥{{p.price/100}}
+								¥{{p.price}}
 							</view>
 						</view>
 						<view class="cartcontrol-wrapper">
@@ -64,13 +64,15 @@
 			}
 		},
 		computed: {
+			categories(){
+				return Object.keys(this.products);
+			},
 			currentProducts: function() {
-				if(this.products.length==0)return [];
-				return this.products[this.currentIndex].products;
+				return this.products[this.currentIndex];
 			},
 			currentTitle: function() {
-				if(this.products.length==0)return '';
-				return this.products[this.currentIndex].name;
+				const titles = Object.keys(this.products);
+				return titles[this.currentIndex];
 			}
 		}
 	}

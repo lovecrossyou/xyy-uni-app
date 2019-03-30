@@ -28,7 +28,7 @@ export default new Vuex.Store({
 	},
 	state: {
 		count: 0,
-		hasLogin: false,
+		hasLogin: true,
 		forcedLogin: true,
 		banners: [],
 		shops: [],
@@ -72,11 +72,8 @@ export default new Vuex.Store({
 			dispatch,
 			state
 		}, params) {
-			const res = await loginApi.appLogin(params);
-			console.log("actions login res",JSON.stringify(res));
-			if (res.status !== 'ok')return;
-			service.addInfo(res.data);
-			commit('setUserInfo',res.data);
+			const res = await loginApi.login(params);
+			if (res.status !== 0)return;
 			commit('setLogin',true);
 			return res;
 		},

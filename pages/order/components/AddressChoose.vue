@@ -2,15 +2,15 @@
 	
 	<div class="address_choose" v-on:click="chooseAddAction" >
 	  
-      <div  class="address_choose_left" v-if="mydata.phoneNum">
+      <div  class="address_choose_left" v-if="mydata.receiverPhone">
         <div class="address_choose_mark_c">
           <div class="address_choose_mark_t">订单配送至</div>
           <div class="address_choose_mark">公司</div>
         </div>
-        <div class="address_choose_detail">{{mydata.fullAddress}}</div>
+        <div class="address_choose_detail">{{mydata.receiverAddress}}</div>
         <div class="address_people">
-          <div class="address_p_name">{{mydata.recievName}}</div>
-          <div class="address_p_phone">{{mydata.phoneNum}}</div>
+          <div class="address_p_name">{{mydata.receiverName}}</div>
+          <div class="address_p_phone">{{mydata.receiverPhone}}</div>
         </div>
       </div>
 	  <div v-else class="add_address">请添加一个收货地址</div>

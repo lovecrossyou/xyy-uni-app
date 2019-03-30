@@ -3,16 +3,17 @@
 		<img src="http://qnimage.xiteng.com/WechatIMG2083.jpeg" alt="" class="bg_img">
 		<view class="enter_box_area">
 			<view class="tel_area_wrapper">
-				<input type="number" v-model="userPhone" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
+				<input  v-model="userPhone" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
 			</view>
 			<view class="tel_area_wrapper">
 				<input type="number" v-model="userCode" placeholder="请输入验证码" placeholder-style="color:#7CA7D2;" />
 				<button type="primary" class="get_code_btn">获取验证码</button>
 			</view>
 		</view>
-		<!-- #ifdef APP-PLUS -->
+		<!-- #ifndef MP-WEIXIN -->
 		<button class="login_btn" @click="simpleLogin">登录</button>
 		<!-- #endif -->
+		
 		<!-- #ifdef MP-WEIXIN -->
 		<button class="login_btn" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">登录</button>
 		<!-- #endif -->
@@ -44,10 +45,11 @@
 		},
 		methods: {
 			...mapActions(['login', 'appLogin']),
-			async simpleLogin() {
+			async simpleLogin(code) {
 				var params = {
-					userPhone: this.userPhone,
-					userCode: this.userCode,
+					username: this.userPhone,
+					password: this.userCode,
+					code:code
 				}
 				const res = await this.appLogin(params);
 				uni.reLaunch({
@@ -56,6 +58,7 @@
 			},
 
 			oauth(value) {
+				let that = this;
 				uni.login({
 					provider: value,
 					success: (res) => {
@@ -72,7 +75,8 @@
 								} = infoRes;
 								console.log("infoRes ", JSON.stringify(infoRes));
 								console.log("res ", JSON.stringify(res));
-
+								that.simpleLogin(res.code);
+								return;
 								console.log("encryptedData ", JSON.stringify(encryptedData));
 								var params = {
 									userPhone: this.userPhone,
@@ -107,7 +111,7 @@
 				if (res.status !== 'ok') return;
 				// #endif
 				// #ifndef APP-PLUS
-				const result = await this.login(params);
+				const result = await this.appLogin(params);
 				if (result.status !== 'ok') return;
 				uni.reLaunch({
 					url: '../main/main'
