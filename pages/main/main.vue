@@ -153,6 +153,7 @@
 				})
 			},
 			goSearch() {
+				return;
 				uni.navigateTo({
 					url: "../HM-search/HM-search"
 				})

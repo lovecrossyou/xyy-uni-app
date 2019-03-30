@@ -8,7 +8,7 @@
 				</view>
 				<view class="user-info">
 					<view class="name">{{userInfo.nickName || userInfo.phoneNum}}</view>
-					<view class="score">积分：2500</view>
+					<view class="score">积分：0</view>
 				</view>
 			</view>
 			<view class="right">
@@ -71,6 +71,7 @@
 			},
 			// 优惠卷
 			toTickets() {
+				return;
 				uni.navigateTo({
 					url: '../order/makeSureOrder/Tickets'
 				})
@@ -90,6 +91,7 @@
 				console.error('image发生error事件，携带值为' + e.detail.errMsg)
 			},
 			modification() {
+				return;
 				uni.navigateTo({
 					url: "personalData/personalData"
 				})
@@ -151,14 +153,14 @@
 						font-size: 30upx;
 						font-family: PingFangSC-Medium;
 						font-weight: 600;
-						color: #000000;
+						color: #fff;
 					}
 
 					.score {
 						font-size: 26upx;
 						font-family: PingFangSC-Regular;
 						font-weight: 400;
-						color: #000000;
+						color: #fff;
 					}
 				}
 			}
