@@ -119,6 +119,7 @@
 				var that = this;
 				const result = await this.createOrder();
 				const orderInfo = result.data;
+				
 				//微信App支付
 				// #ifndef MP-WEIXIN
                 const res = await this.wxpay({

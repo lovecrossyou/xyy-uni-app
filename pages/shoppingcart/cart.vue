@@ -1,10 +1,10 @@
 <template>
 	<view class="shoppingcar">
-		<view v-if="carts.length==0" class="empty-data">
+		<view v-if="!carts" class="empty-data">
 			<image src="../../static/cart/cart.png" class="img"></image>
 			<view class="desc">您还没有相关的商品</view>
 		</view>
-		<view class="shopitem" v-for="(shop,index) in carts" :key="index" @click="toDetail(shop.shopId)">
+		<view class="shopitem" v-for="(shop,index) in carts.list" :key="index" @click="toDetail(shop.shopId)">
 			<view class="shop_header">
 				<view class="header-text">{{ shop.shopName }}</view>
 				<uni-icon type="arrowright" size="24" color="#9a9a9a"></uni-icon>
@@ -29,18 +29,26 @@
 </template>
 
 <script>
+	import api from '@/util/api.js'
 	import checkBox from './custom-checkbox.vue'
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import {
 		mapGetters
 	} from 'vuex'
 export default {
+	data(){
+		return {
+			carts:null
+		}
+	},
 	onShow() {
-		
-		console.log("cart",JSON.stringify(this.carts))	
+		this.cartList();
 	},
 	methods: {
-		
+		async cartList(){
+			const res = await api.cartList();
+			this.carts = res.data;
+		},
 		// 删除商品
 		deletePro(){
 			uni.showToast({
@@ -58,13 +66,7 @@ export default {
 	components:{
 		checkBox,
 		uniIcon
-	},
-	computed: {
-		
-		...mapGetters({
-			"carts": 'cart/productsOrderByShop'
-		}),
-	},
+	}
 };
 </script>
 

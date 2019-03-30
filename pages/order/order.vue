@@ -27,33 +27,33 @@
 		</view>
 		<view
 			class="shopitem"
-			v-for="(shop, index) in orders"
+			v-for="(shop, index) in orders.list"
 			:key="index"
 			@click="toDetail(shop.shopId)"
 		>
 			<view class="shop_header">
 				<view class="order_shop_name">
 					<image src="../../static/img/order_shop_icon.png"></image>
-					<view class="header-text">{{ shop.shopName }}</view>
+					<view class="header-text">店铺名称</view>
 				</view>
-				<view class="order_status_des">{{ shop.statusContent }}</view>
+				<view class="order_status_des">{{shop.orderStatus}}</view>
 			</view>
 			<view
 				class="shop_content"
-				v-for="(product, indexP) in shop.items"
+				v-for="(product, indexP) in shop.orderItemList"
 				:key="indexP"
 				:id="product.id"
 			>
 				<view class="product_container" @click.stop="toOrderDetail(shop.orderNo)">
 					<image
-						:src="product.productImage || 'https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1320726089,2981856556&fm=85&s=DA2AA2451411586754BD75F10300C025'"
+						:src="product.productImage"
 					></image>
 					<view class="product_info">
 						<view class="product_name">{{ product.productName }}</view>
-						<view class="product_price">￥{{ product.productPrice / 100 }}</view>
+						<view class="product_price">￥{{ product.totalPrice }}</view>
 					</view>
 				</view>
-				<view v-if="indexP < shop.items.length - 1" class="space_line"></view>
+				<view v-if="indexP < shop.orderItemList.length - 1" class="space_line"></view>
 			</view>
 		</view>
 	</view>
@@ -63,6 +63,8 @@
 import glanceSlideNavTabBar from '@/components/order/glance-SlideNavTabBar.vue';
 import uniIcon from '@/components/uni-icon/uni-icon.vue';
 import orderApi from '@/util/apis/order.js';
+	import api from '@/util/api.js'
+
 import { mapGetters } from 'vuex';
 export default {
 	onShow() {
@@ -92,14 +94,8 @@ export default {
 			});
 		},
 		async requestList() {
-			const listRes = await orderApi.requestOrderList({
-				page: '1',
-				pageSize: '20'
-			});
-			console.log('listRes', JSON.stringify(listRes));
-			if (listRes.status === 'ok') {
-				this.orders = listRes.data.content;
-			}
+			const listRes = await api.orderList();
+			this.orders = listRes.data;
 		}
 	},
 	onShow() {

@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="header" @click="modification">
+		<view v-if="userInfo" class="header" @click="modification">
 			<view class="left">
 				<view class="image-content">
 					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="userInfo.userIconUrl"

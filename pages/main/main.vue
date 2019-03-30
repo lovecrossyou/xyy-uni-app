@@ -21,7 +21,7 @@
 					 indicator-color="#2ca2f9" indicator-active-color="#FFFFFF">
 						<block v-for="(banner,index) in banners" :key="index">
 							<swiper-item>
-								<image v-bind:src="banner.image" class="swiper-item" mode="scaleToFill"></image>
+								<image v-bind:src="banner.image_path" class="swiper-item" mode="scaleToFill"></image>
 							</swiper-item>
 						</block>
 					</swiper>
@@ -69,7 +69,7 @@
 		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
 
 			<view class="shop-info" @click="goShop(shop)">
-				<image :src="shop.imageUrl" class="shop-img"></image>
+				<image :src="shop.image_path" class="shop-img"></image>
 				<view class="shop-info-middle">
 					<view class="shop-name">{{shop.name}}</view>
 					<view class="shop-details">
@@ -81,7 +81,7 @@
 					</view>
 					<view class="shop-middle-bottom">
 						<view class="distribution-num">
-							¥{{shop.miniNumOrderAmount/100}}起送 | 免费配送
+							¥{{shop.float_minimum_order_amount}}起送 | 免费配送
 						</view>
 						<view class="distribution-num-r">
 							{{shop.distance}}m | {{shop.deliveryExpectTime}}
@@ -123,11 +123,11 @@
 			}),
 			getNearShops() {
 				const params = {
-					"latitude": "39.9284300000",
-					"longitude": "116.3507300000",
+					"latitude": "39.92843",
+					"longitude": "116.35073",
 					"pageNum": "1",
 					"pageSize": "10",
-					"range": "500"
+					"range": "50000000"
 				}
 				this.fetchShops(params);
 			},
@@ -160,9 +160,9 @@
 			},
 			goShop(shop) {
 				console.log(shop);
-				const id = '9b76a5a7-ebe5-443f-a305-39395dbb3d6b'
+				// const id = '9b76a5a7-ebe5-443f-a305-39395dbb3d6b'
 				uni.navigateTo({
-					url: "shop/shop?shopId=" + id
+					url: "shop/shop?shopId=" + shop.id
 				})
 			},
 

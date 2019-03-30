@@ -4,8 +4,7 @@ const api = {
 
 	requestCartClient: (params) => request.get("cart/list"),
 	deliveryAddressList: (params) => request.get("shipping/list"),
-	deliveryAddressCreate: (params) => request.post("client/deliveryAddress/create", params),
-	searchNearby: (params) => request.get("client/common/searchAddress", params),
+	searchNearby: (params) => request.post("map/search", params),
 	deliveryAddressEdit: (params) => request.post("client/deliveryAddress/edit", params),
 	shopOrderCreate: (params) => request.post("client/shopOrder/create", params),
 	keplerPayConfirm: (params) => request.post("client/keplerPay/confirm", params),
@@ -16,6 +15,8 @@ const api = {
 	addCart: params => request.post('cart/update', params),
 	cartList: params => request.get('cart/list'),
 	createOrder: params => request.post('order/create', params),
+	orderList: params => request.get('order/list'),
 	wxpay : params => request.post('order/wxpay', params),
+	addAddress: (params) => request.post("shipping/add", params)
 }
 export default api
