@@ -4,7 +4,7 @@ import api from '@/util/api'
 const state = {
 	items: [],
 	shopId: null,
-	cartList:[]
+	cart:null
 }
 
 // getters
@@ -55,7 +55,7 @@ const getters = {
 			"shopId": state.shopId,
 			"products": products
 		}
-	}
+	},
 }
 
 // actions
@@ -68,11 +68,11 @@ const actions = {
 			productId:product.id
 		});
 		const rest = await api.cartList();
-		// commit('increment')
+		commit('setCart',rest.data);
 	},
 	async cartList({commit}){
 		const res = await api.cartList();
-		
+		commit('setCart',res.data);
 	}
 }
 
@@ -110,6 +110,9 @@ const mutations = {
 	},
 	setShopId(state, shopId) {
 		state.shopId = shopId;
+	},
+	setCart(state,cart){
+		state.cart = cart;
 	}
 }
 

@@ -2,10 +2,10 @@
 	<view>
 		<view class="goods">
 			<scroll-view scroll-y="true" class="menu-wrapper">
-				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in products"
+				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in categories"
 				 v-bind:key="item.id">
 					<view class="title">
-						{{item.name}}
+						{{item}}
 					</view>
 				</view>
 			</scroll-view>
@@ -55,7 +55,6 @@
 					count:10
 				},
 				currentIndex: 0,
-				img_url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550900041138&di=722b8ba73b2b6c1ec8671480add10f70&imgtype=0&src=http%3A%2F%2Fwww.sy-tzs.com%2Fupfile%2FisClass%2Fppic%2F20160216114715-679156452.jpg',
 			}
 		},
 		methods: {
@@ -67,12 +66,11 @@
 			categories(){
 				return Object.keys(this.products);
 			},
-			currentProducts: function() {
-				return this.products[this.currentIndex];
+			currentProducts() {
+				return this.products[this.currentTitle];
 			},
-			currentTitle: function() {
-				const titles = Object.keys(this.products);
-				return titles[this.currentIndex];
+			currentTitle() {
+				return this.categories[this.currentIndex];
 			}
 		}
 	}

@@ -51,11 +51,11 @@
 			<view class="cart-wrapper" @click="popMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
 				<view class="totalPrice">
-					¥{{cartTotalPrice/100}}
+					¥{{cart.totalPrice}}
 				</view>
 			</view>
 			<view class="confirm-wrapper">
-				<view class="limit" v-bind:class="cartProducts.length==0 ?'gray-limit':''" @click="toConfirmOrder">
+				<view class="limit" v-bind:class="cart.list.length==0 ?'gray-limit':''" @click="toConfirmOrder">
 					去结算
 				</view>
 			</view>
@@ -71,17 +71,20 @@
 					清空购物车
 				</view>
 			</view>
-			<scroll-view scroll-y="true" class="cart-list-items">
-				<block v-for="(product,index) in cartProducts" :key="index">
+			<scroll-view v-if="cart" scroll-y="true" class="cart-list-items">
+				<block v-for="(cart,index) in cart.list" :key="index">
 					<view class="cart-list-item">
 						<view class="p-name">
-							{{product.headName}}
+							{{cart.product.name}}
 						</view>
 						<view class="right">
 							<view class="price">
-								¥{{product.price/100}}
+								¥{{cart.product.price}}
 							</view>
-							<cartcontrol :food="product" @add="addFood"></cartcontrol>
+							<view class="count">
+								x {{cart.quantity}}
+							</view>
+							<cartcontrol :food="cart.product" @add="addFood"></cartcontrol>
 						</view>
 					</view>
 				</block>
@@ -137,7 +140,8 @@
 			}),
 			...mapState({
 				judgementData: state => state.shop.comments,
-				shop: state => state.shop.shopInfo
+				shop: state => state.shop.shopInfo,
+				cart: state => state.cart.cart
 			}),
 			cart_icon() {
 				if (this.cartProducts.length === 0) return "../../../static/shop/cart.png"
@@ -153,7 +157,7 @@
 				"setShopId":"cart/setShopId"
 			}),
 			toConfirmOrder() {
-				// if (this.cartProducts.length === 0)return;
+				if (this.cart.list.length === 0)return;
 				uni.navigateTo({
 					url: '../../order/makeSureOrder/MakeSureOrder'
 				})
@@ -187,6 +191,7 @@
 			initShop(shopId) {
 				this.setShopId(shopId);
 				this.fetchShopInfo(shopId);
+				this.$store.dispatch('cart/cartList');
 			},
 			initJudgement(shopId) {
 				var params = {
@@ -477,6 +482,12 @@
 
 
 							color: #E02C2C;
+							font-size: 28upx;
+							line-height: 100%;
+						}
+						.count {
+							margin-left: 6upx;
+							color: #999999;
 							font-size: 28upx;
 							line-height: 100%;
 						}

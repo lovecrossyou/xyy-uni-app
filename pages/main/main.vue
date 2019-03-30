@@ -84,7 +84,7 @@
 							¥{{shop.float_minimum_order_amount}}起送 | 免费配送
 						</view>
 						<view class="distribution-num-r">
-							{{shop.distance}}m | {{shop.deliveryExpectTime}}
+							{{shop.distance}}m
 						</view>
 					</view>
 
@@ -123,11 +123,11 @@
 			}),
 			getNearShops() {
 				const params = {
-					"latitude": "39.92843",
-					"longitude": "116.35073",
-					"pageNum": "1",
-					"pageSize": "10",
-					"range": "50000000"
+					latitude: this.location.latitude,
+					longitude: this.location.longitude,
+					"pageNum": 1,
+					"pageSize": 15,
+					"range": 1000//公里
 				}
 				this.fetchShops(params);
 			},

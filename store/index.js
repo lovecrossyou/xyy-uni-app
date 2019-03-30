@@ -7,12 +7,12 @@ import main from "./modules/main.js"
 import shop from "./modules/shop.js"
 import orderConfirm from './modules/orderConfirm.js'
 import service from "../service.js"
-import amap from '@/common/amap-wx.js'
+// import amap from '@/common/amap-wx.js'
 
 
 // amapPlugin: null,
 // 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
-const amapKey = '72239a17febe0f534f11c5b1fbd8ce4c' ;
+const amapKey = '72239a17febe0f534f11c5b1fbd8ce4c';
 
 import loginApi from "../util/apis/login.js"
 
@@ -32,25 +32,25 @@ export default new Vuex.Store({
 		forcedLogin: true,
 		banners: [],
 		shops: [],
-		userInfo:null,
-		location:{
-			latitude:'',
-			longitude:'',
-			name:'定位中...'
+		userInfo: null,
+		location: {
+			latitude: '',
+			longitude: '',
+			name: '定位中...'
 		}
 	},
 	mutations: {
-		setUserInfo(state,info){
-			state.userInfo = info ;
+		setUserInfo(state, info) {
+			state.userInfo = info;
 		},
-		setLoginOut(state){
-			
+		setLoginOut(state) {
+
 		},
-		setLogin(state,isLogin){
-			state.hasLogin = isLogin ;
+		setLogin(state, isLogin) {
+			state.hasLogin = isLogin;
 		},
-		setLocation(state,location){
-			state.location = location ;
+		setLocation(state, location) {
+			state.location = location;
 		}
 	},
 	actions: {
@@ -60,11 +60,11 @@ export default new Vuex.Store({
 			state
 		}, params) {
 			const res = await loginApi.login(params);
-			console.log("actions login res",JSON.stringify(res));
-			if (res.status !== 'ok')return;
+			console.log("actions login res", JSON.stringify(res));
+			if (res.status !== 'ok') return;
 			service.addInfo(res.data);
-			commit('setUserInfo',res.data);
-			commit('setLogin',true);
+			commit('setUserInfo', res.data);
+			commit('setLogin', true);
 			return res;
 		},
 		async appLogin({
@@ -73,33 +73,27 @@ export default new Vuex.Store({
 			state
 		}, params) {
 			const res = await loginApi.login(params);
-			if (res.status !== 0)return;
-			commit('setLogin',true);
+			if (res.status !== 0) return;
+			commit('setLogin', true);
 			return res;
 		},
-		startLocate({commit},callback){
-			var amapPlugin = new amap.AMapWX({
-				key: amapKey
-			});
-			amapPlugin.getRegeo({
-				success: (data) => {
-					console.log('location info ',data)
-					if(data instanceof Array){
-						var locationInfo = {
-							latitude:data[0].latitude,
-							longitude:data[0].longitude,
-							name:data[0].name
-						}
-						commit('setLocation',locationInfo);
-						callback();
+		startLocate({
+			commit
+		}, callback) {
+			uni.getLocation({
+				type: 'wgs84',
+				success: function(res) {
+					var locationInfo = {
+						latitude: res.latitude,
+						longitude: res.longitude,
+						name: ''
 					}
-				},
-				fail: e => {
-					uni.showToast({
-						title:"定位失败"
-					})
+					console.log('getLocation ',res);
+					commit('setLocation', locationInfo);
+					callback();
 				}
 			});
+			
 		}
 	}
 })

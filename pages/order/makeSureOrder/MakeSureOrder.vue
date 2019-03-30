@@ -21,7 +21,7 @@
 				 :showArrow="true" @itemCallBack="orderRemarkInput"> </OrderInfoItemAction>
 			</view>
 		</div>
-		<BottomBar @toPay="toPay"></BottomBar>
+		<BottomBar :cart="cart" @toPay="toPay"></BottomBar>
 	</view>
 </template>
 
@@ -52,7 +52,8 @@
 			...mapState({
 				"choosedAddress": state => state.address.choosedAddress,
 				"ticket": state => state.orderConfirm.ticket,
-				"orderRemark": state => state.orderConfirm.orderRemark
+				"orderRemark": state => state.orderConfirm.orderRemark,
+				"cart": state => state.cart.cart
 			}),
 			...mapGetters({
 				cartConfirmInfo: 'cart/cartConfirmInfo',
