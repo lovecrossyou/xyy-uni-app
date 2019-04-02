@@ -75,7 +75,7 @@
 	// import {uniCountdown} from '@dcloudio/uni-ui'
 	import OrderDetailHeader from "../components/OrderDetailHeader.vue"
 	import orderApi from "@/util/apis/order.js"
-	
+
 
 	export default {
 		components: {
@@ -84,24 +84,15 @@
 		data() {
 			return {
 				src: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg",
-				orders: [{
-						products: [1, 2, 3]
-					},
-					{
-						products: [1, 2, 3]
-					},
-					{
-						products: [1, 2, 3]
-					}
-				],
+				orders: [],
 				orderDetailData: {
-					orderStatus:''
+					orderStatus: ''
 				},
 				isLoading: true,
 				food: [],
 				extra: [],
 				desc: {
-					"delivery_company": "蜂鸟快送",
+					"delivery_company": "--",
 					"delivery_type": "",
 					"has_distribution_info": 0,
 					"is_position_valid": 0,
@@ -111,7 +102,6 @@
 		},
 		onLoad(option) {
 			this.orderNo = option.orderNo;
-			console.log("orderNo------",this.orderNo);
 			this.getData();
 		},
 		computed: {
@@ -133,6 +123,10 @@
 				let showMessage = "";
 				switch (type) {
 					case "1":
+						const orderInfo = {
+							orderNo: this.orderNo
+						}
+						this.$store.dispatch('pay/startPay', orderInfo);
 						showMessage = "取消订单"
 						break;
 					case "2":
@@ -146,21 +140,23 @@
 						break;
 
 				}
-				uni.showToast({
-					icon: "none",
-					title: showMessage
-				})
+// 				uni.showToast({
+// 					icon: "none",
+// 					title: showMessage
+// 				})
 			},
 			async getData() {
 				uni.showLoading({
 					title: "加载中..."
 				})
-				const res = await orderApi.requestOrderDetail({orderNo:this.orderNo});
-				if(res && res.status === 'ok'){
-					this.orderDetailData = res.data ;
+				const res = await orderApi.requestOrderDetail({
+					orderNo: this.orderNo
+				});
+				if (res && res.status === 'ok') {
+					this.orderDetailData = res.data;
 					this.isLoading = false;
 				}
-				console.log('requestOrderDetail ',res);
+				// console.log('requestOrderDetail ', res);
 			}
 		}
 	};

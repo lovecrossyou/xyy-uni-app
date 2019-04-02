@@ -11,7 +11,6 @@ const actions = {
 		state
 	}, params) {
 		const res = await mainApi.banners(params);
-		console.log('banners ',res);
 		if (res) {
 			commit('saveBanners', res.data);
 		}

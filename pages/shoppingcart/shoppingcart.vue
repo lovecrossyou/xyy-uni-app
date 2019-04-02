@@ -38,9 +38,6 @@
 		data() {
 
 		},
-		onShow() {
-			console.log('carts ', this.carts)
-		}
 	}
 </script>
 

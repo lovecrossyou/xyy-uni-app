@@ -45,7 +45,7 @@
 			judgementData: Object
 		},
 		onLoad() {
-			console.log(this.judgementData);
+			// console.log(this.judgementData);
 		}
 	}
 </script>

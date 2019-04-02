@@ -107,70 +107,72 @@
 			},
 			async toPay() {
 				var that = this;
-				let params = Object.assign({}, this.cartConfirmInfo);
-				params.deliverAddressId = this.choosedAddress.id;
-				params.needDeliverTime = "尽快送达";
-				//生成订单信息
-				const createRes = await api.shopOrderCreate(params);
-				const userInfo = service.getInfo();
-				// #ifndef MP-WEIXIN
-				//传递支付信息
-				let confirmParams = {
-					// "openId": userInfo.openId,
-					"payChannel": "WeixinPay",
-					"payOrderNo": createRes.data.orderNo
-				}
-				this.setPayInfo(confirmParams); //
-				this.setOrderInfo(createRes.data);
-				uni.redirectTo({
-					url: "/pages/order/makeSureOrder/OrderPay"
-				})
-				return;
-				// #endif
-
-				if (this.choosedAddress.id) {
-					let confirmParams = {
-						"openId": userInfo.openId,
-						"payChannel": "WeixinMiniProgramPay",
-						"payOrderNo": createRes.data.orderNo
-					}
-					const confirmRes = await api.keplerPayConfirm(confirmParams)
-					console.log("confirmRes", JSON.stringify(confirmRes))
-					const payOrderNo = confirmRes.data.payOrderNo;
-					if (confirmRes.status === 'ok' && confirmRes.data.wexinSpec) {
-						const wexinSpec = confirmRes.data.wexinSpec;
-						uni.requestPayment({
-							provider: 'wxpay',
-							timeStamp: wexinSpec.timestamp,
-							nonceStr: wexinSpec.noncestr,
-							package: 'prepay_id=' + wexinSpec.prepay_id,
-							signType: 'MD5',
-							paySign: wexinSpec.sign,
-							success: function(res) {
-								console.log('requestPayment res', res);
-								that.queryResult(confirmParams, () => {
-									uni.redirectTo({
-										url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-									})
-								})
-							},
-							fail: function(err) {
-								console.log('requestPayment err', err);
-								uni.redirectTo({
-									url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-								})
-							}
-						});
-					} else {
-
-					}
-				} else {
+				if (!this.choosedAddress.id) {
 					uni.showToast({
 						title: '请选择地址',
 						icon: 'none',
 						duration: 2000
 					});
+					return;
 				}
+				let params = Object.assign({}, this.cartConfirmInfo);
+				params.deliverAddressId = this.choosedAddress.id;
+				params.needDeliverTime = "尽快送达";
+				//生成订单信息
+				const createRes = await api.shopOrderCreate(params);
+				const orderInfo = createRes.data;
+				this.$store.dispatch('pay/startPay',orderInfo);
+
+// 				const userInfo = service.getInfo();
+// 				// #ifndef MP-WEIXIN
+// 				//传递支付信息
+// 				let confirmParams = {
+// 					"payChannel": "WeixinPay",
+// 					"payOrderNo": orderInfo.orderNo
+// 				}
+// 				this.setPayInfo(confirmParams);
+// 				this.setOrderInfo(orderInfo);
+// 				uni.redirectTo({
+// 					url: "/pages/order/makeSureOrder/OrderPay"
+// 				})
+// 				return;
+// 				// #endif
+// 
+// 				confirmParams = {
+// 					"openId": userInfo.openId,
+// 					"payChannel": "WeixinMiniProgramPay",
+// 					"payOrderNo": orderInfo.orderNo
+// 				}
+// 				const confirmRes = await api.keplerPayConfirm(confirmParams)
+// 				const payOrderNo = confirmRes.data.payOrderNo;
+// 				if (confirmRes.status === 'ok' && confirmRes.data.wexinSpec) {
+// 					const wexinSpec = confirmRes.data.wexinSpec;
+// 					uni.requestPayment({
+// 						provider: 'wxpay',
+// 						timeStamp: wexinSpec.timestamp,
+// 						nonceStr: wexinSpec.noncestr,
+// 						package: 'prepay_id=' + wexinSpec.prepay_id,
+// 						signType: 'MD5',
+// 						paySign: wexinSpec.sign,
+// 						success: function(res) {
+// 							console.log('requestPayment res', res);
+// 							that.queryResult(confirmParams, () => {
+// 								uni.redirectTo({
+// 									url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+// 								})
+// 							})
+// 						},
+// 						fail: function(err) {
+// 							console.log('requestPayment err', err);
+// 							uni.redirectTo({
+// 								url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+// 							})
+// 						}
+// 					});
+// 				} else {
+// 
+// 				}
+
 
 			}
 		},
@@ -200,7 +202,7 @@
 			});
 			this.requestOrderData();
 			this.getDefaultAddress();
-			console.log('cartConfirmInfo', this.cartConfirmInfo);
+			// console.log('cartConfirmInfo', this.cartConfirmInfo);
 		}
 	}
 </script>

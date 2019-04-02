@@ -5,6 +5,7 @@ import address from './modules/address/index.js'
 import user from './modules/user.js'
 import main from "./modules/main.js"
 import shop from "./modules/shop.js"
+import pay from "./modules/pay.js"
 import orderConfirm from './modules/orderConfirm.js'
 import service from "../service.js"
 import amap from '@/common/amap-wx.js'
@@ -24,7 +25,8 @@ export default new Vuex.Store({
 		user,
 		main,
 		shop,
-		orderConfirm
+		orderConfirm,
+		pay
 	},
 	state: {
 		count: 0,
@@ -60,7 +62,6 @@ export default new Vuex.Store({
 			state
 		}, params) {
 			const res = await loginApi.login(params);
-			console.log("actions login res",JSON.stringify(res));
 			if (res.status !== 'ok')return;
 			service.addInfo(res.data);
 			commit('setUserInfo',res.data);
@@ -73,7 +74,7 @@ export default new Vuex.Store({
 			state
 		}, params) {
 			const res = await loginApi.appLogin(params);
-			console.log("actions login res",JSON.stringify(res));
+			// console.log("actions login res",JSON.stringify(res));
 			if (res.status !== 'ok')return;
 			service.addInfo(res.data);
 			commit('setUserInfo',res.data);
@@ -86,7 +87,6 @@ export default new Vuex.Store({
 			});
 			amapPlugin.getRegeo({
 				success: (data) => {
-					console.log('location info ',data)
 					if(data instanceof Array){
 						var locationInfo = {
 							latitude:data[0].latitude,

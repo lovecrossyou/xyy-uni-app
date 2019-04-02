@@ -159,7 +159,7 @@
 				})
 			},
 			goShop(shop) {
-				console.log(shop);
+				// console.log(shop);
 				uni.navigateTo({
 					url: "shop/shop?shopId=" + shop.id
 				})
@@ -188,7 +188,7 @@
 		onShow() {
 			const userInfo = service.getInfo();
 			if (userInfo) {
-				console.log('getInfo ', userInfo)
+				// console.log('getInfo ', userInfo)
 				this.$store.commit("setUserInfo", userInfo);
 				this.$store.commit("setLogin", true);
 			}

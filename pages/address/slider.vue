@@ -138,7 +138,7 @@ export default {
 		},
 		// 单击结算
 		jiesuan(){
-			console.log('跳转到支付详情页面');
+			// console.log('跳转到支付详情页面');
 			uni.navigateTo({
 				url: '/pages/my/zhifu',
 				success: res => {},
@@ -228,7 +228,7 @@ export default {
 	// 单间商品的价格 x 数量
 	filters:{
 		totalprice(price,count) {
-			console.log('当前项',price,count);
+			// console.log('当前项',price,count);
 			return price * count;
 		}
 	},

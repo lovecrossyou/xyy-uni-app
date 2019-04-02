@@ -40,38 +40,8 @@
 				const d = await api.queryResult(params);
 				cb();
 			},
-			async goNext() {
-				var that = this;
-				const params = await api.keplerPayConfirm(this.payInfo);
-				const orderInfo = params.data.wexinSpec;
-				const payOrderNo = this.payInfo.payOrderNo;
-				const payParams = {
-					appid:orderInfo.appid,
-					noncestr: orderInfo.noncestr,
-					package: orderInfo.packageValue,
-					partnerid: orderInfo.partnerid,
-					prepayid: orderInfo.prepay_id,
-					sign: orderInfo.sign,
-					timestamp: orderInfo.timestamp,
-				}
-				
-				console.log('orderInfo ', JSON.stringify(payParams));
-				uni.requestPayment({
-					provider: 'wxpay',
-					orderInfo: JSON.stringify(payParams),
-					success: function(res) {
-						uni.redirectTo({
-								url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-							})
-						console.log('success:' + JSON.stringify(res));
-					},
-					fail: function(err) {
-
-						uni.redirectTo({
-							url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-						})
-					}
-				})
+			goNext() {
+				this.$store.dispatch('pay/startPay',this.orderInfo);
 			}
 		},
 		data() {

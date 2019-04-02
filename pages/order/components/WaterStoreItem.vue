@@ -16,10 +16,6 @@
 		props: {
 			shopProduct:Object
 		},
-		onLoad() {
-			console.log(11111)
-			console.log(this.shopProduct)
-		}
 	}
 </script>
 

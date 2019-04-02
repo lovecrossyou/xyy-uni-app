@@ -25,9 +25,6 @@
 				this.$emit('chooseAddAction');
 			}
 		},
-		onLoad() {
-			console.log('mydata',this.mydata);
-		},
 		props:{
 			mydata:{},
 		}

@@ -20,7 +20,7 @@ const getters = {
 			carts[shopId].push(Object.assign({}, product));
 		}
 		var allKeys = Object.keys(carts);
-		console.log("products",JSON.stringify(products));
+		// console.log("products",JSON.stringify(products));
 		var lists = [];
 		var index = 0;
 		for (var obj in carts) {
@@ -68,7 +68,7 @@ const mutations = {
 			product,
 			shop
 		} = pInfo;
-		console.log('mutations product ###',product);
+		// console.log('mutations product ###',product);
 		var existFlag = false;
 		state.items.forEach(p => {
 			if (product.id === p.id) {
@@ -86,7 +86,7 @@ const mutations = {
 			product,
 			shop
 		} = pInfo;
-		console.log('shop ',shop);
+		// console.log('shop ',shop);
 		state.items.forEach(p => {
 			if (product.id === p.id) {
 				p.count = product.count;

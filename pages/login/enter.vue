@@ -70,10 +70,10 @@
 									encryptedData,
 									iv
 								} = infoRes;
-								console.log("infoRes ", JSON.stringify(infoRes));
-								console.log("res ", JSON.stringify(res));
-
-								console.log("encryptedData ", JSON.stringify(encryptedData));
+// 								console.log("infoRes ", JSON.stringify(infoRes));
+// 								console.log("res ", JSON.stringify(res));
+// 
+// 								console.log("encryptedData ", JSON.stringify(encryptedData));
 								var params = {
 									userPhone: this.userPhone,
 									userCode: this.userCode,
