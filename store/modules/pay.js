@@ -19,10 +19,8 @@ async function wxpay(payInfo) {
 		signType: 'MD5',
 		paySign: wexinSpec.sign,
 		success: function(res) {
-			queryResult(confirmParams, () => {
-				uni.redirectTo({
-					url: "../orderDetail/OrderDetail?orderNo=" + payInfo.payOrderNo
-				})
+			uni.redirectTo({
+				url: "../orderDetail/OrderDetail?orderNo=" + payInfo.payOrderNo
 			})
 		},
 		fail: function(err) {
