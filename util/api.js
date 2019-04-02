@@ -14,9 +14,11 @@ const api = {
 
 	addCart: params => request.post('cart/update', params),
 	cartList: params => request.get('cart/list'),
+	shopCartList: (shopId,msg='') => request.get('cart/shopList?shopId='+shopId),
+
 	createOrder: params => request.post('order/create', params),
 	orderList: params => request.get('order/list'),
-	wxpay : params => request.post('order/wxpay', params),
+	wxpay: params => request.post('order/wxpay', params),
 	addAddress: (params) => request.post("shipping/add", params)
 }
 export default api

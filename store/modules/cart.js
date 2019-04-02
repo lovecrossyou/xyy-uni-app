@@ -67,11 +67,15 @@ const actions = {
 			count:1,
 			productId:product.id
 		});
-		const rest = await api.cartList();
+		const rest = await api.shopCartList(product.shopId,'列表');
 		commit('setCart',rest.data);
 	},
 	async cartList({commit}){
 		const res = await api.cartList();
+		commit('setCart',res.data);
+	},
+	async shopCartList({commit},shopId){
+		const res = await api.shopCartList(shopId, '列表');
 		commit('setCart',res.data);
 	}
 }

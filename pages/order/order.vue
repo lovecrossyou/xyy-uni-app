@@ -63,7 +63,7 @@
 import glanceSlideNavTabBar from '@/components/order/glance-SlideNavTabBar.vue';
 import uniIcon from '@/components/uni-icon/uni-icon.vue';
 import orderApi from '@/util/apis/order.js';
-	import api from '@/util/api.js'
+import api from '@/util/api.js'
 
 import { mapGetters } from 'vuex';
 export default {
@@ -95,7 +95,7 @@ export default {
 		},
 		async requestList() {
 			const listRes = await api.orderList();
-			this.orders = listRes.data;
+			this.orders = listRes.data.list;
 		}
 	},
 	onShow() {

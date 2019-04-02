@@ -36,7 +36,7 @@
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
 				<block v-if="shop">
 					<swiper-item>
-						<goods :products="shop.items"></goods>
+						<goods :products="shop.list"></goods>
 					</swiper-item>
 					<swiper-item>
 						<judgement :judgementData="judgementData"></judgement>
@@ -191,7 +191,7 @@
 			initShop(shopId) {
 				this.setShopId(shopId);
 				this.fetchShopInfo(shopId);
-				this.$store.dispatch('cart/cartList');
+				this.$store.dispatch('cart/shopCartList',shopId);
 			},
 			initJudgement(shopId) {
 				var params = {

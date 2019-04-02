@@ -1,19 +1,19 @@
 <template>
-	<view>
+	<view v-if="products">
 		<view class="goods">
 			<scroll-view scroll-y="true" class="menu-wrapper">
-				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in categories"
-				 v-bind:key="item.id">
+				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in products"
+				 v-bind:key="item.categoryId">
 					<view class="title">
-						{{item}}
+						{{item.categoryName}}
 					</view>
 				</view>
 			</scroll-view>
-			<scroll-view scroll-y="true" class="foods-wrapper">
+			<scroll-view v-if="currentProducts" scroll-y="true" class="foods-wrapper">
 				<view class="title">
-					{{currentTitle}}
+					{{currentProducts.categoryName}}
 				</view>
-				<view class="food-list" v-for="(p,index) in currentProducts" :key='index'>
+				<view class="food-list" v-for="(p,index) in currentProducts.items" :key='index'>
 					<view class="food-item">
 						<view class="icon">
 							<image v-bind:src="p.mainImage" mode="aspectFill"></image>
@@ -63,15 +63,9 @@
 			}
 		},
 		computed: {
-			categories(){
-				return Object.keys(this.products);
-			},
 			currentProducts() {
-				return this.products[this.currentTitle];
+				return this.products[this.currentIndex];
 			},
-			currentTitle() {
-				return this.categories[this.currentIndex];
-			}
 		}
 	}
 </script>
