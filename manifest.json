@@ -88,6 +88,18 @@
                     "xxhdpi" : "unpackage/res/icons/144x144.png",
                     "xxxhdpi" : "unpackage/res/icons/192x192.png"
                 }
+            },
+            "splashscreen" : {
+                "ios" : {
+                    "iphone" : {
+                        "retina40" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/640-1136.png",
+                        "retina40l" : "",
+                        "retina47" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/750-1334.png",
+                        "retina55" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/1242-2208.png",
+                        "iphonex" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/1125-2436.png",
+                        "portrait-896h@2x" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/828-1792.png"
+                    }
+                }
             }
         }
     },
