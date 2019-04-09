@@ -1,79 +1,51 @@
+import Fly from 'flyio/dist/npm/wx'
 import {
-	baseUrl
-} from './env'
+	baseURL
+} from '../request'
+const request = new Fly()
+request.config.baseURL = baseURL
 
-export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
-	type = type.toUpperCase();
-	url = baseUrl + url;
+request.interceptors.request.use((request) => {
+	// request.headers["accessToken"] = service.getToken();
+	// uni.showLoading();
+	return request
+})
 
-	if (type == 'GET') {
-		let dataStr = ''; //数据拼接字符串
-		Object.keys(data).forEach(key => {
-			dataStr += key + '=' + data[key] + '&';
-		})
-
-		if (dataStr !== '') {
-			dataStr = dataStr.substr(0, dataStr.lastIndexOf('&'));
-			url = url + '?' + dataStr;
-		}
-	}
-
-	if (window.fetch && method == 'fetch') {
-		let requestConfig = {
-			credentials: 'include',
-			method: type,
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			mode: "cors",
-			cache: "force-cache"
-		}
-
-		if (type == 'POST') {
-			Object.defineProperty(requestConfig, 'body', {
-				value: JSON.stringify(data)
-			})
-		}
-		
-		try {
-			const response = await fetch(url, requestConfig);
-			const responseJson = await response.json();
-			return responseJson
-		} catch (error) {
-			throw new Error(error)
-		}
+const errorPrompt = (err) => {
+	if (err.data.status === "-999") {		
+		//需要登录权限
+		// goLoginPage();
 	} else {
-		return new Promise((resolve, reject) => {
-			let requestObj;
-			if (window.XMLHttpRequest) {
-				requestObj = new XMLHttpRequest();
-			} else {
-				requestObj = new ActiveXObject;
-			}
+		uni.showToast({
+			title: err.data.message || 'fetch data error.',
+			mask: false,
+			duration: 1500
+		});
+	}
+}
 
-			let sendData = '';
-			if (type == 'POST') {
-				sendData = JSON.stringify(data);
-			}
 
-			requestObj.open(type, url, true);
-			requestObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			requestObj.send(sendData);
+request.interceptors.response.use(
+	(response) => {
+		//只将请求结果的data字段返回
+		// uni.hideLoading()
+		console.log('response ', response.status);
+		return Promise.resolve(response.data);
+	},
+	(err) => {
+		//发生网络错误后会走到这里
+		// uni.hideLoading()
+		errorPrompt(err.response)
+		return Promise.resolve(null);
+	}
+)
 
-			requestObj.onreadystatechange = () => {
-				if (requestObj.readyState == 4) {
-					if (requestObj.status == 200) {
-						let obj = requestObj.response
-						if (typeof obj !== 'object') {
-							obj = JSON.parse(obj);
-						}
-						resolve(obj)
-					} else {
-						reject(requestObj)
-					}
-				}
-			}
-		})
+
+export default async (url = '', data = {}, type = 'GET', method = 'fetch') => {
+	type = type.toUpperCase();
+	if (type == 'GET') {
+		return request.get(url, data);
+	} else {
+		return request.post(url, data);
 	}
 }

@@ -1,108 +1,43 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import cart from './modules/cart.js'
-import address from './modules/address/index.js'
-import user from './modules/user.js'
-import main from "./modules/main.js"
-import shop from "./modules/shop.js"
-import pay from "./modules/pay.js"
-import orderConfirm from './modules/orderConfirm.js'
-import service from "../service.js"
-import amap from '@/common/amap-wx.js'
-
-
-// amapPlugin: null,
-// 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
-const amapKey = '72239a17febe0f534f11c5b1fbd8ce4c' ;
-
-import loginApi from "../util/apis/login.js"
+import mutations from './mutations'
+import actions from './action'
+import getters from './getters'
 
 Vue.use(Vuex)
+
+const state = {
+	latitude: '39.92843', // 当前位置纬度
+	longitude: '116.35073', // 当前位置经度
+	cartList: {}, // 加入购物车的商品列表
+	shopDetail: null, //商家详情信息
+	userInfo: null, //用户信息
+	shopid: null,//商铺id
+	remarkText: null,//可选备注内容
+	inputText: '',//输入备注内容
+	invoice: false,//开发票
+	newAddress: [], //确认订单页新的地址
+	searchAddress: null,//搜索并选择的地址
+	geohash: '31.22299,121.36025',//地址geohash值
+	choosedAddress: null,//选择地址
+	addressIndex: null,//选择地址的索引值
+	needValidation: null,//确认订单时是否需要验证
+	cartId: null, //购物车id
+	sig: null,//购物车sig
+	orderParam: null,//订单的参数
+	orderMessage: null, //订单返回的信息
+	orderDetail: null, //订单详情
+	login: true,//是否登录
+	imgPath:null,//头像地址
+	removeAddress:[],//移除地址
+	addAddress:'',		//新增地址
+	question: null,//问题详情
+	cartPrice: null, //会员卡价格
+}
+
 export default new Vuex.Store({
-	modules: {
-		cart,
-		address,
-		user,
-		main,
-		shop,
-		orderConfirm,
-		pay
-	},
-	state: {
-		count: 0,
-		hasLogin: false,
-		forcedLogin: true,
-		banners: [],
-		shops: [],
-		userInfo:null,
-		location:{
-			latitude:'',
-			longitude:'',
-			name:'定位中...'
-		}
-	},
-	mutations: {
-		setUserInfo(state,info){
-			state.userInfo = info ;
-		},
-		setLoginOut(state){
-			
-		},
-		setLogin(state,isLogin){
-			state.hasLogin = isLogin ;
-		},
-		setLocation(state,location){
-			state.location = location ;
-		}
-	},
-	actions: {
-		async login({
-			commit,
-			dispatch,
-			state
-		}, params) {
-			const res = await loginApi.login(params);
-			if (res.status !== 'ok')return;
-			service.addInfo(res.data);
-			commit('setUserInfo',res.data);
-			commit('setLogin',true);
-			return res;
-		},
-		async appLogin({
-			commit,
-			dispatch,
-			state
-		}, params) {
-			const res = await loginApi.appLogin(params);
-			// console.log("actions login res",JSON.stringify(res));
-			if (res.status !== 'ok')return;
-			service.addInfo(res.data);
-			commit('setUserInfo',res.data);
-			commit('setLogin',true);
-			return res;
-		},
-		startLocate({commit},callback){
-			var amapPlugin = new amap.AMapWX({
-				key: amapKey
-			});
-			amapPlugin.getRegeo({
-				success: (data) => {
-					if(data instanceof Array){
-						var locationInfo = {
-							latitude:data[0].latitude,
-							longitude:data[0].longitude,
-							name:data[0].name
-						}
-						commit('setLocation',locationInfo);
-						callback();
-					}
-				},
-				fail: e => {
-					uni.showToast({
-						title:"定位失败"
-					})
-				}
-			});
-		}
-	}
+	state,
+	getters,
+	actions,
+	mutations,
 })

@@ -2,7 +2,7 @@
 	<view>
 		<view class="goods">
 			<scroll-view scroll-y="true" class="menu-wrapper">
-				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in products"
+				<view class="menu-item" @click="selectMenu(index)" :class="{'current':currentIndex === index}" v-for="(item,index) in menuList"
 				 v-bind:key="item.id">
 					<view class="title">
 						{{item.name}}
@@ -20,17 +20,17 @@
 						</view>
 						<view class="content">
 							<view class="name">
-								{{p.headName}}
+								{{p.name}}
 							</view>
 							<view class="desc">
-								月售{{p.saleAmount}} 好评95%
+								月售{{p.month_sales}} 好评95%
 							</view>
-							<view class="price">
+							<!-- <view class="price">
 								¥{{p.price/100}}
-							</view>
+							</view> -->
 						</view>
 						<view class="cartcontrol-wrapper">
-							<cartcontrol :food="p"></cartcontrol>
+							<cartcontrol :shopId='shopId' :foods="p"></cartcontrol>
 						</view>
 					</view>
 				</view>
@@ -43,9 +43,7 @@
 	import cartcontrol from "./cartcontrol/cartcontrol.vue"
 
 	export default {
-		props: {
-			products: Array
-		},
+		props: ['menuList','shopId'],
 		components: {
 			cartcontrol
 		},
@@ -65,12 +63,12 @@
 		},
 		computed: {
 			currentProducts: function() {
-				if(this.products.length==0)return [];
-				return this.products[this.currentIndex].products;
+				if(this.menuList.length==0)return [];
+				return this.menuList[this.currentIndex].foods;
 			},
 			currentTitle: function() {
-				if(this.products.length==0)return '';
-				return this.products[this.currentIndex].name;
+				if(this.menuList.length==0)return '';
+				return this.menuList[this.currentIndex].name;
 			}
 		}
 	}

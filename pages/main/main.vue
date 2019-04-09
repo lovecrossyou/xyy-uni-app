@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="search_container">
 			<view class="address-wrapper">
-				<view class="address">{{location.name}}</view>
+				<view class="address">粮科大厦</view>
 				<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
 			</view>
 			<view class="search-wrapper" @click="goSearch">
@@ -66,25 +66,24 @@
 				<image src="../../static/main/sort_sift_icon.png"></image>
 			</view>
 		</view>
-		<view class="shop-info-wrapper" v-for="(shop, index) in shops" :key="index">
-
+		<view class="shop-info-wrapper" v-for="(shop, index) in shopListArr" :key="index">
 			<view class="shop-info" @click="goShop(shop)">
-				<image :src="shop.imageUrl" class="shop-img"></image>
+				<image :src="shop.image_path" class="shop-img"></image>
 				<view class="shop-info-middle">
 					<view class="shop-name">{{shop.name}}</view>
 					<view class="shop-details">
 						<view class="shop-score">
-							<uniRate disabled="true" value="3.5" size="12"></uniRate>
-							<view class="shop-score-text">{{shop.score}}</view>
+							<uniRate disabled="true" :value="shop.rating" size="12"></uniRate>
+							<view class="shop-score-text">{{shop.rating}}</view>
 						</view>
-						<view class="shop-sales-volume">月售{{shop.soldAmount}}</view>
+						<view class="shop-sales-volume">月售{{shop.recent_order_num}}</view>
 					</view>
 					<view class="shop-middle-bottom">
 						<view class="distribution-num">
-							¥{{shop.miniNumOrderAmount/100}}起送 | 免费配送
+							¥{{shop.float_minimum_order_amount}}起送/配送费约¥{{shop.float_delivery_fee}}
 						</view>
 						<view class="distribution-num-r">
-							{{shop.distance}}m | {{shop.deliveryExpectTime}}
+							{{shop.distance}} | {{shop.order_lead_time}}
 						</view>
 					</view>
 
@@ -105,6 +104,12 @@
 	import service from "../../service.js"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import uniRate from "@/components/uni-rate/uni-rate.vue";
+	import {
+		shopList,
+		msiteAddress,
+		msiteFoodTypes,
+		cityGuess
+	} from "@/util/service/getData.js"
 
 	export default {
 		components: {
@@ -113,15 +118,19 @@
 		},
 		data() {
 			return {
-				"bannerIcon": 'http://qnimage.xiteng.com/home_banner.png'
+				banners:[],
+				offset: 0, // 批次加载店铺列表，每次加载20个 limit = 20
+				shopListArr: [], // 店铺列表数据
+				preventRepeatReuqest: false, //到达底部加载数据，防止重复加载
 			}
 		},
 		methods: {
-			...mapActions({
-				fetchBanners: 'main/banners', // 将 `this.fetchShops()` 映射为 `this.$store.dispatch('fetchShops')`
-				fetchShops: 'main/nearByShops'
-			}),
-			getNearShops() {
+			async initData() {
+				//获取数据
+				let res = await shopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId);
+				this.shopListArr = res;
+			},
+			async getNearShops() {
 				const params = {
 					latitude: this.location.latitude,
 					longitude: this.location.longitude,
@@ -164,49 +173,25 @@
 					url: "shop/shop?shopId=" + shop.id
 				})
 			},
-			
+
 			getRegeo(cb) {
 				this.$store.dispatch('startLocate', cb);
 			},
-			
-			waterDetection(){
+
+			waterDetection() {
 				uni.navigateTo({
-					url:"../waterDetection/waterDetection"
+					url: "../waterDetection/waterDetection"
 				})
 			}
-				
+
 		},
 		computed: {
-			...mapState(['forcedLogin', 'hasLogin', 'userName', 'location']),
-			banners() {
-				return this.$store.state.main.banners
-			},
-			shops() {
-				return this.$store.state.main.shops
-			}
+			...mapState([
+				'latitude', 'longitude'
+			]),
 		},
 		onShow() {
-			const userInfo = service.getInfo();
-			if (userInfo) {
-				// console.log('getInfo ', userInfo)
-				this.$store.commit("setUserInfo", userInfo);
-				this.$store.commit("setLogin", true);
-			}
-			if (!this.hasLogin) {
-				if (this.forcedLogin) {
-					uni.reLaunch({
-						url: '../login/enter'
-					});
-				} else {
-					uni.navigateTo({
-						url: '../login/enter'
-					});
-				}
-			}
-			this.getRegeo(() => {
-				this.getBanner();
-				this.getNearShops();
-			});
+			this.initData();
 		}
 	}
 </script>

@@ -1,17 +1,17 @@
 <template>
-	<view v-if="shop"  class="content">
-		<view  class="shop-header">
+	<view   class="content">
+		<view v-if="shopDetailData" class="shop-header">
 			<view class="bg"></view>
 			<view class="left">
 				<view class="shop-logo">
-					<image v-bind:src="shop.info.imageUrl" mode="aspectFill"></image>
+					<image v-bind:src="shopDetailData.image_path" mode="aspectFill"></image>
 				</view>
 				<view class="shop-info">
-					<block v-if="shop">
-						<view class="name">{{shop.info.name||""}}</view>
+					<block>
+						<view class="name">{{shopDetailData.name||""}}</view>
 						<view class="score-wrapper">
-							<view class="score">评价{{shop.info.score}}</view>
-							<view class="saleinfo">月售{{shop.info.soldAmount}}单</view>
+							<view class="score">评价{{shopDetailData.rating}}</view>
+							<view class="saleinfo">月售{{shopDetailData.recent_order_num}}单</view>
 							<!-- <view class="time">30分钟送达</view> -->
 						</view>
 					</block>
@@ -34,28 +34,29 @@
 				</view>
 			</view>
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
-				<block v-if="shop">
+				<block v-if="ratingScoresData">
 					<swiper-item>
-						<goods :products="shop.products"></goods>
+						<goods :menuList="menuList"></goods>
 					</swiper-item>
 					<swiper-item>
-						<judgement :judgementData="judgementData"></judgement>
+						<judgement :ratingScoresData="ratingScoresData" :ratingList="ratingList"></judgement>
 					</swiper-item>
 					<swiper-item>
-						<shop-info :shopInfo="shop.info"></shop-info>
+						<shop-info :shopId="shopId" :shopInfo="shopDetailData"></shop-info>
 					</swiper-item>
 				</block>
 			</swiper>
 		</view>
+		
 		<view class="footer">
 			<view class="cart-wrapper" @click="popMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
 				<view class="totalPrice">
-					¥{{cartTotalPrice/100}}
+					¥100.0
 				</view>
 			</view>
 			<view class="confirm-wrapper">
-				<view class="limit" v-bind:class="cartProducts.length==0 ?'gray-limit':''" @click="toConfirmOrder">
+				<view class="limit" v-bind:class="cartFoodList.length==0 ?'gray-limit':''" @click="toConfirmOrder">
 					去结算
 				</view>
 			</view>
@@ -72,7 +73,7 @@
 				</view>
 			</view>
 			<scroll-view scroll-y="true" class="cart-list-items">
-				<block v-for="(product,index) in cartProducts" :key="index">
+				<block v-for="(product,index) in cartFoodList" :key="index">
 					<view class="cart-list-item">
 						<view class="p-name">
 							{{product.headName}}
@@ -101,6 +102,7 @@
 		mapMutations,
 		mapState
 	} from 'vuex'
+    import {msiteAddress, shopDetails, foodMenu, getRatingList, ratingScores, ratingTags} from '@/util/service/getData.js'
 
 
 	export default {
@@ -121,7 +123,42 @@
 				],
 				activeTabIndex: 0,
 				animationData: {},
-				showMenu: false
+				showMenu: false,
+				
+				geohash: '', //geohash位置信息
+                shopId: null, //商店id值
+                showLoading: true, //显示加载动画
+                changeShowType: 'food',//切换显示商品或者评价
+                shopDetailData: null, //商铺详情
+                showActivities: false, //是否显示活动详情
+                menuList: [], //食品列表
+                menuIndex: 0, //已选菜单索引值，默认为0
+                menuIndexChange: true,//解决选中index时，scroll监听事件重复判断设置index的bug
+                shopListTop: [], //商品列表的高度集合
+                TitleDetailIndex: null, //点击展示列表头部详情
+                categoryNum: [], //商品类型右上角已加入购物车的数量
+                totalPrice: 0, //总共价格
+                cartFoodList: [], //购物车商品列表
+                showCartList: false,//显示购物车列表
+                receiveInCart: false, //购物车组件下落的圆点是否到达目标位置
+                ratingList: null, //评价列表
+                ratingOffset: 0, //评价获取数据offset值
+                ratingScoresData: null, //评价总体分数
+                ratingTagsList: null, //评价分类列表
+                ratingTageIndex: 0, //评价分类索引
+                preventRepeatRequest: false,// 防止多次触发数据请求
+                ratingTagName: '',//评论的类型
+                loadRatings: false, //加载更多评论是显示加载组件
+                foodScroll: null,  //食品列表scroll
+                showSpecs: false,//控制显示食品规格
+                specsIndex: 0, //当前选中的规格索引值
+                choosedFoods: null, //当前选中视频数据
+                showDeleteTip: false, //多规格商品点击减按钮，弹出提示框
+                showMoveDot: [], //控制下落的小圆点显示隐藏
+                windowHeight: null, //屏幕的高度
+                elLeft: 0, //当前点击加按钮在网页中的绝对top值
+                elBottom: 0, //当前点击加按钮在网页中的绝对left值
+                ratingScroll: null, //评论页Scroll
 			};
 		},
 		components: {
@@ -131,27 +168,71 @@
 			cartcontrol
 		},
 		computed: {
-			...mapGetters({
-				cartTotalPrice: 'cart/cartTotalPrice',
-				cartProducts: 'cart/cartProducts',
-			}),
-			...mapState({
-				judgementData: state => state.shop.comments,
-				shop: state => state.shop.shopInfo
-			}),
+			...mapState([
+                'latitude','longitude','cartList'
+            ]),
 			cart_icon() {
-				if (this.cartProducts.length === 0) return "../../../static/shop/cart.png"
+				// if (this.cartFoodList.length === 0) return "../../../static/shop/cart.png"
 				return "../../../static/cart/cart.png"
-			}
+			},
+//             promotionInfo: function (){
+//                 return this.shopDetailData.promotion_info || '欢迎光临，用餐高峰期请提前下单，谢谢。'
+//             },
+            //配送费
+            deliveryFee: function () {
+                if (this.shopDetailData) {
+                    return this.shopDetailData.float_delivery_fee;
+                }else{
+                    return null;
+                }
+            },
+            //还差多少元起送，为负数时显示去结算按钮
+            minimumOrderAmount: function () {
+                if (this.shopDetailData) {
+                    return this.shopDetailData.float_minimum_order_amount - this.totalPrice;
+                }else{
+                    return null;
+                }
+            },
+            //当前商店购物信息
+            shopCart: function (){
+                return {...this.cartList[this.shopId]};
+            },
+            //购物车中总共商品的数量
+            totalNum: function (){
+                let num = 0;
+                this.cartFoodList.forEach(item => {
+                    num += item.num
+                })
+                return num
+            },
 		},
 		methods: {
-			...mapActions({
-				"fetchShopInfo": "shop/fetchShopInfo",
-				"fetchComments": "shop/fetchComments",
-			}),
-			...mapMutations({
-				"setShopId":"cart/setShopId"
-			}),
+			...mapMutations([
+                'RECORD_ADDRESS','ADD_CART','REDUCE_CART','INIT_BUYCART','CLEAR_CART','RECORD_SHOPDETAIL'
+            ]),
+            //初始化时获取基本数据
+            async initData(){
+                if (!this.latitude) {
+                    //获取位置信息
+                    let res = await msiteAddress(this.geohash);
+                    // 记录当前经度纬度进入vuex
+                    // this.RECORD_ADDRESS(res);
+                }
+                //获取商铺信息
+                this.shopDetailData = await shopDetails(this.shopId, this.latitude, this.longitude);
+                //获取商铺食品列表
+                this.menuList = await foodMenu(this.shopId);
+                //评论列表
+                this.ratingList = await getRatingList(this.shopId, this.ratingOffset);
+                //商铺评论详情
+                this.ratingScoresData = await ratingScores(this.shopId);
+                //评论Tag列表
+                this.ratingTagsList = await ratingTags(this.shopId);
+                this.RECORD_SHOPDETAIL(this.shopDetailData)
+                //隐藏加载动画
+                // this.hideLoading();
+            },
 			toConfirmOrder() {
 				if (this.cartProducts.length === 0)return;
 				uni.navigateTo({
@@ -184,24 +265,10 @@
 			swiperChange(e) {
 				this.activeTabIndex = e.detail.current;
 			},
-			initShop(shopId) {
-				this.setShopId(shopId);
-				this.fetchShopInfo(shopId);
-			},
-			initJudgement(shopId) {
-				var params = {
-					page: 1,
-					pageSize: 15,
-					shopId: shopId
-				}
-				this.fetchComments(params);
-			}
 		},
 		onLoad: function(option) {
-			console.log('shopId ', option)
-			var shopId = option.shopId;
-			this.initShop(shopId)
-			this.initJudgement(shopId)
+			this.shopId  = option.shopId;
+			this.initData();
 		}
 	}
 </script>

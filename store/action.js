@@ -1,11 +1,11 @@
 import {
 	getUser,
 	getAddressList
-} from '@/util/service/getData.js';
+} from '@/util/service/getData'
 import {
 	GET_USERINFO,
 	SAVE_ADDRESS
-} from './mutation-types.js';
+} from './mutation-types.js'
 
 export default {
 
@@ -26,11 +26,4 @@ export default {
 		let addres = await getAddressList(state.userInfo.user_id);
 		commit(SAVE_ADDRESS, addres);	
 	},
-	toPay({
-		commit,
-		state
-	}){
-		
-		
-	}
 }

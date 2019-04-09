@@ -1,7 +1,8 @@
 import Fly from 'flyio/dist/npm/wx'
 import service from "../service"
 const request = new Fly()
-const baseURL = 'https://api.kuaimayoupin.com/'
+// const baseURL = 'https://api.kuaimayoupin.com/'
+export const baseURL = 'http://localhost:8000/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
