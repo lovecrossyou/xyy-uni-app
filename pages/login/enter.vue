@@ -11,7 +11,7 @@
 			</view>
 			<view class="tel_area_wrapper">
 				<input type="number" v-model="codeNumber" placeholder="请输入验证码" placeholder-style="color:#7CA7D2;" />
-				<div class="img_change_img">
+				<div class="img_change_img" @click="getCaptchaCode">
 					<img style="width:80px;height:40px" v-show="captchaCodeImg" :src="captchaCodeImg">
 				</div>
 			</view>

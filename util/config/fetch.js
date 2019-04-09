@@ -8,6 +8,10 @@ request.config.baseURL = baseURL
 request.interceptors.request.use((request) => {
 	// request.headers["accessToken"] = service.getToken();
 	// uni.showLoading();
+	let cookie = uni.getStorageSync('cookieKey');
+	if (cookie) {
+		request.headers['Cookie'] = cookie;
+	}
 	return request
 })
 
@@ -29,7 +33,10 @@ request.interceptors.response.use(
 	(response) => {
 		//只将请求结果的data字段返回
 		// uni.hideLoading()
-		console.log('response ', response.status);
+		if (response && response.headers && response.headers['set-cookie']) {
+			uni.setStorageSync('cookieKey', response.headers['set-cookie'][0]); //保存Cookie到Storage
+		}
+		console.log('response headers', response.headers);
 		return Promise.resolve(response.data);
 	},
 	(err) => {
