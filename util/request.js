@@ -5,7 +5,6 @@ const baseURL = 'https://api.kuaimayoupin.com/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
-	// console.log("err-----",JSON.stringify(err))
 	if (err.data.status === "-999") {		
 		//需要登录权限
 		goLoginPage();
@@ -26,7 +25,7 @@ request.interceptors.request.use((request) => {
 
 const goLoginPage = () => {
 	uni.redirectTo({
-		url: '/pages/login/enter'
+		url: '/pages/login/login'
 	});
 }
 
@@ -34,6 +33,7 @@ request.interceptors.response.use(
 	(response) => {
 		//只将请求结果的data字段返回
 		uni.hideLoading()
+		console.log('response ',response.status);
 		if (!(response.data.status === "ok")) {
 			if (response.data.status === "-999") {
 				//需要登录权限
