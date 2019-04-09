@@ -1,9 +1,9 @@
 <template>
 	<view class="control-wrapper">
-		<image v-show="foods.count>0" class="icon" :src="minus_icon" mode="aspectFit" @click.stop.prevent="decreaseCart"></image>
+		<!-- <image v-show="foods.count>0" class="icon" :src="minus_icon" mode="aspectFit" @click.stop.prevent="decreaseCart"></image>
 		<view v-show="foods.count > 0" class="number">
 			{{foods.count}}
-		</view>
+		</view> -->
 		<image class="icon" :src="add_icon" mode="aspectFit" @click.stop.prevent="addCart(foods.category_id, foods.item_id, foods.specfoods[0].food_id, foods.specfoods[0].name, foods.specfoods[0].price, '', foods.specfoods[0].packing_fee, foods.specfoods[0].sku_id, foods.specfoods[0].stock)"></image>
 	</view>
 </template>
@@ -32,11 +32,11 @@
 				'ADD_CART', 'REDUCE_CART',
 			]),
 			addCart(category_id, item_id, food_id, name, price, specs, packing_fee, sku_id, stock) {
-				if (!this.foods.count) {
-					Vue.set(this.foods, 'count', 1); // 向对象/数组添加是非响应的，强制响应
-				} else {
-					this.foods.count++;
-				};
+// 				if (!this.foods.count) {
+// 					Vue.set(this.foods, 'count', 1); // 向对象/数组添加是非响应的，强制响应
+// 				} else {
+// 					this.foods.count++;
+// 				};
 				this.ADD_CART({
 					shopid: this.shopId,
 					category_id,
@@ -49,20 +49,15 @@
 					sku_id,
 					stock
 				});
-
-				// 				this.$store.commit('cart/addCart', {
-				// 					shop: this.shopInfo,
-				// 					product: this.food
-				// 				});
 			},
 			decreaseCart() {
-				if (this.food.count) {
-					this.food.count--;
+				if (this.foods.count) {
+					this.foods.count--;
 				}
-				this.$store.commit('cart/decrease', {
-					shop: this.shopInfo,
-					product: this.food
-				});
+// 				this.$store.commit('cart/decrease', {
+// 					shop: this.shopInfo,
+// 					product: this.food
+// 				});
 			}
 		}
 

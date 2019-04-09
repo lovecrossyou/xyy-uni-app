@@ -1,5 +1,5 @@
 <template>
-	<view   class="content">
+	<view class="content">
 		<view v-if="shopDetailData" class="shop-header">
 			<view class="bg"></view>
 			<view class="left">
@@ -36,23 +36,23 @@
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
 				<block v-if="ratingScoresData">
 					<swiper-item>
-						<goods :menuList="menuList"></goods>
+						<goods :shopId="shopId" :menuList="menuList"></goods>
 					</swiper-item>
 					<swiper-item>
 						<judgement :ratingScoresData="ratingScoresData" :ratingList="ratingList"></judgement>
 					</swiper-item>
 					<swiper-item>
-						<shop-info :shopId="shopId" :shopInfo="shopDetailData"></shop-info>
+						<shop-info  :shopInfo="shopDetailData"></shop-info>
 					</swiper-item>
 				</block>
 			</swiper>
 		</view>
-		
+
 		<view class="footer">
 			<view class="cart-wrapper" @click="popMenu">
 				<image v-bind:src="cart_icon" mode="aspectFit"></image>
 				<view class="totalPrice">
-					¥100.0
+					¥{{totalPrice}}
 				</view>
 			</view>
 			<view class="confirm-wrapper">
@@ -76,13 +76,13 @@
 				<block v-for="(product,index) in cartFoodList" :key="index">
 					<view class="cart-list-item">
 						<view class="p-name">
-							{{product.headName}}
+							{{product.name}}
 						</view>
 						<view class="right">
 							<view class="price">
-								¥{{product.price/100}}
+								¥{{product.price}}
 							</view>
-							<cartcontrol :food="product" @add="addFood"></cartcontrol>
+							<cartcontrol :shopId='shopId' :foods="product" @add="addFood"></cartcontrol>
 						</view>
 					</view>
 				</block>
@@ -102,7 +102,14 @@
 		mapMutations,
 		mapState
 	} from 'vuex'
-    import {msiteAddress, shopDetails, foodMenu, getRatingList, ratingScores, ratingTags} from '@/util/service/getData.js'
+	import {
+		msiteAddress,
+		shopDetails,
+		foodMenu,
+		getRatingList,
+		ratingScores,
+		ratingTags
+	} from '@/util/service/getData.js'
 
 
 	export default {
@@ -124,41 +131,41 @@
 				activeTabIndex: 0,
 				animationData: {},
 				showMenu: false,
-				
+
 				geohash: '', //geohash位置信息
-                shopId: null, //商店id值
-                showLoading: true, //显示加载动画
-                changeShowType: 'food',//切换显示商品或者评价
-                shopDetailData: null, //商铺详情
-                showActivities: false, //是否显示活动详情
-                menuList: [], //食品列表
-                menuIndex: 0, //已选菜单索引值，默认为0
-                menuIndexChange: true,//解决选中index时，scroll监听事件重复判断设置index的bug
-                shopListTop: [], //商品列表的高度集合
-                TitleDetailIndex: null, //点击展示列表头部详情
-                categoryNum: [], //商品类型右上角已加入购物车的数量
-                totalPrice: 0, //总共价格
-                cartFoodList: [], //购物车商品列表
-                showCartList: false,//显示购物车列表
-                receiveInCart: false, //购物车组件下落的圆点是否到达目标位置
-                ratingList: null, //评价列表
-                ratingOffset: 0, //评价获取数据offset值
-                ratingScoresData: null, //评价总体分数
-                ratingTagsList: null, //评价分类列表
-                ratingTageIndex: 0, //评价分类索引
-                preventRepeatRequest: false,// 防止多次触发数据请求
-                ratingTagName: '',//评论的类型
-                loadRatings: false, //加载更多评论是显示加载组件
-                foodScroll: null,  //食品列表scroll
-                showSpecs: false,//控制显示食品规格
-                specsIndex: 0, //当前选中的规格索引值
-                choosedFoods: null, //当前选中视频数据
-                showDeleteTip: false, //多规格商品点击减按钮，弹出提示框
-                showMoveDot: [], //控制下落的小圆点显示隐藏
-                windowHeight: null, //屏幕的高度
-                elLeft: 0, //当前点击加按钮在网页中的绝对top值
-                elBottom: 0, //当前点击加按钮在网页中的绝对left值
-                ratingScroll: null, //评论页Scroll
+				shopId: null, //商店id值
+				showLoading: true, //显示加载动画
+				changeShowType: 'food', //切换显示商品或者评价
+				shopDetailData: null, //商铺详情
+				showActivities: false, //是否显示活动详情
+				menuList: [], //食品列表
+				menuIndex: 0, //已选菜单索引值，默认为0
+				menuIndexChange: true, //解决选中index时，scroll监听事件重复判断设置index的bug
+				shopListTop: [], //商品列表的高度集合
+				TitleDetailIndex: null, //点击展示列表头部详情
+				categoryNum: [], //商品类型右上角已加入购物车的数量
+				totalPrice: 0, //总共价格
+				cartFoodList: [], //购物车商品列表
+				showCartList: false, //显示购物车列表
+				receiveInCart: false, //购物车组件下落的圆点是否到达目标位置
+				ratingList: null, //评价列表
+				ratingOffset: 0, //评价获取数据offset值
+				ratingScoresData: null, //评价总体分数
+				ratingTagsList: null, //评价分类列表
+				ratingTageIndex: 0, //评价分类索引
+				preventRepeatRequest: false, // 防止多次触发数据请求
+				ratingTagName: '', //评论的类型
+				loadRatings: false, //加载更多评论是显示加载组件
+				foodScroll: null, //食品列表scroll
+				showSpecs: false, //控制显示食品规格
+				specsIndex: 0, //当前选中的规格索引值
+				choosedFoods: null, //当前选中视频数据
+				showDeleteTip: false, //多规格商品点击减按钮，弹出提示框
+				showMoveDot: [], //控制下落的小圆点显示隐藏
+				windowHeight: null, //屏幕的高度
+				elLeft: 0, //当前点击加按钮在网页中的绝对top值
+				elBottom: 0, //当前点击加按钮在网页中的绝对left值
+				ratingScroll: null, //评论页Scroll
 			};
 		},
 		components: {
@@ -167,74 +174,88 @@
 			goods,
 			cartcontrol
 		},
+		watch: {
+			shopCart: function(value) {
+				this.initCategoryNum();
+			},
+			//购物车列表发生变化，没有商铺时，隐藏
+			cartFoodList: function(value) {
+				if (!value.length) {
+					this.showCartList = false;
+				}
+			},
+		},
 		computed: {
 			...mapState([
-                'latitude','longitude','cartList'
-            ]),
+				'latitude', 'longitude', 'cartList'
+			]),
 			cart_icon() {
 				// if (this.cartFoodList.length === 0) return "../../../static/shop/cart.png"
 				return "../../../static/cart/cart.png"
 			},
-//             promotionInfo: function (){
-//                 return this.shopDetailData.promotion_info || '欢迎光临，用餐高峰期请提前下单，谢谢。'
-//             },
-            //配送费
-            deliveryFee: function () {
-                if (this.shopDetailData) {
-                    return this.shopDetailData.float_delivery_fee;
-                }else{
-                    return null;
-                }
-            },
-            //还差多少元起送，为负数时显示去结算按钮
-            minimumOrderAmount: function () {
-                if (this.shopDetailData) {
-                    return this.shopDetailData.float_minimum_order_amount - this.totalPrice;
-                }else{
-                    return null;
-                }
-            },
-            //当前商店购物信息
-            shopCart: function (){
-                return {...this.cartList[this.shopId]};
-            },
-            //购物车中总共商品的数量
-            totalNum: function (){
-                let num = 0;
-                this.cartFoodList.forEach(item => {
-                    num += item.num
-                })
-                return num
-            },
+			//             promotionInfo: function (){
+			//                 return this.shopDetailData.promotion_info || '欢迎光临，用餐高峰期请提前下单，谢谢。'
+			//             },
+			//配送费
+			deliveryFee: function() {
+				if (this.shopDetailData) {
+					return this.shopDetailData.float_delivery_fee;
+				} else {
+					return null;
+				}
+			},
+			//还差多少元起送，为负数时显示去结算按钮
+			minimumOrderAmount: function() {
+				if (this.shopDetailData) {
+					return this.shopDetailData.float_minimum_order_amount - this.totalPrice;
+				} else {
+					return null;
+				}
+			},
+			//当前商店购物信息
+			shopCart: function() {
+				return { ...this.cartList[this.shopId]
+				};
+			},
+			//购物车中总共商品的数量
+			totalNum: function() {
+				let num = 0;
+				this.cartFoodList.forEach(item => {
+					num += item.num
+				})
+				return num
+			},
 		},
 		methods: {
 			...mapMutations([
-                'RECORD_ADDRESS','ADD_CART','REDUCE_CART','INIT_BUYCART','CLEAR_CART','RECORD_SHOPDETAIL'
-            ]),
-            //初始化时获取基本数据
-            async initData(){
-                if (!this.latitude) {
-                    //获取位置信息
-                    let res = await msiteAddress(this.geohash);
-                    // 记录当前经度纬度进入vuex
-                    // this.RECORD_ADDRESS(res);
-                }
-                //获取商铺信息
-                this.shopDetailData = await shopDetails(this.shopId, this.latitude, this.longitude);
-                //获取商铺食品列表
-                this.menuList = await foodMenu(this.shopId);
-                //评论列表
-                this.ratingList = await getRatingList(this.shopId, this.ratingOffset);
-                //商铺评论详情
-                this.ratingScoresData = await ratingScores(this.shopId);
-                //评论Tag列表
-                this.ratingTagsList = await ratingTags(this.shopId);
-                this.RECORD_SHOPDETAIL(this.shopDetailData)
-                //隐藏加载动画
-                // this.hideLoading();
-            },
+				'RECORD_ADDRESS', 'ADD_CART', 'REDUCE_CART', 'INIT_BUYCART', 'CLEAR_CART', 'RECORD_SHOPDETAIL'
+			]),
+			//初始化时获取基本数据
+			async initData() {
+				if (!this.latitude) {
+					//获取位置信息
+					let res = await msiteAddress(this.geohash);
+					// 记录当前经度纬度进入vuex
+					// this.RECORD_ADDRESS(res);
+				}
+				//获取商铺信息
+				this.shopDetailData = await shopDetails(this.shopId, this.latitude, this.longitude);
+				//获取商铺食品列表
+				this.menuList = await foodMenu(this.shopId);
+				//评论列表
+				this.ratingList = await getRatingList(this.shopId, this.ratingOffset);
+				//商铺评论详情
+				this.ratingScoresData = await ratingScores(this.shopId);
+				//评论Tag列表
+				this.ratingTagsList = await ratingTags(this.shopId);
+				this.RECORD_SHOPDETAIL(this.shopDetailData);
+
+				this.initCategoryNum();
+				//隐藏加载动画
+				// this.hideLoading();
+			},
 			toConfirmOrder() {
-				if (this.cartProducts.length === 0)return;
+				if (this.cartProducts.length === 0) return;
 				uni.navigateTo({
 					url: '../../order/makeSureOrder/MakeSureOrder'
 				})
@@ -265,9 +286,55 @@
 			swiperChange(e) {
 				this.activeTabIndex = e.detail.current;
 			},
+
+			initCategoryNum() {
+				let newArr = [];
+				let cartFoodNum = 0;
+				this.totalPrice = 0;
+				this.cartFoodList = [];
+				this.menuList.forEach((item, index) => {
+					if (this.shopCart && this.shopCart[item.foods[0].category_id]) {
+						let num = 0;
+						Object.keys(this.shopCart[item.foods[0].category_id]).forEach(itemid => {
+							Object.keys(this.shopCart[item.foods[0].category_id][itemid]).forEach(foodid => {
+								let foodItem = this.shopCart[item.foods[0].category_id][itemid][foodid];
+								num += foodItem.num;
+								if (item.type == 1) {
+									this.totalPrice += foodItem.num * foodItem.price;
+									if (foodItem.num > 0) {
+										this.cartFoodList[cartFoodNum] = {};
+										this.cartFoodList[cartFoodNum].category_id = item.foods[0].category_id;
+										this.cartFoodList[cartFoodNum].item_id = itemid;
+										this.cartFoodList[cartFoodNum].food_id = foodid;
+										this.cartFoodList[cartFoodNum].num = foodItem.num;
+										this.cartFoodList[cartFoodNum].price = foodItem.price;
+										this.cartFoodList[cartFoodNum].name = foodItem.name;
+										this.cartFoodList[cartFoodNum].specs = foodItem.specs;
+										cartFoodNum++;
+									}
+								}
+							})
+						})
+						newArr[index] = num;
+					} else {
+						newArr[index] = 0;
+					}
+				})
+				this.totalPrice = this.totalPrice.toFixed(2);
+				this.categoryNum = [...newArr];
+			},
+			//控制购物列表是否显示
+			toggleCartList() {
+				this.cartFoodList.length ? this.showCartList = !this.showCartList : true;
+			},
+			//清除购物车
+			clearCart() {
+				this.toggleCartList();
+				this.CLEAR_CART(this.shopId);
+			},
 		},
 		onLoad: function(option) {
-			this.shopId  = option.shopId;
+			this.shopId = option.shopId;
 			this.initData();
 		}
 	}
@@ -290,8 +357,9 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			position:relative;
-			overflow:hidden;
+			position: relative;
+			overflow: hidden;
+
 			.bg {
 				position: absolute;
 				left: -10upx;
@@ -346,7 +414,8 @@
 							color: #FFFFFF;
 							padding: 0 16upx;
 						}
-						.time{
+
+						.time {
 							font-size: 26upx;
 							font-family: PingFangSC-Regular;
 							font-weight: 400;
@@ -388,6 +457,7 @@
 				background-color: #fff;
 				height: 84upx;
 				border-bottom: solid 1upx #E1E1E1;
+
 				.tab-item {
 					display: flex;
 					flex-direction: column;
@@ -439,7 +509,8 @@
 					line-height: @footerHeight;
 					text-align: center;
 				}
-				.gray-limit{
+
+				.gray-limit {
 					color: #fff;
 					font-size: 32upx;
 					line-height: @footerHeight;

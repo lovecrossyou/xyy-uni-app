@@ -60,6 +60,8 @@ export default {
 		sku_id,
 		stock
 	}) {
+		console.log('ADD_CART shopid', shopid);
+		console.log('ADD_CART category_id', category_id);
 		let cart = state.cartList;
 		let shop = cart[shopid] = (cart[shopid] || {});
 		let category = shop[category_id] = (shop[category_id] || {});
