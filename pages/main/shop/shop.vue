@@ -132,7 +132,7 @@
 				animationData: {},
 				showMenu: false,
 
-				geohash: '', //geohash位置信息
+				geohash: '39.92843,116.35073', //geohash位置信息
 				shopId: null, //商店id值
 				showLoading: true, //显示加载动画
 				changeShowType: 'food', //切换显示商品或者评价
@@ -255,9 +255,9 @@
 				// this.hideLoading();
 			},
 			toConfirmOrder() {
-				if (this.cartProducts.length === 0) return;
+				if (this.cartList.length === 0) return;
 				uni.navigateTo({
-					url: '../../order/makeSureOrder/MakeSureOrder'
+					url: '../../order/makeSureOrder/MakeSureOrder?geohash='+this.geohash+'&shopId='+this.shopId
 				})
 			},
 			popMenu() {

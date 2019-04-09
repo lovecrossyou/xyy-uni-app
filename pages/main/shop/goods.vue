@@ -16,7 +16,7 @@
 				<view class="food-list" v-for="(p,index) in currentProducts" :key='index'>
 					<view class="food-item">
 						<view class="icon">
-							<image v-bind:src="p.headImage" mode="aspectFill"></image>
+							<image v-bind:src="p.image_path" mode="aspectFill"></image>
 						</view>
 						<view class="content">
 							<view class="name">
@@ -25,8 +25,9 @@
 							<view class="desc">
 								月售{{p.month_sales}} 好评95%
 							</view>
+							<!--todo  针对不同的规格获取价格 -->
 							<!-- <view class="price">
-								¥{{p.price/100}}
+								¥{{p.price}}
 							</view> -->
 						</view>
 						<view class="cartcontrol-wrapper">

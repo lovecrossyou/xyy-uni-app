@@ -2,6 +2,18 @@
 	"pages": [
 		//pages数组中第一项表示应用启动页
 		{
+			"path": "pages/login/enter",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationBarBackgroundColor": "#4A90E2",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" //透明渐变导航栏
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/main/main",
 			"style": {
 				"navigationBarBackgroundColor":"#FFFFFF",
@@ -156,18 +168,7 @@
 				"navigationBarTextStyle":"black"
 			}
 		},
-		{
-			"path": "pages/login/enter",
-			"style": {
-				"navigationBarTitleText": "登录",
-				"navigationBarBackgroundColor": "#4A90E2",
-				"app-plus": {
-					"titleNView": {
-						"type": "transparent" //透明渐变导航栏
-					}
-				}
-			}
-		},
+		
 		{
 			"path": "pages/user/feedback/feedback",
 			"style": {

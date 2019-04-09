@@ -3,19 +3,21 @@
 		<img src="http://qnimage.xiteng.com/WechatIMG2083.jpeg" alt="" class="bg_img">
 		<view class="enter_box_area">
 			<view class="tel_area_wrapper">
-				<input type="number" v-model="userPhone" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
+				<input type="number" v-model="userAccount" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
 			</view>
 			<view class="tel_area_wrapper">
-				<input type="number" v-model="userCode" placeholder="请输入验证码" placeholder-style="color:#7CA7D2;" />
-				<button type="primary" class="get_code_btn">获取验证码</button>
+				<input type="number" v-model="passWord" placeholder="请输入密码" placeholder-style="color:#7CA7D2;" />
+				<!-- <button type="primary" class="get_code_btn">获取验证码</button> -->
+			</view>
+			<view class="tel_area_wrapper">
+				<input type="number" v-model="codeNumber" placeholder="请输入验证码" placeholder-style="color:#7CA7D2;" />
+				<div class="img_change_img">
+					<img style="width:80px;height:40px" v-show="captchaCodeImg" :src="captchaCodeImg">
+				</div>
 			</view>
 		</view>
-		<!-- #ifdef APP-PLUS -->
+
 		<button class="login_btn" @click="simpleLogin">登录</button>
-		<!-- #endif -->
-		<!-- #ifdef MP-WEIXIN -->
-		<button class="login_btn" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">登录</button>
-		<!-- #endif -->
 
 		<view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
@@ -34,22 +36,39 @@
 		mapMutations,
 		mapActions
 	} from 'vuex'
+	import {
+		mobileCode,
+		checkExsis,
+		sendLogin,
+		getcaptchas,
+		accountLogin
+	} from '@/util/service/getData.js'
+
 	export default {
 		data() {
 			return {
 				providerList: [],
-				userCode: '',
-				userPhone: ''
+				userInfo: null, //获取到的用户信息
+				userAccount: null, //用户名
+				passWord: null, //密码
+				captchaCodeImg: null, //验证码地址
+				codeNumber: null, //验证码
 			}
 		},
+		onLoad() {
+			this.getCaptchaCode();
+		},
 		methods: {
+			...mapMutations([
+				'RECORD_USERINFO',
+			]),
 			...mapActions(['login', 'appLogin']),
+			async getCaptchaCode() {
+				let res = await getcaptchas();
+				this.captchaCodeImg = res.code;
+			},
 			async simpleLogin() {
-				var params = {
-					userPhone: this.userPhone,
-					userCode: this.userCode,
-				}
-				const res = await this.appLogin(params);
+                this.userInfo = await accountLogin(this.userAccount, this.passWord, this.codeNumber);
 				uni.reLaunch({
 					url: '../main/main'
 				});
@@ -70,10 +89,10 @@
 									encryptedData,
 									iv
 								} = infoRes;
-// 								console.log("infoRes ", JSON.stringify(infoRes));
-// 								console.log("res ", JSON.stringify(res));
-// 
-// 								console.log("encryptedData ", JSON.stringify(encryptedData));
+								// 								console.log("infoRes ", JSON.stringify(infoRes));
+								// 								console.log("res ", JSON.stringify(res));
+								// 
+								// 								console.log("encryptedData ", JSON.stringify(encryptedData));
 								var params = {
 									userPhone: this.userPhone,
 									userCode: this.userCode,
@@ -158,6 +177,7 @@
 				color: #7CA7D2;
 				flex: 1;
 			}
+
 		}
 
 		.login_btn {

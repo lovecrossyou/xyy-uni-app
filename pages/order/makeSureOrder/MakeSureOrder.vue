@@ -1,6 +1,6 @@
 <template>
 	<view class="place-order">
-		<div v-if="!showLoading">
+		<!-- <div v-if="!showLoading">
 			<view class="makeOrder_content">
 				<AddressChoose :mydata="choosedAddress" @chooseAddAction="chooseAddAction"></AddressChoose>
 				<ArriveAndPay :mydata="arriveAndPayData1"></ArriveAndPay>
@@ -21,7 +21,7 @@
 				 :showArrow="true" @itemCallBack="orderRemarkInput"> </OrderInfoItemAction>
 			</view>
 		</div>
-		<BottomBar @toPay="toPay"></BottomBar>
+		<BottomBar @toPay="toPay"></BottomBar> -->
 	</view>
 </template>
 
@@ -39,6 +39,9 @@
 	import BottomBar from "../components/BottomBar.vue"
 	import api from '@/util/api.js'
 	import service from "../../../service.js"
+	
+	import {checkout, getAddress, placeOrders, getAddressList} from '@/util/service/getData.js'
+
 
 	export default {
 		components: {
@@ -49,24 +52,65 @@
 			BottomBar,
 		},
 		computed: {
-			...mapState({
-				"choosedAddress": state => state.address.choosedAddress,
-				"ticket": state => state.orderConfirm.ticket,
-				"orderRemark": state => state.orderConfirm.orderRemark
-			}),
-			...mapGetters({
-				cartConfirmInfo: 'cart/cartConfirmInfo',
-				getTicketName: 'orderConfirm/getTicketName',
-				getTicketMoney: 'orderConfirm/getTicketMoney',
-				getOrderRemark: 'orderConfirm/getOrderRemark'
-			}),
+			...mapState([
+                'cartList', 'remarkText', 'inputText', 'invoice', 'choosedAddress', 'userInfo'
+            ]),
+            //备注页返回的信息进行处理
+            remarklist: function (){
+                let str = new String;
+                if (this.remarkText) {
+                    Object.values(this.remarkText).forEach(item => {
+                        str += item[1] + '，';
+                    })
+                }
+                //是否有自定义备注，分开处理
+                if (this.inputText) {
+                    return str + this.inputText;
+                }else{
+                    return str.substr(0, str.lastIndexOf('，')) ;
+                }
+            },
 		},
 		methods: {
-			...mapMutations({
-				GET_DEFAULT_ADDRESS: 'address/GET_DEFAULT_ADDRESS',
-				setPayInfo: 'orderConfirm/setPayInfo',
-				setOrderInfo: 'orderConfirm/setOrderInfo'
-			}),
+			...mapMutations([
+                'INIT_BUYCART', 'SAVE_GEOHASH', 'CHOOSE_ADDRESS', 'NEED_VALIDATION', 'SAVE_CART_ID_SIG', 'SAVE_ORDER_PARAM', 'ORDER_SUCCESS', 'SAVE_SHOPID'
+            ]),
+            //初始化数据
+            async initData(){
+                let newArr = new Array;
+                Object.values(this.shopCart).forEach(categoryItem => {
+                    Object.values(categoryItem).forEach(itemValue=> {
+                        Object.values(itemValue).forEach(item => {
+                            newArr.push({
+                                attrs: [],
+                                extra: {},
+                                id: item.id,
+                                name: item.name,
+                                packing_fee: item.packing_fee,
+                                price: item.price,
+                                quantity: item.num,
+                                sku_id: item.sku_id,
+                                specs: [item.specs],
+                                stock: item.stock,
+                            })
+                        })
+                    })
+                })
+                //检验订单是否满足条件
+                this.checkoutData = await checkout(this.geohash, [newArr], this.shopId);
+                this.SAVE_CART_ID_SIG({cart_id: this.checkoutData.cart.id, sig:  this.checkoutData.sig})
+                this.initAddress();
+                this.showLoading = false;
+            },
+            //获取地址信息，第一个地址为默认选择地址
+            async initAddress(){
+                if (this.userInfo && this.userInfo.user_id) {
+                    const addressRes = await getAddressList(this.userInfo.user_id);
+                    if (addressRes instanceof Array && addressRes.length) {
+                        this.CHOOSE_ADDRESS({address: addressRes[0], index: 0});
+                    }
+                }
+            },
 			async queryResult(params, cb) {
 				const d = await api.queryResult(params);
 				cb();
@@ -122,58 +166,6 @@
 				const createRes = await api.shopOrderCreate(params);
 				const orderInfo = createRes.data;
 				this.$store.dispatch('pay/startPay',orderInfo);
-
-// 				const userInfo = service.getInfo();
-// 				// #ifndef MP-WEIXIN
-// 				//传递支付信息
-// 				let confirmParams = {
-// 					"payChannel": "WeixinPay",
-// 					"payOrderNo": orderInfo.orderNo
-// 				}
-// 				this.setPayInfo(confirmParams);
-// 				this.setOrderInfo(orderInfo);
-// 				uni.redirectTo({
-// 					url: "/pages/order/makeSureOrder/OrderPay"
-// 				})
-// 				return;
-// 				// #endif
-// 
-// 				confirmParams = {
-// 					"openId": userInfo.openId,
-// 					"payChannel": "WeixinMiniProgramPay",
-// 					"payOrderNo": orderInfo.orderNo
-// 				}
-// 				const confirmRes = await api.keplerPayConfirm(confirmParams)
-// 				const payOrderNo = confirmRes.data.payOrderNo;
-// 				if (confirmRes.status === 'ok' && confirmRes.data.wexinSpec) {
-// 					const wexinSpec = confirmRes.data.wexinSpec;
-// 					uni.requestPayment({
-// 						provider: 'wxpay',
-// 						timeStamp: wexinSpec.timestamp,
-// 						nonceStr: wexinSpec.noncestr,
-// 						package: 'prepay_id=' + wexinSpec.prepay_id,
-// 						signType: 'MD5',
-// 						paySign: wexinSpec.sign,
-// 						success: function(res) {
-// 							console.log('requestPayment res', res);
-// 							that.queryResult(confirmParams, () => {
-// 								uni.redirectTo({
-// 									url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-// 								})
-// 							})
-// 						},
-// 						fail: function(err) {
-// 							console.log('requestPayment err', err);
-// 							uni.redirectTo({
-// 								url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
-// 							})
-// 						}
-// 					});
-// 				} else {
-// 
-// 				}
-
-
 			}
 		},
 		data() {
@@ -190,19 +182,34 @@
 
 				},
 				info: {},
-				showLoading: true,
-				alertText: '',
 				productItemList: [],
+				
+				geohash: '', //geohash位置信息
+                shopId: null, //商店id值
+                showLoading: true, //显示加载动画
+                checkoutData: null,//数据返回值
+                shopCart: null,//购物车数据
+                // imgBaseUrl, //图片域名
+                showPayWay: false,//显示付款方式
+                payWayId: 1, //付款方式
+                showAlert: false, //弹出框
+                alertText: null, //弹出框内容
 			}
 		},
-		onLoad() {
-			uni.showLoading({
-				title: '加载中...',
-				mask: true
-			});
-			this.requestOrderData();
-			this.getDefaultAddress();
-			// console.log('cartConfirmInfo', this.cartConfirmInfo);
+		onLoad(opt) {
+			this.geohash = opt.geohash;
+            //获取上个页面传递过来的shopid值
+            this.shopId = opt.shopId;
+            this.INIT_BUYCART();
+            this.SAVE_SHOPID(this.shopId);
+            //获取当前商铺购物车信息
+            this.shopCart = this.cartList[this.shopId];
+			
+			if (this.geohash) {
+				console.log('opt.geohash ',opt.geohash)
+                this.initData();
+                this.SAVE_GEOHASH(this.geohash);
+            }
 		}
 	}
 </script>
