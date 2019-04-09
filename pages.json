@@ -1,18 +1,7 @@
 {
 	"pages": [
 		//pages数组中第一项表示应用启动页
-		{
-			"path": "pages/login/enter",
-			"style": {
-				"navigationBarTitleText": "登录",
-				"navigationBarBackgroundColor": "#4A90E2",
-				"app-plus": {
-					"titleNView": {
-						"type": "transparent" //透明渐变导航栏
-					}
-				}
-			}
-		},
+		
 		{
 			"path": "pages/main/main",
 			"style": {
@@ -23,6 +12,18 @@
 			"permission": {
 				"scope.userLocation": {
 					"desc": "获取您的位置信息推荐附近店铺"
+				}
+			}
+		},
+		{
+			"path": "pages/login/enter",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationBarBackgroundColor": "#4A90E2",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" //透明渐变导航栏
+					}
 				}
 			}
 		},

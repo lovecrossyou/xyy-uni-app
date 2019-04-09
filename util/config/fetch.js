@@ -36,7 +36,6 @@ request.interceptors.response.use(
 		if (response && response.headers && response.headers['set-cookie']) {
 			uni.setStorageSync('cookieKey', response.headers['set-cookie'][0]); //保存Cookie到Storage
 		}
-		console.log('response headers', response.headers);
 		return Promise.resolve(response.data);
 	},
 	(err) => {

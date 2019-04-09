@@ -3,7 +3,7 @@
         <section>
             <div class="search_form">
                 <input type="search" name="search" placeholder="请输入小区/写字楼/学校等" v-model="searchValue">
-                <button @click.prevent="searchPlace()">搜索</button>
+                <button @click.prevent="searchPlace">搜索</button>
             </div>
             <ul class="address_list" v-if="searchData">
                 <li v-for="(item, index) in searchData" :key="index" @click="choooedAddress(item)">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import api from '@/util/api.js'
+     import {searchNearby} from '@/util/service/getData'
     import {mapMutations} from 'vuex'
 
     export default {
@@ -33,31 +33,20 @@
         },
         props:[],
         methods: {
-            ...mapMutations('address',[
-                'CHOOSE_SEARCH_ADDRESS',
-				'RECORD_ADDRESS'
+            ...mapMutations([
+                'CHOOSE_SEARCH_ADDRESS'
             ]),
             //搜索
             async searchPlace(){
-                if (this.searchValue && this.searchValue.length>0) {
-                    const res = await api.searchNearby({keywords:this.searchValue});
-					this.searchData = res.data.pois;
-					console.log('searchData',JSON.stringify(this.searchData));
+                if (this.searchValue) {
+                    this.searchData = await searchNearby(this.searchValue);
                 }
             },
             //选择搜素结果
             choooedAddress(item){
-
-				const locations = item.location.split(',');
-				if ( locations && locations.length>1) {
-					this.RECORD_ADDRESS(locations[0],locations[1]);
-				}
                 this.CHOOSE_SEARCH_ADDRESS(item);
-				uni.navigateBack({
-					delta:1
-				})
+                uni.navigateBack();
             },
-
         }
     }
 </script>

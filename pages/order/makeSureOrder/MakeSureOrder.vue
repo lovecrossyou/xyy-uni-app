@@ -1,27 +1,27 @@
 <template>
 	<view class="place-order">
-		<!-- <div v-if="!showLoading">
+		<div v-if="!showLoading">
 			<view class="makeOrder_content">
 				<AddressChoose :mydata="choosedAddress" @chooseAddAction="chooseAddAction"></AddressChoose>
-				<ArriveAndPay :mydata="arriveAndPayData1"></ArriveAndPay>
+				<!-- <ArriveAndPay :mydata="arriveAndPayData1"></ArriveAndPay>
 				<ArriveAndPay :mydata="arriveAndPayData2"></ArriveAndPay>
 				<view class="water_store_info">
 					<view class="water_store_h_t">水站信息</view>
-					<view v-for="(listItem,index) in productItemList" :key='index'>
+					<view v-for="(listItem,index) in checkoutData.cart.groups" :key='index'>
 						<WaterStoreItem :shopProduct="listItem"></WaterStoreItem>
 					</view>
-				</view>
+				</view> -->
 			</view>
-			<view class="bottom_white">
+			<!-- <view class="bottom_white">
 				<view class="space10" />
 				<OrderInfoItemAction itemTitle="使用优惠券" :itemContent="getTicketName" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
 				<OrderInfoItemAction itemTitle="立减优惠" :itemContent="getTicketMoney" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
 				<view class="space30" />
 				<OrderInfoItemAction itemTitle="订单备注" valueColor="#999999" titleColor="#2E2E2E" :itemContent="getOrderRemark"
 				 :showArrow="true" @itemCallBack="orderRemarkInput"> </OrderInfoItemAction>
-			</view>
+			</view> -->
 		</div>
-		<BottomBar @toPay="toPay"></BottomBar> -->
+		<!-- <BottomBar @toPay="toPay"></BottomBar> -->
 	</view>
 </template>
 
@@ -117,8 +117,10 @@
 			},
 			// 选择地址
 			chooseAddAction() {
+				const id =  this.checkoutData.cart.id;
+				const sig =  this.checkoutData.sig;
 				uni.navigateTo({
-					url: "../../address/chooseAddress?isChoose=true"
+					url: "../../address/chooseAddress?isChoose=true&id="+id+'&sig='+sig
 				})
 			},
 			// 选择优惠券
@@ -204,9 +206,7 @@
             this.SAVE_SHOPID(this.shopId);
             //获取当前商铺购物车信息
             this.shopCart = this.cartList[this.shopId];
-			
 			if (this.geohash) {
-				console.log('opt.geohash ',opt.geohash)
                 this.initData();
                 this.SAVE_GEOHASH(this.geohash);
             }

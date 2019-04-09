@@ -125,6 +125,9 @@
 			}
 		},
 		methods: {
+			...mapActions([
+                'getUserInfo'
+            ]),
 			async initData() {
 				//获取数据
 				let res = await shopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId);
@@ -192,6 +195,8 @@
 		},
 		onShow() {
 			this.initData();
+			 //获取用户信息
+            this.getUserInfo();
 		}
 	}
 </script>

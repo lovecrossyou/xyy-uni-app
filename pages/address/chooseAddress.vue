@@ -58,11 +58,15 @@
 <script>
 	import {mapState, mapMutations} from 'vuex';
 	import api from "@/util/api.js";
+	import {
+		getAddress,
+		getAddressList
+	} from '@/util/service/getData'
     export default {
 		onLoad: function (option) {
 			this.isChoose = option.isChoose === 'true';
-		},
-		onShow: function () {
+			this.id = option.id;
+			this.sig = option.sig;
 			this.initData();
 		},
 		data(){
@@ -78,6 +82,9 @@
             }
         },
 		computed:{
+			...mapState([
+                'userInfo', 'addressIndex', 'newAddress'
+            ]),
 			isActive:function(index){
 				return {
 					activeGrey:index===1
@@ -89,6 +96,30 @@
 				'CHOOSE_ADDRESS',
 				'EDIT_ADDRESS',
 			]),
+			async initData(){
+                this.addressList = [];
+                this.deliverable = [];
+                this.deliverdisable = [];
+
+                if (this.userInfo && this.userInfo.user_id) {
+                    this.addressList = await getAddressList(this.userInfo.user_id);
+                    //将当前所有地址访问有效无效两种
+                    this.addressList.forEach(item => {
+                        if (item.is_deliverable) {
+                            this.deliverable.push(item);
+                        }else{
+                            this.deliverdisable.push(item);
+                        }
+                    })
+                    // this.$nextTick(() => {
+                    //     new BScroll('#scroll_section', {  
+                    //         deceleration: 0.003,
+                    //         bounce: true,
+                    //         swipeTime: 1800,
+                    //     }); 
+                    // })
+                }
+            },
 			chooseAddress(address,index){
 				// this.defaultIndex = index;
 				if (this.isChoose){
@@ -113,28 +144,7 @@
 					url:"addAddress"
 				})
 			},
-            async initData(){
-                this.addressList = [];
-                this.deliverable = [];
-                this.deliverdisable = [];
-				//await getAddressList(this.userInfo.user_id);
-				const params = {
-					"page": "1",
-					"pageSize": "20"
-				}
-				const addData = await api.deliveryAddressList(params);
-				const addresses = addData.data.content;
-                this.addressList = addresses; 
-                    //将当前所有地址访问有效无效两种
-                this.addressList.forEach(item => {
-					if (!item.is_deliverable) {
-						item.tag = "家";
-                            this.deliverable.push(item);
-					}else{
-                            this.deliverdisable.push(item);
-                    }
-                })
-            },
+            
 			iconColor(name){
 				switch(name){
 					case '公司': return '#4cd964';

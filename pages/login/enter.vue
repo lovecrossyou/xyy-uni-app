@@ -69,6 +69,7 @@
 			},
 			async simpleLogin() {
                 this.userInfo = await accountLogin(this.userAccount, this.passWord, this.codeNumber);
+				this.RECORD_USERINFO(this.userInfo);
 				uni.reLaunch({
 					url: '../main/main'
 				});
