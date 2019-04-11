@@ -60,8 +60,8 @@
 			return {
 				providerList: [],
 				userInfo: null, //获取到的用户信息
-				userAccount: '13220168837', //用户名
-				passWord: '123456', //密码
+				userAccount: '', //用户名
+				passWord: '', //密码
 				captchaCodeImg: null, //验证码地址
 				codeNumber: null, //验证码
 			}
@@ -94,8 +94,7 @@
 					return;
 				}
 				const res = await accountLogin(userAccount, passWord, codeNumber, code);
-				if (res.status === 0) return;
-				console.log('res ', res);
+				if (!res) return;
 				this.userInfo = res;
 				this.RECORD_USERINFO(this.userInfo);
 				uni.reLaunch({

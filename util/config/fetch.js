@@ -18,13 +18,14 @@ const errorPrompt = (err) => {
 		uni.navigateTo({
 			url:"/pages/login/enter"
 		})
-		return;
 	}
-	uni.showToast({
-		title: err.message || 'fetch data error.',
-		mask: false,
-		duration: 1500
-	});
+	else{
+		uni.showToast({
+			title: err.message || 'fetch data error.',
+			mask: false,
+			duration: 1500
+		});
+	}
 }
 
 
@@ -34,12 +35,17 @@ request.interceptors.response.use(
 		if (response && response.headers && response.headers['set-cookie']) {
 			uni.setStorageSync('cookieKey', response.headers['set-cookie'][0]); //保存Cookie到Storage
 		}
+		console.log('response.data ',response.data)
+		if(response.data.message){
+			errorPrompt(response.data);
+			return Promise.resolve(null);
+		}
 		return Promise.resolve(response.data);
 	},
 	(err) => {
 		//发生网络错误后会走到这里
 		// uni.hideLoading()
-		errorPrompt(err.response)
+		errorPrompt(err.response.data)
 		return Promise.resolve(null);
 	}
 )
