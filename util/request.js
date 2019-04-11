@@ -1,8 +1,8 @@
 import Fly from 'flyio/dist/npm/wx'
 import service from "../service"
 const request = new Fly()
-// const baseURL = 'http://47.94.169.143:8004/'
-export const baseURL = 'http://localhost:8000/'
+export const baseURL = 'http://47.94.169.143:8004/'
+// export const baseURL = 'http://localhost:8000/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
