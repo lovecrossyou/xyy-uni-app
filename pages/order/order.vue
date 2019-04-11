@@ -15,9 +15,9 @@
 			<image src="../../static/order/order.png" class="img"></image>
 			<view class="desc">您还没有相关的订单</view>
 		</view>
-		<view class="shopitem" v-for="(shop, index) in orderList" :key="index" @click="toDetail(shop.restaurant_id)">
+		<view class="shopitem" v-for="(shop, index) in orderList" :key="index" @click.stop="toOrderDetail(shop)">
 			<view class="shop_header">
-				<view class="order_shop_name">
+				<view class="order_shop_name" @click.stop="toShop(shop)">
 					<image src="../../static/img/order_shop_icon.png"></image>
 					<view class="header-text">{{ shop.restaurant_name }}</view>
 				</view>
@@ -98,14 +98,15 @@
 					title: '删除'
 				});
 			},
-			toDetail(shopId) {
+			toShop(item) {
 				uni.navigateTo({
-					url: '/pages/main/shop/shop?shopId=' + shopId
+					url: '/pages/main/shop/shop?shopId=' + item.restaurant_id
 				});
 			},
-			toOrderDetail(orderNo) {
+			toOrderDetail(item) {
+				this.SAVE_ORDER(item);
 				uni.navigateTo({
-					url: './orderDetail/OrderDetail?orderNo=' + orderNo
+					url: './orderDetail/OrderDetail'
 				});
 			}
 		},

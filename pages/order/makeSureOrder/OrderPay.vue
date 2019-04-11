@@ -79,6 +79,9 @@
 			},
 			//确认付款
 			async confirmPay() {
+				uni.showLoading({
+					mask: true
+				})
 				let res = null;
 				// #ifdef APP-PLUS
 				res = await payRequest(this.userInfo.user_id, this.orderMessage.data.id, 'APP');
@@ -101,18 +104,20 @@
 					signType: wexinSpec.signType,
 					paySign: wexinSpec.paySign,
 					success: function(res) {
+						uni.hideLoading();
 						uni.redirectTo({
-							url: "../orderDetail/OrderDetail?orderNo=" + payInfo.payOrderNo
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
 						})
 					},
 					fail: function(err) {
+						uni.hideLoading();
 						uni.redirectTo({
-							url: "../orderDetail/OrderDetail?orderNo=" + payInfo.payOrderNo
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
 						})
 					}
 				});
 			},
-			
+
 			// app支付
 			nativePay(orderInfo) {
 				const payParams = {
@@ -129,12 +134,12 @@
 					orderInfo: JSON.stringify(payParams),
 					success: function(res) {
 						uni.redirectTo({
-							url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
 						})
 					},
 					fail: function(err) {
 						uni.redirectTo({
-							url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
 						})
 					}
 				})

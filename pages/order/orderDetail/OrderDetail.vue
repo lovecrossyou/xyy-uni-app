@@ -1,24 +1,24 @@
 <template>
 	<view class="detail">
-		<view v-show="!isLoading">
-			<OrderDetailHeader :orderInfo="orderDetailData" @orderAction="orderAction" />
+		<view v-show="orderDetail">
+			<OrderDetailHeader :orderInfo="orderDetail" @orderAction="orderAction" />
 			<view class="content_detail">
 				<view class="item">
 					<view class="img">
-						<image :src="orderDetailData.shopImage" class="img"></image>
+						<image :src="orderDetail.restaurant_image_url" class="img"></image>
 					</view>
-					<view class="text">{{orderDetailData.shopName}}</view>
+					<view class="text">{{orderDetail.restaurant_name}}</view>
 				</view>
-				<view v-for="foodData in orderDetailData.productItems" :key="foodData.id">
+				<view v-for="(foodData,index) in orderDetail.basket.group[0]" :key="index">
 					<view class="item">
-						<view class="text">{{foodData.productName}}</view>
+						<view class="text">{{foodData.name}}</view>
 						<view class="num">x{{foodData.quantity}}</view>
-						<view class="price">¥{{foodData.productPrice/100}}</view>
+						<view class="price">¥{{foodData.price}}</view>
 					</view>
 				</view>
 				<view class="item">
 					<view class="text">配送费</view>
-					<view class="price">¥{{orderDetailData.deliveryFee/100}}</view>
+					<view class="price">¥{{orderDetail.basket.deliver_fee.price}}</view>
 				</view>
 				<view v-for="(extraData,index) in extra" :key="index">
 					<view class="item">
@@ -26,7 +26,7 @@
 						<view class="price">- ¥{{extraData.price/100}}</view>
 					</view>
 				</view>
-				<view class="totoal">实付 ¥{{orderDetailData.price/100}}</view>
+				<view class="totoal">实付 ¥{{orderDetail.total_amount}}</view>
 			</view>
 
 			<view class="info">
@@ -55,7 +55,7 @@
 				<view class="desc">
 					<view class="item">
 						<view class="label">订单号</view>
-						<view class="text">{{orderDetailData.orderNo}}</view>
+						<view class="text">{{orderDetail.id}}</view>
 					</view>
 					<view class="item">
 						<view class="label">支付方式</view>
@@ -63,7 +63,7 @@
 					</view>
 					<view class="item">
 						<view class="label">下单时间</view>
-						<view class="text">{{orderDetailData.payFinishTime||orderDetailData.createTime}}</view>
+						<view class="text">{{orderDetail.order_time}}</view>
 					</view>
 				</view>
 			</view>
@@ -72,9 +72,16 @@
 </template>
 
 <script>
-	// import {uniCountdown} from '@dcloudio/uni-ui'
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+
 	import OrderDetailHeader from "../components/OrderDetailHeader.vue"
 	import orderApi from "@/util/apis/order.js"
+	import {
+		getOrderDetail
+	} from '@/util/service/getData'
 
 
 	export default {
@@ -101,16 +108,19 @@
 			};
 		},
 		onLoad(option) {
-			this.orderNo = option.orderNo;
-			this.getData();
+			this.initData();
+			console.log('orderDetail ## ',JSON.stringify(this.orderDetail));
 		},
 		computed: {
+			...mapState([
+				'orderDetail', 'geohash', 'userInfo'
+			]),
 			getfoodKey: function(index) {
 				return index + "food"
 			}
 		},
 		onPullDownRefresh() {
-			this.getData();
+			this.initData();
 		},
 		methods: {
 			goOrderDetail() {
@@ -140,24 +150,12 @@
 						break;
 
 				}
-// 				uni.showToast({
-// 					icon: "none",
-// 					title: showMessage
-// 				})
 			},
-			async getData() {
-				uni.showLoading({
-					title: "加载中..."
-				})
-				const res = await orderApi.requestOrderDetail({
-					orderNo: this.orderNo
-				});
-				if (res && res.status === 'ok') {
-					this.orderDetailData = res.data;
-					this.isLoading = false;
+			async initData() {
+				if (this.userInfo && this.userInfo.user_id) {
+					this.orderData = await getOrderDetail(this.userInfo.user_id, this.orderDetail.unique_id);
 				}
-				// console.log('requestOrderDetail ', res);
-			}
+			},
 		}
 	};
 </script>

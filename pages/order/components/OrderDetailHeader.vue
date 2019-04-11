@@ -1,8 +1,8 @@
 <template>
 	<view class="orderdetail_header">
-		<img class="header_img" :src="orderInfo.shopImage" />
+		<img class="header_img" :src="orderInfo.restaurant_image_url" />
 		<view class="h_payStatus_c">
-		  <view class="h_payStatus">{{payStatus}}</view>
+		  <view class="h_payStatus">{{orderInfo.status_bar.title}}</view>
 		  <!-- <uni-icon type="arrowright" color="#333333" size="20"></uni-icon> -->
 		</view>
 		<!-- 继续支付按钮 -->
