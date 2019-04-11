@@ -12,8 +12,8 @@
 				<view v-for="(foodData,index) in orderDetail.basket.group[0]" :key="index">
 					<view class="item">
 						<view class="text">{{foodData.name}}</view>
-						<view class="num">x{{foodData.quantity}}</view>
 						<view class="price">¥{{foodData.price}}</view>
+						<view class="num">x{{foodData.quantity}}</view>
 					</view>
 				</view>
 				<view class="item">
@@ -86,7 +86,7 @@
 
 	export default {
 		components: {
-			OrderDetailHeader
+			OrderDetailHeader,
 		},
 		data() {
 			return {

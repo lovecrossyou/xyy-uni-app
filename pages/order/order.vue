@@ -12,14 +12,15 @@
 				]"></glanceSlideNavTabBar>
 		</view>
 		<view v-if="orderList.length == 0" class="empty-data">
-			<image src="../../static/order/order.png" class="img"></image>
+			<image :src="shop.restaurant_image_url" class="img"></image>
 			<view class="desc">您还没有相关的订单</view>
 		</view>
 		<view class="shopitem" v-for="(shop, index) in orderList" :key="index" @click.stop="toOrderDetail(shop)">
 			<view class="shop_header">
 				<view class="order_shop_name" @click.stop="toShop(shop)">
-					<image src="../../static/img/order_shop_icon.png"></image>
+					<image :src="shop.restaurant_image_url"></image>
 					<view class="header-text">{{ shop.restaurant_name }}</view>
+					<view class="header-text">{{ shop.formatted_created_at }}</view>
 				</view>
 				<view class="order_status_des">{{ shop.status_bar.title }}</view>
 			</view>
@@ -54,9 +55,14 @@
 	import glanceSlideNavTabBar from '@/components/order/glance-SlideNavTabBar.vue';
 	import uniIcon from '@/components/uni-icon/uni-icon.vue';
 	import orderApi from '@/util/apis/order.js';
-	    import {getOrderList} from '@/util/service/getData'
+	import {
+		getOrderList
+	} from '@/util/service/getData'
 
-	    import {mapState, mapMutations} from 'vuex'
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
 
 	export default {
 		onShow() {
@@ -66,30 +72,30 @@
 			return {
 				orders: [],
 				orderList: [], //订单列表
-				offset: 0, 
+				offset: 0,
 			};
 		},
 		computed: {
-            ...mapState([
-                'userInfo', 'geohash'
-            ]),
-        },
-        methods: {
-             ...mapMutations([
-               'SAVE_ORDER'
-            ]),
-            //初始化获取信息
-            async initData(){
-                if (this.userInfo && this.userInfo.user_id) {
-                    let res = await getOrderList(this.userInfo.user_id, this.offset);
-                    this.orderList = [...res];
-                }
-            },
-			oneMoreOrder(){
-				
+			...mapState([
+				'userInfo', 'geohash'
+			]),
+		},
+		methods: {
+			...mapMutations([
+				'SAVE_ORDER'
+			]),
+			//初始化获取信息
+			async initData() {
+				if (this.userInfo && this.userInfo.user_id) {
+					let res = await getOrderList(this.userInfo.user_id, this.offset);
+					this.orderList = [...res];
+				}
 			},
-			judge(){
-				
+			oneMoreOrder() {
+
+			},
+			judge() {
+
 			},
 			// 删除商品
 			deletePro() {
@@ -114,7 +120,7 @@
 			uniIcon,
 			glanceSlideNavTabBar
 		},
-		
+
 	};
 </script>
 

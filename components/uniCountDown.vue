@@ -53,6 +53,10 @@
 			second: {
 				type: Number,
 				default: 0
+			},
+			time: {
+				type: Number,
+				default: 0
 			}
 		},
 		data() {
