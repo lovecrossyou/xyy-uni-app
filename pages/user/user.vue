@@ -78,7 +78,7 @@
 			},
 			bindLogin() {
 				uni.navigateTo({
-					url: 'pages/login/enter',
+					url: '/pages/login/enter',
 				});
 			},
 			toAddress() {

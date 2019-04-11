@@ -141,7 +141,7 @@
 					url: "OrderRemark"
 				})
 			},
-			
+
 			//获取确认订单信息
 			async requestOrderData() {
 				const res = await api.requestCartClient(this.cartConfirmInfo);
@@ -152,47 +152,48 @@
 			},
 			async toPay() {
 				var that = this;
-				if (!this.choosedAddress.id) {
+				if (!this.choosedAddress||!this.choosedAddress.id) {
 					uni.showToast({
-						title: '请选择地址',
+						title: '请添加收货地址',
 						icon: 'none',
 						duration: 2000
 					});
 					return;
 				}
-				
+
 				//保存订单
-                this.SAVE_ORDER_PARAM({
-                    user_id: this.userInfo.user_id,
-                    cart_id: this.checkoutData.cart.id,
-                    address_id: this.choosedAddress.id,
-                    description: this.remarklist,
-                    entities: this.checkoutData.cart.groups,
-                    geohash: this.geohash,
-                    sig: this.checkoutData.sig,
-                });
-                //发送订单信息
-                let orderRes = await placeOrders(this.userInfo.user_id, this.checkoutData.cart.id, this.choosedAddress.id, this.remarklist, this.checkoutData.cart.groups, this.geohash, this.checkoutData.sig);
-                //第一次下单的手机号需要进行验证，否则直接下单成功
-                if (orderRes.need_validation) {
-                    this.NEED_VALIDATION(orderRes);
-                    // this.$router.push('/confirmOrder/userValidation');
-                }else{
-                    this.ORDER_SUCCESS(orderRes);
-                    // this.$router.push('/confirmOrder/payment');
-                }
+				this.SAVE_ORDER_PARAM({
+					user_id: this.userInfo.user_id,
+					cart_id: this.checkoutData.cart.id,
+					address_id: this.choosedAddress.id,
+					description: this.remarklist,
+					entities: this.checkoutData.cart.groups,
+					geohash: this.geohash,
+					sig: this.checkoutData.sig,
+				});
+				//发送订单信息
+				let orderRes = await placeOrders(this.userInfo.user_id, this.checkoutData.cart.id, this.choosedAddress.id, this.remarklist,
+					this.checkoutData.cart.groups, this.geohash, this.checkoutData.sig);
+				//第一次下单的手机号需要进行验证，否则直接下单成功
+				if (orderRes.need_validation) {
+					this.NEED_VALIDATION(orderRes);
+					// this.$router.push('/confirmOrder/userValidation');
+				} else {
+					this.ORDER_SUCCESS(orderRes);
+					// this.$router.push('/confirmOrder/payment');
+				}
 				uni.navigateTo({
-					url:"/pages/order/makeSureOrder/OrderPay"
+					url: "/pages/order/makeSureOrder/OrderPay"
 				})
-				
-				
-// 				let params = Object.assign({}, this.cartConfirmInfo);
-// 				params.deliverAddressId = this.choosedAddress.id;
-// 				params.needDeliverTime = "尽快送达";
-// 				//生成订单信息
-// 				const createRes = await api.shopOrderCreate(params);
-// 				const orderInfo = createRes.data;
-// 				this.$store.dispatch('pay/startPay', orderInfo);
+
+
+				// 				let params = Object.assign({}, this.cartConfirmInfo);
+				// 				params.deliverAddressId = this.choosedAddress.id;
+				// 				params.needDeliverTime = "尽快送达";
+				// 				//生成订单信息
+				// 				const createRes = await api.shopOrderCreate(params);
+				// 				const orderInfo = createRes.data;
+				// 				this.$store.dispatch('pay/startPay', orderInfo);
 			}
 		},
 		data() {

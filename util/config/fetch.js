@@ -6,8 +6,6 @@ const request = new Fly()
 request.config.baseURL = baseURL
 
 request.interceptors.request.use((request) => {
-	// request.headers["accessToken"] = service.getToken();
-	// uni.showLoading();
 	let cookie = uni.getStorageSync('cookieKey');
 	if (cookie) {
 		request.headers['Cookie'] = cookie;
@@ -16,23 +14,23 @@ request.interceptors.request.use((request) => {
 })
 
 const errorPrompt = (err) => {
-	if (err.data.status === "-999") {		
-		//需要登录权限
-		// goLoginPage();
-	} else {
-		uni.showToast({
-			title: err.data.message || 'fetch data error.',
-			mask: false,
-			duration: 1500
-		});
+	if(err.type === 'GET_USER_INFO_FAIELD'){
+		uni.navigateTo({
+			url:"/pages/login/enter"
+		})
+		return;
 	}
+	uni.showToast({
+		title: err.message || 'fetch data error.',
+		mask: false,
+		duration: 1500
+	});
 }
 
 
 request.interceptors.response.use(
 	(response) => {
 		//只将请求结果的data字段返回
-		// uni.hideLoading()
 		if (response && response.headers && response.headers['set-cookie']) {
 			uni.setStorageSync('cookieKey', response.headers['set-cookie'][0]); //保存Cookie到Storage
 		}

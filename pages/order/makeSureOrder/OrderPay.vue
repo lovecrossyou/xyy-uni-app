@@ -3,7 +3,7 @@
 		<view class="order_content">
 			<view class="order_pay_top">
 				<view class="order_pay_top_time">支付剩余时间{{remaining}}</view>
-				<view class="order_pay_top_amount">¥{{cartPrice}}</view>
+				<view class="order_pay_top_amount">¥{{orderMessage.data.total_amount}}</view>
 			</view>
 			<view>
 				<block v-for="(channel,index) in paychannels" :key="index">
@@ -19,7 +19,7 @@
 				</block>
 			</view>
 		</view>
-		<view class="confirm_footer" @click="goNext">确认支付</view>
+		<view class="confirm_footer" @click="confirmPay">确认支付</view>
 	</view>
 </template>
 
@@ -30,12 +30,12 @@
 		mapGetters
 	} from 'vuex'
 	import {
-		payRequest
+		payRequest,
+		wxPay
 	} from '@/util/service/getData'
 
 	export default {
 		onLoad(opt) {
-			this.initData();
 			//清除购物车中当前商铺的信息
 			if (this.shopid) {
 				this.CLEAR_CART(this.shopid);
@@ -65,17 +65,6 @@
 			...mapMutations([
 				'CONFIRM_INVOICE', 'CLEAR_CART'
 			]),
-			async initData() {
-				console.log('this.orderMessage ', JSON.stringify(this.orderMessage));
-				console.log('userInfo.user_id ', this.userInfo.user_id);
-
-				this.payDetail = await payRequest(this.orderMessage.data.id, this.userInfo.user_id);
-				if (this.payDetail.message) {
-					this.showAlert = true;
-					this.alertText = this.payDetail.message;
-					return
-				}
-			},
 			//倒计时
 			remainingTime() {
 				clearInterval(this.timer);
@@ -89,13 +78,66 @@
 				}, 1000);
 			},
 			//确认付款
-			confrimPay() {
-				this.showAlert = true;
-				this.alertText = '当前环境无法支付，请打开官方APP进行付款';
-				this.gotoOrders = true;
+			async confirmPay() {
+				let res = null;
+				// #ifdef APP-PLUS
+				res = await payRequest(this.userInfo.user_id, this.orderMessage.data.id, 'APP');
+				this.nativePay(res.data);
+				// #endif
+
+				// #ifdef MP-WEIXIN
+				res = await payRequest(this.userInfo.user_id, this.orderMessage.data.id, 'MP-WEIXIN');
+				console.log('payRequest ##', res);
+				this.wxpay(res.data);
+				// #endif
 			},
-			goNext() {
-				this.$store.dispatch('pay/startPay', this.orderInfo);
+			// 微信小程序支付
+			wxpay(wexinSpec) {
+				uni.requestPayment({
+					provider: 'wxpay',
+					timeStamp: wexinSpec.timeStamp,
+					nonceStr: wexinSpec.nonceStr,
+					package: wexinSpec.package,
+					signType: wexinSpec.signType,
+					paySign: wexinSpec.paySign,
+					success: function(res) {
+						uni.redirectTo({
+							url: "../orderDetail/OrderDetail?orderNo=" + payInfo.payOrderNo
+						})
+					},
+					fail: function(err) {
+						uni.redirectTo({
+							url: "../orderDetail/OrderDetail?orderNo=" + payInfo.payOrderNo
+						})
+					}
+				});
+			},
+			
+			// app支付
+			nativePay(orderInfo) {
+				const payParams = {
+					appid: orderInfo.appid,
+					noncestr: orderInfo.noncestr,
+					package: orderInfo.package,
+					partnerid: orderInfo.partnerid,
+					prepayid: orderInfo.prepayid,
+					sign: orderInfo.sign,
+					timestamp: orderInfo.timestamp,
+				}
+				uni.requestPayment({
+					provider: 'wxpay',
+					orderInfo: JSON.stringify(payParams),
+					success: function(res) {
+						uni.redirectTo({
+							url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+						})
+					},
+					fail: function(err) {
+						uni.redirectTo({
+							url: "../orderDetail/OrderDetail?orderNo=" + payOrderNo
+						})
+					}
+				})
 			}
 		},
 		data() {

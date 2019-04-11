@@ -17,15 +17,26 @@
 			</view>
 		</view>
 
+		<!-- app登录 -->
+		<!-- #ifdef APP-PLUS -->
 		<button class="login_btn" @click="simpleLogin">登录</button>
+		<!-- #endif -->
 
-		<view class="third_party_area">
+		<!--微信 小程序登录 -->
+		<!-- #ifdef MP-WEIXIN -->
+		<view class="login_way">
+			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
+			</button>
+		</view>
+		<!-- #endif -->
+
+		<!-- <view class="third_party_area">
 			<text class="third_party_text">第三方登录</text>
 		</view>
 		<view class="login_way">
 			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
 			</button>
-		</view>
+		</view> -->
 		<view class="footer_text">注册或创建账户即同意《鑫翼优用户注册协议书》 </view>
 	</view>
 </template>
@@ -49,8 +60,8 @@
 			return {
 				providerList: [],
 				userInfo: null, //获取到的用户信息
-				userAccount: null, //用户名
-				passWord: null, //密码
+				userAccount: '13220168837', //用户名
+				passWord: '123456', //密码
 				captchaCodeImg: null, //验证码地址
 				codeNumber: null, //验证码
 			}
@@ -67,52 +78,40 @@
 				let res = await getcaptchas();
 				this.captchaCodeImg = res.code;
 			},
-			async simpleLogin() {
-                this.userInfo = await accountLogin(this.userAccount, this.passWord, this.codeNumber);
+			// 小程序登录
+			wxLogin(userAccount, passWord, codeNumber, code) {
+				this.handleLogin(userAccount, passWord, codeNumber, code);
+			},
+			// app登录
+			simpleLogin() {
+				this.handleLogin(this.userAccount, this.passWord, this.codeNumber);
+			},
+			async handleLogin(userAccount, passWord, codeNumber, code) {
+				if (userAccount.length === 0) {
+					return;
+				}
+				if (passWord.length === 0) {
+					return;
+				}
+				const res = await accountLogin(userAccount, passWord, codeNumber, code);
+				if (res.status === 0) return;
+				console.log('res ', res);
+				this.userInfo = res;
 				this.RECORD_USERINFO(this.userInfo);
 				uni.reLaunch({
-					url: '../main/main'
+					url: '/pages/main/main'
 				});
 			},
-
+			// 微信授权
 			oauth(value) {
+				let that = this;
 				uni.login({
 					provider: value,
 					success: (res) => {
 						uni.getUserInfo({
 							provider: value,
 							success: (infoRes) => {
-								/**
-								 * 实际开发中，获取用户信息后，需要将信息上报至服务端。
-								 * 服务端可以用 userInfo.openId 作为用户的唯一标识新增或绑定用户信息。
-								 */
-								const {
-									encryptedData,
-									iv
-								} = infoRes;
-								// 								console.log("infoRes ", JSON.stringify(infoRes));
-								// 								console.log("res ", JSON.stringify(res));
-								// 
-								// 								console.log("encryptedData ", JSON.stringify(encryptedData));
-								var params = {
-									userPhone: this.userPhone,
-									userCode: this.userCode,
-									code: res.code,
-									userLng: '',
-									userLat: '',
-									encode: {
-										encryptedData,
-										iv
-									}
-								}
-								// #ifdef APP-PLUS
-								params.weiXinUserInfo = {
-									openid: res.authResult.openid
-								}
-								// #endif
-
-								console.log('params###', JSON.stringify(params));
-								this.toMain(params);
+								that.wxLogin(that.userAccount, that.passWord, that.codeNumber, res.code);
 							}
 						});
 					},
@@ -120,19 +119,6 @@
 						console.error('授权登录失败：' + JSON.stringify(err));
 					}
 				});
-			},
-			async toMain(params) {
-				// #ifdef APP-PLUS
-				const res = await this.appLogin(params);
-				if (res.status !== 'ok') return;
-				// #endif
-				// #ifndef APP-PLUS
-				const result = await this.login(params);
-				if (result.status !== 'ok') return;
-				uni.reLaunch({
-					url: '../main/main'
-				});
-				// #endif
 			}
 		}
 	}

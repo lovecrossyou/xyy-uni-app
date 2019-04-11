@@ -339,13 +339,12 @@ export const validateOrders = ({
  * 重新发送订单验证码
  */
 
-export const payRequest = (merchantOrderNo, userId) => fetch('/payapi/payment/queryOrder', {
-	merchantId: 5,
-	merchantOrderNo,
-	source: 'MOBILE_WAP',
-	userId,
-	version: '1.0.0',
-});
+
+export const payRequest = (user_id,order_no,trade_type) => fetch('/payapi/payment/queryOrder', {
+	user_id,
+	order_no,
+	trade_type
+},'POST');
 
 
 
@@ -455,7 +454,7 @@ export const deleteAddress = (userid, addressid) => fetch( '/v1/users/' + userid
 /**
  * 账号密码登录
  */
-export const accountLogin = (username, password, captcha_code) => fetch('/v2/login', {username, password, captcha_code}, 'POST');
+export const accountLogin = (username, password, captcha_code,code) => fetch('/v2/login', {username, password, captcha_code,code}, 'POST');
 
 
 /**
@@ -468,3 +467,7 @@ export const signout = () => fetch('/v2/signout');
  * 改密码
  */
 export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch('/v2/changepassword', {username, oldpassWord, newpassword, confirmpassword, captcha_code}, 'POST');
+
+
+//微信支付
+export const wxPay = (userId,orderNum) => fetch('/v1/users/'+userId+'/wxpay', {user_id:userId,order_no:orderNum}, 'POST');

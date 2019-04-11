@@ -6,21 +6,24 @@ export const baseURL = 'http://localhost:8000/'
 request.config.baseURL = baseURL
 
 const errorPrompt = (err) => {
-	if (err.data.status === "-999") {		
-		//需要登录权限
-		goLoginPage();
-	} else {
-		uni.showToast({
-			title: err.data.message || 'fetch data error.',
-			mask: false,
-			duration: 1500
-		});
+	if(err.type === 'GET_USER_INFO_FAIELD'){
+		uni.navigateTo({
+			url:"/pages/login/enter"
+		})
+		return;
 	}
+	uni.showToast({
+		title: err.message || 'fetch data error.',
+		mask: false,
+		duration: 1500
+	});
 }
 
 request.interceptors.request.use((request) => {
-	request.headers["accessToken"] = service.getToken();
-	uni.showLoading();
+	let cookie = uni.getStorageSync('cookieKey');
+	if (cookie) {
+		request.headers['Cookie'] = cookie;
+	}
 	return request
 })
 
