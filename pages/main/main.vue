@@ -133,15 +133,7 @@
 				let res = await shopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId);
 				this.shopListArr = res;
 			},
-			async getNearShops() {
-				const params = {
-					latitude: this.location.latitude,
-					longitude: this.location.longitude,
-					page: 1,
-					pageSize: 10
-				}
-				this.fetchShops(params);
-			},
+			
 			getBanner() {
 				const params = {
 					latitude: this.location.latitude,
@@ -171,7 +163,6 @@
 				})
 			},
 			goShop(shop) {
-				// console.log(shop);
 				uni.navigateTo({
 					url: "shop/shop?shopId=" + shop.id
 				})
@@ -190,13 +181,18 @@
 		},
 		computed: {
 			...mapState([
-				'latitude', 'longitude'
+				'latitude', 'longitude','userInfo'
 			]),
 		},
-		onShow() {
+		async onShow() {
 			this.initData();
 			 //获取用户信息
-            this.getUserInfo();
+            const res = await this.getUserInfo();
+			if(this.userInfo === null){
+				uni.navigateTo({
+					url:"/pages/login/enter"
+				})
+			}
 		}
 	}
 </script>

@@ -243,12 +243,12 @@
 				"iconPath": "static/tab/home_normal.png",
 				"selectedIconPath": "static/tab/home.png"
 			},
-			{
-				"pagePath": "pages/shoppingcart/cart",
-				"text": "购物车",
-				"iconPath": "static/tab/cart_normal.png",
-				"selectedIconPath": "static/tab/cart.png"
-			},
+// 			{
+// 				"pagePath": "pages/shoppingcart/cart",
+// 				"text": "购物车",
+// 				"iconPath": "static/tab/cart_normal.png",
+// 				"selectedIconPath": "static/tab/cart.png"
+// 			},
 			{
 				"pagePath": "pages/order/order",
 				"text": "订单",

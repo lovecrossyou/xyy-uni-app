@@ -11,31 +11,31 @@
 					{ textcontent: '待评价' }
 				]"></glanceSlideNavTabBar>
 		</view>
-		<view v-if="orders.length == 0" class="empty-data">
+		<view v-if="orderList.length == 0" class="empty-data">
 			<image src="../../static/order/order.png" class="img"></image>
 			<view class="desc">您还没有相关的订单</view>
 		</view>
-		<view class="shopitem" v-for="(shop, index) in orders" :key="index" @click="toDetail(shop.shopId)">
+		<view class="shopitem" v-for="(shop, index) in orderList" :key="index" @click="toDetail(shop.restaurant_id)">
 			<view class="shop_header">
 				<view class="order_shop_name">
 					<image src="../../static/img/order_shop_icon.png"></image>
-					<view class="header-text">{{ shop.shopName }}</view>
+					<view class="header-text">{{ shop.restaurant_name }}</view>
 				</view>
-				<view class="order_status_des">{{ shop.statusContent }}</view>
+				<view class="order_status_des">{{ shop.status_bar.title }}</view>
 			</view>
-			<view class="shop_content" v-for="(product, indexP) in shop.items" :key="indexP" :id="product.id">
+			<!-- <view class="shop_content" v-for="(product, indexP) in shop.basket.group[0]" :key="indexP" :id="product.id">
 				<view class="product_container" @click.stop="toOrderDetail(shop.orderNo)">
 					<image :src="product.productImage"></image>
 					<view class="product_info">
-						<view class="product_name">{{ product.productName }}</view>
-						<view class="product_price">￥{{ product.productPrice / 100 }}</view>
+						<view class="product_name">{{ product.name }}</view>
+						<view class="product_price">￥{{ product.price }}</view>
 					</view>
 				</view>
 				<view v-if="indexP < shop.items.length - 1" class="space_line"></view>
-			</view>
+			</view> -->
 			<view class="shop_footer">
 				<view class="price_info">
-					共2件商品 合计：¥26.00
+					{{shop.basket.group[0][0].name}} 共{{shop.basket.group[0].length}}件商品
 				</view>
 				<view class="opt_info">
 					<view class="btn-one-more-order" @click.stop="oneMoreOrder">
@@ -54,19 +54,37 @@
 	import glanceSlideNavTabBar from '@/components/order/glance-SlideNavTabBar.vue';
 	import uniIcon from '@/components/uni-icon/uni-icon.vue';
 	import orderApi from '@/util/apis/order.js';
-	import {
-		mapGetters
-	} from 'vuex';
+	    import {getOrderList} from '@/util/service/getData'
+
+	    import {mapState, mapMutations} from 'vuex'
+
 	export default {
 		onShow() {
-			console.log('cart', JSON.stringify(this.carts));
+			this.initData();
 		},
 		data() {
 			return {
-				orders: []
+				orders: [],
+				orderList: [], //订单列表
+				offset: 0, 
 			};
 		},
-		methods: {
+		computed: {
+            ...mapState([
+                'userInfo', 'geohash'
+            ]),
+        },
+        methods: {
+             ...mapMutations([
+               'SAVE_ORDER'
+            ]),
+            //初始化获取信息
+            async initData(){
+                if (this.userInfo && this.userInfo.user_id) {
+                    let res = await getOrderList(this.userInfo.user_id, this.offset);
+                    this.orderList = [...res];
+                }
+            },
 			oneMoreOrder(){
 				
 			},
@@ -89,25 +107,13 @@
 				uni.navigateTo({
 					url: './orderDetail/OrderDetail?orderNo=' + orderNo
 				});
-			},
-			async requestList() {
-				const listRes = await orderApi.requestOrderList({
-					page: '1',
-					pageSize: '20'
-				});
-				if (listRes.status === 'ok') {
-					this.orders = listRes.data.content;
-				}
 			}
-		},
-		onShow() {
-			this.requestList();
 		},
 		components: {
 			uniIcon,
 			glanceSlideNavTabBar
 		},
-		computed: {}
+		
 	};
 </script>
 

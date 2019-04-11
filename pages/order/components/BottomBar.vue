@@ -1,20 +1,18 @@
 <template>
 	<div class="buttom_container">
       <div class="buttom_container_money">
-        <div class="buttom_container_m_title">总额：</div>
+        <div class="buttom_container_m_title">待支付：</div>
         <div class="buttom_container_m_mark">¥</div>
-        <div class="buttom_container_m_value">20.00</div>
-        <div class="buttom_container_m_ex">已优惠¥6</div>
+        <div class="buttom_container_m_value">{{cart.total}}</div>
+        <!-- <div class="buttom_container_m_ex">已优惠¥6</div> -->
       </div>
-      <div class="buttom_container_pay"  @click="toPay" >去支付</div>
+      <div class="buttom_container_pay"  @click="toPay" >确认下单</div>
     </div>
 </template>
 
 <script>
 	export default {
-		onLoad() {
-			// console.log('bar....')
-		},
+		props:['cart'],
 		methods:{
 			toPay(){
 				this.$emit('toPay')

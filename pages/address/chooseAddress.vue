@@ -11,13 +11,13 @@
 				    <div class="div_li" v-for="(item,index) in deliverable" :key="index">
 				        <div class="detail_container" v-on:click="chooseAddress(item,index)">
 				            <header>
-				                <span>{{item.recievName}}</span>
+				                <span>{{item.name}}</span>
 				                <span class="space_l_and_r">{{item.sex == 1? '先生' : '女士'}}</span>
-				                <span>{{item.phoneNum}}</span>
+				                <span>{{item.phone}}</span>
 				            </header>
 				            <div class="address_detail ellipsis">
 				                <span v-if="item.tag" :style="{backgroundColor: iconColor(item.tag)}">{{item.tag}}</span>
-				                <p>{{item.fullAddress}}</p>   
+				                <p>{{item.address}}{{item.address_detail}}</p>   
 				            </div>
 				        </div>
 						<image class="edit_address" src="../../static/img/edit_address.png" v-on:click="editAddress(item)"></image>

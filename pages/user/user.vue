@@ -3,12 +3,11 @@
 		<view class="header" @click="modification">
 			<view class="left">
 				<view class="image-content">
-					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="userInfo.userIconUrl"
-					 @error="imageError"></image>
+					<image style="width: 128upx; height: 128upx; background-color: #eee;" mode="aspectFill" :src="userInfo.avatar"></image>
 				</view>
 				<view class="user-info">
-					<view class="name">{{userInfo.nickName || userInfo.phoneNum}}</view>
-					<view class="score">积分：0</view>
+					<view class="name">{{userInfo.username || userInfo.phone}}</view>
+					<view class="score">积分：{{userInfo.point}}</view>
 				</view>
 			</view>
 			<view class="right">
@@ -25,7 +24,8 @@
 			<modifiedData title="更多" :thumb="icon_collect" @click="more"></modifiedData>
 		</view>
 		<view class="btn-row">
-			<button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
+			<button v-if="!userInfo" type="primary" class="primary" @tap="bindLogin">登录</button>
+			<button v-else type="warn" @tap="outLogin">注销登录</button>
 		</view>
 	</view>
 </template>
@@ -37,6 +37,13 @@
 	} from 'vuex'
 	import uniIcon from '@/components/uni-icon/uni-icon.vue'
 	import modifiedData from "@/components/modifiedData.vue";
+	import {
+		signout
+	} from '@/util/service/getData'
+	import {
+		removeStore
+	} from '@/util/config/mUtils'
+
 	export default {
 		data() {
 			return {
@@ -54,13 +61,24 @@
 			uniIcon
 		},
 		computed: {
-			...mapState(['hasLogin', 'forcedLogin', 'userInfo'])
+			...mapState([
+				'userInfo', 'imgPath'
+			]),
 		},
 		methods: {
-			...mapMutations(['logout']),
+			...mapMutations([
+				'OUT_LOGIN', 'SAVE_AVANDER'
+			]),
+			//退出登录
+			async outLogin() {
+				this.OUT_LOGIN();
+				removeStore('user_id')
+				await signout();
+				this.bindLogin();
+			},
 			bindLogin() {
 				uni.navigateTo({
-					url: '../login/login',
+					url: 'pages/login/enter',
 				});
 			},
 			toAddress() {

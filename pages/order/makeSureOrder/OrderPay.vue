@@ -2,8 +2,8 @@
 	<view class="container">
 		<view class="order_content">
 			<view class="order_pay_top">
-				<!-- <view class="order_pay_top_time">支付剩余时间1:0:0</view> -->
-				<view class="order_pay_top_amount">¥{{orderInfo.totalPrice/100}}</view>
+				<view class="order_pay_top_time">支付剩余时间{{remaining}}</view>
+				<view class="order_pay_top_amount">¥{{cartPrice}}</view>
 			</view>
 			<view>
 				<block v-for="(channel,index) in paychannels" :key="index">
@@ -24,42 +24,101 @@
 </template>
 
 <script>
-	import api from '@/util/api.js'
 	import {
 		mapState,
 		mapMutations,
 		mapGetters
 	} from 'vuex'
+	import {
+		payRequest
+	} from '@/util/service/getData'
+
 	export default {
-		computed: mapState({
-			payInfo: state => state.orderConfirm.payInfo,
-			orderInfo: state => state.orderConfirm.orderInfo
-		}),
+		onLoad(opt) {
+			this.initData();
+			//清除购物车中当前商铺的信息
+			if (this.shopid) {
+				this.CLEAR_CART(this.shopid);
+			}
+		},
+		onShow() {
+			this.remainingTime();
+		},
+		computed: {
+			...mapState([
+				'orderMessage', 'userInfo', 'shopid', 'cartPrice'
+			]),
+			//时间转换
+			remaining: function() {
+				let minute = parseInt(this.countNum / 60);
+				if (minute < 10) {
+					minute = '0' + minute;
+				}
+				let second = parseInt(this.countNum % 60);
+				if (second < 10) {
+					second = '0' + second;
+				}
+				return '00 : ' + minute + ' : ' + second;
+			}
+		},
 		methods: {
-			async queryResult(params, cb) {
-				const d = await api.queryResult(params);
-				cb();
+			...mapMutations([
+				'CONFIRM_INVOICE', 'CLEAR_CART'
+			]),
+			async initData() {
+				console.log('this.orderMessage ', JSON.stringify(this.orderMessage));
+				console.log('userInfo.user_id ', this.userInfo.user_id);
+
+				this.payDetail = await payRequest(this.orderMessage.data.id, this.userInfo.user_id);
+				if (this.payDetail.message) {
+					this.showAlert = true;
+					this.alertText = this.payDetail.message;
+					return
+				}
+			},
+			//倒计时
+			remainingTime() {
+				clearInterval(this.timer);
+				this.timer = setInterval(() => {
+					this.countNum--;
+					if (this.countNum == 0) {
+						clearInterval(this.timer);
+						this.showAlert = true;
+						this.alertText = '支付超时';
+					}
+				}, 1000);
+			},
+			//确认付款
+			confrimPay() {
+				this.showAlert = true;
+				this.alertText = '当前环境无法支付，请打开官方APP进行付款';
+				this.gotoOrders = true;
 			},
 			goNext() {
-				this.$store.dispatch('pay/startPay',this.orderInfo);
+				this.$store.dispatch('pay/startPay', this.orderInfo);
 			}
 		},
 		data() {
 			return {
 				selectIndex: 0,
 				paychannels: [{
-						icon: '../../../static/order/pay_icon_weixin@2x.png',
-						selIcon: '../../../static/order/pay_btn_selected_weixin@2x.png',
-						title: "微信支付",
-						unselIcon: '../../../static/order/pay_btn@2x.png'
-					}
-// 					{
-// 						icon: '../../../static/order/pay_icon_zhifubao@2x.png',
-// 						selIcon: '../../../static/order/pay_btn_selected_zhifubao@2x.png',
-// 						title: "支付宝付款",
-// 						unselIcon: '../../../static/order/pay_btn@2x.png'
-// 					}
-				]
+					icon: '../../../static/order/pay_icon_weixin@2x.png',
+					selIcon: '../../../static/order/pay_btn_selected_weixin@2x.png',
+					title: "微信支付",
+					unselIcon: '../../../static/order/pay_btn@2x.png'
+				}, {
+					icon: '../../../static/order/pay_icon_zhifubao@2x.png',
+					selIcon: '../../../static/order/pay_btn_selected_zhifubao@2x.png',
+					title: "支付宝付款",
+					unselIcon: '../../../static/order/pay_btn@2x.png'
+				}],
+
+				payDetail: false, //付款信息详情
+				showAlert: false,
+				alertText: null,
+				payWay: 1, //付款方式
+				countNum: 900, //倒计时15分钟
+				gotoOrders: false, //去付款
 			}
 		}
 	}
