@@ -118,7 +118,9 @@
 		},
 		data() {
 			return {
-				banners:[],
+				banners:[{
+					image:''
+				}],
 				offset: 0, // 批次加载店铺列表，每次加载20个 limit = 20
 				shopListArr: [], // 店铺列表数据
 				preventRepeatReuqest: false, //到达底部加载数据，防止重复加载

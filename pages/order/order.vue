@@ -1,6 +1,6 @@
 <template>
 	<view class="shoppingcar">
-		<view class="top_tab_option">
+		<!-- <view class="top_tab_option">
 			<glanceSlideNavTabBar fontsize="14px" textcolor="#222222" activetextcolor="#3E87EB" underlinecolor="#3E87EB"
 			 underlineheight="3px" underlinewidth="50px" topfixedval="0px" bgcolor="#FAFAFA" :topfixed="true" @clickitem="clickitem"
 			 :data="[
@@ -10,9 +10,9 @@
 					{ textcontent: '待收货' },
 					{ textcontent: '待评价' }
 				]"></glanceSlideNavTabBar>
-		</view>
+		</view> -->
 		<view v-if="orderList.length == 0" class="empty-data">
-			<image :src="shop.restaurant_image_url" class="img"></image>
+			<image src="../../static/order/order.png" class="img"></image>
 			<view class="desc">您还没有相关的订单</view>
 		</view>
 		<view class="shopitem" v-for="(shop, index) in orderList" :key="index" @click.stop="toOrderDetail(shop)">

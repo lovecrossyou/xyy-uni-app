@@ -96,6 +96,7 @@
 			},
 			// 微信小程序支付
 			wxpay(wexinSpec) {
+				let that = this;
 				uni.requestPayment({
 					provider: 'wxpay',
 					timeStamp: wexinSpec.timeStamp,
@@ -106,13 +107,13 @@
 					success: function(res) {
 						uni.hideLoading();
 						uni.redirectTo({
-							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderMessage.data.id
 						})
 					},
 					fail: function(err) {
 						uni.hideLoading();
 						uni.redirectTo({
-							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderMessage.data.id
 						})
 					}
 				});
@@ -120,6 +121,7 @@
 
 			// app支付
 			nativePay(orderInfo) {
+				let that = this;
 				const payParams = {
 					appid: orderInfo.appid,
 					noncestr: orderInfo.noncestr,
@@ -134,12 +136,12 @@
 					orderInfo: JSON.stringify(payParams),
 					success: function(res) {
 						uni.redirectTo({
-							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderMessage.data.id
 						})
 					},
 					fail: function(err) {
 						uni.redirectTo({
-							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + this.orderMessage.data.id
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderMessage.data.id
 						})
 					}
 				})

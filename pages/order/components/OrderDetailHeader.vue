@@ -4,46 +4,30 @@
 		<view class="h_payStatus_c">
 			<view class="h_payStatus">{{orderInfo.status_bar.title}}</view>
 		</view>
-		<!-- 继续支付按钮 -->
-		<!-- <view class="desc">
-			逾期未支付,订单将自动取消
-		</view>
-
-		<view class="btn-wrapper">
-			<view class="btn_rate">
-				评价
+		<view v-if="orderInfo.status_bar.title == '等待支付'" class="h_orderDesc">逾期未支付，订单将自动取消</view>
+		<view v-if="orderInfo.status_bar.title == '等待支付'" class="orderBtn_c">
+			<view class="toPay_btn" @click="goOnPay">
+				<computeTime :time="orderInfo.time_pass"></computeTime>
 			</view>
-			<view class="btn_more">
+		</view>
+		<view v-else>
+			<view class="orderBtn_apprise" @click="buyAgain">
 				再来一单
 			</view>
-		</view> -->
-
-		<view v-if="orderInfo.status_code===0" class="h_orderDesc">逾期未支付，订单将自动取消</view>
-		<view v-if="orderInfo.status_code===0" class="orderBtn_c">
-			<view class="cancel_left_btn uni-countdown" @click="orderAction('1')">继续支付</view>
-			<view class="toPay_btn">
-				<computeTime :time="orderInfo.time_pass">
-					</computeTime>
-
-					<!-- <uni-countdown color="#FFFFFF" splitor-color="#FFFFFF" background-color="transparent" border-color="transparent"
-				 :showColon="false" :show-day="false" :hour="0" :minute="15" :second="0" :time="orderInfo.time_pass">
-				</uni-countdown> -->
-			</view>
-		</view>
-		<view v-else-if="orderInfo.status_code===1" class="orderBtn_apprise" @click="orderAction('2')">
-			去评价
-		</view>
-		<view v-else-if="orderInfo.status_code===1" class="orderBtn_apprise" @click="orderAction('3')">
-			再来一单
-		</view>
-		<view v-else-if="orderstatus==='wating_deal'" class="orderBtn_c">
-			<view class="orderBtn_apprise_left" @click="orderAction('4')">催单</view>
-			<view class="orderBtn_apprise_left" @click="orderAction('1')">取消订单</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations,
+		mapGetters
+	} from 'vuex'
+	import {
+		payRequest,
+		wxPay
+	} from '@/util/service/getData'
 	import uniCountdown from "../../../components/uniCountDown.vue"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import computeTime from '../../../components/computeTime'
@@ -57,20 +41,85 @@
 			computeTime
 		},
 		computed: {
-			payStatus: function() {
-				if (this.orderInfo.orderStatus === 'waiting_deal') {
-					return '等待商家接单'
-				}
-				return this.orderInfo.orderStatusContent
-			},
-			orderstatus: function() {
-				// if (this.orderInfo.status_code === 0) return
-								return 'create';
-				// 				return this.orderInfo.orderStatus;
-			}
+			...mapState([
+				'orderMessage', 'userInfo', 'shopid', 'cartPrice'
+			])
 		},
 		methods: {
-
+			buyAgain(){
+				uni.navigateTo({
+					url: '/pages/main/shop/shop?shopId=' + this.orderInfo.restaurant_id
+				});
+			},
+			//确认付款
+			async goOnPay() {
+				uni.showLoading({
+					mask: true
+				})
+				let res = null;
+				// #ifdef APP-PLUS
+				res = await payRequest(this.userInfo.user_id, this.orderInfo.id, 'APP');
+				this.nativePay(res.data);
+				// #endif
+			
+				// #ifdef MP-WEIXIN
+				res = await payRequest(this.userInfo.user_id, this.orderInfo.id, 'MP-WEIXIN');
+				console.log('payRequest ##', res);
+				this.wxpay(res.data);
+				// #endif
+			},
+			// 微信小程序支付
+			wxpay(wexinSpec) {
+				let that = this;
+				uni.requestPayment({
+					provider: 'wxpay',
+					timeStamp: wexinSpec.timeStamp,
+					nonceStr: wexinSpec.nonceStr,
+					package: wexinSpec.package,
+					signType: wexinSpec.signType,
+					paySign: wexinSpec.paySign,
+					success: function(res) {
+						uni.hideLoading();
+						uni.redirectTo({
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderInfo.id
+						})
+					},
+					fail: function(err) {
+						uni.hideLoading();
+						uni.redirectTo({
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderInfo.id
+						})
+					}
+				});
+			},
+			
+			// app支付
+			nativePay(orderInfo) {
+				let that = this;
+				const payParams = {
+					appid: orderInfo.appid,
+					noncestr: orderInfo.noncestr,
+					package: orderInfo.package,
+					partnerid: orderInfo.partnerid,
+					prepayid: orderInfo.prepayid,
+					sign: orderInfo.sign,
+					timestamp: orderInfo.timestamp,
+				}
+				uni.requestPayment({
+					provider: 'wxpay',
+					orderInfo: JSON.stringify(payParams),
+					success: function(res) {
+						uni.redirectTo({
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderInfo.id
+						})
+					},
+					fail: function(err) {
+						uni.redirectTo({
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderInfo.id
+						})
+					}
+				})
+			},
 			orderAction(type) {
 				// type 1取消订单  2去评价  3再来一单 4催单
 				this.$emit("orderAction", type)
@@ -240,17 +289,17 @@
 			}
 
 			.toPay_btn {
-// 				.padding_my(0, 10px, 0, 10px);
-// 				height: 40px;
-// 				background: rgba(255, 106, 97, 1);
-// 				border-radius: 4px;
-// 				text-align: center;
-// 				font-size: 20px;
-// 				font-family: PingFangSC-Regular;
-// 				font-weight: 400;
-// 				color: rgba(255, 255, 255, 1);
-// 				line-height: 40px;
-// 				margin: 5px;
+				// 				.padding_my(0, 10px, 0, 10px);
+				// 				height: 40px;
+				// 				background: rgba(255, 106, 97, 1);
+				// 				border-radius: 4px;
+				// 				text-align: center;
+				// 				font-size: 20px;
+				// 				font-family: PingFangSC-Regular;
+				// 				font-weight: 400;
+				// 				color: rgba(255, 255, 255, 1);
+				// 				line-height: 40px;
+				// 				margin: 5px;
 			}
 		}
 	}

@@ -16,11 +16,7 @@
 			}
 		},
 		onLoad(option) {
-			// this.countNum -= this.numTime;
-			
-			console.log('countNum### ',this.countNum);
-			console.log('numTime### ',this.numTime);
-			
+			this.countNum -= this.numTime;
 			this.remainingTime();
 		},
 		props: ['time'],

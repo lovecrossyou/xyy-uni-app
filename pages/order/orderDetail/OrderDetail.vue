@@ -63,7 +63,7 @@
 					</view>
 					<view class="item">
 						<view class="label">下单时间</view>
-						<view class="text">{{orderDetail.order_time}}</view>
+						<view class="text">{{orderDetail.formatted_created_at}}</view>
 					</view>
 				</view>
 			</view>
