@@ -26,9 +26,9 @@
 								月售{{p.month_sales}} 好评95%
 							</view>
 							<!--todo  针对不同的规格获取价格 -->
-							<!-- <view class="price">
-								¥{{p.price}}
-							</view> -->
+							<view class="price">
+								¥{{p.specfoods[0].price}}
+							</view>
 						</view>
 						<view class="cartcontrol-wrapper">
 							<cartcontrol :shopId='shopId' :foods="p"></cartcontrol>

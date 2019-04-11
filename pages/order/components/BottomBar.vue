@@ -1,7 +1,7 @@
 <template>
 	<div class="buttom_container">
       <div class="buttom_container_money">
-        <div class="buttom_container_m_title">待支付：</div>
+        <div class="buttom_container_m_title">总计：</div>
         <div class="buttom_container_m_mark">¥</div>
         <div class="buttom_container_m_value">{{cart.total}}</div>
         <!-- <div class="buttom_container_m_ex">已优惠¥6</div> -->

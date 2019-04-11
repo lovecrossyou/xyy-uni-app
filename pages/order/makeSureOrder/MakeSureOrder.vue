@@ -1,6 +1,6 @@
 <template>
 	<view class="place-order">
-		<div v-if="!showLoading">
+		<div v-if="checkoutData">
 			<view class="makeOrder_content">
 				<AddressChoose :mydata="choosedAddress" @chooseAddAction="chooseAddAction"></AddressChoose>
 				<ArriveAndPay :mydata="arriveAndPayData1"></ArriveAndPay>
@@ -14,6 +14,8 @@
 				<view class="space10" />
 				<OrderInfoItemAction itemTitle="使用优惠券" :itemContent="getTicketName" :showArrow="true" @itemCallBack="chooseTickets"></OrderInfoItemAction>
 				<OrderInfoItemAction itemTitle="立减优惠" :itemContent="getTicketMoney" :showArrow="false" valueColor="#FB5147"></OrderInfoItemAction>
+				<OrderInfoItemAction itemTitle="配送费" :itemContent="deliveryFee" :showArrow="false" valueColor="#999"></OrderInfoItemAction>
+
 				<view class="space30" />
 				<OrderInfoItemAction itemTitle="订单备注" valueColor="#999999" titleColor="#2E2E2E" :itemContent="getOrderRemark"
 				 :showArrow="true" @itemCallBack="orderRemarkInput"> </OrderInfoItemAction>
@@ -58,6 +60,10 @@
 			...mapState([
 				'cartList', 'remarkText', 'inputText', 'invoice', 'choosedAddress', 'userInfo'
 			]),
+			deliveryFee(){
+				if(!this.checkoutData)return '¥ 0';
+				return '¥'+this.checkoutData.cart.deliver_amount
+			},
 			//备注页返回的信息进行处理
 			remarklist: function() {
 				let str = new String;
@@ -152,7 +158,7 @@
 			},
 			async toPay() {
 				var that = this;
-				if (!this.choosedAddress||!this.choosedAddress.id) {
+				if (!this.choosedAddress || !this.choosedAddress.id) {
 					uni.showToast({
 						title: '请添加收货地址',
 						icon: 'none',
@@ -185,15 +191,6 @@
 				uni.navigateTo({
 					url: "/pages/order/makeSureOrder/OrderPay"
 				})
-
-
-				// 				let params = Object.assign({}, this.cartConfirmInfo);
-				// 				params.deliverAddressId = this.choosedAddress.id;
-				// 				params.needDeliverTime = "尽快送达";
-				// 				//生成订单信息
-				// 				const createRes = await api.shopOrderCreate(params);
-				// 				const orderInfo = createRes.data;
-				// 				this.$store.dispatch('pay/startPay', orderInfo);
 			}
 		},
 		data() {

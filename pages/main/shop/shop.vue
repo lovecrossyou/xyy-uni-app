@@ -68,7 +68,7 @@
 				<view class="left">
 					已选商品
 				</view>
-				<view class="right">
+				<view class="right" @click="clearCart">
 					清空购物车
 				</view>
 			</view>
@@ -81,6 +81,9 @@
 						<view class="right">
 							<view class="price">
 								¥{{product.price}}
+							</view>
+							<view class="num">
+								x {{product.num}}
 							</view>
 							<cartcontrol :shopId='shopId' :foods="product" @add="addFood"></cartcontrol>
 						</view>
@@ -236,7 +239,7 @@
 					//获取位置信息
 					let res = await msiteAddress(this.geohash);
 					// 记录当前经度纬度进入vuex
-					// this.RECORD_ADDRESS(res);
+					this.RECORD_ADDRESS(res);
 				}
 				//获取商铺信息
 				this.shopDetailData = await shopDetails(this.shopId, this.latitude, this.longitude);
@@ -251,11 +254,9 @@
 				this.RECORD_SHOPDETAIL(this.shopDetailData);
 
 				this.initCategoryNum();
-				//隐藏加载动画
-				// this.hideLoading();
 			},
 			toConfirmOrder() {
-				if (this.cartList.length === 0) return;
+				if (Object.keys(this.cartList).length === 0) return;
 				uni.navigateTo({
 					url: '../../order/makeSureOrder/MakeSureOrder?geohash='+this.geohash+'&shopId='+this.shopId
 				})
@@ -329,7 +330,7 @@
 			},
 			//清除购物车
 			clearCart() {
-				this.toggleCartList();
+				// this.toggleCartList();
 				this.CLEAR_CART(this.shopId);
 			},
 		},
@@ -613,10 +614,14 @@
 						// margin-right: 24upx;
 						.price {
 							// height: 100%;
-
-
 							color: #E02C2C;
 							font-size: 28upx;
+							line-height: 100%;
+						}
+						.num{
+							margin-left: 10upx;
+							color: #999999;
+							font-size: 24upx;
 							line-height: 100%;
 						}
 					}

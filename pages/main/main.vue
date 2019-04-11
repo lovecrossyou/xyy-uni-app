@@ -119,7 +119,7 @@
 		data() {
 			return {
 				banners:[{
-					image:''
+					image:'http://static.kuaimayoupin.com/image/banner/banner@2x%20%284%29.png'
 				}],
 				offset: 0, // 批次加载店铺列表，每次加载20个 limit = 20
 				shopListArr: [], // 店铺列表数据

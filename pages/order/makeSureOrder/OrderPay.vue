@@ -7,7 +7,7 @@
 			</view>
 			<view>
 				<block v-for="(channel,index) in paychannels" :key="index">
-					<view class="p_option" @click="selectIndex=index">
+					<view class="p_option" @click="changePay(index)">
 						<view class="p_option_left">
 							<image v-bind:src="channel.icon" class="pay_icon">
 							</image>
@@ -65,6 +65,10 @@
 			...mapMutations([
 				'CONFIRM_INVOICE', 'CLEAR_CART'
 			]),
+			changePay(index) {
+				if (index === 1) return;
+				this.selectIndex = index;
+			},
 			//倒计时
 			remainingTime() {
 				clearInterval(this.timer);

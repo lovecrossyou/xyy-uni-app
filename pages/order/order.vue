@@ -19,8 +19,10 @@
 			<view class="shop_header">
 				<view class="order_shop_name" @click.stop="toShop(shop)">
 					<image :src="shop.restaurant_image_url"></image>
-					<view class="header-text">{{ shop.restaurant_name }}</view>
-					<view class="header-text">{{ shop.formatted_created_at }}</view>
+					<view class="shop-info">
+						<view class="header-text">{{ shop.restaurant_name }}</view>
+						<view class="time">{{ shop.formatted_created_at }}</view>
+					</view>
 				</view>
 				<view class="order_status_des">{{ shop.status_bar.title }}</view>
 			</view>
@@ -39,12 +41,12 @@
 					{{shop.basket.group[0][0].name}} 共{{shop.basket.group[0].length}}件商品
 				</view>
 				<view class="opt_info">
-					<view class="btn-one-more-order" @click.stop="oneMoreOrder">
+					<view class="btn-one-more-order" @click.stop="toShop(shop)">
 						再来一单
 					</view>
-					<view class="btn-juegement" @click.stop="judge">
+					<!-- <view class="btn-juegement" @click.stop="judge">
 						评价
-					</view>
+					</view> -->
 				</view>
 			</view>
 		</view>
@@ -194,19 +196,31 @@
 					display: flex;
 					flex-direction: row;
 					align-items: center;
-
+					height: 120upx;
+					
 					image {
-						width: 34upx;
-						height: 30upx;
+						width: 80upx;
+						height: 80upx;
 						margin-right: 20upx;
 					}
-
-					.header-text {
-						font-size: 28px;
-						font-family: PingFangSC-Regular;
-						font-weight: 400;
-						color: rgba(34, 34, 34, 1);
+					.shop-info{
+						display: flex;
+						flex-direction: column;
+						.header-text {
+							font-size: 28px;
+							font-family: PingFangSC-Regular;
+							font-weight: 400;
+							color: rgba(34, 34, 34, 1);
+						}
+						.time{
+							font-size: 24px;
+							font-family: PingFangSC-Regular;
+							font-weight: 400;
+							color: #999;
+						}
 					}
+
+					
 				}
 
 				.order_status_des {
