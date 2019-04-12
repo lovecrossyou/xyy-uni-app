@@ -29,20 +29,20 @@
 				<view class="totoal">实付 ¥{{orderDetail.total_amount}}</view>
 			</view>
 
-			<view class="info">
+			<view class="info" v-if="orderData">
 				<view class="title">配送信息</view>
 				<view class="desc">
 					<view class="item">
 						<view class="label">送达时间</view>
-						<view class="text">{{orderDetailData.needDeliverTime}}</view>
+						<view class="text">{{orderData.deliver_time}}</view>
 					</view>
 					<view class="item">
 						<view class="label">送货地址</view>
-						<view class="text">{{orderDetailData.fullAddress}}<br />{{orderDetailData.phone}}<br />{{orderDetailData.address}}</view>
+						<view class="text">{{orderData.addressDetail}}{{orderData.phone}}</view>
 					</view>
 					<view class="item">
 						<view class="label">配送方式</view>
-						<view class="text">{{desc.delivery_company||''}}</view>
+						<view class="text">{{orderData.pay_method||''}}</view>
 					</view>
 					<!-- <view class="item">
 						<view class="label">配送骑手</view>
@@ -98,13 +98,7 @@
 				isLoading: true,
 				food: [],
 				extra: [],
-				desc: {
-					"delivery_company": "--",
-					"delivery_type": "",
-					"has_distribution_info": 0,
-					"is_position_valid": 0,
-					"is_rider_valid": 0
-				},
+				orderData:null
 			};
 		},
 		onLoad(option) {
@@ -154,6 +148,8 @@
 			async initData() {
 				if (this.userInfo && this.userInfo.user_id) {
 					this.orderData = await getOrderDetail(this.userInfo.user_id, this.orderDetail.unique_id);
+					
+					console.log('this.orderData ', JSON.stringify(this.orderData.addressDetail));
 				}
 			},
 		}
