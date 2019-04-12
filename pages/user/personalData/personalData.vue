@@ -3,7 +3,7 @@
 		<view class="header_wrapper" @click="upLoad">
 			<view class="head_portraits_text">头像</view>
 			<view class="header_right">
-				<img mode="aspectFill" :src="image_path" alt="" class="head_img" />
+				<img mode="aspectFill" :src="userInfo.avatar" alt="" class="head_img" />
 				<img src="http://qnimage.xiteng.com/right_icon@2x.png" alt="" class="right_icon" />
 			</view>
 		</view>
@@ -36,7 +36,6 @@
 				src: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
 				animationData: {},
 				showMenu: false,
-				image_path: ''
 			};
 		},
 		components: {
@@ -76,7 +75,7 @@
 							name: 'file',
 							success: res => {
 								const imgData = JSON.parse(res.data);
-								that.image_path = imgData.image_path;
+								that.userInfo.avatar = imgData.image_path;
 							}
 						});
 					}
