@@ -3,7 +3,7 @@
 		<modifiedData title="商务合作"></modifiedData>
 		<modifiedData title="关于我们" @click="goAbout"></modifiedData>
 
-		<button type="primary" class="quit_btn" @click="loginOut">退出登录</button>
+		<!-- <button type="primary" class="quit_btn" @click="loginOut">退出登录</button> -->
 	</view>
 </template>
 

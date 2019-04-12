@@ -23,10 +23,10 @@
 			<modifiedData title="意见反馈" :thumb="icon_feedback" @click="feedback"></modifiedData>
 			<modifiedData title="更多" :thumb="icon_collect" @click="more"></modifiedData>
 		</view>
-		<view class="btn-row">
+		<!-- <view class="btn-row">
 			<button v-if="!userInfo" type="primary" class="primary" @tap="bindLogin">登录</button>
 			<button v-else type="warn" @tap="outLogin">注销登录</button>
-		</view>
+		</view> -->
 	</view>
 </template>
 
@@ -109,7 +109,7 @@
 				console.error('image发生error事件，携带值为' + e.detail.errMsg)
 			},
 			modification() {
-				return;
+				// return;
 				uni.navigateTo({
 					url: "personalData/personalData"
 				})
