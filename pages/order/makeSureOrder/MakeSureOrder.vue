@@ -83,7 +83,7 @@
 		methods: {
 			...mapMutations([
 				'INIT_BUYCART', 'SAVE_GEOHASH', 'CHOOSE_ADDRESS', 'NEED_VALIDATION', 'SAVE_CART_ID_SIG', 'SAVE_ORDER_PARAM',
-				'ORDER_SUCCESS', 'SAVE_SHOPID'
+				'ORDER_SUCCESS', 'SAVE_SHOPID','SAVE_ORDER'
 			]),
 			//初始化数据
 			async initData() {
@@ -188,7 +188,8 @@
 					this.ORDER_SUCCESS(orderRes);
 					// this.$router.push('/confirmOrder/payment');
 				}
-				uni.navigateTo({
+				this.SAVE_ORDER(orderRes.data);
+				uni.redirectTo({
 					url: "/pages/order/makeSureOrder/OrderPay"
 				})
 			}
