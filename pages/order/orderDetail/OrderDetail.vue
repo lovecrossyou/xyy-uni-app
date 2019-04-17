@@ -1,6 +1,6 @@
 <template>
 	<view class="detail">
-		<view v-show="orderDetail">
+		<view v-ifv-if="orderDetail">
 			<OrderDetailHeader :orderInfo="orderDetail" @orderAction="orderAction" />
 			<view class="content_detail">
 				<view class="item">

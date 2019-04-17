@@ -30,6 +30,9 @@
 		mapMutations
 	} from 'vuex';
 	import modifiedData from '@/components/modifiedData.vue';
+	import {
+		baseURL
+	} from '@/util/request.js'
 	export default {
 		data() {
 			return {
@@ -70,7 +73,7 @@
 					success: chooseImageRes => {
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						uni.uploadFile({
-							url: 'http://192.168.1.235:8001/eus/v1/users/' + this.userInfo.user_id + '/avatar', //仅为示例，非真实的接口地址
+							url: baseURL + 'eus/v1/users/' + this.userInfo.user_id + '/avatar', //仅为示例，非真实的接口地址
 							filePath: tempFilePaths[0],
 							name: 'file',
 							success: res => {

@@ -89,13 +89,17 @@
 				let res = null;
 				// #ifdef APP-PLUS
 				res = await payRequest(this.userInfo.user_id, this.orderMessage.data.id, 'APP');
-				this.nativePay(res.data);
+				if(res){
+					this.nativePay(res.data);
+				}
 				// #endif
 
 				// #ifdef MP-WEIXIN
 				res = await payRequest(this.userInfo.user_id, this.orderMessage.data.id, 'MP-WEIXIN');
-				console.log('payRequest ##', res);
-				this.wxpay(res.data);
+				if(res){
+					console.log('payRequest ##', res);
+					this.wxpay(res.data);
+				}
 				// #endif
 			},
 			// 微信小程序支付

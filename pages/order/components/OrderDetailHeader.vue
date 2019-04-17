@@ -46,7 +46,7 @@
 			])
 		},
 		methods: {
-			buyAgain(){
+			buyAgain() {
 				uni.navigateTo({
 					url: '/pages/main/shop/shop?shopId=' + this.orderInfo.restaurant_id
 				});
@@ -59,13 +59,16 @@
 				let res = null;
 				// #ifdef APP-PLUS
 				res = await payRequest(this.userInfo.user_id, this.orderInfo.id, 'APP');
-				this.nativePay(res.data);
+				if (res) {
+					this.nativePay(res.data);
+				}
 				// #endif
-			
+
 				// #ifdef MP-WEIXIN
 				res = await payRequest(this.userInfo.user_id, this.orderInfo.id, 'MP-WEIXIN');
-				console.log('payRequest ##', res);
-				this.wxpay(res.data);
+				if (res) {
+					this.wxpay(res.data);
+				}
 				// #endif
 			},
 			// 微信小程序支付
@@ -92,7 +95,7 @@
 					}
 				});
 			},
-			
+
 			// app支付
 			nativePay(orderInfo) {
 				let that = this;

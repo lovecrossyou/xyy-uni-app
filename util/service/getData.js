@@ -340,7 +340,7 @@ export const validateOrders = ({
  */
 
 
-export const payRequest = (user_id,order_no,trade_type) => fetch('/payapi/payment/queryOrder', {
+export const payRequest = (user_id,order_no,trade_type) => fetch('/payapi/payment/wxpay', {
 	user_id,
 	order_no,
 	trade_type

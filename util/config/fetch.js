@@ -36,10 +36,10 @@ request.interceptors.response.use(
 			uni.setStorageSync('cookieKey', response.headers['set-cookie'][0]); //保存Cookie到Storage
 		}
 		console.log('response.data ',response.data)
-		if(response.data.message){
-			errorPrompt(response.data);
-			return Promise.resolve(null);
-		}
+// 		if(response.data.status===0){
+// 			errorPrompt(response.data);
+// 			return Promise.resolve(null);
+// 		}
 		return Promise.resolve(response.data);
 	},
 	(err) => {
