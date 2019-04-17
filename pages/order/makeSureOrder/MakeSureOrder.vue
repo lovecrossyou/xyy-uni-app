@@ -137,6 +137,7 @@
 			},
 			// 选择优惠券
 			chooseTickets() {
+				return;
 				uni.navigateTo({
 					url: "Tickets?isChoose=true"
 				})
