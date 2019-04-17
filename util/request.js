@@ -1,9 +1,15 @@
 import Fly from 'flyio/dist/npm/wx'
 import service from "../service"
 const request = new Fly()
+<<<<<<< HEAD
 // export const baseURL = 'http://47.94.169.143:8004/'
 // export const baseURL = 'http://192.168.1.235:8004/'
 export const baseURL = 'http://192.168.199.101:8004/'
+=======
+export const baseURL = 'http://47.94.169.143:8004/'
+// export const baseURL = 'http://192.168.1.235:8001/'
+// export const baseURL = 'http://192.168.199.101:8004/'
+>>>>>>> 413df6414242b297300902f4f0b2df451b3439bb
 
 request.config.baseURL = baseURL
 

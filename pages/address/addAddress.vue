@@ -153,34 +153,13 @@
 						duration: 1500
 					});
 				}
-
-				// 				if (this.editAddress.address) {
-				// 					params.id = this.editAddress.address.id;
-				// 				}
-				// 				let res = this.editAddress.address ? await api.deliveryAddressEdit(params) : await api.deliveryAddressCreate(
-				// 					params);
-				// 				console.log('添加地址res===', JSON.stringify(res));
-				// 				if (res.status === 'ok') {
-				// 					uni.navigateBack({
-				// 						delta: 1
-				// 					})
-				// 				} else {
-				// 					uni.showToast({
-				// 						title: res.message,
-				// 						icon: 'none',
-				// 						duration: 2000
-				// 					});
-				// 				}
 			},
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	// @import '../../common/mixin.less';
-	// @import "../../static/css/common.less";
 	@import "../../static/style/mixin.scss";
-
 	.add_img {
 		width: 24upx;
 		height: 24upx;
