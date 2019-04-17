@@ -471,3 +471,7 @@ export const changePassword = (username, oldpassWord, newpassword, confirmpasswo
 
 //微信支付
 export const wxPay = (userId,orderNum) => fetch('/v1/users/'+userId+'/wxpay', {user_id:userId,order_no:orderNum}, 'POST');
+
+
+//微信支付结果查询
+export const orderQuery = (orderNo) => fetch('/payapi/payment/orderQuery',{order_no:orderNo},'POST')

@@ -31,7 +31,8 @@
 	} from 'vuex'
 	import {
 		payRequest,
-		wxPay
+		wxPay,
+		orderQuery
 	} from '@/util/service/getData'
 
 	export default {
@@ -83,27 +84,28 @@
 			},
 			//确认付款
 			async confirmPay() {
+				const orderNo = this.orderMessage.data.id;
 				uni.showLoading({
 					mask: true
 				})
 				let res = null;
 				// #ifdef APP-PLUS
-				res = await payRequest(this.userInfo.user_id, this.orderMessage.data.id, 'APP');
+				res = await payRequest(this.userInfo.user_id, orderNo, 'APP');
 				if(res){
 					this.nativePay(res.data);
 				}
 				// #endif
 
 				// #ifdef MP-WEIXIN
-				res = await payRequest(this.userInfo.user_id, this.orderMessage.data.id, 'MP-WEIXIN');
+				res = await payRequest(this.userInfo.user_id, orderNo, 'MP-WEIXIN');
 				if(res){
 					console.log('payRequest ##', res);
-					this.wxpay(res.data);
+					this.wxpay(res.data,orderNo);
 				}
 				// #endif
 			},
 			// 微信小程序支付
-			wxpay(wexinSpec) {
+			wxpay(wexinSpec,orderNo) {
 				let that = this;
 				uni.requestPayment({
 					provider: 'wxpay',
@@ -112,16 +114,17 @@
 					package: wexinSpec.package,
 					signType: wexinSpec.signType,
 					paySign: wexinSpec.paySign,
-					success: function(res) {
+					success: async function(res) {
 						uni.hideLoading();
+						const orderQueryRes = await orderQuery(orderNo);
 						uni.redirectTo({
-							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderMessage.data.id
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + orderNo
 						})
 					},
 					fail: function(err) {
 						uni.hideLoading();
 						uni.redirectTo({
-							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderMessage.data.id
+							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + orderNo
 						})
 					}
 				});
@@ -166,7 +169,7 @@
 				}, {
 					icon: '../../../static/order/pay_icon_zhifubao@2x.png',
 					selIcon: '../../../static/order/pay_btn_selected_zhifubao@2x.png',
-					title: "支付宝付款",
+					title: "支付宝付款(暂不支持)",
 					unselIcon: '../../../static/order/pay_btn@2x.png'
 				}],
 
