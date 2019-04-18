@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="search_container">
 			<view class="address-wrapper">
-				<view class="address">粮科大厦</view>
+				<view class="address">--</view>
 				<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
 			</view>
 			<view class="search-wrapper" @click="goSearch">
