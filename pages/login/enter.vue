@@ -26,6 +26,7 @@
 		<!-- #ifdef MP-WEIXIN -->
 		<view class="login_way">
 			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
+				登录
 			</button>
 		</view>
 		<!-- #endif -->
@@ -207,20 +208,16 @@
 			}
 
 			.share {
-				width: 110upx;
-				height: 110upx;
-				// padding: 0 20rpx;
-				// position: absolute;
-				// right: 32rpx;
-				// 				top: 0;
-				// 				bottom: 0;
-				margin: auto;
-				background-size: 110upx 110upx;
-				background-repeat: no-repeat;
+				width: 100%;
+				height: 80upx;
+				// margin: auto;
+				background: #7CA7D2;
+				// background-size: 110upx 110upx;
+				// background-repeat: no-repeat;
 				border: none;
-				background-image: url('http://qnimage.xiteng.com/weixin@2x.png');
-				border-radius: 50%;
-				background-color: #fff;
+				// background-image: url('http://qnimage.xiteng.com/weixin@2x.png');
+				// border-radius: 50%;
+				// background-color: #fff;
 			}
 		}
 
@@ -229,7 +226,9 @@
 			height: 25upx;
 			color: #7CA7D2;
 			font-size: 22upx;
-			margin-top: 93upx;
+			// margin-top: 20upx;
+			position: fixed;
+			bottom: 30upx;
 			text-align: center;
 		}
 	}
