@@ -455,6 +455,7 @@ export const deleteAddress = (userid, addressid) => fetch( '/v1/users/' + userid
  * 账号密码登录
  */
 export const accountLogin = (username, password, captcha_code,code) => fetch('/v2/login', {username, password, captcha_code,code}, 'POST');
+export const wxLogin = (code,avatarurl,gender,nickname) => fetch('/v2/wxlogin', {code,avatarurl,gender,nickname}, 'POST');
 
 
 /**

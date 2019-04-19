@@ -1,6 +1,8 @@
 <template>
 	<view class="enter_wrapper">
 		<img src="http://qnimage.xiteng.com/WechatIMG2083.jpeg" alt="" class="bg_img">
+		<!-- app登录 -->
+		<!-- #ifdef APP-PLUS -->
 		<view class="enter_box_area">
 			<view class="tel_area_wrapper">
 				<input type="number" v-model="userAccount" placeholder="请输入您的手机号码" placeholder-style="color:#7CA7D2;" />
@@ -16,28 +18,25 @@
 				</div>
 			</view>
 		</view>
-
-		<!-- app登录 -->
-		<!-- #ifdef APP-PLUS -->
 		<button class="login_btn" @click="simpleLogin">登录</button>
 		<!-- #endif -->
 
 		<!--微信 小程序登录 -->
 		<!-- #ifdef MP-WEIXIN -->
+		
+		
 		<view class="login_way">
-			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
-				登录
+			<button class="btn_auth" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
 			</button>
+
+			<view class="tips">
+				微信授权登录
+			</view>
 		</view>
+		
+		
 		<!-- #endif -->
 
-		<!-- <view class="third_party_area">
-			<text class="third_party_text">第三方登录</text>
-		</view>
-		<view class="login_way">
-			<button class="share" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
-			</button>
-		</view> -->
 		<view class="footer_text">注册或创建账户即同意《鑫翼优用户注册协议书》 </view>
 	</view>
 </template>
@@ -53,7 +52,8 @@
 		checkExsis,
 		sendLogin,
 		getcaptchas,
-		accountLogin
+		accountLogin,
+		wxLogin
 	} from '@/util/service/getData.js'
 
 	export default {
@@ -80,8 +80,14 @@
 				this.captchaCodeImg = res.code;
 			},
 			// 小程序登录
-			wxLogin(userAccount, passWord, codeNumber, code) {
-				this.handleLogin(userAccount, passWord, codeNumber, code);
+			async authLogin(code, avatarUrl, gender, nickName) {
+				const res = await wxLogin(code, avatarUrl, gender, nickName);
+				if (!res) return;
+				this.userInfo = res;
+				this.RECORD_USERINFO(this.userInfo);
+				uni.reLaunch({
+					url: '/pages/main/main'
+				});
 			},
 			// app登录
 			simpleLogin() {
@@ -111,7 +117,13 @@
 						uni.getUserInfo({
 							provider: value,
 							success: (infoRes) => {
-								that.wxLogin(that.userAccount, that.passWord, that.codeNumber, res.code);
+								console.log('infoRes ', infoRes);
+								const {
+									avatarUrl,
+									gender,
+									nickName
+								} = infoRes.userInfo;
+								that.authLogin(res.code, avatarUrl, gender, nickName);
 							}
 						});
 					},
@@ -196,15 +208,36 @@
 		}
 
 		.login_way {
-			width: 70%;
+			// width: 70%;
 			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			// justify-content: space-around;
 			margin: 65upx auto 0 auto;
 
 			image {
 				width: 110upx;
 				height: 110upx;
+			}
+
+			.btn_auth {
+				width: 110upx;
+				height: 110upx;
+				// margin: auto;
+				background: #7CA7D2;
+				background-size: 110upx 110upx;
+				background-repeat: no-repeat;
+				border: none;
+				background-image: url('http://qnimage.xiteng.com/weixin@2x.png');
+				border-radius: 50%;
+				background-color: #fff;
+			}
+
+			.tips {
+				margin-top: 20upx;
+				color: #333;
+				font-size: 28upx;
 			}
 
 			.share {
