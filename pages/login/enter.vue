@@ -23,8 +23,8 @@
 
 		<!--微信 小程序登录 -->
 		<!-- #ifdef MP-WEIXIN -->
-		
-		
+
+
 		<view class="login_way">
 			<button class="btn_auth" type="primary" open-type="getUserInfo" @getuserinfo="oauth('weixin')">
 			</button>
@@ -33,8 +33,8 @@
 				微信授权登录
 			</view>
 		</view>
-		
-		
+
+
 		<!-- #endif -->
 
 		<view class="footer_text">注册或创建账户即同意《鑫翼优用户注册协议书》 </view>
