@@ -25,10 +25,10 @@
 				<span class="section_left">联系电话</span>
 				<section class="section_right">
 					<div class="phone_add">
-						<input type="text" name="phone" placeholder="你的手机号" v-model="phone" class="input_style">
+						<input type="number" name="phone" placeholder="你的手机号" v-model="phone" class="input_style">
 						<img src="../../static/img/add_phone.png" class="add_img" @click="phone_bk = true" />
 					</div>
-					<input v-if="phone_bk" type="text" name="anntherPhoneNumber" placeholder="备选电话" v-model="anntherPhoneNumber" class="input_style phone_bk">
+					<input v-if="phone_bk" type="number" name="anntherPhoneNumber" placeholder="备选电话" v-model="anntherPhoneNumber" class="input_style phone_bk">
 				</section>
 			</section>
 			<section class="section_list">

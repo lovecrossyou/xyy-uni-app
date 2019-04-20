@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="search_container">
 			<view class="address-wrapper">
-				<view class="address">--</view>
+				<view class="address">{{addrName}}</view>
 				<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
 			</view>
 			<view class="search-wrapper" @click="goSearch">
@@ -86,10 +86,8 @@
 							{{shop.distance}} | {{shop.order_lead_time}}
 						</view>
 					</view>
-
 				</view>
 			</view>
-
 			<view class="shop_info_line"></view>
 		</view>
 	</view>
@@ -98,7 +96,8 @@
 <script>
 	import {
 		mapState,
-		mapActions
+		mapActions,
+		mapMutations
 	} from 'vuex'
 	import amap from '@/common/amap-wx.js';
 	import service from "../../service.js"
@@ -118,8 +117,9 @@
 		},
 		data() {
 			return {
-				banners:[{
-					image:'http://static.kuaimayoupin.com/image/banner/banner@2x%20%284%29.png'
+				key: '72239a17febe0f534f11c5b1fbd8ce4c',
+				banners: [{
+					image: 'http://static.kuaimayoupin.com/image/banner/banner@2x%20%284%29.png'
 				}],
 				offset: 0, // 批次加载店铺列表，每次加载20个 limit = 20
 				shopListArr: [], // 店铺列表数据
@@ -127,15 +127,16 @@
 			}
 		},
 		methods: {
+			...mapMutations(['RECORD_ADDRESS']),
 			...mapActions([
-                'getUserInfo'
-            ]),
-			async initData() {
+				'getUserInfo'
+			]),
+			async fetchShops() {
 				//获取数据
 				let res = await shopList(this.latitude, this.longitude, this.offset, this.restaurantCategoryId);
 				this.shopListArr = res;
 			},
-			
+
 			getBanner() {
 				const params = {
 					latitude: this.location.latitude,
@@ -169,32 +170,49 @@
 					url: "shop/shop?shopId=" + shop.id
 				})
 			},
-
-			getRegeo(cb) {
-				this.$store.dispatch('startLocate', cb);
-			},
-
 			waterDetection() {
 				uni.navigateTo({
 					url: "../waterDetection/waterDetection"
 				})
+			},
+			getRegeo(cb) {
+				uni.showLoading({
+					title: '获取信息中'
+				});
+				this.amapPlugin.getRegeo({
+					success: (data) => {
+						console.log(data)
+						this.addressName = data[0].name;
+						uni.hideLoading();
+						cb(data[0]);
+					}
+				});
 			}
 
 		},
 		computed: {
 			...mapState([
-				'latitude', 'longitude','userInfo'
+				'latitude', 'longitude', 'userInfo','addrName'
 			]),
 		},
 		async onShow() {
-			this.initData();
-			 //获取用户信息
-            const res = await this.getUserInfo();
-			if(this.userInfo === null){
+			//获取用户信息
+			const res = await this.getUserInfo();
+			if (this.userInfo === null) {
 				uni.navigateTo({
-					url:"/pages/login/enter"
+					url: "/pages/login/enter"
 				})
 			}
+		},
+		onLoad() {
+			let that = this;
+			this.amapPlugin = new amap.AMapWX({
+				key: this.key
+			});
+			this.getRegeo(data => {
+				that.RECORD_ADDRESS(data);
+				that.fetchShops();
+			});
 		}
 	}
 </script>

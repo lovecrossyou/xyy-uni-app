@@ -256,7 +256,7 @@
 				this.initCategoryNum();
 			},
 			toConfirmOrder() {
-				if (Object.keys(this.cartList).length === 0) return;
+				if (this.cartFoodList.length === 0) return;
 				uni.navigateTo({
 					url: '../../order/makeSureOrder/MakeSureOrder?geohash='+this.geohash+'&shopId='+this.shopId
 				})
