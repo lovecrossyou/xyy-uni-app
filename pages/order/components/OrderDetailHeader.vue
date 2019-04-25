@@ -53,9 +53,9 @@
 			},
 			//确认付款
 			async goOnPay() {
-				uni.showLoading({
-					mask: true
-				})
+// 				uni.showLoading({
+// 					mask: true
+// 				})
 				let res = null;
 				// #ifdef APP-PLUS
 				res = await payRequest(this.userInfo.user_id, this.orderInfo.id, 'APP');
@@ -108,15 +108,19 @@
 					sign: orderInfo.sign,
 					timestamp: orderInfo.timestamp,
 				}
+				
 				uni.requestPayment({
 					provider: 'wxpay',
 					orderInfo: JSON.stringify(payParams),
 					success: function(res) {
+						// uni.hideLoading();
 						uni.redirectTo({
 							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderInfo.id
 						})
 					},
 					fail: function(err) {
+						// console.log('requestPayment err ###',JSON.stringify(err));
+						// uni.hideLoading();
 						uni.redirectTo({
 							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + that.orderInfo.id
 						})

@@ -85,9 +85,9 @@
 			//确认付款
 			async confirmPay() {
 				const orderNo = this.orderMessage.data.id;
-				uni.showLoading({
-					mask: true
-				})
+// 				uni.showLoading({
+// 					mask: true
+// 				})
 				let res = null;
 				// #ifdef APP-PLUS
 				res = await payRequest(this.userInfo.user_id, orderNo, 'APP');
@@ -115,14 +115,14 @@
 					signType: wexinSpec.signType,
 					paySign: wexinSpec.paySign,
 					success: async function(res) {
-						uni.hideLoading();
+						// uni.hideLoading();
 						const orderQueryRes = await orderQuery(orderNo);
 						uni.redirectTo({
 							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + orderNo
 						})
 					},
 					fail: function(err) {
-						uni.hideLoading();
+						// uni.hideLoading();
 						uni.redirectTo({
 							url: "/pages/order/orderDetail/OrderDetail?orderNo=" + orderNo
 						})
