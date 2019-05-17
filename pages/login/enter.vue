@@ -118,11 +118,13 @@
 							provider: value,
 							success: (infoRes) => {
 								console.log('infoRes ', infoRes);
+								console.log('res.code ', res.code);
 								const {
 									avatarUrl,
 									gender,
 									nickName
 								} = infoRes.userInfo;
+								// return;
 								that.authLogin(res.code, avatarUrl, gender, nickName);
 							}
 						});

@@ -294,7 +294,8 @@
 				this.totalPrice = 0;
 				this.cartFoodList = [];
 				this.menuList.forEach((item, index) => {
-					if (this.shopCart && this.shopCart[item.foods[0].category_id]) {
+					console.log('item.foods[0] ', item.foods[0]);
+					if (this.shopCart && item.foods.length!=0 && this.shopCart[item.foods[0].category_id]) {
 						let num = 0;
 						Object.keys(this.shopCart[item.foods[0].category_id]).forEach(itemid => {
 							Object.keys(this.shopCart[item.foods[0].category_id][itemid]).forEach(foodid => {

@@ -3,7 +3,7 @@
     "appid" : "__UNI__com.xyy.client",
     "description" : "本地生活服务",
     "versionName" : "1.0.0",
-    "versionCode" : "100",
+    "versionCode" : 100,
     "transformPx" : true,
     "app-plus" : {
         /* 5+App特有相关 */
@@ -57,7 +57,7 @@
             },
             "icons" : {
                 "ios" : {
-                    "appstore" : "/Users/zhulizhe/Desktop/kuaima/用户端logo/1024*1024.png",
+                    "appstore" : "/Users/wangq/Desktop/kuaima/logo/logo_144@3x.png",
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",
@@ -92,12 +92,12 @@
             "splashscreen" : {
                 "ios" : {
                     "iphone" : {
-                        "retina40" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/640-1136/640-1136.png",
+                        "retina40" : "/Users/wangq/Desktop/kuaima/引导页/用户版/640-1136/640-1136.png",
                         "retina40l" : "",
-                        "retina47" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/750-1334/750-1334.png",
-                        "retina55" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/1242-2208/1242-2208.png",
-                        "iphonex" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/1125-2436/1125-2436.png",
-                        "portrait-896h@2x" : "/Users/zhulizhe/Desktop/kuaima/引导页/用户版/828-1792/828-1792.png"
+                        "retina47" : "/Users/wangq/Desktop/kuaima/引导页/用户版/750-1334/750-1334.png",
+                        "retina55" : "/Users/wangq/Desktop/kuaima/引导页/用户版/1242-2208/1242-2208.png",
+                        "iphonex" : "/Users/wangq/Desktop/kuaima/引导页/用户版/1125-2436/1125-2436.png",
+                        "portrait-896h@2x" : "/Users/wangq/Desktop/kuaima/引导页/用户版/828-1792/828-1792.png"
                     }
                 }
             }
