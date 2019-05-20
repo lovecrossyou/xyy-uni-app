@@ -1,10 +1,13 @@
 <template>
 	<view class="content">
 		<view class="header">
+			<view class="line">
+				
+			</view>
 			<view class="grade_wrap">
 				<view class="score-wrapper">
 					<view class="grade_title">综合评分</view>
-					<view class="grade">{{ratingScoresData.compare_rating}}}</view>
+					<view class="grade">{{ratingScoresData.compare_rating}}</view>
 				</view>
 				<view class="rate-wrapper">
 					<uniRate value="8" size="12"></uniRate>
@@ -12,7 +15,7 @@
 			</view>
 			<view class="comment_wrapper">
 				<view class="grade_title">评论总数</view>
-				<view class="grade">{{ratingScoresData.order_rating_amount}}}</view>
+				<view class="grade">{{ratingScoresData.order_rating_amount}}</view>
 			</view>
 		</view>
 		<view class="gradelist" v-for="(item,index) in ratingList" :key='index'>
@@ -56,17 +59,28 @@
 
 	.content {
 		width: 100%;
-		height: 100%;
+		// height: 100%;
 		background-color: #F2F2F2;
 
 		.header {
 			background: #FFFFFF;
-
-			// .flex-center;
+			display: flex;
+			flex-direction: row;
+			height: 122upx;
+			
+			.line{
+				position: absolute;
+				left: 375upx;
+				top: 28rpx;
+				width: 1upx;
+				height: 69upx;
+				background: #E0E0E0;
+			}
 
 			.grade_wrap {
 				// .flex-center;
 				height: 60upx;
+				flex: 1;
 				.score-wrapper {
 					display: flex;
 					flex-direction: row;
@@ -102,8 +116,9 @@
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				height: 40upx;
-
+				height: 100%;
+				flex: 1;
+				justify-content: center;
 				.grade {
 					margin-left: 10upx;
 					font-size: 28upx;
