@@ -59,7 +59,7 @@
     export default {
         data() {
             return {
-                msgContents: ["界面显示错乱", "启动缓慢，卡出翔了", "UI无法直视，丑哭了", "偶发性崩溃"],
+                msgContents: ["店铺名称不对", "店铺销售假水", "店铺脏乱差"],
                 stars: [1, 2, 3, 4, 5],
                 imageList: [],
                 sendDate: {
