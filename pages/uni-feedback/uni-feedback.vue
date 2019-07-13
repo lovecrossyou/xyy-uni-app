@@ -49,6 +49,13 @@
 </template>
 
 <script>
+	import {
+		baseURL
+	} from '@/util/request.js'
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex';
     export default {
         data() {
             return {
@@ -63,19 +70,12 @@
             }
         },
         onLoad() {
-            // let deviceInfo = {
-            //     appid: plus.runtime.appid,
-            //     imei: plus.device.imei, //设备标识
-            //     p: plus.os.name === "Android" ? "a" : "i", //平台类型，i表示iOS平台，a表示Android平台。
-            //     md: plus.device.model, //设备型号
-            //     app_version: plus.runtime.version,
-            //     plus_version: plus.runtime.innerVersion, //基座版本号
-            //     os: plus.os.version,
-            //     net: "" + plus.networkinfo.getCurrentType()
-            // }
 			let deviceInfo = {};
             this.sendDate = Object.assign(deviceInfo, this.sendDate);
         },
+		computed: {
+			...mapState(['userInfo', 'imgPath'])
+		},
         methods: {
             close(e){
                 this.imageList.splice(e,1);
@@ -94,10 +94,24 @@
                     sizeType: "compressed",
                     count: 8 - this.imageList.length,
                     success: (res) => {
-                        this.imageList = this.imageList.concat(res.tempFilePaths);
+						this.upLoad(res.tempFilePaths);
+                        // this.imageList = this.imageList.concat(res.tempFilePaths);
                     }
                 })
             },
+			upLoad(tempFilePaths) {
+				let that = this;
+				uni.uploadFile({
+					url: baseURL + 'eus/v1/users/' + this.userInfo.user_id + '/avatar', //仅为示例，非真实的接口地址
+					filePath: tempFilePaths[0],
+					name: 'file',
+					success: res => {
+						const imgData = JSON.parse(res.data);
+						that.imageList = that.imageList.concat(imgData.image_path);
+						// that.userInfo.avatar = imgData.image_path;
+					}
+				});
+			},
             chooseStar(e) { //点击评星
                 this.sendDate.score = e;
             },
