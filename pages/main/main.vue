@@ -1,35 +1,5 @@
 <template>
 	<view class="content">
-		<view class="search_container">
-			<view class="address-wrapper">
-				<view class="address">{{addrName}}</view>
-				<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
-			</view>
-			<view class="search-wrapper" @click="goSearch">
-				<view class="search-box">
-					<image src="../../static/img/search_home.png" class="search_home_icon"></image>
-					<view class="label">
-						搜索
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="banner">
-			<view class="page-section swiper">
-				<view class="page-section-spacing">
-					<swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="500"
-					 indicator-color="#2ca2f9" indicator-active-color="#FFFFFF">
-						<block v-for="(banner,index) in banners" :key="index">
-							<swiper-item>
-								<image v-bind:src="banner.image" class="swiper-item" mode="scaleToFill"></image>
-							</swiper-item>
-						</block>
-					</swiper>
-
-				</view>
-			</view>
-		</view>
-
 		<view class="entery">
 			<view class="entery-item">
 				<image src="../../static/main/main_shooping.png" mode="widthFix"></image>
@@ -76,14 +46,11 @@
 							<uniRate disabled="true" :value="shop.rating" size="12"></uniRate>
 							<view class="shop-score-text">{{shop.rating}}</view>
 						</view>
-						<view class="shop-sales-volume">月售{{shop.recent_order_num}}</view>
+						<!-- <view class="shop-sales-volume">月售{{shop.recent_order_num}}</view> -->
 					</view>
 					<view class="shop-middle-bottom">
-						<view class="distribution-num">
-							¥{{shop.float_minimum_order_amount}}起送/配送费约¥{{shop.float_delivery_fee}}
-						</view>
 						<view class="distribution-num-r">
-							{{shop.distance}} | {{shop.order_lead_time}}
+							{{shop.address}}
 						</view>
 					</view>
 				</view>

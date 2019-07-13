@@ -23,24 +23,8 @@
 			</view>
 		</view>
 		<view class="shop-content">
-			<view class="tab-wrapper">
-				<view v-for="(tab,index) in tabs" :key='index'>
-					<view class="tab-item" @click="changeTab(index)">
-						<view class="line" v-if="tab.index===activeTabIndex" />
-						<view class="title">
-							{{tab.title}}
-						</view>
-					</view>
-				</view>
-			</view>
 			<swiper class="swiper" :current="activeTabIndex" :autoplay="false" @change="swiperChange">
 				<block v-if="ratingScoresData">
-					<swiper-item>
-						<goods :shopId="shopId" :menuList="menuList"></goods>
-					</swiper-item>
-					<swiper-item>
-						<judgement :ratingScoresData="ratingScoresData" :ratingList="ratingList"></judgement>
-					</swiper-item>
 					<swiper-item>
 						<shop-info  :shopInfo="shopDetailData"></shop-info>
 					</swiper-item>
@@ -49,47 +33,12 @@
 		</view>
 
 		<view class="footer">
-			<view class="cart-wrapper" @click="popMenu">
-				<image v-bind:src="cart_icon" mode="aspectFit"></image>
-				<view class="totalPrice">
-					¥{{totalPrice}}
-				</view>
-			</view>
+			
 			<view class="confirm-wrapper">
-				<view class="limit" v-bind:class="cartFoodList.length==0 ?'gray-limit':''" @click="toConfirmOrder">
-					去结算
+				<view class="limit" @click="toConfirmOrder">
+					举报黑店
 				</view>
 			</view>
-		</view>
-		<view class="modal-shadow" v-show="showMenu" @click="hiddeMenu">
-		</view>
-		<view :animation="animationData" class="cart-modal">
-			<view class="title" @click="hiddeMenu">
-				<view class="left">
-					已选商品
-				</view>
-				<view class="right" @click="clearCart">
-					清空购物车
-				</view>
-			</view>
-			<scroll-view scroll-y="true" class="cart-list-items">
-				<block v-for="(product,index) in cartFoodList" :key="index">
-					<view class="cart-list-item">
-						<view class="p-name">
-							{{product.name}}
-						</view>
-						<view class="right">
-							<view class="price">
-								¥{{product.price}}
-							</view>
-							<view class="num">
-								x {{product.num}}
-							</view>
-							<cartcontrol :shopId='shopId' :foods="product" @add="addFood"></cartcontrol>
-						</view>
-					</view>
-				</block>
-			</scroll-view>
 		</view>
 	</view>
 </template>
@@ -370,7 +319,7 @@
 				height: 240upx;
 				// width: 100%;
 				filter: blur(8px);
-				background: url('http://static.kuaimayoupin.com/image/banner/banner2x222.png') no-repeat center;
+				background: url('http://qnimage.xiteng.com/banner_002.jpg') no-repeat center;
 				background-size: cover;
 			}
 
@@ -491,19 +440,19 @@
 
 		.footer {
 			height: @footerHeight;
-			background-color: #666;
+			background-color: #3e87eb;
 			position: fixed;
 			bottom: 0;
 			left: 0;
 			right: 0;
 			display: flex;
 			flex-direction: row;
-			justify-content: flex-end;
+			justify-content: center;
 
 			.confirm-wrapper {
 				width: 232upx;
 				height: 100%;
-				background-color: #3e87eb;
+				// background-color: #3e87eb;
 
 				.limit {
 					color: #fff;
