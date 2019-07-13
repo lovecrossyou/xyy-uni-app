@@ -35,7 +35,7 @@
 		<view class="footer">
 			
 			<view class="confirm-wrapper">
-				<view class="limit" @click="toConfirmOrder">
+				<view class="limit" @click="fadeBack">
 					举报黑店
 				</view>
 			</view>
@@ -202,7 +202,12 @@
 				this.ratingTagsList = await ratingTags(this.shopId);
 				this.RECORD_SHOPDETAIL(this.shopDetailData);
 
-				this.initCategoryNum();
+				
+			},
+			fadeBack(){
+				uni.navigateTo({
+					url:"/pages/uni-feedback/uni-feedback"
+				})
 			},
 			toConfirmOrder() {
 				if (this.cartFoodList.length === 0) return;

@@ -28,6 +28,12 @@
 			}
 		},
 		{
+			"path": "pages/uni-feedback/uni-feedback",
+			"style": {
+				"navigationBarTitleText": "反馈"
+			}
+		},
+		{
 		    "path" : "pages/launch/launch",
 		    "style" : {}
 		},
