@@ -38,7 +38,7 @@
             <input class="feedback-input" v-model="sendDate.contact" placeholder="(选填,方便我们联系你 )" />
         </view>
         <view class='feedback-title feedback-star-view'>
-            <text style="width: 180upx;">应用评分</text>
+            <text style="width: 180upx;">店铺评分</text>
             <view class="feedback-star-view">
                 <text class="feedback-star" v-for="(value,key) in stars" :key="key" :class="key < sendDate.score ? 'active' : ''" @tap="chooseStar(value)"></text>
             </view>
@@ -71,9 +71,10 @@
                 }
             }
         },
-        onLoad() {
+        onLoad(opt) {
 			let deviceInfo = {};
             this.sendDate = Object.assign(deviceInfo, this.sendDate);
+			this.shopId = opt.id;
         },
 		computed: {
 			...mapState(['userInfo', 'imgPath'])
@@ -127,7 +128,8 @@
 					content:this.sendDate.content,
 					email:this.sendDate.contact,
 					pictures:this.imageList,
-					score:this.sendDate.score
+					score:this.sendDate.score,
+					shop_id:this.shopId
 				});
 				console.log(JSON.stringify(params));
 				const res = await api.reportShop(params);

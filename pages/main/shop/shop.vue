@@ -206,7 +206,7 @@
 			},
 			fadeBack(){
 				uni.navigateTo({
-					url:"/pages/uni-feedback/uni-feedback"
+					url:"/pages/uni-feedback/uni-feedback?id="+this.shopId
 				})
 			},
 			toConfirmOrder() {
