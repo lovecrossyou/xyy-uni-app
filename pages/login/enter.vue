@@ -37,7 +37,7 @@
 
 		<!-- #endif -->
 
-		<view class="footer_text">注册或创建账户即同意《鑫翼优用户注册协议书》 </view>
+		<!-- <view class="footer_text">注册或创建账户即同意《鑫翼优用户注册协议书》 </view> -->
 	</view>
 </template>
 

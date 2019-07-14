@@ -1,12 +1,12 @@
 <template>
-    <view class="page">
-        <view class='feedback-title'>
-            <text>问题描述</text>
-            <text class="feedback-quick" @tap="chooseMsg">快速键入</text>
-        </view>
-        <view class="feedback-body">
-            <textarea placeholder="请详细描述你的问题和意见..." v-model="sendDate.content" class="feedback-textare" />
-            </view>
+	<view class="page">
+		<view class='feedback-title'>
+			<text>问题描述</text>
+			<text class="feedback-quick" @tap="chooseMsg">快速键入</text>
+		</view>
+		<view class="feedback-body">
+			<textarea placeholder="请详细描述你的问题和意见..." v-model="sendDate.content" class="feedback-textare" />
+			</view>
         <view class='feedback-title'>
             <text>图片(选填,提供问题截图,总大小10M以下)</text>
         </view>
@@ -52,10 +52,12 @@
 	import {
 		baseURL
 	} from '@/util/request.js'
+	
 	import {
 		mapState,
 		mapMutations
 	} from 'vuex';
+	import api from "@/util/api.js"
     export default {
         data() {
             return {
@@ -120,11 +122,19 @@
                     urls: this.imageList
                 });
             },
-            send() { //发送反馈
-                console.log(JSON.stringify(this.sendDate));
-                
-				
-                
+            async send() { //发送反馈
+                const params = Object.assign({},{
+					content:this.sendDate.content,
+					email:this.sendDate.contact,
+					pictures:this.imageList,
+					score:this.sendDate.score
+				});
+				console.log(JSON.stringify(params));
+				const res = await api.reportShop(params);
+				uni.showToast({
+					title:res.message
+				});
+				uni.navigateBack();
             }
         }
     }

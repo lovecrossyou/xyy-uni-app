@@ -1,7 +1,9 @@
 import request from './request'
 
 const api = {
-
+    // 举报黑店
+    reportShop: data => request.post("/report/add", data),
+    
 	requestCartClient: (params) => request.post("client/shop/cartClient", params),
 	deliveryAddressList: (params) => request.post("client/deliveryAddress/list", params),
 	deliveryAddressCreate: (params) => request.post("client/deliveryAddress/create", params),
