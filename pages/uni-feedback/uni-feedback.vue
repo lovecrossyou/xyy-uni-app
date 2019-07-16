@@ -43,7 +43,7 @@
                 <text class="feedback-star" v-for="(value,key) in stars" :key="key" :class="key < sendDate.score ? 'active' : ''" @tap="chooseStar(value)"></text>
             </view>
         </view>
-        <button type="primary" class="feedback-submit" @tap="send">提交</button>
+        <button type="default" class="feedback-submit" @tap="send">提交</button>
         
     </view>
 </template>
