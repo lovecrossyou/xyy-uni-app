@@ -324,7 +324,7 @@
 				height: 240upx;
 				// width: 100%;
 				filter: blur(8px);
-				background: url('http://qnimage.xiteng.com/banner_002.jpg') no-repeat center;
+				background: url('http://qnimage.xiteng.com/shop_top_bg.jpg') no-repeat center;
 				background-size: cover;
 			}
 

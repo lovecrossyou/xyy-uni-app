@@ -359,6 +359,7 @@
 				.shop-img {
 					width: 132upx;
 					height: 132upx;
+					border: solid 1rpx #f1f1f1;
 				}
 
 				.shop-info-middle {
