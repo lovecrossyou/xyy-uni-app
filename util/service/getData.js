@@ -1,5 +1,7 @@
 import fetch from '../config/fetch.js'
-import {getStore} from '../config/mUtils.js'
+import {
+	getStore
+} from '../config/mUtils.js'
 
 /**
  * 获取首页默认地址
@@ -62,12 +64,20 @@ export const msiteFoodTypes = geohash => fetch('/v2/index_entry', {
 	'flags[]': 'F'
 });
 
+export const searchShop = keyword => {
+	return fetch('/shopping/restaurants', {
+		keyword
+	});
+
+}
+
 
 /**
  * 获取msite商铺列表
  */
 
-export const shopList = (latitude, longitude, offset, restaurant_category_id = '', restaurant_category_ids = '', order_by = '2', delivery_mode = '', support_ids = []) => {
+export const shopList = (latitude, longitude, offset, restaurant_category_id = '', restaurant_category_ids = '',
+	order_by = '2', delivery_mode = '', support_ids = []) => {
 	let supportStr = '';
 	support_ids.forEach(item => {
 		if (item.status) {
@@ -140,7 +150,8 @@ export const foodActivity = (latitude, longitude) => fetch('/shopping/v1/restaur
 
 export const shopDetails = (shopid, latitude, longitude) => fetch('/shopping/restaurant/' + shopid, {
 	latitude,
-	longitude: longitude + '&extras[]=activities&extras[]=album&extras[]=license&extras[]=identification&extras[]=statistics'
+	longitude: longitude +
+		'&extras[]=activities&extras[]=album&extras[]=license&extras[]=identification&extras[]=statistics'
 });
 
 
@@ -195,7 +206,7 @@ export const mobileCode = phone => fetch('/v4/mobile/verify_code/send', {
  * 获取图片验证码
  */
 
-export const getcaptchas = () => fetch('/v1/captchas', {},'POST');
+export const getcaptchas = () => fetch('/v1/captchas', {}, 'POST');
 
 
 /**
@@ -266,7 +277,8 @@ export const searchNearby = keyword => fetch('/v1/pois', {
  * 添加地址
  */
 
-export const postAddAddress = (userId, address, address_detail, geohash, name, phone, phone_bk, poi_type, sex, tag, tag_type) => fetch('/v1/users/' + userId + '/addresses', {
+export const postAddAddress = (userId, address, address_detail, geohash, name, phone, phone_bk, poi_type, sex, tag,
+	tag_type) => fetch('/v1/users/' + userId + '/addresses', {
 	address,
 	address_detail,
 	geohash,
@@ -284,16 +296,17 @@ export const postAddAddress = (userId, address, address_detail, geohash, name, p
  * 下订单
  */
 
-export const placeOrders = (user_id, cart_id, address_id, description, entities, geohash, sig) => fetch('/v1/users/' + user_id + '/carts/' + cart_id + '/orders', {
-	address_id,
-	come_from: "mobile_web",
-	deliver_time: "",
-	description,
-	entities,
-	geohash,
-	paymethod_id: 1,
-	sig,
-}, 'POST');
+export const placeOrders = (user_id, cart_id, address_id, description, entities, geohash, sig) => fetch('/v1/users/' +
+	user_id + '/carts/' + cart_id + '/orders', {
+		address_id,
+		come_from: "mobile_web",
+		deliver_time: "",
+		description,
+		entities,
+		geohash,
+		paymethod_id: 1,
+		sig,
+	}, 'POST');
 
 
 /**
@@ -340,11 +353,11 @@ export const validateOrders = ({
  */
 
 
-export const payRequest = (user_id,order_no,trade_type) => fetch('/payapi/payment/wxpay', {
+export const payRequest = (user_id, order_no, trade_type) => fetch('/payapi/payment/wxpay', {
 	user_id,
 	order_no,
 	trade_type
-},'POST');
+}, 'POST');
 
 
 
@@ -357,10 +370,10 @@ export const getService = () => fetch('/v3/profile/explain');
 
 
 /**
-*兑换会员卡
-*/
+ *兑换会员卡
+ */
 
-export const vipCart = (id, number, password) => fetch('/member/v1/users/' + id + '/delivery_card/physical_card/bind',{
+export const vipCart = (id, number, password) => fetch('/member/v1/users/' + id + '/delivery_card/physical_card/bind', {
 	number,
 	password
 }, 'POST')
@@ -369,7 +382,7 @@ export const vipCart = (id, number, password) => fetch('/member/v1/users/' + id 
 
 /**
  * 获取红包
-*/
+ */
 
 export const getHongbaoNum = id => fetch('/promotion/v2/users/' + id + '/hongbaos?limit=20&offset=0');
 
@@ -377,7 +390,7 @@ export const getHongbaoNum = id => fetch('/promotion/v2/users/' + id + '/hongbao
 
 /**
  * 获取过期红包
-*/
+ */
 
 
 export const getExpired = id => fetch('/promotion/v2/users/' + id + '/expired_hongbaos?limit=20&offset=0');
@@ -385,9 +398,9 @@ export const getExpired = id => fetch('/promotion/v2/users/' + id + '/expired_ho
 
 /**
  * 兑换红包
-*/
+ */
 
-export const exChangeHongbao = (id, exchange_code, captcha_code) => fetch('/v1/users/' + id + '/hongbao/exchange',{
+export const exChangeHongbao = (id, exchange_code, captcha_code) => fetch('/v1/users/' + id + '/hongbao/exchange', {
 	exchange_code,
 	captcha_code,
 }, 'POST');
@@ -397,7 +410,9 @@ export const exChangeHongbao = (id, exchange_code, captcha_code) => fetch('/v1/u
  * 获取用户信息
  */
 
-export const getUser = () => fetch('/v1/user', {user_id: getStore('user_id')});
+export const getUser = () => fetch('/v1/user', {
+	user_id: getStore('user_id')
+});
 
 
 /**
@@ -425,37 +440,49 @@ export const getOrderList = (user_id, offset) => fetch('/bos/v2/users/' + user_i
  * 获取订单详情
  */
 
-export const getOrderDetail = (user_id, orderid) => fetch('/bos/v1/users/' + user_id + '/orders/' + orderid + '/snapshot');
+export const getOrderDetail = (user_id, orderid) => fetch('/bos/v1/users/' + user_id + '/orders/' + orderid +
+	'/snapshot');
 
 
 /**
-*个人中心里编辑地址
-*/
+ *个人中心里编辑地址
+ */
 
-export const getAddressList = (user_id) => fetch('/v1/users/'+user_id+'/addresses')
+export const getAddressList = (user_id) => fetch('/v1/users/' + user_id + '/addresses')
 
 /**
-*个人中心里搜索地址
-*/
+ *个人中心里搜索地址
+ */
 
-export const getSearchAddress = (keyword) => fetch('v1/pois',{
-	keyword:keyword,
-	type:'nearby'
+export const getSearchAddress = (keyword) => fetch('v1/pois', {
+	keyword: keyword,
+	type: 'nearby'
 })
 
 /**
-* 删除地址
-*/
+ * 删除地址
+ */
 
-export const deleteAddress = (userid, addressid) => fetch( '/v1/users/' + userid + '/addresses/' + addressid, {}, 'DELETE')
+export const deleteAddress = (userid, addressid) => fetch('/v1/users/' + userid + '/addresses/' + addressid, {},
+	'DELETE')
 
 
 
 /**
  * 账号密码登录
  */
-export const accountLogin = (username, password, captcha_code,code) => fetch('/v2/login', {username, password, captcha_code,code}, 'POST');
-export const wxLogin = (code,avatarurl,gender,nickname) => fetch('/v2/wxlogin', {code,avatarurl,gender,nickname}, 'POST');
+export const accountLogin = (username, password, captcha_code, code) => fetch('/v2/login', {
+	username,
+	password,
+	captcha_code,
+	code
+}, 'POST');
+export const wxLogin = (code, avatarurl, gender, nickname) => fetch('/v2/wxlogin', {
+	code,
+	avatarurl,
+	gender,
+	nickname
+}, 'POST');
 
 
 /**
@@ -467,12 +494,24 @@ export const signout = () => fetch('/v2/signout');
 /**
  * 改密码
  */
-export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch('/v2/changepassword', {username, oldpassWord, newpassword, confirmpassword, captcha_code}, 'POST');
+export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch(
+	'/v2/changepassword', {
+		username,
+		oldpassWord,
+		newpassword,
+		confirmpassword,
+		captcha_code
+	}, 'POST');
 
 
 //微信支付
-export const wxPay = (userId,orderNum) => fetch('/v1/users/'+userId+'/wxpay', {user_id:userId,order_no:orderNum}, 'POST');
+export const wxPay = (userId, orderNum) => fetch('/v1/users/' + userId + '/wxpay', {
+	user_id: userId,
+	order_no: orderNum
+}, 'POST');
 
 
 //微信支付结果查询
-export const orderQuery = (orderNo) => fetch('/payapi/payment/orderQuery',{order_no:orderNo},'POST')
+export const orderQuery = (orderNo) => fetch('/payapi/payment/orderQuery', {
+	order_no: orderNo
+}, 'POST')

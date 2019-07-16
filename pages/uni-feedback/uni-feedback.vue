@@ -304,7 +304,7 @@
     	content: '\e438';
     }
     .feedback-submit {
-    	background: #007AFF;
+    	background: #3e87eb;
     	color: #FFFFFF;
     	margin: 20upx;
     }

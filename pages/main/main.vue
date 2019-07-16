@@ -1,28 +1,21 @@
 <template>
 	<view class="content">
-		<view class="entery">
-			<view class="entery-item">
-				<image src="../../static/main/main_shooping.png" mode="widthFix"></image>
-				<view class="entery-text">商超便利</view>
+		<view class="search_container">
+			<view class="address-wrapper">
+				<view class="address">{{addrName}}</view>
+				<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
 			</view>
-			<view class="entery-item">
-				<image src="../../static/main/main_fruits.png" mode="widthFix"></image>
-				<view class="entery-text">水果</view>
-			</view>
-			<view class="entery-item" @click="waterDetection">
-				<image src="../../static/main/main_water_check.png" mode="widthFix"></image>
-				<view class="entery-text">水质检测</view>
-			</view>
-			<view class="entery-item">
-				<image src="../../static/main/main_water.png" mode="widthFix"></image>
-				<view class="entery-text">桶装水</view>
-			</view>
-			<view class="entery-item">
-				<image src="../../static/main/main_dinner.png" mode="widthFix"></image>
-				<view class="entery-text">夜宵</view>
+			<view class="search-wrapper" @click="goSearch">
+				<view class="search-box">
+					<image src="../../static/img/search_home.png" class="search_home_icon"></image>
+					<view class="label">
+						搜索服务网点
+					</view>
+				</view>
 			</view>
 		</view>
-		<image src="../../static/main/home_commend.png" class="home_commend_icon"></image>
+	
+		<!-- <image src="../../static/main/home_commend.png" class="home_commend_icon"></image> -->
 		<view class="sort-container">
 			<view class="sort-composite">
 				<view class="sort-title">综合排序</view>
@@ -46,11 +39,14 @@
 							<uniRate disabled="true" :value="shop.rating" size="12"></uniRate>
 							<view class="shop-score-text">{{shop.rating}}</view>
 						</view>
-						<!-- <view class="shop-sales-volume">月售{{shop.recent_order_num}}</view> -->
+						<view class="shop-sales-volume"></view>
 					</view>
 					<view class="shop-middle-bottom">
-						<view class="distribution-num-r">
+						<view class="distribution-num">
 							{{shop.address}}
+						</view>
+						<view class="distribution-num-r">
+							<!-- {{shop.distance}} | {{shop.order_lead_time}} -->
 						</view>
 					</view>
 				</view>
@@ -127,9 +123,8 @@
 				})
 			},
 			goSearch() {
-				return;
 				uni.navigateTo({
-					url: "../HM-search/HM-search"
+					url: "/pages/HM-search/HM-search"
 				})
 			},
 			goShop(shop) {
@@ -159,7 +154,7 @@
 		},
 		computed: {
 			...mapState([
-				'latitude', 'longitude', 'userInfo','addrName'
+				'latitude', 'longitude', 'userInfo', 'addrName'
 			]),
 		},
 		async onShow() {
@@ -202,8 +197,8 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			position: absolute;
-			top: 0;
+			// position: absolute;
+			// top: 0;
 			padding: 30upx 32upx;
 			box-sizing: border-box;
 			width: 100%;
@@ -220,14 +215,15 @@
 					font-size: 28upx;
 					font-family: PingFangSC-Medium;
 					font-weight: 500;
-					color: #FEFEFE;
+					// color: #FEFEFE;
 				}
 			}
 
 			.search-wrapper {
 				display: flex;
 				flex: 1;
-				background-color: rgba(255, 255, 255, 0.5);
+				background-color: #e1e1e1;
+
 				border-radius: 40px;
 
 				.search-box {

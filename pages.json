@@ -6,7 +6,7 @@
 			"path": "pages/main/main",
 			"style": {
 				"navigationBarBackgroundColor":"#FFFFFF",
-				"navigationBarTitleText": "首页",
+				"navigationBarTitleText": "附近服务网点",
 				"navigationBarTextStyle":"black"
 			},
 			"permission": {
@@ -36,7 +36,13 @@
 		{
 			"path": "pages/main/shop/shop",
 			"style": {
-				"navigationBarTitleText": "店铺"
+				"navigationBarTitleText": "服务网点"
+			}
+		},
+		{
+			"path": "pages/HM-search/HM-search",
+			"style": {
+				"navigationBarTitleText": "服务网点搜索"
 			}
 		}
     ],
