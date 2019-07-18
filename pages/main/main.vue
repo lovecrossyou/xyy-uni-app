@@ -9,12 +9,27 @@
 				<view class="search-box">
 					<image src="../../static/img/search_home.png" class="search_home_icon"></image>
 					<view class="label">
-						搜索服务网点
+						搜索
 					</view>
 				</view>
 			</view>
 		</view>
-	
+		<view class="banner">
+			<view class="page-section swiper">
+				<view class="page-section-spacing">
+					<swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="500"
+					 indicator-color="#2ca2f9" indicator-active-color="#FFFFFF">
+						<block v-for="(banner,index) in banners" :key="index">
+							<swiper-item>
+								<image v-bind:src="banner.image" class="swiper-item" mode="widthFix"></image>
+							</swiper-item>
+						</block>
+					</swiper>
+
+				</view>
+			</view>
+		</view>
+
 		<!-- <image src="../../static/main/home_commend.png" class="home_commend_icon"></image> -->
 		<view class="sort-container">
 			<view class="sort-composite">
@@ -46,13 +61,16 @@
 							{{shop.address}}
 						</view>
 						<view class="distribution-num-r">
-							<!-- {{shop.distance}} | {{shop.order_lead_time}} -->
+							{{shop.distance}}
 						</view>
 					</view>
 				</view>
 			</view>
 			<view class="shop_info_line"></view>
 		</view>
+
+		<uni-fab :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical" :direction="direction"
+		 @trigger="trigger"></uni-fab>
 	</view>
 </template>
 
@@ -66,6 +84,10 @@
 	import service from "../../service.js"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import uniRate from "@/components/uni-rate/uni-rate.vue";
+	import uniFab from '@/components/uni-fab/uni-fab.vue';
+	import {
+		uniSwiperDot
+	} from "@/components/uni-swiper-dot/uni-swiper-dot.vue"
 	import {
 		shopList,
 		msiteAddress,
@@ -76,13 +98,43 @@
 	export default {
 		components: {
 			uniIcon,
-			uniRate
+			uniRate,
+			uniFab,
+			uniSwiperDot
 		},
 		data() {
 			return {
+				info: [{
+					content: '内容 A'
+				}, {
+					content: '内容 B'
+				}, {
+					content: '内容 C'
+				}],
+				current: 0,
+				mode: 'long',
+				horizontal: 'left',
+				vertical: 'bottom',
+				direction: 'horizontal',
+				pattern: {
+					color: '#7A7E83',
+					backgroundColor: '#fff',
+					selectedColor: '#007AFF',
+					buttonColor: "#007AFF"
+				},
+				content: [{
+					iconPath: '/static/report.png',
+					selectedIconPath: '/static/report.png',
+					text: '举报',
+					active: false
+				}],
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
 				banners: [{
-					image: 'http://static.kuaimayoupin.com/image/banner/banner@2x%20%284%29.png'
+					image: 'http://qnimage.xiteng.com/banner_002.jpg'
+				},{
+					image: 'http://qnimage.xiteng.com/banner.jpg'
+				},{
+					image: 'http://qnimage.xiteng.com/banner3.jpg'
 				}],
 				offset: 0, // 批次加载店铺列表，每次加载20个 limit = 20
 				shopListArr: [], // 店铺列表数据
@@ -149,6 +201,12 @@
 						cb(data[0]);
 					}
 				});
+			},
+			trigger(e) {
+				//举报
+				uni.navigateTo({
+					url: "/pages/uni-feedback/uni-feedback?id=0"
+				})
 			}
 
 		},
@@ -254,15 +312,15 @@
 		}
 
 		.banner {
-			height: 461upx;
+			height: 240upx;
 
 			.swiper {
 				width: 100%;
-				height: 461upx;
+				height: 240upx;
 
 				.swiper-item {
 					width: 100%;
-					height: 461upx;
+					height: 240upx;
 				}
 			}
 

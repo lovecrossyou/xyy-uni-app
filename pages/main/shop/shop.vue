@@ -11,7 +11,7 @@
 						<view class="name">{{shopDetailData.name||""}}</view>
 						<view class="score-wrapper">
 							<view class="score">评价{{shopDetailData.rating}}</view>
-							<view class="saleinfo">月售{{shopDetailData.recent_order_num}}单</view>
+							<!-- <view class="saleinfo">月售{{shopDetailData.recent_order_num}}单</view> -->
 							<!-- <view class="time">30分钟送达</view> -->
 						</view>
 					</block>
@@ -36,7 +36,7 @@
 			
 			<view class="confirm-wrapper">
 				<view class="limit" @click="fadeBack">
-					举报黑店
+					举报投诉
 				</view>
 			</view>
 		</view>

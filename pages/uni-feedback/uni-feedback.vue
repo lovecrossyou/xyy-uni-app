@@ -77,7 +77,7 @@
 			this.shopId = opt.id;
         },
 		computed: {
-			...mapState(['userInfo', 'imgPath'])
+			...mapState(['userInfo', 'imgPath','latitude', 'longitude','addrName'])
 		},
         methods: {
             close(e){
@@ -129,7 +129,12 @@
 					email:this.sendDate.contact,
 					pictures:this.imageList,
 					score:this.sendDate.score,
-					shop_id:this.shopId
+					shop_id:this.shopId,
+					location:{
+						'latitude':this.latitude,
+						'longitude':this.longitude,
+						'addrName':this.addrName
+					}
 				});
 				console.log(JSON.stringify(params));
 				const res = await api.reportShop(params);
@@ -243,6 +248,7 @@
     	justify-content: space-between;
     	align-items: center;
     	padding: 20upx;
+		box-sizing: border-box;
     	color: #8f8f94;
     	font-size: 28upx;
     }

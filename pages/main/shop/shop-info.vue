@@ -7,9 +7,6 @@
 					店铺信息
 				</view>
 			</view>
-			<view class="item-content">
-				{{shopInfo.promotion_info}}
-			</view>
 		</view>
 		<view class="shop-address">
 			<view class="item">
@@ -27,7 +24,18 @@
 			<view class="item">
 				<image class="item-logo" :src="item_icon"></image>
 				<view class="item-title">
-					电话
+					座机
+				</view>
+			</view>
+			<view class="item-content">
+				{{shopInfo.phone}}
+			</view>
+		</view>
+		<view class="shop-phone">
+			<view class="item">
+				<image class="item-logo" :src="item_icon"></image>
+				<view class="item-title">
+					移动电话
 				</view>
 			</view>
 			<view class="item-content">
@@ -44,6 +52,18 @@
 			<view class="item-content">
 				{{shopInfo.opening_hours}}
 			</view>
+		</view>
+		
+		<view class="shop-summary">
+			<view class="item">
+				<image class="item-logo" :src="item_icon"></image>
+				<view class="item-title">
+					店铺简介
+				</view>
+			</view>
+		</view>
+		<view class="jianjie">
+			{{shopInfo.description}}
 		</view>
 	</view>
 </template>
@@ -69,6 +89,7 @@
 		background-color: white;
 
 		.shop-summary {
+			margin-bottom: 10upx;
 			border-bottom: solid 1upx #e1e1e1;
 
 			.item {
@@ -204,5 +225,14 @@
 
 			}
 		}
+	
+	     .jianjie{
+			 padding-top: 20upx;
+			 box-sizing: border-box;
+			 font-size: 24upx;
+			 font-family: PingFangSC-Regular;
+			 font-weight: 400;
+			 color: #7ca7d2;
+		 }
 	}
 </style>
