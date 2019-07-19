@@ -17,11 +17,18 @@
 		<view class="banner">
 			<view class="page-section swiper">
 				<view class="page-section-spacing">
-					<swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="500"
-					 indicator-color="#2ca2f9" indicator-active-color="#FFFFFF">
+					<swiper class="swiper" autoplay="true" interval="3000" duration="500" indicator-color="#2ca2f9"
+					 indicator-active-color="#FFFFFF">
 						<block v-for="(banner,index) in banners" :key="index">
 							<swiper-item>
-								<image v-bind:src="banner.image" class="swiper-item" mode="widthFix"></image>
+								<view class="banner-wrapper">
+									<image v-bind:src="banner.image" class="swiper-item" mode="widthFix"></image>
+									<view class="banner-footer">
+									</view>
+									<view class="banner-footer-text">
+										{{banner.desc}}
+									</view>
+								</view>
 							</swiper-item>
 						</block>
 					</swiper>
@@ -29,6 +36,8 @@
 				</view>
 			</view>
 		</view>
+		<uni-notice-bar show-icon="true" scrollable="true" single="true" text="北京市桶装饮用水销售行业协会有怡宝员工 老百姓最关心的是质量问题，而非标示">
+		</uni-notice-bar>
 
 		<!-- <image src="../../static/main/home_commend.png" class="home_commend_icon"></image> -->
 		<view class="sort-container">
@@ -85,6 +94,7 @@
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import uniRate from "@/components/uni-rate/uni-rate.vue";
 	import uniFab from '@/components/uni-fab/uni-fab.vue';
+	import uniNoticeBar from "@/components/uni-notice-bar/uni-notice-bar.vue"
 	import {
 		uniSwiperDot
 	} from "@/components/uni-swiper-dot/uni-swiper-dot.vue"
@@ -100,7 +110,8 @@
 			uniIcon,
 			uniRate,
 			uniFab,
-			uniSwiperDot
+			uniSwiperDot,
+			uniNoticeBar
 		},
 		data() {
 			return {
@@ -130,11 +141,14 @@
 				}],
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
 				banners: [{
-					image: 'http://qnimage.xiteng.com/banner_002.jpg'
-				},{
-					image: 'http://qnimage.xiteng.com/banner.jpg'
-				},{
-					image: 'http://qnimage.xiteng.com/banner3.jpg'
+					image: 'http://qnimage.xiteng.com/banner_002.jpg',
+					desc: '北京市桶装饮用水销售行业协会有怡宝员工？'
+				}, {
+					image: 'http://qnimage.xiteng.com/banner.jpg',
+					desc: '农夫山泉“标准门”'
+				}, {
+					image: 'http://qnimage.xiteng.com/banner3.jpg',
+					desc: '老百姓最关心的是质量问题，而非标示'
 				}],
 				offset: 0, // 批次加载店铺列表，每次加载20个 limit = 20
 				shopListArr: [], // 店铺列表数据
@@ -317,6 +331,35 @@
 			.swiper {
 				width: 100%;
 				height: 240upx;
+
+				.banner-wrapper {
+					position: relative;
+					height: 240upx;
+
+					.banner-footer {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						height: 66upx;
+						background-color: #333;
+						opacity: .5;
+
+					}
+
+					.banner-footer-text {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						height: 66upx;
+						color: #f1f1f1;
+						text-align: center;
+						line-height: 66upx;
+						font-size: 24upx;
+					}
+				}
+
 
 				.swiper-item {
 					width: 100%;
