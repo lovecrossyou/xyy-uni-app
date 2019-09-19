@@ -23,11 +23,11 @@
 							<swiper-item>
 								<view class="banner-wrapper">
 									<image v-bind:src="banner.image" class="swiper-item" mode="widthFix"></image>
-									<view class="banner-footer">
+									<!-- <view class="banner-footer">
 									</view>
 									<view class="banner-footer-text">
 										{{banner.desc}}
-									</view>
+									</view> -->
 								</view>
 							</swiper-item>
 						</block>
@@ -141,14 +141,8 @@
 				}],
 				key: '72239a17febe0f534f11c5b1fbd8ce4c',
 				banners: [{
-					image: 'http://qnimage.xiteng.com/banner_002.jpg',
-					desc: '北京市桶装饮用水销售行业协会有怡宝员工？'
-				}, {
-					image: 'http://qnimage.xiteng.com/banner.jpg',
-					desc: '农夫山泉“标准门”'
-				}, {
-					image: 'http://qnimage.xiteng.com/banner3.jpg',
-					desc: '老百姓最关心的是质量问题，而非标示'
+					image: 'http://qnimage.xiteng.com/water_search_banner.jpeg',
+					desc: '北京市桶装饮用水销售行业协会'
 				}],
 				offset: 0, // 批次加载店铺列表，每次加载20个 limit = 20
 				shopListArr: [], // 店铺列表数据

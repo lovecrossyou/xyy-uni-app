@@ -6,7 +6,7 @@ const request = new Fly()
 export const baseURL = 'https://api.kuaimayoupin.com/'
 // 192.168.199.101。
 // export const baseURL = 'http://192.168.1.235:8004/'
-// export const baseURL = 'http://10.100.1.115:7001/'
+// export const baseURL = 'http://127.0.0.1:7001/'
 // export const baseURL = 'http://192.168.199.101:8004/'
 
 request.config.baseURL = baseURL
